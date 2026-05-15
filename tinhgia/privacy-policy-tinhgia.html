@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Price Compare (Tinh Gia) - App Information and Privacy Policy</title>
+  <meta name="description" content="Price Compare (Tinh Gia) app information, Google Play description, permissions, data collection, third-party SDKs, and privacy policy.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8f5;
+      --surface: #ffffff;
+      --text: #1d211c;
+      --muted: #5c645b;
+      --line: #dfe4dc;
+      --primary: #2f6b3f;
+      --primary-soft: #e6f1e8;
+      --accent: #8a5a21;
+      --shadow: 0 14px 40px rgba(26, 36, 24, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 40px 0 24px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .app-icon {
+      width: 112px;
+      height: 112px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 3vw, 2.3rem);
+      padding-top: 18px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      padding-top: 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul,
+    ol {
+      margin-top: 8px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 760px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .banner {
+      margin: 24px 0;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .banner img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .section {
+      margin: 20px 0;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .section.soft {
+      background: var(--primary-soft);
+      box-shadow: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .mini-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    .label {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .short-description {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    code {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: #eef1ec;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.94em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f0f4ee;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        font-size: 16px;
+      }
+
+      .hero-grid,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-icon {
+        width: 96px;
+        height: 96px;
+      }
+
+      .section {
+        padding: 18px;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      td {
+        border-bottom: 0;
+        padding: 8px 0;
+      }
+
+      tr {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      tr:last-child {
+        border-bottom: 0;
+      }
+
+      td:first-child {
+        font-weight: 700;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-grid">
+        <img class="app-icon" src="icon/pc-play-icon.png" alt="Price Compare app icon">
+        <div>
+          <h1>Price Compare (Tinh Gia)</h1>
+          <p class="lead">A simple Android app for comparing products by real unit price, discounts, quantities, and unit conversions.</p>
+          <div class="meta">
+            <span class="pill">Package: co.myheart.tinhgia</span>
+            <span class="pill">Developer email: minhthang0792@gmail.com</span>
+            <span class="pill">Last updated: May 15, 2026</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="banner" aria-label="English store banner">
+      <img src="icon/pc-store-banner-en.png" alt="Price Compare English store banner">
+    </section>
+
+    <section class="section soft" id="app-introduction">
+      <h2>App Introduction</h2>
+      <p>Price Compare (Tinh Gia) helps shoppers compare products by the actual price per unit instead of relying only on the shelf price. The app is useful when products have different package sizes, weights, volumes, discounts, or quantities.</p>
+      <p>The app works locally on the user's device. Users can enter product prices, units, discounts, quantities, and unit types, then the app calculates comparable unit prices and highlights the best value.</p>
+    </section>
+
+    <section class="section" id="play-store-description">
+      <h2>Google Play Store Description</h2>
+      <div class="grid">
+        <div class="mini-card">
+          <p class="label">Short description</p>
+          <p class="short-description">Compare unit prices quickly and choose the best value while shopping.</p>
+          <p>Character count: 69 / 80.</p>
+        </div>
+        <div class="mini-card">
+          <p class="label">Primary use</p>
+          <p>Grocery shopping, household shopping, sale comparison, and choosing between different package sizes.</p>
+        </div>
+      </div>
+
+      <h3>Long description</h3>
+      <p>Price Compare (Tinh Gia) helps you compare products by their real unit price, so you can choose the better value faster while shopping.</p>
+      <p>When products have different sizes, weights, volumes, discounts, or package quantities, the lowest shelf price is not always the best deal. This app lets you enter each item's price and unit details, then calculates the comparable unit price clearly.</p>
+
+      <h3>Key features</h3>
+      <ul>
+        <li>Compare multiple items side by side.</li>
+        <li>Automatically highlight the best price.</li>
+        <li>Calculate unit price from price, units, quantity, and discount.</li>
+        <li>Support weight comparison with kg/g conversion.</li>
+        <li>Support volume comparison with L/mL conversion.</li>
+        <li>Use "Other" units for pieces, packs, boxes, or custom comparisons.</li>
+        <li>Optional discount input for sale items.</li>
+        <li>Show or hide total price.</li>
+        <li>Save the current comparison locally on the device.</li>
+        <li>Clear all items when starting a new comparison.</li>
+        <li>Simple, modern interface with large controls.</li>
+        <li>Optional one-time purchase to remove ads.</li>
+      </ul>
+
+      <h3>Useful for</h3>
+      <ul>
+        <li>Grocery shopping.</li>
+        <li>Comparing bulk packs and small packs.</li>
+        <li>Checking sale prices and discounts.</li>
+        <li>Comparing products sold in kg, g, L, mL, pieces, packs, or boxes.</li>
+        <li>Making faster shopping decisions without manual calculation.</li>
+      </ul>
+
+      <h3>How it works</h3>
+      <ol>
+        <li>Add the products you want to compare.</li>
+        <li>Enter the price, units, quantity, discount, and unit type.</li>
+        <li>Choose kg/g, L/mL, or Other.</li>
+        <li>The app calculates the comparable unit price and marks the best value.</li>
+      </ol>
+
+      <p>Your entered comparison data is stored locally on your device. The app does not require an account and does not upload your entered price comparison data to our own server.</p>
+    </section>
+
+    <section class="banner" aria-label="Vietnamese store banner">
+      <img src="icon/pc-store-banner-vi.png" alt="Tinh Gia Vietnamese store banner">
+    </section>
+
+    <section class="section" id="privacy-policy">
+      <h2>App Privacy Policy</h2>
+      <p>This Privacy Policy explains how Price Compare (Tinh Gia), package name <code>co.myheart.tinhgia</code>, handles data, permissions, advertising, in-app purchases, third-party SDKs, data retention, and data deletion.</p>
+      <p>Developer contact: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+
+      <h3>Summary</h3>
+      <p>Price Compare is a local price comparison app. The app lets users enter prices, units, discounts, quantities, and unit types to compare unit prices.</p>
+      <p>The price comparison data entered into the app is processed on the user's device. We do not operate a backend server for this app and we do not upload user-entered price comparison data to our own server.</p>
+
+      <h3>Android permissions</h3>
+      <p>The app currently requests or receives the following Android permissions in the merged application manifest. Some permissions are declared directly by the app, and some are added by third-party SDKs used by the app.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Source</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>android.permission.INTERNET</code></td>
+            <td>App / SDKs</td>
+            <td>Allows the app and SDKs to access the internet for loading ads, requesting consent messages, and communicating with Google Play Billing services.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+            <td>App / SDKs</td>
+            <td>Allows the app and SDKs to check network connectivity before requesting ads, consent messages, or billing information.</td>
+          </tr>
+          <tr>
+            <td><code>com.android.vending.BILLING</code></td>
+            <td>Google Play Billing</td>
+            <td>Allows the app to provide the one-time in-app product <code>remove_ads</code>.</td>
+          </tr>
+          <tr>
+            <td><code>com.google.android.gms.permission.AD_ID</code></td>
+            <td>Google Mobile Ads / Google services</td>
+            <td>Allows access to the Android Advertising ID for advertising, ad measurement, and fraud prevention where available and permitted by user settings.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_ADSERVICES_AD_ID</code></td>
+            <td>Google Mobile Ads / Android Ad Services</td>
+            <td>Supports Android Privacy Sandbox / Ad Services advertising ID functionality on supported Android versions.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_ADSERVICES_ATTRIBUTION</code></td>
+            <td>Google Mobile Ads / Android Ad Services</td>
+            <td>Supports ad attribution measurement through Android Privacy Sandbox / Ad Services on supported Android versions.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_ADSERVICES_TOPICS</code></td>
+            <td>Google Mobile Ads / Android Ad Services</td>
+            <td>Supports interest-based advertising topics through Android Privacy Sandbox / Ad Services on supported Android versions.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.WAKE_LOCK</code></td>
+            <td>Google Play services or related SDK components</td>
+            <td>May be used briefly by SDK components to keep processing active for SDK operations.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.FOREGROUND_SERVICE</code></td>
+            <td>Google SDK dependencies</td>
+            <td>May be added by SDK dependencies for compatibility with SDK operations on supported Android versions.</td>
+          </tr>
+          <tr>
+            <td><code>co.myheart.tinhgia.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td>
+            <td>AndroidX internal permission</td>
+            <td>Internal signature-level permission generated for AndroidX dynamic receiver safety. It is not a user-facing data collection permission.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The app does not request camera, microphone, contacts, calendar, SMS read/send, call log, precise location, approximate location, external storage read/write, or account-login permissions.</p>
+
+      <h3>Data entered by users</h3>
+      <p>The following data may be entered by users and stored locally on the device:</p>
+      <ul>
+        <li>Prices.</li>
+        <li>Units and unit labels.</li>
+        <li>Discount percentages.</li>
+        <li>Quantities.</li>
+        <li>Unit group selection such as kg/g, L/mL, or Other.</li>
+        <li>App preferences such as showing or hiding total price.</li>
+        <li>Local purchase entitlement flag indicating whether ads should be hidden.</li>
+      </ul>
+      <p>This data is used only to provide the app's price comparison features and restore previous input when the app is reopened. This data is stored locally using Android SharedPreferences. We do not transmit this data to our own server.</p>
+
+      <h3>Advertising, consent, and third-party SDKs</h3>
+      <p>The app uses third-party SDKs and services for advertising, consent management, and in-app purchases:</p>
+      <ul>
+        <li>Google AdMob and Google Mobile Ads SDK for banner ads and ad measurement.</li>
+        <li>Google User Messaging Platform (UMP) for privacy consent management.</li>
+        <li>Start.io AdMob mediation adapter for advertising mediation when configured through AdMob.</li>
+        <li>Google Play Billing for the one-time in-app purchase <code>remove_ads</code>.</li>
+      </ul>
+
+      <p>Google AdMob, Google Mobile Ads SDK, mediation partners, and related SDKs may collect or process data such as:</p>
+      <ul>
+        <li>Advertising ID or other device identifiers.</li>
+        <li>IP address.</li>
+        <li>Device information such as device model, operating system, language, and screen information.</li>
+        <li>App information such as package name, app version, and SDK version.</li>
+        <li>Ad interactions such as ad requests, impressions, clicks, performance events, and mediation events.</li>
+        <li>Approximate location inferred from IP address.</li>
+        <li>Diagnostics, crash, and performance data related to SDK operations.</li>
+        <li>Privacy and consent signals.</li>
+      </ul>
+
+      <p>This data may be used by Google and advertising partners for showing ads, measuring ad performance, fraud prevention, security, abuse prevention, frequency capping, ad personalization where permitted by consent and settings, and compliance with legal and policy requirements.</p>
+
+      <p>More information about Google's data practices is available at <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use Google's services</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+      <h3>Consent management</h3>
+      <p>The app uses Google User Messaging Platform (UMP) to request and manage user consent where required by applicable privacy laws and Google policies. Consent choices may be stored locally on the device and/or processed by Google SDKs so that ad requests can respect the user's privacy choices.</p>
+
+      <h3>In-app purchases</h3>
+      <p>The app uses Google Play Billing to provide a one-time in-app product:</p>
+      <ul>
+        <li>Product ID: <code>remove_ads</code>.</li>
+        <li>Purpose: remove ads from the app.</li>
+      </ul>
+      <p>Purchases are processed by Google Play. We do not directly collect, receive, store, or process payment card details, billing addresses, or other payment information. The app may store a local entitlement flag that indicates whether ads should be hidden. Google Play may retain purchase records according to Google's policies and legal obligations.</p>
+
+      <h3>Data sharing</h3>
+      <p>We do not sell personal data. We do not share user-entered price comparison data with our own server because we do not operate one for this app.</p>
+      <p>Data may be shared with or processed by Google and advertising mediation partners through the SDKs and services described above for advertising, consent management, purchase processing, purchase restoration, measurement, diagnostics, fraud prevention, and compliance.</p>
+
+      <h3>Security</h3>
+      <p>The app stores user-entered comparison data locally on the device using Android SharedPreferences. Network communication by third-party SDKs is handled by those SDKs and their service providers. No method of electronic storage or transmission is completely secure, but we limit our own data handling by not operating a backend server for user-entered price comparison data.</p>
+
+      <h3>Data retention</h3>
+      <ul>
+        <li>Local price comparison data is stored on the device until the user clears it in the app, resets app data, or uninstalls the app.</li>
+        <li>Local app preferences are stored on the device until reset or uninstall.</li>
+        <li>The local ads-removed entitlement flag is stored on the device to hide ads after purchase. The app may query Google Play Billing again to restore purchase status.</li>
+        <li>Google AdMob, UMP, Google Play Billing, Start.io mediation, and related SDK data are retained by their respective providers according to their policies, user settings, legal requirements, and service-specific retention rules.</li>
+      </ul>
+
+      <h3>Data deletion policy</h3>
+      <p>This app does not require account creation and does not provide an in-app account system.</p>
+      <p>Users can delete local app data in the following ways:</p>
+      <ul>
+        <li>Use the app's "Clear all" function to clear entered comparison values.</li>
+        <li>Use Android system settings to clear the app's storage/data.</li>
+        <li>Uninstall the app to remove local app data from the device.</li>
+      </ul>
+      <p>Because we do not operate a backend server for this app, we do not store a server-side copy of user-entered price comparison data.</p>
+      <p>For Google-managed or partner-managed data, users should use Android device privacy settings, Google account/ad settings, Google Play tools, and applicable third-party privacy tools where available. Google Play purchase records may be retained by Google for legal, tax, fraud prevention, refund, and transaction record purposes.</p>
+      <p>If you contact us at <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a> with a privacy or deletion request, we will respond and explain what data, if any, we control. For this app, we generally do not have server-side user data to delete.</p>
+
+      <h3>Children's privacy</h3>
+      <p>This app is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through this app, please contact us.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted in the app, the Google Play listing, or the publicly available privacy policy page used for Google Play.</p>
+
+      <h3>Contact</h3>
+      <p>For privacy questions or requests, contact:</p>
+      <ul>
+        <li>Email: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></li>
+        <li>Package name: <code>co.myheart.tinhgia</code></li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>Price Compare (Tinh Gia) - App information and privacy policy for Google Play listing use.</p>
+    </footer>
+  </main>
+</body>
+</html>
