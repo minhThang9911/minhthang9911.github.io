@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De&amp;EnCrypt - App Description and Privacy Policy</title>
+  <meta name="description" content="De&EnCrypt app introduction, Google Play descriptions, and privacy policy.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f9fb;
+      --surface: #ffffff;
+      --surface-alt: #eef3f7;
+      --text: #17212b;
+      --muted: #5a6876;
+      --border: #d7e0e8;
+      --primary: #006c8f;
+      --primary-dark: #06465d;
+      --accent: #1f7a4d;
+      --danger: #b42318;
+      --code-bg: #edf2f7;
+      --shadow: 0 12px 32px rgba(20, 35, 50, 0.12);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101418;
+        --surface: #171c21;
+        --surface-alt: #20262d;
+        --text: #e6edf3;
+        --muted: #aeb8c2;
+        --border: #33404c;
+        --primary: #7dd3fc;
+        --primary-dark: #b8e9ff;
+        --accent: #86efac;
+        --danger: #fca5a5;
+        --code-bg: #222a32;
+        --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 360px;
+      display: block;
+      object-fit: cover;
+      background: var(--surface-alt);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      padding-top: 8px;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    h3 {
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .tagline {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0;
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .callout {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface-alt);
+    }
+
+    .short-description {
+      font-size: 1.15rem;
+      font-weight: 650;
+      color: var(--primary-dark);
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 18px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: var(--code-bg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
+
+    .permission {
+      padding: 14px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .permission:first-of-type {
+      border-top: 0;
+    }
+
+    .permission code {
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      padding: 28px 0 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 14px;
+      }
+
+      .hero-content {
+        grid-template-columns: 72px 1fr;
+        gap: 14px;
+        padding: 18px;
+      }
+
+      .app-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+      }
+
+      .section {
+        padding: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <img class="hero-image" src="icon/banner-ads.png" alt="De&amp;EnCrypt banner">
+      <div class="hero-content">
+        <img class="app-icon" src="icon/play-icon-ads.png" alt="De&amp;EnCrypt app icon">
+        <div>
+          <h1>De&amp;EnCrypt</h1>
+          <p class="tagline">A developer-focused Android utility for encoding, decoding, encryption, decryption, and hashing text quickly.</p>
+          <p class="meta">Developer contact: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="Page sections">
+      <a href="#introduction">Introduction</a>
+      <a href="#play-store-description">Google Play Description</a>
+      <a href="#privacy-policy">Privacy Policy</a>
+      <a href="#permissions">Permissions</a>
+      <a href="#data-deletion">Data Deletion</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="section" id="introduction">
+      <h2>App Introduction</h2>
+      <p>De&amp;EnCrypt is a lightweight Android utility for developers, students, security learners, and users who need fast text conversion or hash verification on a mobile device.</p>
+      <p>The app is built for practical workflows: type or paste text, select a transform, run the operation, and copy the result. It supports common encodings, hashes, classic text transforms, Vigenere, and configurable Java Cryptography Architecture cipher options.</p>
+      <div class="grid">
+        <div class="callout">
+          <h3>Local-first processing</h3>
+          <p>Core text conversions, hashes, and cipher operations are processed on the device. The core app does not upload entered text, keys, IV values, or selected file contents to a developer server.</p>
+        </div>
+        <div class="callout">
+          <h3>Built for developer use</h3>
+          <p>The interface uses clear input and output panels, monospace text, copy/paste/clear/swap actions, system light and dark theme support, and file picker support for hash verification.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="play-store-description">
+      <h2>Google Play Store Description</h2>
+
+      <h3>Short description</h3>
+      <p class="short-description">Encode, decode, encrypt, decrypt, and hash text quickly.</p>
+
+      <h3>Long description</h3>
+      <p>De&amp;EnCrypt is a lightweight utility for developers, students, security learners, and anyone who needs quick text conversion, hashing, encryption, or decryption on Android.</p>
+      <p>The app is built as a practical tool: type or paste text, choose a transform, run the action, and copy the result. It is useful for debugging encoded payloads, checking hashes, converting text formats, experimenting with classic ciphers, or testing Java Cryptography Architecture cipher modes.</p>
+
+      <h3>Key features</h3>
+      <ul>
+        <li>Base32 encode and decode</li>
+        <li>Base64 encode and decode</li>
+        <li>Hex encode and decode</li>
+        <li>Binary encode and decode</li>
+        <li>Octal encode and decode</li>
+        <li>ASCII decimal conversion</li>
+        <li>HTML entity conversion</li>
+        <li>UTF-16 style escape conversion</li>
+        <li>Morse code conversion</li>
+        <li>Roman numeral conversion</li>
+        <li>Vigenere cipher support</li>
+        <li>SHA-256 and MD5 text hashing</li>
+        <li>File hash verification for SHA-256 and MD5</li>
+        <li>Cipher support for algorithms such as AES, ARCFOUR, Blowfish, DES, DESede, and RC4</li>
+        <li>Configurable cipher mode, padding, key, IV, and input/output format</li>
+        <li>Fast copy, paste, clear, and swap actions</li>
+      </ul>
+
+      <h3>Designed for developer workflows</h3>
+      <ul>
+        <li>Clean input and output panels</li>
+        <li>Monospace text for easier reading</li>
+        <li>System light/dark theme support</li>
+        <li>Output remains easy to review while controls stay near the bottom</li>
+        <li>File picker support for verifying file hashes</li>
+        <li>No account required</li>
+      </ul>
+
+      <h3>Privacy-focused core processing</h3>
+      <p>Most text operations are performed directly on your device. Text, keys, IV values, and selected file contents are not uploaded to a developer server by the core app. The app uses ads, so advertising partners may process advertising-related data as described in the privacy policy.</p>
+
+      <h3>Common use cases</h3>
+      <ul>
+        <li>Decode Base64 API payloads</li>
+        <li>Convert strings to Hex, Binary, Octal, or ASCII codes</li>
+        <li>Generate SHA-256 or MD5 hashes</li>
+        <li>Verify a downloaded file against a known hash</li>
+        <li>Test AES/DES/Blowfish cipher settings</li>
+        <li>Experiment with Vigenere, Morse, Roman numerals, and HTML entities</li>
+        <li>Copy converted text into another tool or app</li>
+      </ul>
+
+      <h3>Important notes</h3>
+      <p>This app is a general utility and learning tool. Some cipher mode and padding combinations depend on Android's available crypto providers and may not be supported on every device. If an operation fails, the app shows an error message in the output panel.</p>
+      <p>De&amp;EnCrypt does not replace a full password manager, key management system, or professional security audit tool. Always handle sensitive keys and data carefully.</p>
+    </section>
+
+    <section class="section" id="privacy-policy">
+      <h2>App Privacy Policy</h2>
+      <p><strong>Effective date:</strong> May 15, 2026</p>
+      <p><strong>Developer contact:</strong> <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+
+      <h3>1. Overview</h3>
+      <p>De&amp;EnCrypt is a text encoding, decoding, encryption, decryption, and hashing utility. The app is designed to process the text or files that you choose inside the app.</p>
+      <p>This Privacy Policy explains what data the app processes, what Android permissions the app and its integrated third-party SDKs use, how data is handled, and how you can request deletion of data.</p>
+
+      <h3>2. Data processed by the app</h3>
+      <p>The core De&amp;EnCrypt app processes the following data only when you provide it:</p>
+      <ul>
+        <li>Text that you type or paste into the input field.</li>
+        <li>Keys, IV values, alphabets, and other parameters that you type for encryption or decryption.</li>
+        <li>Files that you manually select through the Android file picker for hash verification.</li>
+        <li>Text copied to or pasted from the clipboard when you use the Copy or Paste actions.</li>
+      </ul>
+      <p>The core app uses this data to perform the requested local operation, such as Base64 encoding, Hex conversion, SHA-256 or MD5 hashing, Vigenere processing, or cipher encryption/decryption.</p>
+      <p>The core app does not require account registration and does not ask for your name, email address, phone number, contacts, photos, precise location, or other personal profile information.</p>
+
+      <h3>3. Local processing of text, keys, and files</h3>
+      <p>Text conversions, encryption/decryption operations, and text hashing are performed on the device.</p>
+      <p>For file hash verification, the app opens only the file that you explicitly select through the Android system file picker. The app reads the file to calculate a hash value and compare it with the hash text entered by you. The app does not request broad storage access and does not scan your device files.</p>
+      <p>The core app does not upload your entered text, encryption keys, IV values, or selected file contents to the developer's server. The developer does not operate a backend server for collecting this app content.</p>
+
+      <h3>4. Advertising and third-party SDKs</h3>
+      <p>De&amp;EnCrypt uses Google AdMob / Google Mobile Ads SDK to display ads. The app may also include the Start.io AdMob mediation adapter so Start.io can serve ads as a mediated ad source configured through AdMob.</p>
+      <p>Advertising SDKs and mediated ad sources may collect or process device and advertising-related data to provide, measure, limit, and improve ads. Depending on your device, Android version, Google Play services, privacy settings, and regional requirements, this may include:</p>
+      <ul>
+        <li>Advertising ID or similar advertising identifiers.</li>
+        <li>IP address and approximate location derived from IP address.</li>
+        <li>Device information such as device model, operating system version, language, screen information, and app/package information.</li>
+        <li>Network connection information.</li>
+        <li>Ad interaction data, such as ad impressions, clicks, and related diagnostics.</li>
+        <li>App install/referrer or attribution-related data where available.</li>
+        <li>Android Privacy Sandbox / Ads Services topics or similar advertising signals where available and permitted by Android and Google Play policy.</li>
+      </ul>
+      <p>Advertising SDKs may share advertising-related data with service providers, advertising partners, measurement partners, and fraud-prevention providers as described in their privacy policies and SDK terms.</p>
+      <p>De&amp;EnCrypt does not control all processing performed by third-party advertising partners. You can review Google's and Start.io's privacy information at:</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+        <li><a href="https://www.start.io/policy/privacy-policy/">https://www.start.io/policy/privacy-policy/</a></li>
+      </ul>
+
+      <h3 id="permissions">5. Permissions used by the app</h3>
+      <p>The following permissions may appear in the final Google Play build. Some permissions are declared directly by De&amp;EnCrypt, while others are added by integrated SDKs such as Google Mobile Ads, Start.io mediation, or Google Play services dependencies.</p>
+
+      <div class="permission">
+        <code>android.permission.INTERNET</code>
+        <p>Used to allow the advertising SDK to request and display ads. Also required for links such as opening the no-ads Play Store page.</p>
+      </div>
+
+      <div class="permission">
+        <code>android.permission.ACCESS_NETWORK_STATE</code>
+        <p>Added by SDK dependencies. Used to check network availability before requesting ads or related services.</p>
+      </div>
+
+      <div class="permission">
+        <code>android.permission.RECEIVE_BOOT_COMPLETED</code>
+        <p>Added by the advertising SDK or mediated ad source. May be used for ad cache, configuration refresh, scheduling, or related background components.</p>
+      </div>
+
+      <div class="permission">
+        <code>com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE</code>
+        <p>Added by Google Play or SDK dependencies. May be used for install referrer, attribution, and measurement.</p>
+      </div>
+
+      <div class="permission">
+        <code>com.google.android.gms.permission.AD_ID</code>
+        <p>Added by SDK dependencies. Used for advertising, ad measurement, frequency capping, fraud prevention, and attribution where allowed by the user's device settings and applicable policy.</p>
+      </div>
+
+      <div class="permission">
+        <code>android.permission.ACCESS_ADSERVICES_TOPICS</code>
+        <p>Added by SDK dependencies on supported Android versions. May be used for Android Privacy Sandbox / Ads Services advertising topics where available and permitted.</p>
+      </div>
+
+      <div class="permission">
+        <code>android.permission.ACCESS_ADSERVICES_AD_ID</code>
+        <p>Added by SDK dependencies on supported Android versions. May be used to access Android Privacy Sandbox / Ads Services advertising ID functionality where available and permitted.</p>
+      </div>
+
+      <div class="permission">
+        <code>android.permission.ACCESS_ADSERVICES_ATTRIBUTION</code>
+        <p>Added by SDK dependencies on supported Android versions. May be used for Android Privacy Sandbox / Ads Services attribution measurement where available and permitted.</p>
+      </div>
+
+      <div class="permission">
+        <code>minh.free.dencrypt.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>
+        <p>Generated by AndroidX/runtime components. Used internally to protect app-local dynamic broadcast receivers. It is not used to collect user data.</p>
+      </div>
+
+      <div class="permission">
+        <code>android.permission.ACCESS_WIFI_STATE</code>
+        <p>The app explicitly removes this permission from the manifest when possible using manifest tools configuration.</p>
+      </div>
+
+      <h3>6. Clipboard data</h3>
+      <p>The app reads clipboard content only when you press the Paste action. The app writes output text to the clipboard only when you press the Copy action.</p>
+      <p>Clipboard text is not sent to the developer by the core app. Please avoid copying sensitive information if you do not want it available through the Android system clipboard.</p>
+
+      <h3>7. Data storage and retention</h3>
+      <p>The core app does not create a user account and does not store your text, keys, IV values, selected files, or hash inputs on the developer's server.</p>
+      <p>Some temporary state may be held in app memory while the app is open, such as the current input and output text shown on screen.</p>
+      <p>Third-party SDKs may store advertising identifiers, cache files, diagnostics, or related ad data on the device or process them on their own servers according to their own privacy policies and retention practices.</p>
+
+      <h3>8. Data sharing</h3>
+      <p>The developer does not sell or share your entered text, encryption keys, IV values, or selected file contents.</p>
+      <p>Advertising-related data may be collected and shared by Google AdMob, Start.io mediation, and their partners for ads, measurement, fraud prevention, and attribution as described in their privacy policies.</p>
+
+      <h3>9. Security</h3>
+      <p>The app is intended as a utility tool. The core transformations are performed on-device. However, no app or transmission method can be guaranteed to be completely secure.</p>
+      <p>You are responsible for deciding whether to enter sensitive text, encryption keys, or files into the app. Do not use the app as your only secure storage system.</p>
+
+      <h3>10. Children</h3>
+      <p>De&amp;EnCrypt is a general utility app and is not directed to children. The developer does not knowingly collect personal information from children through the core app.</p>
+      <p>If you believe a child has provided personal information through this app, contact the developer at <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+
+      <h3>11. User choices and controls</h3>
+      <p>You can control or limit advertising personalization through your Android and Google settings, such as resetting or deleting your Advertising ID, disabling ad personalization where available, or using Android Privacy Sandbox controls where available.</p>
+      <p>You can remove app-local data by clearing the app's storage from Android system settings or uninstalling the app.</p>
+
+      <h3 id="data-deletion">12. Data deletion requests</h3>
+      <p>Because the core app does not operate a developer backend account system and does not store your entered text, keys, IV values, or selected files on developer servers, the developer usually has no core app content to delete from a server.</p>
+      <p>To delete local data stored by the app on your device:</p>
+      <ol>
+        <li>Open Android Settings.</li>
+        <li>Go to Apps.</li>
+        <li>Select De&amp;EnCrypt.</li>
+        <li>Select Storage.</li>
+        <li>Tap Clear storage / Clear data, or uninstall the app.</li>
+      </ol>
+      <p>To request deletion of any data that may be associated with you and controlled by the developer, email <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+      <p>Please include <strong>De&amp;EnCrypt Data Deletion Request</strong> in the subject line. The developer will review and respond to deletion requests within a reasonable time, subject to identity verification and legal, security, fraud-prevention, or compliance obligations.</p>
+      <p>For data collected or controlled by Google AdMob, Start.io, or other advertising partners, you may also need to contact those providers or use their privacy controls, because the developer may not have direct access to delete data stored by third-party advertising systems.</p>
+
+      <h3>13. International users</h3>
+      <p>Advertising partners and service providers may process data in countries other than your country of residence. By using the app, you understand that advertising-related processing may occur internationally according to the third-party provider's privacy policy.</p>
+
+      <h3>14. Changes to this Privacy Policy</h3>
+      <p>This Privacy Policy may be updated from time to time. When changes are made, the effective date at the top of this document will be updated.</p>
+
+      <h3 id="contact">15. Contact</h3>
+      <p>If you have questions about this Privacy Policy, data handling, or deletion requests, contact: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+    </section>
+
+    <footer class="footer">
+      <p>De&amp;EnCrypt - App description and privacy policy. Contact: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+    </footer>
+  </main>
+</body>
+</html>
