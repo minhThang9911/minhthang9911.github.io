@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dược Điển IV - Giới thiệu và Chính sách quyền riêng tư</title>
+    <meta name="description" content="Giới thiệu ứng dụng Dược Điển IV, mô tả Google Play và chính sách quyền riêng tư.">
+    <style>
+        :root {
+            --bg: #f4f7f6;
+            --surface: #ffffff;
+            --text: #1d2a2e;
+            --muted: #657579;
+            --line: #d9e2df;
+            --primary: #0f766e;
+            --primary-dark: #134e4a;
+            --accent: #b45309;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: var(--primary-dark);
+        }
+
+        .hero {
+            background: var(--surface);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-inner,
+        main {
+            width: min(1040px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .app-header {
+            display: grid;
+            grid-template-columns: 96px 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 28px 0 32px;
+        }
+
+        .app-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, .18);
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.25;
+            margin: 0 0 12px;
+        }
+
+        h1 {
+            font-size: clamp(28px, 4vw, 44px);
+            letter-spacing: 0;
+        }
+
+        h2 {
+            color: var(--primary-dark);
+            font-size: 26px;
+            padding-top: 6px;
+        }
+
+        h3 {
+            font-size: 19px;
+            margin-top: 22px;
+        }
+
+        p {
+            margin: 0 0 14px;
+        }
+
+        ul {
+            margin: 0 0 14px 22px;
+            padding: 0;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        main {
+            padding: 28px 0 48px;
+        }
+
+        section {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            margin: 0 0 18px;
+            padding: 24px;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .note {
+            border-left: 4px solid var(--accent);
+            background: #fff7ed;
+            padding: 12px 14px;
+            margin: 14px 0;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 16px;
+        }
+
+        .table th,
+        .table td {
+            border: 1px solid var(--line);
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .table th {
+            background: #eef7f5;
+            color: var(--primary-dark);
+        }
+
+        footer {
+            color: var(--muted);
+            text-align: center;
+            padding: 0 16px 32px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 640px) {
+            .app-header {
+                grid-template-columns: 72px 1fr;
+                gap: 14px;
+                padding: 20px 0 24px;
+            }
+
+            .app-icon {
+                width: 72px;
+                height: 72px;
+                border-radius: 16px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            .table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="hero">
+    <img class="hero-image" src="icon/banner.png" alt="Banner ứng dụng Dược Điển IV">
+    <div class="hero-inner">
+        <div class="app-header">
+            <img class="app-icon" src="icon/icon.png" alt="Biểu tượng ứng dụng Dược Điển IV">
+            <div>
+                <h1>Dược Điển IV</h1>
+                <p class="meta">Giới thiệu ứng dụng, mô tả Google Play và chính sách quyền riêng tư.</p>
+                <p class="meta">Cập nhật lần cuối: 16/05/2026</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="gioi-thieu">
+        <h2>Giới thiệu app</h2>
+        <p>
+            Dược Điển IV là ứng dụng Android hỗ trợ tra cứu nội dung Dược Điển Việt Nam IV trên thiết bị di động.
+            Ứng dụng hiển thị kho tài liệu HTML được đóng gói sẵn trong app, giúp người dùng đọc mục lục và các
+            chuyên luận liên quan đến dược điển, dược liệu, hóa dược, vắc xin, sinh phẩm y tế, phổ hồng ngoại và
+            các phụ lục.
+        </p>
+        <p>
+            Ứng dụng không yêu cầu đăng ký tài khoản, không có tính năng đăng nhập, không cho phép người dùng tải
+            lên tệp riêng và không thu thập nội dung tra cứu của người dùng để tạo hồ sơ cá nhân.
+        </p>
+    </section>
+
+    <section id="google-play-listing">
+        <h2>Nội dung mô tả cho Google Play</h2>
+
+        <h3>Short description</h3>
+        <p>Tra cứu Dược Điển Việt Nam IV offline trên điện thoại Android.</p>
+
+        <h3>Long description</h3>
+        <p>
+            Dược Điển IV giúp người dùng tra cứu nhanh nội dung Dược Điển Việt Nam IV ngay trên điện thoại Android.
+            Tài liệu được đóng gói sẵn trong ứng dụng và hiển thị bằng WebView, phù hợp khi cần đọc mục lục, chuyên
+            luận và phụ lục mà không phụ thuộc vào trình duyệt bên ngoài.
+        </p>
+        <p>Tính năng chính:</p>
+        <ul>
+            <li>Tra cứu mục lục Dược Điển Việt Nam IV.</li>
+            <li>Đọc nội dung offline từ kho HTML có sẵn trong ứng dụng.</li>
+            <li>Điều hướng các chương, mục và phụ lục trực tiếp trong ứng dụng.</li>
+            <li>Hỗ trợ các nhóm nội dung: mở đầu, quy định chung, hóa dược, vắc xin và sinh phẩm y tế, dược liệu,
+                thuốc từ dược liệu, phổ hồng ngoại và các phụ lục.</li>
+            <li>Giao diện đơn giản, tập trung vào việc đọc và tra cứu tài liệu.</li>
+        </ul>
+        <p>
+            Lưu ý: Ứng dụng được cung cấp với mục đích tham khảo và tra cứu tài liệu. Người dùng cần tham khảo ý kiến
+            chuyên môn y tế, dược sĩ hoặc cơ quan có thẩm quyền khi áp dụng thông tin vào thực hành chuyên môn.
+        </p>
+    </section>
+
+    <section id="privacy-policy">
+        <h2>App privacy policy</h2>
+        <p>
+            Chính sách này giải thích cách ứng dụng Dược Điển IV xử lý dữ liệu, các quyền Android có thể được sử dụng
+            và các SDK bên thứ ba được tích hợp để hiển thị quảng cáo. Bằng việc cài đặt và sử dụng ứng dụng, người
+            dùng đồng ý với nội dung của chính sách này.
+        </p>
+
+        <h3>Thông tin nhà phát triển</h3>
+        <p>
+            Email liên hệ hỗ trợ và yêu cầu về dữ liệu:
+            <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>
+        </p>
+
+        <h3>Dữ liệu ứng dụng trực tiếp thu thập</h3>
+        <p>
+            Dược Điển IV không trực tiếp thu thập tên, địa chỉ, số điện thoại, email đăng nhập, danh bạ, ảnh, video,
+            tệp cá nhân, vị trí GPS, lịch sử gọi điện, tin nhắn SMS hay nội dung người dùng nhập vào. Ứng dụng không
+            có máy chủ riêng để lưu tài khoản người dùng.
+        </p>
+
+        <h3>Dữ liệu có thể được xử lý bởi SDK quảng cáo bên thứ ba</h3>
+        <p>
+            Ứng dụng có sử dụng Google AdMob và Start.io thông qua cơ chế mediation để hiển thị quảng cáo. Các SDK này
+            có thể tự động thu thập hoặc xử lý một số dữ liệu cần thiết cho quảng cáo, bao gồm:
+        </p>
+        <ul>
+            <li>Mã định danh quảng cáo Android Advertising ID, nếu có sẵn và người dùng chưa tắt hoặc hạn chế.</li>
+            <li>Thông tin thiết bị như loại thiết bị, hệ điều hành, ngôn ngữ, kích thước màn hình và phiên bản ứng dụng.</li>
+            <li>Địa chỉ IP, thông tin kết nối mạng và dữ liệu chẩn đoán kỹ thuật.</li>
+            <li>Dữ liệu tương tác với quảng cáo như số lần hiển thị, lượt nhấp, lỗi tải quảng cáo và hiệu năng quảng cáo.</li>
+            <li>Dữ liệu vị trí tương đối có thể được suy luận từ địa chỉ IP theo chính sách của nhà cung cấp quảng cáo.</li>
+        </ul>
+        <p>
+            Việc thu thập và xử lý dữ liệu của các SDK bên thứ ba được điều chỉnh bởi chính sách riêng của từng nhà
+            cung cấp:
+        </p>
+        <ul>
+            <li><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543" rel="noopener">Google AdMob policies and privacy information</a></li>
+            <li><a href="https://www.start.io/policy/privacy-policy/" rel="noopener">Start.io Privacy Policy</a></li>
+        </ul>
+
+        <h3>Các quyền Android ứng dụng yêu cầu hoặc có thể được SDK quảng cáo thêm vào</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Quyền</th>
+                <th>Mục đích sử dụng</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code>com.google.android.gms.permission.AD_ID</code></td>
+                <td>Cho phép SDK quảng cáo đọc Android Advertising ID để đo lường, chống gian lận và cá nhân hóa quảng cáo nếu người dùng cho phép.</td>
+            </tr>
+            <tr>
+                <td><code>android.permission.INTERNET</code></td>
+                <td>Cho phép SDK quảng cáo tải quảng cáo, mediation response và nội dung liên quan từ máy chủ quảng cáo.</td>
+            </tr>
+            <tr>
+                <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+                <td>Cho phép SDK kiểm tra trạng thái kết nối mạng để quyết định khi nào có thể tải quảng cáo.</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+            Ứng dụng không yêu cầu các quyền nhạy cảm như camera, microphone, danh bạ, SMS, lịch sử cuộc gọi, bộ nhớ
+            ngoài hay vị trí GPS chính xác. Quyền <code>ACCESS_WIFI_STATE</code> được cấu hình loại bỏ khỏi manifest
+            hợp nhất nếu thư viện bên thứ ba đề xuất quyền này.
+        </p>
+
+        <h3>Mục đích sử dụng dữ liệu</h3>
+        <ul>
+            <li>Hiển thị và tối ưu hóa quảng cáo trong ứng dụng.</li>
+            <li>Đo lường hiệu năng quảng cáo và ngăn chặn hành vi gian lận quảng cáo.</li>
+            <li>Duy trì tính ổn định kỹ thuật của SDK quảng cáo.</li>
+            <li>Tuân thủ yêu cầu pháp lý, chính sách Google Play và chính sách của các mạng quảng cáo.</li>
+        </ul>
+
+        <h3>Chia sẻ dữ liệu</h3>
+        <p>
+            Ứng dụng không bán dữ liệu cá nhân của người dùng. Dữ liệu liên quan đến quảng cáo có thể được chia sẻ với
+            Google AdMob, Start.io và các đối tác xử lý dữ liệu của họ theo chính sách quảng cáo, bảo mật và pháp lý
+            của từng bên.
+        </p>
+
+        <h3>Lưu trữ và bảo mật</h3>
+        <p>
+            Ứng dụng không vận hành hệ thống máy chủ riêng để lưu trữ hồ sơ người dùng. Dữ liệu do SDK quảng cáo xử lý,
+            nếu có, được lưu trữ và bảo vệ theo chính sách của Google, Start.io và các đối tác liên quan. Nhà phát triển
+            sử dụng các SDK phổ biến và cập nhật theo khả năng tương thích của ứng dụng.
+        </p>
+
+        <h3>Quyền lựa chọn của người dùng</h3>
+        <ul>
+            <li>Người dùng có thể đặt lại hoặc xóa Advertising ID trong phần cài đặt quyền riêng tư/quảng cáo của Android.</li>
+            <li>Người dùng có thể tắt cá nhân hóa quảng cáo nếu hệ điều hành hỗ trợ tùy chọn này.</li>
+            <li>Người dùng có thể gỡ cài đặt ứng dụng bất cứ lúc nào để dừng việc xử lý dữ liệu phát sinh từ ứng dụng.</li>
+            <li>Người dùng tại EEA/UK hoặc khu vực có yêu cầu consent có thể nhận thông báo xin đồng ý theo cơ chế của Google hoặc SDK liên quan nếu được kích hoạt trong phiên bản ứng dụng.</li>
+        </ul>
+
+        <h3>Yêu cầu xóa dữ liệu</h3>
+        <p>
+            Vì ứng dụng không tạo tài khoản và không lưu trữ dữ liệu cá nhân trên máy chủ của nhà phát triển, thông
+            thường không có hồ sơ người dùng để xóa từ hệ thống riêng của ứng dụng. Nếu người dùng muốn hỏi về dữ liệu
+            hoặc yêu cầu hỗ trợ xóa dữ liệu liên quan đến ứng dụng, vui lòng gửi email đến
+            <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.
+        </p>
+        <p>
+            Với dữ liệu do Google AdMob hoặc Start.io xử lý, người dùng nên thực hiện các tùy chọn quyền riêng tư trên
+            thiết bị Android và tham khảo chính sách/xóa dữ liệu của từng nhà cung cấp.
+        </p>
+
+        <h3>Trẻ em</h3>
+        <p>
+            Ứng dụng không được thiết kế riêng cho trẻ em và không có chủ đích thu thập dữ liệu cá nhân của trẻ em.
+            Nếu phụ huynh hoặc người giám hộ cho rằng trẻ em đã cung cấp dữ liệu cá nhân thông qua ứng dụng, vui lòng
+            liên hệ email hỗ trợ để được xử lý.
+        </p>
+
+        <h3>Thay đổi chính sách</h3>
+        <p>
+            Chính sách này có thể được cập nhật khi ứng dụng thay đổi tính năng, SDK quảng cáo, yêu cầu của Google Play
+            hoặc quy định pháp lý. Phiên bản mới sẽ được công bố tại trang này và có hiệu lực kể từ ngày cập nhật.
+        </p>
+
+        <div class="note">
+            <strong>Lưu ý y tế:</strong> Nội dung trong ứng dụng chỉ phục vụ mục đích tham khảo tài liệu. Ứng dụng không
+            thay thế tư vấn của bác sĩ, dược sĩ, chuyên gia y tế hoặc cơ quan quản lý có thẩm quyền.
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Dược Điển IV - Developer contact: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+</footer>
+</body>
+</html>
