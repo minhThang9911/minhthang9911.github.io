@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bệnh học - Chính sách quyền riêng tư</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --line: #d9e2ec;
+      --accent: #146c94;
+      --bg: #f7f9fb;
+      --paper: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .banner {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+    .wrap {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0;
+    }
+    .app-title {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+    }
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    h2 {
+      margin-top: 28px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    p {
+      margin: 0 0 12px;
+    }
+    ul {
+      margin: 0 0 12px 22px;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 18px 0;
+    }
+    code {
+      background: #eef3f7;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="banner" src="icon/banner.png" alt="Bệnh học">
+    <div class="wrap app-title">
+      <img class="icon" src="icon/icon.png" alt="Biểu tượng Bệnh học">
+      <div>
+        <h1>Bệnh học</h1>
+        <p class="muted">Ứng dụng tra cứu nội dung bệnh học và thông tin y khoa tiếng Việt.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <h2>Thông tin Google Play</h2>
+      <h3>Mô tả ngắn</h3>
+      <p>Tra cứu bệnh học, thuốc và bài viết y khoa tiếng Việt.</p>
+
+      <h3>Mô tả đầy đủ</h3>
+      <p>Bệnh học cung cấp thư viện nội dung y khoa tiếng Việt để người dùng tra cứu các chủ đề bệnh học, thuốc, chẩn đoán, dinh dưỡng và nhiều nhóm kiến thức liên quan. Ứng dụng hoạt động chủ yếu với dữ liệu đóng gói trong ứng dụng và Play Asset Pack, hỗ trợ tìm kiếm, đọc bài viết trong WebView, lưu yêu thích và lưu lịch sử đọc trên thiết bị.</p>
+      <p>Ứng dụng có quảng cáo banner Google AdMob. Người dùng có thể mua gói mở khóa qua Google Play Billing để tắt quảng cáo và mở toàn bộ nội dung. Nội dung trong ứng dụng chỉ phục vụ mục đích tham khảo, không thay thế tư vấn, chẩn đoán hoặc điều trị từ nhân viên y tế.</p>
+    </section>
+
+    <section class="section">
+      <h2>Chính sách quyền riêng tư</h2>
+      <p>Cập nhật lần cuối: 17/05/2026</p>
+      <p>Chính sách này mô tả cách ứng dụng Bệnh học, package <code>com.free.benhhocnew</code>, xử lý dữ liệu khi bạn sử dụng ứng dụng.</p>
+
+      <h3>Dữ liệu do ứng dụng xử lý</h3>
+      <ul>
+        <li>Lịch sử đọc và danh sách yêu thích được lưu cục bộ trên thiết bị trong cơ sở dữ liệu của ứng dụng.</li>
+        <li>Trạng thái đã mua gói mở khóa được lưu cục bộ như bộ nhớ đệm và được kiểm tra lại qua Google Play Billing.</li>
+        <li>Ứng dụng không yêu cầu tạo tài khoản và không vận hành máy chủ riêng để lưu hồ sơ cá nhân của người dùng.</li>
+      </ul>
+
+      <h3>Quyền Android đang khai báo</h3>
+      <ul>
+        <li><code>INTERNET</code>: dùng cho Google AdMob, Google Play Billing và các thành phần cần kết nối mạng.</li>
+        <li><code>ACCESS_NETWORK_STATE</code>: dùng để SDK quảng cáo/thanh toán kiểm tra trạng thái kết nối.</li>
+      </ul>     
+
+      <h3>Dịch vụ và SDK bên thứ ba</h3>
+      <ul>
+        <li>Google AdMob / Google Mobile Ads SDK: hiển thị quảng cáo banner. SDK có thể xử lý Advertising ID, địa chỉ IP, thông tin thiết bị, sự kiện quảng cáo và dữ liệu chẩn đoán theo chính sách của Google.</li>
+        <li>Start.io mediation adapter: được AdMob gọi khi mediation chọn nguồn quảng cáo Start.io. SDK có thể xử lý thông tin thiết bị, địa chỉ IP, Advertising ID, sự kiện quảng cáo và dữ liệu chẩn đoán theo chính sách của Start.io.</li>
+        <li>Google Play Billing: xử lý giao dịch mua gói mở khóa và khôi phục mua hàng.</li>
+        <li>Google Play Asset Delivery: phân phối gói nội dung HTML đi kèm ứng dụng.</li>
+        <li>SQLCipher: lưu và đọc cơ sở dữ liệu nội dung/yêu thích/lịch sử trên thiết bị.</li>
+      </ul>
+      <p>Start.io được tích hợp dưới dạng mediation adapter cho AdMob; ứng dụng không gọi banner Start.io trực tiếp trong mã nguồn.</p>
+
+      <h3>Mục đích sử dụng dữ liệu</h3>
+      <ul>
+        <li>Cung cấp chức năng đọc bài, tìm kiếm, yêu thích và lịch sử đọc.</li>
+        <li>Hiển thị quảng cáo cho người dùng chưa mua gói mở khóa.</li>
+        <li>Xác thực và khôi phục quyền lợi mua hàng qua Google Play.</li>
+        <li>Duy trì tính ổn định, bảo mật và khả năng vận hành của ứng dụng.</li>
+      </ul>
+
+      <h3>Chia sẻ dữ liệu</h3>
+      <p>Nhà phát triển không bán dữ liệu cá nhân và không chia sẻ dữ liệu cục bộ như lịch sử/yêu thích cho máy chủ riêng. Dữ liệu quảng cáo và thanh toán có thể được xử lý bởi Google theo chính sách của các SDK Google được tích hợp.</p>
+
+      <h3>Lưu trữ và xóa dữ liệu</h3>
+      <ul>
+        <li>Lịch sử và yêu thích được lưu trên thiết bị cho đến khi người dùng xóa trong ứng dụng, xóa dữ liệu ứng dụng hoặc gỡ cài đặt.</li>
+        <li>Trạng thái mua hàng được Google Play quản lý; ứng dụng chỉ lưu bộ nhớ đệm cục bộ để mở khóa nhanh hơn.</li>
+        <li>Người dùng có thể dùng mục xóa lịch sử, xóa yêu thích trong menu ứng dụng hoặc vào Cài đặt Android để xóa toàn bộ dữ liệu ứng dụng.</li>
+      </ul>
+
+      <h3>Bảo mật</h3>
+      <p>Dữ liệu nội dung và dữ liệu cục bộ được lưu trong vùng dữ liệu riêng của ứng dụng. Không có phương thức truyền dữ liệu lịch sử/yêu thích lên máy chủ riêng của nhà phát triển.</p>
+
+      <h3>Trẻ em</h3>
+      <p>Ứng dụng cung cấp nội dung y khoa tham khảo và không cố ý thu thập thông tin cá nhân từ trẻ em.</p>
+
+      <h3>Liên hệ</h3>
+      <p>Nếu có câu hỏi về quyền riêng tư hoặc yêu cầu liên quan đến dữ liệu, vui lòng liên hệ: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+    </section>
+  </main>
+</body>
+</html>
