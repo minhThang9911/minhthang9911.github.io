@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chính sách quyền riêng tư - Biệt Dược</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #1f2933;
+            background: #f6f8fb;
+            line-height: 1.6;
+        }
+        main {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 28px 18px 48px;
+            background: #ffffff;
+        }
+        h1, h2 {
+            color: #12395b;
+            line-height: 1.25;
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+        h2 {
+            margin-top: 28px;
+            font-size: 20px;
+        }
+        ul {
+            padding-left: 22px;
+        }
+        .muted {
+            color: #5f6b7a;
+        }
+        .listing {
+            border-left: 4px solid #2f80ed;
+            padding: 12px 16px;
+            background: #eef6ff;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Chính sách quyền riêng tư - Biệt Dược</h1>
+    <p class="muted">Ngày cập nhật: 17/05/2026</p>
+
+    <p>Biệt Dược là ứng dụng Android giúp người dùng tra cứu thông tin thuốc và biệt dược từ dữ liệu HTML lưu cục bộ trong ứng dụng. Ứng dụng không yêu cầu đăng nhập và không có tính năng gửi dữ liệu cá nhân trực tiếp về máy chủ của nhà phát triển.</p>
+
+    <section class="listing">
+        <h2>Mô tả Google Play</h2>
+        <p><strong>Mô tả ngắn:</strong> Tra cứu thông tin thuốc và biệt dược offline, nhanh chóng trên Android.</p>
+        <p><strong>Mô tả dài:</strong> Biệt Dược hỗ trợ tra cứu tên thuốc, biệt dược và mở thông tin chi tiết ngay trong ứng dụng. Dữ liệu chính được đóng gói cục bộ, giúp người dùng tìm kiếm nhanh, đọc nội dung qua WebView và sử dụng giao diện đơn giản trên Android. Ứng dụng có hiển thị quảng cáo banner và quảng cáo native Google AdMob để duy trì dịch vụ.</p>
+    </section>
+
+    <h2>1. Dữ liệu ứng dụng xử lý</h2>
+    <p>Ứng dụng không trực tiếp thu thập tên, email, số điện thoại, địa chỉ hoặc tài khoản người dùng. Nội dung tra cứu thuốc được đọc từ file cục bộ trong ứng dụng.</p>
+
+    <h2>2. Quyền Android</h2>
+    <ul>
+        <li><strong>android.permission.INTERNET:</strong> dùng để tải quảng cáo Google AdMob.</li>
+        <li><strong>android.permission.ACCESS_NETWORK_STATE:</strong> dùng để SDK quảng cáo kiểm tra trạng thái kết nối mạng.</li>
+        <li><strong>com.google.android.gms.permission.AD_ID:</strong> dùng cho Google Mobile Ads SDK để hỗ trợ quảng cáo, đo lường và chống gian lận theo chính sách của Google.</li>
+        <li><strong>android.permission.ACCESS_ADSERVICES_AD_ID, android.permission.ACCESS_ADSERVICES_ATTRIBUTION, android.permission.ACCESS_ADSERVICES_TOPICS:</strong> các quyền Android Privacy Sandbox/Ad Services được Google Mobile Ads SDK merge vào manifest để hỗ trợ quảng cáo, đo lường phân bổ và chủ đề quảng cáo trên các phiên bản Android tương thích.</li>
+        <li><strong>android.permission.WAKE_LOCK và android.permission.FOREGROUND_SERVICE:</strong> các quyền do SDK/phụ thuộc Google merge vào manifest để hỗ trợ tác vụ nền liên quan đến quảng cáo/dịch vụ hệ thống khi cần.</li>
+        <li><strong>co.mt.bietduoc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION:</strong> quyền nội bộ do AndroidX tạo để bảo vệ broadcast receiver không export của ứng dụng.</li>
+    </ul>
+
+    <h2>3. SDK và dịch vụ bên thứ ba</h2>
+    <p>Ứng dụng sử dụng Google Mobile Ads SDK (AdMob) để hiển thị quảng cáo banner và quảng cáo native trong danh sách thuốc. Google có thể xử lý các dữ liệu như Advertising ID, địa chỉ IP, thông tin thiết bị, sự kiện hiển thị/quảng cáo và dữ liệu chẩn đoán theo chính sách của Google. Nhà phát triển không tự vận hành máy chủ quảng cáo riêng.</p>
+    <p>Ứng dụng không còn tích hợp Start.io/StartApp SDK trong bản hiện tại. Start.io mediation chưa được thêm vào code ứng dụng.</p>
+
+    <h2>4. Mục đích sử dụng dữ liệu</h2>
+    <p>Dữ liệu do SDK quảng cáo xử lý được dùng để phân phối quảng cáo, đo lường hiệu quả quảng cáo, chống gian lận và duy trì tính ổn định của dịch vụ quảng cáo.</p>
+
+    <h2>5. Chia sẻ dữ liệu</h2>
+    <p>Nhà phát triển không bán dữ liệu cá nhân của người dùng. Dữ liệu quảng cáo có thể được Google xử lý hoặc chia sẻ theo chính sách của Google Mobile Ads và các yêu cầu pháp lý áp dụng.</p>
+
+    <h2>6. Lưu trữ, bảo mật và xóa dữ liệu</h2>
+    <p>Nhà phát triển không lưu trữ dữ liệu cá nhân trên máy chủ riêng. Dữ liệu do Google xử lý được lưu trữ và xóa theo chính sách của Google. Người dùng có thể đặt lại hoặc xóa Advertising ID trong phần cài đặt Android/Google trên thiết bị.</p>
+
+    <h2>7. Trẻ em</h2>
+    <p>Ứng dụng cung cấp nội dung tra cứu thông tin thuốc và không nhắm riêng đến trẻ em dưới 13 tuổi.</p>
+
+    <h2>8. Thay đổi chính sách</h2>
+    <p>Chính sách này có thể được cập nhật khi ứng dụng thay đổi tính năng, SDK hoặc yêu cầu pháp lý.</p>
+
+    <h2>9. Liên hệ</h2>
+    <p>Nếu có câu hỏi hoặc yêu cầu liên quan đến quyền riêng tư, vui lòng liên hệ: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+</main>
+</body>
+</html>
