@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bệnh Học - Mô tả ứng dụng và Chính sách quyền riêng tư</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #1f2933; background: #f7f9fb; }
+    header { background: #0f766e; color: #fff; padding: 28px 16px; text-align: center; }
+    header img.banner { max-width: 100%; height: auto; border-radius: 6px; margin-bottom: 18px; }
+    header img.icon { width: 96px; height: 96px; border-radius: 20px; display: block; margin: 0 auto 12px; }
+    main { max-width: 900px; margin: 0 auto; padding: 24px 16px 48px; background: #fff; }
+    h1, h2 { line-height: 1.25; }
+    h1 { margin: 8px 0; }
+    h2 { margin-top: 32px; color: #0f766e; }
+    ul { padding-left: 22px; }
+    .note { background: #eef7f6; border-left: 4px solid #0f766e; padding: 12px 14px; }
+    footer { max-width: 900px; margin: 0 auto; padding: 16px; color: #52616b; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="banner" src="icon/banner.png" alt="Bệnh Học">
+    <img class="icon" src="icon/icon.png" alt="Biểu tượng Bệnh Học">
+    <h1>Bệnh Học</h1>
+    <p>Tra cứu tài liệu bệnh học tiếng Việt, đọc offline trên Android.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Mô tả ngắn trên Google Play</h2>
+      <p>Tra cứu bệnh học tiếng Việt offline, có tìm kiếm và lưu yêu thích.</p>
+    </section>
+
+    <section>
+      <h2>Mô tả dài trên Google Play</h2>
+      <p>Bệnh Học là ứng dụng Android giúp đọc và tra cứu tài liệu bệnh học bằng tiếng Việt. Nội dung được đóng gói sẵn trong ứng dụng để có thể mở offline, phù hợp cho nhu cầu học tập, ôn tập và tham khảo nhanh.</p>
+      <ul>
+        <li>Danh mục bệnh học theo chuyên mục.</li>
+        <li>Tìm kiếm bài viết trong danh sách hiện tại.</li>
+        <li>Đọc nội dung HTML offline bằng WebView.</li>
+        <li>Lưu bài yêu thích và lịch sử đọc trên thiết bị.</li>
+        <li>Hỗ trợ mua gói tắt quảng cáo qua Google Play Billing.</li>
+      </ul>
+      <p class="note">Thông tin trong ứng dụng chỉ phục vụ tham khảo và học tập, không thay thế tư vấn, chẩn đoán hoặc điều trị của nhân viên y tế.</p>
+    </section>
+
+    <section>
+      <h2>Chính sách quyền riêng tư</h2>
+      <p>Chính sách này áp dụng cho ứng dụng Bệnh Học, package Android <strong>com.free.benhhoc</strong>. Nhà phát triển có thể được liên hệ qua email: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>Dữ liệu ứng dụng xử lý</h2>
+      <ul>
+        <li><strong>Nội dung đọc, yêu thích và lịch sử:</strong> ứng dụng lưu danh sách bài đã đọc và bài yêu thích trong cơ sở dữ liệu cục bộ trên thiết bị. Dữ liệu này không được gửi về máy chủ riêng của nhà phát triển.</li>
+        <li><strong>Trạng thái mua tắt quảng cáo:</strong> ứng dụng dùng Google Play Billing để kiểm tra, xác nhận và khôi phục giao dịch mua trong ứng dụng. Trạng thái tắt quảng cáo có thể được lưu cục bộ như bộ nhớ đệm.</li>
+        <li><strong>Dữ liệu quảng cáo:</strong> ứng dụng dùng Google AdMob để hiển thị banner quảng cáo cho người dùng chưa mua gói tắt quảng cáo. Google có thể xử lý mã nhận dạng quảng cáo, thông tin thiết bị, địa chỉ IP gần đúng và tín hiệu liên quan để phân phối, đo lường và chống gian lận quảng cáo theo chính sách của Google.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quyền Android được khai báo</h2>
+      <ul>
+        <li><strong>com.android.vending.BILLING:</strong> dùng cho giao dịch mua tắt quảng cáo qua Google Play.</li>
+        <li><strong>android.permission.INTERNET:</strong> dùng cho Google AdMob, Google Play Billing và nội dung WebView khi cần tải tài nguyên mạng.</li>
+        <li><strong>android.permission.READ_EXTERNAL_STORAGE:</strong> quyền lưu trữ cũ được khai báo cho khả năng tương thích Android cũ.</li>
+        <li><strong>android.permission.WRITE_EXTERNAL_STORAGE:</strong> quyền lưu trữ cũ được khai báo cho khả năng tương thích Android cũ.</li>
+        <li><strong>android.permission.ACCESS_WIFI_STATE:</strong> được khai báo với chỉ thị loại bỏ trong manifest để tránh quyền hợp nhất từ SDK không cần thiết.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Dịch vụ và SDK bên thứ ba</h2>
+      <ul>
+        <li><strong>Google AdMob / Google Mobile Ads SDK:</strong> hiển thị và đo lường banner quảng cáo.</li>
+        <li><strong>Google Play Billing:</strong> xử lý giao dịch mua gói tắt quảng cáo và khôi phục mua hàng.</li>
+        <li><strong>AndroidX Room:</strong> lưu dữ liệu ứng dụng cục bộ như lịch sử và yêu thích.</li>
+        <li><strong>Android WebView:</strong> hiển thị nội dung HTML được đóng gói trong ứng dụng.</li>
+      </ul>
+      <p>Ứng dụng hiện không tích hợp SDK phân tích riêng và không gửi dữ liệu cá nhân về máy chủ riêng của nhà phát triển.</p>
+    </section>
+
+    <section>
+      <h2>Mục đích sử dụng và chia sẻ dữ liệu</h2>
+      <p>Dữ liệu cục bộ được dùng để vận hành các tính năng đọc, lịch sử, yêu thích và tắt quảng cáo. Dữ liệu quảng cáo và thanh toán có thể được xử lý bởi Google theo chính sách của các dịch vụ tương ứng. Nhà phát triển không bán dữ liệu cá nhân của người dùng.</p>
+    </section>
+
+    <section>
+      <h2>Lưu trữ, bảo mật và xóa dữ liệu</h2>
+      <ul>
+        <li>Dữ liệu lịch sử, yêu thích và bộ nhớ đệm trạng thái mua được lưu trên thiết bị cho đến khi người dùng xóa trong ứng dụng, xóa dữ liệu ứng dụng hoặc gỡ ứng dụng.</li>
+        <li>Người dùng có thể xóa lịch sử và yêu thích trong menu ứng dụng.</li>
+        <li>Người dùng có thể dùng chức năng khôi phục mua hàng để đồng bộ lại trạng thái tắt quảng cáo từ Google Play.</li>
+        <li>Để yêu cầu hỗ trợ liên quan đến quyền riêng tư, vui lòng liên hệ <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Thay đổi chính sách</h2>
+      <p>Chính sách này có thể được cập nhật khi ứng dụng thay đổi tính năng, SDK hoặc yêu cầu pháp lý. Ngày cập nhật: 17/05/2026.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Bệnh Học - Chính sách quyền riêng tư và nội dung mô tả phát hành.</p>
+  </footer>
+</body>
+</html>
