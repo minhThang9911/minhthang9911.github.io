@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Giới thiệu ứng dụng Sim Phong Thủy, mô tả Google Play Store và chính sách quyền riêng tư.">
+  <title>Sim Phong Thủy - Google Play & Chính Sách Quyền Riêng Tư</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --surface-soft: #f1f6fb;
+      --text: #172033;
+      --muted: #5f6f86;
+      --line: #dce5ef;
+      --primary: #125f9d;
+      --primary-dark: #0b406d;
+      --green: #1f8f5f;
+      --amber: #a15c07;
+      --shadow: 0 18px 45px rgba(19, 32, 51, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #102033;
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .hero .banner {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(9, 23, 38, 0.92), rgba(9, 23, 38, 0.76) 46%, rgba(9, 23, 38, 0.2));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(700px, 100%);
+      padding: 42px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .app-icon {
+      width: 92px;
+      height: 92px;
+      border: 3px solid rgba(255, 255, 255, 0.85);
+      border-radius: 22px;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+    }
+
+    .eyebrow {
+      margin: 0 0 5px;
+      color: #cbe8ff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.12;
+    }
+
+    .hero-text {
+      margin: 18px 0 0;
+      max-width: 650px;
+      color: #edf5ff;
+      font-size: 18px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      border-radius: 999px;
+      padding: 8px 13px;
+      background: rgba(255, 255, 255, 0.13);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-top: 24px;
+    }
+
+    nav {
+      position: sticky;
+      top: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 10px 28px rgba(19, 32, 51, 0.08);
+      padding: 16px;
+    }
+
+    nav strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+    }
+
+    nav a {
+      display: block;
+      padding: 8px 0;
+      border-top: 1px solid #edf2f7;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    main {
+      display: grid;
+      gap: 20px;
+    }
+
+    section {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 10px 28px rgba(19, 32, 51, 0.08);
+      padding: 28px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      color: var(--primary-dark);
+      font-size: 26px;
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      color: #30435d;
+      font-size: 19px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 16px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .box {
+      border-left: 4px solid var(--green);
+      border-radius: 8px;
+      background: #eefaf4;
+      padding: 16px 18px;
+    }
+
+    .note {
+      border-left-color: var(--amber);
+      background: #fff8eb;
+    }
+
+    .long-description {
+      white-space: pre-line;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      background: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: var(--surface-soft);
+      color: var(--primary-dark);
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      margin: 24px 0 10px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 840px) {
+      .page {
+        padding: 14px;
+      }
+
+      .hero {
+        min-height: 420px;
+        border-radius: 14px;
+      }
+
+      .hero::after {
+        background: rgba(9, 23, 38, 0.78);
+      }
+
+      .hero-content {
+        padding: 28px;
+      }
+
+      .brand {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        position: static;
+      }
+
+      section {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <img class="banner" src="icon/banner.png" alt="Banner ứng dụng Sim Phong Thủy">
+      <div class="hero-content">
+        <div class="brand">
+          <img class="app-icon" src="icon/icon.png" alt="Biểu tượng ứng dụng Sim Phong Thủy">
+          <div>
+            <p class="eyebrow">Google Play Store Listing & Privacy Policy</p>
+            <h1>Sim Phong Thủy</h1>
+          </div>
+        </div>
+        <p class="hero-text">
+          Trang giới thiệu ứng dụng, mô tả ngắn, mô tả đầy đủ và Chính sách quyền riêng tư dành cho ứng dụng Sim Phong Thủy trên Google Play.
+        </p>
+        <div class="hero-meta">
+          <span class="pill">Android</span>
+          <span class="pill">Tra cứu ý nghĩa sim</span>
+          <span class="pill">Quảng cáo AdMob</span>
+          <span class="pill">Mua trong ứng dụng</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav aria-label="Mục lục">
+        <strong>Mục lục</strong>
+        <a href="#intro">Giới thiệu app</a>
+        <a href="#short-description">Short description</a>
+        <a href="#long-description">Long description</a>
+        <a href="#privacy">App privacy policy</a>
+        <a href="#permissions">Quyền ứng dụng</a>
+        <a href="#sdks">SDK bên thứ ba</a>
+        <a href="#data">Thu thập, sử dụng và xóa dữ liệu</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+
+      <main>
+        <section id="intro">
+          <h2>Giới Thiệu App</h2>
+          <p>
+            <strong>Sim Phong Thủy</strong> là ứng dụng Android giúp người dùng tra cứu ý nghĩa của số điện thoại dựa trên 4 số cuối. Ứng dụng hỗ trợ nhiều bộ dữ liệu tham khảo về Kinh Dịch, bát quái, Hán Việt Chiết Tự và sim đại cát.
+          </p>
+          <p>
+            Ứng dụng được thiết kế để sử dụng nhanh, không yêu cầu tạo tài khoản và không yêu cầu người dùng cung cấp họ tên, email, danh bạ hoặc vị trí. Các thao tác tra cứu được thực hiện trong ứng dụng; lịch sử tra cứu được lưu cục bộ trên thiết bị để người dùng xem lại hoặc xóa khi cần.
+          </p>
+          <div class="box note">
+            Nội dung phong thủy trong ứng dụng chỉ có giá trị tham khảo, giải trí và hỗ trợ tra cứu. Ứng dụng không cung cấp tư vấn tài chính, pháp lý, y tế hoặc quyết định đầu tư.
+          </div>
+        </section>
+
+        <section id="short-description">
+          <h2>Short Description</h2>
+          <div class="box">
+            Tra cứu ý nghĩa 4 số cuối sim điện thoại theo phong thủy.
+          </div>
+        </section>
+
+        <section id="long-description">
+          <h2>Long Description</h2>
+          <div class="box long-description">Sim Phong Thủy giúp bạn tra cứu ý nghĩa 4 số cuối của số điện thoại theo các bộ dữ liệu phong thủy phổ biến.
+
+Tính năng chính:
+• Nhập 4 số cuối của số điện thoại để xem ý nghĩa tương ứng.
+• Hỗ trợ nhiều bộ dữ liệu tham khảo: Kinh Dịch Trung Hoa, quẻ tính bát quái tiên thiên, Hán Việt Chiết Tự và sim đại cát.
+• Lưu lịch sử tra cứu ngay trên thiết bị để xem lại.
+• Cho phép xóa lịch sử tra cứu.
+• Tìm số đẹp theo ý nghĩa: chọn một ý nghĩa và xem danh sách các số có liên quan.
+• Hỗ trợ mua gói tắt quảng cáo trong ứng dụng.
+
+Ứng dụng phù hợp với người muốn tham khảo ý nghĩa các dãy số điện thoại một cách nhanh chóng, tiện lợi và dễ sử dụng. Người dùng không cần đăng ký tài khoản, không cần đăng nhập và không cần cung cấp thông tin cá nhân để tra cứu.
+
+Lưu ý: Kết quả tra cứu trong ứng dụng mang tính tham khảo và giải trí. Người dùng nên cân nhắc theo nhu cầu cá nhân khi sử dụng thông tin từ ứng dụng.</div>
+        </section>
+
+        <section id="privacy">
+          <h2>App Privacy Policy - Chính Sách Quyền Riêng Tư</h2>
+          <p class="updated">Cập nhật lần cuối: 17/05/2026</p>
+          <p>
+            Chính sách quyền riêng tư này áp dụng cho ứng dụng <strong>Sim Phong Thủy</strong>. Chính sách mô tả cách ứng dụng truy cập, thu thập, sử dụng, lưu trữ, chia sẻ và xóa dữ liệu người dùng, bao gồm cả dữ liệu có thể được xử lý bởi các SDK bên thứ ba được tích hợp trong ứng dụng.
+          </p>
+          <p>
+            Nhà phát triển cam kết minh bạch về dữ liệu và chỉ sử dụng dữ liệu cho các mục đích cần thiết để vận hành ứng dụng, hiển thị quảng cáo, xử lý mua hàng trong ứng dụng, bảo mật, chẩn đoán lỗi và tuân thủ chính sách của Google Play.
+          </p>
+
+          <h3>1. Thông tin nhà phát triển</h3>
+          <p>
+            Ứng dụng: <strong>Sim Phong Thủy</strong><br>
+            Email liên hệ về quyền riêng tư: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>
+          </p>
+
+          <h3>2. Dữ liệu ứng dụng trực tiếp xử lý</h3>
+          <ul>
+            <li><strong>Số người dùng nhập để tra cứu:</strong> ứng dụng xử lý 4 số cuối do người dùng nhập để trả về ý nghĩa tương ứng.</li>
+            <li><strong>Lịch sử tra cứu:</strong> kết quả tra cứu có thể được lưu cục bộ trên thiết bị trong cơ sở dữ liệu của ứng dụng để người dùng xem lại.</li>
+            <li><strong>Trạng thái mua gói tắt quảng cáo:</strong> ứng dụng lưu cục bộ trạng thái đã mua/chưa mua để bật hoặc tắt quảng cáo.</li>
+          </ul>
+          <p>
+            Ứng dụng không yêu cầu tạo tài khoản, không thu thập họ tên, địa chỉ email, danh bạ, vị trí chính xác, ảnh, video, tệp cá nhân hoặc nội dung tin nhắn của người dùng.
+          </p>
+
+          <h3>3. Dữ liệu có thể được xử lý bởi SDK bên thứ ba</h3>
+          <p>
+            Ứng dụng có tích hợp SDK quảng cáo và thanh toán. Các SDK này có thể tự động xử lý một số dữ liệu kỹ thuật để cung cấp dịch vụ, đo lường hiệu quả quảng cáo, chống gian lận, xử lý giao dịch và tuân thủ chính sách.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>SDK / dịch vụ</th>
+                  <th>Mục đích sử dụng</th>
+                  <th>Loại dữ liệu có thể được xử lý</th>
+                  <th>Chia sẻ dữ liệu</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Google Mobile Ads SDK / Google AdMob</td>
+                  <td>Hiển thị quảng cáo banner và App Open Ad; đo lường, phân phối, giới hạn tần suất, chống gian lận quảng cáo.</td>
+                  <td>Advertising ID, địa chỉ IP, thông tin thiết bị, thông tin ứng dụng, dữ liệu tương tác quảng cáo, dữ liệu chẩn đoán và dữ liệu hiệu suất.</td>
+                  <td>Có thể được xử lý/chia sẻ với Google và các đối tác quảng cáo theo chính sách của Google.</td>
+                </tr>
+                <tr>
+                  <td>Start.io thông qua AdMob Mediation</td>
+                  <td>Nguồn quảng cáo trung gian trong AdMob mediation.</td>
+                  <td>Advertising ID, thông tin thiết bị, địa chỉ IP, dữ liệu quảng cáo và dữ liệu kỹ thuật cần thiết cho phân phối quảng cáo.</td>
+                  <td>Có thể được xử lý bởi Start.io theo cơ chế mediation của AdMob.</td>
+                </tr>
+                <tr>
+                  <td>Google Play Billing</td>
+                  <td>Xử lý gói mua trong ứng dụng để tắt quảng cáo.</td>
+                  <td>Thông tin giao dịch do Google Play xử lý, trạng thái mua hàng, mã sản phẩm và dữ liệu kỹ thuật liên quan đến giao dịch.</td>
+                  <td>Dữ liệu thanh toán được xử lý bởi Google Play. Ứng dụng chỉ lưu trạng thái mua để bật/tắt quảng cáo.</td>
+                </tr>
+                <tr>
+                  <td>SQLCipher / cơ sở dữ liệu cục bộ</td>
+                  <td>Lưu dữ liệu tra cứu và lịch sử tra cứu trên thiết bị.</td>
+                  <td>Dữ liệu lịch sử tra cứu do người dùng tạo trong ứng dụng.</td>
+                  <td>Không chủ động gửi dữ liệu lịch sử tra cứu lên máy chủ của nhà phát triển.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="permissions">
+          <h2>Quyền Ứng Dụng Yêu Cầu</h2>
+          <p>
+            Ứng dụng khai báo các quyền Android sau trong manifest. Một số quyền phục vụ SDK quảng cáo/thanh toán hoặc tương thích với phiên bản Android cũ.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Quyền</th>
+                  <th>Mục đích</th>
+                  <th>Ghi chú quyền riêng tư</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>android.permission.INTERNET</code></td>
+                  <td>Kết nối mạng cho quảng cáo AdMob, mediation Start.io, Google Play Billing và các dịch vụ kỹ thuật liên quan.</td>
+                  <td>Cần thiết để tải quảng cáo, xác minh/thực hiện giao dịch và kết nối với dịch vụ bên thứ ba.</td>
+                </tr>
+                <tr>
+                  <td><code>android.permission.Ad_ID</code></td>
+                  <td>Cho phép SDK quảng cáo truy cập Advertising ID khi thiết bị và chính sách Google Play cho phép.</td>
+                  <td>Dùng cho cá nhân hóa/đo lường quảng cáo, giới hạn tần suất và chống gian lận. Người dùng có thể quản lý Advertising ID trong cài đặt thiết bị.</td>
+                </tr>
+                <tr>
+                  <td><code>android.permission.READ_EXTERNAL_STORAGE</code></td>
+                  <td>Quyền lưu trữ cũ phục vụ tương thích với các phiên bản Android trước đây.</td>
+                  <td>Ứng dụng không yêu cầu người dùng chọn ảnh, video hoặc tệp cá nhân để sử dụng tính năng chính.</td>
+                </tr>
+                <tr>
+                  <td><code>android.permission.WRITE_EXTERNAL_STORAGE</code></td>
+                  <td>Quyền lưu trữ cũ phục vụ tương thích với các phiên bản Android trước đây.</td>
+                  <td>Dữ liệu tra cứu của ứng dụng được lưu trong vùng dữ liệu của ứng dụng; người dùng có thể xóa lịch sử trong app hoặc gỡ cài đặt app để xóa dữ liệu cục bộ.</td>
+                </tr>
+                <tr>
+                  <td><code>android.permission.ACCESS_WIFI_STATE</code></td>
+                  <td>Ứng dụng khai báo loại bỏ quyền này bằng cấu hình manifest merge.</td>
+                  <td>Quyền này không nhằm phục vụ tính năng chính của ứng dụng.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="sdks">
+          <h2>SDK Bên Thứ Ba</h2>
+          <p>
+            Theo yêu cầu của Google Play, nhà phát triển chịu trách nhiệm về các SDK bên thứ ba được tích hợp trong ứng dụng và phải mô tả rõ dữ liệu có thể được xử lý bởi các SDK đó. Ứng dụng hiện có các nhóm SDK/dịch vụ chính:
+          </p>
+          <ul>
+            <li><strong>Google Mobile Ads SDK / AdMob:</strong> hiển thị quảng cáo, đo lường quảng cáo và chống gian lận.</li>
+            <li><strong>Start.io mediation adapter:</strong> nguồn quảng cáo bên thứ ba được sử dụng thông qua AdMob mediation.</li>
+            <li><strong>Google Play Billing:</strong> xử lý giao dịch mua gói tắt quảng cáo.</li>
+            <li><strong>AndroidX, Material Components, NavigationTabStrip, BottomSheet, SQLCipher và các thư viện giao diện/tiện ích:</strong> phục vụ giao diện, điều hướng, lưu trữ cục bộ và vận hành ứng dụng.</li>
+          </ul>
+          <p>
+            Nhà phát triển không bán dữ liệu lịch sử tra cứu của người dùng. Dữ liệu quảng cáo do SDK quảng cáo xử lý có thể được dùng theo chính sách riêng của các nhà cung cấp SDK để phân phối, đo lường và bảo vệ hệ sinh thái quảng cáo.
+          </p>
+        </section>
+
+        <section id="data">
+          <h2>Chính Sách Thu Thập, Sử Dụng Và Xóa Dữ Liệu</h2>
+
+          <h3>1. Mục đích thu thập và sử dụng</h3>
+          <ul>
+            <li>Cung cấp chức năng tra cứu ý nghĩa số điện thoại.</li>
+            <li>Lưu lịch sử tra cứu cục bộ để người dùng xem lại.</li>
+            <li>Hiển thị quảng cáo cho người dùng chưa mua gói tắt quảng cáo.</li>
+            <li>Xử lý và xác nhận giao dịch mua gói tắt quảng cáo.</li>
+            <li>Phát hiện lỗi, đảm bảo an toàn, chống gian lận và duy trì chất lượng ứng dụng.</li>
+          </ul>
+
+          <h3>2. Lưu trữ dữ liệu</h3>
+          <ul>
+            <li>Lịch sử tra cứu được lưu trên thiết bị trong cơ sở dữ liệu của ứng dụng.</li>
+            <li>Trạng thái mua gói tắt quảng cáo được lưu trong bộ nhớ cục bộ của ứng dụng.</li>
+            <li>Dữ liệu quảng cáo và thanh toán có thể được xử lý bởi Google, Start.io hoặc các dịch vụ liên quan theo chính sách của họ.</li>
+          </ul>
+
+          <h3>3. Chia sẻ dữ liệu</h3>
+          <p>
+            Ứng dụng không chủ động chia sẻ lịch sử tra cứu cục bộ với máy chủ của nhà phát triển. Tuy nhiên, dữ liệu kỹ thuật phục vụ quảng cáo, đo lường, chống gian lận và thanh toán có thể được xử lý bởi Google AdMob, Start.io mediation và Google Play Billing.
+          </p>
+
+          <h3>4. Bảo mật dữ liệu</h3>
+          <ul>
+            <li>Ứng dụng không yêu cầu đăng nhập và hạn chế dữ liệu người dùng cần nhập.</li>
+            <li>Dữ liệu lịch sử tra cứu được lưu cục bộ trong vùng dữ liệu của ứng dụng.</li>
+            <li>Dữ liệu trao đổi với dịch vụ của Google và SDK bên thứ ba được xử lý qua các cơ chế bảo mật do các nhà cung cấp SDK triển khai.</li>
+          </ul>
+
+          <h3>5. Xóa dữ liệu</h3>
+          <ul>
+            <li>Người dùng có thể xóa lịch sử tra cứu trong ứng dụng khi chức năng xóa lịch sử khả dụng.</li>
+            <li>Người dùng có thể xóa toàn bộ dữ liệu cục bộ bằng cách xóa dữ liệu ứng dụng trong cài đặt Android hoặc gỡ cài đặt ứng dụng.</li>
+            <li>Đối với yêu cầu liên quan đến dữ liệu hoặc quyền riêng tư, người dùng có thể liên hệ qua email <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</li>
+            <li>Dữ liệu quảng cáo hoặc thanh toán do Google/Start.io xử lý được quản lý theo chính sách và công cụ quyền riêng tư của các nhà cung cấp đó.</li>
+          </ul>
+
+          <h3>6. Trẻ em</h3>
+          <p>
+            Ứng dụng không được thiết kế dành riêng cho trẻ em và không cố ý thu thập dữ liệu cá nhân của trẻ em. Nếu phụ huynh hoặc người giám hộ cho rằng trẻ em đã cung cấp dữ liệu cá nhân qua ứng dụng, vui lòng liên hệ với nhà phát triển để được hỗ trợ.
+          </p>
+
+          <h3>7. Thay đổi chính sách</h3>
+          <p>
+            Chính sách này có thể được cập nhật khi ứng dụng thay đổi tính năng, SDK, quyền Android hoặc yêu cầu từ Google Play. Phiên bản mới sẽ được công bố trên trang này với ngày cập nhật tương ứng.
+          </p>
+        </section>
+
+        <section id="contact">
+          <h2>Liên Hệ</h2>
+          <p>
+            Nếu bạn có câu hỏi về ứng dụng, quyền riêng tư, dữ liệu, quảng cáo hoặc yêu cầu xóa dữ liệu, vui lòng liên hệ:
+          </p>
+          <p>
+            Email nhà phát triển: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      © 2026 Sim Phong Thủy. Trang này được cung cấp cho Google Play Store listing và App Privacy Policy.
+    </footer>
+  </div>
+</body>
+</html>
