@@ -55,7 +55,7 @@
       <ul>
         <li><strong>Nội dung đọc, yêu thích và lịch sử:</strong> ứng dụng lưu danh sách bài đã đọc và bài yêu thích trong cơ sở dữ liệu cục bộ trên thiết bị. Dữ liệu này không được gửi về máy chủ riêng của nhà phát triển.</li>
         <li><strong>Trạng thái mua tắt quảng cáo:</strong> ứng dụng dùng Google Play Billing để kiểm tra, xác nhận và khôi phục giao dịch mua trong ứng dụng. Trạng thái tắt quảng cáo có thể được lưu cục bộ như bộ nhớ đệm.</li>
-        <li><strong>Dữ liệu quảng cáo:</strong> ứng dụng dùng Google AdMob để hiển thị banner quảng cáo cho người dùng chưa mua gói tắt quảng cáo. Google có thể xử lý mã nhận dạng quảng cáo, thông tin thiết bị, địa chỉ IP gần đúng và tín hiệu liên quan để phân phối, đo lường và chống gian lận quảng cáo theo chính sách của Google.</li>
+        <li><strong>Dữ liệu quảng cáo:</strong> ứng dụng dùng Google AdMob và Start.io mediation để hiển thị banner quảng cáo cho người dùng chưa mua gói tắt quảng cáo. Các SDK quảng cáo có thể xử lý mã nhận dạng quảng cáo, thông tin thiết bị, địa chỉ IP gần đúng và tín hiệu liên quan để phân phối, đo lường và chống gian lận quảng cáo theo chính sách của từng dịch vụ.</li>
       </ul>
     </section>
 
@@ -64,9 +64,10 @@
       <ul>
         <li><strong>com.android.vending.BILLING:</strong> dùng cho giao dịch mua tắt quảng cáo qua Google Play.</li>
         <li><strong>android.permission.INTERNET:</strong> dùng cho Google AdMob, Google Play Billing và nội dung WebView khi cần tải tài nguyên mạng.</li>
-        <li><strong>android.permission.READ_EXTERNAL_STORAGE:</strong> quyền lưu trữ cũ được khai báo cho khả năng tương thích Android cũ.</li>
-        <li><strong>android.permission.WRITE_EXTERNAL_STORAGE:</strong> quyền lưu trữ cũ được khai báo cho khả năng tương thích Android cũ.</li>
-        <li><strong>android.permission.ACCESS_WIFI_STATE:</strong> được khai báo với chỉ thị loại bỏ trong manifest để tránh quyền hợp nhất từ SDK không cần thiết.</li>
+        <li><strong>android.permission.ACCESS_NETWORK_STATE:</strong> giúp SDK quảng cáo kiểm tra trạng thái kết nối mạng trước khi tải quảng cáo.</li>
+        <li><strong>com.google.android.gms.permission.AD_ID:</strong> dùng cho mã nhận dạng quảng cáo theo chính sách Google Play.</li>
+        <li><strong>android.permission.ACCESS_ADSERVICES_AD_ID / ATTRIBUTION / TOPICS:</strong> dùng bởi Google Mobile Ads trên các phiên bản Android hỗ trợ Privacy Sandbox.</li>
+        <li><strong>com.free.benhhoc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION:</strong> quyền signature nội bộ do AndroidX thêm để bảo vệ receiver động trong app.</li>
       </ul>
     </section>
 
@@ -74,6 +75,7 @@
       <h2>Dịch vụ và SDK bên thứ ba</h2>
       <ul>
         <li><strong>Google AdMob / Google Mobile Ads SDK:</strong> hiển thị và đo lường banner quảng cáo.</li>
+        <li><strong>Start.io mediation:</strong> cung cấp nguồn quảng cáo qua cấu hình mediation trong AdMob.</li>
         <li><strong>Google Play Billing:</strong> xử lý giao dịch mua gói tắt quảng cáo và khôi phục mua hàng.</li>
         <li><strong>AndroidX Room:</strong> lưu dữ liệu ứng dụng cục bộ như lịch sử và yêu thích.</li>
         <li><strong>Android WebView:</strong> hiển thị nội dung HTML được đóng gói trong ứng dụng.</li>
