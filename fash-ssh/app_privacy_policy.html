@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Fast SSH - App Information and Privacy Policy</title>
+  <style>
+    :root {
+      --primary: #2f6f5f;
+      --primary-dark: #184d42;
+      --secondary: #2f5f8f;
+      --surface: #ffffff;
+      --surface-soft: #f6f8f7;
+      --surface-tint: #e7f2ee;
+      --outline: #d9e2de;
+      --text: #17201d;
+      --muted: #5d6b66;
+      --shadow: 0 18px 44px rgba(20, 43, 36, 0.16);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--surface-soft);
+      font-family: Roboto, Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 520px;
+      color: #fff;
+      overflow: hidden;
+      background: #102a24;
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(9, 24, 20, 0.88), rgba(9, 24, 20, 0.58) 52%, rgba(9, 24, 20, 0.18)),
+        url("icon/banner5.jpeg") center / cover no-repeat;
+      transform: scale(1.01);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 40px));
+      min-height: 520px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 64px 0 96px;
+    }
+
+    .app-mark {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .app-icon {
+      width: 82px;
+      height: 82px;
+      border-radius: 22px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      object-fit: cover;
+    }
+
+    .eyebrow {
+      margin: 0 0 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #bfe7db;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.5rem, 6vw, 5.25rem);
+      line-height: 1.02;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: #d7f3e9;
+      color: #0c3028;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .button.secondary {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 40px));
+      margin: -58px auto 64px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .toc {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .toc h2 {
+      margin-top: 0;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .toc-grid a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+      border: 1px solid var(--outline);
+      font-weight: 650;
+    }
+
+    section {
+      margin-top: 22px;
+      padding: 34px;
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      line-height: 1.2;
+      color: var(--primary-dark);
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 1.1rem;
+      color: #243531;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .meta-card {
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--outline);
+      background: var(--surface-soft);
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+    }
+
+    .description-box {
+      padding: 18px;
+      border-radius: var(--radius);
+      background: var(--surface-tint);
+      border: 1px solid #c9e5da;
+      font-weight: 650;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .feature {
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--outline);
+      background: var(--surface-soft);
+    }
+
+    .feature strong {
+      color: var(--primary-dark);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--outline);
+      border-radius: var(--radius);
+      margin-top: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: #fff;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--outline);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--primary-dark);
+      background: var(--surface-tint);
+      font-size: 0.92rem;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .note {
+      padding: 16px;
+      border-left: 4px solid var(--primary);
+      background: #f0f7f4;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: #29443c;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto 44px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .hero,
+      .hero-inner {
+        min-height: 500px;
+      }
+
+      .hero-inner,
+      main,
+      footer {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .app-mark {
+        align-items: flex-start;
+      }
+
+      .toc,
+      .meta-grid,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section,
+      .toc {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="app-mark">
+        <img class="app-icon" src="icon/icon1.jpeg" alt="Fast SSH app icon">
+        <div>
+          <p class="eyebrow">Fast SSH for Android</p>
+          <p class="updated">App information and privacy policy</p>
+        </div>
+      </div>
+      <h1>Fast SSH</h1>
+      <p class="hero-copy">
+        A secure Android SSH client with terminal sessions, SFTP transfers, background SSH tunnels, quick snippets, and privacy-first local storage.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#privacy-policy">Read Privacy Policy</a>
+        <a class="button secondary" href="#play-store-copy">Play Store Copy</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="panel toc" id="top">
+      <div>
+        <h2>Contents</h2>
+        <p class="updated">Last updated: May 18, 2026</p>
+      </div>
+      <nav class="toc-grid" aria-label="Page contents">
+        <a href="#app-introduction">App Introduction</a>
+        <a href="#play-store-copy">Short and Long Description</a>
+        <a href="#privacy-policy">App Privacy Policy</a>
+        <a href="#permissions">Permissions</a>
+        <a href="#third-party-sdks">Third-Party SDKs</a>
+        <a href="#data-practices">Data Collection, Use, and Deletion</a>
+        <a href="#security">Security</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <section id="app-introduction">
+      <h2>App Introduction</h2>
+      <p>
+        Fast SSH is a mobile SSH client built for Android users who manage servers, test deployments, inspect logs, transfer files, or keep secure local tunnels running from a phone or tablet.
+      </p>
+      <p>
+        The app is designed around practical terminal work: saved SSH hosts, password and private-key authentication, reattachable terminal sessions, an xterm-compatible terminal view, quick command snippets, SFTP browsing, file upload/download, and local SSH port forwarding that can run as a background process.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-card">
+          <strong>Platform</strong>
+          Android
+        </div>
+        <div class="meta-card">
+          <strong>Developer Contact</strong>
+          <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>
+        </div>
+        <div class="meta-card">
+          <strong>Privacy Model</strong>
+          No ads, no analytics, no developer-operated tracking service.
+        </div>
+      </div>
+    </section>
+
+    <section id="play-store-copy">
+      <h2>Google Play Store Listing Text</h2>
+
+      <h3>Short Description</h3>
+      <div class="description-box">
+        Fast Android SSH client with terminal, SFTP, tunnels, and secure keys.
+      </div>
+
+      <h3>Long Description</h3>
+      <p>
+        Fast SSH is a modern SSH client for Android, designed for system administrators, developers, DevOps engineers, and anyone who needs secure access to remote servers from a mobile device.
+      </p>
+      <p>
+        Connect to your Linux servers over SSHv2, authenticate with a password or private key, work in an xterm-compatible terminal, run quick snippets, browse files over SFTP, and keep SSH local tunnels active as background processes.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <strong>Secure SSH access</strong>
+          <p>Save host profiles, use password or private-key authentication, and store sensitive credentials with Android secure storage.</p>
+        </div>
+        <div class="feature">
+          <strong>Mobile-friendly terminal</strong>
+          <p>Use accessory keys for Esc, Tab, Ctrl, Alt, Home, End, and arrows. Buffered input helps with long commands and IME text entry.</p>
+        </div>
+        <div class="feature">
+          <strong>SFTP file management</strong>
+          <p>Browse remote directories, download files through Android's document picker, create folders, upload files, and upload folders recursively.</p>
+        </div>
+        <div class="feature">
+          <strong>Background SSH tunnels</strong>
+          <p>Create local port forwards similar to ssh -N -L, monitor running tunnels, restart them, or stop them from the background process tab.</p>
+        </div>
+        <div class="feature">
+          <strong>Session workflow</strong>
+          <p>Keep active SSH sessions in memory, return to Home, then re-enter a running terminal without losing its current buffer.</p>
+        </div>
+        <div class="feature">
+          <strong>Customization</strong>
+          <p>Adjust terminal font size, color theme, TERM profile, and mouse-wheel reporting behavior for terminal apps such as tmux, vim, and less.</p>
+        </div>
+      </div>
+
+      <p class="note">
+        Fast SSH is a client tool. You choose the servers you connect to, and the app does not operate a backend service that receives your SSH credentials, private keys, commands, files, or terminal output.
+      </p>
+    </section>
+
+    <section id="privacy-policy">
+      <h2>App Privacy Policy</h2>
+      <p class="updated">Effective date: May 18, 2026</p>
+      <p>
+        This Privacy Policy explains how Fast SSH handles information when you use the Android application. "Fast SSH", "we", "us", and "our" refer to the app developer. The app is designed as a local client. It does not include advertising SDKs, analytics SDKs, or a developer-operated tracking backend.
+      </p>
+      <p>
+        Fast SSH stores the information needed to run the features you choose on your device. Network traffic is sent only to SSH servers, SFTP servers, tunnel destinations, Google Play Billing, or Android system services as required by the selected feature.
+      </p>
+    </section>
+
+    <section id="permissions">
+      <h2>Permissions Requested by the App</h2>
+      <p>
+        Fast SSH requests Android permissions only to provide SSH, SFTP, tunnel, notification, billing, and background-service features.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission or Access</th>
+              <th>Purpose</th>
+              <th>Data Involved</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>android.permission.INTERNET</code></td>
+              <td>Connect to SSH servers, SFTP servers, and tunnel destinations selected by the user.</td>
+              <td>SSH traffic, SFTP traffic, local tunnel traffic, hostnames, ports, usernames, commands, terminal output, and transferred files as required by the connection.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.FOREGROUND_SERVICE</code></td>
+              <td>Keep active SSH sessions and tunnel processes running more reliably while the app is not in the foreground.</td>
+              <td>Foreground service state and active connection status on the device.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE</code></td>
+              <td>Declare the foreground service type used for connected-device/network style work on recent Android versions.</td>
+              <td>Foreground service metadata on the device.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.POST_NOTIFICATIONS</code></td>
+              <td>Show foreground-service notifications for active background SSH or tunnel work on Android versions that require notification permission.</td>
+              <td>Notification content such as active service status. The app does not send notification content to the developer.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code></td>
+              <td>Ask the user to allow more stable long-running SSH sessions and tunnels by excluding the app from battery optimization.</td>
+              <td>Battery optimization permission state. No personal content is collected by the developer.</td>
+            </tr>
+            <tr>
+              <td><code>com.android.vending.BILLING</code></td>
+              <td>Enable the optional Support Developer in-app purchase through Google Play Billing.</td>
+              <td>Purchase status, product id, purchase token, and billing metadata handled by Google Play Billing. The app stores only a local support count.</td>
+            </tr>
+            <tr>
+              <td>Android document picker / Storage Access Framework</td>
+              <td>Let the user select private-key files, local download folders, files to upload, or folders to upload.</td>
+              <td>Only files or folders selected by the user. The app reads or writes selected content for SSH key import, SFTP download, file upload, or folder upload.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="third-party-sdks">
+      <h2>Third-Party SDKs and Libraries</h2>
+      <p>
+        Fast SSH uses Flutter and open-source packages to provide app functionality. The app does not include advertising or analytics SDKs. The main third-party components include:
+      </p>
+      <ul>
+        <li><strong>Flutter and Android platform libraries:</strong> UI framework, app runtime, platform channels, and Android integration.</li>
+        <li><strong>dartssh2:</strong> SSH, SFTP, authentication, shell sessions, and local port forwarding.</li>
+        <li><strong>xterm:</strong> Terminal emulation and terminal rendering.</li>
+        <li><strong>Hive and hive_flutter:</strong> Local on-device storage for host profiles, snippets, settings, and support count.</li>
+        <li><strong>flutter_secure_storage:</strong> Secure on-device credential storage backed by Android secure storage.</li>
+        <li><strong>file_picker:</strong> User-selected file and folder picking for private keys and SFTP transfers.</li>
+        <li><strong>path_provider:</strong> App temporary storage paths used during file transfer workflows.</li>
+        <li><strong>flutter_background_service:</strong> Android foreground service support for active SSH sessions and tunnels.</li>
+        <li><strong>flutter_local_notifications:</strong> Foreground-service notification support.</li>
+        <li><strong>permission_handler:</strong> Runtime permission checks and system settings flows.</li>
+        <li><strong>device_info_plus:</strong> Device and OS information used for Android-specific behavior.</li>
+        <li><strong>in_app_purchase and in_app_purchase_android:</strong> Google Play Billing integration for the optional Support Developer purchase.</li>
+        <li><strong>google_fonts, flex_color_scheme, flutter_animate, gap, intl, uuid:</strong> UI, localization, layout, and utility support.</li>
+      </ul>
+      <p>
+        Third-party services may process data according to their own terms when their functionality is used. In particular, Google Play Billing is operated by Google and may process purchase and account information necessary to complete in-app purchases.
+      </p>
+    </section>
+
+    <section id="data-practices">
+      <h2>Data Collection, Use, and Deletion</h2>
+
+      <h3>Data Stored Locally on the Device</h3>
+      <ul>
+        <li>SSH host profiles, including alias, hostname, port, and username.</li>
+        <li>SSH passwords and imported private-key content, stored through Android secure storage.</li>
+        <li>Quick snippets and post-login snippets.</li>
+        <li>Terminal settings such as theme, font size, TERM profile, and mouse-wheel reporting preference.</li>
+        <li>Support Developer purchase count, stored locally after successful purchases.</li>
+        <li>Temporary files created during SFTP download or upload preparation. These files are used for transfer workflows and may be cleaned by the app or Android system storage management.</li>
+      </ul>
+
+      <h3>Data Sent to User-Selected Servers</h3>
+      <p>
+        When you connect to an SSH/SFTP server or start an SSH tunnel, the app sends the data required for that connection to the server you selected. This may include hostname, port, username, SSH authentication data, terminal commands, terminal output transport, SFTP file data, and tunnel traffic. The developer does not receive this server traffic.
+      </p>
+
+      <h3>Data Processed by Google Play Billing</h3>
+      <p>
+        If you use the optional Support Developer purchase, Google Play Billing processes the purchase. The app receives purchase details needed to verify, complete, and consume the purchase, then stores a local support count. The app does not store your payment card details.
+      </p>
+
+      <h3>How Data Is Used</h3>
+      <ul>
+        <li>To save SSH profiles and reconnect to servers chosen by the user.</li>
+        <li>To authenticate SSH sessions and SFTP sessions.</li>
+        <li>To display terminal sessions, run snippets, and preserve active in-memory terminal buffers while sessions remain active.</li>
+        <li>To download, upload, and manage files through SFTP when requested by the user.</li>
+        <li>To run local SSH tunnels configured by the user.</li>
+        <li>To complete optional in-app purchases and display the local support-count badge.</li>
+      </ul>
+
+      <h3>Data Sharing</h3>
+      <p>
+        Fast SSH does not sell personal data. Fast SSH does not share data with advertising networks or analytics providers. Data is shared only as necessary for user-selected SSH/SFTP/tunnel connections, Android system features, selected file/folder access, and Google Play Billing purchases.
+      </p>
+
+      <h3>Data Deletion</h3>
+      <ul>
+        <li>You can delete saved SSH hosts, keys, snippets, and settings inside the app where those controls are available.</li>
+        <li>You can clear app data or uninstall the app from Android system settings to remove local app data from the device.</li>
+        <li>You can remove files created by SFTP downloads from the destination folder you selected.</li>
+        <li>If you need help with privacy or deletion questions, contact <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</li>
+      </ul>
+    </section>
+
+    <section id="security">
+      <h2>Security</h2>
+      <p>
+        Fast SSH uses Android secure storage for sensitive credentials such as SSH passwords and private keys. The app does not intentionally send these credentials to the developer. Credentials are used locally to establish SSH connections to servers selected by the user.
+      </p>
+      <p>
+        No method of electronic storage or network transmission can be guaranteed to be perfectly secure. Users should protect their Android device, use strong authentication, and connect only to trusted servers.
+      </p>
+    </section>
+
+    <section id="children">
+      <h2>Children's Privacy</h2>
+      <p>
+        Fast SSH is a technical utility intended for users who manage servers or network services. It is not directed to children under 13, and we do not knowingly collect personal information from children.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes to This Policy</h2>
+      <p>
+        We may update this page when the app changes, when Google Play requirements change, or when privacy practices need clarification. Updates will be posted on this page with a revised effective date.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        For privacy questions, app listing questions, data deletion requests, or support requests, contact the developer at:
+      </p>
+      <p><strong><a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></strong></p>
+      <p><a href="#top">Back to contents</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Fast SSH - App Information and Privacy Policy - Last updated May 18, 2026</p>
+  </footer>
+</body>
+</html>
