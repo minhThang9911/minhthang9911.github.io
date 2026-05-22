@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tieq Viet - Google Play & Chính sách quyền riêng tư</title>
+  <style>
+    :root {
+      --bg: #0f0730;
+      --surface: #ffffff;
+      --surface-soft: #f7f5ff;
+      --primary: #6c5ce7;
+      --accent: #ff4f86;
+      --text: #151827;
+      --muted: #667085;
+      --line: #e4e8f5;
+      --soft: #f0f2ff;
+      --warning-bg: #fff0f6;
+      --warning-line: #ffd5e4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Arial, "Helvetica Neue", sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(255, 79, 134, 0.36), transparent 34rem),
+        radial-gradient(circle at top right, rgba(0, 229, 255, 0.28), transparent 36rem),
+        var(--bg);
+    }
+
+    main {
+      width: min(1060px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .hero {
+      overflow: hidden;
+      background: #1a0a46;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 31 / 15;
+      object-fit: cover;
+    }
+
+    header {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 22px 24px 24px;
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(91, 77, 255, 0.34), rgba(255, 79, 134, 0.22));
+    }
+
+    header img {
+      width: 92px;
+      height: 92px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      object-fit: cover;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 46px);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-size: 24px;
+    }
+
+    h3 {
+      margin-top: 22px;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    a {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.78);
+      margin: 0;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 4px 10px;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section {
+      margin-top: 18px;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    ul {
+      margin: 8px 0 16px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--soft);
+    }
+
+    .note {
+      padding: 14px 16px;
+      background: var(--warning-bg);
+      border: 1px solid var(--warning-line);
+      border-radius: 14px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 14px 0 18px;
+    }
+
+    .summary-card {
+      padding: 14px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.76);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #ffffff;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        width: min(100% - 20px, 1060px);
+        padding-top: 10px;
+      }
+
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      section {
+        padding: 18px;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="hero">
+      <img class="hero-image" src="feature_img.png" alt="Ảnh giới thiệu ứng dụng Tieq Viet">
+      <header>
+        <img src="icon.png" alt="Biểu tượng ứng dụng Tieq Viet">
+        <div>
+          <h1>Tieq Viet</h1>
+          <p class="subtitle">Trang thông tin Google Play và Chính sách quyền riêng tư</p>
+          <div class="badge-row">
+            <span class="badge">Ứng dụng Android</span>
+            <span class="badge">Chuyển đổi bảng mã</span>
+            <span class="badge">Không quảng cáo</span>
+            <span class="badge">Không yêu cầu Internet</span>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <section id="gioi-thieu">
+      <h2>Giới thiệu ứng dụng</h2>
+      <p><strong>Tieq Viet</strong> là ứng dụng Android giúp người dùng chuyển đổi văn bản theo các bảng mã ký tự. Ứng dụng có bảng mã mặc định <strong>Tiếq Việt</strong> và hỗ trợ người dùng tự tạo bảng mã riêng theo dạng hoán đổi ký tự hoặc cụm ký tự, ví dụ <strong>a ↔ w</strong>, <strong>kh ↔ x</strong>, <strong>ng ↔ q</strong>.</p>
+      <p>Người dùng có thể nhập văn bản, dán từ clipboard, chuyển đổi, sao chép kết quả, tạo/sửa/xóa bảng mã, nhập/xuất bảng mã bằng file <strong>.tqx</strong> để chia sẻ cho người khác, và chọn nhiều giao diện màu khác nhau.</p>
+    </section>
+
+    <section id="google-play-description">
+      <h2>Nội dung mô tả Google Play</h2>
+
+      <h3>Short description</h3>
+      <p>Chuyển đổi văn bản bằng bảng mã Tiếq Việt hoặc bảng mã riêng của bạn.</p>
+
+      <h3>Long description</h3>
+      <p><strong>Tieq Viet</strong> là công cụ chuyển đổi văn bản đơn giản, nhẹ và dễ dùng. Ứng dụng giúp bạn chuyển đổi văn bản theo bảng mã có sẵn hoặc tự tạo bảng mã riêng theo nhu cầu cá nhân.</p>
+      <p>Tính năng chính:</p>
+      <ul>
+        <li>Chuyển mã văn bản bằng bảng mã mặc định <strong>Tiếq Việt</strong>.</li>
+        <li>Giải mã với bảng mã mặc định khi cần chuyển ngược văn bản.</li>
+        <li>Tự tạo bảng mã riêng bằng các cặp ký tự hoặc cụm ký tự, ví dụ <strong>a ↔ w</strong>, <strong>ng ↔ q</strong>.</li>
+        <li>Tự động hiểu bảng mã tùy chỉnh theo hai chiều, giúp người dùng chỉ cần nhập một cặp chuyển đổi.</li>
+        <li>Sửa hoặc xóa bảng mã đã tạo.</li>
+        <li>Nhập và xuất bảng mã bằng file <strong>.tqx</strong> để chia sẻ cho bạn bè hoặc dùng trên thiết bị khác.</li>
+        <li>Dán nhanh văn bản từ clipboard và sao chép kết quả sau khi chuyển đổi.</li>
+        <li>Chọn nhiều giao diện màu trẻ trung, hiện đại, phù hợp với sở thích cá nhân.</li>
+      </ul>
+      <p>Ứng dụng được thiết kế cho các thao tác chuyển đổi nhanh, không yêu cầu đăng nhập, không yêu cầu kết nối Internet và không hiển thị quảng cáo.</p>
+      <p>Lưu ý: với các bảng mã tự tạo, nếu nhiều ký tự hoặc cụm ký tự được chuyển thành cùng một giá trị, việc khôi phục văn bản ban đầu có thể không chính xác tuyệt đối. Ứng dụng sẽ hiển thị cảnh báo trong các trường hợp có khả năng gây nhầm lẫn khi giải mã.</p>
+    </section>
+
+    <section id="privacy-policy">
+      <h2>Chính sách quyền riêng tư</h2>
+      <p><strong>Ngày có hiệu lực:</strong> 22/05/2026</p>
+      <p>Chính sách này mô tả cách ứng dụng <strong>Tieq Viet</strong> xử lý dữ liệu người dùng. Chính sách được viết dựa trên kiểm tra thực tế mã nguồn hiện tại, bao gồm Android Manifest, dependencies và các API mà ứng dụng đang sử dụng.</p>
+
+      <h3>1. Nhà phát triển và liên hệ</h3>
+      <p>Nhà phát triển: Tieq Viet</p>
+      <p>Email hỗ trợ và yêu cầu liên quan đến quyền riêng tư: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+
+      <h3>2. Tóm tắt quyền và SDK thực tế</h3>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <strong>Quyền Android Manifest</strong>
+          Không khai báo thẻ <code>uses-permission</code>.
+        </div>
+        <div class="summary-card">
+          <strong>Internet</strong>
+          Không yêu cầu quyền Internet và không gửi dữ liệu về máy chủ của nhà phát triển.
+        </div>
+        <div class="summary-card">
+          <strong>Quảng cáo / Analytics</strong>
+          Không tích hợp SDK quảng cáo, Firebase Analytics, Google Analytics hoặc SDK theo dõi hành vi.
+        </div>
+        <div class="summary-card">
+          <strong>Lưu dữ liệu</strong>
+          Dữ liệu bảng mã và theme được lưu cục bộ bằng SharedPreferences.
+        </div>
+      </div>
+
+      <h3>3. Dữ liệu ứng dụng thu thập hoặc xử lý</h3>
+      <p>Theo cách Google Play thường phân loại, ứng dụng không thu thập dữ liệu cá nhân để gửi ra khỏi thiết bị. Tuy nhiên, ứng dụng có xử lý cục bộ một số dữ liệu do người dùng tự nhập hoặc tự chọn:</p>
+      <ul>
+        <li><strong>Văn bản nhập vào:</strong> được dùng để chuyển mã, giải mã hoặc hoán đổi ký tự ngay trên thiết bị.</li>
+        <li><strong>Nội dung clipboard:</strong> chỉ được đọc khi người dùng bấm nút dán. Ứng dụng không tự động đọc clipboard trong nền.</li>
+        <li><strong>Bảng mã tùy chỉnh:</strong> gồm tên bảng mã và các cặp ký tự/cụm ký tự do người dùng tạo.</li>
+        <li><strong>File .tqx:</strong> được đọc khi người dùng chủ động chọn file để nhập bảng mã.</li>
+        <li><strong>Tùy chọn giao diện:</strong> ID theme màu được lưu để ứng dụng ghi nhớ giao diện đã chọn.</li>
+      </ul>
+      <p>Tieq Viet không yêu cầu người dùng đăng ký tài khoản và không chủ động thu thập họ tên, số điện thoại, email, vị trí, danh bạ, ảnh, video, âm thanh, thông tin thanh toán hoặc mã định danh quảng cáo.</p>
+
+      <h3>4. Mục đích sử dụng dữ liệu</h3>
+      <p>Dữ liệu nêu trên chỉ được sử dụng cho các mục đích sau:</p>
+      <ul>
+        <li>Chuyển đổi, giải mã hoặc hoán đổi văn bản theo bảng mã người dùng chọn.</li>
+        <li>Lưu bảng mã tùy chỉnh để người dùng sử dụng lại trong ứng dụng.</li>
+        <li>Nhập hoặc xuất bảng mã để người dùng chia sẻ file bảng mã với người khác.</li>
+        <li>Ghi nhớ giao diện màu mà người dùng đã chọn.</li>
+        <li>Mở chức năng chia sẻ của Android khi người dùng chủ động chia sẻ ứng dụng hoặc file bảng mã.</li>
+      </ul>
+
+      <h3>5. Quyền và khả năng truy cập trên thiết bị</h3>
+      <p>Phiên bản hiện tại của ứng dụng không khai báo quyền nguy hiểm trong Android Manifest và không yêu cầu các quyền như vị trí, camera, microphone, danh bạ, SMS, lịch sử cuộc gọi, ảnh/video, bộ nhớ ngoài hoặc Internet.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Chức năng/truy cập</th>
+            <th>Cách sử dụng thực tế</th>
+            <th>Dữ liệu có rời khỏi thiết bị không?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Clipboard</td>
+            <td>Đọc nội dung clipboard khi người dùng bấm nút dán để đưa văn bản vào ô nhập.</td>
+            <td>Không. Nội dung chỉ được xử lý cục bộ trong ứng dụng.</td>
+          </tr>
+          <tr>
+            <td>Storage Access Framework / File Picker</td>
+            <td>Mở trình chọn file của Android bằng <code>ACTION_OPEN_DOCUMENT</code> để người dùng chọn file <strong>.tqx</strong> khi nhập bảng mã.</td>
+            <td>Không. Ứng dụng chỉ đọc file mà người dùng chủ động chọn.</td>
+          </tr>
+          <tr>
+            <td>FileProvider</td>
+            <td>Tạo URI tạm thời cho file <strong>.tqx</strong> trong vùng cache khi người dùng xuất/chia sẻ bảng mã. Provider đặt <code>exported=false</code> và chỉ cấp quyền đọc tạm thời.</td>
+            <td>Chỉ chia sẻ khi người dùng chủ động chọn ứng dụng nhận file qua Android share sheet.</td>
+          </tr>
+          <tr>
+            <td>SharedPreferences</td>
+            <td>Lưu bảng mã tùy chỉnh, bảng mã đang chọn và theme giao diện đã chọn.</td>
+            <td>Không. Dữ liệu được lưu cục bộ trong vùng dữ liệu ứng dụng.</td>
+          </tr>
+          <tr>
+            <td>Android share sheet</td>
+            <td>Mở giao diện chia sẻ của hệ thống bằng <code>ACTION_SEND</code> để chia sẻ app hoặc file bảng mã.</td>
+            <td>Chỉ gửi dữ liệu đến ứng dụng bên thứ ba nếu người dùng chủ động chọn.</td>
+          </tr>
+          <tr>
+            <td>Play Store intent</td>
+            <td>Mở trang đánh giá ứng dụng bằng <code>ACTION_VIEW</code> với đường dẫn Play Store.</td>
+            <td>Không gửi dữ liệu cá nhân từ ứng dụng Tieq Viet.</td>
+          </tr>
+          <tr>
+            <td>Android backup</td>
+            <td>Manifest hiện đặt <code>android:allowBackup="true"</code>. Tùy cài đặt thiết bị và hệ điều hành, Android có thể sao lưu dữ liệu ứng dụng cục bộ theo cơ chế backup của hệ thống.</td>
+            <td>Dữ liệu có thể được hệ thống Android/Google xử lý nếu người dùng bật sao lưu thiết bị. Ứng dụng Tieq Viet không tự tải dữ liệu này lên máy chủ riêng.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>6. SDK và thư viện bên thứ ba</h3>
+      <p>Ứng dụng sử dụng các SDK/thư viện sau để xây dựng chức năng và giao diện:</p>
+      <ul>
+        <li><strong>AndroidX AppCompat</strong>: hỗ trợ giao diện và tương thích Android.</li>
+        <li><strong>AndroidX Core</strong>: hỗ trợ các API tiện ích như FileProvider.</li>
+        <li><strong>AndroidX ConstraintLayout</strong>: hỗ trợ bố cục giao diện.</li>
+        <li><strong>Apache Commons Lang</strong>: hỗ trợ xử lý chuỗi khi chuyển đổi văn bản.</li>
+      </ul>
+      <p>Ứng dụng không tích hợp SDK quảng cáo, không tích hợp Google Analytics/Firebase Analytics, không tích hợp SDK theo dõi hành vi người dùng, không tích hợp SDK mạng xã hội và không có SDK thanh toán trong phiên bản hiện tại.</p>
+
+      <h3>7. Chia sẻ dữ liệu</h3>
+      <p>Tieq Viet không bán, cho thuê hoặc trao đổi dữ liệu cá nhân của người dùng. Ứng dụng chỉ chia sẻ dữ liệu khi người dùng chủ động thực hiện thao tác chia sẻ, ví dụ chia sẻ file <strong>.tqx</strong> qua ứng dụng khác. Sau khi người dùng chọn ứng dụng nhận dữ liệu, việc xử lý dữ liệu tiếp theo sẽ tuân theo chính sách quyền riêng tư của ứng dụng nhận đó.</p>
+
+      <h3>8. Lưu trữ dữ liệu</h3>
+      <p>Dữ liệu bảng mã tùy chỉnh và tùy chọn giao diện được lưu cục bộ trên thiết bị bằng SharedPreferences. File bảng mã xuất ra được tạo tạm trong vùng cache của ứng dụng để phục vụ thao tác chia sẻ.</p>
+      <p>Ứng dụng không tải dữ liệu lên máy chủ của nhà phát triển vì ứng dụng không có backend riêng và không yêu cầu quyền Internet.</p>
+
+      <h3>9. Xóa dữ liệu</h3>
+      <p>Người dùng có thể xóa dữ liệu theo các cách sau:</p>
+      <ul>
+        <li>Xóa từng bảng mã tùy chỉnh trong menu <strong>Cài đặt &gt; Xóa bảng mã</strong>.</li>
+        <li>Xóa file <strong>.tqx</strong> đã xuất bằng ứng dụng quản lý file của thiết bị hoặc ứng dụng nhận file.</li>
+        <li>Xóa toàn bộ dữ liệu ứng dụng bằng cách vào cài đặt hệ thống Android và chọn xóa dữ liệu của ứng dụng Tieq Viet.</li>
+        <li>Gỡ cài đặt ứng dụng để xóa dữ liệu cục bộ do ứng dụng lưu trên thiết bị.</li>
+        <li>Nếu thiết bị bật sao lưu Android, người dùng có thể cần quản lý/xóa bản sao lưu theo cài đặt tài khoản hoặc cài đặt hệ thống của thiết bị.</li>
+      </ul>
+      <p>Nếu bạn cần hỗ trợ liên quan đến việc xóa dữ liệu hoặc quyền riêng tư, vui lòng liên hệ email: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+
+      <h3>10. Bảo mật</h3>
+      <p>Ứng dụng xử lý dữ liệu cục bộ trên thiết bị và không truyền dữ liệu về máy chủ của nhà phát triển. Tuy nhiên, người dùng nên thận trọng khi chia sẻ file bảng mã hoặc văn bản qua ứng dụng bên thứ ba, vì các ứng dụng đó có chính sách và cách xử lý dữ liệu riêng.</p>
+
+      <h3>11. Quyền riêng tư của trẻ em</h3>
+      <p>Tieq Viet không chủ động thu thập dữ liệu cá nhân của trẻ em. Ứng dụng không yêu cầu đăng nhập, không có quảng cáo và không có mua hàng trong ứng dụng trong phiên bản hiện tại. Nếu phụ huynh hoặc người giám hộ cho rằng trẻ em đã chia sẻ dữ liệu cá nhân qua kênh hỗ trợ, vui lòng liên hệ để được xử lý.</p>
+
+      <h3>12. Thay đổi chính sách</h3>
+      <p>Chính sách quyền riêng tư có thể được cập nhật khi ứng dụng thay đổi chức năng, quyền truy cập hoặc SDK bên thứ ba. Phiên bản mới sẽ được đăng tại trang này và ghi rõ ngày có hiệu lực.</p>
+
+      <div class="note">
+        <strong>Tóm tắt:</strong> Tieq Viet không khai báo quyền Android nguy hiểm, không yêu cầu Internet, không có quảng cáo, không dùng analytics và không thu thập dữ liệu cá nhân lên máy chủ của nhà phát triển. Dữ liệu văn bản và bảng mã được xử lý chủ yếu trên thiết bị của người dùng.
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Tieq Viet. Liên hệ: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+    </footer>
+  </main>
+</body>
+</html>
