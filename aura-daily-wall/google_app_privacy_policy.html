@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aura Daily Wall - Google Play Listing and Privacy Policy</title>
+  <meta name="description" content="Aura Daily Wall Google Play descriptions and privacy policy.">
+  <style>
+    :root {
+      --bg: #0d0e14;
+      --surface: #151722;
+      --surface-2: #1d2030;
+      --text: #f8f9ff;
+      --muted: #b9bfd4;
+      --line: rgba(255, 255, 255, 0.12);
+      --pink: #ff6aac;
+      --violet: #8c67ff;
+      --blue: #4da3ff;
+      --sun: #ffb45e;
+      --green: #6de7b0;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(13, 14, 20, 0.12), var(--bg) 78%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: #9fd0ff;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(10, 11, 18, 0.92) 0%, rgba(10, 11, 18, 0.66) 45%, rgba(10, 11, 18, 0.18) 100%),
+        url("icon/play_banner_with_name_en.png");
+      background-position: center;
+      background-size: cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 30%;
+      background: linear-gradient(180deg, rgba(13, 14, 20, 0), var(--bg));
+      z-index: -1;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 18px 0;
+      backdrop-filter: blur(18px);
+      background: rgba(13, 14, 20, 0.42);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      box-shadow: 0 10px 34px rgba(140, 103, 255, 0.34);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.85rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 68vw;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-content {
+      padding: 132px 0 84px;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: #ffe0ef;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sun), var(--pink), var(--blue));
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 7vw, 6.2rem);
+      line-height: 0.96;
+      font-weight: 900;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      color: #e6e9f8;
+      font-size: clamp(1.08rem, 2.2vw, 1.34rem);
+      max-width: 680px;
+    }
+
+    main {
+      padding: 54px 0 80px;
+    }
+
+    .section {
+      padding: 38px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:first-child {
+      padding-top: 0;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
+      line-height: 1.12;
+    }
+
+    h3 {
+      margin: 30px 0 10px;
+      font-size: 1.12rem;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h3 {
+      margin-top: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      margin: 0;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.92rem;
+    }
+
+    .listing-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      margin: 16px 0;
+    }
+
+    .listing-label {
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .description-text {
+      white-space: pre-line;
+      color: #dce1f6;
+    }
+
+    .permission-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .permission-table th,
+    .permission-table td {
+      border: 1px solid var(--line);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+      color: var(--muted);
+    }
+
+    .permission-table th {
+      color: var(--text);
+      background: var(--surface-2);
+    }
+
+    .callout {
+      border-left: 4px solid var(--pink);
+      background: rgba(255, 106, 172, 0.09);
+      padding: 16px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 18px 0;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px;
+      background: linear-gradient(135deg, rgba(255, 180, 94, 0.13), rgba(77, 163, 255, 0.13));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .contact img {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      flex: 0 0 auto;
+    }
+
+    footer {
+      color: #8d94ad;
+      padding: 32px 0 54px;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .permission-table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .contact {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="Page navigation">
+      <div class="wrap nav-inner">
+        <div class="brand">
+          <img src="icon/icon_play_s.png" alt="Aura Daily Wall app icon">
+          <div>
+            <strong>Aura Daily Wall</strong>
+            <span>Google Play listing and privacy policy</span>
+          </div>
+        </div>
+        <a href="#privacy">Privacy Policy</a>
+      </div>
+    </nav>
+
+    <div class="wrap hero-content">
+      <p class="eyebrow">AI wallpapers for Android</p>
+      <h1>Aura Daily Wall</h1>
+      <p class="lead">A modern wallpaper app for discovering AI-generated artwork, previewing full-screen visuals, saving favorites, setting home or lock screen wallpapers, and keeping your device fresh with automatic wallpaper rotation.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section" id="intro">
+      <h2>App Introduction</h2>
+      <p>Aura Daily Wall provides a curated collection of high-quality AI-generated wallpapers for Android phones and tablets. The app is designed for fast visual browsing, reliable wallpaper setting, local favorites, wallpaper history, optional daily recommendations, and an auto-change feature powered by Android background work.</p>
+      <div class="grid" aria-label="Core app features">
+        <article class="panel">
+          <h3>Fresh visual library</h3>
+          <p>Browse daily, trending, latest, category-based, and searchable wallpaper collections delivered through the app backend.</p>
+        </article>
+        <article class="panel">
+          <h3>Wallpaper tools</h3>
+          <p>Preview wallpapers, set them on the home screen, lock screen, or both, and download selected images where supported.</p>
+        </article>
+        <article class="panel">
+          <h3>Personal controls</h3>
+          <p>Save favorites, review wallpaper history, manage cache, enable notifications, and configure automatic wallpaper changes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="listing">
+      <h2>Google Play Store Listing Text</h2>
+      <div class="listing-box">
+        <div class="listing-label">Short description - 80 characters or less</div>
+        <p class="description-text">Stunning AI wallpapers, daily updates, favorites, and auto-change.</p>
+      </div>
+
+      <div class="listing-box">
+        <div class="listing-label">Long description</div>
+        <p class="description-text">Transform your screen with Aura Daily Wall, a polished Android wallpaper app built for people who want fresh, artistic, and high-quality AI-generated wallpapers every day.
+
+Explore a curated visual library across styles such as nature, space, abstract art, minimalist scenes, vibrant color moods, and futuristic compositions. Every wallpaper is selected for modern mobile screens and delivered with fast thumbnails for smooth browsing.
+
+Key features:
+
+- AI-generated wallpaper collections with a fresh, modern look.
+- Daily, trending, latest, category, and search discovery.
+- Full-screen preview for checking how a wallpaper feels before applying it.
+- Set wallpapers to the home screen, lock screen, or both.
+- Save favorites locally and revisit your wallpaper history.
+- Optional auto-change wallpaper scheduling for a refreshed device.
+- Optional daily wallpaper notifications.
+- Cache controls to help manage local storage.
+- Premium upgrade option for an ad-free experience.
+
+Aura Daily Wall does not require an account. Your favorites, history, and app settings are stored locally on your device. The app uses network access to load wallpapers, Google Play Billing for purchases, and advertising SDKs for the free version.
+
+All wallpapers in Aura Daily Wall are AI-generated artwork. They are not intended to represent real people, private events, or real-world endorsements. Any resemblance to real persons, places, or events is coincidental.</p>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <h2>Privacy Policy</h2>
+      <p><strong>Last updated:</strong> May 22, 2026</p>
+      <p>This Privacy Policy explains how Aura Daily Wall ("we", "our", or "the app") accesses, collects, uses, shares, retains, and deletes data. This policy applies to the Aura Daily Wall Android application with package name <strong>aura.daily.wall</strong>.</p>
+
+      <div class="callout">
+        <p>Aura Daily Wall does not require users to create an account. The app stores favorites, wallpaper history, and settings locally on the device. The free version uses third-party advertising SDKs, which may process device identifiers and usage data for ad delivery, measurement, fraud prevention, and mediation.</p>
+      </div>
+
+      <h3>Data We Collect or Process</h3>
+      <ul>
+        <li><strong>Wallpaper and app usage data:</strong> wallpaper IDs, categories, search requests, selected wallpapers, favorites, and wallpaper history may be processed locally to provide app features. Favorites and history are stored in the local Room database on your device.</li>
+        <li><strong>Settings data:</strong> notification preference, auto-change schedule, wallpaper target, separate lock screen setting, dynamic color setting, premium status cache, and related preferences are stored locally using Android DataStore.</li>
+        <li><strong>Network and technical data:</strong> when the app connects to the wallpaper API or image storage, technical request data such as IP address, user agent, request time, and requested URLs may be processed by the hosting provider for security, reliability, and delivery.</li>
+        <li><strong>Advertising data:</strong> Google AdMob and mediation partners may collect or receive device identifiers, Advertising ID, approximate location inferred from IP address, ad interactions, diagnostic data, and other data described in their own policies.</li>
+        <li><strong>Purchase data:</strong> Google Play Billing processes purchases. The app receives purchase state information needed to unlock premium or download features, but we do not receive your full payment card details.</li>
+        <li><strong>Notification data:</strong> if notifications are enabled, the app may schedule and display local daily wallpaper reminders. The app does not use notifications to collect contacts, SMS, call logs, or precise location.</li>
+      </ul>
+
+      <h3>Data We Do Not Collect</h3>
+      <ul>
+        <li>We do not require account registration.</li>
+        <li>We do not ask for your name, email address, phone number, contacts, messages, camera, microphone, or precise location.</li>
+        <li>We do not sell personal and sensitive user data.</li>
+        <li>We do not upload your local favorites, history, or settings to an app account, because the app currently has no account system.</li>
+      </ul>
+
+      <h3>How We Use Data</h3>
+      <ul>
+        <li>To load wallpaper lists, categories, thumbnails, and full-size wallpaper files.</li>
+        <li>To set selected images as Android wallpapers.</li>
+        <li>To save favorites and wallpaper history locally on your device.</li>
+        <li>To support search, preview, download, cache management, and auto-change wallpaper features.</li>
+        <li>To send optional wallpaper notifications when enabled by the user.</li>
+        <li>To show ads in the free version, measure ad performance, prevent abuse, and support Start.io mediation through Google AdMob.</li>
+        <li>To process in-app purchases and restore premium or paid download entitlements through Google Play Billing.</li>
+        <li>To secure, monitor, and improve service reliability.</li>
+      </ul>
+
+      <h3>Android Permissions Used</h3>
+      <table class="permission-table">
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>INTERNET</td>
+            <td>Loads wallpaper metadata, thumbnail images, full-size wallpaper files, ads, billing-related services, and remote resources.</td>
+          </tr>
+          <tr>
+            <td>ACCESS_NETWORK_STATE</td>
+            <td>Checks network availability to load content and ads more reliably.</td>
+          </tr>
+          <tr>
+            <td>ACCESS_WIFI_STATE</td>
+            <td>Supports network-state awareness used by app services and integrated SDKs.</td>
+          </tr>
+          <tr>
+            <td>SET_WALLPAPER</td>
+            <td>Allows the app to apply a selected image as the device wallpaper.</td>
+          </tr>
+          <tr>
+            <td>RECEIVE_BOOT_COMPLETED</td>
+            <td>Allows scheduled wallpaper rotation or related background work to continue after the device restarts, when enabled.</td>
+          </tr>
+          <tr>
+            <td>POST_NOTIFICATIONS</td>
+            <td>Allows optional daily wallpaper reminders and status notifications on Android versions that require runtime notification permission.</td>
+          </tr>
+          <tr>
+            <td>WRITE_EXTERNAL_STORAGE, Android 9 and below only</td>
+            <td>Allows saving downloaded wallpapers to shared device storage on older Android versions.</td>
+          </tr>
+          <tr>
+            <td>com.google.android.gms.permission.AD_ID</td>
+            <td>Allows advertising SDKs to access the Android Advertising ID for ad delivery, frequency capping, measurement, fraud prevention, and mediation where permitted by user settings and law.</td>
+          </tr>
+          <tr>
+            <td>com.android.vending.BILLING</td>
+            <td>Enables Google Play Billing for premium and paid download features.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Third-Party SDKs and Services</h3>
+      <ul class="tag-list" aria-label="Third-party services">
+        <li>Google AdMob</li>
+        <li>Start.io mediation adapter</li>
+        <li>Google Play Billing</li>
+        <li>Cloudflare API and storage delivery</li>
+        <li>Retrofit and OkHttp networking</li>
+        <li>Coil image loading</li>
+        <li>Android Room</li>
+        <li>Android DataStore</li>
+        <li>Android WorkManager</li>
+      </ul>
+
+      <p>Advertising is provided through Google AdMob, with Start.io used as a mediation demand source. These providers may independently process advertising and device data according to their own policies and user consent requirements. Learn more from <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>, <a href="https://support.google.com/admob/answer/6128543" rel="noopener">AdMob privacy information</a>, and <a href="https://www.start.io/policy/privacy-policy/" rel="noopener">Start.io Privacy Policy</a>.</p>
+
+      <h3>Data Sharing</h3>
+      <p>We share data only as needed to operate the app, provide advertising, process purchases, host content, prevent fraud or abuse, comply with law, or protect the app and users. This may include Google, Start.io, Cloudflare, Google Play services, and infrastructure providers. We do not sell personal and sensitive user data.</p>
+
+      <h3>Data Retention</h3>
+      <ul>
+        <li>Local favorites, history, and settings remain on your device until you delete them, clear app data, or uninstall the app.</li>
+        <li>Cached images remain on your device until cleared by the app, Android storage management, or the user.</li>
+        <li>Advertising, billing, and infrastructure providers may retain data according to their own privacy policies and legal obligations.</li>
+        <li>Temporary server and network logs may be retained for security, debugging, abuse prevention, and service reliability.</li>
+      </ul>
+
+      <h3>Data Deletion and User Choices</h3>
+      <ul>
+        <li>You can delete local app data by using Android system settings, clearing app storage, clearing cache, or uninstalling Aura Daily Wall.</li>
+        <li>You can remove favorites inside the app where the favorite feature is available.</li>
+        <li>You can disable notifications in the app settings or Android notification settings.</li>
+        <li>You can reset or limit the Android Advertising ID in Android privacy settings where supported.</li>
+        <li>Because the app does not currently provide user accounts, there is no app account deletion flow.</li>
+        <li>For privacy requests, contact us at <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</li>
+      </ul>
+
+      <h3>Security</h3>
+      <p>We use reasonable technical and organizational safeguards for the app and related services. Network communication is performed over secure endpoints where supported. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.</p>
+
+      <h3>Children's Privacy</h3>
+      <p>Aura Daily Wall is not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through the app, contact us so we can review the request.</p>
+
+      <h3>International Users</h3>
+      <p>The app, advertising SDKs, billing services, and infrastructure providers may process data in countries other than your own. By using the app, you understand that data may be processed where our service providers operate, subject to applicable law.</p>
+
+      <h3>Changes to This Policy</h3>
+      <p>We may update this Privacy Policy when the app changes, when third-party services change, or when legal requirements require updates. The latest version will be identified by the "Last updated" date above.</p>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        <div>
+          <p><strong>Developer privacy contact:</strong></p>
+          <p><a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+          <p>Use this email for privacy questions, data deletion requests, app listing questions, or policy concerns related to Aura Daily Wall.</p>
+        </div>
+        <img src="icon/icon_play_s.png" alt="Aura Daily Wall app icon">
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Aura Daily Wall - Google Play listing and privacy policy page. This page is intended to be hosted at a public, non-editable URL for Play Console privacy policy submission.</p>
+  </footer>
+</body>
+</html>
