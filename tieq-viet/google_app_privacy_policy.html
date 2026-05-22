@@ -241,8 +241,8 @@
           <div class="badge-row">
             <span class="badge">Ứng dụng Android</span>
             <span class="badge">Chuyển đổi bảng mã</span>
-            <span class="badge">Không quảng cáo</span>
-            <span class="badge">Không yêu cầu Internet</span>
+            <span class="badge">Có quảng cáo</span>
+            <span class="badge">Có tùy chọn tắt quảng cáo</span>
           </div>
         </div>
       </header>
@@ -273,7 +273,7 @@
         <li>Dán nhanh văn bản từ clipboard và sao chép kết quả sau khi chuyển đổi.</li>
         <li>Chọn nhiều giao diện màu trẻ trung, hiện đại, phù hợp với sở thích cá nhân.</li>
       </ul>
-      <p>Ứng dụng được thiết kế cho các thao tác chuyển đổi nhanh, không yêu cầu đăng nhập, không yêu cầu kết nối Internet và không hiển thị quảng cáo.</p>
+      <p>Ứng dụng được thiết kế cho các thao tác chuyển đổi nhanh, không yêu cầu đăng nhập. Ứng dụng có thể hiển thị quảng cáo Google AdMob dạng banner và App Open, đồng thời cung cấp tùy chọn mua một lần để tắt quảng cáo.</p>
       <p>Lưu ý: với các bảng mã tự tạo, nếu nhiều ký tự hoặc cụm ký tự được chuyển thành cùng một giá trị, việc khôi phục văn bản ban đầu có thể không chính xác tuyệt đối. Ứng dụng sẽ hiển thị cảnh báo trong các trường hợp có khả năng gây nhầm lẫn khi giải mã.</p>
     </section>
 
@@ -290,32 +290,34 @@
       <div class="summary-grid">
         <div class="summary-card">
           <strong>Quyền Android Manifest</strong>
-          Không khai báo thẻ <code>uses-permission</code>.
+          Khai báo <code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code> và <code>com.android.vending.BILLING</code>.
         </div>
         <div class="summary-card">
           <strong>Internet</strong>
-          Không yêu cầu quyền Internet và không gửi dữ liệu về máy chủ của nhà phát triển.
+          Dùng cho Google Mobile Ads SDK và Google Play Billing. Ứng dụng không có máy chủ riêng của nhà phát triển.
         </div>
         <div class="summary-card">
           <strong>Quảng cáo / Analytics</strong>
-          Không tích hợp SDK quảng cáo, Firebase Analytics, Google Analytics hoặc SDK theo dõi hành vi.
+          Tích hợp Google Mobile Ads SDK để hiển thị banner và App Open ad. Không tích hợp Firebase Analytics hoặc Google Analytics riêng.
         </div>
         <div class="summary-card">
           <strong>Lưu dữ liệu</strong>
-          Dữ liệu bảng mã và theme được lưu cục bộ bằng SharedPreferences.
+          Dữ liệu bảng mã, theme, trạng thái tắt quảng cáo và thời điểm hiển thị App Open ad được lưu cục bộ bằng SharedPreferences.
         </div>
       </div>
 
       <h3>3. Dữ liệu ứng dụng thu thập hoặc xử lý</h3>
-      <p>Theo cách Google Play thường phân loại, ứng dụng không thu thập dữ liệu cá nhân để gửi ra khỏi thiết bị. Tuy nhiên, ứng dụng có xử lý cục bộ một số dữ liệu do người dùng tự nhập hoặc tự chọn:</p>
+      <p>Ứng dụng không yêu cầu người dùng đăng ký tài khoản và không có backend riêng của nhà phát triển. Ứng dụng xử lý cục bộ một số dữ liệu do người dùng tự nhập hoặc tự chọn, đồng thời các SDK của Google có thể xử lý dữ liệu kỹ thuật để cung cấp quảng cáo và mua hàng trong ứng dụng:</p>
       <ul>
         <li><strong>Văn bản nhập vào:</strong> được dùng để chuyển mã, giải mã hoặc hoán đổi ký tự ngay trên thiết bị.</li>
         <li><strong>Nội dung clipboard:</strong> chỉ được đọc khi người dùng bấm nút dán. Ứng dụng không tự động đọc clipboard trong nền.</li>
         <li><strong>Bảng mã tùy chỉnh:</strong> gồm tên bảng mã và các cặp ký tự/cụm ký tự do người dùng tạo.</li>
         <li><strong>File .tqx:</strong> được đọc khi người dùng chủ động chọn file để nhập bảng mã.</li>
         <li><strong>Tùy chọn giao diện:</strong> ID theme màu được lưu để ứng dụng ghi nhớ giao diện đã chọn.</li>
+        <li><strong>Trạng thái mua remove_ads:</strong> được lưu cục bộ sau khi Google Play xác nhận giao dịch tắt quảng cáo.</li>
+        <li><strong>Dữ liệu quảng cáo/thanh toán do SDK Google xử lý:</strong> Google Mobile Ads SDK và Google Play Billing SDK có thể xử lý thông tin thiết bị, địa chỉ IP, trạng thái mạng, mã định danh quảng cáo nếu có, tương tác quảng cáo, dữ liệu chẩn đoán và thông tin giao dịch cần thiết theo chính sách của Google.</li>
       </ul>
-      <p>Tieq Viet không yêu cầu người dùng đăng ký tài khoản và không chủ động thu thập họ tên, số điện thoại, email, vị trí, danh bạ, ảnh, video, âm thanh, thông tin thanh toán hoặc mã định danh quảng cáo.</p>
+      <p>Tieq Viet không chủ động thu thập họ tên, số điện thoại, email, vị trí chính xác, danh bạ, ảnh, video, âm thanh hoặc nội dung bảng mã lên máy chủ riêng. Thông tin thanh toán không được ứng dụng trực tiếp thu thập; giao dịch được xử lý bởi Google Play.</p>
 
       <h3>4. Mục đích sử dụng dữ liệu</h3>
       <p>Dữ liệu nêu trên chỉ được sử dụng cho các mục đích sau:</p>
@@ -324,11 +326,13 @@
         <li>Lưu bảng mã tùy chỉnh để người dùng sử dụng lại trong ứng dụng.</li>
         <li>Nhập hoặc xuất bảng mã để người dùng chia sẻ file bảng mã với người khác.</li>
         <li>Ghi nhớ giao diện màu mà người dùng đã chọn.</li>
+        <li>Hiển thị quảng cáo banner và App Open qua Google Mobile Ads SDK.</li>
+        <li>Xác nhận và lưu trạng thái mua gói <strong>remove_ads</strong> để tắt quảng cáo.</li>
         <li>Mở chức năng chia sẻ của Android khi người dùng chủ động chia sẻ ứng dụng hoặc file bảng mã.</li>
       </ul>
 
       <h3>5. Quyền và khả năng truy cập trên thiết bị</h3>
-      <p>Phiên bản hiện tại của ứng dụng không khai báo quyền nguy hiểm trong Android Manifest và không yêu cầu các quyền như vị trí, camera, microphone, danh bạ, SMS, lịch sử cuộc gọi, ảnh/video, bộ nhớ ngoài hoặc Internet.</p>
+      <p>Phiên bản hiện tại của ứng dụng không yêu cầu các quyền nguy hiểm như vị trí, camera, microphone, danh bạ, SMS, lịch sử cuộc gọi, ảnh/video hoặc bộ nhớ ngoài theo quyền runtime. Ứng dụng có khai báo quyền Internet, trạng thái mạng và Billing để phục vụ quảng cáo và mua hàng trong ứng dụng.</p>
       <table>
         <thead>
           <tr>
@@ -369,6 +373,21 @@
             <td>Không gửi dữ liệu cá nhân từ ứng dụng Tieq Viet.</td>
           </tr>
           <tr>
+            <td>Internet và trạng thái mạng</td>
+            <td>Dùng bởi Google Mobile Ads SDK để tải quảng cáo và bởi Google Play Billing SDK để kết nối dịch vụ mua hàng.</td>
+            <td>Có. Dữ liệu kỹ thuật cần thiết có thể được gửi đến dịch vụ Google theo chính sách của Google.</td>
+          </tr>
+          <tr>
+            <td>Google Mobile Ads SDK</td>
+            <td>Hiển thị quảng cáo banner trong màn hình chính và quảng cáo App Open khi mở lại ứng dụng. Ứng dụng lưu thời điểm hiển thị App Open gần nhất để giới hạn tần suất.</td>
+            <td>Có. SDK quảng cáo có thể xử lý mã định danh quảng cáo, IP, thông tin thiết bị, tương tác quảng cáo và dữ liệu chẩn đoán.</td>
+          </tr>
+          <tr>
+            <td>Google Play Billing</td>
+            <td>Xử lý mua/khôi phục sản phẩm một lần <code>remove_ads</code> để tắt quảng cáo.</td>
+            <td>Có. Giao dịch được xử lý bởi Google Play; ứng dụng chỉ lưu trạng thái đã mua để ẩn quảng cáo.</td>
+          </tr>
+          <tr>
             <td>Android backup</td>
             <td>Manifest hiện đặt <code>android:allowBackup="true"</code>. Tùy cài đặt thiết bị và hệ điều hành, Android có thể sao lưu dữ liệu ứng dụng cục bộ theo cơ chế backup của hệ thống.</td>
             <td>Dữ liệu có thể được hệ thống Android/Google xử lý nếu người dùng bật sao lưu thiết bị. Ứng dụng Tieq Viet không tự tải dữ liệu này lên máy chủ riêng.</td>
@@ -382,16 +401,20 @@
         <li><strong>AndroidX AppCompat</strong>: hỗ trợ giao diện và tương thích Android.</li>
         <li><strong>AndroidX Core</strong>: hỗ trợ các API tiện ích như FileProvider.</li>
         <li><strong>AndroidX ConstraintLayout</strong>: hỗ trợ bố cục giao diện.</li>
+        <li><strong>AndroidX Lifecycle Process</strong>: theo dõi vòng đời foreground/background của ứng dụng để quản lý App Open ad.</li>
+        <li><strong>Google Mobile Ads SDK</strong>: hiển thị quảng cáo banner và App Open ad.</li>
+        <li><strong>Google Play Billing SDK</strong>: xử lý mua/khôi phục sản phẩm <code>remove_ads</code>.</li>
         <li><strong>Apache Commons Lang</strong>: hỗ trợ xử lý chuỗi khi chuyển đổi văn bản.</li>
       </ul>
-      <p>Ứng dụng không tích hợp SDK quảng cáo, không tích hợp Google Analytics/Firebase Analytics, không tích hợp SDK theo dõi hành vi người dùng, không tích hợp SDK mạng xã hội và không có SDK thanh toán trong phiên bản hiện tại.</p>
+      <p>Ứng dụng không tích hợp Firebase Analytics, Google Analytics riêng, SDK mạng xã hội hoặc SDK theo dõi hành vi ngoài các SDK Google nêu trên. Dữ liệu do Google Mobile Ads và Google Play Billing xử lý tuân theo chính sách và điều khoản của Google.</p>
 
       <h3>7. Chia sẻ dữ liệu</h3>
       <p>Tieq Viet không bán, cho thuê hoặc trao đổi dữ liệu cá nhân của người dùng. Ứng dụng chỉ chia sẻ dữ liệu khi người dùng chủ động thực hiện thao tác chia sẻ, ví dụ chia sẻ file <strong>.tqx</strong> qua ứng dụng khác. Sau khi người dùng chọn ứng dụng nhận dữ liệu, việc xử lý dữ liệu tiếp theo sẽ tuân theo chính sách quyền riêng tư của ứng dụng nhận đó.</p>
+      <p>Đối với quảng cáo và mua hàng trong ứng dụng, dữ liệu kỹ thuật cần thiết có thể được xử lý bởi Google Mobile Ads SDK và Google Play Billing SDK. Nhà phát triển không vận hành máy chủ riêng để nhận hoặc bán dữ liệu này.</p>
 
       <h3>8. Lưu trữ dữ liệu</h3>
-      <p>Dữ liệu bảng mã tùy chỉnh và tùy chọn giao diện được lưu cục bộ trên thiết bị bằng SharedPreferences. File bảng mã xuất ra được tạo tạm trong vùng cache của ứng dụng để phục vụ thao tác chia sẻ.</p>
-      <p>Ứng dụng không tải dữ liệu lên máy chủ của nhà phát triển vì ứng dụng không có backend riêng và không yêu cầu quyền Internet.</p>
+      <p>Dữ liệu bảng mã tùy chỉnh, tùy chọn giao diện, trạng thái <code>remove_ads</code> và thời điểm hiển thị App Open ad gần nhất được lưu cục bộ trên thiết bị bằng SharedPreferences. File bảng mã xuất ra được tạo tạm trong vùng cache của ứng dụng để phục vụ thao tác chia sẻ.</p>
+      <p>Ứng dụng không tải nội dung văn bản hoặc bảng mã lên máy chủ của nhà phát triển vì ứng dụng không có backend riêng. Các SDK Google có thể truyền dữ liệu kỹ thuật cần thiết để cung cấp quảng cáo và thanh toán.</p>
 
       <h3>9. Xóa dữ liệu</h3>
       <p>Người dùng có thể xóa dữ liệu theo các cách sau:</p>
@@ -401,20 +424,21 @@
         <li>Xóa toàn bộ dữ liệu ứng dụng bằng cách vào cài đặt hệ thống Android và chọn xóa dữ liệu của ứng dụng Tieq Viet.</li>
         <li>Gỡ cài đặt ứng dụng để xóa dữ liệu cục bộ do ứng dụng lưu trên thiết bị.</li>
         <li>Nếu thiết bị bật sao lưu Android, người dùng có thể cần quản lý/xóa bản sao lưu theo cài đặt tài khoản hoặc cài đặt hệ thống của thiết bị.</li>
+        <li>Giao dịch <code>remove_ads</code> được quản lý bởi Google Play; người dùng có thể xem lịch sử giao dịch trong tài khoản Google Play.</li>
       </ul>
       <p>Nếu bạn cần hỗ trợ liên quan đến việc xóa dữ liệu hoặc quyền riêng tư, vui lòng liên hệ email: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
 
       <h3>10. Bảo mật</h3>
-      <p>Ứng dụng xử lý dữ liệu cục bộ trên thiết bị và không truyền dữ liệu về máy chủ của nhà phát triển. Tuy nhiên, người dùng nên thận trọng khi chia sẻ file bảng mã hoặc văn bản qua ứng dụng bên thứ ba, vì các ứng dụng đó có chính sách và cách xử lý dữ liệu riêng.</p>
+      <p>Ứng dụng xử lý nội dung văn bản và bảng mã cục bộ trên thiết bị và không truyền các nội dung này về máy chủ của nhà phát triển. Tuy nhiên, người dùng nên thận trọng khi chia sẻ file bảng mã hoặc văn bản qua ứng dụng bên thứ ba, vì các ứng dụng đó có chính sách và cách xử lý dữ liệu riêng. Dữ liệu kỹ thuật liên quan đến quảng cáo và thanh toán được xử lý bởi các SDK Google theo cơ chế bảo mật của Google.</p>
 
       <h3>11. Quyền riêng tư của trẻ em</h3>
-      <p>Tieq Viet không chủ động thu thập dữ liệu cá nhân của trẻ em. Ứng dụng không yêu cầu đăng nhập, không có quảng cáo và không có mua hàng trong ứng dụng trong phiên bản hiện tại. Nếu phụ huynh hoặc người giám hộ cho rằng trẻ em đã chia sẻ dữ liệu cá nhân qua kênh hỗ trợ, vui lòng liên hệ để được xử lý.</p>
+      <p>Tieq Viet không chủ động thu thập dữ liệu cá nhân của trẻ em và không yêu cầu đăng nhập. Ứng dụng có quảng cáo và có mua hàng trong ứng dụng để tắt quảng cáo; phụ huynh hoặc người giám hộ nên quản lý cài đặt Google Play, quảng cáo và thanh toán trên thiết bị của trẻ. Nếu phụ huynh hoặc người giám hộ cho rằng trẻ em đã chia sẻ dữ liệu cá nhân qua kênh hỗ trợ, vui lòng liên hệ để được xử lý.</p>
 
       <h3>12. Thay đổi chính sách</h3>
       <p>Chính sách quyền riêng tư có thể được cập nhật khi ứng dụng thay đổi chức năng, quyền truy cập hoặc SDK bên thứ ba. Phiên bản mới sẽ được đăng tại trang này và ghi rõ ngày có hiệu lực.</p>
 
       <div class="note">
-        <strong>Tóm tắt:</strong> Tieq Viet không khai báo quyền Android nguy hiểm, không yêu cầu Internet, không có quảng cáo, không dùng analytics và không thu thập dữ liệu cá nhân lên máy chủ của nhà phát triển. Dữ liệu văn bản và bảng mã được xử lý chủ yếu trên thiết bị của người dùng.
+        <strong>Tóm tắt:</strong> Tieq Viet không khai báo quyền Android nguy hiểm, không yêu cầu đăng nhập và không có máy chủ riêng của nhà phát triển. Dữ liệu văn bản và bảng mã được xử lý chủ yếu trên thiết bị. Ứng dụng có Google Mobile Ads để hiển thị quảng cáo và Google Play Billing cho gói <code>remove_ads</code>.
       </div>
     </section>
 
