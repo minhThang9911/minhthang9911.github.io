@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ImRich - Luxury Status Club & Privacy Policy</title>
+  <meta name="description" content="ImRich is a luxury status club app where virtual assets, shop items, and leaderboard rank become a private showcase of prestige.">
+  <style>
+    :root {
+      --black: #050403;
+      --black-2: #0d0a06;
+      --panel: #14100a;
+      --panel-2: #1a140b;
+      --gold: #d6b25e;
+      --gold-2: #f5d98b;
+      --text: #f8f1de;
+      --muted: #b9a985;
+      --line: rgba(214, 178, 94, 0.25);
+      --shadow: rgba(0, 0, 0, 0.55);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(214, 178, 94, 0.12), transparent 30%),
+        linear-gradient(180deg, #040302 0%, #090704 42%, #050403 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: var(--gold-2); }
+
+    .shell {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 4, 3, 0.82);
+      backdrop-filter: blur(18px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 72px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(214, 178, 94, 0.18));
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 620px;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: #050403;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(5, 4, 3, 0.18), rgba(5, 4, 3, 0.18)),
+        linear-gradient(180deg, transparent 46%, rgba(5, 4, 3, 0.82) 100%),
+        url("feature_graphic_full_size.png") center / cover no-repeat;
+      transform: scale(1.01);
+    }
+
+    .hero-content {
+      position: relative;
+      padding: 120px 0 58px;
+      max-width: 720px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(58px, 9vw, 116px);
+      text-shadow: 0 18px 40px var(--shadow);
+    }
+
+    h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      color: var(--gold-2);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      max-width: 640px;
+      margin: 20px 0 0;
+      color: #eadcb8;
+      font-size: clamp(18px, 2vw, 23px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid var(--gold);
+      color: #090704;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 16px 36px rgba(214, 178, 94, 0.18);
+    }
+
+    .button.secondary {
+      color: var(--gold-2);
+      background: rgba(8, 6, 4, 0.72);
+      box-shadow: none;
+    }
+
+    section {
+      padding: 86px 0;
+      border-bottom: 1px solid rgba(214, 178, 94, 0.13);
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(26, 20, 11, 0.92), rgba(10, 8, 5, 0.92));
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+      padding: 26px;
+    }
+
+    .panel p,
+    .panel li {
+      color: var(--muted);
+    }
+
+    .listing {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 22px;
+    }
+
+    .copy-box {
+      border-left: 2px solid var(--gold);
+      background: rgba(255, 255, 255, 0.035);
+      padding: 22px;
+      color: #f7edcf;
+      white-space: pre-wrap;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 16px;
+      border-bottom: 1px solid rgba(214, 178, 94, 0.16);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .data-table th {
+      color: var(--gold-2);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .data-table td {
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 38px 0 54px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .hero { min-height: 560px; }
+      .grid,
+      .listing,
+      .policy-grid {
+        grid-template-columns: 1fr;
+      }
+      section { padding: 64px 0; }
+    }
+
+    @media (max-width: 560px) {
+      .shell { width: min(100% - 28px, 1120px); }
+      nav { min-height: 66px; }
+      .hero-content { padding: 96px 0 42px; }
+      .panel { padding: 20px; }
+      .data-table th,
+      .data-table td {
+        display: block;
+        width: 100%;
+      }
+      .data-table th { border-bottom: 0; padding-bottom: 4px; }
+      .data-table td { padding-top: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="ImRich home">
+        <img src="icon_transparent.png" alt="ImRich app icon">
+        <span>ImRich</span>
+      </a>
+      <div class="nav-links">
+        <a href="#app">App</a>
+        <a href="#store-listing">Play Store Copy</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#delete-data">Delete Data</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="ImRich hero">
+      <div class="shell hero-content">
+        <h1>ImRich</h1>
+        <p class="lead">A private status club for collecting virtual luxury assets, comparing leaderboard rank, and showcasing a refined black-and-gold profile.</p>
+        <div class="hero-actions">
+          <a class="button" href="#store-listing">View Play Store Copy</a>
+          <a class="button secondary" href="#privacy">Read Privacy Policy</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="app">
+      <div class="shell">
+        <h2>Luxury Status, Made Visible</h2>
+        <p class="section-intro">ImRich is designed as a premium showcase app. Users build a profile, collect shop items, gain rich points, and compare their standing on seasonal leaderboards.</p>
+        <div class="grid">
+          <article class="panel">
+            <h3>Profile Vault</h3>
+            <p>Display a black-card inspired identity, owned virtual assets, and a luxury score that reflects the user's collected items.</p>
+          </article>
+          <article class="panel">
+            <h3>Shop Items</h3>
+            <p>Browse limited digital items with custom icons, rich point values, purchase states, and supply information managed by the backend.</p>
+          </article>
+          <article class="panel">
+            <h3>Season Club</h3>
+            <p>Compare profiles on a seasonal leaderboard backed by Cloudflare D1, with pull-to-refresh updates across Shop, Vault, and Club.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="store-listing">
+      <div class="shell">
+        <h2>Google Play Store Listing Copy</h2>
+        <p class="section-intro">The following copy is prepared for Google Play listing fields. The short description is written within Google's 80-character limit, and the long description is written for the Play Store's standard long description field.</p>
+        <div class="listing">
+          <article class="panel">
+            <h3>App Name</h3>
+            <div class="copy-box">ImRich</div>
+            <p class="meta">Recommended category: Lifestyle / Entertainment, depending on final store positioning.</p>
+          </article>
+          <article class="panel">
+            <h3>Short Description</h3>
+            <div class="copy-box">Collect luxury items and climb a private status leaderboard.</div>
+            <p class="meta">60 characters including spaces.</p>
+          </article>
+        </div>
+        <article class="panel" style="margin-top: 18px;">
+          <h3>Long Description</h3>
+          <div class="copy-box">ImRich is a luxury status club where your profile becomes a private showcase of virtual prestige.
+
+Build your black-and-gold identity, collect digital luxury items, grow your rich points, and compare your rank against other members on a seasonal leaderboard.
+
+Key features:
+- Premium profile card with luxury score and owned assets
+- Shop catalog with limited virtual items and custom item icons
+- Rich point values for each item
+- Seasonal leaderboard for comparing status
+- Pull-to-refresh updates for Shop, Vault, and Club
+- Gmail sign-in support for profile continuity
+- Cloud-backed profile and leaderboard data
+
+ImRich is designed for entertainment and social status display. Digital items, rich points, leaderboard rank, and profile assets are virtual app experiences only. They do not represent real money, financial assets, investment products, or real-world wealth.
+
+When Google Play in-app purchases are enabled, purchases are processed by Google Play. ImRich does not receive or store payment card details. ImRich items, rich points, leaderboard rank, and profile assets remain virtual entertainment features only.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="shell">
+        <h2>App Privacy Policy</h2>
+        <p class="section-intro">Effective date: May 24, 2026. This Privacy Policy applies to the ImRich Android app and is provided by the ImRich developer. Contact: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+
+        <div class="policy-grid">
+          <article class="panel">
+            <h3>Information We Collect</h3>
+            <ul>
+              <li>Profile information you provide or authorize, such as display name, Gmail address, Google account display name, and Google profile photo URL when you use Google Sign-In.</li>
+              <li>App profile identifiers, owned item IDs, virtual item status, rich points, leaderboard score, and season ranking.</li>
+              <li>Purchase-related product information if Google Play in-app purchases are enabled, such as product ID, purchase status, and verification result. We do not receive payment card details.</li>
+              <li>Basic technical data required to operate the app, such as network requests to the ImRich backend and local app settings stored on your device.</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>How We Use Data</h3>
+            <ul>
+              <li>To create and maintain your ImRich profile.</li>
+              <li>To show your owned virtual assets, rich points, and leaderboard position.</li>
+              <li>To sync shop items and leaderboard data between the app and backend.</li>
+              <li>To verify purchase state when Google Play in-app purchases are enabled.</li>
+              <li>To respond to support, privacy, and deletion requests.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="panel" style="margin-top: 18px;">
+          <h3>Data Practices Summary</h3>
+          <table class="data-table">
+            <tbody>
+              <tr>
+                <th>Data shared</th>
+                <td>We do not sell user data. Data may be processed by service providers needed to operate the app, including Google services and Cloudflare.</td>
+              </tr>
+              <tr>
+                <th>Encryption</th>
+                <td>Network communication uses HTTPS when the production backend is configured. Data stored in Cloudflare D1 is managed by Cloudflare infrastructure.</td>
+              </tr>
+              <tr>
+                <th>Retention</th>
+                <td>Profile, owned item, and leaderboard data are kept while your app profile is active or as needed for service operation, fraud prevention, testing, legal compliance, and dispute handling.</td>
+              </tr>
+              <tr>
+                <th>Children</th>
+                <td>ImRich is not designed for children and is not intended for users under 13. We do not knowingly collect personal data from children.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+    </section>
+
+    <section id="permissions">
+      <div class="shell">
+        <h2>Permissions and Third-Party SDKs</h2>
+        <p class="section-intro">This section lists the permissions and third-party services used by the app so users and reviewers can understand how the app works.</p>
+        <div class="grid">
+          <article class="panel">
+            <h3>Android Permission</h3>
+            <p><strong>Internet access</strong> is used to connect to the ImRich backend, load shop item icons, use Google Sign-In, refresh leaderboard data, and communicate with Google Play services when purchases are enabled.</p>
+          </article>
+          <article class="panel">
+            <h3>Third-Party SDKs</h3>
+            <ul>
+              <li>Google Sign-In / Google Play services for account sign-in.</li>
+              <li>Google Play Billing when in-app purchases are enabled.</li>
+              <li>Flutter SharedPreferences for local device storage.</li>
+              <li>Dart HTTP networking for API communication.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Backend Providers</h3>
+            <p>ImRich uses a Cloudflare Worker API and Cloudflare D1 database to store profile, shop, item ownership, season, and leaderboard information.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="delete-data">
+      <div class="shell">
+        <h2>Data Deletion and User Rights</h2>
+        <p class="section-intro">You can request deletion of your ImRich profile and associated app data at any time.</p>
+        <div class="policy-grid">
+          <article class="panel">
+            <h3>How to Request Deletion</h3>
+            <p>Open the ImRich app, go to <strong>Profile</strong>, choose <strong>Delete my data</strong>, and confirm the deletion dialog. If your profile is linked with Gmail, you may be asked to sign in again so ImRich can verify that the Google account matches the profile being deleted.</p>
+            <p>You may also email <a href="mailto:minhthang0792@gmail.com?subject=ImRich%20Account%20and%20Data%20Deletion%20Request">minhthang0792@gmail.com</a> with the subject line <strong>ImRich Account and Data Deletion Request</strong>. Include the Gmail address used in the app, or your ImRich profile ID if available.</p>
+          </article>
+          <article class="panel">
+            <h3>What We Delete</h3>
+            <ul>
+              <li>Profile identity stored by ImRich.</li>
+              <li>Gmail address, display name, and avatar URL stored in the ImRich backend.</li>
+              <li>Owned virtual items and profile item associations.</li>
+              <li>Leaderboard entries associated with your profile where technically and legally possible.</li>
+            </ul>
+          </article>
+        </div>
+        <article class="panel" style="margin-top: 18px;">
+          <h3>Processing Time and Exceptions</h3>
+          <p>In-app deletion is processed immediately when the backend request succeeds. Email deletion requests are normally reviewed within 30 days. Some records may be retained longer when required for legal compliance, fraud prevention, purchase dispute handling, security, or backup recovery. Google Play purchase history and payment data are controlled by Google and may need to be managed through your Google account or Google Play settings.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <p>ImRich - Private Status Club. This page is intended for Google Play store listing support, privacy disclosure, and account/data deletion requests.</p>
+      <p>Developer contact: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
