@@ -369,11 +369,13 @@ Key features:
 - Seasonal leaderboard for comparing status
 - Pull-to-refresh updates for Shop, Vault, and Club
 - Gmail sign-in support for profile continuity
+- Google Play in-app purchases for virtual shop items
 - Cloud-backed profile and leaderboard data
+- Show ImRich sharing for Vault and Club screenshots
 
 ImRich is designed for entertainment and social status display. Digital items, rich points, leaderboard rank, and profile assets are virtual app experiences only. They do not represent real money, financial assets, investment products, or real-world wealth.
 
-When Google Play in-app purchases are enabled, purchases are processed by Google Play. ImRich does not receive or store payment card details. ImRich items, rich points, leaderboard rank, and profile assets remain virtual entertainment features only.</div>
+In-app purchases are processed by Google Play. ImRich does not receive or store payment card details. ImRich verifies purchase tokens with Google Play before granting virtual items. ImRich items, rich points, leaderboard rank, and profile assets remain virtual entertainment features only.</div>
         </article>
       </div>
     </section>
@@ -381,7 +383,7 @@ When Google Play in-app purchases are enabled, purchases are processed by Google
     <section id="privacy">
       <div class="shell">
         <h2>App Privacy Policy</h2>
-        <p class="section-intro">Effective date: May 24, 2026. This Privacy Policy applies to the ImRich Android app and is provided by the ImRich developer. Contact: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+        <p class="section-intro">Effective date: May 26, 2026. This Privacy Policy applies to the ImRich Android app and is provided by the ImRich developer. Contact: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
 
         <div class="policy-grid">
           <article class="panel">
@@ -389,8 +391,9 @@ When Google Play in-app purchases are enabled, purchases are processed by Google
             <ul>
               <li>Profile information you provide or authorize, such as display name, Gmail address, Google account display name, and Google profile photo URL when you use Google Sign-In.</li>
               <li>App profile identifiers, owned item IDs, virtual item status, rich points, leaderboard score, and season ranking.</li>
-              <li>Purchase-related product information if Google Play in-app purchases are enabled, such as product ID, purchase status, and verification result. We do not receive payment card details.</li>
-              <li>Basic technical data required to operate the app, such as network requests to the ImRich backend and local app settings stored on your device.</li>
+              <li>Purchase-related information required to verify Google Play in-app purchases, such as product ID, purchase token, order ID when provided by Google, purchase state, acknowledgement state, verification result, and review status for limited sold-out items. We do not receive payment card details.</li>
+              <li>Shop catalog and item supply information, including item type, rarity, price label, rich points, sold count, maximum supply, and custom icon URLs.</li>
+              <li>Basic technical data required to operate the app, such as network requests to the ImRich backend, temporary files created for sharing screenshots, and local app settings stored on your device.</li>
             </ul>
           </article>
 
@@ -400,7 +403,9 @@ When Google Play in-app purchases are enabled, purchases are processed by Google
               <li>To create and maintain your ImRich profile.</li>
               <li>To show your owned virtual assets, rich points, and leaderboard position.</li>
               <li>To sync shop items and leaderboard data between the app and backend.</li>
-              <li>To verify purchase state when Google Play in-app purchases are enabled.</li>
+              <li>To verify Google Play purchase tokens before granting virtual items.</li>
+              <li>To record purchases that need manual review, such as a limited item selling out during verification.</li>
+              <li>To create shareable Vault, item, and Club rank screenshots when you choose Show ImRich.</li>
               <li>To respond to support, privacy, and deletion requests.</li>
             </ul>
           </article>
@@ -412,15 +417,15 @@ When Google Play in-app purchases are enabled, purchases are processed by Google
             <tbody>
               <tr>
                 <th>Data shared</th>
-                <td>We do not sell user data. Data may be processed by service providers needed to operate the app, including Google services and Cloudflare.</td>
+                <td>We do not sell user data. Data may be processed by service providers needed to operate the app, including Google services for sign-in and purchase verification, Google Play Billing for purchases, and Cloudflare for backend hosting and database storage. When you choose to share a screenshot, Android's system share sheet sends the image only to the app or contact you select.</td>
               </tr>
               <tr>
                 <th>Encryption</th>
-                <td>Network communication uses HTTPS when the production backend is configured. Data stored in Cloudflare D1 is managed by Cloudflare infrastructure.</td>
+                <td>Production network communication uses HTTPS. Data stored in Cloudflare D1 is managed by Cloudflare infrastructure.</td>
               </tr>
               <tr>
                 <th>Retention</th>
-                <td>Profile, owned item, and leaderboard data are kept while your app profile is active or as needed for service operation, fraud prevention, testing, legal compliance, and dispute handling.</td>
+                <td>Profile, owned item, leaderboard, and purchase verification records are kept while your app profile is active or as needed for service operation, fraud prevention, sold-out item review, legal compliance, and purchase dispute handling.</td>
               </tr>
               <tr>
                 <th>Children</th>
@@ -439,20 +444,22 @@ When Google Play in-app purchases are enabled, purchases are processed by Google
         <div class="grid">
           <article class="panel">
             <h3>Android Permission</h3>
-            <p><strong>Internet access</strong> is used to connect to the ImRich backend, load shop item icons, use Google Sign-In, refresh leaderboard data, and communicate with Google Play services when purchases are enabled.</p>
+            <p><strong>Internet access</strong> is used to connect to the ImRich backend, load shop item icons, use Google Sign-In, refresh leaderboard data, query Google Play product details, and verify purchases.</p>
           </article>
           <article class="panel">
             <h3>Third-Party SDKs</h3>
             <ul>
               <li>Google Sign-In / Google Play services for account sign-in.</li>
-              <li>Google Play Billing when in-app purchases are enabled.</li>
+              <li>Google Play Billing / Flutter in_app_purchase for in-app purchases and purchase restoration.</li>
+              <li>Share Plus for opening Android's system share sheet when you choose to share an ImRich screenshot.</li>
+              <li>Path Provider for creating temporary screenshot files inside app-managed temporary storage before sharing.</li>
               <li>Flutter SharedPreferences for local device storage.</li>
               <li>Dart HTTP networking for API communication.</li>
             </ul>
           </article>
           <article class="panel">
             <h3>Backend Providers</h3>
-            <p>ImRich uses a Cloudflare Worker API and Cloudflare D1 database to store profile, shop, item ownership, season, and leaderboard information.</p>
+            <p>ImRich uses a Cloudflare Worker API and Cloudflare D1 database to store profile, shop, item ownership, purchase verification, season, and leaderboard information. The Worker also calls the Google Play Developer API to verify purchase tokens.</p>
           </article>
         </div>
       </div>
@@ -475,12 +482,13 @@ When Google Play in-app purchases are enabled, purchases are processed by Google
               <li>Gmail address, display name, and avatar URL stored in the ImRich backend.</li>
               <li>Owned virtual items and profile item associations.</li>
               <li>Leaderboard entries associated with your profile where technically and legally possible.</li>
+              <li>App-generated temporary screenshot files stored in app-managed temporary storage may be removed by the app or operating system.</li>
             </ul>
           </article>
         </div>
         <article class="panel" style="margin-top: 18px;">
           <h3>Processing Time and Exceptions</h3>
-          <p>In-app deletion is processed immediately when the backend request succeeds. Email deletion requests are normally reviewed within 30 days. Some records may be retained longer when required for legal compliance, fraud prevention, purchase dispute handling, security, or backup recovery. Google Play purchase history and payment data are controlled by Google and may need to be managed through your Google account or Google Play settings.</p>
+          <p>In-app deletion is processed immediately when the backend request succeeds. Email deletion requests are normally reviewed within 30 days. Some purchase verification records, order references, and review records may be retained longer when required for legal compliance, fraud prevention, purchase dispute handling, sold-out item review, security, or backup recovery. Google Play purchase history and payment data are controlled by Google and may need to be managed through your Google account or Google Play settings.</p>
         </article>
       </div>
     </section>
