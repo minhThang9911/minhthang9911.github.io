@@ -295,7 +295,7 @@
       <article class="card half">
         <h2>Short Description</h2>
         <div class="description-box">
-          Design colorful QR codes and barcodes, save or share them, and scan codes instantly.
+          Create colorful QR codes and barcodes, then scan from camera or gallery.
         </div>
         <p class="small">Recommended for Google Play short description: concise, clear, and under 80 characters.</p>
       </article>
@@ -303,7 +303,7 @@
       <article class="card half">
         <h2>App Overview</h2>
         <p>
-          QR Create &amp; Scan helps you turn links, text, WiFi credentials, email details, and phone numbers into creative QR designs. Customize colors, shapes, captions, logos, and backgrounds, then save or share your design as an image. The app also includes a camera scanner for QR codes and barcodes.
+          QR Create &amp; Scan helps you turn links, text, WiFi credentials, email details, and phone numbers into creative QR designs. Customize colors, shapes, captions, logos, backgrounds, frames, and canvas sizes, then save or share your design as an image. Save local drafts, restore recent exports, and scan QR codes or barcodes from the camera or an image selected from your device.
         </p>
       </article>
 
@@ -314,7 +314,7 @@
             Create QR codes that look fun, bright, and personal. QR Create &amp; Scan is a creative QR and barcode studio for links, text, WiFi, email, phone numbers, and more.
           </p>
           <p>
-            Customize your QR code with colorful styles, shapes, captions, logos, and image backgrounds. Export your design to your gallery, share it with friends or customers, and use the built-in scanner to read QR codes and barcodes from the camera.
+            Customize your QR code with colorful styles, shapes, captions, draggable labels, adjustable logos, image backgrounds, frames, and export templates. Export your design to your gallery, share it with friends or customers, save local drafts for later editing, and use the built-in scanner to read QR codes and barcodes from your camera or an image selected from your device.
           </p>
           <p>
             Features:
@@ -322,10 +322,13 @@
           <ul class="list">
             <li>Create QR codes for links, text, WiFi, email, and phone numbers.</li>
             <li>Create Code 128 and EAN-13 barcodes.</li>
-            <li>Customize QR colors, shapes, accent borders, captions, logos, and backgrounds.</li>
-            <li>Save QR artwork to your device gallery.</li>
+            <li>Customize QR colors, shapes, accent borders, captions, labels, logos, frames, canvas sizes, and backgrounds.</li>
+            <li>Drag QR, caption, label, and logo layers directly on the canvas.</li>
+            <li>Save local drafts, automatically restore your active design, and reopen recent export history.</li>
+            <li>Export QR artwork as PNG or JPG images, including optional transparent PNG backgrounds.</li>
             <li>Share generated QR designs as images.</li>
-            <li>Scan QR codes and barcodes with your camera.</li>
+            <li>Scan QR codes and barcodes with your camera or from an image selected from your device.</li>
+            <li>Paste clipboard text into the active content field or clear content fields quickly.</li>
             <li>Remove ads with a one-time in-app purchase.</li>
           </ul>
           <p>
@@ -339,7 +342,7 @@
       <article class="card callout">
         <h2>Privacy Policy</h2>
         <p>
-          Effective date: May 29, 2026
+          Effective date: May 31, 2026
         </p>
         <p>
           This Privacy Policy explains how QR Create &amp; Scan accesses, collects, uses, shares, and protects data. It is intended to support Google Play privacy policy and Data Safety disclosures. Google Play requires developers to clearly disclose how apps and third-party SDKs collect, use, and share user data, and developers remain responsible for accurate Data Safety declarations.
@@ -380,7 +383,7 @@
               </tr>
               <tr>
                 <td>Generated QR/barcode images</td>
-                <td>To preview, save to gallery, or share as an image.</td>
+                <td>To preview, save to gallery, share as an image, or create a compact local thumbnail for Drafts and History.</td>
                 <td>No custom developer server collection.</td>
                 <td>Only shared when you choose Android's share function or save/export to device storage/gallery.</td>
               </tr>
@@ -392,9 +395,21 @@
               </tr>
               <tr>
                 <td>Images selected from gallery</td>
-                <td>To add a logo or background to QR artwork.</td>
+                <td>To add a logo or background to QR artwork, or to scan a QR code or barcode from an image you select.</td>
                 <td>No custom developer server collection.</td>
-                <td>No direct sharing by the developer unless you export or share the final design.</td>
+                <td>No direct sharing by the developer. Selected images are processed locally unless you intentionally export or share a final design that includes them.</td>
+              </tr>
+              <tr>
+                <td>Clipboard text</td>
+                <td>To paste text into the active QR content field only when you press the Paste button.</td>
+                <td>No custom developer server collection.</td>
+                <td>No direct sharing by the developer. Clipboard content is processed locally and is not read unless you request Paste.</td>
+              </tr>
+              <tr>
+                <td>Local drafts, autosave snapshots, export history, and thumbnail paths</td>
+                <td>To restore your active design, reopen saved drafts, and reopen recent exported designs for editing.</td>
+                <td>No custom developer server collection.</td>
+                <td>No direct sharing by the developer unless you intentionally export or share a generated image.</td>
               </tr>
               <tr>
                 <td>Advertising identifiers, app/device information, approximate technical signals</td>
@@ -409,9 +424,9 @@
                 <td>Processed by Google Play Billing. A local purchase state may be stored on device for app behavior.</td>
               </tr>
             </tbody>
-          </table>
-        </div>
-      </article>
+        </table>
+      </div>
+    </article>
 
       <article class="card">
         <h2>Permissions Requested</h2>
@@ -433,11 +448,11 @@
               </tr>
               <tr>
                 <td><code>READ_MEDIA_IMAGES</code></td>
-                <td>Used on newer Android versions to choose images for QR logos or backgrounds.</td>
+                <td>Used on newer Android versions to choose images for QR logos, backgrounds, or scan-from-image when required by the device picker flow.</td>
               </tr>
               <tr>
                 <td><code>READ_EXTERNAL_STORAGE</code></td>
-                <td>Used on older Android versions to choose images from device storage.</td>
+                <td>Used on older Android versions to choose images from device storage for logos, backgrounds, or scan-from-image.</td>
               </tr>
               <tr>
                 <td><code>WRITE_EXTERNAL_STORAGE</code> with <code>maxSdkVersion="29"</code></td>
@@ -458,6 +473,7 @@
             </tbody>
           </table>
         </div>
+        <p class="muted">Clipboard Paste does not require an Android permission. The app reads clipboard text only after you press Paste. On supported Android versions, the system image picker can grant access only to the image you select.</p>
       </article>
 
       <article class="card">
@@ -468,7 +484,9 @@
         <ul class="list">
           <li><strong>Google Mobile Ads / AdMob:</strong> used to show banner, interstitial, and rewarded ads. This SDK may collect advertising identifiers, device identifiers, app activity, diagnostics, and other signals for ad delivery, fraud prevention, analytics, and measurement.</li>
           <li><strong>Google Play Billing:</strong> used to process the non-consumable Remove Ads purchase with product ID <code>remove_ads</code>.</li>
-          <li><strong>Mobile Scanner / ML Kit-related barcode scanning components:</strong> used to detect QR codes and barcodes from camera frames.</li>
+          <li><strong>Mobile Scanner / ML Kit-related barcode scanning components:</strong> used to detect QR codes and barcodes from camera frames or from an image you select for scanning.</li>
+          <li><strong>Image Picker:</strong> used to open the Android system picker when you choose a logo, a background image, or an image to scan.</li>
+          <li><strong>Shared Preferences and app documents storage:</strong> used for local autosave, Drafts, export History metadata, thumbnail paths, and app behavior settings.</li>
           <li><strong>Android system share sheet and gallery/media APIs:</strong> used when you choose to share or save generated QR artwork.</li>
         </ul>
         <p>
@@ -480,8 +498,10 @@
         <h2>How Data Is Used</h2>
         <ul class="list">
           <li>To generate QR codes and barcodes from content you enter.</li>
-          <li>To render, save, and share QR artwork.</li>
-          <li>To scan QR codes and barcodes using your camera.</li>
+          <li>To render, save, and share QR artwork in your selected export format.</li>
+          <li>To save local drafts, autosave your active design, and restore recent export history.</li>
+          <li>To scan QR codes and barcodes using your camera or an image you select.</li>
+          <li>To paste clipboard text into an active content field when you explicitly press Paste.</li>
           <li>To show ads to users who have not purchased Remove Ads.</li>
           <li>To process and restore the Remove Ads purchase.</li>
           <li>To diagnose crashes, prevent abuse, and maintain app functionality through platform and SDK services.</li>
@@ -495,6 +515,7 @@
         </p>
         <ul class="list">
           <li>When you intentionally share exported QR artwork through Android's share sheet.</li>
+          <li>When you save generated QR artwork to your device gallery.</li>
           <li>When Google Mobile Ads processes data for advertising and measurement.</li>
           <li>When Google Play Billing processes purchase transactions.</li>
           <li>When required by law, regulation, platform policy, or to protect rights and security.</li>
@@ -504,7 +525,10 @@
       <article class="card half">
         <h2>Local Storage and Retention</h2>
         <p>
-          QR content, selected images, and generated artwork are primarily handled on your device. Exported images remain in your gallery until you delete them. Temporary export files may be stored in app cache or temporary directories and may be removed by the operating system or when app data is cleared.
+          QR content, selected images, clipboard text pasted at your request, and generated artwork are primarily handled on your device. Exported images remain in your gallery until you delete them. Temporary export files may be stored in app cache or temporary directories and may be removed by the operating system or when app data is cleared.
+        </p>
+        <p>
+          The app stores local autosave snapshots, Drafts, and recent export History metadata using app-local storage. Compact thumbnail images for Drafts and History may be stored in the app documents directory. The app limits retained local history and cleans thumbnail files that are no longer referenced. This information remains on your device until you delete it, clear app storage, or uninstall the app.
         </p>
         <p>
           The app may store a local Remove Ads state to keep ads hidden after a successful purchase. Google Play Billing may also provide purchase restoration information through Google Play services.
@@ -518,6 +542,8 @@
         </p>
         <ul class="list">
           <li>Deleting exported QR images from your device gallery.</li>
+          <li>Deleting individual Drafts or History items inside the app.</li>
+          <li>Clearing export History inside the app.</li>
           <li>Clearing the app cache or app storage in Android Settings.</li>
           <li>Uninstalling the app from your device.</li>
           <li>Contacting the developer at <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a> for privacy-related questions.</li>
