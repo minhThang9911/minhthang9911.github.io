@@ -447,16 +447,8 @@
                 <td>Used for QR and barcode scanning. The camera is opened only when using the Scan feature.</td>
               </tr>
               <tr>
-                <td><code>READ_MEDIA_IMAGES</code></td>
-                <td>Used on newer Android versions to choose images for QR logos, backgrounds, or scan-from-image when required by the device picker flow.</td>
-              </tr>
-              <tr>
-                <td><code>READ_EXTERNAL_STORAGE</code></td>
-                <td>Used on older Android versions to choose images from device storage for logos, backgrounds, or scan-from-image.</td>
-              </tr>
-              <tr>
-                <td><code>WRITE_EXTERNAL_STORAGE</code> with <code>maxSdkVersion="29"</code></td>
-                <td>Used on older Android versions to save exported QR artwork to the device gallery.</td>
+                <td><code>WRITE_EXTERNAL_STORAGE</code> with <code>maxSdkVersion="28"</code></td>
+                <td>Used only on Android 8.1 and below to save exported QR artwork to the device gallery.</td>
               </tr>
               <tr>
                 <td><code>INTERNET</code> and network state permissions</td>
@@ -473,7 +465,7 @@
             </tbody>
           </table>
         </div>
-        <p class="muted">Clipboard Paste does not require an Android permission. The app reads clipboard text only after you press Paste. On supported Android versions, the system image picker can grant access only to the image you select.</p>
+        <p class="muted">The app does not request <code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code>, or <code>READ_EXTERNAL_STORAGE</code>. Clipboard Paste does not require an Android permission, and the app reads clipboard text only after you press Paste. The Android system image picker grants access only to the image you select for a logo, background, or scan-from-image action.</p>
       </article>
 
       <article class="card">
