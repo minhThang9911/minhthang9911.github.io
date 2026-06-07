@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chính sách quyền riêng tư - Luật giao thông</title>
+  <meta name="description" content="Chính sách quyền riêng tư, mô tả ngắn và mô tả đầy đủ cho ứng dụng Luật giao thông.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7f8;
+      --surface: #ffffff;
+      --surface-soft: #eef7f4;
+      --ink: #17211f;
+      --muted: #5c6b66;
+      --line: #d8e2de;
+      --brand: #087a64;
+      --brand-dark: #075646;
+      --accent: #d9932f;
+      --danger: #a94438;
+      --shadow: 0 18px 45px rgba(13, 49, 42, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--brand-dark);
+      font-weight: 700;
+    }
+
+    .page {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .hero {
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-graphic {
+      width: 100%;
+      aspect-ratio: 1024 / 500;
+      object-fit: cover;
+      background: #0b705e;
+    }
+
+    .hero-body {
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 28px;
+    }
+
+    .app-icon {
+      width: 108px;
+      height: 108px;
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-top: 36px;
+      padding-top: 8px;
+      font-size: 26px;
+    }
+
+    h3 {
+      margin-top: 24px;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 12px 0 0;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+    }
+
+    .card {
+      margin-top: 22px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .notice {
+      border-left: 5px solid var(--accent);
+      background: #fff8ed;
+    }
+
+    .privacy {
+      border-left: 5px solid var(--brand);
+      background: var(--surface-soft);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .description-box {
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 12px;
+      background: #f9fbfb;
+      border: 1px solid var(--line);
+      white-space: pre-line;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 14px;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #ecf5f2;
+      color: var(--brand-dark);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 20px, 1040px);
+        padding-top: 16px;
+      }
+
+      .hero-body {
+        grid-template-columns: 78px 1fr;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .app-icon {
+        width: 78px;
+        height: 78px;
+        border-radius: 18px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        border-bottom: 0;
+        padding: 10px 12px;
+      }
+
+      td::before {
+        display: block;
+        margin-bottom: 2px;
+        color: var(--brand-dark);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      td:nth-child(1)::before { content: "Mục"; }
+      td:nth-child(2)::before { content: "Mục đích"; }
+      td:nth-child(3)::before { content: "Thông tin thêm"; }
+
+      tr {
+        border-bottom: 1px solid var(--line);
+      }
+
+      tr:last-child {
+        border-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Luật giao thông">
+      <img class="hero-graphic" src="feature_graphic.png" alt="Banner ứng dụng Luật giao thông">
+      <div class="hero-body">
+        <img class="app-icon" src="icon_fullsize.png" alt="Biểu tượng ứng dụng Luật giao thông">
+        <div>
+          <h1>Luật giao thông</h1>
+          <p class="lead">Trang thông tin ứng dụng, mô tả Google Play và chính sách quyền riêng tư.</p>
+          <div class="meta">
+            <span class="pill">Hoạt động offline</span>
+            <span class="pill">Có quảng cáo AdMob</span>
+            <span class="pill">Có mua trong ứng dụng</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Giới thiệu ứng dụng</h2>
+      <p><strong>Luật giao thông</strong> là ứng dụng tra cứu thông tin giao thông đường bộ tại Việt Nam, tập trung vào việc giúp người dùng tìm nhanh quy định, nhóm lỗi vi phạm, mức phạt tham khảo và hệ thống biển báo giao thông.</p>
+      <p>Ứng dụng được thiết kế để sử dụng ngoại tuyến. Dữ liệu tra cứu được đóng gói sẵn trong phiên bản ứng dụng, vì vậy người dùng có thể sử dụng các chức năng chính mà không cần kết nối Internet. Khi có cập nhật dữ liệu, người dùng cần nâng cấp lên phiên bản ứng dụng mới trên Google Play.</p>
+    </section>
+
+    <section class="card">
+      <h2>Short description cho Google Play</h2>
+      <div class="description-box">Tra cứu luật giao thông, mức phạt và biển báo offline.</div>
+    </section>
+
+    <section class="card">
+      <h2>Long description cho Google Play</h2>
+      <div class="description-box">Luật giao thông giúp bạn tra cứu nhanh các quy định giao thông đường bộ tại Việt Nam, mức phạt tham khảo theo nhóm hành vi và hệ thống biển báo thường gặp ngay trên điện thoại.
+
+Điểm nổi bật:
+• Tra cứu offline, không cần Internet cho dữ liệu chính.
+• Tìm kiếm lỗi vi phạm và mức phạt theo từ khóa.
+• Lọc nhanh theo phương tiện như ô tô, xe máy và các nhóm liên quan.
+• Xem chi tiết lỗi, quy định áp dụng và nội dung cần lưu ý.
+• Tra cứu biển báo giao thông bằng hình ảnh minh họa.
+• Lưu mục quan tâm để xem lại nhanh.
+• Tùy chỉnh giao diện sáng, tối hoặc theo hệ thống.
+• Tăng giảm cỡ chữ để đọc thoải mái hơn.
+• Có tùy chọn mua trong ứng dụng để tắt quảng cáo.
+
+Ứng dụng phù hợp với người tham gia giao thông, người học luật giao thông và người cần một công cụ tra cứu nhanh trên thiết bị di động.
+
+Lưu ý: Luật giao thông không phải ứng dụng chính thức của cơ quan nhà nước. Nội dung trong ứng dụng chỉ phục vụ mục đích tham khảo, hỗ trợ tra cứu và có thể được biên tập/rút gọn để dễ sử dụng trên điện thoại. Khi cần áp dụng trong tình huống pháp lý cụ thể, người dùng nên kiểm tra văn bản pháp luật chính thức hoặc hỏi cơ quan có thẩm quyền.</div>
+    </section>
+
+    <section class="card privacy">
+      <h2>App privacy policy</h2>
+      <p><strong>Ngày hiệu lực:</strong> 07/06/2026</p>
+      <p>Chính sách quyền riêng tư này áp dụng cho ứng dụng <strong>Luật giao thông</strong>, tên gói Android <strong>luat.giao.thong</strong>.</p>
+      <p><strong>Liên hệ nhà phát triển:</strong> <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+
+      <h3>1. Dữ liệu ứng dụng tự thu thập</h3>
+      <p>Ứng dụng không yêu cầu tạo tài khoản, không yêu cầu đăng nhập và không yêu cầu người dùng gửi thông tin cá nhân như họ tên, số điện thoại, địa chỉ, giấy tờ tùy thân hoặc vị trí chính xác.</p>
+      <p>Các dữ liệu như cài đặt giao diện, cỡ chữ, mục đã lưu, trạng thái tắt quảng cáo và dữ liệu tra cứu được lưu cục bộ trên thiết bị. Nhà phát triển không vận hành máy chủ để nhận, lưu trữ hoặc phân tích dữ liệu cá nhân của người dùng từ ứng dụng.</p>
+
+      <h3>2. Dữ liệu có thể được xử lý bởi SDK bên thứ ba</h3>
+      <p>Ứng dụng có tích hợp SDK bên thứ ba để hiển thị quảng cáo và xử lý mua trong ứng dụng. Các SDK này có thể thu thập hoặc xử lý một số dữ liệu kỹ thuật theo chính sách riêng của nhà cung cấp.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>SDK / Dịch vụ</th>
+            <th>Mục đích sử dụng</th>
+            <th>Dữ liệu có thể được xử lý</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google Mobile Ads SDK / Google AdMob</td>
+            <td>Hiển thị quảng cáo banner và quảng cáo native trong ứng dụng.</td>
+            <td>Có thể xử lý Advertising ID, địa chỉ IP, thông tin thiết bị, thông tin ứng dụng, sự kiện hiển thị/tương tác quảng cáo, dữ liệu chẩn đoán và dữ liệu chống gian lận theo chính sách của Google.</td>
+          </tr>
+          <tr>
+            <td>Google Play Billing / In-app Purchase</td>
+            <td>Xử lý giao dịch mua trong ứng dụng với mã sản phẩm <strong>remove_ads</strong> để tắt quảng cáo.</td>
+            <td>Có thể xử lý trạng thái giao dịch, mã sản phẩm, mã giao dịch, purchase token và thông tin tài khoản Google Play cần thiết cho việc thanh toán. Ứng dụng không nhận hoặc lưu số thẻ, tài khoản ngân hàng hay thông tin thanh toán đầy đủ.</td>
+          </tr>
+          <tr>
+            <td>SQLite cục bộ trên thiết bị</td>
+            <td>Lưu dữ liệu tra cứu offline và cài đặt sử dụng trong ứng dụng.</td>
+            <td>Dữ liệu được lưu trên thiết bị, bao gồm cấu hình giao diện, cỡ chữ, mục đã lưu và trạng thái tắt quảng cáo. Dữ liệu này không được gửi về máy chủ của nhà phát triển.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>3. Các quyền Android ứng dụng sử dụng</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Quyền</th>
+            <th>Mục đích</th>
+            <th>Thông tin thêm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>INTERNET</td>
+            <td>Kết nối đến dịch vụ quảng cáo AdMob và dịch vụ Google Play liên quan đến mua trong ứng dụng.</td>
+            <td>Dữ liệu tra cứu chính của ứng dụng vẫn hoạt động offline.</td>
+          </tr>
+          <tr>
+            <td>com.google.android.gms.permission.AD_ID</td>
+            <td>Cho phép Google Mobile Ads SDK sử dụng Android Advertising ID cho quảng cáo, đo lường và chống gian lận nếu thiết bị hỗ trợ và chính sách Google Play yêu cầu.</td>
+            <td>Quyền này có thể được thêm bởi SDK Google trong manifest khi build ứng dụng.</td>
+          </tr>
+          <tr>
+            <td>com.android.vending.BILLING</td>
+            <td>Cho phép xử lý mua trong ứng dụng thông qua Google Play Billing cho tính năng tắt quảng cáo.</td>
+            <td>Quyền này có thể được thêm bởi thư viện Google Play Billing.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Ứng dụng không yêu cầu các quyền nhạy cảm như vị trí, camera, microphone, danh bạ, lịch, SMS, nhật ký cuộc gọi hoặc truy cập tệp cá nhân của người dùng.</p>
+
+      <h3>4. Mục đích sử dụng dữ liệu</h3>
+      <ul>
+        <li>Cung cấp chức năng tra cứu dữ liệu giao thông offline.</li>
+        <li>Lưu tùy chọn cá nhân trên thiết bị như giao diện, cỡ chữ và mục đã lưu.</li>
+        <li>Hiển thị quảng cáo trong phiên bản miễn phí.</li>
+        <li>Xác nhận trạng thái mua trong ứng dụng để tắt quảng cáo khi người dùng mua hoặc khôi phục giao dịch.</li>
+        <li>Hỗ trợ bảo mật, đo lường, chống gian lận và vận hành dịch vụ theo cơ chế của Google AdMob và Google Play Billing.</li>
+      </ul>
+
+      <h3>5. Chia sẻ dữ liệu</h3>
+      <p>Nhà phát triển không bán dữ liệu cá nhân của người dùng và không chia sẻ dữ liệu cá nhân với bên thứ ba cho mục đích riêng của nhà phát triển.</p>
+      <p>Dữ liệu kỹ thuật liên quan đến quảng cáo và mua trong ứng dụng có thể được xử lý bởi Google thông qua Google Mobile Ads SDK, Google AdMob, Google Play services và Google Play Billing. Việc xử lý này tuân theo chính sách của Google và cài đặt tài khoản Google/thiết bị của người dùng.</p>
+
+      <h3>6. Lưu trữ và bảo mật dữ liệu</h3>
+      <p>Dữ liệu cục bộ của ứng dụng được lưu trên thiết bị của người dùng. Nhà phát triển không có quyền truy cập trực tiếp vào dữ liệu cục bộ này. Người dùng nên bảo vệ thiết bị bằng các biện pháp bảo mật phù hợp như khóa màn hình, cập nhật hệ điều hành và chỉ cài đặt ứng dụng từ nguồn tin cậy.</p>
+
+      <h3>7. Xóa dữ liệu</h3>
+      <ul>
+        <li>Người dùng có thể xóa dữ liệu cục bộ bằng cách gỡ cài đặt ứng dụng hoặc vào phần cài đặt Android của ứng dụng và chọn xóa dữ liệu.</li>
+        <li>Mục đã lưu, tùy chọn giao diện, cỡ chữ và trạng thái cục bộ sẽ bị xóa khỏi thiết bị khi dữ liệu ứng dụng bị xóa.</li>
+        <li>Giao dịch mua <strong>remove_ads</strong> được quản lý bởi Google Play. Khi cài lại ứng dụng, người dùng có thể dùng chức năng khôi phục mua hàng nếu Google Play vẫn ghi nhận giao dịch hợp lệ.</li>
+        <li>Đối với dữ liệu do Google xử lý, người dùng có thể quản lý hoặc yêu cầu xóa theo công cụ và chính sách tài khoản Google.</li>
+        <li>Nếu cần hỗ trợ liên quan đến dữ liệu, vui lòng liên hệ <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</li>
+      </ul>
+
+      <h3>8. Trẻ em</h3>
+      <p>Ứng dụng không được thiết kế dành riêng cho trẻ em dưới 13 tuổi. Nội dung ứng dụng hướng đến người tham gia giao thông, người học và người cần tra cứu thông tin giao thông. Nhà phát triển không cố ý thu thập thông tin cá nhân từ trẻ em.</p>
+
+      <h3>9. Tính chính xác của nội dung pháp luật</h3>
+      <p>Ứng dụng cung cấp thông tin để tham khảo và hỗ trợ tra cứu. Ứng dụng không thay thế tư vấn pháp lý, không phải văn bản pháp luật chính thức và không phải kênh thông tin chính thức của cơ quan nhà nước. Người dùng nên đối chiếu với văn bản pháp luật chính thức hoặc cơ quan có thẩm quyền trước khi đưa ra quyết định trong tình huống cụ thể.</p>
+
+      <h3>10. Thay đổi chính sách</h3>
+      <p>Chính sách này có thể được cập nhật khi ứng dụng thay đổi tính năng, SDK, quyền truy cập hoặc yêu cầu pháp lý. Phiên bản mới sẽ được công bố tại trang này và có hiệu lực từ ngày được ghi trong chính sách.</p>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 Luật giao thông. Liên hệ: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+    </footer>
+  </main>
+</body>
+</html>
