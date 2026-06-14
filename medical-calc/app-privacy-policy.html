@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Calc - Máy tính y khoa offline</title>
+  <meta name="description" content="Medical Calc là ứng dụng máy tính y khoa offline bằng tiếng Việt cho nhân viên y tế, có 50 calculator, công thức, diễn giải và tài liệu tham khảo.">
+  <style>
+    :root {
+      --teal: #126c72;
+      --blue: #2f80ed;
+      --mint: #d9f3ee;
+      --ink: #102a43;
+      --muted: #52616b;
+      --line: #d6e6e4;
+      --soft: #f8fbfa;
+      --panel: #ffffff;
+      --warning: #8a5a00;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f8fbfa 0%, #eaf2ff 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--teal);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: #eef8f6;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(8, 38, 48, 0.82) 0%, rgba(8, 38, 48, 0.48) 42%, rgba(8, 38, 48, 0.08) 100%);
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.02);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 54px 0 76px;
+      color: #fff;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 16px 10px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .app-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+    }
+
+    .badge-text {
+      display: grid;
+      gap: 1px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .badge-text span {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 28px 0 18px;
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: clamp(20px, 2.5vw, 28px);
+      line-height: 1.42;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--teal);
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.14);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      box-shadow: none;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 62px 0 86px;
+    }
+
+    section {
+      margin: 0 0 54px;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.24;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 16px 34px rgba(16, 42, 67, 0.06);
+    }
+
+    .metric {
+      color: var(--teal);
+      font-size: 38px;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .metric-label {
+      margin-top: 8px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .description-box {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+    }
+
+    .play-field {
+      border-left: 4px solid var(--teal);
+    }
+
+    .char-note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 14px 0 0;
+      padding-left: 20px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .table {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .row:first-child {
+      border-top: 0;
+    }
+
+    .row strong,
+    .row span {
+      padding: 14px 16px;
+    }
+
+    .row strong {
+      background: #eef8f6;
+      color: var(--teal);
+    }
+
+    .notice {
+      border-color: rgba(138, 90, 0, 0.22);
+      background: #fff8e8;
+      color: #3f2d0a;
+    }
+
+    .source-list {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero::after {
+        background: linear-gradient(180deg, rgba(8, 38, 48, 0.78) 0%, rgba(8, 38, 48, 0.48) 58%, rgba(8, 38, 48, 0.12) 100%);
+      }
+
+      .hero-image {
+        object-position: 62% center;
+      }
+
+      .grid,
+      .description-box,
+      .privacy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <img class="hero-image" src="feature_graphic_1024x500.png" alt="Medical Calc feature graphic">
+      <div class="hero-content">
+        <div class="app-badge" aria-label="Medical Calc">
+          <img class="app-icon" src="launcher_icon_1024.png" alt="Biểu tượng ứng dụng Medical Calc">
+          <div class="badge-text">
+            Medical Calc
+            <span>Máy tính y khoa offline</span>
+          </div>
+        </div>
+        <h1>50 máy tính y khoa bằng tiếng Việt</h1>
+        <p class="hero-copy">Công thức, diễn giải và tài liệu tham khảo được đóng gói sẵn trong app để tra cứu nhanh; quảng cáo và mua gói tắt quảng cáo dùng dịch vụ Google.</p>
+        <div class="hero-actions">
+          <a class="button" href="#playstore">Nội dung Play Store</a>
+          <a class="button secondary" href="#privacy">Chính sách riêng tư</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="intro">
+        <div class="section-head">
+          <h2>Giới thiệu app</h2>
+          <p class="lead">Medical Calc là ứng dụng tham khảo y khoa dành cho nhân viên y tế và người học y khoa. Ứng dụng giúp tra cứu, tính toán và xem diễn giải các công thức lâm sàng thường dùng ngay trên thiết bị.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="metric">50</div>
+            <div class="metric-label">calculator trong bản phát hành đầu tiên</div>
+          </div>
+          <div class="card">
+            <div class="metric">Ads</div>
+            <div class="metric-label">banner AdMob, có gói remove_ads để tắt quảng cáo</div>
+          </div>
+          <div class="card">
+            <div class="metric">Offline</div>
+            <div class="metric-label">công thức, diễn giải và nguồn tham khảo nằm trong app</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="playstore">
+        <div class="section-head">
+          <h2>Nội dung Google Play Store</h2>
+          <p class="lead">Các phần dưới đây được viết theo cấu trúc phổ biến của Play Console: tên app, mô tả ngắn và mô tả đầy đủ.</p>
+        </div>
+
+        <div class="description-box">
+          <article class="card play-field">
+            <h3>Tên ứng dụng</h3>
+            <p>Medical Calc</p>
+            <h3>Mô tả ngắn</h3>
+            <p>Máy tính y khoa offline bằng tiếng Việt cho nhân viên y tế.</p>
+            <p class="char-note">Mô tả ngắn dưới 80 ký tự, phù hợp trường Short description của Google Play.</p>
+          </article>
+
+          <article class="card play-field">
+            <h3>Mô tả đầy đủ</h3>
+            <p>Medical Calc là ứng dụng máy tính y khoa offline bằng tiếng Việt, được thiết kế để hỗ trợ nhân viên y tế tra cứu và tính nhanh các công thức lâm sàng thường dùng.</p>
+            <p>Bản phát hành đầu tiên gồm 50 calculator, bao phủ các nhóm như cấp cứu, hồi sức, tim mạch, hô hấp, thận - tiết niệu, tiêu hóa - gan mật, huyết học, thần kinh, nhi khoa, sản phụ khoa và nội tổng quát.</p>
+            <ul>
+              <li>Tra cứu calculator theo tên, viết tắt, chuyên khoa và từ khóa.</li>
+              <li>Tính toán công thức ngay trên thiết bị.</li>
+              <li>Lưu calculator yêu thích.</li>
+              <li>Lưu lịch sử tính trên thiết bị nếu người dùng bật tính năng này.</li>
+              <li>Hiển thị diễn giải, công thức và tài liệu tham khảo cho từng calculator.</li>
+              <li>Không yêu cầu tài khoản.</li>
+              <li>Không gửi dữ liệu bệnh nhân lên máy chủ.</li>
+              <li>Có quảng cáo banner Google AdMob; có mua trong ứng dụng remove_ads để tắt quảng cáo.</li>
+            </ul>
+            <p><strong>Lưu ý y khoa:</strong> Medical Calc chỉ là công cụ hỗ trợ tham khảo. Kết quả tính toán không thay thế đánh giá lâm sàng, chẩn đoán, điều trị, guideline nội bộ, ý kiến chuyên khoa hoặc trách nhiệm của nhân viên y tế. Người dùng cần tự xác minh đơn vị, ngưỡng diễn giải, bối cảnh lâm sàng và tính phù hợp trước khi áp dụng.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="privacy">
+        <div class="section-head">
+          <h2>App Privacy Policy</h2>
+          <p class="lead">Chính sách này áp dụng cho ứng dụng Medical Calc phát hành trên Google Play. Email liên hệ nhà phát triển: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+        </div>
+
+        <div class="privacy-grid">
+          <article class="card">
+            <h3>Tóm tắt quyền riêng tư</h3>
+            <p>Medical Calc là ứng dụng máy tính y khoa tiếng Việt. Nội dung công thức được đóng gói trong app; quảng cáo Google AdMob và mua hàng Google Play Billing cần kết nối mạng.</p>
+            <p>Ứng dụng không yêu cầu tài khoản, không có máy chủ riêng để nhận dữ liệu người dùng, không bán dữ liệu cá nhân và không yêu cầu người dùng nhập thông tin định danh bệnh nhân.</p>
+            <p>Người dùng không nên nhập tên, số hồ sơ, số điện thoại, địa chỉ hoặc bất kỳ thông tin định danh bệnh nhân nào vào lịch sử tính.</p>
+          </article>
+
+          <article class="card notice">
+            <h3>Lưu ý y khoa</h3>
+            <p>Medical Calc chỉ dùng để tham khảo lâm sàng. Ứng dụng không cung cấp chẩn đoán, không thay thế bác sĩ, không thay thế phác đồ điều trị và không tự động quyết định chăm sóc người bệnh.</p>
+          </article>
+        </div>
+
+        <h3>Quyền ứng dụng và SDK bên thứ ba</h3>
+        <div class="table" role="table" aria-label="Quyền ứng dụng và SDK">
+          <div class="row" role="row">
+            <strong role="cell">Quyền Android trong bản release</strong>
+            <span role="cell">Khai báo quyền mạng, quảng cáo, billing và một số quyền do Google/AndroidX SDK merge vào manifest. Không yêu cầu vị trí, camera, microphone, danh bạ, bộ nhớ ngoài, Bluetooth, SMS, điện thoại hoặc quyền nhạy cảm khác.</span>
+          </div>
+          <div class="row" role="row">
+            <strong role="cell">Quyền cụ thể</strong>
+            <span role="cell"><code>android.permission.INTERNET</code>, <code>android.permission.ACCESS_NETWORK_STATE</code>, <code>com.google.android.gms.permission.AD_ID</code>, <code>android.permission.ACCESS_ADSERVICES_AD_ID</code>, <code>android.permission.ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>android.permission.ACCESS_ADSERVICES_TOPICS</code>, <code>com.android.vending.BILLING</code>, <code>android.permission.WAKE_LOCK</code>, <code>android.permission.FOREGROUND_SERVICE</code>, <code>vn.mtco.mcalc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>.</span>
+          </div>
+          <div class="row" role="row">
+            <strong role="cell">SDK bên thứ ba</strong>
+            <span role="cell">Ứng dụng dùng Flutter SDK, shared_preferences, Google Mobile Ads SDK / AdMob và Google Play Billing / in_app_purchase. Không tích hợp Firebase Analytics, Google Analytics, Facebook SDK hoặc SDK theo dõi độc lập khác.</span>
+          </div>
+          <div class="row" role="row">
+            <strong role="cell">Tài khoản</strong>
+            <span role="cell">Không yêu cầu đăng nhập, không tạo tài khoản và không thu thập thông tin xác thực.</span>
+          </div>
+        </div>
+
+        <h3>Dữ liệu được lưu trên thiết bị</h3>
+        <div class="table" role="table" aria-label="Dữ liệu cục bộ">
+          <div class="row" role="row">
+            <strong role="cell">Calculator yêu thích</strong>
+            <span role="cell">Lưu cục bộ để người dùng mở nhanh các công cụ thường dùng.</span>
+          </div>
+          <div class="row" role="row">
+            <strong role="cell">Lịch sử phép tính</strong>
+            <span role="cell">Lưu cục bộ nếu người dùng bật tính năng lưu lịch sử. Dữ liệu này dùng cho chức năng xem lại trong app.</span>
+          </div>
+          <div class="row" role="row">
+            <strong role="cell">Tùy chọn cài đặt</strong>
+            <span role="cell">Lưu cục bộ các tùy chọn như bật/tắt lịch sử tính và trạng thái đã mua remove_ads.</span>
+          </div>
+        </div>
+
+        <h3>Dữ liệu, quảng cáo và thanh toán</h3>
+        <div class="card">
+          <ul>
+            <li>Không chủ động thu thập tên, email, số điện thoại, tài khoản người dùng hoặc thông tin định danh bệnh nhân.</li>
+            <li>Không thu thập vị trí, danh bạ, hình ảnh, video, âm thanh, microphone, camera hoặc dữ liệu sức khỏe gửi về máy chủ.</li>
+            <li>Nhà phát triển không vận hành máy chủ riêng để thu thập lịch sử tính hoặc dữ liệu yêu thích.</li>
+            <li>Google AdMob có thể xử lý advertising ID, thông tin thiết bị, địa chỉ IP, tương tác quảng cáo, dữ liệu chẩn đoán và dữ liệu chống gian lận theo chính sách của Google.</li>
+            <li>Google Play Billing xử lý dữ liệu giao dịch mua gói remove_ads theo chính sách Google Play.</li>
+            <li>Nhà phát triển không bán dữ liệu cá nhân.</li>
+          </ul>
+        </div>
+
+        <h3>Cách sử dụng dữ liệu</h3>
+        <div class="card">
+          <p>Dữ liệu cục bộ chỉ được dùng để cung cấp chức năng của ứng dụng: hiển thị danh sách yêu thích, lịch sử phép tính, cài đặt và trạng thái tắt quảng cáo. Nhà phát triển không truy cập từ xa, không đồng bộ và không phân tích dữ liệu cục bộ này.</p>
+          <p>Dữ liệu quảng cáo và thanh toán được Google xử lý để hiển thị quảng cáo, chống gian lận, đo lường quảng cáo, xử lý mua hàng và khôi phục giao dịch.</p>
+        </div>
+
+        <h3>Xóa dữ liệu</h3>
+        <div class="card">
+          <p>Người dùng có thể xóa lịch sử tính trong màn hình cài đặt của Medical Calc. Người dùng cũng có thể xóa toàn bộ dữ liệu ứng dụng bằng công cụ quản lý ứng dụng của Android, ví dụ: Cài đặt hệ thống &gt; Ứng dụng &gt; Medical Calc &gt; Bộ nhớ &gt; Xóa dữ liệu.</p>
+          <p>Trạng thái mua remove_ads có thể được khôi phục từ Google Play bằng chức năng khôi phục mua hàng trong app.</p>
+          <p>Nếu cần hỗ trợ về quyền riêng tư hoặc yêu cầu liên quan đến dữ liệu, vui lòng liên hệ <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+        </div>
+
+        <h3>Căn cứ công bố theo Google Play</h3>
+        <div class="card source-list">
+          <p>Chính sách này được viết để phù hợp với yêu cầu Google Play về privacy policy và Data safety: nhà phát triển phải mô tả cách app truy cập, thu thập, sử dụng, chia sẻ dữ liệu; đồng thời khai báo cả dữ liệu được xử lý qua thư viện hoặc SDK bên thứ ba.</p>
+          <ul>
+            <li><a href="https://support.google.com/googleplay/android-developer/answer/10144311" rel="noopener">Google Play User Data policy</a></li>
+            <li><a href="https://support.google.com/googleplay/android-developer/answer/10787469" rel="noopener">Google Play Data safety section</a></li>
+            <li><a href="https://support.google.com/googleplay/android-developer/answer/9859455" rel="noopener">Prepare your app for review - Privacy policy</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Medical Calc. Liên hệ nhà phát triển: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>
