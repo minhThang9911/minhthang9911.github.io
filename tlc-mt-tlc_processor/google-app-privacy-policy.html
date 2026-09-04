@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TLC report — Giới Thiệu Ứng Dụng & Chính Sách Quyền Riêng Tư</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070D18;
+      --bg-card: rgba(13, 24, 43, 0.75);
+      --bg-card-hover: rgba(18, 33, 58, 0.85);
+      --border-color: rgba(0, 210, 255, 0.18);
+      --border-focus: rgba(0, 210, 255, 0.5);
+      --primary: #00D2FF;
+      --primary-glow: rgba(0, 210, 255, 0.35);
+      --accent: #00E676;
+      --accent-glow: rgba(0, 230, 118, 0.3);
+      --text-main: #E2E8F0;
+      --text-muted: #94A3B8;
+      --text-highlight: #FFFFFF;
+      --tag-bg: rgba(0, 210, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.65;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 210, 255, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 65%, rgba(0, 230, 118, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(58, 123, 213, 0.07) 0%, transparent 50%);
+      background-attachment: fixed;
+      padding-bottom: 60px;
+    }
+
+    /* ─── Header & Nav ────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 13, 24, 0.85);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 0 16px var(--primary-glow);
+    }
+
+    .brand-text {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-highlight);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-text span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      background: var(--tag-bg);
+    }
+
+    /* ─── Main Container ──────────────────────────────────── */
+    .main-container {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Hero Section ────────────────────────────────────── */
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(12px);
+      margin-bottom: 40px;
+    }
+
+    .hero-banner {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-content {
+      padding: 36px 40px;
+    }
+
+    .hero-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px var(--primary-glow);
+      border: 2px solid rgba(0, 210, 255, 0.4);
+    }
+
+    .hero-titles h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-highlight);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-cyan {
+      background: rgba(0, 210, 255, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(0, 210, 255, 0.35);
+    }
+
+    .badge-green {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(0, 230, 118, 0.35);
+    }
+
+    .badge-dark {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-desc {
+      font-size: 1.08rem;
+      color: var(--text-main);
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    /* ─── Grid & Cards ────────────────────────────────────── */
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--text-highlight);
+      margin: 40px 0 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 2px;
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-focus);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ─── Store Listing Boxes ─────────────────────────────── */
+    .copy-box {
+      background: rgba(4, 9, 17, 0.7);
+      border: 1px solid rgba(0, 210, 255, 0.25);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      position: relative;
+    }
+
+    .copy-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .copy-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--text-highlight);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      font-size: 1.3rem;
+      background: var(--tag-bg);
+      border: 1px solid rgba(0, 210, 255, 0.3);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    .feature-item strong {
+      color: var(--text-highlight);
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .feature-item p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    /* ─── Privacy Policy Styling ──────────────────────────── */
+    .policy-point {
+      margin-bottom: 22px;
+    }
+
+    .policy-point h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .policy-point p, .policy-point ul {
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    .policy-point ul {
+      margin-left: 20px;
+      margin-top: 6px;
+    }
+
+    .policy-point li {
+      margin-bottom: 6px;
+    }
+
+    .highlight-badge {
+      background: rgba(0, 230, 118, 0.12);
+      border-left: 4px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      margin: 16px 0;
+    }
+
+    .highlight-badge strong {
+      color: var(--accent);
+    }
+
+    /* ─── Contact Card ────────────────────────────────────── */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.12), rgba(0, 230, 118, 0.08));
+      border: 1px solid rgba(0, 210, 255, 0.35);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-card h2 {
+      font-size: 1.4rem;
+      color: var(--text-highlight);
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #070D18;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 12px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 0 20px var(--primary-glow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .email-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+    }
+
+    /* ─── Footer ──────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* ─── Responsive ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero-content {
+        padding: 24px;
+      }
+      .hero-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .card {
+        padding: 20px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <img src="tlc-playicon.png" alt="TLC report Icon">
+        <div class="brand-text">TLC <span>report</span></div>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#store-info">Thông tin Play Store</a>
+        <a href="#privacy">Chính sách riêng tư</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Hero Card -->
+    <section class="hero-card" id="about">
+      <img src="tlc-feature-img.png" alt="TLC report Feature Graphic" class="hero-banner">
+      <div class="hero-content">
+        <div class="hero-header">
+          <img src="tlc-playicon.png" alt="App Icon" class="hero-icon">
+          <div class="hero-titles">
+            <h1>TLC report — Sắc Ký Lớp Mỏng</h1>
+            <div class="hero-badges">
+              <span class="badge badge-cyan">🔬 Phân Tích & Kiểm Nghiệm</span>
+              <span class="badge badge-green">⚡ Offline 100% On-Device</span>
+              <span class="badge badge-dark">📄 Báo Cáo PDF A4 Dược Điển</span>
+              <span class="badge badge-cyan">🚫 100% Không Quảng Cáo</span>
+            </div>
+          </div>
+        </div>
+        <p class="hero-desc">
+          <strong>TLC report</strong> là ứng dụng di động chuyên dụng hỗ trợ kiểm nghiệm viên, dược sĩ và nhà nghiên cứu hóa học trong việc xử lý ảnh sắc ký lớp mỏng (Thin Layer Chromatography - TLC), tự động căn chỉnh biến dạng phối cảnh, định vị vạch và vết chấm, tính toán chỉ số $R_f$ theo thời gian thực và xuất báo cáo kết quả định tính đạt chuẩn khổ giấy A4 theo quy chuẩn Dược điển.
+        </p>
+      </div>
+    </section>
+
+    <!-- Google Play Store Details -->
+    <section id="store-info">
+      <h2 class="section-title">Thông Tin Đăng Tải Google Play Store</h2>
+
+      <div class="card">
+        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.15rem;">📌 Tên ứng dụng & Mô tả ngắn (Short Description)</h3>
+        
+        <div class="copy-box">
+          <div class="copy-header">Tên ứng dụng (App Title — Tối đa 30 ký tự)</div>
+          <div class="copy-text">TLC report: Sắc Ký Lớp Mỏng</div>
+        </div>
+
+        <div class="copy-box">
+          <div class="copy-header">Mô tả ngắn (Short Description — 76/80 ký tự)</div>
+          <div class="copy-text">Xử lý ảnh sắc ký lớp mỏng, căn chỉnh góc, tính Rf và xuất báo cáo PDF A4 chuẩn.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.15rem;">📝 Mô tả chi tiết (Long Description)</h3>
+        
+        <div class="copy-box">
+          <div class="copy-header">Nội dung chi tiết trên Google Play Store</div>
+          <div class="copy-text">TLC report — Giải pháp kỹ thuật số toàn diện dành cho phòng kiểm nghiệm dược liệu, viện nghiên cứu và phòng thí nghiệm hóa phân tích trong công tác chụp ảnh, xử lý và lập hồ sơ sắc ký lớp mỏng (TLC).
+
+🔬 CÁC TÍNH NĂNG NỔI BẬT:
+
+1. Xử Lý Ảnh Sắc Ký Chuyên Nghiệp (OpenCV Native):
+• Căn chỉnh 4 góc (Perspective Transform): Khắc phục triệt để hiện tượng méo góc, nghiêng lệch khi chụp bản mỏng bằng camera điện thoại.
+• Tăng cường tương phản cục bộ thích ứng (CLAHE): Làm rõ nét các vết mờ, vết sắc ký khó quan sát.
+• Hiệu chỉnh Gamma & Bộ lọc hiển thị: Tinh chỉnh độ sáng, độ bão hòa màu sắc để nhận diện rõ màu vết thử mà không làm biến dạng dữ liệu ảnh gốc.
+• Xử lý EXIF tự động: Nhận diện và xoay đúng chiều ảnh chụp camera ngay khi nạp.
+
+2. Đánh Dấu Tương Tác & Tính Chỉ Số Rf Chuẩn Xác:
+• Tự động thu phóng (Auto-fit) và xem trọn vẹn bản mỏng ngay khi mở ảnh.
+• Thao tác chạm trực quan để đặt Vạch xuất phát (Baseline), Vạch dung môi (Solvent front), các vết mẫu thử/chuẩn và nhãn định danh mẫu chấm.
+• Hỗ trợ kéo thả vi chỉnh mượt mà, công cụ D-pad tinh chỉnh tọa độ từng pixel (±1 px).
+• Lịch sử hoàn tác (Undo) nhiều bước tiện lợi.
+• Tự động tính toán giá trị Rf tức thì theo công thức tiêu chuẩn Dược điển với định dạng dấu phẩy thập phân chuẩn Việt Nam (ví dụ: 0,50; 0,72).
+
+3. So Sánh Hai Khối Song Song (Khối A / Khối B):
+• Quản lý linh hoạt 2 dải bản mỏng trong cùng một phiên làm việc (đối chiếu mẫu thử và mẫu chuẩn dược liệu).
+• Tự động đồng bộ số thứ tự vết và giá trị Rf sang bảng dữ liệu chi tiết.
+• Bàn phím tích hợp thanh ký tự chuyên ngành nhanh: °C, μ, μg, μL, λ, α, β, γ.
+
+4. Xuất Báo Cáo PDF Khổ A4 Chuẩn Dược Điển:
+• Bố cục A4 chuyên nghiệp, đồng nhất hoàn toàn giữa bản di động và máy tính để bàn.
+• Nhúng ảnh bản sắc ký sắc nét kèm vạch mốc và ký hiệu nhãn vết rõ ràng.
+• Tích hợp font chữ hiển thị tiếng Việt có dấu đầy đủ, sắc nét.
+• Hỗ trợ xem trước PDF, in trực tiếp, lưu vào bộ nhớ thiết bị hoặc chia sẻ nhanh qua Email, Zalo.
+
+5. Hoạt Động Hoàn Toàn Ngoại Tuyến (Offline 100%):
+• Toàn bộ thuật toán xử lý ảnh và tạo PDF chạy trực tiếp trên thiết bị (On-Device).
+• Không gửi ảnh hoặc dữ liệu kiểm nghiệm lên máy chủ bên ngoài, đảm bảo an toàn và bảo mật thông tin hồ sơ kiểm nghiệm.
+
+6. Hoàn Toàn Không Quảng Cáo & Ủng Hộ Tác Giả:
+• Ứng dụng sạch 100%, không chứa bất kỳ banner, pop-up hay video quảng cáo làm gián đoạn công việc của bạn.
+• Tích hợp tính năng In-App Purchase tự nguyện "Ủng hộ tác giả" hỗ trợ kinh phí duy trì và phát triển ứng dụng.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy">
+      <h2 class="section-title">Chính Sách Quyền Riêng Tư (App Privacy Policy)</h2>
+
+      <div class="card">
+        <p style="margin-bottom: 16px; color: var(--text-muted);">
+          <em>Cập nhật lần cuối: 03/09/2026</em>
+        </p>
+
+        <div class="highlight-badge">
+          <strong>CAM KẾT BẢO MẬT TUYỆT ĐỐI:</strong> Ứng dụng <strong>TLC report</strong> được thiết kế theo nguyên tắc <em>Privacy by Design</em> — hoạt động hoàn toàn cục bộ trên thiết bị của bạn (Offline / On-Device). Chúng tôi <strong>KHÔNG</strong> thu thập, <strong>KHÔNG</strong> lưu trữ trên máy chủ và <strong>KHÔNG</strong> chia sẻ bất kỳ dữ liệu cá nhân, hình ảnh hoặc kết quả kiểm nghiệm nào của bạn với bất kỳ bên thứ ba nào.
+        </div>
+
+        <div class="policy-point">
+          <h3>1. Quyền Ứng Dụng Yêu Cầu & Mục Đích Sử Dụng</h3>
+          <p>Để thực hiện các chức năng cốt lõi của việc xử lý sắc ký lớp mỏng, ứng dụng có thể yêu cầu bạn cấp các quyền sau trên thiết bị Android:</p>
+          <ul>
+            <li><strong>Quyền Máy ảnh (CAMERA):</strong> Được sử dụng duy nhất khi bạn chọn chức năng <em>"Chụp ảnh"</em> để chụp trực tiếp ảnh bản mỏng sắc ký vào ứng dụng. Ứng dụng không tự ý kích hoạt camera ngoài thao tác trực tiếp của bạn.</li>
+            <li><strong>Quyền Đọc Thư viện / Bộ nhớ (READ_EXTERNAL_STORAGE / READ_MEDIA_IMAGES):</strong> Được sử dụng khi bạn chọn chức năng <em>"Chọn từ thư viện"</em> để nạp ảnh sắc ký có sẵn trong máy vào ứng dụng.</li>
+            <li><strong>Quyền Lưu trữ tệp / Quản lý tài liệu (Storage Access Framework):</strong> Được sử dụng khi bạn nhấn <em>"Lưu PDF"</em> để cho phép bạn chỉ định thư mục lưu trữ file báo cáo PDF xuất ra trên thiết bị của mình.</li>
+          </ul>
+        </div>
+
+        <div class="policy-point">
+          <h3>2. Thư Viện & SDK Bên Thứ Ba (Third-Party SDKs)</h3>
+          <p>Ứng dụng chỉ sử dụng các thư viện mã nguồn mở cần thiết cho tính toán, giao diện và thanh toán an toàn qua Google Play:</p>
+          <ul>
+            <li><strong>Flutter SDK (Google):</strong> Khung phát triển ứng dụng giao diện người dùng native.</li>
+            <li><strong>OpenCV Native (dartcv4):</strong> Thư viện mã nguồn mở xử lý ảnh thị giác máy tính, biên dịch trực tiếp dưới dạng mã máy nhúng (C++) và thực thi 100% trên phần cứng cục bộ của máy.</li>
+            <li><strong>pdf & printing (Dart/Flutter):</strong> Bộ thư viện tạo file PDF nhúng font và kết xuất đồ họa PDF cục bộ trên máy.</li>
+            <li><strong>image_picker & file_picker:</strong> Các module mở hộp thoại chọn ảnh và chọn thư mục chuẩn của hệ điều hành Android.</li>
+            <li><strong>Google Play Billing (in_app_purchase):</strong> Được sử dụng để hỗ trợ tính năng tự nguyện "Ủng hộ tác giả" (Product ID: unghotacgia). Quá trình xử lý thanh toán được thực hiện trực tiếp và an toàn tuyệt đối qua hệ thống Google Play Billing của Google; ứng dụng hoàn toàn KHÔNG thu thập, KHÔNG truy cập và KHÔNG lưu trữ bất kỳ thông tin tài khoản ngân hàng, thẻ thanh toán hay dữ liệu tài chính nào của người dùng.</li>
+            <li><strong>HOÀN TOÀN KHÔNG CÓ QUẢNG CÁO:</strong> Ứng dụng không tích hợp bất kỳ SDK quảng cáo nào (như Google AdMob, Unity Ads, Facebook Audience Network...).</li>
+            <li><strong>KHÔNG CÓ SDK theo dõi hoặc phân tích hành vi người dùng:</strong> Không sử dụng Google Analytics for Firebase, AppsFlyer, Mixpanel...</li>
+          </ul>
+        </div>
+
+        <div class="policy-point">
+          <h3>3. Thu Thập, Sử Dụng & Chia Sẻ Dữ Liệu</h3>
+          <ul>
+            <li><strong>Dữ liệu không thu thập:</strong> Chúng tôi không thu thập bất kỳ dữ liệu nhận dạng cá nhân (họ tên, email, số điện thoại, danh bạ, vị trí GPS, thông tin tài chính...).</li>
+            <li><strong>Dữ liệu hình ảnh và phiên làm việc:</strong> Tất cả hình ảnh bản mỏng, các điểm đánh dấu $R_f$, thông tin mẫu kiểm nghiệm và tệp PDF được lưu trữ hoàn toàn trong vùng nhớ riêng của ứng dụng trên thiết bị của bạn.</li>
+            <li><strong>Chia sẻ dữ liệu:</strong> Dữ liệu chỉ được gửi ra ngoài thiết bị khi <strong>chính bạn</strong> chủ động sử dụng tính năng <em>"Chia sẻ PDF"</em> qua các ứng dụng mà bạn chọn (như Zalo, Email, Drive).</li>
+          </ul>
+        </div>
+
+        <div class="policy-point">
+          <h3>4. Lưu Trữ & Quyền Xóa Dữ Liệu (Data Retention & Deletion)</h3>
+          <ul>
+            <li>Người dùng có toàn quyền quản lý, chỉnh sửa hoặc xóa bất kỳ ảnh bản mỏng hoặc phiên làm việc nào ngay trong giao diện ứng dụng.</li>
+            <li>Khi bạn gỡ cài đặt ứng dụng (Uninstall) hoặc chọn <em>"Xóa dữ liệu ứng dụng"</em> trong Cài đặt hệ thống của Android, toàn bộ các phiên làm việc và dữ liệu cục bộ sẽ được xóa sạch vĩnh viễn khỏi thiết bị.</li>
+          </ul>
+        </div>
+
+        <div class="policy-point">
+          <h3>5. An Toàn Cho Trẻ Em & Tuân Thủ Pháp Luật</h3>
+          <p>Ứng dụng là công cụ khoa học/kỹ thuật chuyên nghiệp, không chứa nội dung không phù hợp và an toàn cho người dùng thuộc mọi lứa tuổi. Ứng dụng tuân thủ nghiêm ngặt các nguyên tắc bảo vệ quyền riêng tư của Google Play Developer Policy và quy định pháp luật về bảo vệ dữ liệu cá nhân.</p>
+        </div>
+
+        <div class="policy-point">
+          <h3>6. Thay Đổi Đối Với Chính Sách Này</h3>
+          <p>Nếu có bất kỳ thay đổi nào trong tương lai đối với chính sách quyền riêng tư này, nội dung cập nhật sẽ được đăng tải công khai trên trang này kèm mốc thời gian cập nhật cụ thể.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Contact -->
+    <section id="contact">
+      <div class="contact-card">
+        <h2>Thông Tin Nhà Phát Triển & Hỗ Trợ Kỹ Thuật</h2>
+        <p>Nếu bạn có bất kỳ câu hỏi, thắc mắc hoặc đề xuất tính năng nào liên quan đến ứng dụng TLC report, vui lòng liên hệ trực tiếp với chúng tôi:</p>
+        <a href="mailto:minhthang0792@gmail.com" class="email-btn">
+          ✉️ minhthang0792@gmail.com
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 TLC report — Sắc Ký Lớp Mỏng & Báo Cáo A4. Bản quyền thuộc về nhà phát triển.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
