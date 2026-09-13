@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuổi Cưới Gả - Play Store Listing & Chính Sách Quyền Riêng Tư</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #B71C1C;
+            --primary-dark: #7F0000;
+            --primary-light: #FFEBEE;
+            --accent-gold: #C98814;
+            --gold-light: #FFF8E1;
+            --gold-gradient: linear-gradient(135deg, #FFB300, #C98814, #B78103);
+            --red-gradient: linear-gradient(135deg, #B71C1C, #86160C, #4A0809);
+            --bg-body: #FAF7F2;
+            --bg-card: #FFFFFF;
+            --text-main: #261B1B;
+            --text-secondary: #665252;
+            --border-color: #EEDFD0;
+            --shadow-sm: 0 4px 12px rgba(134, 22, 12, 0.06);
+            --shadow-md: 0 8px 24px rgba(134, 22, 12, 0.1);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding-bottom: 60px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .navbar-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .nav-brand img {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Header Section */
+        .hero {
+            position: relative;
+            margin-top: 24px;
+            margin-bottom: 40px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: var(--red-gradient);
+            color: #FFFFFF;
+        }
+
+        .hero-banner-img {
+            width: 100%;
+            height: auto;
+            max-height: 460px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-content {
+            padding: 32px;
+            background: linear-gradient(180deg, rgba(74, 8, 9, 0.85) 0%, rgba(134, 22, 12, 0.95) 100%);
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .hero-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            flex-shrink: 0;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #FFE082;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.15);
+            color: #FFF;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .badge-gold {
+            background: rgba(255, 179, 0, 0.25);
+            color: #FFD54F;
+            border-color: rgba(255, 213, 79, 0.4);
+        }
+
+        /* Section Layout */
+        .section-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            padding: 36px;
+            margin-bottom: 32px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .section-header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Copy Box Component for Devs */
+        .copy-box {
+            background: #FDFBF8;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-top: 16px;
+            position: relative;
+        }
+
+        .copy-box-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        .copy-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .copy-content {
+            font-size: 0.95rem;
+            color: #333;
+            white-space: pre-line;
+            line-height: 1.8;
+            user-select: all;
+        }
+
+        .char-count {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #777;
+            font-weight: normal;
+        }
+
+        /* Policy specific styles */
+        .policy-item {
+            margin-bottom: 24px;
+        }
+
+        .policy-item h3 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .policy-item p {
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            background: #FFF;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .policy-table th, .policy-table td {
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .policy-table th {
+            background: #F8F4EE;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .policy-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: var(--gold-light);
+            border-left: 4px solid var(--accent-gold);
+            padding: 16px 20px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #FFF9F8 0%, #FFF3F0 100%);
+            border: 1px solid #FFCDD2;
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: var(--primary);
+            color: #FFF;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 10px 24px;
+            border-radius: 30px;
+            margin-top: 12px;
+            box-shadow: 0 4px 12px rgba(183, 28, 28, 0.25);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .contact-email:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .nav-links {
+                gap: 8px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-content {
+                padding: 20px;
+                text-align: center;
+                justify-content: center;
+            }
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            .section-card {
+                padding: 20px;
+            }
+            .policy-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#overview" class="nav-brand">
+                <img src="app-icon-1.png" alt="Tuổi Cưới Gả App Icon">
+                <span>Tuổi Cưới Gả</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#overview">Giới Thiệu</a></li>
+                <li><a href="#store-listing">Play Store Listing</a></li>
+                <li><a href="#privacy-policy">Privacy Policy</a></li>
+                <li><a href="#data-deletion">Xóa Dữ Liệu</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <header id="overview" class="hero">
+            <img src="feature-img-1.png" alt="Tuổi Cưới Gả Feature Graphic" class="hero-banner-img">
+            <div class="hero-content">
+                <img src="app-icon-1.png" alt="Tuổi Cưới Gả App Icon" class="hero-icon">
+                <div class="hero-text">
+                    <h1 class="hero-title">Tuổi Cưới Gả</h1>
+                    <p class="hero-subtitle">Tử Vi Tướng Số • Duyên Phận Lứa Đôi • So Tuổi Hôn Phối</p>
+                    <div class="hero-badges">
+                        <span class="badge badge-gold">★ Bản 2.0 (Target SDK 37)</span>
+                        <span class="badge">Google Play Verified</span>
+                        <span class="badge">Bảo Mật Cục Bộ 100%</span>
+                        <span class="badge">Package: com.free.tuoituongso</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 1. APP OVERVIEW SECTION -->
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-header-icon">💍</div>
+                <h2 class="section-title">Tổng Quan Ứng Dụng (App Overview)</h2>
+            </div>
+            <p><strong>Tuổi Cưới Gả</strong> (định danh: <code>com.free.tuoituongso</code>) là ứng dụng Android chuyên sâu về phong thủy hôn phối và tử vi tướng số phương Đông, được tối ưu hóa toàn diện theo phong tục cưới hỏi truyền thống của người Việt Nam.</p>
+            <p style="margin-top: 12px;">Ứng dụng tích hợp các thuật toán cổ truyền chính xác giúp giải đáp tường tận hai bài toán trọng đại của đời người:</p>
+            <ul style="margin-left: 24px; margin-top: 8px; line-height: 2;">
+                <li><strong>Tử Vi Cá Nhân:</strong> Tra cứu Can Chi, Cung Mạng Bát Trạch, Sao chiếu mệnh Cửu Diệu, Bát Hạn niên hạn và Cung hoàng đạo phương Tây.</li>
+                <li><strong>Xem Tuổi Cưới Hỏi:</strong> Đánh giá mức độ hòa hợp âm dương - ngũ hành bản mệnh giữa hai người, tính toán năm cưới đại cát (tránh hạn Kim Lâu, Hoang Ốc, Tam Tai), chọn tháng cưới Đại Lợi / Tiểu Lợi và tra ngày tốt Bát Môn cưới hỏi.</li>
+            </ul>
+        </section>
+
+        <!-- 2. GOOGLE PLAY STORE LISTING ASSETS (SHORT & LONG DESCRIPTION) -->
+        <section id="store-listing" class="section-card">
+            <div class="section-header">
+                <div class="section-header-icon">📝</div>
+                <h2 class="section-title">Google Play Store Listing (Nội Dung Xuất Bản)</h2>
+            </div>
+            <p>Phần nội dung chuẩn hóa sẵn sàng copy-paste vào <strong>Google Play Console</strong> &gt; <em>Store presence</em> &gt; <em>Main store listing</em>:</p>
+
+            <!-- Short Description (Vietnamese) -->
+            <div class="copy-box">
+                <div class="copy-box-header">
+                    <span>1. Bản Tóm Tắt (Short Description - Tiếng Việt) <span class="char-count">(79 / 80 ký tự)</span></span>
+                    <button class="copy-btn" onclick="copyText('short-desc-vi')">Sao chép</button>
+                </div>
+                <div id="short-desc-vi" class="copy-content">Tử vi xem tuổi cưới hỏi, cung mạng, sao hạn và chọn ngày cưới cát lợi lứa đôi.</div>
+            </div>
+
+            <!-- Short Description (English) -->
+            <div class="copy-box">
+                <div class="copy-box-header">
+                    <span>2. Short Description (English) <span class="char-count">(76 / 80 characters)</span></span>
+                    <button class="copy-btn" onclick="copyText('short-desc-en')">Copy</button>
+                </div>
+                <div id="short-desc-en" class="copy-content">Wedding horoscope, couple age zodiac match, auspicious dates & personal fortune.</div>
+            </div>
+
+            <!-- Long Description (Vietnamese) -->
+            <div class="copy-box">
+                <div class="copy-box-header">
+                    <span>3. Bản Mô Tả Chi Tiết (Long Description - Tiếng Việt)</span>
+                    <button class="copy-btn" onclick="copyText('long-desc-vi')">Sao chép</button>
+                </div>
+                <div id="long-desc-vi" class="copy-content">💍 TUỔI CƯỚI GẢ – TỬ VI TƯỚNG SỐ & DUYÊN PHẬN LỨA ĐÔI 💍
+Tra cứu tuổi hợp kết hôn, xem can chi cung mạng, giải sao hạn và chọn ngày tháng đại cát cưới hỏi theo phong tục phương Đông.
+
+"Hôn nhân là việc trọng đại cả đời". Ứng dụng Tuổi Cưới Gả được thiết kế chỉn chu với giao diện cung đình trang trọng, bộ font chữ sắc nét và thuật toán tra cứu phong thủy chuẩn xác, giúp các cặp đôi và gia đình dễ dàng chọn được thời điểm tổ chức hôn lễ trọn vẹn, ấm êm và viên mãn.
+
+🌟 CÁC TÍNH NĂNG NỔI BẬT:
+
+1. XEM TUỔI CƯỚI HỎI – SO ĐÔI LỨA CÁT HUNG
+• Phân tích sự tương sinh, tương khắc giữa bản mệnh của Nam và Nữ (Kim, Mộc, Thủy, Hỏa, Thổ).
+• Đánh giá can chi, cung phi Bát Trạch (Sinh Khí, Diên Niên, Thiên Y, Phục Vì vs Tuyệt Mạng, Ngũ Quỷ, Lục Sát, Họa Hại).
+• Xem tường tận Tam Hợp, Lục Hợp, Tứ Hành Xung, Lục Hại để tìm phương cách hóa giải, mang lại bình an, hạnh phúc.
+
+2. TÍNH NĂM CƯỚI TỐT – TRÁNH KIM LÂU, HOANG ỐC, TAM TAI
+• Tính tuổi mụ của cô dâu chính xác để tránh phạm hạn Kim Lâu (Kim Lâu Thân, Thê, Tử, Súc).
+• Xét hạn Hoang Ốc và Tam Tai của đôi bên để chọn năm lành, đón tài lộc và vượng khí cho tổ ấm mới.
+
+3. CHỌN THÁNG ĐẠI LỢI & NGÀY CƯỚI BÁT MÔN
+• Tra cứu bảng Tháng Đại Lợi, Tháng Tiểu Lợi theo tuổi cô dâu (tránh tháng Phu chủ, Thê chủ, Nhạc phụ mẫu).
+• Chọn ngày hoàng đạo dựa theo Bát Môn cưới hỏi (Khai, Hưu, Sinh tốt lành; Thương, Đỗ, Cảnh, Tử, Kinh hung).
+
+4. TỬ VI CÁ NHÂN CHI TIẾT
+• Tra cứu Can Chi, Cung Mạng, Tướng Tinh, Ngũ Đế, Vận Niên từng năm.
+• Xem Sao Chiếu Mệnh Cửu Diệu (Thái Bạch, La Hầu, Kế Đô, Thổ Tú, Thủy Diệu...) và hướng dẫn cúng dâng sao giải hạn.
+• Phân tích Bát Hạn niên hạn (Huỳnh Tuyển, Tam Kheo, Ngũ Mộ, Thiên Tinh, Thiên La, Địa Võng...).
+• Khám phá tính cách và tình duyên 12 Cung Hoàng Đạo.
+
+5. TRẢI NGHIỆM ĐỈNH CAO & BẢO MẬT TUYỆT ĐỐI
+• Giao diện phong thủy cung đình hiện đại, thuần Việt, mượt mà trên mọi dòng máy.
+• Không yêu cầu đăng ký tài khoản, 100% dữ liệu ngày sinh được xử lý cục bộ trên thiết bị của bạn.
+• Hỗ trợ gói VIP "Tắt quảng cáo" mua một lần, sử dụng vĩnh viễn không làm phiền.
+
+Tải ngay "Tuổi Cưới Gả" để xem duyên phận lứa đôi và chọn ngày lành tháng tốt cho ngày hạnh phúc thăng hoa!</div>
+            </div>
+
+            <!-- Long Description (English) -->
+            <div class="copy-box">
+                <div class="copy-box-header">
+                    <span>4. Full Description (English for Global Listing)</span>
+                    <button class="copy-btn" onclick="copyText('long-desc-en')">Copy</button>
+                </div>
+                <div id="long-desc-en" class="copy-content">💍 WEDDING HOROSCOPE & COUPLE ZODIAC FORTUNE (TUỔI CƯỚI GẢ) 💍
+Discover marriage compatibility, check personal horoscope, Five Elements destiny, and pick auspicious wedding dates based on authentic Eastern astrology.
+
+Marriage is a monumental life milestone. "Tuổi Cưới Gả" is an elegant, beautifully crafted mobile application delivering precise astrological matchmaking and auspicious date calculations to ensure lifelong happiness and harmony.
+
+🌟 KEY FEATURES:
+
+1. WEDDING AGE & ZODIAC COMPATIBILITY
+• Analyze Five Elements harmony (Metal, Wood, Water, Fire, Earth) between bride and groom.
+• Evaluate Eight Trigrams (Bagua) compatibility for optimal family prosperity.
+• Check Heavenly Stems & Earthly Branches relationships (Triple Harmony, Six Clashes).
+
+2. AUSPICIOUS WEDDING YEAR SELECTOR
+• Avoid major astrological inauspicious years (Kim Lau, Hoang Oc, Tam Tai).
+• Identify prosperous wedding years that bring luck and blessings to both families.
+
+3. AUSPICIOUS MONTH & DAY CALCULATOR
+• Query prime wedding months ("Thang Dai Loi" & "Thang Tieu Loi").
+• Select optimal wedding days based on the ancient Eight Gates ("Bat Mon") system.
+
+4. IN-DEPTH PERSONAL HOROSCOPE
+• Discover your birth elements, animal zodiac sign, ruling stars, and yearly fortune.
+• Detailed analysis of 9 Navagraha stars and 8 destiny cycles.
+• Comprehensive Western 12 Zodiac personality and romantic compatibility guide.
+
+5. PRIVACY & SMOOTH EXPERIENCE
+• Clean, ad-free option available with a one-time VIP In-App Purchase.
+• 100% offline calculation: birth dates are processed directly on your device without sending any personal data to external servers.
+
+Download "Tuổi Cưới Gả" today and find the most auspicious timing for your once-in-a-lifetime celebration!</div>
+            </div>
+        </section>
+
+        <!-- 3. APP PRIVACY POLICY (GOOGLE PLAY COMPLIANT) -->
+        <section id="privacy-policy" class="section-card">
+            <div class="section-header">
+                <div class="section-header-icon">🛡️</div>
+                <h2 class="section-title">Chính Sách Quyền Riêng Tư (Privacy Policy)</h2>
+            </div>
+            <p><strong>Ngày có hiệu lực:</strong> 13 tháng 09 năm 2026<br>
+            <strong>Nhà phát triển:</strong> Minh Thắng (<a href="mailto:minhthang0792@gmail.com" style="color: var(--primary);">minhthang0792@gmail.com</a>)<br>
+            <strong>Ứng dụng:</strong> Tuổi Cưới Gả (Package ID: <code>com.free.tuoituongso</code>)</p>
+
+            <div class="highlight-box">
+                <strong>Cam kết cốt lõi:</strong> Chúng tôi tôn trọng tuyệt đối quyền riêng tư của bạn. Ứng dụng "Tuổi Cưới Gả" <strong>KHÔNG</strong> thu thập bất kỳ thông tin nhận dạng cá nhân nào (như họ tên, số điện thoại, địa chỉ, danh bạ, vị trí GPS). Toàn bộ dữ liệu ngày tháng năm sinh bạn nhập được xử lý <strong>hoàn toàn cục bộ trên thiết bị của bạn</strong>.
+            </div>
+
+            <!-- Permission Table -->
+            <div class="policy-item">
+                <h3>1. Các Quyền Ứng Dụng Yêu Cầu (Application Permissions)</h3>
+                <p>Ứng dụng chỉ yêu cầu số lượng quyền tối thiểu theo tiêu chuẩn hệ điều hành Android để duy trì các tính năng cơ bản:</p>
+                <table class="policy-table">
+                    <thead>
+                        <tr>
+                            <th>Tên quyền hạn (Permission)</th>
+                            <th>Mục đích sử dụng</th>
+                            <th>Loại dữ liệu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>android.permission.INTERNET</code></td>
+                            <td>Tải nội dung quảng cáo Google AdMob và kết nối xác thực giao dịch Google Play Billing.</td>
+                            <td>Dữ liệu mạng (Không chứa PII)</td>
+                        </tr>
+                        <tr>
+                            <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+                            <td>Kiểm tra kết nối mạng (Wi-Fi/4G/5G) để hiển thị giao diện phù hợp khi offline/online.</td>
+                            <td>Trạng thái kết nối</td>
+                        </tr>
+                        <tr>
+                            <td><code>com.android.vending.BILLING</code></td>
+                            <td>Cho phép người dùng mua gói "Tắt quảng cáo" (Product ID: <code>remove_ads</code>) an toàn qua Google Play.</td>
+                            <td>Xác thực biên nhận mua hàng qua Google Play</td>
+                        </tr>
+                        <tr>
+                            <td><code>com.google.android.gms.permission.AD_ID</code></td>
+                            <td>Quyền định danh quảng cáo của Google Play Services để phân phối quảng cáo phù hợp theo chính sách Google.</td>
+                            <td>Advertising ID (do Google quản lý)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Third party SDKs -->
+            <div class="policy-item">
+                <h3>2. Các Thư Viện & Dịch Vụ Của Bên Thứ Ba (Third-Party SDKs)</h3>
+                <p>Ứng dụng sử dụng các dịch vụ uy tín được chứng nhận bởi Google:</p>
+                <ul style="margin-left: 24px; line-height: 2;">
+                    <li><strong>Google AdMob (Google Mobile Ads SDK):</strong> Dùng để hiển thị quảng cáo biểu ngữ (Banner), quảng cáo xen kẽ (Interstitial) và quảng cáo mở ứng dụng (App Open Ads). Google AdMob có thể sử dụng mã nhận dạng quảng cáo (Advertising ID) ẩn danh để phân phát quảng cáo theo chính sách của Google. Xem <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--primary);">Chính sách bảo mật của Google</a>.</li>
+                    <li><strong>Google Play In-App Billing (Google Play Billing API v6.2.1):</strong> Xử lý giao dịch thanh toán gói VIP tắt quảng cáo an toàn tuyệt đối qua tài khoản Google Play. Chúng tôi không thu thập và không thể tiếp cận thông tin thẻ tín dụng hay tài khoản ngân hàng của bạn.</li>
+                </ul>
+            </div>
+
+            <!-- Data Collection & Usage -->
+            <div class="policy-item">
+                <h3>3. Thu Thập & Sử Dụng Dữ Liệu (Data Collection & Usage)</h3>
+                <p><strong>A. Dữ liệu ngày tháng năm sinh & giới tính:</strong> Khi bạn nhập ngày sinh để tính tử vi hoặc xem tuổi cưới, thông tin này được lưu tạm thời trong bộ nhớ RAM của điện thoại và xử lý qua thuật toán phong thủy cục bộ. <em>Dữ liệu này hoàn toàn không gửi về máy chủ bên ngoài hay chia sẻ với bất kỳ ai.</em></p>
+                <p><strong>B. Dữ liệu trạng thái mua gói (In-App Purchase):</strong> Trạng thái đã mua gói VIP (<code>is_ads_removed</code>) được lưu trữ trong bộ nhớ nội bộ của điện thoại (<code>SharedPreferences</code>) để đảm bảo ngay cả khi không có mạng, ứng dụng vẫn nhận diện bản quyền và tắt toàn bộ quảng cáo cho bạn.</p>
+            </div>
+
+            <!-- Data Retention & Deletion -->
+            <div id="data-deletion" class="policy-item">
+                <h3>4. Chính Sách Lưu Trữ & Xóa Dữ Liệu (Data Retention & Deletion)</h3>
+                <p>Vì ứng dụng không duy trì máy chủ lưu trữ dữ liệu người dùng cá nhân (không yêu cầu tài khoản/đăng nhập), bạn có toàn quyền kiểm soát và xóa sạch dữ liệu bất kỳ lúc nào:</p>
+                <ul style="margin-left: 24px; line-height: 2;">
+                    <li><strong>Tự xóa dữ liệu trên máy:</strong> Vào <em>Cài đặt điện thoại &gt; Ứng dụng &gt; Tuổi Cưới Gả &gt; Bộ nhớ &gt; Nhấn "Xóa dữ liệu" (Clear Data)</em>, hoặc đơn giản là gỡ cài đặt ứng dụng. Mọi cài đặt và cờ lưu trữ cục bộ sẽ bị xóa vĩnh viễn ngay lập tức.</li>
+                    <li><strong>Yêu cầu hỗ trợ xóa dữ liệu:</strong> Nếu bạn có bất kỳ câu hỏi nào về dữ liệu hoặc yêu cầu xác nhận xóa dữ liệu, vui lòng gửi email tới <strong><a href="mailto:minhthang0792@gmail.com" style="color: var(--primary);">minhthang0792@gmail.com</a></strong>. Chúng tôi sẽ xử lý và phản hồi trong vòng 48 giờ làm việc.</li>
+                </ul>
+            </div>
+
+            <!-- Children's Privacy -->
+            <div class="policy-item">
+                <h3>5. Quyền Riêng Tư Của Trẻ Em (Children's Privacy)</h3>
+                <p>Ứng dụng không hướng đến đối tượng trẻ em dưới 13 tuổi (hoặc độ tuổi tối thiểu theo luật định tại quốc gia của bạn). Chúng tôi không cố ý thu thập bất kỳ dữ liệu cá nhân nào từ trẻ em. Nếu phụ huynh hoặc người giám hộ phát hiện trẻ đã cung cấp thông tin cho ứng dụng, vui lòng liên hệ với chúng tôi để xóa bỏ.</p>
+            </div>
+
+            <!-- User Rights -->
+            <div class="policy-item">
+                <h3>6. Quyền Lợi Của Người Dùng (User Rights)</h3>
+                <p>Bạn có toàn quyền:</p>
+                <ul style="margin-left: 24px; line-height: 2;">
+                    <li>Từ chối xem quảng cáo cá nhân hóa bằng cách tắt tùy chọn "Personalized Ads" trong Cài đặt Google trên thiết bị Android.</li>
+                    <li>Mua gói VIP một lần duy nhất để tắt vĩnh viễn 100% mọi hình thức quảng cáo trong ứng dụng.</li>
+                    <li>Gỡ bỏ ứng dụng bất cứ lúc nào mà không gặp bất kỳ ràng buộc nào về dữ liệu.</li>
+                </ul>
+            </div>
+
+            <!-- Changes to Policy -->
+            <div class="policy-item">
+                <h3>7. Thay Đổi Chính Sách Bảo Mật</h3>
+                <p>Chúng tôi có thể cập nhật Chính Sách Quyền Riêng Tư theo thời gian nhằm tuân thủ quy định mới của Google Play và luật pháp hiện hành. Bất kỳ thay đổi nào sẽ được công bố trực tiếp trên trang này với ngày hiệu lực cập nhật tương ứng.</p>
+            </div>
+
+            <!-- Contact Box -->
+            <div id="contact" class="contact-box">
+                <h3 style="color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 8px;">Thông Tin Liên Hệ Nhà Phát Triển</h3>
+                <p style="color: #555;">Nếu bạn có thắc mắc, đóng góp ý kiến hoặc cần hỗ trợ về ứng dụng, xin vui lòng liên hệ:</p>
+                <p style="margin-top: 6px;"><strong>Lập trình viên:</strong> Minh Thắng</p>
+                <p><strong>Dự án:</strong> Tuổi Cưới Gả (<code>com.free.tuoituongso</code>)</p>
+                <a href="mailto:minhthang0792@gmail.com" class="contact-email">✉ minhthang0792@gmail.com</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tuổi Cưới Gả (com.free.tuoituongso). All rights reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 4px;">Designed with authentic Eastern Feng Shui principles for Google Play Store.</p>
+        </div>
+    </footer>
+
+    <!-- Copy to Clipboard Script -->
+    <script>
+        function copyText(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const origText = btn.innerText;
+                btn.innerText = '✓ Đã sao chép';
+                btn.style.background = '#2E7D32';
+                setTimeout(() => {
+                    btn.innerText = origText;
+                    btn.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                alert('Không thể sao chép: ' + err);
+            });
+        }
+    </script>
+</body>
+</html>
