@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính sách quyền riêng tư & Thông tin ứng dụng - Nguyên tố Hóa học</title>
+    <style>
+        :root {
+            --primary: #1A56DB;
+            --primary-dark: #1E40AF;
+            --primary-light: #EBF5FF;
+            --accent: #7E22CE;
+            --surface: #0F172A;
+            --surface-card: #1E293B;
+            --text-main: #0F172A;
+            --text-secondary: #475569;
+            --text-light: #94A3B8;
+            --bg-page: #F8FAFC;
+            --border: #E2E8F0;
+            --border-dark: #334155;
+            --success: #10B981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .hero-wrapper {
+            position: relative;
+            background-color: #0B0F19;
+            overflow: hidden;
+        }
+
+        .hero-banner {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            display: block;
+            opacity: 0.92;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, rgba(11, 15, 25, 0.95), transparent);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+        }
+
+        .app-header-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 28px 32px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .app-icon {
+            width: 104px;
+            height: 104px;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px -4px rgba(26, 86, 219, 0.35);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .app-title-area h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #0F172A;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .app-subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-primary {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .badge-success {
+            background-color: #ECFDF5;
+            color: #065F46;
+        }
+
+        .badge-purple {
+            background-color: #F3E8FF;
+            color: #6B21A8;
+        }
+
+        .nav-anchor-bar {
+            display: flex;
+            gap: 12px;
+            margin: 32px 0 24px 0;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            background: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--primary);
+            color: #FFFFFF;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(26, 86, 219, 0.25);
+        }
+
+        .section-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 28px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg-page);
+        }
+
+        .section-title span.icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .desc-box {
+            background: #F8FAFC;
+            border: 1px solid #CBD5E1;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 14px;
+            margin-bottom: 20px;
+        }
+
+        .desc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .desc-label {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .char-count {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--success);
+            background: #DCFCE7;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .desc-content {
+            font-family: inherit;
+            font-size: 14.5px;
+            line-height: 1.65;
+            color: #1E293B;
+            white-space: pre-wrap;
+        }
+
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+
+        .table-custom th, .table-custom td {
+            padding: 12px 16px;
+            border: 1px solid #E2E8F0;
+            text-align: left;
+        }
+
+        .table-custom th {
+            background-color: #F1F5F9;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .table-custom tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
+
+        .alert-box {
+            background-color: #EFF6FF;
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 18px 0;
+            font-size: 14.5px;
+            color: #1E40AF;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            color: #FFFFFF;
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-info h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .contact-info p {
+            color: #94A3B8;
+            font-size: 14px;
+        }
+
+        .email-btn {
+            background: #FFFFFF;
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .email-btn:hover {
+            background: var(--primary-light);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 640px) {
+            .app-header-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px 20px;
+            }
+            .badge-list {
+                justify-content: center;
+            }
+            .section-card {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Banner Image -->
+    <div class="hero-wrapper">
+        <img src="feature-img.png" alt="Nguyên tố Hóa học Feature Graphic" class="hero-banner">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+        <!-- App Header Card -->
+        <div class="app-header-card">
+            <img src="icon-img.png" alt="App Icon Nguyên tố Hóa học" class="app-icon">
+            <div class="app-title-area">
+                <h1>Nguyên tố Hóa học & Bảng tuần hoàn</h1>
+                <div class="app-subtitle">Ứng dụng tra cứu khoa học toàn diện, chính xác và trực quan chuẩn IUPAC</div>
+                <div class="badge-list">
+                    <span class="badge badge-primary">Phiên bản 2.0.1</span>
+                    <span class="badge badge-success">Google Play Standard</span>
+                    <span class="badge badge-purple">Tra cứu Offline 100%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="nav-anchor-bar">
+            <a href="#store-listing" class="nav-btn active">Thông tin Google Play</a>
+            <a href="#privacy-policy" class="nav-btn">Chính sách Quyền riêng tư</a>
+            <a href="#permissions" class="nav-btn">Quyền & SDK Thứ ba</a>
+            <a href="#data-policy" class="nav-btn">Thu thập & Xóa dữ liệu</a>
+            <a href="#contact" class="nav-btn">Liên hệ</a>
+        </div>
+
+        <!-- SECTION 1: GOOGLE PLAY STORE LISTING -->
+        <div id="store-listing" class="section-card">
+            <h2 class="section-title"><span class="icon">📱</span> Bộ Nội dung Chuẩn Google Play Store Listing</h2>
+            <p style="color: var(--text-secondary); font-size: 14.5px; margin-bottom: 20px;">
+                Dưới đây là phần mô tả ngắn (Short description) và mô tả chi tiết (Long description) được tối ưu hóa chuẩn SEO App Store, tuân thủ giới hạn ký tự khắt khe của Google Play Console.
+            </p>
+
+            <!-- Short Description (Tiếng Việt) -->
+            <div class="desc-box">
+                <div class="desc-header">
+                    <span class="desc-label">Mô tả ngắn (Short Description - Tiếng Việt)</span>
+                    <span class="char-count">79 / 80 ký tự (Chuẩn)</span>
+                </div>
+                <div class="desc-content">Bảng tuần hoàn tương tác, 118 nguyên tố, tính mol, so sánh & trắc nghiệm offline</div>
+            </div>
+
+            <!-- Short Description (English) -->
+            <div class="desc-box">
+                <div class="desc-header">
+                    <span class="desc-label">Short Description (English)</span>
+                    <span class="char-count">73 / 80 characters</span>
+                </div>
+                <div class="desc-content">Explore 118 chemical elements and IUPAC periodic table offline with ease.</div>
+            </div>
+
+            <!-- Long Description (Tiếng Việt) -->
+            <div class="desc-box">
+                <div class="desc-header">
+                    <span class="desc-label">Mô tả chi tiết (Long Description - Tiếng Việt)</span>
+                    <span class="char-count">Chuẩn định dạng Google Play</span>
+                </div>
+                <div class="desc-content">"Nguyên tố Hóa học" là ứng dụng học tập và tra cứu khoa học toàn diện dành cho học sinh, sinh viên, giáo viên và người yêu Hóa học. Khám phá toàn bộ 118 nguyên tố hóa học chuẩn quốc tế IUPAC — 100% offline, không cần Internet.
+
+✨ TÍNH NĂNG NỔI BẬT:
+
+🔬 BẢNG TUẦN HOÀN TƯƠNG TÁC NATIVE:
+• Bảng tuần hoàn vẽ hoàn toàn native (không WebView), zoom/pan mượt mà.
+• 11 nhóm nguyên tố phân biệt bằng màu sắc, chạm chú giải để highlight nhóm.
+• Chạm ô xem tóm tắt nguyên tố ngay tại chỗ.
+
+📖 THẺ CHI TIẾT NATIVE + MÔ HÌNH BOHR:
+• Tab Tổng quan: ô nguyên tố phóng to, vị trí bảng tuần hoàn, cấu hình electron, tính chất vật lý & hóa học, lịch sử phát hiện.
+• Mô hình Bohr Canvas vẽ vòng tròn electron từng lớp theo đúng quy tắc.
+• Tab Bài viết: bài viết offline chi tiết với font tiếng Việt sắc nét.
+
+⚖️ SO SÁNH 2-3 NGUYÊN TỐ:
+• Chọn 2 hoặc 3 nguyên tố, bảng so sánh 14 thuộc tính cùng lúc.
+• Tự động tô đậm giá trị số lớn nhất để dễ nhận biết.
+
+🧮 MÁY TÍNH KHỐI LƯỢNG MOL:
+• Nhập công thức hóa học (H₂SO₄, Ca(OH)₂, CuSO₄·5H₂O, Fe₂(SO₄)₃...).
+• Tính tổng M (g/mol), bảng % khối lượng từng nguyên tố.
+• Bàn phím mini 20 nguyên tố phổ biến, hỗ trợ ngoặc lồng nhau.
+
+📝 TRẮC NGHIỆM & FLASHCARD:
+• 6 chủ đề trắc nghiệm, 3 phạm vi, 10 câu/lượt, phản hồi đúng/sai tức thì.
+• Flashcard lật 3D hiệu ứng đẹp, theo dõi tiến độ "Đã thuộc".
+• Lưu kỷ lục điểm cao nhất theo chủ đề.
+
+⭐ YÊU THÍCH & LỊCH SỬ XEM:
+• Đánh dấu yêu thích, lọc nhanh nguyên tố đã lưu.
+• Xem gần đây hiển thị 10 nguyên tố vừa tra cứu.
+
+🌙 CHẾ ĐỘ TỐI (DARK MODE):
+• Giao diện Material 3 DayNight, bảo vệ mắt khi học ban đêm.
+
+🎨 GIAO DIỆN & TRẢI NGHIỆM:
+• Tìm kiếm siêu tốc theo tên, ký hiệu, số hiệu nguyên tử.
+• Sắp xếp theo 7 tiêu chí: Z, tên A-Z, khối lượng, độ âm điện...
+• Font Be Vietnam Pro sắc nét, 4 mức cỡ chữ tùy chỉnh.
+• Tùy chọn tắt quảng cáo vĩnh viễn (In-App Purchase).
+
+Bài viết tham khảo biên soạn từ Wikipedia tiếng Việt (CC BY-SA 4.0).</div>
+            </div>
+
+            <!-- Long Description (English) -->
+            <div class="desc-box">
+                <div class="desc-header">
+                    <span class="desc-label">Long Description (English)</span>
+                    <span class="char-count">Global Play Store Ready</span>
+                </div>
+                <div class="desc-content">"Chemical Elements" is a comprehensive, fully offline chemistry learning app for students, teachers, and science enthusiasts. Explore all 118 elements of the IUPAC Periodic Table with interactive tools — no Internet required.
+
+✨ KEY HIGHLIGHTS:
+
+🔬 INTERACTIVE NATIVE PERIODIC TABLE:
+• Fully native Canvas-drawn periodic table with pinch-to-zoom and pan.
+• 11 element categories color-coded, tap legend chips to highlight groups.
+• Tap any cell for instant element summary via bottom sheet.
+
+📖 NATIVE ELEMENT DETAIL WITH BOHR MODEL:
+• Overview tab: enlarged element card, position, electron configuration, physical & chemical properties, discovery history.
+• Canvas-drawn Bohr atomic model with electron shells.
+• Article tab: detailed offline article with crisp Vietnamese typography.
+
+⚖️ COMPARE 2-3 ELEMENTS SIDE BY SIDE:
+• Pick 2 or 3 elements, compare 14 properties at once.
+• Automatically highlights the largest numeric value per row.
+
+🧮 MOLAR MASS CALCULATOR:
+• Enter chemical formulas (H₂SO₄, Ca(OH)₂, CuSO₄·5H₂O, Fe₂(SO₄)₃...).
+• Calculates total M (g/mol) and mass % per element.
+• Mini keyboard with 20 common elements, supports nested parentheses.
+
+📝 QUIZ & FLASHCARD:
+• 6 quiz topics, 3 scope ranges, 10 questions per round, instant feedback.
+• 3D flip flashcards with "Learned" tracking and progress filter.
+• High score saved per topic.
+
+⭐ FAVORITES & RECENT HISTORY:
+• Bookmark favorite elements, quick filter saved list.
+• Recent history shows last 10 viewed elements.
+
+🌙 DARK MODE:
+• Material 3 DayNight theme, eye-friendly for night study.
+
+🎨 UI & EXPERIENCE:
+• Instant search by name, symbol, or atomic number.
+• Sort by 7 criteria: Z, name A-Z, mass, electronegativity...
+• Be Vietnam Pro font, 4 adjustable font sizes.
+• Optional one-time In-App Purchase to remove all ads.
+
+Reference articles compiled from Vietnamese Wikipedia (CC BY-SA 4.0).</div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: PRIVACY POLICY -->
+        <div id="privacy-policy" class="section-card">
+            <h2 class="section-title"><span class="icon">🔒</span> Chính sách Quyền riêng tư (App Privacy Policy)</h2>
+            <p style="margin-bottom: 16px; color: var(--text-secondary);">
+                <strong>Ngày có hiệu lực:</strong> 12/09/2026<br>
+                <strong>Nhà phát triển:</strong> Minh Thắng (<a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>)<br>
+                <strong>Tên ứng dụng:</strong> Nguyên tố Hóa học (Package ID: <code>free.hocoo.ngtohoahoc</code>)
+            </p>
+
+            <div class="alert-box">
+                <strong>Cam kết cốt lõi:</strong> Ứng dụng "Nguyên tố Hóa học" được xây dựng với mục đích giáo dục thuần túy. Chúng tôi tôn trọng tuyệt đối quyền riêng tư của bạn. Ứng dụng <strong>KHÔNG</strong> thu thập, không bán và không chia sẻ bất kỳ thông tin nhận dạng cá nhân nào (như tên, số điện thoại, email cá nhân, danh bạ, vị trí GPS) của người dùng.
+            </div>
+
+            <h3 style="font-size: 16px; margin: 20px 0 10px 0; color: #0F172A;">1. Thu thập và Sử dụng Dữ liệu Cục bộ</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 12px;">
+                Ứng dụng chỉ lưu trữ một số dữ liệu tùy biến hiển thị cục bộ ngay trên bộ nhớ thiết bị của bạn thông qua <code>SharedPreferences</code> của hệ điều hành Android:
+            </p>
+            <ul style="padding-left: 20px; color: var(--text-secondary); margin-bottom: 16px;">
+                <li><strong>Cỡ chữ hiển thị (pref_font_zoom):</strong> Lưu mức phóng to chữ bạn chọn (85%, 100%, 120%, 140%).</li>
+                <li><strong>Trạng thái gỡ quảng cáo (pref_remove_ads):</strong> Lưu trạng thái người dùng đã mua gói tắt quảng cáo hay chưa để ẩn quảng cáo tương ứng.</li>
+                <li><strong>Danh sách yêu thích (favorites):</strong> Lưu số hiệu Z các nguyên tố đã đánh dấu yêu thích.</li>
+                <li><strong>Lịch sử xem gần đây (recent_history):</strong> Lưu 10 nguyên tố vừa tra cứu gần nhất.</li>
+                <li><strong>Điểm trắc nghiệm (quiz_high_score_*):</strong> Lưu kỷ lục điểm cao nhất theo từng chủ đề trắc nghiệm.</li>
+                <li><strong>Tiến độ flashcard (flashcard_learned):</strong> Lưu danh sách nguyên tố đã đánh dấu "Đã thuộc".</li>
+                <li><strong>Chế độ giao diện (pref_theme):</strong> Lưu lựa chọn giao diện Sáng/Tối/Theo hệ thống.</li>
+                <li><strong>Tiêu chí sắp xếp (pref_sort):</strong> Lưu lựa chọn sắp xếp danh sách nguyên tố.</li>
+            </ul>
+            <p style="color: var(--text-secondary);">Các dữ liệu cấu hình này không bao giờ được gửi tới bất kỳ máy chủ riêng nào của nhà phát triển.</p>
+
+            <!-- SECTION 3: PERMISSIONS & THIRD-PARTY SDKs -->
+            <h3 id="permissions" style="font-size: 16px; margin: 28px 0 10px 0; color: #0F172A;">2. Các Quyền Ứng dụng Yêu cầu (App Permissions)</h3>
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th style="width: 35%;">Quyền hệ thống</th>
+                        <th>Mục đích sử dụng cụ thể</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>android.permission.INTERNET</code></td>
+                        <td>Cho phép kết nối mạng để nạp quảng cáo từ Google AdMob và xác thực giao dịch in-app purchase từ Google Play Store.</td>
+                    </tr>
+                    <tr>
+                        <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+                        <td>Kiểm tra kết nối mạng (Wifi/Cellular) trước khi yêu cầu quảng cáo hoặc kiểm tra kết nối Google Play Billing.</td>
+                    </tr>
+                    <tr>
+                        <td><code>com.android.vending.BILLING</code></td>
+                        <td>Sử dụng dịch vụ thanh toán Google Play Billing an toàn để người dùng nâng cấp gói "Tắt Quảng Cáo" (Remove Ads).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="font-size: 16px; margin: 28px 0 10px 0; color: #0F172A;">3. Dịch vụ và SDK Bên Thứ ba (Third-Party Services)</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 12px;">
+                Ứng dụng tích hợp các dịch vụ chuẩn quốc tế được Google chứng nhận. Các SDK bên thứ ba này có thể thu thập thông tin thiết bị kỹ thuật theo chính sách riêng của họ:
+            </p>
+            
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Dịch vụ / SDK</th>
+                        <th>Dữ liệu có thể được thu thập</th>
+                        <th>Chính sách bảo mật</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Google AdMob</strong><br>(Google Mobile Ads SDK)</td>
+                        <td>Mã nhận dạng quảng cáo (Google Advertising ID / GAID), địa chỉ IP rút gọn, thông tin thiết bị cơ bản (hệ điều hành, nhà mạng, độ phân giải) để phục vụ hiển thị banner và native ad.</td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Play Billing</strong><br>(In-app Purchases API)</td>
+                        <td>ID đơn hàng giao dịch do Google Play cấp. Toàn bộ thông tin thẻ ngân hàng/thanh toán được mã hóa và xử lý trực tiếp bởi Google; ứng dụng của chúng tôi không có quyền truy cập thông tin thanh toán.</td>
+                        <td><a href="https://policies.google.com/terms" target="_blank" rel="noopener">Google Play Terms</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- SECTION 4: DATA RETENTION & DELETION -->
+            <h3 id="data-policy" style="font-size: 16px; margin: 28px 0 10px 0; color: #0F172A;">4. Chính sách Lưu trữ và Xóa Dữ liệu (Data Deletion Policy)</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 12px;">
+                Tuân thủ yêu cầu <strong>Data Safety (Bảo mật dữ liệu)</strong> của Google Play Store:
+            </p>
+            <ul style="padding-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+                <li><strong>Dữ liệu trên máy:</strong> Người dùng có thể xóa toàn bộ dữ liệu cấu hình cục bộ bất kỳ lúc nào bằng cách vào <em>Cài đặt thiết bị &gt; Ứng dụng &gt; Nguyên tố Hóa học &gt; Lưu trữ &gt; Xóa dữ liệu (Clear Data)</em> hoặc gỡ cài đặt ứng dụng.</li>
+                <li><strong>Mã định danh quảng cáo (Ad ID):</strong> Người dùng có thể thiết lập lại hoặc xóa Mã nhận dạng quảng cáo tại <em>Cài đặt Google trên thiết bị &gt; Quảng cáo &gt; Xóa mã nhận dạng quảng cáo (Delete advertising ID)</em>.</li>
+                <li><strong>Yêu cầu từ nhà phát triển:</strong> Do chúng tôi không duy trì bất kỳ máy chủ lưu trữ dữ liệu cá nhân nào, không có bản sao dữ liệu nào của bạn nằm ngoài thiết bị của bạn. Mọi thắc mắc vui lòng gửi email tới <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</li>
+            </ul>
+
+            <h3 style="font-size: 16px; margin: 28px 0 10px 0; color: #0F172A;">5. Quyền riêng tư của Trẻ em (Children's Privacy - COPPA)</h3>
+            <p style="color: var(--text-secondary);">
+                Ứng dụng "Nguyên tố Hóa học" phù hợp cho mọi lứa tuổi từ học sinh trung học cơ sở đến đại học. Chúng tôi không cố ý thu thập dữ liệu cá nhân từ trẻ em dưới 13 tuổi. Nếu bạn là cha mẹ hoặc người giám hộ và cho rằng con bạn đã cung cấp thông tin cho dịch vụ bên thứ ba thông qua ứng dụng, vui lòng liên hệ để chúng tôi hỗ trợ xử lý kịp thời.
+            </p>
+
+            <h3 style="font-size: 16px; margin: 28px 0 10px 0; color: #0F172A;">6. Thay đổi Chính sách</h3>
+            <p style="color: var(--text-secondary);">
+                Chúng tôi có thể cập nhật Chính sách quyền riêng tư này theo thời gian để phản ánh các thay đổi kỹ thuật hoặc quy định mới của Google Play. Mọi cập nhật sẽ được thông báo thông qua phiên bản phát hành mới của ứng dụng hoặc trên trang web này.
+            </p>
+        </div>
+
+        <!-- SECTION 5: CONTACT & FOOTER -->
+        <div id="contact" class="contact-card">
+            <div class="contact-info">
+                <h3>Bạn có câu hỏi hoặc cần hỗ trợ?</h3>
+                <p>Chúng tôi luôn sẵn sàng lắng nghe mọi phản hồi, đóng góp và yêu cầu hỗ trợ kỹ thuật.</p>
+            </div>
+            <a href="mailto:minhthang0792@gmail.com" class="email-btn">✉ minhthang0792@gmail.com</a>
+        </div>
+
+        <footer>
+            <p>© 2026 Nguyên tố Hóa học. Bản quyền thuộc về Minh Thắng.</p>
+            <p style="margin-top: 6px; font-size: 12px; color: var(--text-light);">
+                Quy chuẩn Bảng tuần hoàn theo IUPAC. Dữ liệu và hình ảnh nguyên tố được tổng hợp theo giấy phép Creative Commons CC BY-SA 4.0.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
