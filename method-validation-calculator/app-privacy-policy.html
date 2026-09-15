@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thẩm Định Phương Pháp — Giới thiệu & Chính sách quyền riêng tư</title>
+<meta name="description" content="Giới thiệu ứng dụng Thẩm Định Phương Pháp (Method Validation) và Chính sách quyền riêng tư theo yêu cầu của Google Play.">
+<style>
+  :root { --blue:#2563eb; --blue-dark:#1e40af; --green:#1b8a4c; --amber:#b26a00; --ink:#1f2937; --muted:#6b7280; --bg:#f6f8fc; --card:#ffffff; --line:#e5e7eb; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Be Vietnam Pro", "Segoe UI", Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
+  header { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color:#fff; padding:32px 16px; }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  .hero { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+  .hero img.icon { width:96px; height:96px; border-radius:22px; box-shadow:0 8px 24px rgba(0,0,0,.25); background:#fff; }
+  .hero h1 { margin:0 0 4px; font-size:28px; }
+  .hero p { margin:0; opacity:.9; }
+  .feature { width:100%; max-width:900px; display:block; margin:24px auto 0; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.15); }
+  nav { background:var(--card); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:2; }
+  nav .wrap { display:flex; gap:8px; flex-wrap:wrap; padding:8px 16px; }
+  nav a { color:var(--blue-dark); text-decoration:none; font-size:14px; padding:6px 10px; border-radius:8px; }
+  nav a:hover { background:#eef2ff; }
+  main { padding: 16px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin:18px 0; }
+  h2 { margin-top:0; color:var(--blue-dark); font-size:22px; }
+  h3 { font-size:17px; margin:18px 0 6px; }
+  .meta { color:var(--muted); font-size:13px; }
+  .pill { display:inline-block; background:#eef2ff; color:var(--blue-dark); border-radius:999px; padding:2px 10px; font-size:12px; margin-right:6px; }
+  pre.copy { white-space:pre-wrap; background:#f3f4f6; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family: inherit; font-size:15px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { border:1px solid var(--line); padding:8px 10px; vertical-align:top; text-align:left; }
+  th { background:#f3f4f6; }
+  ul { padding-left:20px; }
+  .ok { color:var(--green); font-weight:600; }
+  .note { background:#fff8e1; border:1px solid #ffe08a; border-radius:10px; padding:10px 14px; font-size:14px; }
+  footer { text-align:center; color:var(--muted); font-size:13px; padding:24px 16px 40px; }
+  a { color:var(--blue-dark); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="hero">
+      <img class="icon" src="playicon.png" alt="Biểu tượng ứng dụng Thẩm Định Phương Pháp">
+      <div>
+        <h1>Thẩm Định Phương Pháp</h1>
+        <p>Method Validation — công cụ tính toán thẩm định / xác nhận giá trị sử dụng phương pháp phân tích cho phòng kiểm nghiệm</p>
+        <p class="meta" style="opacity:.8;margin-top:6px">Gói ứng dụng: <code>method.validation.calculator</code> · Nhà phát triển: Minh Thang · Liên hệ: <a style="color:#fff" href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+      </div>
+    </div>
+    <img class="feature" src="feature-img.png" alt="Ảnh giới thiệu ứng dụng trên Google Play">
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#gioi-thieu">Giới thiệu</a>
+  <a href="#short">Short description</a>
+  <a href="#long">Long description</a>
+  <a href="#privacy">Chính sách quyền riêng tư</a>
+  <a href="#permissions">Quyền & SDK bên thứ ba</a>
+  <a href="#data">Thu thập · sử dụng · xoá dữ liệu</a>
+  <a href="#contact">Liên hệ</a>
+</div></nav>
+
+<main class="wrap">
+
+<section id="gioi-thieu">
+  <h2>Giới thiệu ứng dụng</h2>
+  <p><strong>Thẩm Định Phương Pháp</strong> là ứng dụng Android hoạt động <strong>hoàn toàn ngoại tuyến</strong>, thay thế các bảng tính Excel dùng để thẩm định (validation) và xác nhận giá trị sử dụng (verification) phương pháp phân tích trong phòng kiểm nghiệm dược phẩm, dược liệu và thực phẩm. Người dùng chỉ nhập số liệu thô (lượng cân, thể tích, diện tích pic, độ hấp thụ…); ứng dụng tự tính mọi chỉ tiêu, so với tiêu chí chấp nhận và đưa ra kết luận <span class="pill">ĐẠT</span><span class="pill">KHÔNG ĐẠT</span><span class="pill">CHƯA ĐỦ DỮ LIỆU</span> rồi xuất báo cáo PDF/CSV tiếng Việt.</p>
+  <p>Ba quy trình được hỗ trợ:</p>
+  <ul>
+    <li><strong>HPLC / GC theo ICH Q2(R2)</strong>: tính thích hợp hệ thống, tuyến tính & khoảng làm việc, độ lặp lại, độ đúng bằng thêm chuẩn vào nền mẫu, độ chụm trung gian (t-test, F-test), độ không đảm bảo đo, khoảng tin cậy 95 %.</li>
+    <li><strong>Kim loại nặng theo Ph. Eur. 2.4.27</strong> (GF-AAS, hydride, cold vapour): đường chuẩn kép, mẫu trắng LOD/LOQ, thu hồi 70–150 %, hệ số f và nhánh phương pháp, độ lặp lại Cách A/B, độ chụm trung gian theo ISO 5725, độ không đảm bảo đo, tính thích hợp hệ thống.</li>
+    <li><strong>Quy trình cơ bản ICH / USP / ASEAN / ISO 17025</strong>: máy tính pha chế (dung dịch gốc, pha loãng, thêm chuẩn), assay ngoại chuẩn, SST, độ đúng, độ lặp lại, tuyến tính.</li>
+  </ul>
+  <p>Mỗi project có nhật ký thay đổi (audit log), hoàn tác/làm lại, trạng thái hồ sơ (bản nháp → đã kiểm tra → đã phê duyệt khoá nhập liệu) và sao lưu/khôi phục bằng file.</p>
+  <div class="note">Ứng dụng là công cụ hỗ trợ tính toán. Kết luận thẩm định chính thức thuộc trách nhiệm của phòng kiểm nghiệm và người phê duyệt theo quy định hiện hành.</div>
+</section>
+
+<section id="short">
+  <h2>Short description <span class="meta">(Google Play, tối đa 80 ký tự)</span></h2>
+  <pre class="copy">Tính toán thẩm định phương pháp phân tích: HPLC ICH Q2(R2), AAS Ph. Eur. 2.4.27</pre>
+  <p class="meta">79 ký tự.</p>
+</section>
+
+<section id="long">
+  <h2>Long description <span class="meta">(Google Play, tối đa 4 000 ký tự)</span></h2>
+  <pre class="copy">Thẩm Định Phương Pháp thay thế các bảng tính Excel thẩm định phương pháp phân tích bằng một ứng dụng làm việc ngoại tuyến trên điện thoại và máy tính bảng. Bạn chỉ nhập số liệu thô từ phiếu cân và thiết bị; ứng dụng tự tính mọi chỉ tiêu, đối chiếu tiêu chí chấp nhận và kết luận ĐẠT / KHÔNG ĐẠT / CHƯA ĐỦ DỮ LIỆU.
+
+BA QUY TRÌNH THẨM ĐỊNH
+• HPLC / GC theo ICH Q2(R2): tính thích hợp hệ thống (RSD diện tích, tailing, số đĩa), tuyến tính và khoảng làm việc (r, R², tung độ gốc, hệ số đáp ứng, phần dư), độ lặp lại, độ đúng bằng thêm chuẩn vào nền mẫu thật với hồi quy thêm chuẩn, độ chụm trung gian ngày 2 (t-test, F-test, RSD gộp), khoảng tin cậy 95 % thu hồi, độ không đảm bảo đo top-down.
+• Kim loại nặng theo Ph. Eur. 2.4.27 (GF-AAS, hydride, hoá hơi lạnh): đường chuẩn đầu/cuối buổi và độ trôi, mẫu trắng thuốc thử (LOD/LOQ, tiêu chí N4), độ thu hồi 70–150 % ba mức × ba nền, hệ số f và khuyến cáo nhánh phương pháp, LOQ theo EP, độ lặp lại Cách A hoặc Cách B, độ chụm trung gian phân rã phương sai theo ISO 5725, độ không đảm bảo đo top-down và liệt kê đầy đủ, tính thích hợp hệ thống bằng đọc lại chuẩn, kết luận 8 thông số EP và 5 tiêu chí nội bộ.
+• Quy trình cơ bản ICH / USP &lt;1225&gt; / USP &lt;1226&gt; / ASEAN / ISO 17025: máy tính pha chế (dung dịch gốc theo độ tinh khiết, pha loãng C1V1=C2V2, kế hoạch thêm chuẩn), assay ngoại chuẩn đơn giản và nâng cao, SST, độ đúng, độ lặp lại, tuyến tính với LOD/LOQ.
+
+ĐÚNG TỪNG CON SỐ
+Mọi công thức được đối chiếu với bảng tính gốc của phòng kiểm nghiệm bằng hàng trăm phép thử tự động ở sai số 1e-9; thống kê chuẩn: độ lệch chuẩn mẫu, hồi quy tuyến tính, TINV/FINV, ISO 5725, Grubbs.
+
+DỄ DÙNG TẠI BÀN MÁY
+• Nhập theo bước với vòng tiến độ, chip kết luận ngay trên mỗi module, nhập nhanh cả cột (Enter xuống dòng) và dán từ bộ nhớ tạm.
+• Chạm vào ô kết quả để xem công thức và các số đã thế vào.
+• Bảng điều khiển KPI, tổng hợp kết luận, chế độ tối, giao diện hai cột trên máy tính bảng.
+• Hoàn tác / làm lại, nhật ký thay đổi từng ô, trạng thái hồ sơ (bản nháp → đã kiểm tra → đã phê duyệt khoá nhập liệu), tên KNV và người kiểm tra.
+• Xuất báo cáo PDF tiếng Việt, CSV, sao lưu/khôi phục project bằng file.
+• Không cần tài khoản, không cần Internet để tính toán; dữ liệu lưu trên máy của bạn.
+
+DÀNH CHO
+Kiểm nghiệm viên, phòng QC/QA, trung tâm kiểm nghiệm dược phẩm – dược liệu – thực phẩm, giảng viên và sinh viên ngành phân tích.
+
+Ứng dụng hiển thị quảng cáo để duy trì phát triển; bạn có thể tắt toàn bộ quảng cáo vĩnh viễn bằng một lần mua trong ứng dụng. Ứng dụng là công cụ hỗ trợ tính toán, không thay thế kết luận thẩm định chính thức của phòng kiểm nghiệm.</pre>
+  <p class="meta">≈ 2 600 ký tự.</p>
+</section>
+
+<section id="privacy">
+  <h2>Chính sách quyền riêng tư (Privacy Policy)</h2>
+  <p class="meta">Hiệu lực từ: 15/09/2026 · Áp dụng cho ứng dụng Android "Thẩm Định Phương Pháp" (<code>method.validation.calculator</code>) do Minh Thang phát hành trên Google Play.</p>
+  <p><em>English summary:</em> The app works fully offline. Your validation data stays on your device and is never uploaded by us. The app shows ads through Google AdMob and offers a one-time in-app purchase ("remove_ads") through Google Play Billing; these Google SDKs may collect the advertising ID, device information and purchase history under Google's own policies. You can delete all app data by deleting projects in the app or uninstalling it. Contact: minhthang0792@gmail.com.</p>
+
+  <h3>1. Dữ liệu do bạn nhập vào ứng dụng</h3>
+  <ul>
+    <li>Số liệu thí nghiệm (lượng cân, thể tích, diện tích pic, độ hấp thụ…), tên phương pháp, tên chất phân tích, tên người thực hiện/người kiểm tra và nhật ký thay đổi <strong>chỉ được lưu cục bộ</strong> trong cơ sở dữ liệu SQLite của ứng dụng trên thiết bị của bạn.</li>
+    <li>Chúng tôi <strong>không</strong> có máy chủ và <strong>không</strong> nhận, đọc, sao chép hay truyền các dữ liệu này đi bất kỳ đâu.</li>
+    <li>File PDF/CSV/sao lưu do bạn xuất được ghi vào thư mục riêng của ứng dụng; việc chia sẻ file cho ứng dụng khác chỉ xảy ra khi bạn chủ động chọn "Chia sẻ" và do bạn kiểm soát.</li>
+    <li>Nếu bạn bật sao lưu Android/Google, hệ điều hành có thể sao lưu dữ liệu ứng dụng lên tài khoản Google của bạn theo chính sách của Google; chúng tôi không truy cập được bản sao lưu đó.</li>
+  </ul>
+
+  <h3>2. Dữ liệu do SDK bên thứ ba thu thập</h3>
+  <p>Để hiển thị quảng cáo và xử lý mua hàng, ứng dụng tích hợp các SDK của Google. Các SDK này có thể tự động thu thập một số dữ liệu theo chính sách riêng của Google:</p>
+  <table>
+    <tr><th>SDK</th><th>Mục đích</th><th>Dữ liệu có thể thu thập</th><th>Chính sách</th></tr>
+    <tr><td>Google AdMob (Google Mobile Ads SDK) và User Messaging Platform</td><td>Hiển thị quảng cáo (banner, quảng cáo khi mở ứng dụng, quảng cáo xen kẽ) và thu thập sự đồng ý theo GDPR/UK</td><td>Mã nhận dạng quảng cáo (Advertising ID), thông tin thiết bị và hệ điều hành, địa chỉ IP (vị trí gần đúng), tương tác với quảng cáo, thông tin chẩn đoán</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>, <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></td></tr>
+    <tr><td>Google Play Billing (In-app purchase)</td><td>Xử lý mua một lần sản phẩm "Tắt quảng cáo" (<code>remove_ads</code>) và khôi phục giao dịch</td><td>Lịch sử mua hàng, mã giao dịch, tài khoản Google dùng để mua (do Google Play xử lý; ứng dụng không thấy thông tin thanh toán)</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+    <tr><td>Google Play services (kèm theo các SDK trên)</td><td>Hạ tầng cho AdMob và Billing</td><td>Thông tin thiết bị, mã nhận dạng thiết bị, thông tin chẩn đoán</td><td>Như trên</td></tr>
+  </table>
+  <p>Khi bạn mua "Tắt quảng cáo", ứng dụng không còn tải quảng cáo và SDK AdMob không còn được gọi để hiển thị quảng cáo.</p>
+
+  <h3>3. Dữ liệu chúng tôi <u>không</u> thu thập</h3>
+  <ul>
+    <li>Không tài khoản, không đăng nhập, không thu thập tên, email, số điện thoại, danh bạ, ảnh, tệp cá nhân, vị trí chính xác, micro, camera.</li>
+    <li>Không phân tích hành vi (analytics) và không báo cáo sự cố (crash reporting) do chúng tôi vận hành trong phiên bản hiện tại.</li>
+    <li>Ứng dụng không hướng tới trẻ em dưới 13 tuổi và không cố ý thu thập dữ liệu của trẻ em.</li>
+  </ul>
+</section>
+
+<section id="permissions">
+  <h2>Quyền mà ứng dụng yêu cầu</h2>
+  <table>
+    <tr><th>Quyền Android</th><th>Nguồn</th><th>Lý do</th></tr>
+    <tr><td><code>android.permission.INTERNET</code></td><td>Google Mobile Ads SDK (AdMob), Google Play Billing</td><td>Tải và hiển thị quảng cáo; kiểm tra và khôi phục giao dịch mua "Tắt quảng cáo". Việc tính toán thẩm định không cần Internet.</td></tr>
+    <tr><td><code>android.permission.ACCESS_NETWORK_STATE</code></td><td>Google Mobile Ads SDK</td><td>Biết thiết bị có kết nối mạng hay không để chỉ tải quảng cáo khi có mạng.</td></tr>
+    <tr><td><code>com.google.android.gms.permission.AD_ID</code></td><td>Google Mobile Ads SDK</td><td>Đọc mã nhận dạng quảng cáo của Android để phục vụ quảng cáo và giới hạn tần suất. Bạn có thể đặt lại hoặc xoá mã này trong Cài đặt Android → Google → Quảng cáo.</td></tr>
+    <tr><td><code>com.android.vending.BILLING</code></td><td>Google Play Billing</td><td>Thực hiện mua trong ứng dụng sản phẩm <code>remove_ads</code>.</td></tr>
+    <tr><td><code>android.permission.WAKE_LOCK</code>, <code>RECEIVE_BOOT_COMPLETED</code>, <code>FOREGROUND_SERVICE</code> (nếu SDK khai báo)</td><td>Google Play services / WorkManager đi kèm SDK</td><td>Hạ tầng nội bộ của SDK Google; ứng dụng không tự sử dụng.</td></tr>
+  </table>
+  <p>Ứng dụng <strong>không</strong> yêu cầu quyền lưu trữ (READ/WRITE_EXTERNAL_STORAGE, MANAGE_EXTERNAL_STORAGE): file xuất được ghi trong thư mục riêng của ứng dụng và chia sẻ qua hộp thoại hệ thống. Ứng dụng không dùng quyền vị trí, camera, micro, danh bạ, SMS, điện thoại.</p>
+</section>
+
+<section id="data">
+  <h2>Thu thập, sử dụng và xoá dữ liệu</h2>
+  <h3>Mục đích sử dụng</h3>
+  <ul>
+    <li><strong>Dữ liệu thẩm định của bạn</strong>: chỉ để tính toán, hiển thị kết luận, xuất báo cáo và lưu nhật ký thay đổi trên thiết bị theo yêu cầu của bạn.</li>
+    <li><strong>Dữ liệu do SDK Google thu thập</strong>: hiển thị quảng cáo phù hợp, đo lường quảng cáo, phòng chống gian lận và xử lý thanh toán — theo chính sách của Google.</li>
+  </ul>
+  <h3>Chia sẻ</h3>
+  <p>Chúng tôi không bán, không chia sẻ dữ liệu thẩm định của bạn với bất kỳ ai. Dữ liệu quảng cáo/mua hàng được Google xử lý trực tiếp theo điều khoản của Google; chúng tôi chỉ nhận báo cáo tổng hợp, ẩn danh (doanh thu quảng cáo, số lượt mua) từ Google.</p>
+  <h3>Lưu trữ và bảo mật</h3>
+  <p>Dữ liệu được lưu trong bộ nhớ riêng của ứng dụng (sandbox Android), các ứng dụng khác không đọc được nếu thiết bị không root. Bạn nên đặt khoá màn hình cho thiết bị chứa dữ liệu thẩm định.</p>
+  <h3>Xoá dữ liệu</h3>
+  <ul>
+    <li><strong>Xoá một project</strong>: Trang chủ → menu ⋮ trên project → Xoá. Dữ liệu và nhật ký thay đổi của project đó bị xoá ngay khỏi cơ sở dữ liệu.</li>
+    <li><strong>Xoá toàn bộ</strong>: Cài đặt Android → Ứng dụng → Thẩm Định Phương Pháp → Bộ nhớ → Xoá dữ liệu, hoặc gỡ cài đặt ứng dụng. File PDF/CSV đã xuất nằm trong thư mục riêng của ứng dụng cũng bị xoá cùng lúc; file bạn đã chia sẻ sang ứng dụng khác cần xoá tại ứng dụng đó.</li>
+    <li><strong>Dữ liệu quảng cáo</strong>: đặt lại/xoá mã quảng cáo trong Cài đặt Android → Google → Quảng cáo; tuỳ chỉnh quảng cáo tại <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>; hoặc mua "Tắt quảng cáo" để ứng dụng ngừng gọi SDK quảng cáo.</li>
+    <li><strong>Yêu cầu hỗ trợ xoá</strong>: gửi email tới <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>; chúng tôi phản hồi trong 7 ngày làm việc. Vì chúng tôi không lưu dữ liệu của bạn trên máy chủ nên không có dữ liệu nào phía chúng tôi cần xoá; chúng tôi sẽ hướng dẫn thao tác trên thiết bị.</li>
+  </ul>
+  <h3>Thời gian lưu giữ</h3>
+  <p>Dữ liệu tồn tại trên thiết bị cho đến khi bạn xoá. Dữ liệu do Google thu thập được lưu theo thời hạn trong chính sách của Google.</p>
+  <h3>Thay đổi chính sách</h3>
+  <p>Khi chính sách thay đổi, chúng tôi cập nhật trang này và ghi ngày hiệu lực mới; thay đổi quan trọng sẽ được thông báo trong mô tả phiên bản trên Google Play.</p>
+</section>
+
+<section id="contact">
+  <h2>Liên hệ</h2>
+  <p>Nhà phát triển: <strong>Minh Thang</strong> — Mỹ Tho, Tiền Giang, Việt Nam<br>
+  Email: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+</section>
+
+</main>
+
+<footer>© 2026 Minh Thang · Thẩm Định Phương Pháp (Method Validation) · Trang này là tài liệu công khai phục vụ Google Play.</footer>
+</body>
+</html>
