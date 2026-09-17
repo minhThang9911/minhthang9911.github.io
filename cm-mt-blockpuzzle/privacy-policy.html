@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chính sách bảo mật & Thông tin ứng dụng – Block Puzzle: Jewel Edition</title>
+  <meta name="description" content="Chính sách quyền riêng tư và thông tin chi tiết ứng dụng Block Puzzle: Jewel Edition (cm.mt.blockpuzzle) theo tiêu chuẩn Google Play Store.">
+  <link rel="icon" type="image/png" href="playstore-app-icon.png">
+  <style>
+    :root {
+      --bg-deep: #0B0E17;
+      --bg-card: #141A2B;
+      --bg-card-hover: #1B2236;
+      --line-soft: #28324A;
+      --text-main: #F1F4FF;
+      --text-dim: #8A93B0;
+      --accent-cyan: #22D3EE;
+      --accent-gold: #FBBF24;
+      --accent-pink: #F43F5E;
+      --accent-green: #34D399;
+      --accent-purple: #A78BFA;
+      --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--accent-gold);
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(180deg, #182038 0%, var(--bg-deep) 100%);
+      border-bottom: 1px solid var(--line-soft);
+      padding: 2.5rem 0 3.5rem;
+      overflow: hidden;
+    }
+
+    .hero-banner-wrap {
+      width: 100%;
+      max-height: 440px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(34, 211, 238, 0.2);
+      margin-bottom: 2rem;
+      background-color: #000;
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-profile {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-icon {
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(251, 191, 36, 0.35);
+      background-color: var(--bg-card);
+      flex-shrink: 0;
+    }
+
+    .hero-info {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid var(--line-soft);
+      background-color: rgba(20, 26, 43, 0.8);
+      color: var(--text-main);
+    }
+
+    .badge-cyan {
+      border-color: rgba(34, 211, 238, 0.4);
+      color: var(--accent-cyan);
+      background-color: rgba(34, 211, 238, 0.08);
+    }
+
+    .badge-gold {
+      border-color: rgba(251, 191, 36, 0.4);
+      color: var(--accent-gold);
+      background-color: rgba(251, 191, 36, 0.08);
+    }
+
+    .badge-green {
+      border-color: rgba(52, 211, 153, 0.4);
+      color: var(--accent-green);
+      background-color: rgba(52, 211, 153, 0.08);
+    }
+
+    /* Table of contents */
+    .toc-nav {
+      background-color: var(--bg-card);
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      padding: 1.2rem 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .toc-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent-gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .toc-list li a {
+      color: var(--text-main);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .toc-list li a:hover {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    /* Main Content Sections */
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--line-soft);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin: 1.4rem 0 0.6rem;
+    }
+
+    p, ul, ol {
+      color: #D1D5E5;
+      font-size: 0.96rem;
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85em;
+      background-color: rgba(34, 211, 238, 0.12);
+      color: var(--accent-cyan);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid rgba(34, 211, 238, 0.25);
+    }
+
+    /* Cards & Boxes */
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-highlight {
+      border-left: 4px solid var(--accent-cyan);
+      background: linear-gradient(90deg, rgba(34, 211, 238, 0.05) 0%, var(--bg-card) 100%);
+    }
+
+    .card-warning {
+      border-left: 4px solid var(--accent-gold);
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.05) 0%, var(--bg-card) 100%);
+    }
+
+    .card-success {
+      border-left: 4px solid var(--accent-green);
+      background: linear-gradient(90deg, rgba(52, 211, 153, 0.05) 0%, var(--bg-card) 100%);
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.2rem 0 1.8rem;
+      border-radius: 12px;
+      border: 1px solid var(--line-soft);
+      background-color: var(--bg-card);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background-color: #171E32;
+      color: #FFFFFF;
+      font-weight: 600;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(40, 50, 74, 0.5);
+      color: #D1D5E5;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Store Listing Display */
+    .listing-box {
+      background-color: #0F1424;
+      border: 1px dashed var(--line-soft);
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
+      white-space: pre-line;
+      color: #E2E8F0;
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    /* Contact Box */
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      background-color: var(--bg-card);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 14px;
+      padding: 1.8rem;
+      text-align: center;
+      align-items: center;
+    }
+
+    .contact-email {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      background-color: rgba(34, 211, 238, 0.1);
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid rgba(34, 211, 238, 0.25);
+    }
+
+    footer {
+      border-top: 1px solid var(--line-soft);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      background-color: #070910;
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 1.6rem;
+      }
+      .hero-icon {
+        width: 80px;
+        height: 80px;
+      }
+      .hero {
+        padding: 1.5rem 0 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-banner-wrap">
+        <img src="feature-image.png" alt="Block Puzzle Jewel Edition Banner" class="hero-banner" loading="eager">
+      </div>
+
+      <div class="hero-profile">
+        <img src="playstore-app-icon.png" alt="Block Puzzle App Icon" class="hero-icon">
+        <div class="hero-info">
+          <h1 class="hero-title">Block Puzzle: Jewel Edition</h1>
+          <div class="hero-subtitle">Xếp khối · Nổ dòng · Phá kỷ lục (Jewel Neon Edition)</div>
+          <div class="hero-meta">
+            <span class="badge badge-cyan">Package: cm.mt.blockpuzzle</span>
+            <span class="badge badge-gold">Google Play Verified</span>
+            <span class="badge badge-green">100% Offline</span>
+            <span class="badge">Phiên bản: 1.0.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- MỤC LỤC ĐIỀU HƯỚNG -->
+    <nav class="toc-nav" aria-label="Mục lục trang">
+      <div class="toc-title">Mục lục thông tin & chính sách</div>
+      <ul class="toc-list">
+        <li><a href="#about-app">1. Giới thiệu ứng dụng & Lối chơi</a></li>
+        <li><a href="#store-listing">2. Mô tả chuẩn Google Play Store</a></li>
+        <li><a href="#privacy-policy">3. Chính sách quyền riêng tư (Privacy Policy)</a></li>
+        <li><a href="#app-permissions">4. Quyền ứng dụng yêu cầu (Permissions)</a></li>
+        <li><a href="#third-party-sdk">5. Các SDK bên thứ ba & Mục đích</a></li>
+        <li><a href="#data-collection-usage">6. Chính sách thu thập & sử dụng dữ liệu</a></li>
+        <li><a href="#data-deletion">7. Hướng dẫn & Chính sách xóa dữ liệu</a></li>
+        <li><a href="#children-privacy">8. Quyền riêng tư của trẻ em (COPPA)</a></li>
+        <li><a href="#contact-dev">9. Thông tin nhà phát triển & Hỗ trợ</a></li>
+      </ul>
+    </nav>
+
+    <!-- 1. GIỚI THIỆU ỨNG DỤNG -->
+    <section id="about-app">
+      <h2>1. Giới thiệu ứng dụng</h2>
+      <p>
+        <strong>Block Puzzle: Jewel Edition</strong> (mã gói <code>cm.mt.blockpuzzle</code>) là trò chơi giải đố xếp khối 2D phong cách ngọc neon hiện đại được phát triển trên nền tảng Godot Engine v4.7. Trò chơi kết hợp lối chơi xếp khối lưới 8x8 kinh điển với đồ hoạ hạt neon rực rỡ, âm thanh phát sinh theo chuỗi hợp âm sống động và cơ chế combo nhân điểm kịch tính.
+      </p>
+      <div class="card card-highlight">
+        <h3 style="margin-top: 0;">Đặc tính cốt lõi của trò chơi:</h3>
+        <ul>
+          <li><strong>Offline-first (100% Ngoại tuyến):</strong> Hoàn toàn không cần kết nối mạng Internet hoặc Wi-Fi để trải nghiệm trọn vẹn trò chơi.</li>
+          <li><strong>Không tạo tài khoản:</strong> Không yêu cầu người chơi đăng nhập, không thu thập mật khẩu, email, số điện thoại hay thông tin cá nhân nhạy cảm.</li>
+          <li><strong>Tiến trình lưu cục bộ:</strong> Điểm số cao nhất (High score), tiến trình ván đang chơi dở và các cài đặt âm thanh, rung đều được lưu an toàn trực tiếp trên bộ nhớ thiết bị của người dùng.</li>
+          <li><strong>Thân thiện với gia đình:</strong> Trò chơi lành mạnh, phù hợp cho mọi lứa tuổi, không chứa nội dung độc hại hay bạo lực.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. MÔ TẢ CHUẨN GOOGLE PLAY STORE -->
+    <section id="store-listing">
+      <h2>2. Thông tin mô tả trên Google Play Store</h2>
+      <p>Nội dung niêm yết chính thức của ứng dụng trên cửa hàng Google Play:</p>
+
+      <h3>Mô tả ngắn (Short Description - tối đa 80 ký tự):</h3>
+      <div class="listing-box">Game xếp khối giải đố ngọc neon thư giãn, chơi offline mọi lúc mọi nơi.</div>
+
+      <h3>Mô tả đầy đủ (Full Description):</h3>
+      <div class="listing-box">Block Puzzle: Jewel Edition là trò chơi xếp khối giải đố cổ điển kết hợp phong cách ngọc neon hiện đại, mang đến trải nghiệm thư giãn và rèn luyện trí tuệ đỉnh cao.
+
+Cách chơi:
+• Kéo và thả các khối ngọc lấp lánh vào lưới 8x8.
+• Lấp kín các hàng ngang hoặc cột dọc để kích hoạt hiệu ứng nổ dòng và ghi điểm.
+• Giữ chuỗi nổ liên tục để tạo combo nhân số điểm thưởng cực lớn.
+• Tính toán không gian thông minh để không bị hết nước đi!
+
+Tính năng nổi bật:
+• Đồ hoạ Jewel Neon rực rỡ, hiệu ứng ánh sáng mượt mà cùng âm thanh chân thực.
+• Lối chơi xếp khối 8x8 kinh điển, không giới hạn thời gian — chơi theo nhịp độ của riêng bạn.
+• Cơ hội bứt phá: Đổi 3 khối mới hoặc hồi sinh dọn sạch tâm bàn khi bế tắc.
+• Chơi 100% offline mọi lúc, mọi nơi, hoàn toàn không cần kết nối mạng hay Wi-Fi.
+• Tự động lưu ván chơi: thoải mái dừng lại và tiếp tục ván đấu bất kỳ lúc nào.
+• Tối ưu hoá tuyệt đối, dung lượng siêu nhẹ, tiết kiệm pin.
+
+Hãy sẵn sàng phá vỡ giới hạn kỷ lục điểm số của bạn cùng Block Puzzle: Jewel Edition!</div>
+    </section>
+
+    <!-- 3. CHÍNH SÁCH QUYỀN RIÊNG TƯ -->
+    <section id="privacy-policy">
+      <h2>3. Chính sách quyền riêng tư (App Privacy Policy)</h2>
+      <p><em>Cập nhật lần cuối: Ngày 17 tháng 09 năm 2026</em></p>
+      <p>
+        Nhà phát triển (Developer: <strong>Minh Thắng</strong>, email: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>) cam kết tôn trọng và bảo vệ tuyệt đối quyền riêng tư của mọi người dùng khi cài đặt và thưởng thức trò chơi <strong>Block Puzzle: Jewel Edition</strong>.
+      </p>
+      <p>
+        Chính sách quyền riêng tư này giải thích rõ ràng, minh bạch về các quyền ứng dụng cần sử dụng, những dữ liệu có thể được xử lý bởi các thư viện đối tác (SDK) được tích hợp trong ứng dụng, mục đích sử dụng cũng như quyền kiểm soát và xóa dữ liệu của người dùng theo đúng quy định của Google Play Developer Policy và pháp luật bảo vệ dữ liệu hiện hành (bao gồm GDPR và CCPA).
+      </p>
+    </section>
+
+    <!-- 4. QUYỀN ỨNG DỤNG YÊU CẦU -->
+    <section id="app-permissions">
+      <h2>4. Các quyền ứng dụng yêu cầu (App Permissions)</h2>
+      <p>Để đảm bảo hoạt động kỹ thuật mượt mà và các tính năng tương tác trong game, ứng dụng chỉ yêu cầu các quyền hệ thống tối thiểu sau:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tên quyền hệ thống (Permission)</th>
+              <th>Mục đích sử dụng thực tế</th>
+              <th>Bắt buộc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>android.permission.INTERNET</code></td>
+              <td>Cho phép ứng dụng kết nối mạng để tải quảng cáo từ Google AdMob và đồng bộ hoá xác thực giao dịch mua gói "Xoá quảng cáo" qua Google Play Billing. Khi chơi offline, trò chơi vẫn hoạt động bình thường không cần mạng.</td>
+              <td>Không bắt buộc đối với gameplay lõi</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+              <td>Kiểm tra thiết bị đang có kết nối Internet (Wi-Fi/4G/5G) hay đang ngoại tuyến để tối ưu hiệu suất tải quảng cáo, tránh gửi yêu cầu mạng thừa thãi khi offline.</td>
+              <td>Không bắt buộc</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.VIBRATE</code></td>
+              <td>Tạo hiệu ứng rung xúc giác (haptic feedback nhẹ 10ms - 35ms) khi người chơi chạm phím, thả khối thành công hoặc kích hoạt nổ combo. Người dùng có thể bật/tắt tính năng rung bất kỳ lúc nào trong menu Cài đặt của game.</td>
+              <td>Tuỳ chọn (có thể tắt trong game)</td>
+            </tr>
+            <tr>
+              <td><code>com.android.vending.BILLING</code></td>
+              <td>Được sử dụng bởi thư viện Google Play In-App Billing chính thức để hỗ trợ tính năng mua gói vật phẩm "Xoá quảng cáo" (Remove Ads) an toàn thông qua tài khoản Google Play.</td>
+              <td>Chỉ kích hoạt khi mua IAP</td>
+            </tr>
+            <tr>
+              <td><code>com.google.android.gms.permission.AD_ID</code></td>
+              <td>Được yêu cầu bởi Google Mobile Ads SDK trên hệ điều hành Android 13+ nhằm truy cập Mã nhận dạng quảng cáo (Advertising ID) phục vụ hiển thị quảng cáo phù hợp và ngăn chặn gian lận hiển thị quảng cáo.</td>
+              <td>Theo quy định Google Play</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Ứng dụng <strong>KHÔNG</strong> yêu cầu bất kỳ quyền nhạy cảm nào như: Vị trí GPS chính xác (Location), Danh bạ (Contacts), Máy ảnh (Camera), Micro (Microphone), Bộ nhớ chia sẻ bên ngoài (Storage READ/WRITE) hay Quyền điện thoại (Phone State).</p>
+    </section>
+
+    <!-- 5. SDK BÊN THỨ BA -->
+    <section id="third-party-sdk">
+      <h2>5. Các SDK bên thứ ba được tích hợp</h2>
+      <p>Ứng dụng tích hợp đúng 02 bộ công cụ SDK chuẩn hoá, chính thức từ Google:</p>
+
+      <div class="card card-highlight">
+        <h3>5.1. Google Mobile Ads SDK (Google AdMob)</h3>
+        <p>
+          Ứng dụng hiển thị biểu ngữ (banner ad) ở màn hình chính, quảng cáo xen kẽ (interstitial ad) có giới hạn chu kỳ khi kết thúc ván chơi và quảng cáo có tặng thưởng (rewarded ad) khi người chơi chủ động chọn tính năng đổi khối hoặc hồi sinh.
+        </p>
+        <ul>
+          <li><strong>Dữ liệu do SDK tự động xử lý:</strong> Mã nhận dạng quảng cáo thiết bị (Google Advertising ID - GAID), thông tin kỹ thuật cơ bản của thiết bị (kiểu máy, phiên bản hệ điều hành, độ phân giải màn hình), tương tác với quảng cáo, chẩn đoán hiệu suất và nhật ký sự cố phát sinh (Crash logs & Diagnostics).</li>
+          <li><strong>Bảo mật truyền tải:</strong> Mọi kết nối trao đổi dữ liệu quảng cáo đều được mã hóa bằng giao thức HTTPS/TLS theo tiêu chuẩn của Google.</li>
+          <li><strong>Tuân thủ quyền riêng tư Châu Âu (GDPR / UK):</strong> Tích hợp giao diện quản lý chấp thuận người dùng Google UMP (User Messaging Platform). Người dùng tại khu vực EEA và Vương quốc Anh có toàn quyền chọn hoặc điều chỉnh lại sự đồng thuận đối với quảng cáo cá nhân hoá bất kỳ lúc nào trong mục Cài đặt.</li>
+          <li><strong>Chính sách bảo mật tham chiếu:</strong> Xem chi tiết tại <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách bảo mật của Google</a> và <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Quy định xử lý dữ liệu của AdMob</a>.</li>
+        </ul>
+      </div>
+
+      <div class="card card-success">
+        <h3>5.2. Google Play In-App Billing SDK</h3>
+        <p>
+          Cung cấp cơ chế giao dịch thanh toán trong ứng dụng cho gói "Xoá quảng cáo" (Remove Ads).
+        </p>
+        <ul>
+          <li>Toàn bộ quy trình thanh toán, trừ tiền thẻ ngân hàng hoặc ví điện tử được xử lý 100% trên nền tảng máy chủ bảo mật của Google Play.</li>
+          <li>Nhà phát triển <strong>không bao giờ tiếp cận, lưu trữ hay yêu cầu</strong> bất kỳ thông tin tài khoản ngân hàng, số thẻ tín dụng hay dữ liệu tài chính nào của người dùng.</li>
+          <li>Khi mua thành công, ứng dụng chỉ ghi nhận một cờ trạng thái boolean <code>remove_ads_owned = true</code> cục bộ trên máy để tắt toàn bộ quảng cáo vĩnh viễn.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. CHÍNH SÁCH THU THẬP & SỬ DỤNG DỮ LIỆU -->
+    <section id="data-collection-usage">
+      <h2>6. Chính sách thu thập, sử dụng và chia sẻ dữ liệu (Data Safety)</h2>
+      <p>Căn cứ theo biểu mẫu An toàn dữ liệu (Data Safety) của Google Play Store:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Loại dữ liệu</th>
+              <th>Thu thập bởi ai</th>
+              <th>Mục đích sử dụng</th>
+              <th>Được chia sẻ bên ngoài?</th>
+              <th>Mã hoá truyền tải</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mã định danh thiết bị (Advertising ID / GAID)</strong></td>
+              <td>Google AdMob SDK</td>
+              <td>Quảng cáo, tiếp thị, phòng chống gian lận hiển thị quảng cáo</td>
+              <td>Có (chia sẻ với mạng lưới quảng cáo của Google)</td>
+              <td>Có (HTTPS)</td>
+            </tr>
+            <tr>
+              <td><strong>Tương tác trong app (App interactions)</strong></td>
+              <td>Google AdMob SDK</td>
+              <td>Phân tích hiệu suất phân phối quảng cáo</td>
+              <td>Có (thuộc hệ thống Google AdMob)</td>
+              <td>Có (HTTPS)</td>
+            </tr>
+            <tr>
+              <td><strong>Nhật ký sự cố & Hiệu suất (Crash logs & Diagnostics)</strong></td>
+              <td>Google AdMob SDK</td>
+              <td>Phân tích kỹ thuật, phát hiện lỗi giật khung hình / sập ứng dụng</td>
+              <td>Không chia sẻ bên thứ ba độc lập</td>
+              <td>Có (HTTPS)</td>
+            </tr>
+            <tr>
+              <td><strong>Dữ liệu trò chơi (Điểm cao, cài đặt âm thanh, ván dở)</strong></td>
+              <td>Lưu trữ cục bộ trên máy người dùng</td>
+              <td>Duy trì trải nghiệm chơi game liên tục cho người dùng</td>
+              <td><strong>Hoàn toàn không</strong> (chỉ lưu trên máy người chơi, không gửi lên bất kỳ máy chủ nào)</td>
+              <td>Lưu trên vùng nhớ ứng dụng Android</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card card-warning">
+        <h3 style="margin-top: 0;">Cam kết không thu thập thông tin cá nhân:</h3>
+        <p>
+          Nhà phát triển <strong>cam kết không thu thập</strong> tên, địa chỉ email, số điện thoại, hình ảnh, tài liệu cá nhân, danh bạ hay dữ liệu định vị địa lý thời gian thực của người dùng. Trò chơi không có máy chủ backend riêng, không có hệ thống tài khoản đám mây và hoạt động độc lập ngay trên thiết bị cầm tay của bạn.
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. HƯỚNG DẪN VÀ CHÍNH SÁCH XÓA DỮ LIỆU -->
+    <section id="data-deletion">
+      <h2>7. Chính sách và hướng dẫn xóa dữ liệu (Data Deletion Policy)</h2>
+      <p>Người chơi có toàn quyền kiểm soát, đặt lại hoặc xóa hoàn toàn mọi dữ liệu liên quan đến ứng dụng bất kỳ lúc nào:</p>
+
+      <h3>7.1. Xóa toàn bộ dữ liệu trò chơi (Điểm số, cài đặt, ván chơi dở)</h3>
+      <p>Vì dữ liệu trò chơi được lưu trữ hoàn toàn cục bộ trên điện thoại của bạn, bạn có thể xóa sạch tức thì thông qua một trong hai cách sau:</p>
+      <ol>
+        <li><strong>Xóa bộ nhớ ứng dụng trong Cài đặt Android:</strong> Mở <em>Cài đặt (Settings)</em> trên thiết bị &rarr; chọn <em>Ứng dụng (Apps)</em> &rarr; tìm và chọn <em>Block Puzzle</em> &rarr; chọn <em>Lưu trữ (Storage)</em> &rarr; bấm <strong>Xóa dữ liệu (Clear Data)</strong> và <strong>Xóa bộ nhớ đệm (Clear Cache)</strong>. Toàn bộ điểm số, kỷ lục và tiến trình chơi sẽ được xóa vĩnh viễn khỏi thiết bị.</li>
+        <li><strong>Gỡ cài đặt ứng dụng:</strong> Khi bạn gỡ cài đặt (Uninstall) <em>Block Puzzle</em> khỏi thiết bị Android, hệ điều hành sẽ tự động giải phóng và xoá bỏ toàn bộ thư mục dữ liệu cục bộ của game.</li>
+      </ol>
+
+      <h3>7.2. Đặt lại hoặc xóa Mã nhận dạng quảng cáo (Advertising ID)</h3>
+      <p>Nếu bạn muốn xóa hoặc ngừng chia sẻ Mã quảng cáo của thiết bị với Google AdMob:</p>
+      <ol>
+        <li>Mở <em>Cài đặt (Settings)</em> trên điện thoại Android.</li>
+        <li>Chọn mục <strong>Google</strong> &rarr; chọn <strong>Quảng cáo (Ads)</strong>.</li>
+        <li>Chọn <strong>Đặt lại mã nhận dạng cho quảng cáo (Reset advertising ID)</strong> hoặc <strong>Xóa mã nhận dạng cho quảng cáo (Delete advertising ID)</strong>.</li>
+      </ol>
+
+      <h3>7.3. Yêu cầu hỗ trợ xóa dữ liệu qua Email</h3>
+      <p>
+        Trong trường hợp bạn có bất kỳ thắc mắc nào về quyền dữ liệu hoặc muốn gửi yêu cầu hỗ trợ kiểm tra xóa dữ liệu, vui lòng gửi email trực tiếp tới địa chỉ: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a> với tiêu đề <code>[Data Deletion Request - Block Puzzle]</code>. Chúng tôi sẽ phản hồi và hướng dẫn xử lý trong vòng 48 giờ làm việc.
+      </p>
+    </section>
+
+    <!-- 8. QUYỀN RIÊNG TƯ CỦA TRẺ EM -->
+    <section id="children-privacy">
+      <h2>8. Quyền riêng tư của trẻ em (Children's Privacy / COPPA)</h2>
+      <p>
+        Trò chơi <strong>Block Puzzle: Jewel Edition</strong> được thiết kế theo tiêu chuẩn giải trí gia đình thân thiện, tuy nhiên ứng dụng không trực tiếp nhắm mục tiêu đến đối tượng trẻ em dưới 13 tuổi (hoặc độ tuổi tương ứng theo quy định pháp luật sở tại) mà không có sự giám sát của cha mẹ hoặc người giám hộ.
+      </p>
+      <p>
+        Chúng tôi không cố ý thu thập bất kỳ thông tin nhận dạng cá nhân nào từ trẻ em. Cấu hình phân phối quảng cáo trên Google AdMob được thiết lập giới hạn nội dung cao nhất là mức phù hợp với gia đình (<code>RequestConfiguration.MAX_AD_CONTENT_RATING_PG</code>). Nếu cha mẹ hoặc người giám hộ phát hiện con em mình cung cấp thông tin hoặc có vấn đề cần phản ánh, vui lòng liên hệ ngay với chúng tôi qua email để được giải quyết kịp thời.
+      </p>
+    </section>
+
+    <!-- 9. LIÊN HỆ -->
+    <section id="contact-dev">
+      <h2>9. Thông tin liên hệ nhà phát triển</h2>
+      <p>Mọi câu hỏi, góp ý về sản phẩm hoặc yêu cầu liên quan đến Chính sách bảo mật và Quyền riêng tư, xin vui lòng liên hệ:</p>
+
+      <div class="contact-card">
+        <h3 style="margin: 0; color: #FFFFFF; font-size: 1.2rem;">Hỗ trợ kỹ thuật & Bảo mật thông tin</h3>
+        <p style="margin: 0; color: var(--text-dim);">Đại diện nhà phát triển: <strong>Minh Thắng (MT Games)</strong></p>
+        <div class="contact-email">
+          Email: <a href="mailto:minhthang0792@gmail.com" style="color: var(--accent-cyan);">minhthang0792@gmail.com</a>
+        </div>
+        <p style="margin: 0; font-size: 0.88rem; color: var(--text-dim);">Thời gian tiếp nhận và phản hồi: Thứ Hai – Thứ Bảy (trong vòng 24h - 48h).</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 MT Games · Block Puzzle: Jewel Edition. Tất cả các quyền được bảo lưu.</p>
+      <p style="margin-top: 0.4rem; font-size: 0.8rem; color: #5A6482;">
+        Trang thông tin & chính sách bảo mật tuân thủ nguyên tắc dành cho nhà phát triển của Google Play Store.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
