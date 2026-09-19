@@ -53,36 +53,52 @@ a { color:var(--accent); }
   <!-- ================= TIẾNG VIỆT ================= -->
   <section id="vi">
     <h2>Giới thiệu ứng dụng</h2>
-    <p>Lịch âm thuần Việt, nhẹ và sạch: xem ngày âm, giờ hoàng đạo, đổi ngày âm dương và widget ngay màn hình chính.</p>
+    <p>Lịch âm thuần Việt, nhẹ và sạch: xem ngày âm, giờ hoàng đạo, đổi ngày âm dương, tính ngày giỗ & cúng và widget ngay màn hình chính.</p>
 
     <div class="box">
       <div class="label">Short description (Google Play)</div>
-      Lịch âm offline: giờ hoàng đạo, đổi ngày, ngày lễ, widget. Nhẹ, không rác.
+      Lịch âm offline: giờ hoàng đạo, ngày giỗ, cúng 49-100 ngày, thôi nôi, widget.
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">Lịch Âm Việt dùng thuật toán chuẩn Hồ Ngọc Đức, hoạt động offline 100%: lịch tháng âm – dương với ngày lễ, mùng 1 và rằm; chi tiết từng ngày gồm can chi ngày/tháng/năm, tiết khí, ngày hoàng đạo – hắc đạo với trực thần và 6 giờ hoàng đạo; đổi ngày âm ↔ dương hỗ trợ tháng nhuận; danh sách ngày lễ sắp tới; widget ngày âm trên màn hình chính. Nhẹ, sạch, không rác.</p>
+      <p style="margin:0">Lịch Âm Việt dùng thuật toán chuẩn Hồ Ngọc Đức, hoạt động offline 100%: lịch tháng âm – dương với ngày lễ, mùng 1 và rằm; chi tiết từng ngày gồm can chi ngày/tháng/năm, tiết khí, ngày hoàng đạo – hắc đạo với trực thần và 6 giờ hoàng đạo; đổi ngày âm ↔ dương hỗ trợ tháng nhuận; danh sách ngày lễ sắp tới; widget ngày âm trên màn hình chính. Tính ngày giỗ & cúng: nhập ngày mất (âm hoặc dương) là có ngay lễ 3 ngày, tuần thất, cúng 49 ngày, 100 ngày, giỗ đầu, giỗ hết và giỗ hằng năm — xử lý đúng tháng nhuận; đầy cữ, đầy tháng, thôi nôi cho bé theo lệ "gái lùi 2, trai lùi 1" hoặc tuỳ chỉnh. Bạn còn thêm được sự kiện riêng theo ngày âm hoặc dương (giỗ, sinh nhật âm, các mốc cúng vừa tính) và được nhắc trước đúng số ngày bạn chọn. Nhẹ, sạch, không rác. Có gói "Xoá quảng cáo" mua một lần để tắt hẳn quảng cáo.</p>
     </div>
 
     <h2>Chính sách quyền riêng tư</h2>
-    <p class="note">Cập nhật lần cuối: 09/07/2026 · Áp dụng cho ứng dụng <strong>Lịch Âm Việt - Lịch Vạn Niên</strong> (package <code>home.free.lichamviet</code>).</p>
+    <p class="note">Cập nhật lần cuối: 19/09/2026 · Áp dụng cho ứng dụng <strong>Lịch Âm Việt - Lịch Vạn Niên</strong> (package <code>home.free.lichamviet</code>).</p>
 
     <h3>Tóm tắt</h3>
     <ul>
       <li>Ứng dụng hoạt động <strong>offline</strong>, không yêu cầu tài khoản, không có máy chủ riêng.</li>
       <li>Chúng tôi <strong>không thu thập, không lưu trữ, không chia sẻ</strong> dữ liệu cá nhân của bạn.</li>
-      <li>Bên thứ ba duy nhất là <strong>Google AdMob</strong> để hiển thị quảng cáo (chi tiết bên dưới).</li>
+      <li>Bên thứ ba: <strong>Google AdMob</strong> (quảng cáo) và <strong>Google Play Billing</strong> (mua gói xoá quảng cáo) — chi tiết bên dưới.</li>
     </ul>
 
     <h3>Quyền (permissions) ứng dụng yêu cầu</h3>
+    <p class="note">Đây là <strong>toàn bộ</strong> quyền có trong file cài đặt (AndroidManifest sau khi ghép),
+    gồm cả quyền do SDK của Google tự thêm vào — đúng danh sách Google Play hiển thị. Ứng dụng
+    không yêu cầu quyền vị trí, danh bạ, camera hay bộ nhớ.</p>
     <table>
       <tr><th style="width:38%">Quyền Android</th><th>Mục đích sử dụng</th></tr>
-      <tr><td class="code">INTERNET</td><td>Hiển thị quảng cáo Google AdMob. Ứng dụng không dùng internet cho bất kỳ mục đích nào khác.</td></tr>
+      <tr><td class="code">POST_NOTIFICATIONS</td><td>Hiện thông báo nhắc do chính bạn đặt trong ứng dụng.</td></tr>
+<tr><td class="code">RECEIVE_BOOT_COMPLETED</td><td>Đặt lại lịch nhắc của bạn sau khi thiết bị khởi động lại.</td></tr>
+<tr><td class="code">VIBRATE</td><td>Rung phản hồi nhẹ khi thao tác trong ứng dụng và khi hiện thông báo.</td></tr>
+<tr><td class="code">INTERNET</td><td>Tải quảng cáo Google AdMob và kiểm tra gói "Xoá quảng cáo" qua Google Play. Ứng dụng không dùng internet cho bất kỳ mục đích nào khác — mọi tính năng chính chạy offline.</td></tr>
+<tr><td class="code">com.android.vending.BILLING</td><td>Mua gói "Xoá quảng cáo" một lần qua Google Play. Thanh toán do Google Play xử lý — ứng dụng không nhìn thấy và không lưu thông tin thẻ của bạn.</td></tr>
+<tr><td class="code">com.google.android.gms.permission.AD_ID</td><td>Mã quảng cáo của thiết bị, do SDK Google AdMob khai báo để phân phối và đo lường quảng cáo. Bạn có thể đặt lại hoặc xoá mã này trong Cài đặt Android → Google → Quảng cáo.</td></tr>
+<tr><td class="code">ACCESS_NETWORK_STATE</td><td>SDK quảng cáo kiểm tra máy có mạng hay không trước khi tải quảng cáo (do SDK khai báo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_AD_ID</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (đọc mã quảng cáo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_ATTRIBUTION</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (đo lường chuyển đổi quảng cáo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_TOPICS</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (chủ đề quảng cáo).</td></tr>
+<tr><td class="code">WAKE_LOCK</td><td>Do các SDK của Google (quảng cáo, thanh toán) và thư viện thông báo khai báo để công việc của chúng không bị ngắt giữa chừng. Bản thân ứng dụng không giữ máy thức chạy nền.</td></tr>
+<tr><td class="code">FOREGROUND_SERVICE</td><td>Do các SDK của Google và thư viện thông báo khai báo. Ứng dụng không chạy dịch vụ nền nào.</td></tr>
     </table>
-    <ul class="note"><li>Widget màn hình chính chỉ đọc dữ liệu ứng dụng lưu cục bộ trên máy.</li></ul>
+    <ul class="note"><li>Widget màn hình chính chỉ đọc dữ liệu ứng dụng lưu cục bộ trên máy.</li>
+<li>Ứng dụng cố ý KHÔNG xin quyền báo thức chính xác (SCHEDULE_EXACT_ALARM): lời nhắc có thể lệch vài phút, đổi lại bạn không phải cấp thêm quyền nào.</li>
+<li>Khi bạn bấm chia sẻ hoặc xuất dữ liệu, nội dung đi thẳng tới ứng dụng bạn chọn — không qua máy chủ của chúng tôi.</li></ul>
 
     <h3>SDK bên thứ ba</h3>
-    <p>Ứng dụng tích hợp duy nhất một SDK có kết nối mạng: <strong>Google AdMob</strong>
+    <p>Ứng dụng tích hợp hai dịch vụ của Google có kết nối mạng. Thứ nhất, <strong>Google AdMob</strong>
     (Google Mobile Ads SDK) để hiển thị quảng cáo — nguồn thu duy trì ứng dụng miễn phí.
     AdMob có thể thu thập: <strong>mã quảng cáo của thiết bị (Advertising ID)</strong>,
     địa chỉ IP, thông tin thiết bị chung và dữ liệu tương tác quảng cáo, theo
@@ -91,6 +107,10 @@ a { color:var(--accent); }
     Bạn có thể đặt lại hoặc xóa Advertising ID trong <em>Cài đặt Android → Google → Quảng cáo</em>.
     Ngoài AdMob, ứng dụng <strong>không nhúng</strong> bất kỳ SDK phân tích, theo dõi hay mạng xã hội nào
     (không Firebase Analytics, không Facebook SDK, không crash reporting).</p>
+    <p>Thứ hai, <strong>Google Play Billing</strong> — dùng khi bạn mua gói "Xoá quảng cáo" một lần.
+Giao dịch do <strong>Google Play xử lý hoàn toàn</strong>: ứng dụng không nhìn thấy và không lưu số thẻ hay thông tin
+thanh toán của bạn; chúng tôi chỉ nhận biết trạng thái "đã mua" để tắt quảng cáo. Việc mua hàng tuân theo
+<a href="https://policies.google.com/privacy" rel="noopener">Chính sách quyền riêng tư của Google</a>.</p>
 
     <h3>Thu thập &amp; sử dụng dữ liệu</h3>
     <ul>
@@ -100,7 +120,8 @@ a { color:var(--accent); }
       <li>Dữ liệu cảm biến/micro (nếu ứng dụng có dùng) được xử lý tức thời trên máy và không được lưu thành bản ghi gốc.</li>
       <li>Không có hồ sơ người dùng, không quảng cáo dựa trên dữ liệu do chúng tôi thu thập.</li>
     </ul>
-    
+    <h3>Dữ liệu ứng dụng lưu trên máy bạn</h3>
+<p>Ứng dụng lưu các sự kiện âm/dương bạn tự thêm (tên, ngày, ghi chú, số ngày nhắc trước) và cài đặt; ngày âm hôm nay được ghi ra cho widget màn hình chính. Ngày mất, ngày sinh và tên bạn nhập ở màn "Ngày giỗ &amp; cúng" chỉ dùng để tính ngay trên máy và <strong>không được lưu</strong>, trừ khi bạn bấm thêm mốc đó vào Sự kiện của tôi. Toàn bộ nằm trong bộ nhớ riêng của ứng dụng trên máy bạn — không đồng bộ, không gửi lên máy chủ nào (chúng tôi không có máy chủ), và SDK quảng cáo không truy cập được.</p>
 
     <h3>Xóa dữ liệu</h3>
     <ul>
@@ -125,36 +146,52 @@ a { color:var(--accent); }
   <!-- ================= ENGLISH ================= -->
   <section id="en" lang="en">
     <h2>About this app</h2>
-    <p>A clean, lightweight Vietnamese lunar calendar: lunar dates, auspicious hours, date conversion and a home-screen widget.</p>
+    <p>A clean, lightweight Vietnamese lunar calendar: lunar dates, auspicious hours, date conversion, memorial & rite dates and a home-screen widget.</p>
 
     <div class="box">
       <div class="label">Short description (Google Play)</div>
-      Vietnamese lunar calendar: auspicious hours, date converter, home widget.
+      Vietnamese lunar calendar: auspicious hours, memorial & rite dates, widget.
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">Viet Lunar Calendar uses the standard Hồ Ngọc Đức algorithm and works 100% offline: a monthly solar–lunar grid with holidays and new/full moon days; day details with can-chi, solar terms, auspicious/inauspicious day stars and the 6 auspicious hours; two-way lunar↔solar conversion with leap-month support; upcoming holidays; and a home-screen widget. Light and clean.</p>
+      <p style="margin:0">Viet Lunar Calendar uses the standard Hồ Ngọc Đức algorithm and works 100% offline: a monthly solar–lunar grid with holidays and new/full moon days; day details with can-chi, solar terms, auspicious/inauspicious day stars and the 6 auspicious hours; two-way lunar↔solar conversion with leap-month support; upcoming holidays; and a home-screen widget. Memorial & rite dates: enter a date of death (lunar or solar) to get the 3rd-day, weekly, 49th-day and 100th-day rites plus the first, second and yearly death anniversaries, with leap months handled correctly; and a newborn's đầy cữ, full-month and first-birthday dates by Vietnamese custom or your own rule. You can also add your own lunar or solar events (death anniversaries, lunar birthdays, the rite dates you just computed) and be reminded the number of days ahead you choose. Light and clean. A one-time "Remove ads" purchase switches the ads off for good.</p>
     </div>
 
     <h2>Privacy Policy</h2>
-    <p class="note">Last updated: 09/07/2026 · Applies to <strong>Viet Lunar Calendar Offline</strong> (package <code>home.free.lichamviet</code>).</p>
+    <p class="note">Last updated: 19/09/2026 · Applies to <strong>Viet Lunar Calendar Offline</strong> (package <code>home.free.lichamviet</code>).</p>
 
     <h3>Summary</h3>
     <ul>
       <li>The app works <strong>offline</strong>, requires no account, and we operate no servers.</li>
       <li>We <strong>do not collect, store or share</strong> any of your personal data.</li>
-      <li>The only third party is <strong>Google AdMob</strong>, used to serve ads (details below).</li>
+      <li>Third parties: <strong>Google AdMob</strong> (ads) and <strong>Google Play Billing</strong> (the remove-ads purchase) — see below.</li>
     </ul>
 
     <h3>Permissions requested</h3>
+    <p class="note">This is the <strong>complete</strong> list from the installed package (the merged
+    AndroidManifest), including permissions added automatically by Google's SDKs — the same list Google Play
+    shows. The app requests no location, contacts, camera or storage permission.</p>
     <table>
       <tr><th style="width:38%">Android permission</th><th>Purpose</th></tr>
-      <tr><td class="code">INTERNET</td><td>Serve Google AdMob ads. The app uses the internet for no other purpose.</td></tr>
+      <tr><td class="code">POST_NOTIFICATIONS</td><td>Show the reminder notifications you set up yourself in the app.</td></tr>
+<tr><td class="code">RECEIVE_BOOT_COMPLETED</td><td>Re-arm your scheduled reminders after the device reboots.</td></tr>
+<tr><td class="code">VIBRATE</td><td>Light haptic feedback for in-app actions and notifications.</td></tr>
+<tr><td class="code">INTERNET</td><td>Load Google AdMob ads and check the "Remove ads" purchase through Google Play. The app uses the internet for nothing else — every core feature works offline.</td></tr>
+<tr><td class="code">com.android.vending.BILLING</td><td>Buy the one-time "Remove ads" item through Google Play. Payment is handled by Google Play — the app never sees or stores your card details.</td></tr>
+<tr><td class="code">com.google.android.gms.permission.AD_ID</td><td>The device advertising ID, declared by the Google AdMob SDK to serve and measure ads. You can reset or delete it in Android Settings → Google → Ads.</td></tr>
+<tr><td class="code">ACCESS_NETWORK_STATE</td><td>The ads SDK checks whether the device is online before requesting an ad (declared by the SDK).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_AD_ID</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (read the advertising ID).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_ATTRIBUTION</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (ad conversion measurement).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_TOPICS</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (ads topics).</td></tr>
+<tr><td class="code">WAKE_LOCK</td><td>Declared by Google's SDKs (ads, billing) and the notification library so their work is not cut off. The app itself does not hold the device awake in the background.</td></tr>
+<tr><td class="code">FOREGROUND_SERVICE</td><td>Declared by Google's SDKs and the notification library. The app runs no foreground service.</td></tr>
     </table>
-    <ul class="note"><li>The home-screen widget only reads app data stored locally on the device.</li></ul>
+    <ul class="note"><li>The home-screen widget only reads app data stored locally on the device.</li>
+<li>The app deliberately does NOT request exact-alarm permission (SCHEDULE_EXACT_ALARM): reminders may drift by a few minutes, and you never have to grant an extra permission.</li>
+<li>When you tap share or export, the content goes straight to the app you pick — never through our servers.</li></ul>
 
     <h3>Third-party SDKs</h3>
-    <p>The app embeds exactly one network-connected SDK: <strong>Google AdMob</strong>
+    <p>The app integrates two Google services that use the network. First, <strong>Google AdMob</strong>
     (Google Mobile Ads SDK), which serves the ads that keep this app free.
     AdMob may collect the device <strong>Advertising ID</strong>, IP address,
     general device information and ad-interaction data, as described in the
@@ -163,6 +200,10 @@ a { color:var(--accent); }
     You can reset or delete your Advertising ID in <em>Android Settings → Google → Ads</em>.
     Beyond AdMob, the app embeds <strong>no</strong> analytics, tracking or social SDKs
     (no Firebase Analytics, no Facebook SDK, no crash reporting).</p>
+    <p>Second, <strong>Google Play Billing</strong> — used when you buy the one-time "Remove ads" item.
+The transaction is <strong>handled entirely by Google Play</strong>: the app never sees or stores your card or payment
+details; it only learns the "purchased" state in order to switch ads off. Purchases are governed by the
+<a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</p>
 
     <h3>Data collection &amp; use</h3>
     <ul>
@@ -172,7 +213,8 @@ a { color:var(--accent); }
       <li>Sensor/microphone data (where applicable) is processed on-device in real time and never stored as raw recordings.</li>
       <li>No user profiles are built; no advertising is based on data we collect.</li>
     </ul>
-    
+    <h3>What the app stores on your device</h3>
+<p>The app stores the lunar/solar events you add yourself (title, date, note, how many days ahead to remind) and settings; today's lunar date is written out for the home-screen widget. The date of death, date of birth and name you type on the "Memorial &amp; rites" screen are used only for the on-device calculation and are <strong>not stored</strong> unless you choose to add a rite to My events. All of it lives in the app's private storage on your phone — never synced, never uploaded to any server (we run none), and the advertising SDK cannot access it.</p>
 
     <h3>Data deletion</h3>
     <ul>
