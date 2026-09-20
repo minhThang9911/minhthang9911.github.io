@@ -1,36 +1,461 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chính sách bảo mật – Evil 2048</title>
-<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:2rem auto;padding:0 1rem;line-height:1.6}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chính sách bảo mật &amp; Giới thiệu – Evil 2048</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #0f0b1d;
+      --bg-card: #1a1433;
+      --bg-card-subtle: #231b42;
+      --border-color: #3b2c6d;
+      --accent-yellow: #ffd43b;
+      --accent-pink: #ff6b6b;
+      --accent-green: #51cf66;
+      --accent-blue: #339af0;
+      --accent-cyan: #22b8cf;
+      --text-main: #f8f9fa;
+      --text-muted: #b8b3d1;
+      --font-display: 'Baloo 2', cursive, sans-serif;
+      --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 107, 107, 0.2);
+      margin-bottom: 2rem;
+      border: 2px solid var(--border-color);
+      background-color: #1a1233;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Header Profile */
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: var(--bg-card);
+      padding: 1.5rem 1.8rem;
+      border-radius: 20px;
+      border: 2px solid var(--border-color);
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .app-icon {
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      flex-shrink: 0;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .app-title-group h1 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent-yellow);
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+    }
+
+    .app-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .badge {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    .badge.highlight {
+      background: rgba(81, 207, 102, 0.15);
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+    }
+
+    .badge.tagline {
+      background: rgba(255, 107, 107, 0.15);
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+    }
+
+    /* Section Cards */
+    .card {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--accent-yellow);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-top: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    p.lead {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    /* Mode Showcase Cards */
+    .modes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+
+    .mode-item {
+      background: var(--bg-card-subtle);
+      border: 1.5px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.2rem;
+    }
+
+    .mode-item h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .mode-item.classic h4 { color: var(--accent-green); }
+    .mode-item.versus h4 { color: var(--accent-pink); }
+    .mode-item.sabotage h4 { color: var(--accent-yellow); }
+
+    .mode-item p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: var(--text-muted);
+    }
+
+    /* Feature Grid */
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .feature-pill {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0;
+      font-size: 0.95rem;
+      background: var(--bg-card-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    th, td {
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--accent-yellow);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Alerts */
+    .info-box {
+      background: rgba(34, 184, 207, 0.1);
+      border-left: 4px solid var(--accent-cyan);
+      padding: 1rem 1.2rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.2rem 0;
+    }
+
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Links */
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--accent-yellow);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .app-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1rem;
+      }
+      .app-badges {
+        justify-content: center;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+    }
+  </style>
 </head>
 <body>
-<h1>Chính sách bảo mật – Evil 2048</h1>
-<p>Cập nhật lần cuối: 2026-09-18</p>
-<p>Ứng dụng <strong>Evil 2048</strong> (mã gói <code>cm.mt.evil2048</code>) được phát triển bởi MT Games. Chính sách này mô tả cách ứng dụng xử lý dữ liệu.</p>
 
-<h2>Dữ liệu chúng tôi thu thập</h2>
-<p>Ứng dụng <strong>không</strong> yêu cầu đăng ký tài khoản và <strong>không</strong> tự thu thập thông tin cá nhân. Tiến trình chơi được lưu cục bộ trên thiết bị của bạn.</p>
+<div class="container">
 
-<h2>Quảng cáo (Google AdMob)</h2>
-<p>Ứng dụng hiển thị quảng cáo qua Google AdMob. AdMob có thể thu thập và sử dụng mã định danh quảng cáo (Advertising ID), thông tin thiết bị và dữ liệu sử dụng để hiển thị quảng cáo phù hợp. Xem chi tiết tại
-<a href="https://policies.google.com/privacy">Chính sách bảo mật của Google</a> và
-<a href="https://support.google.com/admob/answer/6128543">cách Google sử dụng dữ liệu</a>.</p>
-<p>Người dùng trong Khu vực Kinh tế Châu Âu và Vương quốc Anh sẽ được hỏi ý kiến về quảng cáo cá nhân hoá khi mở ứng dụng, và có thể thay đổi lựa chọn trong mục Cài đặt của ứng dụng.</p>
-<p>Bạn có thể đặt lại hoặc tắt mã định danh quảng cáo trong Cài đặt Android → Google → Quảng cáo.</p>
+  <!-- Hero Feature Image -->
+  <div class="hero-banner">
+    <img src="feature-image.png" alt="Evil 2048 Banner">
+  </div>
 
-<h2>Mua trong ứng dụng</h2>
-<p>Ứng dụng cung cấp tuỳ chọn mua "Xóa quảng cáo" qua Google Play Billing. Giao dịch được Google Play xử lý; chúng tôi không nhận thông tin thanh toán của bạn.</p>
+  <!-- App Header -->
+  <header class="app-header">
+    <img src="playstore-app-icon.png" alt="Evil 2048 App Icon" class="app-icon">
+    <div class="app-title-group">
+      <h1>Evil 2048</h1>
+      <div class="app-badges">
+        <span class="badge highlight">MT Games</span>
+        <span class="badge">cm.mt.evil2048</span>
+        <span class="badge tagline">2048 nhưng máy chơi ác — hoặc bạn chơi ác!</span>
+      </div>
+    </div>
+  </header>
 
-<h2>Trẻ em</h2>
-<p>Ứng dụng không hướng tới trẻ em dưới 13 tuổi và không cố ý thu thập dữ liệu của trẻ em.</p>
+  <!-- Giới thiệu App (Google Play Store Listing) -->
+  <section class="card">
+    <h2>🎮 Giới thiệu Trò chơi</h2>
+    
+    <div class="info-box">
+      <p class="lead"><strong>Mô tả ngắn (Short Description):</strong><br>
+      2048 nhưng máy chơi ác — hoặc bạn chơi ác! Đấu trí bot AI kịch tính, offline.</p>
+    </div>
 
-<h2>Thay đổi chính sách</h2>
-<p>Chính sách có thể được cập nhật; phiên bản mới nhất luôn ở địa chỉ này.</p>
+    <h3>Mô tả chi tiết (Full Description)</h3>
+    <p>Bạn đã quá quen với 2048 cổ điển dễ đoán? <strong>Evil 2048</strong> mang đến trải nghiệm giải đố hoàn toàn mới với AI đối kháng thông minh, biến từng nước đi thành một cuộc đấu trí nghẹt thở.</p>
 
-<h2>Liên hệ</h2>
-<p>Email: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+    <div class="modes-grid">
+      <div class="mode-item classic">
+        <h4>🎲 Chế độ Cổ Điển</h4>
+        <p>Luật chơi 2048 quen thuộc với phong cách đồ họa hoạt hình kẹo ngọt rực rỡ. Vuốt gộp các ô số để chinh phục mốc 2048 vương giả và phá vỡ kỷ lục cá nhân.</p>
+      </div>
+      <div class="mode-item versus">
+        <h4>⚔️ Chế độ Đối Kháng</h4>
+        <p>Máy không còn sinh ô ngẫu nhiên mà chủ động tính toán vị trí hiểm hóc nhất để chặn đường vuốt của bạn. Vượt qua 4 cấp độ khó từ "Khó chịu" đến "Ác Quỷ".</p>
+      </div>
+      <div class="mode-item sabotage">
+        <h4>💣 Chế độ Phá Hoại (Đảo vai)</h4>
+        <p>Bạn vào vai kẻ ác đi săn! Tự tay đặt các ô 2 và 4 vào bàn cờ để dồn ép, triệt hạ bot giải đố trước khi nó trốn thoát qua 5 cấp bot thử thách.</p>
+      </div>
+    </div>
+
+    <h3>Đặc điểm nổi bật</h3>
+    <div class="feature-list">
+      <div class="feature-pill">⚡ Hoàn toàn Offline — Không cần kết nối mạng</div>
+      <div class="feature-pill">🔒 Không cần tài khoản — Mở game là chơi ngay</div>
+      <div class="feature-pill">⭐ Gói mua 1 lần — 1 IAP Xóa toàn bộ quảng cáo vĩnh viễn</div>
+      <div class="feature-pill">🎨 Đồ họa Cartoon sống động — Mascot Ác Quỷ biểu cảm hài hước</div>
+    </div>
+  </section>
+
+  <!-- Chính sách bảo mật (Google Play Store Privacy Policy) -->
+  <section class="card">
+    <h2>🛡️ Chính sách Bảo mật (Privacy Policy)</h2>
+    <p><em>Cập nhật lần cuối: Tháng 09/2026</em></p>
+    <p>Chính sách bảo mật này áp dụng cho ứng dụng di động <strong>Evil 2048</strong> (mã gói <code>cm.mt.evil2048</code>) được phát triển bởi <strong>MT Games</strong>. Chúng tôi cam kết bảo vệ quyền riêng tư của người dùng và minh bạch trong mọi hoạt động xử lý dữ liệu.</p>
+
+    <h3>1. Quyền ứng dụng yêu cầu (App Permissions)</h3>
+    <p>Ứng dụng chỉ yêu cầu các quyền tối thiểu cần thiết để vận hành các tính năng cơ bản:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Quyền Android</th>
+          <th>Mục đích sử dụng</th>
+          <th>Bắt buộc</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>android.permission.INTERNET</code></td>
+          <td>Tải quảng cáo từ mạng Google AdMob và xử lý giao dịch mua hàng Google Play Billing.</td>
+          <td>Có</td>
+        </tr>
+        <tr>
+          <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+          <td>Kiểm tra trạng thái kết nối mạng để tối ưu việc tải quảng cáo.</td>
+          <td>Có</td>
+        </tr>
+        <tr>
+          <td><code>android.permission.VIBRATE</code></td>
+          <td>Tạo phản hồi xúc giác (rung nhẹ) khi vuốt và gộp ô số. Có thể bật/tắt trong phần Cài đặt của game.</td>
+          <td>Không</td>
+        </tr>
+        <tr>
+          <td><code>com.android.vending.BILLING</code></td>
+          <td>Hỗ trợ gói thanh toán mua trong ứng dụng (IAP) "Xóa quảng cáo" thông qua Google Play.</td>
+          <td>Có</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2. Các dịch vụ và SDK của Bên thứ ba (Third-Party SDKs)</h3>
+    <p>Ứng dụng tích hợp các SDK tiêu chuẩn sau để hỗ trợ quảng cáo và thanh toán:</p>
+    <ul>
+      <li>
+        <strong>Google Mobile Ads SDK (AdMob):</strong>
+        Dùng để hiển thị quảng cáo Banner, Interstitial và Rewarded (quảng cáo nhận gợi ý). Google AdMob có thể thu thập và xử lý mã định danh quảng cáo (Google Advertising ID), thông tin thiết bị, dữ liệu tương tác quảng cáo và dữ liệu chẩn đoán để phân phát quảng cáo phù hợp và ngăn chặn gian lận.
+        <br>Tìm hiểu thêm tại: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách bảo mật của Google</a> và <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Quy định dữ liệu AdMob</a>.
+      </li>
+      <li style="margin-top: 0.8rem;">
+        <strong>Google Play In-App Billing:</strong>
+        Xử lý giao dịch mua gói "Xóa quảng cáo" duy nhất. Toàn bộ thông tin thẻ, tài khoản ngân hàng và giao dịch do Google Play trực tiếp bảo mật và xử lý. Nhà phát triển <strong>hoàn toàn không</strong> thu thập, tiếp cận hay lưu trữ bất kỳ thông tin thanh toán cá nhân nào.
+      </li>
+    </ul>
+
+    <h3>3. Thu thập và Lưu trữ Dữ liệu (Data Collection &amp; Storage)</h3>
+    <ul>
+      <li><strong>Không thu thập Thông tin Nhận dạng Cá nhân (PII):</strong> Ứng dụng không yêu cầu đăng ký tài khoản, không yêu cầu email, số điện thoại, tên, danh bạ, máy ảnh hay vị trí địa lý của bạn.</li>
+      <li><strong>Lưu trữ Cục bộ (Offline Storage):</strong> Mọi tiến trình chơi, điểm kỷ lục, cấp độ đã mở khóa và thiết lập âm thanh đều được mã hóa và lưu trữ cục bộ trực tiếp trên thiết bị của bạn. Dữ liệu này không bao giờ được gửi về máy chủ riêng của nhà phát triển.</li>
+    </ul>
+
+    <h3>4. Chính sách Xóa Dữ liệu (Data Deletion Policy)</h3>
+    <p>Chúng tôi tôn trọng tuyệt đối quyền kiểm soát dữ liệu của người chơi:</p>
+    <ul>
+      <li><strong>Xóa dữ liệu trò chơi:</strong> Vì dữ liệu game lưu trực tiếp trên máy của bạn, bạn có thể xóa toàn bộ dữ liệu bất kỳ lúc nào bằng cách vào <em>Cài đặt thiết bị &rarr; Ứng dụng &rarr; Evil 2048 &rarr; Lưu trữ &rarr; Xóa dữ liệu (Clear Data)</em>, hoặc đơn giản là gỡ cài đặt ứng dụng.</li>
+      <li><strong>Đặt lại Mã định danh Quảng cáo:</strong> Bạn có thể kiểm soát, đặt lại hoặc xóa Mã nhận dạng quảng cáo (Advertising ID) trong mục <em>Cài đặt &rarr; Google &rarr; Quảng cáo &rarr; Xóa mã nhận dạng cho quảng cáo</em>.</li>
+      <li><strong>Yêu cầu hỗ trợ từ nhà phát triển:</strong> Nếu bạn có bất kỳ câu hỏi nào về chính sách bảo mật hoặc quyền dữ liệu, vui lòng gửi email về địa chỉ: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</li>
+    </ul>
+
+    <h3>5. Tuân thủ Quy định Châu Âu (GDPR / UMP Consent)</h3>
+    <p>Đối với người dùng tại Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK), ứng dụng hiển thị hộp thoại xin ý kiến đồng thuận (Google User Messaging Platform - UMP) theo tiêu chuẩn GDPR khi khởi chạy. Người dùng có thể xem lại hoặc thay đổi tùy chọn đồng thuận quảng cáo bất kỳ lúc nào trong mục <strong>Cài đặt</strong> của trò chơi.</p>
+
+    <h3>6. Quyền riêng tư của Trẻ em (Children's Privacy)</h3>
+    <p>Ứng dụng tuân thủ các quy định về bảo vệ quyền riêng tư của trẻ em trực tuyến (COPPA). Ứng dụng không chủ ý thu thập bất kỳ thông tin nhận dạng cá nhân nào từ trẻ em dưới 13 tuổi.</p>
+
+    <h3>7. Thông tin Liên hệ (Developer Contact)</h3>
+    <p>Nếu bạn có bất kỳ đóng góp, khiếu nại hoặc thắc mắc nào liên quan đến Chính sách Bảo mật, vui lòng liên hệ:</p>
+    <div class="info-box">
+      <p><strong>Nhà phát triển:</strong> MT Games</p>
+      <p><strong>Email:</strong> <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+      <p><strong>Trang chủ dự án:</strong> <a href="https://minhthang9911.github.io/cm-mt-evil2048/">https://minhthang9911.github.io/cm-mt-evil2048/</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 MT Games · Evil 2048. All rights reserved.</p>
+  </footer>
+
+</div>
+
 </body>
 </html>

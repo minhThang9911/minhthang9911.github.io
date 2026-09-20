@@ -1,8 +1,16 @@
-Evil 2048 là game mini đơn giản, dễ chơi, phù hợp mọi lứa tuổi.
+2048 nhưng máy chơi ác — hoặc bạn chơi ác!
 
-• Chơi offline, không cần kết nối mạng
-• Không cần đăng ký tài khoản
-• Nhẹ, không tốn pin
-• Vô số màn chơi
+Bạn đã quá quen với 2048 cổ điển dễ đoán? Evil 2048 mang đến trải nghiệm giải đố hoàn toàn mới với AI đối kháng thông minh, biến từng nước đi thành một cuộc đấu trí nghẹt thở.
 
-Cảm ơn bạn đã tải game! Nếu thích, hãy để lại đánh giá 5 sao để chúng tôi có động lực phát triển thêm.
+3 CHẾ ĐỘ CHƠI ĐỘC ĐÁO:
+• Cổ Điển: Luật chơi 2048 quen thuộc với phong cách đồ họa hoạt hình kẹo ngọt rực rỡ. Vuốt gộp các ô số để chinh phục mốc 2048 vương giả và phá vỡ kỷ lục cá nhân.
+• Đối Kháng: Máy không còn sinh ô ngẫu nhiên mà chủ động tính toán vị trí hiểm hóc nhất để chặn đường vuốt của bạn. Vượt qua 4 cấp độ khó từ "Khó chịu" đến "Ác Quỷ".
+• Phá Hoại (Đảo vai): Bạn vào vai kẻ ác đi săn! Tự tay đặt các ô 2 và 4 vào bàn cờ để dồn ép, triệt hạ bot giải đố trước khi nó trốn thoát qua 5 cấp bot thử thách.
+
+ĐẶC ĐIỂM NỔI BẬT:
+• Hoàn toàn Offline: Trải nghiệm mượt mà mọi lúc mọi nơi, không cần kết nối mạng.
+• Không cần tài khoản: Mở game là chơi ngay, không đăng ký, không thu thập dữ liệu cá nhân.
+• Gói mua 1 lần: Chỉ duy nhất 1 gói Mua trong ứng dụng (IAP) để gỡ bỏ hoàn toàn quảng cáo vĩnh viễn.
+• Đồ họa Cartoon sống động: Hiệu ứng bắt mắt, âm thanh vui nhộn cùng mascot Ác Quỷ biểu cảm hài hước.
+
+Tải Evil 2048 ngay hôm nay để xem bạn hay bot thông minh hơn!
