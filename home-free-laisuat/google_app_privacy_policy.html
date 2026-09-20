@@ -57,15 +57,15 @@ a { color:var(--accent); }
 
     <div class="box">
       <div class="label">Short description (Google Play)</div>
-      Tính lãi vay, trả góp, tiết kiệm. Biết lãi thật khi bị cắt lãi đầu.
+      Tính lãi vay, trả góp, tiết kiệm, đọc số tiền thành chữ. Biết lãi thật.
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">Ngân hàng báo "lãi 8%/năm", nhưng cùng con số đó bạn trả rất khác nhau tuỳ cách tính. Vay 500 triệu trong 12 tháng: dư nợ giảm dần thì lãi 21,7 triệu, lãi phẳng thì 40 triệu — chênh 18,3 triệu. Tệ hơn là khi bị trừ tiền ngay lúc nhận: ký 500 triệu mà cầm về 460 triệu, nợ vẫn tính trên 500 triệu, thì đó không còn là 8% mà là 15,68%/năm. Ứng dụng quy mọi kiểu vay về MỘT con số so sánh được — lãi thật, tính trên số tiền bạn thực sự cầm về. Có 3 cách tính đặt cạnh nhau (dư nợ giảm dần, lãi phẳng, trả đều); khai báo phần bị cắt lúc giải ngân (lãi kỳ đầu, trọn gói lãi, phí hồ sơ); vay mua nhà ưu đãi rồi thả nổi — thấy trước kỳ trả nhảy bao nhiêu khi hết ưu đãi và tổng lãi đắt thêm bao nhiêu; lịch trả nợ từng kỳ kèm biểu đồ gốc/lãi, chia sẻ được thành ảnh; tính ngược 'trả tối đa X mỗi tháng thì vay được bao nhiêu'; quy đổi vay nóng và trả góp '0% lãi suất' có phí chuyển đổi ra %/năm; tính lãi tiền gửi và số tiền mất nếu rút trước hạn; xem tất toán sớm có lợi không sau khi trừ phí phạt, và trả thêm gốc mỗi tháng thì rút ngắn được bao lâu. Ứng dụng KHÔNG nhúng lãi suất của ngân hàng nào — bạn tự nhập theo hợp đồng của mình nên kết quả không bao giờ lỗi thời. Có gói "Xoá quảng cáo" mua một lần.</p>
+      <p style="margin:0">Ngân hàng báo "lãi 8%/năm", nhưng cùng con số đó bạn trả rất khác nhau tuỳ cách tính. Vay 500 triệu trong 12 tháng: dư nợ giảm dần thì lãi 21,7 triệu, lãi phẳng thì 40 triệu — chênh 18,3 triệu. Tệ hơn là khi bị trừ tiền ngay lúc nhận: ký 500 triệu mà cầm về 460 triệu, nợ vẫn tính trên 500 triệu, thì đó không còn là 8% mà là 15,68%/năm. Ứng dụng quy mọi kiểu vay về MỘT con số so sánh được — lãi thật, tính trên số tiền bạn thực sự cầm về. Có 3 cách tính đặt cạnh nhau (dư nợ giảm dần, lãi phẳng, trả đều); khai báo phần bị cắt lúc giải ngân (lãi kỳ đầu, trọn gói lãi, phí hồ sơ); vay mua nhà ưu đãi rồi thả nổi — thấy trước kỳ trả nhảy bao nhiêu khi hết ưu đãi và tổng lãi đắt thêm bao nhiêu; lịch trả nợ từng kỳ kèm biểu đồ gốc/lãi, chia sẻ được thành ảnh; tính ngược 'trả tối đa X mỗi tháng thì vay được bao nhiêu'; quy đổi vay nóng và trả góp '0% lãi suất' có phí chuyển đổi ra %/năm; tính lãi tiền gửi và số tiền mất nếu rút trước hạn; xem tất toán sớm có lợi không sau khi trừ phí phạt, và trả thêm gốc mỗi tháng thì rút ngắn được bao lâu. Mọi ô nhập tiền đọc ngay số thành chữ ("Năm trăm triệu đồng") để không gõ thiếu số 0, và có công cụ Số → chữ để sao chép dòng "bằng chữ" vào hợp đồng, giấy vay tiền, biên nhận. Ứng dụng KHÔNG nhúng lãi suất của ngân hàng nào — bạn tự nhập theo hợp đồng của mình nên kết quả không bao giờ lỗi thời. Có gói "Xoá quảng cáo" mua một lần.</p>
     </div>
 
     <h2>Chính sách quyền riêng tư</h2>
-    <p class="note">Cập nhật lần cuối: 08/09/2026 · Áp dụng cho ứng dụng <strong>Tính Lãi Vay - Trả Góp</strong> (package <code>home.free.laisuat</code>).</p>
+    <p class="note">Cập nhật lần cuối: 20/09/2026 · Áp dụng cho ứng dụng <strong>Tính Lãi Vay - Trả Góp</strong> (package <code>home.free.laisuat</code>).</p>
 
     <h3>Tóm tắt</h3>
     <ul>
@@ -90,7 +90,8 @@ a { color:var(--accent); }
 <tr><td class="code">WAKE_LOCK</td><td>Do các SDK của Google (quảng cáo, thanh toán) và thư viện thông báo khai báo để công việc của chúng không bị ngắt giữa chừng. Bản thân ứng dụng không giữ máy thức chạy nền.</td></tr>
 <tr><td class="code">FOREGROUND_SERVICE</td><td>Do các SDK của Google và thư viện thông báo khai báo. Ứng dụng không chạy dịch vụ nền nào.</td></tr>
     </table>
-    <ul class="note"><li>Khi bạn bấm chia sẻ hoặc xuất dữ liệu, nội dung đi thẳng tới ứng dụng bạn chọn — không qua máy chủ của chúng tôi.</li></ul>
+    <ul class="note"><li>Khi bạn bấm chia sẻ hoặc xuất dữ liệu, nội dung đi thẳng tới ứng dụng bạn chọn — không qua máy chủ của chúng tôi.</li>
+<li>Nút "Sao chép" ghi kết quả vào bộ nhớ tạm của máy để bạn dán vào nơi khác; ứng dụng không đọc bộ nhớ tạm.</li></ul>
 
     <h3>SDK bên thứ ba</h3>
     <p>Ứng dụng tích hợp hai dịch vụ của Google có kết nối mạng. Thứ nhất, <strong>Google AdMob</strong>
@@ -116,7 +117,7 @@ thanh toán của bạn; chúng tôi chỉ nhận biết trạng thái "đã mua
       <li>Không có hồ sơ người dùng, không quảng cáo dựa trên dữ liệu do chúng tôi thu thập.</li>
     </ul>
     <h3>Dữ liệu ứng dụng lưu trên máy bạn</h3>
-<p>Ứng dụng chỉ lưu <strong>cài đặt hiển thị</strong> (chủ đề, ngôn ngữ) và cờ đã mua gói "Xoá quảng cáo". Các con số bạn nhập để tính — số tiền vay, lãi suất, phí — <strong>không được lưu lại</strong>: tính xong là xong, đóng ứng dụng là mất. Chúng tôi không có máy chủ, không đồng bộ, và SDK quảng cáo không truy cập được gì.</p>
+<p>Ứng dụng chỉ lưu <strong>cài đặt hiển thị</strong> (chủ đề, ngôn ngữ, cách đọc số tiền) và cờ đã mua gói "Xoá quảng cáo". Các con số bạn nhập để tính — số tiền vay, lãi suất, phí — <strong>không được lưu lại</strong>: tính xong là xong, đóng ứng dụng là mất. Chúng tôi không có máy chủ, không đồng bộ, và SDK quảng cáo không truy cập được gì.</p>
     <h3>Ứng dụng không phải là tư vấn tài chính</h3>
 <p>Kết quả tính chỉ mang tính tham khảo để bạn đối chiếu. Số liệu chính thức luôn theo hợp đồng tín dụng hoặc sổ tiết kiệm của ngân hàng. Ứng dụng <strong>không tư vấn tài chính</strong>, không gợi ý nên vay ở đâu, không liên kết với tổ chức tín dụng nào và không nhận hoa hồng giới thiệu.</p>
 
@@ -147,15 +148,15 @@ thanh toán của bạn; chúng tôi chỉ nhận biết trạng thái "đã mua
 
     <div class="box">
       <div class="label">Short description (Google Play)</div>
-      Loan, instalment & savings calculator. See the real rate you pay.
+      Loan, instalment & savings calculator, amount in words. See the real rate.
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">Banks quote "8% a year", but the same number costs very differently depending on how it is computed. Borrowing 500 million over 12 months costs 21.7 million in interest on a declining balance, but 40 million at a flat rate. Worse still is interest deducted at disbursement: sign for 500 million, take home 460 million, and still owe on 500 million — that is not 8%, it is 15.68% a year. This app reduces every kind of loan to ONE comparable number: the real rate, computed on what you actually received. Compare three methods side by side (declining balance, flat rate, annuity); declare what is deducted at disbursement (first-period interest, all interest upfront, processing fees); model a home loan with a promo rate that later floats, and see how far the payment jumps and how much extra interest that costs; read the full repayment schedule with a principal/interest chart you can share as an image; work backwards from 'what I can pay each month' to how much you can borrow; convert informal quick loans and '0% interest' instalments with a conversion fee into an annual rate; compute deposit interest and what you lose by withdrawing early; and check whether settling early pays off after the penalty, or how much time paying extra each month would save. The app embeds no bank's interest rates — you enter the figures from your own contract, so results never go stale. A one-time "Remove ads" purchase is available.</p>
+      <p style="margin:0">Banks quote "8% a year", but the same number costs very differently depending on how it is computed. Borrowing 500 million over 12 months costs 21.7 million in interest on a declining balance, but 40 million at a flat rate. Worse still is interest deducted at disbursement: sign for 500 million, take home 460 million, and still owe on 500 million — that is not 8%, it is 15.68% a year. This app reduces every kind of loan to ONE comparable number: the real rate, computed on what you actually received. Compare three methods side by side (declining balance, flat rate, annuity); declare what is deducted at disbursement (first-period interest, all interest upfront, processing fees); model a home loan with a promo rate that later floats, and see how far the payment jumps and how much extra interest that costs; read the full repayment schedule with a principal/interest chart you can share as an image; work backwards from 'what I can pay each month' to how much you can borrow; convert informal quick loans and '0% interest' instalments with a conversion fee into an annual rate; compute deposit interest and what you lose by withdrawing early; and check whether settling early pays off after the penalty, or how much time paying extra each month would save. Every money field spells the amount out in Vietnamese words as you type so you never miss a zero, and a Number → words tool lets you copy the "in words" line into a contract or receipt. The app embeds no bank's interest rates — you enter the figures from your own contract, so results never go stale. A one-time "Remove ads" purchase is available.</p>
     </div>
 
     <h2>Privacy Policy</h2>
-    <p class="note">Last updated: 08/09/2026 · Applies to <strong>Loan Calculator - Real Rate</strong> (package <code>home.free.laisuat</code>).</p>
+    <p class="note">Last updated: 20/09/2026 · Applies to <strong>Loan Calculator - Real Rate</strong> (package <code>home.free.laisuat</code>).</p>
 
     <h3>Summary</h3>
     <ul>
@@ -180,7 +181,8 @@ thanh toán của bạn; chúng tôi chỉ nhận biết trạng thái "đã mua
 <tr><td class="code">WAKE_LOCK</td><td>Declared by Google's SDKs (ads, billing) and the notification library so their work is not cut off. The app itself does not hold the device awake in the background.</td></tr>
 <tr><td class="code">FOREGROUND_SERVICE</td><td>Declared by Google's SDKs and the notification library. The app runs no foreground service.</td></tr>
     </table>
-    <ul class="note"><li>When you tap share or export, the content goes straight to the app you pick — never through our servers.</li></ul>
+    <ul class="note"><li>When you tap share or export, the content goes straight to the app you pick — never through our servers.</li>
+<li>The "Copy" button writes the result to the device clipboard for you to paste elsewhere; the app never reads the clipboard.</li></ul>
 
     <h3>Third-party SDKs</h3>
     <p>The app integrates two Google services that use the network. First, <strong>Google AdMob</strong>
@@ -206,7 +208,7 @@ details; it only learns the "purchased" state in order to switch ads off. Purcha
       <li>No user profiles are built; no advertising is based on data we collect.</li>
     </ul>
     <h3>What the app stores on your device</h3>
-<p>The app stores only <strong>display settings</strong> (theme, language) and the "Remove ads" purchase flag. The figures you type in — loan amount, rate, fees — are <strong>not stored at all</strong>: they live only while you are calculating and are gone when you close the app. We run no servers, nothing is synced, and the advertising SDK can access none of it.</p>
+<p>The app stores only <strong>display settings</strong> (theme, language, how amounts are read out) and the "Remove ads" purchase flag. The figures you type in — loan amount, rate, fees — are <strong>not stored at all</strong>: they live only while you are calculating and are gone when you close the app. We run no servers, nothing is synced, and the advertising SDK can access none of it.</p>
     <h3>This app is not financial advice</h3>
 <p>The results are for reference only. The official figures are always those in your credit contract or savings passbook. The app gives <strong>no financial advice</strong>, recommends no lender, is affiliated with no financial institution and takes no referral commission.</p>
 

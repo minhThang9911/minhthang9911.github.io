@@ -57,15 +57,15 @@ a { color:var(--accent); }
 
     <div class="box">
       <div class="label">Short description (Google Play)</div>
-      Ghi điện nước, tính tiền phòng, gửi hoá đơn. Offline, có khoá PIN.
+      Ghi điện nước, tính tiền phòng, hoá đơn có số tiền bằng chữ. Offline, khoá PIN.
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">Sổ Nhà Trọ thay cuốn sổ giấy của chủ trọ: quản lý nhiều dãy trọ, mỗi dãy nhiều phòng. Đến kỳ, mở màn chốt sổ nhập chỉ số điện nước cũ → mới cho cả dãy, ứng dụng tự tính số kWh, số khối, tiền phòng và các khoản phí hằng tháng (gửi xe, rác, internet — tính theo phòng hoặc theo người), ra ngay số tiền từng phòng phải trả. Xem hoá đơn từng phòng và chia sẻ cho khách qua Zalo, tin nhắn hay bất kỳ ứng dụng nào. Theo dõi đã thu – còn nợ theo từng kỳ, quản lý khách thuê với tiền cọc, ngày vào ở và thủ tục trả phòng. Nhắc bạn đúng ngày chốt sổ hằng tháng. Sổ có tiền và số điện thoại khách nên khoá được bằng PIN hoặc vân tay, và sao lưu ra tệp để chuyển sang máy mới. Hoạt động offline hoàn toàn: không cần tài khoản, không cần internet (trừ quảng cáo), dữ liệu chỉ nằm trên điện thoại của bạn. Có gói mua một lần để xoá quảng cáo.</p>
+      <p style="margin:0">Sổ Nhà Trọ thay cuốn sổ giấy của chủ trọ: quản lý nhiều dãy trọ, mỗi dãy nhiều phòng. Đến kỳ, mở màn chốt sổ nhập chỉ số điện nước cũ → mới cho cả dãy, ứng dụng tự tính số kWh, số khối, tiền phòng và các khoản phí hằng tháng (gửi xe, rác, internet — tính theo phòng hoặc theo người), ra ngay số tiền từng phòng phải trả. Xem hoá đơn từng phòng (có dòng số tiền bằng chữ như biên nhận thật) và chia sẻ cho khách qua Zalo, tin nhắn hay bất kỳ ứng dụng nào. Theo dõi đã thu – còn nợ theo từng kỳ, quản lý khách thuê với tiền cọc, ngày vào ở và thủ tục trả phòng. Nhắc bạn đúng ngày chốt sổ hằng tháng. Sổ có tiền và số điện thoại khách nên khoá được bằng PIN hoặc vân tay, và sao lưu ra tệp để chuyển sang máy mới. Hoạt động offline hoàn toàn: không cần tài khoản, không cần internet (trừ quảng cáo), dữ liệu chỉ nằm trên điện thoại của bạn. Có gói mua một lần để xoá quảng cáo.</p>
     </div>
 
     <h2>Chính sách quyền riêng tư</h2>
-    <p class="note">Cập nhật lần cuối: 04/09/2026 · Áp dụng cho ứng dụng <strong>Sổ Nhà Trọ - Ghi Điện Nước</strong> (package <code>home.free.sonhatro</code>).</p>
+    <p class="note">Cập nhật lần cuối: 20/09/2026 · Áp dụng cho ứng dụng <strong>Sổ Nhà Trọ - Ghi Điện Nước</strong> (package <code>home.free.sonhatro</code>).</p>
 
     <h3>Tóm tắt</h3>
     <ul>
@@ -75,15 +75,28 @@ a { color:var(--accent); }
     </ul>
 
     <h3>Quyền (permissions) ứng dụng yêu cầu</h3>
+    <p class="note">Đây là <strong>toàn bộ</strong> quyền có trong file cài đặt (AndroidManifest sau khi ghép),
+    gồm cả quyền do SDK của Google tự thêm vào — đúng danh sách Google Play hiển thị. Ứng dụng
+    không yêu cầu quyền vị trí, danh bạ, camera hay bộ nhớ.</p>
     <table>
       <tr><th style="width:38%">Quyền Android</th><th>Mục đích sử dụng</th></tr>
-      <tr><td class="code">INTERNET</td><td>Hiển thị quảng cáo Google AdMob. Ứng dụng không dùng internet cho bất kỳ mục đích nào khác.</td></tr>
-<tr><td class="code">POST_NOTIFICATIONS</td><td>Nhắc bạn đúng ngày chốt sổ của từng dãy trọ do chính bạn đặt trong Cài đặt.</td></tr>
-<tr><td class="code">RECEIVE_BOOT_COMPLETED</td><td>Đặt lại lịch nhắc chốt sổ sau khi thiết bị khởi động lại.</td></tr>
+      <tr><td class="code">POST_NOTIFICATIONS</td><td>Hiện thông báo nhắc do chính bạn đặt trong ứng dụng.</td></tr>
+<tr><td class="code">RECEIVE_BOOT_COMPLETED</td><td>Đặt lại lịch nhắc của bạn sau khi thiết bị khởi động lại.</td></tr>
 <tr><td class="code">USE_BIOMETRIC</td><td>Mở khoá ứng dụng bằng vân tay/khuôn mặt do Android quản lý. Ứng dụng chỉ nhận kết quả "đúng/sai" — KHÔNG đọc, KHÔNG lưu dữ liệu sinh trắc học.</td></tr>
-<tr><td class="code">com.android.vending.BILLING</td><td>Mua gói "Xoá quảng cáo" một lần qua Google Play. Thanh toán do Google Play xử lý — ứng dụng không nhìn thấy thông tin thẻ của bạn.</td></tr>
+<tr><td class="code">USE_FINGERPRINT</td><td>Bản tương thích của quyền trên cho Android 9 trở xuống.</td></tr>
+<tr><td class="code">VIBRATE</td><td>Rung phản hồi nhẹ khi thao tác trong ứng dụng và khi hiện thông báo.</td></tr>
+<tr><td class="code">INTERNET</td><td>Tải quảng cáo Google AdMob và kiểm tra gói "Xoá quảng cáo" qua Google Play. Ứng dụng không dùng internet cho bất kỳ mục đích nào khác — mọi tính năng chính chạy offline.</td></tr>
+<tr><td class="code">com.android.vending.BILLING</td><td>Mua gói "Xoá quảng cáo" một lần qua Google Play. Thanh toán do Google Play xử lý — ứng dụng không nhìn thấy và không lưu thông tin thẻ của bạn.</td></tr>
+<tr><td class="code">com.google.android.gms.permission.AD_ID</td><td>Mã quảng cáo của thiết bị, do SDK Google AdMob khai báo để phân phối và đo lường quảng cáo. Bạn có thể đặt lại hoặc xoá mã này trong Cài đặt Android → Google → Quảng cáo.</td></tr>
+<tr><td class="code">ACCESS_NETWORK_STATE</td><td>SDK quảng cáo kiểm tra máy có mạng hay không trước khi tải quảng cáo (do SDK khai báo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_AD_ID</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (đọc mã quảng cáo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_ATTRIBUTION</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (đo lường chuyển đổi quảng cáo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_TOPICS</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (chủ đề quảng cáo).</td></tr>
+<tr><td class="code">WAKE_LOCK</td><td>Do các SDK của Google (quảng cáo, thanh toán) và thư viện thông báo khai báo để công việc của chúng không bị ngắt giữa chừng. Bản thân ứng dụng không giữ máy thức chạy nền.</td></tr>
+<tr><td class="code">FOREGROUND_SERVICE</td><td>Do các SDK của Google và thư viện thông báo khai báo. Ứng dụng không chạy dịch vụ nền nào.</td></tr>
     </table>
-    
+    <ul class="note"><li>Ứng dụng cố ý KHÔNG xin quyền báo thức chính xác (SCHEDULE_EXACT_ALARM): lời nhắc có thể lệch vài phút, đổi lại bạn không phải cấp thêm quyền nào.</li>
+<li>Khi bạn bấm chia sẻ hoặc xuất dữ liệu, nội dung đi thẳng tới ứng dụng bạn chọn — không qua máy chủ của chúng tôi.</li></ul>
 
     <h3>SDK bên thứ ba</h3>
     <p>Ứng dụng tích hợp hai dịch vụ của Google có kết nối mạng. Thứ nhất, <strong>Google AdMob</strong>
@@ -156,11 +169,11 @@ không qua máy chủ của chúng tôi. Hãy giữ tệp sao lưu cẩn thận 
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">Rental Ledger replaces the landlord's paper notebook: manage several buildings, each with many rooms. At the end of a period, open the closing screen and enter the old → new electricity and water readings for the whole building; the app computes the kWh and cubic meters used, the rent and the monthly fees (parking, garbage, internet — charged per room or per person) and shows exactly what each room owes. View each room's invoice and share it with the tenant through any messaging app. Track paid and outstanding amounts per period, manage tenants with deposits, move-in dates and move-out settlement. Get a reminder on your meter-reading day each month. Because the ledger holds money and tenant phone numbers, you can lock it with a PIN or fingerprint, and back it up to a file to move to a new phone. Fully offline: no account, no internet needed (except for ads), and your data stays on your phone. A one-time in-app purchase removes ads.</p>
+      <p style="margin:0">Rental Ledger replaces the landlord's paper notebook: manage several buildings, each with many rooms. At the end of a period, open the closing screen and enter the old → new electricity and water readings for the whole building; the app computes the kWh and cubic meters used, the rent and the monthly fees (parking, garbage, internet — charged per room or per person) and shows exactly what each room owes. View each room's invoice (with the amount spelled out in words, like a real receipt) and share it with the tenant through any messaging app. Track paid and outstanding amounts per period, manage tenants with deposits, move-in dates and move-out settlement. Get a reminder on your meter-reading day each month. Because the ledger holds money and tenant phone numbers, you can lock it with a PIN or fingerprint, and back it up to a file to move to a new phone. Fully offline: no account, no internet needed (except for ads), and your data stays on your phone. A one-time in-app purchase removes ads.</p>
     </div>
 
     <h2>Privacy Policy</h2>
-    <p class="note">Last updated: 04/09/2026 · Applies to <strong>Rental Ledger - Rooms & Bills</strong> (package <code>home.free.sonhatro</code>).</p>
+    <p class="note">Last updated: 20/09/2026 · Applies to <strong>Rental Ledger - Rooms & Bills</strong> (package <code>home.free.sonhatro</code>).</p>
 
     <h3>Summary</h3>
     <ul>
@@ -170,15 +183,28 @@ không qua máy chủ của chúng tôi. Hãy giữ tệp sao lưu cẩn thận 
     </ul>
 
     <h3>Permissions requested</h3>
+    <p class="note">This is the <strong>complete</strong> list from the installed package (the merged
+    AndroidManifest), including permissions added automatically by Google's SDKs — the same list Google Play
+    shows. The app requests no location, contacts, camera or storage permission.</p>
     <table>
       <tr><th style="width:38%">Android permission</th><th>Purpose</th></tr>
-      <tr><td class="code">INTERNET</td><td>Serve Google AdMob ads. The app uses the internet for no other purpose.</td></tr>
-<tr><td class="code">POST_NOTIFICATIONS</td><td>Remind you on the meter-reading day you set yourself for each building.</td></tr>
-<tr><td class="code">RECEIVE_BOOT_COMPLETED</td><td>Restore the meter-reading reminders after the device reboots.</td></tr>
-<tr><td class="code">USE_BIOMETRIC</td><td>Unlock the app with the fingerprint/face enrolled in Android. The app only receives a pass/fail result — it never reads or stores biometric data.</td></tr>
-<tr><td class="code">com.android.vending.BILLING</td><td>Buy the one-time "Remove ads" purchase through Google Play. Payment is handled by Google Play — the app never sees your card details.</td></tr>
+      <tr><td class="code">POST_NOTIFICATIONS</td><td>Show the reminder notifications you set up yourself in the app.</td></tr>
+<tr><td class="code">RECEIVE_BOOT_COMPLETED</td><td>Re-arm your scheduled reminders after the device reboots.</td></tr>
+<tr><td class="code">USE_BIOMETRIC</td><td>Unlock the app with the fingerprint/face check handled by Android. The app only receives a pass/fail result — it never reads or stores biometric data.</td></tr>
+<tr><td class="code">USE_FINGERPRINT</td><td>The legacy equivalent of the permission above, for Android 9 and older.</td></tr>
+<tr><td class="code">VIBRATE</td><td>Light haptic feedback for in-app actions and notifications.</td></tr>
+<tr><td class="code">INTERNET</td><td>Load Google AdMob ads and check the "Remove ads" purchase through Google Play. The app uses the internet for nothing else — every core feature works offline.</td></tr>
+<tr><td class="code">com.android.vending.BILLING</td><td>Buy the one-time "Remove ads" item through Google Play. Payment is handled by Google Play — the app never sees or stores your card details.</td></tr>
+<tr><td class="code">com.google.android.gms.permission.AD_ID</td><td>The device advertising ID, declared by the Google AdMob SDK to serve and measure ads. You can reset or delete it in Android Settings → Google → Ads.</td></tr>
+<tr><td class="code">ACCESS_NETWORK_STATE</td><td>The ads SDK checks whether the device is online before requesting an ad (declared by the SDK).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_AD_ID</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (read the advertising ID).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_ATTRIBUTION</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (ad conversion measurement).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_TOPICS</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (ads topics).</td></tr>
+<tr><td class="code">WAKE_LOCK</td><td>Declared by Google's SDKs (ads, billing) and the notification library so their work is not cut off. The app itself does not hold the device awake in the background.</td></tr>
+<tr><td class="code">FOREGROUND_SERVICE</td><td>Declared by Google's SDKs and the notification library. The app runs no foreground service.</td></tr>
     </table>
-    
+    <ul class="note"><li>The app deliberately does NOT request exact-alarm permission (SCHEDULE_EXACT_ALARM): reminders may drift by a few minutes, and you never have to grant an extra permission.</li>
+<li>When you tap share or export, the content goes straight to the app you pick — never through our servers.</li></ul>
 
     <h3>Third-party SDKs</h3>
     <p>The app integrates two Google services that use the network. First, <strong>Google AdMob</strong>
