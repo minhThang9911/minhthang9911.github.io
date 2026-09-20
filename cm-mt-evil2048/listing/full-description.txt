@@ -1,0 +1,8 @@
+Evil 2048 là game mini đơn giản, dễ chơi, phù hợp mọi lứa tuổi.
+
+• Chơi offline, không cần kết nối mạng
+• Không cần đăng ký tài khoản
+• Nhẹ, không tốn pin
+• Vô số màn chơi
+
+Cảm ơn bạn đã tải game! Nếu thích, hãy để lại đánh giá 5 sao để chúng tôi có động lực phát triển thêm.
