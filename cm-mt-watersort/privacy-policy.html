@@ -3,28 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chính sách bảo mật &amp; Giới thiệu – Water Sort - Đổ Nước Màu</title>
-  <meta name="description" content="Chính sách quyền riêng tư và thông tin chi tiết trò chơi Water Sort - Đổ Nước Màu (cm.mt.watersort) theo tiêu chuẩn Google Play Store.">
+  <title>Water Sort - Đổ Nước Màu | Giới Thiệu &amp; Chính Sách Bảo Mật</title>
+  <meta name="description" content="Trang thông tin chính thức, mô tả ứng dụng và chính sách quyền riêng tư (Privacy Policy) của trò chơi Water Sort - Đổ Nước Màu (cm.mt.watersort) theo chuẩn Google Play Store.">
   <link rel="icon" type="image/png" href="playstore-app-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #0b1120;
-      --bg-card: #152033;
-      --bg-card-subtle: #1c2b45;
-      --border-color: #2b3e61;
-      --accent-water: #38bdf8;
-      --accent-cyan: #2dd4bf;
-      --accent-yellow: #fbbf24;
-      --accent-orange: #fb923c;
-      --accent-purple: #a855f7;
-      --accent-green: #34d399;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
+      --bg-dark: #070d1e;
+      --bg-card: rgba(17, 28, 54, 0.85);
+      --bg-card-subtle: rgba(26, 42, 79, 0.65);
+      --bg-glass: rgba(15, 25, 48, 0.7);
+      --border-soft: rgba(56, 189, 248, 0.22);
+      --border-strong: rgba(56, 189, 248, 0.45);
+      --water-primary: #38bdf8;
+      --water-cyan: #22d3ee;
+      --water-deep: #0284c7;
+      --water-stream: #3b82f6;
+      --accent-gold: #fbbf24;
+      --accent-coral: #fb7185;
+      --accent-emerald: #34d399;
+      --accent-purple: #c084fc;
+      --text-pure: #ffffff;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
       --font-display: 'Baloo 2', cursive, sans-serif;
-      --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     }
 
     * {
@@ -34,160 +40,303 @@
     }
 
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.12) 0%, transparent 35%),
+        radial-gradient(circle at 85% 25%, rgba(192, 132, 252, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(34, 211, 238, 0.08) 0%, transparent 40%),
+        linear-gradient(180deg, #070d1e 0%, #0a1329 50%, #060b18 100%);
+      background-attachment: fixed;
+      color: var(--text-primary);
       font-family: var(--font-body);
-      line-height: 1.65;
-      padding: 1.5rem 1rem 3rem;
+      line-height: 1.7;
+      padding: 1.5rem 1rem 4rem;
       -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 880px;
+      max-width: 920px;
       margin: 0 auto;
     }
 
-    /* Hero Banner */
-    .hero-banner {
+    /* Hero Banner Container */
+    .hero-wrapper {
+      position: relative;
       width: 100%;
-      border-radius: 20px;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(56, 189, 248, 0.18);
       margin-bottom: 2rem;
-      border: 2px solid var(--border-color);
-      background-color: #121c2e;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(56, 189, 248, 0.25);
+      border: 2px solid var(--border-soft);
+      background: #0f172a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .hero-banner img {
+    .hero-wrapper:hover {
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 45px rgba(56, 189, 248, 0.35);
+    }
+
+    .hero-image {
       width: 100%;
       height: auto;
       display: block;
+      object-fit: cover;
     }
 
-    /* Header Profile */
-    .app-header {
+    /* App Header Profile with Glassmorphism */
+    .app-profile {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.8rem;
       background: var(--bg-card);
-      padding: 1.5rem 1.8rem;
-      border-radius: 20px;
-      border: 2px solid var(--border-color);
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.8rem 2.2rem;
+      border-radius: 24px;
+      border: 1.5px solid var(--border-soft);
+      margin-bottom: 2.2rem;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
     }
 
     .app-icon {
-      width: 104px;
-      height: 104px;
-      border-radius: 24px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      width: 112px;
+      height: 112px;
+      border-radius: 26px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 0 20px rgba(56, 189, 248, 0.3);
       flex-shrink: 0;
-      border: 2px solid rgba(255, 255, 255, 0.15);
+      border: 2.5px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease;
     }
 
-    .app-title-group h1 {
+    .app-icon:hover {
+      transform: scale(1.04) rotate(-2deg);
+    }
+
+    .app-meta {
+      flex: 1;
+    }
+
+    .app-title {
       font-family: var(--font-display);
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       font-weight: 800;
-      color: var(--accent-water);
+      background: linear-gradient(135deg, #ffffff 30%, var(--water-cyan) 80%, var(--water-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       letter-spacing: 0.5px;
       line-height: 1.15;
+      margin-bottom: 0.4rem;
     }
 
     .app-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
     }
 
     .badge {
       font-family: var(--font-display);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 700;
-      padding: 0.25rem 0.75rem;
-      border-radius: 12px;
+      padding: 0.3rem 0.85rem;
+      border-radius: 14px;
       background: var(--bg-card-subtle);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
+      border: 1px solid var(--border-soft);
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
     }
 
-    .badge.highlight {
+    .badge.developer {
       background: rgba(56, 189, 248, 0.15);
-      border-color: var(--accent-water);
-      color: var(--accent-water);
+      border-color: var(--water-primary);
+      color: var(--water-cyan);
     }
 
     .badge.tagline {
       background: rgba(251, 191, 36, 0.15);
-      border-color: var(--accent-yellow);
-      color: var(--accent-yellow);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
     }
 
-    /* Section Cards */
+    .badge.package {
+      background: rgba(192, 132, 252, 0.15);
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      font-family: monospace;
+      font-size: 0.82rem;
+    }
+
+    /* Navigation Quick Links */
+    .quick-nav {
+      display: flex;
+      gap: 0.8rem;
+      overflow-x: auto;
+      padding: 0.3rem 0 1.2rem;
+      margin-bottom: 1.2rem;
+      scrollbar-width: none;
+    }
+
+    .quick-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-pill {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      background: var(--bg-card-subtle);
+      padding: 0.5rem 1.1rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover {
+      color: var(--text-pure);
+      border-color: var(--water-primary);
+      background: rgba(56, 189, 248, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Cards */
     .card {
       background: var(--bg-card);
-      border: 2px solid var(--border-color);
-      border-radius: 20px;
-      padding: 1.8rem 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 24px;
+      padding: 2.2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+      position: relative;
     }
 
     h2 {
       font-family: var(--font-display);
-      font-size: 1.65rem;
+      font-size: 1.8rem;
       font-weight: 800;
-      color: var(--accent-water);
-      margin-bottom: 1rem;
+      color: var(--water-primary);
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.7rem;
+      letter-spacing: 0.3px;
+    }
+
+    h2 .icon {
+      font-size: 1.6rem;
     }
 
     h3 {
       font-family: var(--font-display);
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      color: var(--accent-cyan);
-      margin-top: 1.4rem;
-      margin-bottom: 0.5rem;
+      color: var(--water-cyan);
+      margin-top: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
     }
 
     p {
-      margin-bottom: 1rem;
-      color: var(--text-main);
-    }
-
-    p.lead {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    ul, ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.1rem;
+      color: var(--text-primary);
+      font-size: 1.02rem;
     }
 
     strong {
-      color: #fff;
+      color: var(--text-pure);
+      font-weight: 700;
     }
 
-    /* Screenshots gallery */
+    em {
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* Short Description Highlight Box */
+    .playstore-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(34, 211, 238, 0.05) 100%);
+      border: 1.5px solid var(--border-strong);
+      border-left: 6px solid var(--water-primary);
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.4rem 0 1.8rem;
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.08);
+    }
+
+    .playstore-box .tag {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--water-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .playstore-box .lead-text {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--text-pure);
+      line-height: 1.5;
+    }
+
+    /* Long Description Container */
+    .long-description-content {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 1.8rem;
+      margin-top: 1.2rem;
+      font-size: 1.02rem;
+    }
+
+    .long-description-content ul {
+      list-style-type: none;
+      margin: 0.8rem 0 1.2rem;
+      padding-left: 0;
+    }
+
+    .long-description-content li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-primary);
+    }
+
+    .long-description-content li::before {
+      content: "💧";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Screenshots Scrollable Showcase */
+    .screenshots-container {
+      margin: 1.8rem 0;
+    }
+
     .screenshots-scroll {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem;
       overflow-x: auto;
-      padding: 0.8rem 0 1.2rem;
-      margin: 1rem 0;
+      padding: 0.8rem 0.2rem 1.6rem;
       scrollbar-width: thin;
-      scrollbar-color: var(--accent-water) var(--bg-card-subtle);
+      scrollbar-color: var(--water-primary) var(--bg-card-subtle);
+      scroll-snap-type: x mandatory;
     }
 
     .screenshots-scroll::-webkit-scrollbar {
@@ -196,149 +345,246 @@
 
     .screenshots-scroll::-webkit-scrollbar-track {
       background: var(--bg-card-subtle);
-      border-radius: 4px;
+      border-radius: 6px;
     }
 
     .screenshots-scroll::-webkit-scrollbar-thumb {
-      background-color: var(--accent-water);
-      border-radius: 4px;
+      background: linear-gradient(90deg, var(--water-primary), var(--water-cyan));
+      border-radius: 6px;
     }
 
-    .screenshot-thumb {
-      flex: 0 0 210px;
-      border-radius: 16px;
+    .screenshot-card {
+      flex: 0 0 220px;
+      scroll-snap-align: start;
+      border-radius: 20px;
       overflow: hidden;
-      border: 2px solid var(--border-color);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      border: 2px solid var(--border-soft);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      transition: all 0.25s ease;
       background: #000;
     }
 
-    .screenshot-thumb:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent-water);
+    .screenshot-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--water-cyan);
+      box-shadow: 0 14px 30px rgba(34, 211, 238, 0.25);
     }
 
-    .screenshot-thumb img {
+    .screenshot-card img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    .screenshot-caption {
-      padding: 0.5rem 0.6rem;
-      font-size: 0.82rem;
+    .screenshot-info {
+      padding: 0.7rem 0.8rem;
+      font-size: 0.88rem;
       text-align: center;
-      background: var(--bg-card-subtle);
-      color: var(--text-muted);
-      font-weight: 600;
+      background: rgba(15, 25, 48, 0.95);
+      color: var(--water-cyan);
+      font-weight: 700;
+      font-family: var(--font-display);
+      border-top: 1px solid var(--border-soft);
     }
 
-    /* Feature Grid */
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .feature-pill {
-      background: var(--bg-card-subtle);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 0.75rem 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    /* Rules Showcase Cards */
+    /* Gameplay Rules Highlights Cards */
     .rules-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1rem;
-      margin: 1.2rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin: 1.4rem 0 1.8rem;
     }
 
-    .rule-item {
+    .rule-card {
       background: var(--bg-card-subtle);
-      border: 1.5px solid var(--border-color);
-      border-radius: 16px;
-      padding: 1.2rem;
+      border: 1.5px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 1.4rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .rule-item h4 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
+    .rule-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--water-cyan);
     }
 
-    .rule-item.step1 h4 { color: var(--accent-water); }
-    .rule-item.step2 h4 { color: var(--accent-cyan); }
-    .rule-item.step3 h4 { color: var(--accent-yellow); }
+    .rule-card.step1 h4 { color: var(--water-primary); }
+    .rule-card.step2 h4 { color: var(--water-cyan); }
+    .rule-card.step3 h4 { color: var(--accent-gold); }
 
-    .rule-item p {
+    .rule-card p {
       font-size: 0.95rem;
       margin-bottom: 0;
-      color: var(--text-muted);
+      color: var(--text-secondary);
     }
 
-    /* Tables */
+    /* Feature Pillars Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin: 1.4rem 0;
+    }
+
+    .feature-item {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-weight: 600;
+      font-size: 0.98rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .feature-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Permissions Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.4rem 0;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.2rem 0;
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       background: var(--bg-card-subtle);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
     }
 
     th, td {
-      padding: 0.8rem 1rem;
+      padding: 1rem 1.2rem;
       text-align: left;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-soft);
     }
 
     th {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--accent-water);
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--water-cyan);
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
 
     tr:last-child td {
       border-bottom: none;
     }
 
-    /* Alerts */
-    .info-box {
-      background: rgba(56, 189, 248, 0.1);
-      border-left: 4px solid var(--accent-water);
-      padding: 1rem 1.2rem;
-      border-radius: 0 12px 12px 0;
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    code {
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--accent-coral);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+      border: 1px solid rgba(251, 113, 133, 0.25);
+    }
+
+    /* Standard Lists in Privacy Policy */
+    .card ul, .card ol {
+      margin: 0.8rem 0 1.2rem 1.6rem;
+    }
+
+    .card li {
+      margin-bottom: 0.6rem;
+      color: var(--text-primary);
+    }
+
+    /* Third-party SDK Box */
+    .sdk-box {
+      background: var(--bg-card-subtle);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 1.5rem 1.6rem;
       margin: 1.2rem 0;
     }
 
-    .info-box p:last-child {
+    .sdk-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--water-cyan);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Info & Alert Callouts */
+    .callout {
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.4rem 0;
+      font-size: 0.98rem;
+    }
+
+    .callout.info {
+      background: rgba(56, 189, 248, 0.1);
+      border-left: 4px solid var(--water-primary);
+    }
+
+    .callout.success {
+      background: rgba(52, 211, 153, 0.1);
+      border-left: 4px solid var(--accent-emerald);
+    }
+
+    .callout.warning {
+      background: rgba(251, 191, 36, 0.1);
+      border-left: 4px solid var(--accent-gold);
+    }
+
+    /* Contact Details Grid */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(15, 25, 48, 0.9) 0%, rgba(26, 42, 79, 0.8) 100%);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      margin-top: 1.2rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.05rem;
+    }
+
+    .contact-row:last-child {
       margin-bottom: 0;
+    }
+
+    .contact-label {
+      font-weight: 700;
+      color: var(--water-cyan);
+      min-width: 140px;
     }
 
     /* Links */
     a {
-      color: var(--accent-water);
+      color: var(--water-cyan);
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.15s ease;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
     }
 
     a:hover {
-      color: var(--accent-yellow);
+      color: var(--accent-gold);
       text-decoration: underline;
     }
 
@@ -346,26 +592,51 @@
     footer {
       text-align: center;
       color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-top: 3rem;
-      border-top: 1px solid var(--border-color);
-      padding-top: 1.5rem;
+      font-size: 0.92rem;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-soft);
     }
 
-    @media (max-width: 640px) {
-      .app-header {
+    footer p {
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.8rem 3rem;
+      }
+      .app-profile {
         flex-direction: column;
         text-align: center;
-        padding: 1.5rem 1rem;
+        padding: 1.6rem 1.2rem;
+      }
+      .app-title {
+        font-size: 1.9rem;
       }
       .app-badges {
         justify-content: center;
       }
       .card {
-        padding: 1.4rem 1.2rem;
+        padding: 1.5rem 1.2rem;
+        border-radius: 20px;
       }
-      h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.4rem; }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .screenshot-card {
+        flex: 0 0 180px;
+      }
+      .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+      }
+      .contact-label {
+        min-width: unset;
+      }
     }
   </style>
 </head>
@@ -373,167 +644,300 @@
 
 <div class="container">
 
-  <!-- Hero Feature Image -->
-  <div class="hero-banner">
-    <img src="feature-image.png" alt="Water Sort Banner">
+  <!-- Hero Feature Graphic Image -->
+  <div class="hero-wrapper">
+    <img src="feature-image.png" alt="Water Sort - Đổ Nước Màu Banner" class="hero-image">
   </div>
 
-  <!-- App Header -->
-  <header class="app-header">
+  <!-- App Profile Header -->
+  <header class="app-profile">
     <img src="playstore-app-icon.png" alt="Water Sort App Icon" class="app-icon">
-    <div class="app-title-group">
-      <h1>Water Sort - Đổ Nước Màu</h1>
+    <div class="app-meta">
+      <h1 class="app-title">Water Sort - Đổ Nước Màu</h1>
       <div class="app-badges">
-        <span class="badge highlight">MT Games</span>
-        <span class="badge">cm.mt.watersort</span>
-        <span class="badge tagline">Phân loại màu sắc · Thư giãn trí não · 100% Offline</span>
+        <span class="badge developer">👤 MT Games</span>
+        <span class="badge package">📦 cm.mt.watersort</span>
+        <span class="badge tagline">🌊 Phân loại màu sắc · 100% Offline</span>
       </div>
     </div>
   </header>
 
-  <!-- Giới thiệu App (Google Play Store Listing) -->
-  <section class="card">
-    <h2>🎮 Giới thiệu Trò chơi</h2>
-    
-    <div class="info-box">
-      <p class="lead"><strong>Mô tả ngắn (Short Description):</strong><br>
-      Đổ nước đến khi mỗi ống một màu. Vô hạn màn, offline, có chế độ nước ẩn.</p>
-    </div>
+  <!-- Quick Navigation Pills -->
+  <nav class="quick-nav" aria-label="Điều hướng nhanh">
+    <a href="#gioi-thieu" class="nav-pill">🎮 Giới thiệu</a>
+    <a href="#mo-ta-store" class="nav-pill">📝 Mô tả Google Play</a>
+    <a href="#hinh-anh" class="nav-pill">📸 Ảnh chụp màn hình</a>
+    <a href="#privacy-policy" class="nav-pill">🛡️ Chính sách quyền riêng tư</a>
+    <a href="#quyen-ung-dung" class="nav-pill">🔑 Quyền hạn &amp; SDK</a>
+    <a href="#chinh-sach-du-lieu" class="nav-pill">💾 Xử lý &amp; Xóa dữ liệu</a>
+    <a href="#lien-he" class="nav-pill">📬 Liên hệ</a>
+  </nav>
 
-    <h3>Luật chơi đơn giản</h3>
+  <!-- Section 1: Giới thiệu ứng dụng & Gameplay -->
+  <section class="card" id="gioi-thieu">
+    <h2><span class="icon">🎮</span> Giới Thiệu Trò Chơi</h2>
+    <p>
+      <strong>Water Sort - Đổ Nước Màu</strong> là tựa game giải đố phân loại màu nước thông minh, kết hợp giữa đồ họa thủy tinh hiện đại, âm thanh rót nước sống động và cơ chế giải đố thư giãn đỉnh cao. Game được thiết kế tinh giản, mượt mà và hoạt động <strong>hoàn toàn offline</strong>, phù hợp để bạn xả stress và rèn luyện tư duy logic mọi lúc mọi nơi.
+    </p>
+
+    <h3>Cách chơi vô cùng trực quan</h3>
     <div class="rules-grid">
-      <div class="rule-item step1">
+      <div class="rule-card step1">
         <h4>1. Chọn ống nước</h4>
-        <p>Chạm vào một ống để chọn ống đang chứa màu muốn chuyển.</p>
+        <p>Chạm nhẹ vào bất kỳ ống nghiệm nào để nhấc ống đang chứa màu bạn muốn chuyển.</p>
       </div>
-      <div class="rule-item step2">
-        <h4>2. Rót sang ống đích</h4>
-        <p>Chạm vào ống đích. Nước chỉ rót được nếu ống đích có cùng màu trên cùng và còn đủ khoảng trống.</p>
+      <div class="rule-card step2">
+        <h4>2. Rót vào ống đích</h4>
+        <p>Chạm vào ống đích. Nước sẽ rót sang nếu ống đích có cùng màu trên cùng và còn đủ khoảng trống.</p>
       </div>
-      <div class="rule-item step3">
-        <h4>3. Hoàn thành màn chơi</h4>
-        <p>Phân loại cho đến khi mỗi ống chỉ chứa duy nhất một màu để giành chiến thắng 3 sao trọn vẹn!</p>
-      </div>
-    </div>
-
-    <h3>Hình ảnh trong game</h3>
-    <div class="screenshots-scroll">
-      <div class="screenshot-thumb">
-        <img src="screenshots/phone-01.png" alt="Rót nước sống động">
-        <div class="screenshot-caption">Rót nước mượt mà</div>
-      </div>
-      <div class="screenshot-thumb">
-        <img src="screenshots/phone-02.png" alt="Chế độ Nước Ẩn">
-        <div class="screenshot-caption">Chế độ Nước Ẩn</div>
-      </div>
-      <div class="screenshot-thumb">
-        <img src="screenshots/phone-03.png" alt="Chiến thắng 3 sao">
-        <div class="screenshot-caption">Chiến thắng 3 sao</div>
-      </div>
-      <div class="screenshot-thumb">
-        <img src="screenshots/phone-04.png" alt="14 ống 12 màu">
-        <div class="screenshot-caption">Thử thách 14 ống</div>
+      <div class="rule-card step3">
+        <h4>3. Hoàn thành &amp; 3 Sao</h4>
+        <p>Phân loại khéo léo để mỗi ống nghiệm chỉ chứa đúng một màu duy nhất và đạt tối đa 3 sao danh giá!</p>
       </div>
     </div>
 
-    <h3>Tính năng nổi bật</h3>
-    <div class="feature-list">
-      <div class="feature-pill">🌊 Vô hạn màn chơi — Sinh bằng thuật toán thông minh</div>
-      <div class="feature-pill">🧩 100% Đảm bảo giải được — Lời giải kiểm chứng toán học</div>
-      <div class="feature-pill">👁️ Chế độ Nước Ẩn — Tăng kịch tính với lớp nước bí ẩn</div>
-      <div class="feature-pill">⚡ Hoàn toàn Offline — Không cần Wi-Fi hay 4G/5G</div>
-      <div class="feature-pill">🔒 Không cần tài khoản — Mở app là chơi ngay</div>
-      <div class="feature-pill">⭐ Đánh giá sao theo par — Rèn luyện tư duy tối ưu</div>
-      <div class="feature-pill">💡 Gợi ý AI &amp; Thêm ống — Không bao giờ lo bế tắc</div>
-      <div class="feature-pill">🚫 Gói mua 1 lần — 1 IAP Xóa toàn bộ quảng cáo vĩnh viễn</div>
+    <h3>Đặc điểm nổi bật của Water Sort</h3>
+    <div class="feature-grid">
+      <div class="feature-item"><span class="feature-icon">🌊</span><span>Vô hạn màn chơi sinh tự động</span></div>
+      <div class="feature-item"><span class="feature-icon">🧩</span><span>100% Đảm bảo giải được bằng toán học</span></div>
+      <div class="feature-item"><span class="feature-icon">👁️</span><span>Chế độ Nước Ẩn độc đáo đầy bất ngờ</span></div>
+      <div class="feature-item"><span class="feature-icon">⚡</span><span>100% Offline — Không cần mạng hay Wi-Fi</span></div>
+      <div class="feature-item"><span class="feature-icon">🔒</span><span>Không tài khoản — Chơi tức thì, lưu tự động</span></div>
+      <div class="feature-item"><span class="feature-icon">💡</span><span>Gợi ý AI, Hoàn tác (Undo), Thêm ống trống</span></div>
+      <div class="feature-item"><span class="feature-icon">⭐</span><span>Hệ thống chấm điểm 3 sao theo nước đi Par</span></div>
+      <div class="feature-item"><span class="feature-icon">🚫</span><span>Tùy chọn Mua 1 lần xóa sạch quảng cáo</span></div>
     </div>
   </section>
 
-  <!-- Chính sách bảo mật (Google Play Store Privacy Policy) -->
-  <section class="card">
-    <h2>🛡️ Chính sách Bảo mật (Privacy Policy)</h2>
-    <p><em>Cập nhật lần cuối: Tháng 09/2026</em></p>
-    <p>Chính sách bảo mật này áp dụng cho ứng dụng di động <strong>Water Sort - Đổ Nước Màu</strong> (mã gói <code>cm.mt.watersort</code>) được phát triển bởi <strong>MT Games</strong>. Chúng tôi tôn trọng quyền riêng tư của người dùng và cam kết minh bạch trong việc xử lý dữ liệu.</p>
+  <!-- Section 2: Mô tả ứng dụng chuẩn Google Play Store (Short & Long Description) -->
+  <section class="card" id="mo-ta-store">
+    <h2><span class="icon">📝</span> Mô Tả Chuẩn Google Play Store</h2>
+    <p>Nội dung công bố chính thức trên trang cửa hàng Google Play Store theo đúng quy định hiển thị:</p>
 
-    <h3>1. Quyền ứng dụng yêu cầu (App Permissions)</h3>
-    <p>Ứng dụng chỉ yêu cầu các quyền tối thiểu cần thiết để vận hành:</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Quyền Android</th>
-          <th>Mục đích sử dụng</th>
-          <th>Bắt buộc</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>android.permission.INTERNET</code></td>
-          <td>Tải quảng cáo từ mạng Google AdMob và xử lý giao dịch mua hàng Google Play Billing.</td>
-          <td>Có</td>
-        </tr>
-        <tr>
-          <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
-          <td>Kiểm tra trạng thái kết nối mạng để tối ưu việc tải quảng cáo.</td>
-          <td>Có</td>
-        </tr>
-        <tr>
-          <td><code>android.permission.VIBRATE</code></td>
-          <td>Tạo phản hồi xúc giác nhẹ (haptic feedback) khi rót nước và hoàn thành ống. Có thể tắt trong phần Cài đặt.</td>
-          <td>Không</td>
-        </tr>
-        <tr>
-          <td><code>com.android.vending.BILLING</code></td>
-          <td>Hỗ trợ gói mua trong ứng dụng (IAP) "Xóa quảng cáo" qua Google Play Billing.</td>
-          <td>Có</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Short Description -->
+    <div class="playstore-box">
+      <span class="tag">Mô tả ngắn (Short Description) — Tối đa 80 ký tự:</span>
+      <p class="lead-text">"Đổ nước đến khi mỗi ống một màu. Vô hạn màn, offline, có chế độ nước ẩn."</p>
+    </div>
 
-    <h3>2. Dịch vụ và SDK của Bên thứ ba (Third-Party SDKs)</h3>
-    <p>Ứng dụng tích hợp các SDK tiêu chuẩn sau để hỗ trợ quảng cáo và thanh toán:</p>
+    <!-- Long Description -->
+    <h3>Mô tả chi tiết (Full / Long Description)</h3>
+    <div class="long-description-content">
+      <p>Water Sort - Đổ Nước Màu là trò chơi giải đố phân loại màu sắc kinh điển, mang đến trải nghiệm thư giãn và rèn luyện tư duy logic nhẹ nhàng nhưng đầy lôi cuốn.</p>
+      
+      <p><strong>Luật chơi đơn giản:</strong></p>
+      <ul>
+        <li>Chạm vào một ống để chọn, sau đó chạm vào ống khác để đổ nước sang.</li>
+        <li>Nước chỉ có thể đổ vào ống có cùng màu trên cùng và còn đủ chỗ trống.</li>
+        <li>Đổ nước sao cho mỗi ống chỉ chứa duy nhất một màu để chiến thắng!</li>
+      </ul>
+
+      <p><strong>Tính năng nổi bật:</strong></p>
+      <ul>
+        <li><strong>Vô hạn màn chơi:</strong> Màn chơi được sinh tự động bằng thuật toán thông minh, đảm bảo 100% giải được và độ khó tăng dần thử thách.</li>
+        <li><strong>Chế độ Nước Ẩn độc đáo:</strong> Khám phá các lớp nước bí ẩn được giấu kín sau lớp sương xám, tăng thêm phần bất ngờ và kịch tính.</li>
+        <li><strong>Đánh giá sao theo số nước đi:</strong> Tính toán lộ trình tối ưu nhất để đạt trọn vẹn 3 sao danh giá ở mỗi màn.</li>
+        <li><strong>Công cụ hỗ trợ hữu ích:</strong> Hoàn tác nước đi (Undo), Gợi ý thông minh (Hint), hoặc Thêm ống trống khi gặp tình thế khó.</li>
+        <li><strong>Chơi hoàn toàn Offline:</strong> Thư giãn mọi lúc mọi nơi mà không cần Wi-Fi hay kết nối mạng di động.</li>
+        <li>Không yêu cầu tài khoản, không giới hạn thời gian, tự động lưu tiến trình chơi.</li>
+        <li>Dung lượng siêu nhẹ, đồ hoạ sắc nét dịu mắt cùng âm thanh rót nước sống động, vui tai.</li>
+      </ul>
+
+      <p>Hãy tải ngay Water Sort - Đổ Nước Màu để tận hưởng những phút giây giải trí sảng khoái và rèn luyện trí não mỗi ngày!</p>
+    </div>
+  </section>
+
+  <!-- Section 3: Ảnh chụp màn hình ứng dụng (Screenshots Gallery) -->
+  <section class="card" id="hinh-anh">
+    <h2><span class="icon">📸</span> Ảnh Chụp Màn Hình Trải Nghiệm Thực Tế</h2>
+    <p>Hình ảnh chân thực chụp trực tiếp trên thiết bị di động chuẩn độ phân giải cao 1080×2400 px:</p>
+
+    <div class="screenshots-container">
+      <div class="screenshots-scroll">
+        <div class="screenshot-card">
+          <img src="screenshots/phone-01.png" alt="Rót nước sống động Màn 8">
+          <div class="screenshot-info">Rót nước sống động</div>
+        </div>
+        <div class="screenshot-card">
+          <img src="screenshots/phone-02.png" alt="Chế độ Nước Ẩn Màn 40">
+          <div class="screenshot-info">Chế độ Nước Ẩn</div>
+        </div>
+        <div class="screenshot-card">
+          <img src="screenshots/phone-03.png" alt="Chiến thắng 3 sao Màn 1">
+          <div class="screenshot-info">Chiến thắng 3 Sao</div>
+        </div>
+        <div class="screenshot-card">
+          <img src="screenshots/phone-04.png" alt="Thử thách đỉnh cao Màn 201">
+          <div class="screenshot-info">14 Ống · 12 Màu Nước</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Chính sách quyền riêng tư (App Privacy Policy) -->
+  <section class="card" id="privacy-policy">
+    <h2><span class="icon">🛡️</span> Chính Sách Quyền Riêng Tư (App Privacy Policy)</h2>
+    <p><em>Ngày có hiệu lực: 24 tháng 09 năm 2026</em></p>
+    <p>
+      Chính sách quyền riêng tư này áp dụng cho ứng dụng di động <strong>Water Sort - Đổ Nước Màu</strong> (mã định danh gói ứng dụng: <code>cm.mt.watersort</code>) được phát triển và vận hành bởi <strong>MT Games</strong> (đại diện: Nguyễn Minh Thắng).
+    </p>
+    <p>
+      Chúng tôi cam kết tôn trọng và bảo vệ tuyệt đối quyền riêng tư của mọi người dùng. Trò chơi được xây dựng theo nguyên tắc <strong>Offline First</strong> — tôn trọng tối đa dữ liệu cá nhân, không theo dõi và chỉ sử dụng các quyền cũng như dịch vụ tối thiểu cần thiết để vận hành trải nghiệm chơi game.
+    </p>
+
+    <!-- Permissions Table -->
+    <h3 id="quyen-ung-dung">1. Danh sách quyền ứng dụng yêu cầu (App Permissions)</h3>
+    <p>Ứng dụng chỉ yêu cầu các quyền hệ thống Android sau:</p>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Quyền Android</th>
+            <th>Mục đích sử dụng cụ thể</th>
+            <th>Bắt buộc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>android.permission.INTERNET</code></td>
+            <td>Dùng để kết nối máy chủ Google AdMob tải quảng cáo (banner, thưởng) và kết nối Google Play xử lý giao dịch mua gói Xóa quảng cáo.</td>
+            <td>Có</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+            <td>Kiểm tra thiết bị có đang kết nối mạng (Wi-Fi/4G) hay không để tối ưu hóa việc tải dữ liệu quảng cáo và tránh các yêu cầu mạng lãng phí pin.</td>
+            <td>Có</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.VIBRATE</code></td>
+            <td>Tạo phản hồi xúc giác nhẹ (rung haptic) khi người chơi rót nước hoặc hoàn thành một ống nghiệm. Có thể bật hoặc tắt bất kỳ lúc nào trong mục Cài đặt.</td>
+            <td>Không</td>
+          </tr>
+          <tr>
+            <td><code>com.android.vending.BILLING</code></td>
+            <td>Giao tiếp an toàn với hệ thống Google Play Store để người chơi có thể mua gói "Xóa quảng cáo" (IAP remove_ads).</td>
+            <td>Có</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Third-Party SDKs -->
+    <h3>2. Các SDK và Dịch vụ của Bên Thứ Ba (Third-Party SDKs)</h3>
+    <p>Để duy trì miễn phí trò chơi và xử lý giao dịch mua trong ứng dụng an toàn, chúng tôi tích hợp các SDK chính thức từ Google:</p>
+
+    <div class="sdk-box">
+      <div class="sdk-title">📢 Google Mobile Ads SDK (Google AdMob)</div>
+      <p>
+        Ứng dụng hiển thị quảng cáo thông qua Google AdMob (Banner ở menu, Interstitial sau mỗi 2 màn hoàn thành và Rewarded Video khi người chơi chủ động xem để nhận thêm gợi ý hoặc ống nghiệm mới).
+      </p>
+      <p>
+        Google AdMob có thể tự động thu thập và xử lý một số thông tin kỹ thuật theo tiêu chuẩn của Google, bao gồm:
+      </p>
+      <ul>
+        <li><strong>Mã định danh quảng cáo (Google Advertising ID / GAID):</strong> Dùng để phân phát quảng cáo phù hợp, đo lường tần suất và ngăn chặn hành vi gian lận lượt xem.</li>
+        <li><strong>Thông tin thiết bị và mạng:</strong> Kiểu máy, phiên bản hệ điều hành Android, nhà mạng, ngôn ngữ hệ thống.</li>
+        <li><strong>Dữ liệu tương tác và chẩn đoán:</strong> Thống kê số lần hiển thị quảng cáo, thời lượng tương tác và báo cáo lỗi kỹ thuật (crash logs).</li>
+      </ul>
+      <p>
+        Chi tiết về cách Google xử lý dữ liệu người dùng được nêu tại:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Chính sách bảo mật của Google</a> và 
+        <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">Quy định bảo vệ dữ liệu Google AdMob</a>.
+      </p>
+    </div>
+
+    <div class="sdk-box">
+      <div class="sdk-title">💳 Dịch vụ Thanh toán Google Play (Google Play In-App Billing)</div>
+      <p>
+        Ứng dụng cung cấp gói mua một lần "Xóa quảng cáo" (Remove Ads). Mọi giao dịch được bảo mật và thực hiện trực tiếp thông qua hạ tầng Google Play Store. Nhà phát triển <strong>hoàn toàn không tiếp cận, không thu thập và không lưu trữ</strong> bất kỳ thông tin nhạy cảm nào liên quan đến thẻ tín dụng, tài khoản ngân hàng hoặc hóa đơn của người dùng.
+      </p>
+    </div>
+
+    <!-- Data Collection & Processing -->
+    <h3 id="chinh-sach-du-lieu">3. Chính sách Thu Thập, Sử Dụng và Lưu Trữ Dữ Liệu</h3>
+    
+    <div class="callout success">
+      <strong>🔒 Cam kết Không thu thập Thông tin Nhận dạng Cá nhân (PII):</strong><br>
+      Trò chơi không yêu cầu người dùng phải đăng ký tài khoản, không yêu cầu cung cấp tên, địa chỉ email, số điện thoại, danh bạ, vị trí GPS, micro, hình ảnh hay camera của thiết bị.
+    </div>
+
+    <p><strong>A. Dữ liệu trò chơi (Game Progress &amp; State):</strong></p>
+    <ul>
+      <li>Mọi tiến trình màn chơi, số sao đạt được, thiết lập bật/tắt âm thanh, rung và cờ trạng thái mua gói "Xóa quảng cáo" được lưu trữ <strong>cục bộ 100% trên bộ nhớ thiết bị</strong> của người dùng.</li>
+      <li>Dữ liệu này không bao giờ được tải lên hay lưu trữ trên bất kỳ máy chủ bên ngoài nào của nhà phát triển.</li>
+    </ul>
+
+    <p><strong>B. Mục đích sử dụng dữ liệu:</strong></p>
+    <ul>
+      <li>Đảm bảo tiến trình chơi game của bạn được liên tục, không bị mất khi thoát ứng dụng.</li>
+      <li>Phân phối quảng cáo hợp pháp thông qua Google AdMob để hỗ trợ duy trì phát triển game miễn phí.</li>
+      <li>Khôi phục quyền lợi gói mua "Xóa quảng cáo" khi bạn cài đặt lại trò chơi trên cùng tài khoản Google Play.</li>
+    </ul>
+
+    <!-- Data Deletion Policy -->
+    <h3>4. Chính Sách Xóa Dữ Liệu và Quyền Của Người Dùng (Data Deletion Policy)</h3>
+    <p>
+      Theo quy định về quyền riêng tư dữ liệu của Google Play Store và các quy chuẩn quốc tế, người dùng có toàn quyền kiểm soát và xóa bỏ toàn bộ dữ liệu liên quan đến việc sử dụng ứng dụng bất kỳ lúc nào:
+    </p>
+
     <ul>
       <li>
-        <strong>Google Mobile Ads SDK (AdMob):</strong>
-        Dùng để hiển thị quảng cáo Banner, Interstitial và Rewarded (nhận thêm gợi ý, thêm ống hoặc hoàn tác). Google AdMob có thể thu thập và xử lý mã định danh quảng cáo (Google Advertising ID), thông tin thiết bị và dữ liệu tương tác quảng cáo nhằm mục đích phân phát quảng cáo phù hợp và ngăn chặn gian lận.
-        <br>Tìm hiểu thêm tại: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách bảo mật của Google</a> và <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Quy định dữ liệu AdMob</a>.
+        <strong>Xóa dữ liệu tiến trình game:</strong> Vì toàn bộ tiến trình được lưu trữ cục bộ trên máy của bạn, bạn có thể xóa sạch mọi dữ liệu bằng cách:
+        <br>👉 Mở <em>Cài đặt thiết bị (Settings) &rarr; Ứng dụng (Apps) &rarr; Water Sort &rarr; Lưu trữ (Storage) &rarr; chọn "Xóa dữ liệu" (Clear Data) / "Xóa bộ nhớ đệm" (Clear Cache)</em>; hoặc chỉ cần gỡ cài đặt (uninstall) ứng dụng khỏi máy.
       </li>
-      <li style="margin-top: 0.8rem;">
-        <strong>Google Play In-App Billing:</strong>
-        Xử lý gói thanh toán "Xóa quảng cáo" duy nhất. Toàn bộ thông tin tài khoản thanh toán do Google Play trực tiếp bảo mật và xử lý. Nhà phát triển <strong>hoàn toàn không</strong> thu thập, tiếp cận hay lưu trữ bất kỳ thông tin thanh toán cá nhân nào.
+      <li>
+        <strong>Xóa / Đặt lại Mã nhận dạng quảng cáo (Advertising ID):</strong> Bạn có thể xóa hoặc đặt lại mã định danh quảng cáo bất kỳ lúc nào thông qua hệ thống Android:
+        <br>👉 Mở <em>Cài đặt thiết bị &rarr; Google &rarr; Quảng cáo &rarr; Chọn "Đặt lại mã nhận dạng cho quảng cáo" (Reset advertising ID) hoặc "Xóa mã nhận dạng cho quảng cáo" (Delete advertising ID)</em>.
+      </li>
+      <li>
+        <strong>Yêu cầu giải đáp và hỗ trợ xóa dữ liệu từ Nhà phát triển:</strong> Do ứng dụng không thu thập thông tin tài khoản và không có máy chủ lưu trữ dữ liệu cá nhân, việc xóa trên thiết bị là hoàn tất và triệt để 100%. Nếu bạn có bất kỳ câu hỏi nào liên quan đến dữ liệu, vui lòng gửi email yêu cầu trực tiếp về địa chỉ: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>. Chúng tôi sẽ phản hồi trong vòng tối đa 48 giờ làm việc.
       </li>
     </ul>
 
-    <h3>3. Thu thập và Lưu trữ Dữ liệu (Data Collection &amp; Storage)</h3>
-    <ul>
-      <li><strong>Không thu thập Thông tin Nhận dạng Cá nhân (PII):</strong> Ứng dụng không yêu cầu đăng ký tài khoản, không yêu cầu email, số điện thoại, tên, danh bạ, máy ảnh, microphone hay vị trí địa lý của bạn.</li>
-      <li><strong>Lưu trữ Cục bộ (Offline Storage):</strong> Tiến trình màn chơi, số sao đạt được và thiết lập âm thanh/rung được lưu trữ cục bộ trực tiếp trên bộ nhớ thiết bị của bạn. Dữ liệu này không gửi về bất kỳ máy chủ nào.</li>
-    </ul>
-
-    <h3>4. Chính sách Xóa Dữ liệu (Data Deletion Policy)</h3>
-    <p>Người chơi có toàn quyền kiểm soát dữ liệu của mình:</p>
-    <ul>
-      <li><strong>Xóa dữ liệu trò chơi:</strong> Do dữ liệu được lưu hoàn toàn trên thiết bị của bạn, bạn có thể xóa toàn bộ dữ liệu bất kỳ lúc nào bằng cách vào <em>Cài đặt thiết bị &rarr; Ứng dụng &rarr; Water Sort &rarr; Lưu trữ &rarr; Xóa dữ liệu (Clear Data)</em>, hoặc đơn giản là gỡ cài đặt ứng dụng.</li>
-      <li><strong>Đặt lại Mã định danh Quảng cáo:</strong> Bạn có thể quản lý, đặt lại hoặc xóa Mã nhận dạng quảng cáo (Advertising ID) trong mục <em>Cài đặt Android &rarr; Google &rarr; Quảng cáo &rarr; Xóa mã nhận dạng cho quảng cáo</em>.</li>
-      <li><strong>Yêu cầu hỗ trợ từ nhà phát triển:</strong> Nếu bạn có bất kỳ thắc mắc nào về chính sách bảo mật hoặc quyền dữ liệu, vui lòng gửi email về: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>.</li>
-    </ul>
-
+    <!-- GDPR & UMP Consent -->
     <h3>5. Tuân thủ Quy định Châu Âu (GDPR / UMP Consent)</h3>
-    <p>Đối với người dùng tại Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK), ứng dụng tích hợp hộp thoại lấy ý kiến đồng thuận (Google User Messaging Platform - UMP) theo tiêu chuẩn GDPR. Người dùng có thể xem lại hoặc thay đổi tùy chọn đồng thuận bất kỳ lúc nào trong mục <strong>Cài đặt</strong> của trò chơi.</p>
+    <p>
+      Đối với người dùng thuộc Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK), ứng dụng tuân thủ nghiêm ngặt Quy định chung về bảo vệ dữ liệu (GDPR). Ứng dụng tích hợp hệ thống <strong>Google User Messaging Platform (UMP)</strong> để hiển thị hộp thoại xin ý kiến đồng thuận về quảng cáo cá nhân hóa.
+    </p>
+    <p>
+      Bạn có thể xem lại hoặc thay đổi tùy chọn đồng thuận quyền riêng tư bất kỳ lúc nào bằng cách vào mục <strong>Cài đặt (Settings)</strong> trong giao diện trò chơi và chọn <em>"Tùy chọn quyền riêng tư" (Privacy Options)</em>.
+    </p>
 
-    <h3>6. Quyền riêng tư của Trẻ em (Children's Privacy)</h3>
-    <p>Ứng dụng tuân thủ các quy định về bảo vệ quyền riêng tư của trẻ em trực tuyến (COPPA). Ứng dụng không chủ ý thu thập bất kỳ thông tin nhận dạng cá nhân nào từ trẻ em dưới 13 tuổi.</p>
+    <!-- Children's Privacy -->
+    <h3>6. Quyền Riêng Tư Của Trẻ Em (Children's Privacy / COPPA)</h3>
+    <p>
+      Ứng dụng Water Sort được thiết kế cho đối tượng khán giả phổ thông từ 13 tuổi trở lên và tuân thủ Đạo luật bảo vệ quyền riêng tư của trẻ em trên mạng (COPPA). Chúng tôi không cố ý thu thập bất kỳ thông tin cá nhân nào từ trẻ em dưới 13 tuổi. Nếu phụ huynh hoặc người giám hộ phát hiện trẻ em cung cấp thông tin cho các dịch vụ bên thứ ba mà không có sự đồng thuận, vui lòng liên hệ ngay với chúng tôi để được xử lý.
+    </p>
 
-    <h3>7. Thông tin Liên hệ (Developer Contact)</h3>
-    <p>Nếu bạn có bất kỳ đóng góp, khiếu nại hoặc thắc mắc nào liên quan đến Chính sách Bảo mật, vui lòng liên hệ:</p>
-    <div class="info-box">
-      <p><strong>Nhà phát triển:</strong> MT Games</p>
-      <p><strong>Email:</strong> <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
-      <p><strong>Trang chủ dự án:</strong> <a href="https://minhthang9911.github.io/cm-mt-watersort/">https://minhthang9911.github.io/cm-mt-watersort/</a></p>
+    <!-- Developer Contact Information -->
+    <h3 id="lien-he">7. Thông Tin Liên Hệ Của Nhà Phát Triển (Developer Contact)</h3>
+    <p>Mọi thắc mắc, phản hồi hoặc đóng góp ý kiến về trò chơi cũng như chính sách quyền riêng tư, xin vui lòng liên hệ:</p>
+
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="contact-label">Nhà phát triển:</span>
+        <span><strong>MT Games</strong> (Nguyễn Minh Thắng)</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Email hỗ trợ:</span>
+        <span><a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Gói ứng dụng:</span>
+        <span><code>cm.mt.watersort</code></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Trang dự án:</span>
+        <span><a href="https://minhthang9911.github.io/cm-mt-watersort/">https://minhthang9911.github.io/cm-mt-watersort/</a></span>
+      </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 MT Games · Water Sort - Đổ Nước Màu. All rights reserved.</p>
+    <p>&copy; 2026 MT Games · Water Sort - Đổ Nước Màu. Tất cả các quyền được bảo lưu.</p>
+    <p>Được xây dựng với tình yêu dành cho các tựa game giải đố trí tuệ offline chất lượng cao.</p>
   </footer>
 
 </div>
