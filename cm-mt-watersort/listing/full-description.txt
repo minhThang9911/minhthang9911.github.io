@@ -1,0 +1,17 @@
+Water Sort - Đổ Nước Màu là trò chơi giải đố phân loại màu sắc kinh điển, mang đến trải nghiệm thư giãn và rèn luyện tư duy logic nhẹ nhàng nhưng đầy lôi cuốn.
+
+Luật chơi đơn giản:
+• Chạm vào một ống để chọn, sau đó chạm vào ống khác để đổ nước sang.
+• Nước chỉ có thể đổ vào ống có cùng màu trên cùng và còn đủ chỗ trống.
+• Đổ nước sao cho mỗi ống chỉ chứa duy nhất một màu để chiến thắng!
+
+Tính năng nổi bật:
+• Vô hạn màn chơi: Màn chơi được sinh tự động bằng thuật toán thông minh, đảm bảo 100% giải được và độ khó tăng dần thử thách.
+• Chế độ Nước Ẩn độc đáo: Khám phá các lớp nước bí ẩn được giấu kín sau lớp sương xám, tăng thêm phần bất ngờ và kịch tính.
+• Đánh giá sao theo số nước đi: Tính toán lộ trình tối ưu nhất để đạt trọn vẹn 3 sao danh giá ở mỗi màn.
+• Công cụ hỗ trợ hữu ích: Hoàn tác nước đi (Undo), Gợi ý thông minh (Hint), hoặc Thêm ống trống khi gặp tình thế khó.
+• Chơi hoàn toàn Offline: Thư giãn mọi lúc mọi nơi mà không cần Wi-Fi hay kết nối mạng.
+• Không yêu cầu tài khoản, không giới hạn thời gian, tự động lưu tiến trình chơi.
+• Dung lượng siêu nhẹ, đồ hoạ sắc nét dịu mắt cùng âm thanh rót nước sống động, vui tai.
+
+Hãy tải ngay Water Sort - Đổ Nước Màu để tận hưởng những phút giây giải trí sảng khoái và rèn luyện trí não mỗi ngày!
