@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Number Match - Ghép Số 10 | Giới Thiệu &amp; Chính Sách Quyền Riêng Tư</title>
+  <meta name="description" content="Trang thông tin chính thức, giới thiệu tính năng và Chính sách quyền riêng tư (Privacy Policy) của trò chơi Number Match - Ghép Số 10 (cm.mt.numbermatch) theo chuẩn Google Play Store.">
+  <link rel="icon" type="image/png" href="playstore-app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #131224;
+      --bg-card: rgba(26, 26, 48, 0.88);
+      --bg-card-subtle: rgba(36, 37, 66, 0.65);
+      --bg-glass: rgba(22, 23, 42, 0.75);
+      --border-soft: rgba(255, 146, 43, 0.22);
+      --border-strong: rgba(132, 94, 247, 0.45);
+      --pop-orange: #ff922b;
+      --pop-orange-light: #ffa94d;
+      --pop-violet: #845ef7;
+      --pop-violet-light: #9775fa;
+      --pop-mint: #51cf66;
+      --pop-sky: #4d96ff;
+      --pop-coral: #ff6b6b;
+      --pop-sun: #fcc419;
+      --pop-berry: #f06595;
+      --text-pure: #ffffff;
+      --text-primary: #f8f9fa;
+      --text-secondary: #a5a9c5;
+      --text-muted: #6e7292;
+      --font-display: 'Baloo 2', cursive, sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 12% 12%, rgba(255, 146, 43, 0.1) 0%, transparent 35%),
+        radial-gradient(circle at 88% 22%, rgba(132, 94, 247, 0.12) 0%, transparent 32%),
+        radial-gradient(circle at 50% 75%, rgba(77, 150, 255, 0.08) 0%, transparent 40%),
+        linear-gradient(180deg, #131224 0%, #17162e 50%, #0f0e1d 100%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      padding: 1.5rem 1rem 4.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+
+    /* Hero Banner */
+    .hero-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(255, 146, 43, 0.2);
+      border: 2px solid var(--border-soft);
+      background: #181930;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-wrapper:hover {
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 45px rgba(132, 94, 247, 0.3);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* App Header Profile */
+    .app-profile {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.8rem 2.2rem;
+      border-radius: 24px;
+      border: 1.5px solid var(--border-strong);
+      margin-bottom: 2rem;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .app-icon {
+      width: 116px;
+      height: 116px;
+      border-radius: 26px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 22px rgba(255, 146, 43, 0.35);
+      flex-shrink: 0;
+      border: 2.5px solid rgba(255, 255, 255, 0.25);
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    .app-meta {
+      flex: 1;
+    }
+
+    .app-title {
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 20%, var(--pop-orange-light) 65%, var(--pop-violet-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+
+    .app-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .badge {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.3rem 0.85rem;
+      border-radius: 14px;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-soft);
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .badge.developer {
+      background: rgba(255, 146, 43, 0.15);
+      border-color: var(--pop-orange);
+      color: var(--pop-orange-light);
+    }
+
+    .badge.genre {
+      background: rgba(132, 94, 247, 0.15);
+      border-color: var(--pop-violet);
+      color: var(--pop-violet-light);
+    }
+
+    .badge.package {
+      background: rgba(81, 207, 102, 0.15);
+      border-color: var(--pop-mint);
+      color: var(--pop-mint);
+      font-family: monospace;
+      font-size: 0.82rem;
+    }
+
+    .badge.version {
+      background: rgba(77, 150, 255, 0.15);
+      border-color: var(--pop-sky);
+      color: var(--pop-sky);
+    }
+
+    /* Quick Navigation */
+    .quick-nav {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding: 0.3rem 0 1.2rem;
+      margin-bottom: 1.5rem;
+      scrollbar-width: none;
+    }
+
+    .quick-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-pill {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      background: var(--bg-card-subtle);
+      padding: 0.5rem 1.15rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover {
+      color: var(--text-pure);
+      border-color: var(--pop-orange);
+      background: rgba(255, 146, 43, 0.22);
+      transform: translateY(-2px);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 24px;
+      padding: 2.2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+      position: relative;
+    }
+
+    .card.highlight {
+      border-color: var(--border-strong);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(132, 94, 247, 0.15);
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--pop-orange-light);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      letter-spacing: 0.3px;
+    }
+
+    h2.violet {
+      color: var(--pop-violet-light);
+    }
+
+    h2.mint {
+      color: var(--pop-mint);
+    }
+
+    h2 .icon {
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffd8a8;
+      margin-top: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    p.lead {
+      font-size: 1.08rem;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    strong {
+      color: var(--text-pure);
+      font-weight: 700;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: rgba(255, 146, 43, 0.12);
+      color: #ffd8a8;
+      padding: 0.2rem 0.45rem;
+      border-radius: 6px;
+      font-size: 0.9em;
+      border: 1px solid rgba(255, 146, 43, 0.2);
+    }
+
+    ul, ol {
+      margin: 0.6rem 0 1.2rem 1.4rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    /* TL;DR Grid */
+    .tldr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.1rem;
+      margin: 1.4rem 0 0.5rem;
+    }
+
+    .tldr-box {
+      background: var(--bg-card-subtle);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .tldr-box:hover {
+      transform: translateY(-3px);
+      border-color: var(--pop-orange);
+    }
+
+    .tldr-icon {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .tldr-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-pure);
+    }
+
+    .tldr-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Screenshots Gallery */
+    .screenshots-scroll {
+      display: flex;
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding: 1rem 0 1.5rem;
+      margin: 1.2rem 0;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--pop-orange) var(--bg-card-subtle);
+    }
+
+    .screenshot-item {
+      flex: 0 0 240px;
+      scroll-snap-align: start;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid var(--border-soft);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+      background: #0f1020;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .screenshot-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--pop-orange);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 146, 43, 0.3);
+    }
+
+    .screenshot-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .screenshot-caption {
+      padding: 0.65rem 0.8rem;
+      font-size: 0.82rem;
+      text-align: center;
+      color: var(--text-secondary);
+      background: var(--bg-card-subtle);
+      font-weight: 600;
+    }
+
+    /* Data Safety & Permissions Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.4rem 0 1rem;
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+      text-align: left;
+      background: var(--bg-card-subtle);
+    }
+
+    th {
+      background: rgba(30, 31, 56, 0.95);
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--pop-orange-light);
+      padding: 1rem 1.2rem;
+      border-bottom: 2px solid var(--border-soft);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.95rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-primary);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .tag-yes {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: rgba(81, 207, 102, 0.18);
+      color: #69db7c;
+      border: 1px solid rgba(81, 207, 102, 0.35);
+    }
+
+    .tag-no {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: rgba(255, 107, 107, 0.18);
+      color: #ff8787;
+      border: 1px solid rgba(255, 107, 107, 0.35);
+    }
+
+    /* Step boxes */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.1rem;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 1.1rem 1.4rem;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pop-orange), var(--pop-coral));
+      color: var(--text-pure);
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(255, 146, 43, 0.4);
+    }
+
+    .step-text h4 {
+      color: var(--text-pure);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-text p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 0;
+    }
+
+    /* Callout Boxes */
+    .callout {
+      border-left: 4px solid var(--pop-orange);
+      background: rgba(255, 146, 43, 0.1);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 16px 16px 0;
+      margin: 1.4rem 0;
+    }
+
+    .callout.violet {
+      border-left-color: var(--pop-violet);
+      background: rgba(132, 94, 247, 0.1);
+    }
+
+    .callout.mint {
+      border-left-color: var(--pop-mint);
+      background: rgba(81, 207, 102, 0.1);
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    footer a {
+      color: var(--pop-orange-light);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* External Links */
+    a {
+      color: var(--pop-orange-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #ffe8cc;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .app-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1.2rem;
+      }
+      .app-title {
+        font-size: 1.85rem;
+      }
+      .app-badges {
+        justify-content: center;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+      .screenshot-item {
+        flex: 0 0 190px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero Banner Image -->
+  <div class="hero-wrapper">
+    <img src="feature-image.png" alt="Number Match - Ghép Số 10 Feature Graphic" class="hero-image" width="1024" height="500">
+  </div>
+
+  <!-- App Header Profile -->
+  <header class="app-profile">
+    <img src="playstore-app-icon.png" alt="Number Match App Icon" class="app-icon" width="116" height="116">
+    <div class="app-meta">
+      <h1 class="app-title">Number Match - Ghép Số 10</h1>
+      <p style="margin-bottom: 0.4rem; color: #e2e8f0; font-weight: 500;">Trò chơi giải đố số học tư duy logic phong cách Pop 3D hiện đại &amp; thư giãn ASMR</p>
+      <div class="app-badges">
+        <span class="badge developer">👤 MT Games</span>
+        <span class="badge genre">🧩 Giải đố Logic</span>
+        <span class="badge package">📦 cm.mt.numbermatch</span>
+        <span class="badge version">🚀 v1.0.0</span>
+        <span class="badge" style="color: #69db7c; border-color: rgba(81, 207, 102, 0.35);">⚡ 100% Offline</span>
+        <span class="badge" style="color: #ffd43b; border-color: rgba(252, 196, 25, 0.35);">★ Gia đình &amp; Giới trẻ</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Navigation Pills -->
+  <nav class="quick-nav" aria-label="Menu điều hướng nhanh">
+    <a href="#about" class="nav-pill">🎯 Giới Thiệu App</a>
+    <a href="#playstore-listing" class="nav-pill">📝 Mô Tả Store</a>
+    <a href="#screenshots" class="nav-pill">📸 Ảnh Màn Hình</a>
+    <a href="#permissions" class="nav-pill">🛡️ Quyền Ứng Dụng</a>
+    <a href="#data-policy" class="nav-pill">🔒 Thu Thập Dữ Liệu</a>
+    <a href="#data-deletion" class="nav-pill">🗑️ Xoá Dữ Liệu</a>
+    <a href="#children-gdpr" class="nav-pill">👶 Trẻ Em &amp; GDPR</a>
+    <a href="#iap" class="nav-pill">💎 Mua Hàng IAP</a>
+    <a href="#contact" class="nav-pill">✉️ Liên Hệ Dev</a>
+  </nav>
+
+  <!-- Summary TL;DR Cards -->
+  <div class="tldr-grid">
+    <div class="tldr-box">
+      <div class="tldr-icon">🚫</div>
+      <div class="tldr-title">Không Đăng Ký</div>
+      <div class="tldr-desc">Chơi ngay lập tức, không yêu cầu tạo tài khoản, không lưu trữ dữ liệu cá nhân trên đám mây.</div>
+    </div>
+    <div class="tldr-box">
+      <div class="tldr-icon">📶</div>
+      <div class="tldr-title">Chơi Hoàn Toàn Offline</div>
+      <div class="tldr-desc">Không cần Wi-Fi hay 4G/5G, lưu dữ liệu tiến trình hoàn toàn cục bộ trên thiết bị của bạn.</div>
+    </div>
+    <div class="tldr-box">
+      <div class="tldr-icon">🛡️</div>
+      <div class="tldr-title">Bảo Mật &amp; Minh Bạch</div>
+      <div class="tldr-desc">Chỉ dùng mã định danh quảng cáo (Google AdMob) và cổng thanh toán chuẩn Google Play Billing.</div>
+    </div>
+    <div class="tldr-box">
+      <div class="tldr-icon">✨</div>
+      <div class="tldr-title">Quyền Kiểm Soát Dữ Liệu</div>
+      <div class="tldr-desc">Dễ dàng xoá sạch 100% dữ liệu đã lưu bất cứ lúc nào trong mục Cài đặt hệ điều hành Android.</div>
+    </div>
+  </div>
+
+  <div style="height: 1.5rem;"></div>
+
+  <!-- SECTION 1: ABOUT APP -->
+  <section id="about" class="card">
+    <h2><span class="icon">🎯</span> Giới Thiệu Ứng Dụng</h2>
+    <p class="lead">
+      <strong>Number Match - Ghép Số 10</strong> là tựa game giải đố số học kinh điển được làm mới hoàn toàn với phong cách thiết kế <strong>Tactile Pop &amp; Cozy Juice</strong> hiện đại, mang đến trải nghiệm tư duy bổ ích nhưng cực kỳ êm dịu và giải trí cho giới trẻ cũng như mọi lứa tuổi.
+    </p>
+    <p>
+      Trò chơi được phát triển độc lập bởi <strong>MT Games</strong> trên nền tảng Godot Engine 4.7, tối ưu hoá mượt mà trên mọi thiết bị Android, tiết kiệm pin tối đa và vận hành hoàn toàn độc lập mà không cần kết nối Internet thường trực.
+    </p>
+
+    <h3>Điểm Nhấn Trải Nghiệm:</h3>
+    <ul>
+      <li><strong>Đồ hoạ Thẻ Squircle 3D Tactile:</strong> Các ô số được tạo hình khối nổi 3D bo góc với 9 sắc màu rực rỡ riêng biệt (Coral, Sky, Mint, Lilac, Tangerine, Sun, Berry, Teal, Violet) trên nền Deep Midnight Indigo tương phản cao.</li>
+      <li><strong>Hiệu ứng nảy thạch (Squash &amp; Stretch):</strong> Từng cú chạm có độ đàn hồi tự nhiên như thạch, kèm vệt sáng quét ngang thanh lịch khi xoá sạch hàng số.</li>
+      <li><strong>Âm thanh ASMR thư giãn:</strong> Tiếng gõ bọt nước (bubble pop) vui tai và giai điệu đàn Kalimba ngũ cung êm dịu, thăng hoa khi tạo chuỗi combo ghép số liên tiếp.</li>
+      <li><strong>Thuật toán sinh màn chơi thông minh:</strong> Hàng trăm màn chơi độc bản, bảo đảm 100% có nghiệm giải mà không cần lặp lại nội dung cũ.</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 2: PLAY STORE LISTING -->
+  <section id="playstore-listing" class="card highlight">
+    <h2><span class="icon">📝</span> Thông Tin Niêm Yết Chuẩn Google Play Store</h2>
+    <p>Dưới đây là thông tin tiêu đề, mô tả ngắn và mô tả đầy đủ chính thức của ứng dụng trên cửa hàng Google Play:</p>
+
+    <div class="callout">
+      <h4>📌 Tiêu Đề Ứng Dụng (App Title - 25/30 ký tự):</h4>
+      <p style="font-size: 1.25rem; font-weight: 800; color: #fff; font-family: var(--font-display);">Number Match - Ghép Số 10</p>
+    </div>
+
+    <div class="callout violet">
+      <h4>⚡ Mô Tả Ngắn (Short Description - 77/80 ký tự):</h4>
+      <p style="font-size: 1.05rem; font-weight: 600; color: #fff;">Ghép hai số bằng nhau hoặc cộng bằng 10 để xoá hết lưới. Vô hạn màn, offline.</p>
+    </div>
+
+    <div class="callout mint">
+      <h4>📖 Mô Tả Đầy Đủ (Full Description):</h4>
+      <div style="font-size: 0.95rem; line-height: 1.8; color: #f1f5f9; white-space: pre-line;">
+Number Match - Ghép Số 10 là trò chơi giải đố logic kinh điển với các con số, mang phong cách Pop &amp; Modern tươi sáng, thư giãn và cực kỳ cuốn hút!
+
+Nếu bạn yêu thích Sudoku, Nonogram, giải đố số học hoặc đơn giản là muốn tìm một tựa game vừa thư giãn vừa rèn luyện trí não mỗi ngày, Number Match chính là sự lựa chọn hoàn hảo dành cho bạn.
+
+🎯 LUẬT CHƠI ĐƠN GIẢN:
+• Mục tiêu: Xoá sạch tất cả các con số trên bảng để chiến thắng!
+• Chạm vào 2 ô số để ghép cặp và loại bỏ chúng nếu:
+  1. Hai số BẰNG NHAU (ví dụ: 5 và 5, 2 và 2, 8 và 8).
+  2. Hoặc tổng của hai số BẰNG 10 (ví dụ: 1 và 9, 2 và 8, 3 và 7, 4 và 6, 5 và 5).
+• Hai số phải nhìn thấy nhau mà không bị cản trở bởi các số chưa xoá. (Các ô đã xoá sẽ trở nên trong suốt và không chặn đường nhìn).
+
+🔍 5 HƯỚNG GHÉP CẶP ĐỘC ĐÁO:
+• Cùng hàng ngang: 2 số nằm trên cùng một hàng.
+• Cùng cột dọc: 2 số nằm trên cùng một cột.
+• Chéo xuống - phải hoặc chéo xuống - trái: 2 số nằm trên cùng một đường chéo.
+• Kế tiếp theo thứ tự đọc: Số cuối cùng của một hàng có thể nối trực tiếp sang số đầu tiên của hàng tiếp theo!
+
+✨ TÍNH NĂNG NỔI BẬT:
+• Đồ hoạ Tactile 3D hiện đại: Từng ô số squircle 3D sống động với màu sắc pastel rực rỡ, hiệu ứng nảy thạch (squash &amp; stretch) và tia chớp combo bắt mắt.
+• Âm thanh ASMR thư giãn: Tiếng chạm bọt nước (bubble pop) vui tai và giai điệu kalimba nhẹ nhàng giúp giải toả căng thẳng sau giờ học tập, làm việc.
+• Vô hạn màn chơi thông minh: Màn chơi được sinh tự động bằng thuật toán chuyên sâu, đảm bảo 100% giải được với độ khó tăng dần theo từng cấp bậc.
+• Đánh giá 3 sao danh giá: Cố gắng hoàn thành màn chơi với số lần Thêm số ít nhất để đạt trọn vẹn 3 sao.
+• Công cụ hỗ trợ đắc lực:
+  - Thêm số (Add Numbers): Nhân bản các số còn lại xuống cuối lưới khi bạn tạm thời hết nước đi.
+  - Gợi ý (Hint): Soi sáng cặp số tiềm năng khi bạn cần sự trợ giúp.
+  - Hoàn tác (Undo): Dễ dàng quay lại nước đi trước để thử chiến thuật mới.
+• Hoàn toàn Offline: Chơi mượt mà mọi lúc mọi nơi không cần Wi-Fi hay 4G/5G.
+• Dung lượng siêu nhẹ, tiết kiệm pin, không cần đăng nhập tài khoản phiền phức.
+
+Hãy thử thách độ nhạy bén của đôi mắt và tư duy logic của bạn với Number Match - Ghép Số 10 ngay hôm nay!
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: SCREENSHOTS -->
+  <section id="screenshots" class="card">
+    <h2><span class="icon">📸</span> Ảnh Chụp Màn Hình Trải Nghiệm Thực Tế</h2>
+    <p>Trải nghiệm hình ảnh thực tế được chụp trực tiếp trên thiết bị Android chuẩn 1080×2400 điểm ảnh:</p>
+    
+    <div class="screenshots-scroll">
+      <div class="screenshot-item">
+        <img src="screenshots/phone-01.png" alt="Gameplay ghép cặp số và hiệu ứng thẻ 3D" class="screenshot-img" loading="lazy">
+        <div class="screenshot-caption">1. Ghép Cặp Bằng Nhau &amp; Tổng 10</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/phone-02.png" alt="Lưới câu đố sau khi bấm thêm số" class="screenshot-img" loading="lazy">
+        <div class="screenshot-caption">2. Lưới Dài Thử Thách Sau Thêm Số</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/phone-03.png" alt="Màn hình chiến thắng 3 sao và confetti" class="screenshot-img" loading="lazy">
+        <div class="screenshot-caption">3. Hoàn Thành Màn Chơi 3 Sao Rực Rỡ</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshots/phone-04.png" alt="Màn hình chọn màn chơi và tiến trình" class="screenshot-img" loading="lazy">
+        <div class="screenshot-caption">4. Danh Sách Màn Chơi &amp; Kỷ Lục</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: APP PERMISSIONS -->
+  <section id="permissions" class="card">
+    <h2><span class="icon">🛡️</span> Danh Sách Quyền Ứng Dụng Yêu Cầu (App Permissions)</h2>
+    <p class="lead">
+      Ứng dụng cam kết chỉ yêu cầu các quyền kỹ thuật tối thiểu cần thiết để vận hành ổn định trên hệ điều hành Android và hiển thị quảng cáo hỗ trợ duy trì phát triển. Ứng dụng <strong>tuyệt đối không yêu cầu các quyền xâm phạm đời tư</strong> như: Danh bạ, Vị trí chính xác (GPS), Máy ảnh (Camera), Micro, Bộ nhớ ngoài (Storage) hay Tin nhắn (SMS).
+    </p>
+
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Tên Quyền Kỹ Thuật (Android Permission)</th>
+            <th>Bên Sử Dụng</th>
+            <th>Mục Đích Cụ Thể</th>
+            <th>Tác Vụ Bắt Buộc?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>com.google.android.gms.permission.AD_ID</code></td>
+            <td>Google AdMob SDK</td>
+            <td>Cho phép Google Play Services cấp mã nhận dạng quảng cáo (Advertising ID) để phân phối quảng cáo phù hợp ngữ cảnh và tần suất hiển thị.</td>
+            <td><span class="tag-yes">Có (cho AdMob)</span></td>
+          </tr>
+          <tr>
+            <td><code>android.permission.INTERNET</code></td>
+            <td>AdMob &amp; Play Billing</td>
+            <td>Kết nối mạng để tải biểu mẫu quảng cáo và gửi yêu cầu giao dịch thanh toán gói Xoá Quảng Cáo tới Google Play. (Khi không có mạng, game tự động chuyển sang chế độ thuần Offline).</td>
+            <td><span class="tag-yes">Có</span></td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+            <td>AdMob &amp; Godot Engine</td>
+            <td>Kiểm tra thiết bị đang có mạng (Wi-Fi/di động) hay mất mạng, giúp tạm dừng các tiến trình tải nền khi không có mạng, tiết kiệm pin và dữ liệu của người dùng.</td>
+            <td><span class="tag-yes">Có</span></td>
+          </tr>
+          <tr>
+            <td><code>com.android.vending.BILLING</code></td>
+            <td>Google Play Billing</td>
+            <td>Tích hợp cổng thanh toán an toàn của Google Play để người dùng có thể mua gói "Xóa quảng cáo" (Remove Ads) vĩnh viễn.</td>
+            <td><span class="tag-yes">Có (cho IAP)</span></td>
+          </tr>
+          <tr>
+            <td><code>android.permission.VIBRATE</code></td>
+            <td>Godot Engine (Haptic)</td>
+            <td>Kích hoạt mô tơ rung phản hồi xúc giác nhẹ (Haptic Feedback) khi người chơi chạm ô số, ghép cặp đúng hoặc qua màn (có thể bật/tắt trong Cài đặt).</td>
+            <td><span class="tag-yes">Tuỳ chọn</span></td>
+          </tr>
+          <tr>
+            <td><code>android.permission.WAKE_LOCK</code></td>
+            <td>Godot Engine</td>
+            <td>Giữ cho màn hình thiết bị không bị tự động khoá hoặc tối mờ đột ngột khi người chơi đang suy nghĩ tìm nước đi.</td>
+            <td><span class="tag-yes">Có</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 5: DATA SAFETY POLICY -->
+  <section id="data-policy" class="card highlight">
+    <h2><span class="icon">🔒</span> Chính Sách Thu Thập, Sử Dụng &amp; Bảo Mật Dữ Liệu</h2>
+    <p>
+      Chính sách này được lập theo biểu mẫu <strong>Google Play Data Safety</strong> để bảo đảm tính minh bạch tuyệt đối trước người dùng và cơ quan quản lý.
+    </p>
+
+    <h3>1. Dữ Liệu Chúng Tôi Thu Thập:</h3>
+    <ul>
+      <li><strong>Chúng tôi (Nhà phát triển MT Games): KHÔNG thu thập</strong> bất kỳ thông tin nhận dạng cá nhân nào (như tên, địa chỉ email, số điện thoại, vị trí địa lý, tài khoản mạng xã hội). Ứng dụng không yêu cầu đăng nhập tài khoản.</li>
+      <li><strong>Dữ liệu lưu trữ cục bộ:</strong> Tiến trình chơi (số màn hiện tại, số sao đã đạt, điểm kỷ lục cao nhất, trạng thái ván chơi đang dở) được lưu hoàn toàn trong bộ nhớ riêng tư của ứng dụng (Sandbox Storage) trên chính thiết bị của bạn qua hệ thống mã hoá nội bộ. Dữ liệu này không bao giờ được gửi lên bất kỳ máy chủ bên ngoài nào.</li>
+      <li><strong>Dữ liệu do SDK bên thứ ba (Google AdMob) xử lý:</strong> Nhằm hiển thị quảng cáo miễn phí để duy trì ứng dụng, SDK Google AdMob có thể tự động thu thập:
+        <ul>
+          <li><strong>Mã định danh thiết bị:</strong> Advertising ID của Android.</li>
+          <li><strong>Dữ liệu tương tác ứng dụng:</strong> Lượt hiển thị quảng cáo, số lần chạm vào quảng cáo.</li>
+          <li><strong>Thông tin chẩn đoán kỹ thuật:</strong> Báo cáo lỗi (Crash logs), hiệu suất hoạt động, kiểu thiết bị, nhà mạng và phiên bản hệ điều hành.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>2. Bảng Khai Báo Data Safety Google Play:</h3>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Loại Dữ Liệu</th>
+            <th>Thu Thập?</th>
+            <th>Chia Sẻ Bên Thứ 3?</th>
+            <th>Mục Đích Xử Lý</th>
+            <th>Bảo Mật Truyền Tải</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Device or other IDs</strong><br>(Mã Advertising ID)</td>
+            <td><span class="tag-yes">Có</span></td>
+            <td><span class="tag-yes">Có (AdMob)</span></td>
+            <td>Quảng cáo cá nhân hoá (nếu đồng thuận), giới hạn tần suất quảng cáo và phòng chống gian lận.</td>
+            <td>Mã hoá HTTPS/TLS trong quá trình truyền</td>
+          </tr>
+          <tr>
+            <td><strong>App Activity</strong><br>(Tương tác trong app)</td>
+            <td><span class="tag-yes">Có</span></td>
+            <td><span class="tag-yes">Có (AdMob)</span></td>
+            <td>Phân tích hiệu quả quảng cáo và tối ưu hoá giao diện.</td>
+            <td>Mã hoá HTTPS/TLS trong quá trình truyền</td>
+          </tr>
+          <tr>
+            <td><strong>App Info &amp; Performance</strong><br>(Crash logs, chẩn đoán)</td>
+            <td><span class="tag-yes">Có</span></td>
+            <td><span class="tag-no">Không</span></td>
+            <td>Phân tích độ ổn định, phát hiện lỗi giật lag để nâng cấp các bản vá lỗi.</td>
+            <td>Mã hoá HTTPS/TLS trong quá trình truyền</td>
+          </tr>
+          <tr>
+            <td><strong>Thông Tin Cá Nhân Nhạy Cảm</strong><br>(Tên, SĐT, Email, Vị trí, Ảnh)</td>
+            <td><span class="tag-no">KHÔNG</span></td>
+            <td><span class="tag-no">KHÔNG</span></td>
+            <td>Ứng dụng không thu thập và không truy cập bất kỳ dữ liệu cá nhân nào.</td>
+            <td>N/A</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3. Cơ Chế Bảo Mật &amp; Cam Kết:</h3>
+    <p>
+      Mọi dữ liệu trao đổi giữa thiết bị và các dịch vụ của Google đều được bảo vệ bằng giao thức bảo mật lớp truyền tải <strong>TLS/HTTPS tiêu chuẩn công nghiệp</strong>. Chúng tôi không bao giờ bán, cho thuê hay trao đổi dữ liệu người dùng cho bất kỳ bên thứ ba không liên quan nào.
+    </p>
+  </section>
+
+  <!-- SECTION 6: DATA DELETION -->
+  <section id="data-deletion" class="card">
+    <h2><span class="icon">🗑️</span> Hướng Dẫn Yêu Cầu &amp; Thực Hiện Xóa Dữ Liệu</h2>
+    <p class="lead">
+      Vì <strong>Number Match</strong> không duy trì tài khoản hay máy chủ backend lưu trữ thông tin cá nhân, bạn có toàn quyền kiểm soát và có thể <strong>xoá sạch 100% dữ liệu</strong> của trò chơi trên thiết bị của mình bất kỳ lúc nào một cách tức thì:
+    </p>
+
+    <div class="steps-container">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h4>Xoá Toàn Bộ Dữ Liệu &amp; Tiến Trình Chơi Trong Máy</h4>
+          <p>Mở <strong>Cài đặt hệ điều hành Android</strong> → Chọn <strong>Ứng dụng (Apps)</strong> → Chọn <strong>Number Match</strong> → Chọn <strong>Lưu trữ &amp; Bộ nhớ đệm (Storage &amp; Cache)</strong> → Bấm <strong>Xoá bộ nhớ / Xoá dữ liệu (Clear Storage / Clear Data)</strong>. Toàn bộ điểm số, kỷ lục và thiết lập sẽ được đặt lại về trạng thái ban đầu như mới tải app.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h4>Đặt Lại Hoặc Xoá Mã Định Danh Quảng Cáo (Ad ID) Của Google</h4>
+          <p>Mở <strong>Cài đặt Android</strong> → Chọn mục <strong>Google</strong> → Chọn <strong>Quảng cáo (Ads)</strong> → Nhấn <strong>Đặt lại mã nhận dạng cho quảng cáo</strong> hoặc <strong>Xoá mã nhận dạng cho quảng cáo</strong>. Hành động này sẽ ngắt kết nối lịch sử hiển thị quảng cáo trên thiết bị của bạn.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h4>Gỡ Cài Đặt Ứng Dụng</h4>
+          <p>Khi bạn gỡ cài đặt (Uninstall) ứng dụng Number Match khỏi điện thoại, toàn bộ thư mục dữ liệu nội bộ được hệ điều hành Android tự động dọn dẹp sạch sẽ khỏi máy.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout violet">
+      <p>
+        Nếu bạn có bất kỳ thắc mắc nào liên quan đến việc xoá dữ liệu hoặc cần hỗ trợ kỹ thuật, vui lòng gửi email trực tiếp tới nhà phát triển: <a href="mailto:minhthang0792@gmail.com"><strong>minhthang0792@gmail.com</strong></a>. Chúng tôi sẽ phản hồi và hướng dẫn chi tiết trong vòng 24–48 giờ.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 7: CHILDREN & GDPR -->
+  <section id="children-gdpr" class="card">
+    <h2><span class="icon">👶</span> Quyền Riêng Tư Của Trẻ Em &amp; Tuân Thủ Quốc Tế</h2>
+
+    <h3>1. Tuân Thủ COPPA (Bảo Vệ Quyền Riêng Tư Của Trẻ Em):</h3>
+    <p>
+      Ứng dụng được thiết kế cho đối tượng khán giả chung (đặc biệt là học sinh, sinh viên và người lớn trong độ tuổi 15–25 yêu thích giải đố trí tuệ), <strong>không hướng riêng tới trẻ em dưới 13 tuổi</strong>. Chúng tôi không cố ý thu thập thông tin nhận dạng cá nhân từ trẻ em dưới 13 tuổi. Trong mã nguồn trò chơi, SDK Google AdMob được cấu hình với tham số <code>RequestConfiguration.MAX_AD_CONTENT_RATING_PG</code> để bảo đảm các nội dung quảng cáo hiển thị luôn thân thiện với gia đình.
+    </p>
+
+    <h3>2. Tuân Thủ GDPR (Châu Âu) &amp; CCPA (California):</h3>
+    <p>
+      Người chơi tại Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK) được bảo vệ bởi nền tảng <strong>Google User Messaging Platform (UMP)</strong>:
+    </p>
+    <ul>
+      <li>Khi mở ứng dụng lần đầu tại các quốc gia này, một hộp thoại xin phép đồng thuận (Consent Form) sẽ hiển thị để bạn lựa chọn cho phép hoặc từ chối quảng cáo cá nhân hoá.</li>
+      <li>Bạn có thể xem lại hoặc thay đổi quyết định đồng thuận bất kỳ lúc nào bằng cách vào mục <strong>Cài đặt (Settings)</strong> trong game và nhấn nút <strong>Lựa chọn quyền riêng tư</strong>.</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 8: IAP -->
+  <section id="iap" class="card">
+    <h2><span class="icon">💎</span> Giao Dịch Mua Trong Ứng Dụng (In-App Purchases)</h2>
+    <p class="lead">
+      Trò chơi cung cấp một tuỳ chọn mua hàng duy nhất là gói <strong>"Xóa quảng cáo" (Remove Ads)</strong> vĩnh viễn:
+    </p>
+    <ul>
+      <li><strong>Bản chất sản phẩm:</strong> Sản phẩm không tiêu hao (non-consumable), bạn chỉ cần mua 1 lần duy nhất để tận hưởng trải nghiệm chơi hoàn toàn sạch bóng quảng cáo banner và quảng cáo chuyển màn.</li>
+      <li><strong>Cơ chế thanh toán:</strong> Mọi giao dịch được xử lý hoàn toàn qua cổng bảo mật của <strong>Google Play Billing</strong>. Nhà phát triển <strong>không</strong> nhận và <strong>không</strong> có quyền truy cập vào thông tin thẻ tín dụng, tài khoản ngân hàng của bạn.</li>
+      <li><strong>Khôi phục mua hàng (Restore):</strong> Khi đổi điện thoại hoặc cài đặt lại app trên cùng một tài khoản Google Play, trạng thái đã mua "Xóa quảng cáo" sẽ được tự động khôi phục hoàn toàn miễn phí.</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 9: DEVELOPER CONTACT -->
+  <section id="contact" class="card highlight">
+    <h2><span class="icon">✉️</span> Thông Tin Liên Hệ Nhà Phát Triển</h2>
+    <p>Nếu bạn có bất kỳ câu hỏi, phản hồi về lỗi, góp ý tính năng hoặc thắc mắc về chính sách quyền riêng tư này, xin vui lòng liên hệ với chúng tôi qua các kênh chính thức sau:</p>
+
+    <div style="background: var(--bg-card-subtle); padding: 1.4rem 1.6rem; border-radius: 18px; border: 1px solid var(--border-soft); margin-top: 1rem;">
+      <p style="margin-bottom: 0.6rem;">🏢 <strong>Nhà phát triển:</strong> MT Games</p>
+      <p style="margin-bottom: 0.6rem;">📧 <strong>Email hỗ trợ &amp; quyền riêng tư:</strong> <a href="mailto:minhthang0792@gmail.com" style="font-weight: 700; color: var(--pop-orange-light);">minhthang0792@gmail.com</a></p>
+      <p style="margin-bottom: 0.6rem;">📱 <strong>Gói ứng dụng (Package Name):</strong> <code>cm.mt.numbermatch</code></p>
+      <p style="margin-bottom: 0;">🌐 <strong>Địa chỉ lưu trữ chính sách:</strong> <a href="https://minhthang9911.github.io/cm-mt-numbermatch/privacy-policy.html">https://minhthang9911.github.io/cm-mt-numbermatch/privacy-policy.html</a></p>
+    </div>
+
+    <div style="margin-top: 1.5rem; text-align: center;">
+      <a href="mailto:minhthang0792@gmail.com" class="nav-pill" style="font-size: 1rem; padding: 0.75rem 1.8rem; background: linear-gradient(135deg, var(--pop-orange), var(--pop-coral)); color: #fff; border: none; box-shadow: 0 8px 20px rgba(255, 146, 43, 0.4); display: inline-block;">
+        ✉️ Gửi Email Cho Chúng Tôi
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 MT Games. Bảo lưu mọi quyền.</p>
+    <p style="margin-top: 0.4rem; font-size: 0.85rem;">
+      Chính sách bảo mật này có hiệu lực từ ngày <strong>01 tháng 10 năm 2026</strong> và được cập nhật định kỳ để luôn tương thích với các quy định mới nhất của Google Play Store.
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>

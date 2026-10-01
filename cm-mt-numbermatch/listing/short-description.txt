@@ -1,0 +1,1 @@
+Ghép hai số bằng nhau hoặc cộng bằng 10 để xoá hết lưới. Vô hạn màn, offline.

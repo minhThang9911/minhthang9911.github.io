@@ -1,0 +1,30 @@
+Number Match - Ghép Số 10 là trò chơi giải đố logic kinh điển với các con số, mang phong cách Pop & Modern tươi sáng, thư giãn và cực kỳ cuốn hút!
+
+Nếu bạn yêu thích Sudoku, Nonogram, giải đố số học hoặc đơn giản là muốn tìm một tựa game vừa thư giãn vừa rèn luyện trí não mỗi ngày, Number Match chính là sự lựa chọn hoàn hảo dành cho bạn.
+
+🎯 LUẬT CHƠI ĐƠN GIẢN:
+• Mục tiêu: Xoá sạch tất cả các con số trên bảng để chiến thắng!
+• Chạm vào 2 ô số để ghép cặp và loại bỏ chúng nếu:
+  1. Hai số BẰNG NHAU (ví dụ: 5 và 5, 2 và 2, 8 và 8).
+  2. Hoặc tổng của hai số BẰNG 10 (ví dụ: 1 và 9, 2 và 8, 3 và 7, 4 và 6, 5 và 5).
+• Hai số phải nhìn thấy nhau mà không bị cản trở bởi các số chưa xoá. (Các ô đã xoá sẽ trở nên trong suốt và không chặn đường nhìn).
+
+🔍 5 HƯỚNG GHÉP CẶP ĐỘC ĐÁO:
+• Cùng hàng ngang: 2 số nằm trên cùng một hàng.
+• Cùng cột dọc: 2 số nằm trên cùng một cột.
+• Chéo xuống - phải hoặc chéo xuống - trái: 2 số nằm trên cùng một đường chéo.
+• Kế tiếp theo thứ tự đọc: Số cuối cùng của một hàng có thể nối trực tiếp sang số đầu tiên của hàng tiếp theo!
+
+✨ TÍNH NĂNG NỔI BẬT:
+• Đồ hoạ Tactile 3D hiện đại: Từng ô số squircle 3D sống động với màu sắc pastel rực rỡ, hiệu ứng nảy thạch (squash & stretch) và tia chớp combo bắt mắt.
+• Âm thanh ASMR thư giãn: Tiếng chạm bọt nước (bubble pop) vui tai và giai điệu kalimba nhẹ nhàng giúp giải toả căng thẳng sau giờ học tập, làm việc.
+• Vô hạn màn chơi thông minh: Màn chơi được sinh tự động bằng thuật toán chuyên sâu, đảm bảo 100% giải được với độ khó tăng dần theo từng cấp bậc.
+• Đánh giá 3 sao danh giá: Cố gắng hoàn thành màn chơi với số lần Thêm số ít nhất để đạt trọn vẹn 3 sao.
+• Công cụ hỗ trợ đắc lực:
+  - Thêm số (Add Numbers): Nhân bản các số còn lại xuống cuối lưới khi bạn tạm thời hết nước đi.
+  - Gợi ý (Hint): Soi sáng cặp số tiềm năng khi bạn cần sự trợ giúp.
+  - Hoàn tác (Undo): Dễ dàng quay lại nước đi trước để thử chiến thuật mới.
+• Hoàn toàn Offline: Chơi mượt mà mọi lúc mọi nơi không cần Wi-Fi hay 4G/5G.
+• Dung lượng siêu nhẹ, tiết kiệm pin, không cần đăng nhập tài khoản phiền phức.
+
+Hãy thử thách độ nhạy bén của đôi mắt và tư duy logic của bạn với Number Match - Ghép Số 10 ngay hôm nay!
