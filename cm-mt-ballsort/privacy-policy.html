@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chính Sách Bảo Mật & Giới Thiệu – Ball Sort</title>
+  <meta name="description" content="Chính sách bảo mật, giới thiệu và điều khoản dữ liệu của trò chơi Ball Sort (cm.mt.ballsort) phát triển bởi MT Games.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --bg-color: #f7f5f0;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --bg-card-solid: #ffffff;
+      --border-color: rgba(140, 120, 100, 0.15);
+      --border-highlight: rgba(255, 159, 28, 0.35);
+      --text-main: #2b2623;
+      --text-muted: #6b645d;
+      --text-light: #948b82;
+      --accent: #ff9f1c;
+      --accent-gradient: linear-gradient(135deg, #ff9f1c 0%, #ff6b6b 100%);
+      --accent-soft: rgba(255, 159, 28, 0.12);
+      --mint: #4ecca3;
+      --mint-soft: rgba(78, 204, 163, 0.14);
+      --blue: #4d96ff;
+      --blue-soft: rgba(77, 150, 255, 0.14);
+      --purple: #9d4edd;
+      --purple-soft: rgba(157, 78, 221, 0.14);
+      --shadow-sm: 0 4px 12px rgba(43, 38, 35, 0.04);
+      --shadow-md: 0 10px 30px rgba(43, 38, 35, 0.08);
+      --shadow-lg: 0 20px 40px rgba(43, 38, 35, 0.12);
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0d0f17;
+        --bg-card: rgba(24, 27, 38, 0.82);
+        --bg-card-solid: #181b26;
+        --border-color: rgba(255, 255, 255, 0.08);
+        --border-highlight: rgba(255, 159, 28, 0.4);
+        --text-main: #f0ede8;
+        --text-muted: #a69f96;
+        --text-light: #706a62;
+        --accent: #ffa938;
+        --accent-soft: rgba(255, 169, 56, 0.15);
+        --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.25);
+        --shadow-md: 0 10px 32px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.55);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.68;
+      font-size: 16px;
+      padding: 24px 16px 80px;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    /* Hero Section */
+    .hero-wrapper {
+      position: relative;
+      margin-bottom: 32px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-card-solid);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2b3044 0%, #151821 100%);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%);
+    }
+
+    .hero-content {
+      padding: 0 28px 28px;
+      position: relative;
+    }
+
+    .hero-header-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      margin-top: -55px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-icon-box {
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
+      padding: 4px;
+      background: var(--bg-card-solid);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+      flex-shrink: 0;
+      border: 3px solid var(--bg-card-solid);
+      overflow: hidden;
+    }
+
+    .app-icon-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 19px;
+      display: block;
+    }
+
+    .hero-titles {
+      flex: 1;
+      padding-bottom: 4px;
+    }
+
+    .app-title {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--text-main);
+    }
+
+    .app-pkg {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      margin-top: 4px;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(255, 159, 28, 0.2);
+    }
+
+    .badge.mint {
+      background: var(--mint-soft);
+      color: #10b981;
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+
+    .badge.blue {
+      background: var(--blue-soft);
+      color: #3b82f6;
+      border-color: rgba(59, 130, 246, 0.2);
+    }
+
+    .badge.purple {
+      background: var(--purple-soft);
+      color: #8b5cf6;
+      border-color: rgba(139, 92, 246, 0.2);
+    }
+
+    /* Quick Nav */
+    .quick-nav {
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 8px 12px;
+      margin-bottom: 28px;
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-sm);
+      scrollbar-width: none;
+    }
+
+    .quick-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .quick-nav a {
+      white-space: nowrap;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: var(--radius-full);
+      transition: all 0.2s ease;
+    }
+
+    .quick-nav a:hover, .quick-nav a:focus {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* Section Cards */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-highlight);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      font-size: 18px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 22px 0 10px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    ul, ol {
+      margin: 10px 0 16px 22px;
+      color: var(--text-muted);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    /* Grid Feature Highlights */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .feature-item {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card-solid);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-item .icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .feature-item .title {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .feature-item .desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Box Styles */
+    .callout {
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      margin: 18px 0;
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .callout.green {
+      border-left-color: var(--mint);
+      background: var(--mint-soft);
+    }
+
+    .callout.blue {
+      border-left-color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    /* Tables */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 18px 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card-solid);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--accent-soft);
+      color: var(--text-main);
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(140, 120, 100, 0.02);
+    }
+
+    /* Description Code Box */
+    .store-box {
+      background: var(--bg-card-solid);
+      border: 1px dashed var(--border-highlight);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 16px 0;
+      position: relative;
+    }
+
+    .store-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #ffffff;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .store-text {
+      white-space: pre-line;
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--text-main);
+      word-break: break-word;
+    }
+
+    /* Contact Box */
+    .contact-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 24px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--accent-soft) 0%, var(--purple-soft) 100%);
+      border: 1px solid var(--border-highlight);
+      margin-top: 14px;
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .contact-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--accent-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(255, 159, 28, 0.35);
+    }
+
+    .contact-email {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .contact-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 14px rgba(255, 159, 28, 0.35);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-2px);
+      background: #e68e17;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 13.5px;
+      color: var(--text-light);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 12px 60px;
+      }
+      .card {
+        padding: 20px 18px;
+      }
+      .hero-banner {
+        height: 180px;
+      }
+      .hero-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: -40px;
+      }
+      .app-icon-box {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+      }
+      .app-title {
+        font-size: 24px;
+      }
+      .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn-action {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO SECTION -->
+  <header class="hero-wrapper">
+    <div class="hero-banner">
+      <img src="./feature-image.png" alt="Ball Sort Feature Graphic Cover" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-content">
+      <div class="hero-header-row">
+        <div class="app-icon-box">
+          <img src="./app-icon.png" alt="Ball Sort Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'45\' fill=\'%23ff9f1c\'/><text x=\'50\' y=\'62\' font-size=\'36\' text-anchor=\'middle\' fill=\'white\'>🔮</text></svg>'">
+        </div>
+        <div class="hero-titles">
+          <h1 class="app-title">Ball Sort: Xếp Bóng Màu</h1>
+          <div class="app-pkg">cm.mt.ballsort • Phiên bản 1.0.0 • MT Games</div>
+        </div>
+      </div>
+
+      <div class="badge-group">
+        <span class="badge">✨ 100% Offline</span>
+        <span class="badge mint">🧘 Thư Giãn ASMR</span>
+        <span class="badge blue">🎨 4 Bộ Skins & 3 Themes</span>
+        <span class="badge purple">🛡️ Không Cần Tài Khoản</span>
+        <span class="badge">📅 Thử Thách Hằng Ngày</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUICK NAVIGATION BAR -->
+  <nav class="quick-nav" aria-label="Điều hướng nhanh">
+    <a href="#gioi-thieu">Giới Thiệu</a>
+    <a href="#mo-ta-store">Mô Tả Play Store</a>
+    <a href="#quyen-truy-cap">Quyền Ứng Dụng</a>
+    <a href="#sdk-ben-thu-ba">SDK Bên Thứ Ba</a>
+    <a href="#chinh-sach-du-lieu">Chính Sách Dữ Liệu</a>
+    <a href="#xoa-du-lieu">Xóa Dữ Liệu</a>
+    <a href="#lien-he">Liên Hệ</a>
+  </nav>
+
+  <!-- MỤC 1: GIỚI THIỆU ỨNG DỤNG -->
+  <section id="gioi-thieu" class="card">
+    <div class="section-header">
+      <div class="section-icon">🎮</div>
+      <h2>1. Giới Thiệu Ứng Dụng Ball Sort</h2>
+    </div>
+
+    <p>
+      <strong>Ball Sort</strong> là tựa game giải đố sắp xếp bóng màu phong cách <em>Cozy & Satisfying</em>, 
+      được thiết kế tỉ mỉ nhằm đem lại cảm giác xoa dịu tâm trí (Sensory Relief), giải tỏa âu lo và rèn luyện tư duy logic 
+      nhẹ nhàng cho người chơi từ 15 đến 25 tuổi cũng như mọi lứa tuổi yêu thích thể loại trí tuệ casual.
+    </p>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="icon">✨</div>
+        <div class="title">Đồ Họa Jelly Physics</div>
+        <div class="desc">Bóng nảy lò xo mềm mại, hiệu ứng kéo giãn (Squash & Stretch) sống động, đàn hồi như thạch trái cây khi rơi chạm đáy.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🎶</div>
+        <div class="title">Âm Thanh ASMR Ngũ Cung</div>
+        <div class="desc">Thanh âm Kalimba gõ chuông gió theo thang âm Pentatonic thanh thoát, trong trẻo; hợp âm pha lê ngân vang khi hoàn thành ống.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🎨</div>
+        <div class="title">4 Bộ Skin Vector Độc Bản</div>
+        <div class="desc">Thỏa thích mở khóa và chuyển đổi giữa Cổ điển bóng kính, Mặt cười Emoji tinh nghịch, Trái cây nhiệt đới và Cẩm thạch lấp lánh.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🌙</div>
+        <div class="title">3 Chủ Đề Giao Diện</div>
+        <div class="desc">Pastel Cozy ấm áp, OLED Midnight Dark Mode đen sâu bảo vệ mắt khi chơi đêm, và Matcha Zen thư thái dịu êm.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📅</div>
+        <div class="title">Thử Thách Hằng Ngày</div>
+        <div class="desc">Mỗi ngày sinh một màn puzzle độc bản tái lập chuẩn xác 100% offline, tích lũy chuỗi ngày Streak và thưởng thêm sao mở skin.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📴</div>
+        <div class="title">100% Ngoại Tuyến (Offline)</div>
+        <div class="desc">Chơi mọi lúc mọi nơi trên máy bay hay tàu xe, không ngốn 4G/5G, không tạo tài khoản, không theo dõi định danh cá nhân.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MỤC 2: MÔ TẢ THEO CHUẨN GOOGLE PLAY STORE -->
+  <section id="mo-ta-store" class="card">
+    <div class="section-header">
+      <div class="section-icon">📱</div>
+      <h2>2. Nội Dung Niêm Yết Chuẩn Google Play Store</h2>
+    </div>
+
+    <p>Dưới đây là nội dung mô tả niêm yết chính thức của ứng dụng trên cửa hàng Google Play:</p>
+
+    <h3>Tên Ứng Dụng (App Title – Tối đa 30 ký tự)</h3>
+    <div class="store-box">
+      <div class="store-badge">Tiêu Đề (Title)</div>
+      <div class="store-text">Ball Sort: Xếp Bóng Màu ASMR</div>
+    </div>
+
+    <h3>Mô Tả Ngắn (Short Description – Tối đa 80 ký tự)</h3>
+    <div class="store-box">
+      <div class="store-badge">Mô Tả Ngắn (78 / 80 Ký Tự)</div>
+      <div class="store-text">Xếp bóng màu ASMR thư giãn, skin Emoji & trái cây, chơi 100% offline cực cuốn!</div>
+    </div>
+
+    <h3>Mô Tả Chi Tiết (Full / Long Description – Chuẩn Play Store)</h3>
+    <div class="store-box">
+      <div class="store-badge">Mô Tả Đầy Đủ (Long Description)</div>
+      <div class="store-text">Chào mừng bạn đến với **Ball Sort: Xếp Bóng Màu ASMR** – trò chơi giải đố sắp xếp sắc màu phong cách Cozy, thư thái và thỏa mãn thị giác hàng đầu!
+
+Bạn đang tìm kiếm một tựa game vừa giúp giải tỏa căng thẳng sau những giờ học tập, làm việc mệt mỏi, vừa rèn luyện trí óc sắc bén? Ball Sort chính là lựa chọn hoàn hảo dành cho bạn.
+
+🌟 CÁCH CHƠI VÔ CÙNG ĐƠN GIẢN:
+• Chạm vào một ống nghiệm để nhấc quả bóng trên cùng lên.
+• Chạm vào ống nghiệm khác để di chuyển bóng sang.
+• Quy tắc: Bạn chỉ có thể đặt một quả bóng lên trên một quả bóng cùng màu hoặc vào một ống nghiệm còn trống.
+• Chạm nhanh vào cùng ống đích để chuyển tiếp các quả bóng cùng màu kế tiếp.
+• Sắp xếp khéo léo cho đến khi mỗi ống nghiệm chứa trọn vẹn 4 quả bóng cùng một màu duy nhất để giành chiến thắng!
+
+✨ ĐIỂM NHẤN ĐẶC SẮC CHỈ CÓ TẠI BALL SORT:
+1. VẬT LÝ ĐÀN HỒI JELLY PHYSICS CỰC "JUICY":
+Từng quả bóng khi nhấc lên sẽ kéo giãn dọc, khi rơi tự do sẽ ép dẹp và nảy tưng lò xo mềm mại như viên kẹo thạch dẻo. Hiệu ứng quét sáng và pháo hoa confetti rực rỡ khi hoàn thành ống khiến bạn không thể rời mắt!
+
+2. ÂM THANH ASMR CHUÔNG GIÓ NGŨ CUNG:
+Mỗi lượt thả bóng sẽ gõ lên một nốt nhạc Kalimba trong trẻo theo thang âm ngũ cung Pentatonic (C-D-E-G-A). Người chơi như đang hòa mình vào giai điệu êm dịu xua tan mọi âu lo.
+
+3. BỘ SƯU TẬP 4 SKINS BÓNG VECTOR NGHỆ THUẬT:
+• Cổ điển (Classic): Ánh bóng kính phản quang thanh lịch.
+• Biểu cảm (Cute Emoji): 12 sắc thái khuôn mặt ngộ nghĩnh, tinh nghịch.
+• Trái cây (Fruit Orbs): Dưa hấu, kiwi, chanh vàng, việt quất, cam tươi mát mắt.
+• Cẩm thạch (Marble): Vân xoáy ngọc bích ảo diệu lấp lánh phản quang.
+
+4. 3 CHỦ ĐỀ GIAO DIỆN (THEMES) THỜI THƯỢNG:
+• Pastel Cozy: Tông kem sữa ấm áp nhẹ nhàng.
+• Midnight OLED: Chế độ nền đen sâu huyền bí, bảo vệ mắt khi chơi đêm và cực kỳ tiết kiệm pin cho điện thoại.
+• Matcha Zen: Tông rêu đất tự nhiên tĩnh lặng, thanh lọc tâm hồn.
+
+5. THỬ THÁCH HẰNG NGÀY (DAILY CHALLENGE):
+Mỗi ngày một câu đố đặc biệt được sinh độc bản 100% offline. Vượt qua thử thách để xây dựng chuỗi ngày liên tiếp (Streak) và nhận thêm sao thưởng!
+
+6. 100% NGOẠI TUYẾN & AN TÂM BẢO MẬT:
+• Hoạt động mượt mà không cần Wifi hay 4G/5G.
+• Không yêu cầu đăng ký tài khoản, không thu thập dữ liệu cá nhân.
+• Tính năng Hoàn tác (Undo) và Thêm ống trợ giúp thông minh khi bạn gặp nước đi khó.
+
+Hãy tải ngay **Ball Sort: Xếp Bóng Màu ASMR** hôm nay để tận hưởng cảm giác phân loại màu sắc cực đã và thư giãn bất tận!</div>
+    </div>
+  </section>
+
+  <!-- MỤC 3: QUYỀN TRUY CẬP ỨNG DỤNG -->
+  <section id="quyen-truy-cap" class="card">
+    <div class="section-header">
+      <div class="section-icon">🔐</div>
+      <h2>3. Quyền Truy Cập Ứng Dụng (App Permissions)</h2>
+    </div>
+
+    <p>
+      Ball Sort được phát triển theo triết lý <strong>tối giản quyền hạn</strong> (Principle of Least Privilege). 
+      Ứng dụng <strong>chỉ</strong> yêu cầu các quyền kỹ thuật tối thiểu cần thiết để vận hành tính năng trò chơi, 
+      phục hồi mua hàng và hiển thị mạng quảng cáo:
+    </p>
+
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Quyền (Android Permission)</th>
+            <th>Mục Đích Sử Dụng</th>
+            <th>Bộ Phận Sử Dụng</th>
+            <th>Bắt Buộc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>android.permission.INTERNET</code></td>
+            <td>Tải nội dung quảng cáo (Banner, Interstitial, Rewarded) và kiểm tra trạng thái mua hàng Google Play.</td>
+            <td>Google AdMob &amp; Play Billing</td>
+            <td>Có</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+            <td>Kiểm tra thiết bị có đang kết nối Internet hay không để xử lý nạp quảng cáo và chuyển đổi trạng thái offline.</td>
+            <td>Google AdMob SDK</td>
+            <td>Có</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.VIBRATE</code></td>
+            <td>Phản hồi rung xúc giác haptic nhẹ (10ms – 40ms) khi di chuyển bóng, nảy bóng và hoàn thành ống nghiệm (có thể tắt trong Cài đặt).</td>
+            <td>Hệ thống rung Godot Game</td>
+            <td>Không</td>
+          </tr>
+          <tr>
+            <td><code>com.android.vending.BILLING</code></td>
+            <td>Xử lý giao dịch mua gói "Xóa quảng cáo" (Remove Ads) vĩnh viễn thông qua cổng thanh toán bảo mật của Google Play.</td>
+            <td>Google Play Billing Library</td>
+            <td>Có</td>
+          </tr>
+          <tr>
+            <td><code>com.google.android.gms.permission.AD_ID</code></td>
+            <td>Truy cập Mã định danh quảng cáo (Google Advertising ID) theo chính sách của Google Play để cá nhân hóa quảng cáo nếu được cho phép.</td>
+            <td>Google Mobile Ads SDK</td>
+            <td>Có</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-title">✅ Cam kết không yêu cầu quyền nhạy cảm</div>
+      <p style="margin-bottom:0">
+        Ứng dụng <strong>hoàn toàn không yêu cầu</strong> quyền truy cập Danh bạ, Vị trí địa lý (GPS), Máy ảnh (Camera), 
+        Microphone, Bộ nhớ ngoài (Storage) hay bất kỳ thông tin riêng tư nào trên điện thoại của bạn.
+      </p>
+    </div>
+  </section>
+
+  <!-- MỤC 4: SDK BÊN THỨ BA -->
+  <section id="sdk-ben-thu-ba" class="card">
+    <div class="section-header">
+      <div class="section-icon">🧩</div>
+      <h2>4. Các SDK Bên Thứ Ba Tích Hợp</h2>
+    </div>
+
+    <p>
+      Để duy trì tính gọn nhẹ và an toàn thông tin, Ball Sort chỉ tích hợp đúng 2 bộ thư viện chính thức của Google:
+    </p>
+
+    <h3>1. Google Mobile Ads SDK (AdMob v23+)</h3>
+    <ul>
+      <li><strong>Mục đích:</strong> Hiển thị quảng cáo biểu ngữ (Banner) ở chân trang, quảng cáo xen kẽ (Interstitial) giữa các màn chơi cách quãng và quảng cáo xem có thưởng (Rewarded Video) để nhận lượt hoàn tác, gợi ý hoặc mở khóa nhanh skin bóng.</li>
+      <li><strong>Cơ chế UMP GDPR / CCPA:</strong> Trò chơi tích hợp sẵn nền tảng thông điệp người dùng (User Messaging Platform - UMP). Người chơi tại Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh có toàn quyền chọn hoặc từ chối quảng cáo cá nhân hóa ngay lần đầu mở game và có thể thay đổi lại lựa chọn bất kỳ lúc nào trong menu Cài đặt.</li>
+      <li><strong>Chính sách AdMob:</strong> Tìm hiểu thêm tại <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách quyền riêng tư của Google</a> và <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Quy định xử lý dữ liệu của AdMob</a>.</li>
+    </ul>
+
+    <h3>2. Google Play Billing Library (v3.3+)</h3>
+    <ul>
+      <li><strong>Mục đích:</strong> Cung cấp tính năng Mua một lần trong ứng dụng (In-App Purchase) gói <code>remove_ads</code> (Xóa toàn bộ quảng cáo vĩnh viễn).</li>
+      <li><strong>Bảo mật thanh toán:</strong> Toàn bộ quy trình thanh toán được thực hiện trực tiếp trong môi trường bảo mật của Google Play Store. Nhà phát triển <strong>không thu thập, không xử lý và không lưu trữ</strong> bất kỳ thông tin số thẻ tín dụng, tài khoản ví điện tử hay thông tin tài chính cá nhân nào của bạn.</li>
+    </ul>
+  </section>
+
+  <!-- MỤC 5: CHÍNH SÁCH THU THẬP & SỬ DỤNG DỮ LIỆU -->
+  <section id="chinh-sach-du-lieu" class="card">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <h2>5. Chính Sách Thu Thập &amp; Sử Dụng Dữ Liệu</h2>
+    </div>
+
+    <p>
+      Chúng tôi tuân thủ nghiêm ngặt nguyên tắc <strong>Tối giản Dữ liệu (Data Minimization)</strong>. 
+      Chúng tôi không thu thập thông tin nhận dạng cá nhân (PII) như họ tên, địa chỉ email cá nhân, số điện thoại hay tài khoản mạng xã hội.
+    </p>
+
+    <h3>Bảng Khai Báo An Toàn Dữ Liệu (Google Play Data Safety)</h3>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Nhóm Dữ Liệu</th>
+            <th>Dữ Liệu Cụ Thể</th>
+            <th>Thu Thập</th>
+            <th>Chia Sẻ</th>
+            <th>Mục Đích Xử Lý</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mã định danh (Device or other IDs)</strong></td>
+            <td>Mã nhận dạng quảng cáo (Advertising ID)</td>
+            <td>Có (bởi AdMob)</td>
+            <td>Có (cho mạng AdMob)</td>
+            <td>Hiển thị quảng cáo, phòng chống gian lận, phân tích số lượt hiển thị.</td>
+          </tr>
+          <tr>
+            <td><strong>Tương tác ứng dụng (App Activity)</strong></td>
+            <td>Lượt tương tác và xem video quảng cáo</td>
+            <td>Có (bởi AdMob)</td>
+            <td>Có (cho mạng AdMob)</td>
+            <td>Đo lường hiệu quả quảng cáo và cấp quyền nhận thưởng trong game.</td>
+          </tr>
+          <tr>
+            <td><strong>Hiệu năng &amp; Chẩn đoán (App Info &amp; Performance)</strong></td>
+            <td>Báo cáo lỗi (Crash logs), mức độ gián đoạn</td>
+            <td>Có (bởi AdMob)</td>
+            <td>Không</td>
+            <td>Phát hiện và chẩn đoán sự cố kỹ thuật của SDK.</td>
+          </tr>
+          <tr>
+            <td><strong>Dữ liệu tiến trình chơi game</strong></td>
+            <td>Số màn đã vượt, sao tích lũy, skin đã mở</td>
+            <td>Cục bộ</td>
+            <td>Không</td>
+            <td>Lưu trữ cục bộ trên máy để tiếp tục ván chơi khi mở lại ứng dụng.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout blue">
+      <div class="callout-title">🔒 Bảo mật mã hóa khi truyền tải</div>
+      <p style="margin-bottom:0">
+        Toàn bộ dữ liệu kỹ thuật truyền tải giữa thiết bị của bạn và máy chủ Google AdMob / Google Play 
+        đều được mã hóa thông qua giao thức an toàn tiêu chuẩn quốc tế <strong>HTTPS / TLS</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- MỤC 6: CHÍNH SÁCH XÓA DỮ LIỆU & QUYỀN NGƯỜI DÙNG -->
+  <section id="xoa-du-lieu" class="card">
+    <div class="section-header">
+      <div class="section-icon">🗑️</div>
+      <h2>6. Chính Sách Xóa Dữ Liệu (Data Deletion Policy)</h2>
+    </div>
+
+    <p>
+      Vì trò chơi hoạt động hoàn toàn ngoại tuyến và không duy trì hệ thống tài khoản trên máy chủ đám mây, 
+      bạn nắm <strong>100% quyền kiểm soát</strong> đối với dữ liệu của mình:
+    </p>
+
+    <h3>Cách 1: Xóa toàn bộ dữ liệu trò chơi trên thiết bị</h3>
+    <ol>
+      <li>Mở ứng dụng <strong>Cài đặt (Settings)</strong> trên thiết bị Android của bạn.</li>
+      <li>Chọn mục <strong>Ứng dụng (Apps)</strong> hoặc <strong>Quản lý ứng dụng</strong>.</li>
+      <li>Tìm và chọn ứng dụng <strong>Ball Sort</strong>.</li>
+      <li>Chọn <strong>Lưu trữ &amp; bộ nhớ đệm (Storage &amp; cache)</strong>.</li>
+      <li>Nhấn <strong>Xóa bộ nhớ lưu trữ / Xóa dữ liệu (Clear Storage / Clear Data)</strong>. Mọi tiến trình chơi, số sao tích lũy và cài đặt sẽ được xóa sạch ngay lập tức.</li>
+      <li>Hoặc bạn chỉ cần <strong>Gỡ cài đặt (Uninstall)</strong> trò chơi khỏi điện thoại.</li>
+    </ol>
+
+    <h3>Cách 2: Đặt lại hoặc Xóa Mã nhận dạng quảng cáo (Advertising ID)</h3>
+    <ol>
+      <li>Mở ứng dụng <strong>Cài đặt</strong> trên điện thoại Android.</li>
+      <li>Cuộn xuống và chọn mục <strong>Google</strong> &rarr; <strong>Quảng cáo (Ads)</strong>.</li>
+      <li>Chọn <strong>Xóa mã nhận dạng quảng cáo (Delete advertising ID)</strong> để chặn hoàn toàn việc theo dõi quảng cáo, hoặc chọn <strong>Đặt lại mã nhận dạng quảng cáo (Reset advertising ID)</strong> để xóa sạch lịch sử phân phối quảng cáo trước đó.</li>
+    </ol>
+
+    <h3>Cách 3: Rút lại sự đồng ý quảng cáo (GDPR Consent)</h3>
+    <p>
+      Nếu bạn ở khu vực EEA/UK và muốn thay đổi lựa chọn chia sẻ dữ liệu quảng cáo, 
+      hãy mở game &rarr; vào <strong>Cài đặt</strong> trong game &rarr; chọn <strong>Tùy chọn quảng cáo (Privacy Options)</strong> để cập nhật lại quyền chấp thuận bất kỳ lúc nào.
+    </p>
+  </section>
+
+  <!-- MỤC 7: TRẺ EM & ĐIỀU KHOẢN -->
+  <section class="card">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <h2>7. Quyền Riêng Tư Của Trẻ Em</h2>
+    </div>
+    <p>
+      Ball Sort là trò chơi giải đố thông thường dành cho đối tượng đại chúng và giới trẻ (từ 13 tuổi trở lên). 
+      Chúng tôi tuân thủ nghiêm túc Đạo luật Bảo vệ Quyền riêng tư của Trẻ em trên mạng (COPPA) và Chính sách Gia đình của Google Play. 
+      Chúng tôi không cố ý thu thập hay lưu trữ thông tin của trẻ em dưới 13 tuổi.
+    </p>
+
+    <div class="section-header" style="margin-top: 28px;">
+      <div class="section-icon">📜</div>
+      <h2>8. Thay Đổi Chính Sách Bảo Mật</h2>
+    </div>
+    <p>
+      Chính sách bảo mật này có thể được cập nhật theo thời gian nhằm phản ánh những thay đổi trong trò chơi 
+      hoặc đáp ứng các quy định pháp luật hiện hành của Google Play. 
+      Phiên bản mới nhất luôn được công khai trực tiếp tại liên kết trang web này với ngày cập nhật rõ ràng ở chân trang.
+    </p>
+  </section>
+
+  <!-- MỤC 8: LIÊN HỆ NHÀ PHÁT TRIỂN -->
+  <section id="lien-he" class="card">
+    <div class="section-header">
+      <div class="section-icon">📬</div>
+      <h2>9. Thông Tin Liên Hệ Nhà Phát Triển</h2>
+    </div>
+
+    <p>
+      Nếu bạn có bất kỳ thắc mắc, đóng góp ý kiến hoặc yêu cầu hỗ trợ liên quan đến chính sách bảo mật và dữ liệu trò chơi, 
+      vui lòng liên hệ trực tiếp với chúng tôi qua thông tin dưới đây:
+    </p>
+
+    <div class="contact-card">
+      <div class="contact-info">
+        <div class="contact-avatar">✉️</div>
+        <div>
+          <a href="mailto:minhthang0792@gmail.com" class="contact-email">minhthang0792@gmail.com</a>
+          <div class="contact-sub">Nhà phát triển: MT Games • Hỗ trợ 24/7</div>
+        </div>
+      </div>
+      <button class="btn-action" onclick="copyEmail()">
+        📋 Sao chép Email
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 MT Games. Bảo lưu mọi quyền.</p>
+    <p style="margin-top: 6px;">
+      Mã định danh gói: <code>cm.mt.ballsort</code> • Cập nhật lần cuối: <strong>01/10/2026</strong>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  function copyEmail() {
+    navigator.clipboard.writeText('minhthang0792@gmail.com').then(() => {
+      alert('Đã sao chép địa chỉ email vào bộ nhớ tạm: minhthang0792@gmail.com');
+    }).catch(() => {
+      prompt('Địa chỉ email của chúng tôi:', 'minhthang0792@gmail.com');
+    });
+  }
+</script>
+
+</body>
+</html>
