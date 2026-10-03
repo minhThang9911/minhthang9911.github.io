@@ -1,0 +1,19 @@
+Nonogram - Picross Logic là trò chơi giải đố vẽ hình theo số kinh điển, mang đến trải nghiệm rèn luyện trí tuệ và tư duy suy luận logic đầy thú vị, thư giãn.
+
+Luật chơi đơn giản:
+• Quan sát các con số gợi ý ở đầu mỗi hàng và mỗi cột: Chúng cho biết độ dài các cụm ô tô liên tiếp cần tìm.
+• Tô màu các ô chắc chắn thuộc hình vẽ, và đánh dấu X vào những ô chắc chắn trống.
+• Hoàn thành toàn bộ lưới ô để hé lộ bức tranh ẩn giấu đầy sắc màu!
+
+Điểm đặc biệt chỉ có tại Nonogram - Picross Logic:
+• 100% SUY LUẬN LOGIC — KHÔNG BAO GIỜ PHẢI ĐOÁN: Mọi màn chơi đều được kiểm chứng chặt chẽ bằng thuật toán suy luận hàng/cột, đảm bảo có nghiệm duy nhất và luôn giải được mà không cần thử vận may.
+• 4 cấp độ kích thước vô hạn: 5×5 (Dễ cho người mới bắt đầu), 10×10 (Vừa vặn rèn luyện), 15×15 (Thử thách logic), và 20×20 (Chuyên gia đỉnh cao).
+• Báo lỗi ngay & Tự sửa: Nếu bạn tô nhầm hoặc đánh X sai, máy sẽ báo hiệu và tự sửa lại đúng, giúp bạn không bao giờ bị kẹt thế cờ.
+• Tự động đánh dấu X: Tự động điền X vào các ô trống khi một hàng hoặc cột đã được tô đủ điều kiện.
+• Điều khiển mượt mà: Hỗ trợ kéo nét thẳng hàng nhanh chóng kèm nhãn đếm ô tiện lợi, phóng to thu nhỏ (Pinch Zoom) và di chuyển mượt mà trên bàn cờ lớn.
+• Đánh giá sao & Kỷ lục thời gian: Thi đua giành trọn vẹn 3 sao và phá vỡ kỷ lục thời gian của chính mình.
+• Công cụ hỗ trợ thông minh: Gợi ý ô tiếp theo (Hint), Mở hàng/cột (Line Reveal), và Xoá lỗi khi cần.
+• Chơi hoàn toàn Offline: Tận hưởng trò chơi mọi lúc mọi nơi mà không cần Internet, Wi-Fi hay 4G.
+• Không cần đăng ký tài khoản, tự động lưu tiến trình chơi, dung lượng nhẹ và tiết kiệm pin.
+
+Hãy tải ngay Nonogram - Picross Logic để thử thách trí não và khám phá hàng ngàn bức tranh kỳ thú mỗi ngày!

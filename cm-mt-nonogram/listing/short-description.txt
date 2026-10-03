@@ -1,0 +1,1 @@
+Giải đố tô ô theo số. Vô hạn màn 5×5 đến 20×20, không cần đoán, offline.

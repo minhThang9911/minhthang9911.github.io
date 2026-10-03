@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nonogram - Picross Logic | Giới Thiệu &amp; Chính Sách Quyền Riêng Tư</title>
+  <meta name="description" content="Trang thông tin chính thức, giới thiệu ứng dụng và chính sách quyền riêng tư (Privacy Policy) của trò chơi Nonogram - Picross Logic (cm.mt.nonogram) theo chuẩn Google Play Store.">
+  <link rel="icon" type="image/png" href="playstore-app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(18, 26, 47, 0.88);
+      --bg-card-subtle: rgba(27, 38, 68, 0.65);
+      --bg-glass: rgba(15, 23, 42, 0.75);
+      --border-soft: rgba(99, 102, 241, 0.22);
+      --border-strong: rgba(99, 102, 241, 0.45);
+      --accent-indigo: #6366f1;
+      --accent-violet: #8b5cf6;
+      --accent-purple: #c084fc;
+      --accent-cyan: #06b6d4;
+      --accent-gold: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-emerald: #10b981;
+      --accent-paper: #fef3c7;
+      --text-pure: #ffffff;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 12% 12%, rgba(99, 102, 241, 0.16) 0%, transparent 40%),
+        radial-gradient(circle at 88% 22%, rgba(244, 63, 94, 0.12) 0%, transparent 35%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.1) 0%, transparent 45%),
+        linear-gradient(180deg, #0b0f19 0%, #0f172a 50%, #070a12 100%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.75;
+      padding: 1.5rem 1rem 4.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    /* Hero Banner Frame */
+    .hero-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(99, 102, 241, 0.25);
+      border: 2px solid var(--border-soft);
+      background: #0f172a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-wrapper:hover {
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 45px rgba(99, 102, 241, 0.35);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* App Header Profile with Modern Glassmorphism */
+    .app-profile {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      background: var(--bg-card);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 1.8rem 2.2rem;
+      border-radius: 24px;
+      border: 1.5px solid var(--border-soft);
+      margin-bottom: 2.2rem;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .app-icon {
+      width: 112px;
+      height: 112px;
+      border-radius: 26px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 24px rgba(99, 102, 241, 0.35);
+      flex-shrink: 0;
+      border: 2.5px solid rgba(255, 255, 255, 0.22);
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.04) rotate(-2deg);
+    }
+
+    .app-meta {
+      flex: 1;
+    }
+
+    .app-title {
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 25%, #c7d2fe 65%, var(--accent-indigo) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+
+    .app-tagline-sub {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .app-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .badge {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      border-radius: 14px;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-soft);
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .badge.developer {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--accent-indigo);
+      color: #a5b4fc;
+    }
+
+    .badge.tagline {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    .badge.package {
+      background: rgba(192, 132, 252, 0.15);
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.82rem;
+    }
+
+    .badge.highlight {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+    }
+
+    /* Navigation Quick Links */
+    .quick-nav {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding: 0.3rem 0 1.2rem;
+      margin-bottom: 1.2rem;
+      scrollbar-width: none;
+    }
+
+    .quick-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-pill {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      background: var(--bg-card-subtle);
+      padding: 0.5rem 1.15rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover {
+      color: var(--text-pure);
+      border-color: var(--accent-indigo);
+      background: rgba(99, 102, 241, 0.22);
+      transform: translateY(-2px);
+    }
+
+    /* Content Cards */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 24px;
+      padding: 2.2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
+      position: relative;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #c7d2fe;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      letter-spacing: 0.3px;
+    }
+
+    h2 .icon {
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #93c5fd;
+      margin-top: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin-bottom: 1.1rem;
+      color: var(--text-primary);
+      font-size: 1.02rem;
+    }
+
+    strong {
+      color: var(--text-pure);
+      font-weight: 700;
+    }
+
+    em {
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* Short Description Highlight Box */
+    .playstore-box {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.14) 0%, rgba(139, 92, 246, 0.08) 100%);
+      border: 1.5px solid var(--border-strong);
+      border-left: 6px solid var(--accent-indigo);
+      border-radius: 18px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.4rem 0 1.8rem;
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+    }
+
+    .playstore-box .tag {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #a5b4fc;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .playstore-box .lead-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-pure);
+      line-height: 1.5;
+    }
+
+    /* Long Description Container */
+    .long-description-content {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 1.8rem;
+      margin-top: 1.2rem;
+      font-size: 1.02rem;
+    }
+
+    .long-description-content ul {
+      list-style-type: none;
+      margin: 0.8rem 0 1.2rem;
+      padding-left: 0;
+    }
+
+    .long-description-content li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .long-description-content li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1rem;
+      color: var(--accent-indigo);
+    }
+
+    /* Rules Steps Grid */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin: 1.4rem 0 1.8rem;
+    }
+
+    .rule-card {
+      background: var(--bg-card-subtle);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 1.4rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .rule-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-indigo);
+    }
+
+    .rule-card.step1 h4 { color: #818cf8; }
+    .rule-card.step2 h4 { color: #38bdf8; }
+    .rule-card.step3 h4 { color: #f472b6; }
+
+    .rule-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: var(--text-secondary);
+    }
+
+    /* Features Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin: 1.4rem 0;
+    }
+
+    .feature-item {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-weight: 600;
+      font-size: 0.98rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: rgba(99, 102, 241, 0.35);
+    }
+
+    .feature-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Screenshots Gallery Showcase */
+    .screenshots-container {
+      margin: 1.8rem 0;
+    }
+
+    .screenshots-scroll {
+      display: flex;
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding: 0.8rem 0.2rem 1.6rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-indigo) var(--bg-card-subtle);
+      scroll-snap-type: x mandatory;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar-track {
+      background: var(--bg-card-subtle);
+      border-radius: 6px;
+    }
+
+    .screenshots-scroll::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, var(--accent-indigo), var(--accent-purple));
+      border-radius: 6px;
+    }
+
+    .screenshot-card {
+      flex: 0 0 220px;
+      scroll-snap-align: start;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid var(--border-soft);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      transition: all 0.25s ease;
+      background: #000;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-purple);
+      box-shadow: 0 14px 30px rgba(192, 132, 252, 0.25);
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .screenshot-info {
+      padding: 0.75rem 0.8rem;
+      font-size: 0.88rem;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.95);
+      color: #c7d2fe;
+      font-weight: 700;
+      font-family: var(--font-display);
+      border-top: 1px solid var(--border-soft);
+    }
+
+    /* Permissions & Data Safety Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.4rem 0;
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+      background: var(--bg-card-subtle);
+    }
+
+    th, td {
+      padding: 1rem 1.2rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    th {
+      background: rgba(99, 102, 241, 0.16);
+      color: #c7d2fe;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.02rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    code {
+      background: rgba(0, 0, 0, 0.45);
+      color: #fda4af;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+      border: 1px solid rgba(244, 63, 94, 0.25);
+    }
+
+    /* Standard Lists */
+    .card ul, .card ol {
+      margin: 0.8rem 0 1.2rem 1.6rem;
+    }
+
+    .card li {
+      margin-bottom: 0.6rem;
+      color: var(--text-primary);
+    }
+
+    /* Third-party SDK Box */
+    .sdk-box {
+      background: var(--bg-card-subtle);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 1.6rem;
+      margin: 1.2rem 0;
+    }
+
+    .sdk-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #a5b4fc;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Callout Boxes */
+    .callout {
+      border-radius: 18px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.4rem 0;
+      font-size: 0.98rem;
+    }
+
+    .callout.info {
+      background: rgba(99, 102, 241, 0.12);
+      border-left: 4px solid var(--accent-indigo);
+    }
+
+    .callout.success {
+      background: rgba(16, 185, 129, 0.12);
+      border-left: 4px solid var(--accent-emerald);
+    }
+
+    .callout.warning {
+      background: rgba(245, 158, 11, 0.12);
+      border-left: 4px solid var(--accent-gold);
+    }
+
+    /* Contact Details Card */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(27, 38, 68, 0.85) 100%);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      margin-top: 1.2rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
+      font-size: 1.05rem;
+    }
+
+    .contact-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-label {
+      font-weight: 700;
+      color: #a5b4fc;
+      min-width: 150px;
+    }
+
+    /* Links */
+    a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--accent-gold);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    footer p {
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.8rem 3rem;
+      }
+      .app-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.6rem 1.2rem;
+      }
+      .app-title {
+        font-size: 1.95rem;
+      }
+      .app-badges {
+        justify-content: center;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+        border-radius: 20px;
+      }
+      h2 {
+        font-size: 1.55rem;
+      }
+      .screenshot-card {
+        flex: 0 0 180px;
+      }
+      .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+      }
+      .contact-label {
+        min-width: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero Feature Graphic Image -->
+  <div class="hero-wrapper">
+    <img src="feature-image.png" alt="Nonogram - Picross Logic Banner" class="hero-image">
+  </div>
+
+  <!-- App Profile Header -->
+  <header class="app-profile">
+    <img src="playstore-app-icon.png" alt="Nonogram App Icon" class="app-icon">
+    <div class="app-meta">
+      <h1 class="app-title">Nonogram - Picross Logic</h1>
+      <div class="app-tagline-sub">Trò chơi giải đố vẽ hình theo số kinh điển phong cách hiện đại</div>
+      <div class="app-badges">
+        <span class="badge developer">👤 MT Games</span>
+        <span class="badge package">📦 cm.mt.nonogram</span>
+        <span class="badge tagline">🧩 100% Logic · Không Đoán</span>
+        <span class="badge highlight">⚡ 100% Chơi Offline</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Navigation Pills -->
+  <nav class="quick-nav" aria-label="Điều hướng nhanh">
+    <a href="#gioi-thieu" class="nav-pill">🎮 Giới thiệu</a>
+    <a href="#mo-ta-store" class="nav-pill">📝 Mô tả Google Play</a>
+    <a href="#hinh-anh" class="nav-pill">📸 Ảnh chụp màn hình</a>
+    <a href="#privacy-policy" class="nav-pill">🛡️ Chính sách quyền riêng tư</a>
+    <a href="#quyen-ung-dung" class="nav-pill">🔑 Quyền hạn &amp; SDK</a>
+    <a href="#chinh-sach-du-lieu" class="nav-pill">💾 Xử lý &amp; Xóa dữ liệu</a>
+    <a href="#lien-he" class="nav-pill">📬 Liên hệ</a>
+  </nav>
+
+  <!-- Section 1: Giới thiệu ứng dụng & Gameplay -->
+  <section class="card" id="gioi-thieu">
+    <h2><span class="icon">🎮</span> Giới Thiệu Trò Chơi</h2>
+    <p>
+      <strong>Nonogram - Picross Logic</strong> (còn được biết đến rộng rãi với các tên gọi <em>Picross, Griddlers, Hanjie, Nhật Bản Crossword</em>) là tựa game giải đố vẽ tranh logic kinh điển, kết hợp giữa đồ họa Neo-Cozy thời thượng, âm thanh mộc acoustic Marimba êm dịu và thuật toán kiểm chứng logic đỉnh cao.
+    </p>
+    <p>
+      Trò chơi mang lại trải nghiệm rèn luyện trí tuệ, khả năng suy luận logic và khả năng tập trung cho mọi lứa tuổi, đặc biệt là thế hệ trẻ năng động (15–25 tuổi) yêu thích phong cách tối giản, thẩm mỹ pixel art và gameplay thư giãn, không áp lực. Game hoạt động <strong>100% Offline</strong>, không yêu cầu kết nối mạng, sẵn sàng đồng hành cùng bạn mọi lúc mọi nơi.
+    </p>
+
+    <h3>Cách chơi cực kỳ dễ hiểu</h3>
+    <div class="rules-grid">
+      <div class="rule-card step1">
+        <h4>1. Đọc gợi ý số</h4>
+        <p>Quan sát các con số ở đầu mỗi hàng và cột. Chúng chỉ ra độ dài các khối ô tô liên tiếp cần tìm theo đúng thứ tự.</p>
+      </div>
+      <div class="rule-card step2">
+        <h4>2. Tô ô &amp; Đánh dấu X</h4>
+        <p>Tô màu các ô chắc chắn thuộc về bức tranh và đánh dấu X vào những ô chắc chắn là ô trống để thu hẹp phạm vi.</p>
+      </div>
+      <div class="rule-card step3">
+        <h4>3. Mở khóa tác phẩm</h4>
+        <p>Hoàn thành bàn cờ để hé lộ tác phẩm nghệ thuật dạng ảnh Polaroid và nhận trọn vẹn 3 sao danh giá!</p>
+      </div>
+    </div>
+
+    <h3>Đặc điểm nổi bật chỉ có tại Nonogram - Picross Logic</h3>
+    <div class="feature-grid">
+      <div class="feature-item"><span class="feature-icon">🧩</span><span>100% Thuần Logic — Không bao giờ phải đoán</span></div>
+      <div class="feature-item"><span class="feature-icon">📐</span><span>4 Kích thước vô hạn: 5×5, 10×10, 15×15, 20×20</span></div>
+      <div class="feature-item"><span class="feature-icon">🛡️</span><span>Báo lỗi ngay &amp; Tự sửa thông minh</span></div>
+      <div class="feature-item"><span class="feature-icon">❌</span><span>Tự động đánh dấu X khi hàng/cột hoàn thành</span></div>
+      <div class="feature-item"><span class="feature-icon">🔍</span><span>Phóng to/thu nhỏ (Pinch-zoom) &amp; Pan 2 ngón</span></div>
+      <div class="feature-item"><span class="feature-icon">📏</span><span>Kéo khóa trục kèm nhãn đếm ô tiện lợi</span></div>
+      <div class="feature-item"><span class="feature-icon">🎨</span><span>4 Giao diện sành điệu: Giấy ấm, Cyber, Trà xanh, Sakura</span></div>
+      <div class="feature-item"><span class="feature-icon">⚡</span><span>100% Offline — Không cần Wi-Fi, không cần 4G</span></div>
+      <div class="feature-item"><span class="feature-icon">🔒</span><span>Không tài khoản — Chơi tức thì, lưu tự động</span></div>
+      <div class="feature-item"><span class="feature-icon">🚫</span><span>Tùy chọn Mua 1 lần xóa sạch toàn bộ quảng cáo</span></div>
+    </div>
+  </section>
+
+  <!-- Section 2: Mô tả ứng dụng chuẩn Google Play Store -->
+  <section class="card" id="mo-ta-store">
+    <h2><span class="icon">📝</span> Mô Tả Chuẩn Google Play Store</h2>
+    <p>Nội dung mô tả công bố chính thức trên cửa hàng Google Play Store theo đúng tiêu chuẩn hiển thị:</p>
+
+    <!-- Short Description -->
+    <div class="playstore-box">
+      <span class="tag">Mô tả ngắn (Short Description) — Tối đa 80 ký tự:</span>
+      <p class="lead-text">"Giải đố tô ô theo số. Vô hạn màn 5×5 đến 20×20, không cần đoán, offline."</p>
+    </div>
+
+    <!-- Long Description -->
+    <h3>Mô tả chi tiết (Full / Long Description)</h3>
+    <div class="long-description-content">
+      <p>Nonogram - Picross Logic là trò chơi giải đố vẽ hình theo số kinh điển, mang đến trải nghiệm rèn luyện trí tuệ và tư duy suy luận logic đầy thú vị, thư giãn.</p>
+
+      <p><strong>Luật chơi đơn giản:</strong></p>
+      <ul>
+        <li>Quan sát các con số gợi ý ở đầu mỗi hàng và mỗi cột: Chúng cho biết độ dài các cụm ô tô liên tiếp cần tìm.</li>
+        <li>Tô màu các ô chắc chắn thuộc hình vẽ, và đánh dấu X vào những ô chắc chắn trống.</li>
+        <li>Hoàn thành toàn bộ lưới ô để hé lộ bức tranh ẩn giấu đầy sắc màu!</li>
+      </ul>
+
+      <p><strong>Điểm đặc biệt chỉ có tại Nonogram - Picross Logic:</strong></p>
+      <ul>
+        <li><strong>100% SUY LUẬN LOGIC — KHÔNG BAO GIỜ PHẢI ĐOÁN:</strong> Mọi màn chơi đều được kiểm chứng chặt chẽ bằng thuật toán suy luận hàng/cột, đảm bảo có nghiệm duy nhất và luôn giải được mà không cần thử vận may.</li>
+        <li><strong>4 cấp độ kích thước vô hạn:</strong> 5×5 (Dễ cho người mới bắt đầu), 10×10 (Vừa vặn rèn luyện), 15×15 (Thử thách logic), và 20×20 (Chuyên gia đỉnh cao).</li>
+        <li><strong>Báo lỗi ngay &amp; Tự sửa:</strong> Nếu bạn tô nhầm hoặc đánh X sai, máy sẽ báo hiệu và tự sửa lại đúng, giúp bạn không bao giờ bị kẹt thế cờ.</li>
+        <li><strong>Tự động đánh dấu X:</strong> Tự động điền X vào các ô trống khi một hàng hoặc cột đã được tô đủ điều kiện.</li>
+        <li><strong>Điều khiển mượt mà:</strong> Hỗ trợ kéo nét thẳng hàng nhanh chóng kèm nhãn đếm ô tiện lợi, phóng to thu nhỏ (Pinch Zoom) và di chuyển mượt mà trên bàn cờ lớn.</li>
+        <li><strong>Đánh giá sao &amp; Kỷ lục thời gian:</strong> Thi đua giành trọn vẹn 3 sao và phá vỡ kỷ lục thời gian của chính mình.</li>
+        <li><strong>Công cụ hỗ trợ thông minh:</strong> Gợi ý ô tiếp theo (Hint), Mở hàng/cột (Line Reveal), và Xoá lỗi khi cần.</li>
+        <li><strong>Chơi hoàn toàn Offline:</strong> Tận hưởng trò chơi mọi lúc mọi nơi mà không cần Internet, Wi-Fi hay 4G.</li>
+        <li>Không cần đăng ký tài khoản, tự động lưu tiến trình chơi, dung lượng nhẹ và tiết kiệm pin.</li>
+      </ul>
+
+      <p>Hãy tải ngay Nonogram - Picross Logic để thử thách trí não và khám phá hàng ngàn bức tranh kỳ thú mỗi ngày!</p>
+    </div>
+  </section>
+
+  <!-- Section 3: Ảnh chụp màn hình ứng dụng -->
+  <section class="card" id="hinh-anh">
+    <h2><span class="icon">📸</span> Ảnh Chụp Màn Hình Trải Nghiệm Thực Tế</h2>
+    <p>Hình ảnh thực tế chụp trực tiếp trên thiết bị Android chuẩn độ phân giải cao 1080×2400 px:</p>
+
+    <div class="screenshots-container">
+      <div class="screenshots-scroll">
+        <div class="screenshot-card">
+          <img src="screenshots/phone-01.png" alt="Menu chính giao diện Neo-Cozy thời thượng">
+          <div class="screenshot-info">Menu chính &amp; 4 Cấp độ</div>
+        </div>
+        <div class="screenshot-card">
+          <img src="screenshots/phone-02.png" alt="Bàn cờ 10x10 kéo nét thẳng kèm nhãn đếm ô">
+          <div class="screenshot-info">10×10 Kéo nét &amp; Nhãn đếm</div>
+        </div>
+        <div class="screenshot-card">
+          <img src="screenshots/phone-03.png" alt="Chiến thắng Polaroid Art & Pháo hoa Confetti">
+          <div class="screenshot-info">Chiến thắng Polaroid Art</div>
+        </div>
+        <div class="screenshot-card">
+          <img src="screenshots/phone-04.png" alt="Lưới lớn 15x15 và 20x20 chuyên gia">
+          <div class="screenshot-info">20×20 Chuyên gia đỉnh cao</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Chính sách quyền riêng tư chuẩn Google Play -->
+  <section class="card" id="privacy-policy">
+    <h2><span class="icon">🛡️</span> Chính Sách Quyền Riêng Tư (App Privacy Policy)</h2>
+    <p><em>Cập nhật lần cuối: Tháng 10 năm 2026</em></p>
+    <p>
+      Chính sách quyền riêng tư này áp dụng cho ứng dụng di động <strong>Nonogram - Picross Logic</strong> (mã định danh gói ứng dụng: <code>cm.mt.nonogram</code>) được phát triển và vận hành bởi <strong>MT Games</strong> (đại diện: Nguyễn Minh Thắng).
+    </p>
+    <p>
+      Chúng tôi cam kết tôn trọng và bảo vệ tuyệt đối quyền riêng tư của mọi người dùng. Trò chơi được phát triển theo triết lý <strong>Offline First</strong>: tôn trọng tối đa dữ liệu cá nhân, không theo dõi người dùng trái phép, và chỉ sử dụng các quyền cũng như dịch vụ tối thiểu cần thiết để vận hành trò chơi an toàn.
+    </p>
+
+    <!-- Permissions Table -->
+    <h3 id="quyen-ung-dung">1. Danh sách quyền ứng dụng yêu cầu (App Permissions)</h3>
+    <p>Ứng dụng chỉ yêu cầu các quyền hệ thống Android tiêu chuẩn sau đây:</p>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Quyền Android</th>
+            <th>Mục đích sử dụng cụ thể</th>
+            <th>Loại quyền</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>android.permission.INTERNET</code></td>
+            <td>Dùng để kết nối máy chủ Google AdMob tải quảng cáo (banner menu, interstitial cuối ván, rewarded video) và kết nối máy chủ Google Play để xác thực gói mua "Xóa quảng cáo". Trò chơi hoạt động offline hoàn toàn khi không có mạng.</td>
+            <td>Bình thường (Normal)</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+            <td>Kiểm tra thiết bị có đang kết nối mạng (Wi-Fi/4G/5G) hay không trước khi gửi yêu cầu nạp quảng cáo, giúp tối ưu hiệu năng mạng và tiết kiệm pin thiết bị.</td>
+            <td>Bình thường (Normal)</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.VIBRATE</code></td>
+            <td>Cung cấp phản hồi xúc giác nhẹ (haptic vibration) khi bạn tô ô, đánh dấu X, kéo nét hoặc cảnh báo tô sai. Người dùng có thể bật hoặc tắt phản hồi rung bất kỳ lúc nào trong mục Cài đặt.</td>
+            <td>Bình thường (Normal)</td>
+          </tr>
+          <tr>
+            <td><code>com.google.android.gms.permission.AD_ID</code></td>
+            <td>Cho phép Google Mobile Ads SDK truy cập mã định danh quảng cáo (Advertising ID) nhằm hiển thị quảng cáo phù hợp và ngăn chặn hành vi gian lận.</td>
+            <td>Dịch vụ Google Play</td>
+          </tr>
+          <tr>
+            <td><code>com.android.vending.BILLING</code></td>
+            <td>Giao tiếp bảo mật với hệ thống Google Play Store để xử lý giao dịch mua gói "Xóa quảng cáo" (In-App Purchase `remove_ads`) một cách an toàn.</td>
+            <td>Google Play Billing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Third-Party SDKs -->
+    <h3>2. Các SDK và Dịch vụ của Bên Thứ Ba (Third-Party SDKs)</h3>
+    <p>Để duy trì miễn phí trò chơi và xử lý giao dịch mua trong ứng dụng an toàn, chúng tôi chỉ tích hợp các SDK chính thức đạt chuẩn bảo mật từ Google:</p>
+
+    <div class="sdk-box">
+      <div class="sdk-title">📢 Google Mobile Ads SDK (Google AdMob)</div>
+      <p>
+        Ứng dụng hiển thị quảng cáo thông qua Google AdMob (Banner ở màn hình chính, Interstitial hiển thị khi kết thúc ván chơi và Rewarded Video khi người chơi chủ động xem để nhận thêm gợi ý hoặc mở hàng/cột).
+      </p>
+      <p>
+        Google AdMob có thể tự động thu thập và xử lý một số thông tin kỹ thuật tiêu chuẩn theo quy định của Google, bao gồm:
+      </p>
+      <ul>
+        <li><strong>Mã định danh quảng cáo (Google Advertising ID / GAID):</strong> Dùng để phân phát quảng cáo phù hợp, giới hạn tần suất hiển thị và ngăn ngừa hành vi gian lận hiển thị.</li>
+        <li><strong>Thông tin thiết bị và mạng:</strong> Tên dòng máy, phiên bản hệ điều hành Android, độ phân giải màn hình, nhà mạng, ngôn ngữ hệ thống.</li>
+        <li><strong>Dữ liệu tương tác và chẩn đoán:</strong> Thống kê số lượt xem quảng cáo, tỷ lệ tương tác và báo cáo sự cố (crash logs) để nâng cao độ ổn định.</li>
+      </ul>
+      <p>
+        Người dùng có thể tìm hiểu thêm về chính sách quyền riêng tư của Google tại:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Chính sách bảo mật của Google</a> và 
+        <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">Cách Google sử dụng dữ liệu trong AdMob</a>.
+      </p>
+    </div>
+
+    <div class="sdk-box">
+      <div class="sdk-title">💳 Dịch vụ Thanh toán Google Play (Google Play In-App Billing)</div>
+      <p>
+        Ứng dụng cung cấp gói mua một lần "Xóa quảng cáo" (Remove Ads). Mọi giao dịch tài chính được thực hiện và mã hóa bảo mật 100% trực tiếp thông qua Google Play Store. Nhà phát triển <strong>hoàn toàn không tiếp cận, không thu thập và không lưu trữ</strong> bất kỳ thông tin nào liên quan đến thẻ thanh toán, tài khoản ngân hàng hay thông tin hóa đơn của người dùng.
+      </p>
+    </div>
+
+    <!-- Data Collection & Processing -->
+    <h3 id="chinh-sach-du-lieu">3. Chính Sách Thu Thập, Sử Dụng và Lưu Trữ Dữ Liệu (Data Safety)</h3>
+    
+    <div class="callout success">
+      <strong>🔒 Cam kết Không thu thập Thông tin Nhận dạng Cá nhân (PII):</strong><br>
+      Trò chơi không yêu cầu đăng ký tài khoản, không yêu cầu cung cấp họ tên, số điện thoại, email cá nhân, vị trí định vị GPS, danh bạ, micro, hình ảnh hay camera của thiết bị.
+    </div>
+
+    <p>Bảng thông tin an toàn dữ liệu (Data Safety) công bố trên Google Play Console:</p>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Loại dữ liệu</th>
+            <th>Thu thập</th>
+            <th>Chia sẻ</th>
+            <th>Mục đích sử dụng</th>
+            <th>Bảo mật khi truyền</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Device or other IDs</strong><br>(Advertising ID / GAID)</td>
+            <td>Có (bởi AdMob SDK)</td>
+            <td>Có (cho mạng lưới AdMob)</td>
+            <td>Quảng cáo, Tiếp thị &amp; Phân tích chẩn đoán</td>
+            <td>Mã hóa qua HTTPS/TLS</td>
+          </tr>
+          <tr>
+            <td><strong>App activity</strong><br>(Tương tác trong app với ad)</td>
+            <td>Có (bởi AdMob SDK)</td>
+            <td>Có (cho mạng lưới AdMob)</td>
+            <td>Quảng cáo &amp; Phòng chống gian lận</td>
+            <td>Mã hóa qua HTTPS/TLS</td>
+          </tr>
+          <tr>
+            <td><strong>App info &amp; Performance</strong><br>(Crash logs, Diagnostics)</td>
+            <td>Có (bởi AdMob SDK)</td>
+            <td>Không</td>
+            <td>Phân tích lỗi &amp; Tối ưu hiệu năng ứng dụng</td>
+            <td>Mã hóa qua HTTPS/TLS</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Lưu trữ tiến trình chơi game (Game Progress &amp; State):</strong></p>
+    <ul>
+      <li>Mọi tiến trình màn chơi, thời gian giải đố, số sao đạt được, thiết lập âm thanh/rung, giao diện đã chọn và cờ trạng thái "Đã mua xóa quảng cáo" được lưu trữ <strong>cục bộ 100% trên bộ nhớ trong thiết bị</strong> của bạn (tại <code>user://save.json</code>).</li>
+      <li>Dữ liệu này không bao giờ được tải lên bất kỳ máy chủ bên ngoài nào của nhà phát triển.</li>
+    </ul>
+
+    <!-- Data Deletion Policy -->
+    <h3>4. Chính Sách Xóa Dữ Liệu và Quyền Của Người Dùng (Data Deletion Policy)</h3>
+    <p>
+      Theo quy định về quyền riêng tư của Google Play Store và các quy chuẩn quốc tế, người dùng có toàn quyền chủ động xóa bỏ toàn bộ dữ liệu liên quan đến việc sử dụng ứng dụng:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Xóa dữ liệu tiến trình game:</strong> Do toàn bộ tiến trình lưu trữ cục bộ trên máy của bạn, bạn có thể xóa sạch mọi dữ liệu bất kỳ lúc nào bằng 1 trong 2 cách:
+        <br>👉 Cách 1: Mở <em>Cài đặt thiết bị (Settings) &rarr; Ứng dụng (Apps) &rarr; Nonogram &rarr; Lưu trữ (Storage) &rarr; chọn "Xóa bộ nhớ" (Clear Storage / Clear Data)</em>.
+        <br>👉 Cách 2: Gỡ cài đặt (uninstall) ứng dụng khỏi máy. Toàn bộ tệp dữ liệu cục bộ sẽ được hệ điều hành Android tự động dọn dẹp triệt để.
+      </li>
+      <li>
+        <strong>Xóa hoặc Đặt lại Mã nhận dạng quảng cáo (Advertising ID):</strong> Người dùng có thể xóa hoặc đổi mới mã định danh quảng cáo bất kỳ lúc nào thông qua hệ thống Android:
+        <br>👉 Mở <em>Cài đặt thiết bị &rarr; Google &rarr; Tất cả dịch vụ &rarr; Quảng cáo &rarr; Chọn "Đặt lại ID quảng cáo" (Reset advertising ID) hoặc "Xóa ID quảng cáo" (Delete advertising ID)</em>.
+      </li>
+      <li>
+        <strong>Yêu cầu giải đáp và hỗ trợ xóa dữ liệu từ Nhà phát triển:</strong> Do ứng dụng không thu thập thông tin tài khoản và không có máy chủ lưu trữ dữ liệu cá nhân (server-less), việc xóa trên thiết bị là hoàn tất 100%. Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ về dữ liệu, vui lòng gửi email trực tiếp tới: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>. Chúng tôi sẽ phản hồi trong vòng tối đa 48 giờ làm việc.
+      </li>
+    </ul>
+
+    <!-- GDPR & UMP Consent -->
+    <h3>5. Tuân thủ Quy định Châu Âu (GDPR / UMP Consent)</h3>
+    <p>
+      Đối với người dùng thuộc Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK), ứng dụng tuân thủ nghiêm ngặt Quy định chung về bảo vệ dữ liệu (GDPR). Ứng dụng tích hợp hệ thống <strong>Google User Messaging Platform (UMP)</strong> để hiển thị hộp thoại xin ý kiến đồng thuận về quảng cáo cá nhân hóa.
+    </p>
+    <p>
+      Bạn có thể xem lại hoặc thay đổi tùy chọn đồng thuận quyền riêng tư bất kỳ lúc nào bằng cách vào mục <strong>Cài đặt (Settings)</strong> trong giao diện trò chơi và chọn <em>"Tùy chọn quyền riêng tư" (Privacy Options)</em>.
+    </p>
+
+    <!-- Children's Privacy -->
+    <h3>6. Quyền Riêng Tư Của Trẻ Em (Children's Privacy / COPPA)</h3>
+    <p>
+      Ứng dụng Nonogram - Picross Logic được thiết kế cho đối tượng khán giả phổ thông từ 13 tuổi trở lên và tuân thủ Đạo luật bảo vệ quyền riêng tư của trẻ em trên mạng (COPPA). Chúng tôi không cố ý thu thập bất kỳ thông tin cá nhân nào từ trẻ em dưới 13 tuổi. Nếu phụ huynh hoặc người giám hộ phát hiện trẻ em cung cấp thông tin cho các dịch vụ bên thứ ba mà không có sự đồng thuận, vui lòng liên hệ ngay với chúng tôi để được xử lý.
+    </p>
+
+    <!-- Developer Contact Information -->
+    <h3 id="lien-he">7. Thông Tin Liên Hệ Của Nhà Phát Triển (Developer Contact)</h3>
+    <p>Mọi thắc mắc, phản hồi hoặc đóng góp ý kiến về trò chơi cũng như chính sách quyền riêng tư, xin vui lòng liên hệ với chúng tôi:</p>
+
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="contact-label">Nhà phát triển:</span>
+        <span><strong>MT Games</strong> (Nguyễn Minh Thắng)</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Email hỗ trợ:</span>
+        <span><a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Mã gói ứng dụng:</span>
+        <span><code>cm.mt.nonogram</code></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Trang công bố:</span>
+        <span><a href="https://minhthang9911.github.io/cm-mt-nonogram/privacy-policy.html">https://minhthang9911.github.io/cm-mt-nonogram/privacy-policy.html</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 MT Games · Nonogram - Picross Logic. Tất cả các quyền được bảo lưu.</p>
+    <p>Được xây dựng với niềm đam mê dành cho các trò chơi giải đố tư duy logic ngoại tuyến chất lượng cao.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
