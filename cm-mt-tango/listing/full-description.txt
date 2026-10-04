@@ -1,0 +1,22 @@
+Sun & Moon - Tango Puzzle là trò chơi giải đố logic thuần túy (tương tự Tango, Takuzu, Binairo), mang đến trải nghiệm rèn luyện trí tuệ thư thái và sâu sắc.
+
+Mục tiêu của bạn là lấp đầy bàn cờ bằng các biểu tượng Mặt Trời (☀) và Mặt Trăng (🌙) tuân theo 3 quy luật đơn giản:
+1. Cân bằng số lượng: Mỗi hàng và mỗi cột phải có số lượng Mặt Trời và Mặt Trăng bằng nhau chính xác.
+2. Không quá hai ô liền kề: Không được có quá 2 biểu tượng giống nhau nằm cạnh nhau trên cùng một hàng hoặc cột (không có 3 Mặt Trời hoặc 3 Mặt Trăng liên tiếp).
+3. Tuân thủ dấu quan hệ: 
+   • Dấu bằng (=): Hai ô liền kề phải cùng một biểu tượng.
+   • Dấu nhân (×): Hai ô liền kề phải có biểu tượng khác nhau.
+
+Đặc điểm nổi bật chỉ có tại Sun & Moon:
+• 100% SUY LUẬN LOGIC — KHÔNG BAO GIỜ PHẢI ĐOÁN: Mọi màn chơi đều được tạo bằng thuật toán độc quyền và kiểm chứng chặt chẽ, đảm bảo có nghiệm duy nhất và luôn giải được bằng suy luận logic thuần túy.
+• Gợi ý thông minh kèm giải thích: Không chỉ điền đáp án, tính năng gợi ý chỉ ra chính xác lý do logic (cặp liền kề, ô kẹp giữa, cân bằng hàng/cột, dấu ràng buộc) giúp bạn học và nâng cao kỹ năng tư duy.
+• 3 cấp độ kích thước với vô hạn màn chơi:
+   - 6×6 Cơ bản: Khởi động nhẹ nhàng, dễ làm quen.
+   - 8×8 Thử thách: Đòi hỏi khả năng kết hợp đa chiều.
+   - 10×10 Chuyên gia: Thử thách đỉnh cao cho bậc thầy suy luận.
+• Công cụ hỗ trợ hữu ích: Hoàn tác (Undo) không giới hạn, Kiểm tra sai sót trên bàn cờ, và Mở trọn vẹn một hàng/cột khi cần.
+• Thiết kế tối giản, êm dịu: Đồ hoạ vector sắc nét trên tông màu kem ấm áp, âm thanh thư giãn, bảo vệ mắt.
+• Chơi hoàn toàn Offline: Thưởng thức mọi lúc, mọi nơi mà không cần kết nối mạng Wi-Fi hay 4G.
+• Tự động lưu tiến trình chơi, không yêu cầu tài khoản, dung lượng siêu nhẹ và tiết kiệm pin.
+
+Hãy bắt đầu hành trình rèn luyện tư duy logic và tận hưởng những phút giây thư giãn tuyệt vời cùng Sun & Moon - Tango Puzzle ngay hôm nay!

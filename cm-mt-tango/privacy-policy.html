@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sun &amp; Moon - Tango Puzzle | Giới Thiệu Trò Chơi &amp; Chính Sách Quyền Riêng Tư</title>
+  <meta name="description" content="Trang thông tin chính thức, giới thiệu trò chơi giải đố logic Sun & Moon - Tango Puzzle (cm.mt.tango) và chính sách quyền riêng tư (Privacy Policy) minh bạch theo chuẩn Google Play Store.">
+  <link rel="icon" type="image/png" href="playstore-app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --bg-card: rgba(16, 22, 38, 0.88);
+      --bg-card-subtle: rgba(24, 33, 58, 0.65);
+      --bg-glass: rgba(13, 18, 32, 0.75);
+      --border-soft: rgba(244, 163, 0, 0.22);
+      --border-strong: rgba(244, 163, 0, 0.45);
+      --border-moon: rgba(123, 140, 255, 0.3);
+      --accent-sun: #f4a300;
+      --accent-sun-light: #ffd166;
+      --accent-moon: #4a5fc1;
+      --accent-moon-light: #7b8cff;
+      --accent-teal: #06d6a0;
+      --accent-rose: #f43f5e;
+      --text-pure: #ffffff;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 12% 12%, rgba(244, 163, 0, 0.16) 0%, transparent 40%),
+        radial-gradient(circle at 88% 22%, rgba(123, 140, 255, 0.18) 0%, transparent 35%),
+        radial-gradient(circle at 50% 85%, rgba(6, 214, 160, 0.1) 0%, transparent 45%),
+        linear-gradient(180deg, #090d16 0%, #111728 50%, #060911 100%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.75;
+      padding: 1.5rem 1rem 4.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    /* Hero Banner Frame */
+    .hero-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(244, 163, 0, 0.22);
+      border: 2px solid var(--border-soft);
+      background: #111728;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-wrapper:hover {
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 45px rgba(244, 163, 0, 0.32);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* App Header Profile with Glassmorphism */
+    .app-profile {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      background: var(--bg-card);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 1.8rem 2.2rem;
+      border-radius: 24px;
+      border: 1.5px solid var(--border-soft);
+      margin-bottom: 2.2rem;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .app-icon {
+      width: 104px;
+      height: 104px;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      flex-shrink: 0;
+      background: #fbf7ef;
+    }
+
+    .app-info h1 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ffd166 0%, #f4a300 45%, #7b8cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.4rem;
+    }
+
+    .app-info p {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+    }
+
+    .app-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .badge.sun {
+      background: rgba(244, 163, 0, 0.15);
+      color: #ffd166;
+      border-color: rgba(244, 163, 0, 0.35);
+    }
+
+    .badge.moon {
+      background: rgba(123, 140, 255, 0.18);
+      color: #a5b4fc;
+      border-color: rgba(123, 140, 255, 0.4);
+    }
+
+    .badge.teal {
+      background: rgba(6, 214, 160, 0.15);
+      color: #34d399;
+      border-color: rgba(6, 214, 160, 0.35);
+    }
+
+    .badge.package {
+      background: rgba(192, 132, 252, 0.15);
+      border-color: #c084fc;
+      color: #d8b4fe;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.8rem;
+    }
+
+    /* Quick Navigation Pills */
+    .quick-nav {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding: 0.3rem 0 1.2rem;
+      margin-bottom: 1.4rem;
+      scrollbar-width: none;
+    }
+
+    .quick-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-pill {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      background: var(--bg-card-subtle);
+      padding: 0.5rem 1.15rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover {
+      color: var(--text-pure);
+      border-color: var(--accent-sun);
+      background: rgba(244, 163, 0, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Content Cards */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 24px;
+      padding: 2.2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
+      position: relative;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #ffd166;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      letter-spacing: 0.2px;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    h2 .icon {
+      font-size: 1.55rem;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin: 1.8rem 0 0.85rem;
+    }
+
+    p {
+      margin-bottom: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    strong {
+      color: var(--text-pure);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: rgba(0, 0, 0, 0.38);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      color: #ffd166;
+      font-size: 0.88em;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    ul, ol {
+      margin: 0.8rem 0 1.2rem 1.6rem;
+      color: #cbd5e1;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* Feature Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 1.3rem 0;
+    }
+
+    .feature-item {
+      background: var(--bg-card-subtle);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 1.3rem 1.5rem;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-strong);
+    }
+
+    .feature-item .title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .feature-item p {
+      margin: 0;
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Screenshots Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid var(--border-soft);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      background: #090d16;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.65), 0 0 25px rgba(244, 163, 0, 0.25);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gallery-caption {
+      text-align: center;
+      padding: 0.6rem 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: rgba(13, 18, 32, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Description Box (Store Spec) */
+    .store-box {
+      background: rgba(8, 12, 22, 0.7);
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      padding: 1.5rem;
+      margin: 1.2rem 0;
+    }
+
+    .store-field-label {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-sun);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .store-field-count {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: normal;
+    }
+
+    .store-field-content {
+      font-size: 0.98rem;
+      color: #f1f5f9;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      padding: 0.85rem 1.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      white-space: pre-line;
+      line-height: 1.7;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.3rem 0;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8, 12, 22, 0.65);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.04);
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: #f1f5f9;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Callouts & SDK Boxes */
+    .callout {
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.3rem 0;
+      border-left: 4.5px solid;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .callout.success {
+      border-color: var(--accent-teal);
+      background: rgba(6, 214, 160, 0.08);
+    }
+
+    .callout.info {
+      border-color: var(--accent-sun);
+      background: rgba(244, 163, 0, 0.08);
+    }
+
+    .callout.alert {
+      border-color: var(--accent-rose);
+      background: rgba(244, 63, 94, 0.08);
+    }
+
+    .sdk-box {
+      background: var(--bg-card-subtle);
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.2rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .sdk-title {
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    a {
+      color: #ffd166;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255, 209, 102, 0.5);
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    a:hover {
+      color: #ffffff;
+      border-bottom-color: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .app-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.2rem;
+        padding: 1.5rem;
+      }
+      .app-badges {
+        justify-content: center;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Hero Banner Image (feature-image.png) -->
+    <div class="hero-wrapper">
+      <img src="feature-image.png" alt="Sun & Moon - Tango Puzzle Hero Banner" class="hero-image">
+    </div>
+
+    <!-- App Profile Header (playstore-app-icon.png) -->
+    <header class="app-profile">
+      <img src="playstore-app-icon.png" alt="Sun & Moon - Tango Puzzle App Icon" class="app-icon">
+      <div class="app-info">
+        <h1>Sun &amp; Moon - Tango Puzzle</h1>
+        <p>Trò chơi giải đố logic Mặt Trời &amp; Mặt Trăng thuần túy | Không đoán mò | Offline 100%</p>
+        <div class="app-badges">
+          <span class="badge sun">☀ &amp; 🌙 Logic Tango</span>
+          <span class="badge moon">🧠 Nghiệm Duy Nhất</span>
+          <span class="badge teal">💡 Gợi Ý Kèm Giải Thích</span>
+          <span class="badge package">cm.mt.tango</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Quick Navigation Bar -->
+    <nav class="quick-nav" aria-label="Điều hướng nhanh">
+      <a href="#gioi-thieu" class="nav-pill">🎮 Giới Thiệu</a>
+      <a href="#mo-ta-store" class="nav-pill">📝 Mô Tả Store</a>
+      <a href="#hinh-anh" class="nav-pill">📸 Trải Nghiệm Thực Tế</a>
+      <a href="#quyen-ung-dung" class="nav-pill">🛡️ Quyền Ứng Dụng</a>
+      <a href="#sdk-ben-thu-ba" class="nav-pill">📢 SDK Bên Thứ Ba</a>
+      <a href="#an-toan-du-lieu" class="nav-pill">🔒 An Toàn Dữ Liệu</a>
+      <a href="#xoa-du-lieu" class="nav-pill">🗑️ Xóa Dữ Liệu</a>
+      <a href="#lien-he" class="nav-pill">✉️ Liên Hệ</a>
+    </nav>
+
+    <!-- Section 1: Giới thiệu ứng dụng -->
+    <section class="card" id="gioi-thieu">
+      <h2><span class="icon">🎮</span> Giới Thiệu Trò Chơi Sun &amp; Moon</h2>
+      <p>
+        <strong>Sun &amp; Moon - Tango Puzzle</strong> (mã gói ứng dụng: <code>cm.mt.tango</code>) là tựa game giải đố trí tuệ logic đỉnh cao (tương tự như Tango, Takuzu, Binairo), mang đến không gian tĩnh lặng, tao nhã và giàu cảm xúc (*cozy &amp; satisfying*). Trò chơi được phát triển nhằm rèn luyện tư duy phản biện, khả năng tập trung và suy luận sắc bén cho người chơi, đặc biệt là thế hệ trẻ yêu thích phong cách tối giản thời thượng.
+      </p>
+
+      <h3>3 Quy Luật Vàng Trong Sun &amp; Moon:</h3>
+      <div class="grid-2">
+        <div class="feature-item">
+          <div class="title"><span>⚖️</span> 1. Cân Bằng Số Lượng</div>
+          <p>Mỗi hàng và mỗi cột phải chứa số lượng Mặt Trời (☀) và Mặt Trăng (🌙) bằng nhau chính xác (3–3 ở 6×6, 4–4 ở 8×8, 5–5 ở 10×10).</p>
+        </div>
+        <div class="feature-item">
+          <div class="title"><span>🚫</span> 2. Không Quá 2 Ô Liền Kề</div>
+          <p>Tuyệt đối không được có quá 2 biểu tượng giống nhau nằm cạnh nhau liên tiếp trên cùng một hàng hoặc cột (không có 3 ☀ hoặc 3 🌙 liên tiếp).</p>
+        </div>
+        <div class="feature-item">
+          <div class="title"><span>🔗</span> 3. Dấu Bằng (=) &amp; Khác (×)</div>
+          <p>Dấu <code>=</code> nằm giữa 2 ô nghĩa là hai ô đó cùng biểu tượng; dấu <code>×</code> nằm giữa 2 ô nghĩa là hai ô đó khác biểu tượng.</p>
+        </div>
+        <div class="feature-item">
+          <div class="title"><span>🔍</span> 4. 100% Suy Luận Logic</div>
+          <p>Mọi màn chơi đều đảm bảo có đúng 1 nghiệm duy nhất, giải được hoàn toàn bằng tư duy logic mà không bao giờ cần đoán mò.</p>
+        </div>
+      </div>
+
+      <div class="callout info">
+        <strong>💡 Hệ Thống Gợi Ý Thông Minh Có Giải Thích:</strong> Khác với các game giải đố thông thường chỉ điền đáp án, tính năng gợi ý của Sun &amp; Moon hiển thị bong bóng giải thích chi tiết lý do logic (cặp liền kề, ô kẹp giữa, đủ số lượng hàng/cột, dấu ràng buộc hoặc giả định mâu thuẫn) giúp bạn làm chủ luật chơi và nâng cao phản xạ tư duy.
+      </div>
+
+      <h3>Đặc Điểm Nổi Bật Trải Nghiệm:</h3>
+      <ul>
+        <li><strong>Đa Giao Diện Thời Thượng:</strong> Hỗ trợ cả 2 Theme — ☀️ <em>Cozy Lo-fi</em> (ấm áp ban ngày) và 🌙 <em>Cosmic Midnight</em> (Dark Mode vũ trụ ngàn sao bảo vệ mắt).</li>
+        <li><strong>Âm Thanh ASMR &amp; Combo Dopamine:</strong> Tiếng gõ gỗ ấm áp (☀), tiếng chuông pha lê trong vắt (🌙), kèm cơ chế thăng tiến cao độ (+1 bán âm) khi điền liên tục đúng.</li>
+        <li><strong>3 Cấp Độ Kích Thước Vô Hạn:</strong> 6×6 Cơ bản, 8×8 Thử thách, và 10×10 Chuyên gia đỉnh cao.</li>
+        <li><strong>Công Cụ Hỗ Trợ Đắc Lực:</strong> Hoàn tác (Undo) không giới hạn, Kiểm tra lỗi trên bàn cờ, và Mở trọn vẹn 1 hàng/cột khi cần.</li>
+        <li><strong>100% Chơi Offline:</strong> Thưởng thức trọn vẹn mọi lúc mọi nơi mà không cần kết nối mạng Wi-Fi hay 4G.</li>
+      </ul>
+    </section>
+
+    <!-- Section 2: Mô tả chuẩn Google Play Store (Short & Long Description) -->
+    <section class="card" id="mo-ta-store">
+      <h2><span class="icon">📝</span> Mô Tả Chuẩn Google Play Store</h2>
+      <p>Nội dung chính thức được công bố trên trang cửa hàng Google Play Store:</p>
+
+      <div class="store-box">
+        <div class="store-field-label">
+          <span>Tên ứng dụng (Title)</span>
+          <span class="store-field-count">25 / 30 ký tự</span>
+        </div>
+        <div class="store-field-content"><strong>Sun &amp; Moon - Tango Puzzle</strong></div>
+      </div>
+
+      <div class="store-box">
+        <div class="store-field-label">
+          <span>Mô tả ngắn (Short Description)</span>
+          <span class="store-field-count">76 / 80 ký tự</span>
+        </div>
+        <div class="store-field-content">Giải đố Mặt Trời &amp; Mặt Trăng. Vô hạn màn 6×6–10×10, suy luận logic, offline.</div>
+      </div>
+
+      <div class="store-box">
+        <div class="store-field-label">
+          <span>Mô tả đầy đủ (Full / Long Description)</span>
+          <span class="store-field-count">1906 / 4000 ký tự</span>
+        </div>
+        <div class="store-field-content">Sun &amp; Moon - Tango Puzzle là trò chơi giải đố logic thuần túy (tương tự Tango, Takuzu, Binairo), mang đến trải nghiệm rèn luyện trí tuệ thư thái và sâu sắc.
+
+Mục tiêu của bạn là lấp đầy bàn cờ bằng các biểu tượng Mặt Trời (☀) và Mặt Trăng (🌙) tuân theo 3 quy luật đơn giản:
+1. Cân bằng số lượng: Mỗi hàng và mỗi cột phải có số lượng Mặt Trời và Mặt Trăng bằng nhau chính xác.
+2. Không quá hai ô liền kề: Không được có quá 2 biểu tượng giống nhau nằm cạnh nhau trên cùng một hàng hoặc cột (không có 3 Mặt Trời hoặc 3 Mặt Trăng liên tiếp).
+3. Tuân thủ dấu quan hệ: 
+   • Dấu bằng (=): Hai ô liền kề phải cùng một biểu tượng.
+   • Dấu nhân (×): Hai ô liền kề phải có biểu tượng khác nhau.
+
+Đặc điểm nổi bật chỉ có tại Sun &amp; Moon:
+• 100% SUY LUẬN LOGIC — KHÔNG BAO GIỜ PHẢI ĐOÁN: Mọi màn chơi đều được tạo bằng thuật toán độc quyền và kiểm chứng chặt chẽ, đảm bảo có nghiệm duy nhất và luôn giải được bằng suy luận logic thuần túy.
+• Gợi ý thông minh kèm giải thích: Không chỉ điền đáp án, tính năng gợi ý chỉ ra chính xác lý do logic (cặp liền kề, ô kẹp giữa, cân bằng hàng/cột, dấu ràng buộc) giúp bạn học và nâng cao kỹ năng tư duy.
+• 3 cấp độ kích thước với vô hạn màn chơi:
+   - 6×6 Cơ bản: Khởi động nhẹ nhàng, dễ làm quen.
+   - 8×8 Thử thách: Đòi hỏi khả năng kết hợp đa chiều.
+   - 10×10 Chuyên gia: Thử thách đỉnh cao cho bậc thầy suy luận.
+• Công cụ hỗ trợ hữu ích: Hoàn tác (Undo) không giới hạn, Kiểm tra sai sót trên bàn cờ, và Mở trọn vẹn một hàng/cột khi cần.
+• Thiết kế tối giản, êm dịu: Đồ hoạ vector sắc nét trên tông màu kem ấm áp, âm thanh thư giãn, bảo vệ mắt.
+• Chơi hoàn toàn Offline: Thưởng thức mọi lúc, mọi nơi mà không cần kết nối mạng Wi-Fi hay 4G.
+• Tự động lưu tiến trình chơi, không yêu cầu tài khoản, dung lượng siêu nhẹ và tiết kiệm pin.
+
+Hãy bắt đầu hành trình rèn luyện tư duy logic và tận hưởng những phút giây thư giãn tuyệt vời cùng Sun &amp; Moon - Tango Puzzle ngay hôm nay!</div>
+      </div>
+    </section>
+
+    <!-- Section 3: Ảnh chụp màn hình trải nghiệm thực tế -->
+    <section class="card" id="hinh-anh">
+      <h2><span class="icon">📸</span> Ảnh Chụp Màn Hình Trải Nghiệm Thực Tế</h2>
+      <p>Giao diện tối giản, thanh lịch, bảo vệ mắt và tối ưu hoàn hảo cho mọi kích thước màn hình Android (chuẩn tỉ lệ 20:9):</p>
+      
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="screenshots/phone-01.png" alt="Bàn cờ 6x6 đang chơi">
+          <div class="gallery-caption">Lưới 6×6 đang chơi</div>
+        </div>
+        <div class="gallery-item">
+          <img src="screenshots/phone-02.png" alt="Gợi ý kèm giải thích lý do logic">
+          <div class="gallery-caption">Gợi ý có giải thích</div>
+        </div>
+        <div class="gallery-item">
+          <img src="screenshots/phone-03.png" alt="Mở hàng cột thông minh">
+          <div class="gallery-caption">Mở hàng/cột hỗ trợ</div>
+        </div>
+        <div class="gallery-item">
+          <img src="screenshots/phone-04.png" alt="Menu 3 cấp độ kích thước">
+          <div class="gallery-caption">3 Kích thước vô hạn</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: App Privacy Policy chuẩn Google Play Store -->
+    <section class="card" id="privacy-policy">
+      <h2><span class="icon">🛡️</span> Chính Sách Quyền Riêng Tư (App Privacy Policy)</h2>
+      <p><em>Cập nhật lần cuối: Tháng 10 năm 2026</em></p>
+      <p>
+        Chính sách quyền riêng tư này áp dụng cho ứng dụng di động <strong>Sun &amp; Moon - Tango Puzzle</strong> (mã gói: <code>cm.mt.tango</code>) được phát triển và vận hành bởi <strong>MT Games</strong> (đại diện: Nguyễn Minh Thắng).
+      </p>
+      <p>
+        Chúng tôi cam kết tôn trọng và bảo vệ tuyệt đối quyền riêng tư của mọi người dùng. Trò chơi được phát triển theo triết lý <strong>Offline First</strong>: tôn trọng tối đa dữ liệu cá nhân, không theo dõi người dùng trái phép, và chỉ sử dụng các quyền cũng như dịch vụ tối thiểu cần thiết để vận hành an toàn.
+      </p>
+
+      <!-- Danh sách quyền -->
+      <h3 id="quyen-ung-dung">1. Danh Sách Quyền Ứng Dụng Yêu Cầu (App Permissions)</h3>
+      <p>Ứng dụng chỉ yêu cầu các quyền hệ thống Android tiêu chuẩn sau đây:</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Quyền Android</th>
+              <th>Mục đích sử dụng cụ thể</th>
+              <th>Loại quyền</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>android.permission.INTERNET</code></td>
+              <td>Dùng để kết nối Google AdMob tải quảng cáo (banner ở menu, interstitial sau ván, rewarded video khi nhận gợi ý) và kết nối Google Play Billing xác thực gói mua "Xóa quảng cáo". Trò chơi hoạt động offline hoàn toàn khi không có mạng.</td>
+              <td>Bình thường (Normal)</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+              <td>Kiểm tra thiết bị có đang kết nối mạng (Wi-Fi/4G/5G) hay không trước khi gửi yêu cầu nạp quảng cáo, giúp tối ưu hiệu năng mạng và tiết kiệm pin thiết bị.</td>
+              <td>Bình thường (Normal)</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.VIBRATE</code></td>
+              <td>Cung cấp phản hồi xúc giác nhẹ (haptic vibration) khi bạn chạm ô hoặc khi thắng ván. Người chơi có thể bật hoặc tắt phản hồi rung bất kỳ lúc nào trong mục Cài đặt.</td>
+              <td>Bình thường (Normal)</td>
+            </tr>
+            <tr>
+              <td><code>com.google.android.gms.permission.AD_ID</code></td>
+              <td>Cho phép Google Mobile Ads SDK truy cập mã định danh quảng cáo (Google Advertising ID) nhằm hiển thị quảng cáo phù hợp và ngăn chặn gian lận.</td>
+              <td>Dịch vụ Google Play</td>
+            </tr>
+            <tr>
+              <td><code>com.android.vending.BILLING</code></td>
+              <td>Giao tiếp bảo mật với hệ thống Google Play Store để xử lý giao dịch mua gói "Xóa quảng cáo" (In-App Purchase <code>remove_ads</code>) một cách an toàn.</td>
+              <td>Google Play Billing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SDK Bên thứ 3 -->
+      <h3 id="sdk-ben-thu-ba">2. Các SDK và Dịch Vụ Của Bên Thứ Ba (Third-Party SDKs)</h3>
+      <p>Để duy trì miễn phí trò chơi và xử lý giao dịch mua an toàn, chúng tôi chỉ tích hợp các SDK chính thức đạt chuẩn bảo mật từ Google:</p>
+
+      <div class="sdk-box">
+        <div class="sdk-title">📢 Google Mobile Ads SDK (Google AdMob)</div>
+        <p>
+          Ứng dụng hiển thị quảng cáo thông qua Google AdMob (Banner ở đáy màn hình, Interstitial xuất hiện cách ván khi hoàn thành màn chơi, và Rewarded Video khi người chơi chủ động xem để nhận thêm gợi ý hoặc mở hàng/cột).
+        </p>
+        <p>
+          Google AdMob có thể tự động thu thập và xử lý một số thông tin kỹ thuật tiêu chuẩn theo quy định của Google, bao gồm:
+        </p>
+        <ul>
+          <li><strong>Mã định danh quảng cáo (Google Advertising ID / GAID):</strong> Dùng để phân phát quảng cáo phù hợp, giới hạn tần suất hiển thị và ngăn chặn hành vi gian lận.</li>
+          <li><strong>Thông tin thiết bị và mạng:</strong> Tên dòng máy, phiên bản hệ điều hành Android, độ phân giải màn hình, nhà mạng, ngôn ngữ hệ thống.</li>
+          <li><strong>Dữ liệu tương tác và hiệu năng:</strong> Thống kê số lượt xem quảng cáo, tỷ lệ tương tác và báo cáo sự cố (crash logs) để nâng cao độ ổn định.</li>
+        </ul>
+        <p>
+          Người dùng có thể tìm hiểu thêm về chính sách quyền riêng tư của Google tại:
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Chính sách bảo mật của Google</a> và 
+          <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">Cách Google sử dụng dữ liệu trong AdMob</a>.
+        </p>
+      </div>
+
+      <div class="sdk-box">
+        <div class="sdk-title">💳 Dịch Vụ Thanh Toán Google Play (Google Play In-App Billing)</div>
+        <p>
+          Ứng dụng cung cấp gói mua một lần "Xóa quảng cáo" (Remove Ads). Mọi giao dịch tài chính được thực hiện và mã hóa bảo mật 100% trực tiếp thông qua Google Play Store. Nhà phát triển <strong>hoàn toàn không tiếp cận, không thu thập và không lưu trữ</strong> bất kỳ thông tin nào liên quan đến thẻ thanh toán, tài khoản ngân hàng hay thông tin hóa đơn của người dùng.
+        </p>
+      </div>
+
+      <!-- Thu thập và sử dụng dữ liệu -->
+      <h3 id="an-toan-du-lieu">3. Chính Sách Thu Thập, Sử Dụng và Lưu Trữ Dữ Liệu (Data Safety)</h3>
+      
+      <div class="callout success">
+        <strong>🔒 Cam Kết Không Thu Thập Thông Tin Nhận Dạng Cá Nhân (PII):</strong><br>
+        Trò chơi không yêu cầu đăng ký tài khoản, không yêu cầu cung cấp họ tên, số điện thoại, email cá nhân, vị trí định vị GPS, danh bạ, micro, hình ảnh hay camera của thiết bị.
+      </div>
+
+      <p>Bảng thông tin an toàn dữ liệu (Data Safety) công bố chính thức trên Google Play Console:</p>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Loại dữ liệu</th>
+              <th>Thu thập</th>
+              <th>Chia sẻ</th>
+              <th>Mục đích sử dụng</th>
+              <th>Bảo mật khi truyền</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Device or other IDs</strong><br>(Advertising ID / GAID)</td>
+              <td>Có (bởi AdMob SDK)</td>
+              <td>Có (cho mạng lưới AdMob)</td>
+              <td>Quảng cáo, Tiếp thị &amp; Phân tích chẩn đoán</td>
+              <td>Mã hóa qua HTTPS/TLS</td>
+            </tr>
+            <tr>
+              <td><strong>App activity</strong><br>(Tương tác với quảng cáo)</td>
+              <td>Có (bởi AdMob SDK)</td>
+              <td>Có (cho mạng lưới AdMob)</td>
+              <td>Quảng cáo &amp; Phòng chống gian lận</td>
+              <td>Mã hóa qua HTTPS/TLS</td>
+            </tr>
+            <tr>
+              <td><strong>App info &amp; Performance</strong><br>(Crash logs, Diagnostics)</td>
+              <td>Có (bởi AdMob SDK)</td>
+              <td>Không</td>
+              <td>Phân tích lỗi &amp; Tối ưu hiệu năng ứng dụng</td>
+              <td>Mã hóa qua HTTPS/TLS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Lưu trữ tiến trình chơi game (Game Progress &amp; State):</strong></p>
+      <ul>
+        <li>Mọi tiến trình màn chơi, thời gian giải đố kỷ lục, số sao đạt được, thiết lập âm thanh/rung, giao diện Theme đã chọn và trạng thái "Đã mua xóa quảng cáo" được lưu trữ <strong>cục bộ 100% trên bộ nhớ trong thiết bị</strong> của bạn (tại <code>user://save.json</code>).</li>
+        <li>Dữ liệu này không bao giờ được gửi lên bất kỳ máy chủ bên ngoài nào của nhà phát triển.</li>
+      </ul>
+
+      <!-- Chính sách xóa dữ liệu -->
+      <h3 id="xoa-du-lieu">4. Chính Sách Xóa Dữ Liệu và Quyền Của Người Dùng (Data Deletion Policy)</h3>
+      <p>
+        Theo quy định về quyền riêng tư của Google Play Store và các quy chuẩn quốc tế, người dùng có toàn quyền chủ động xóa bỏ toàn bộ dữ liệu liên quan đến việc sử dụng ứng dụng:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Xóa dữ liệu tiến trình game:</strong> Do toàn bộ tiến trình lưu trữ cục bộ trên máy của bạn, bạn có thể xóa sạch mọi dữ liệu bất kỳ lúc nào bằng 1 trong 2 cách:
+          <br>👉 Cách 1: Mở <em>Cài đặt thiết bị (Settings) &rarr; Ứng dụng (Apps) &rarr; Sun &amp; Moon &rarr; Lưu trữ (Storage) &rarr; chọn "Xóa bộ nhớ" (Clear Storage / Clear Data)</em>.
+          <br>👉 Cách 2: Gỡ cài đặt (uninstall) ứng dụng khỏi máy. Toàn bộ tệp dữ liệu cục bộ sẽ được hệ điều hành Android tự động dọn dẹp triệt để.
+        </li>
+        <li>
+          <strong>Đặt lại hoặc Xóa mã định danh quảng cáo (Google Advertising ID):</strong>
+          <br>Bạn có thể chủ động kiểm soát hoặc xóa bỏ mã định danh quảng cáo của thiết bị bất kỳ lúc nào bằng cách vào:
+          <em>Cài đặt Android (Settings) &rarr; Google &rarr; Quảng cáo (Ads) &rarr; chọn "Đặt lại mã nhận dạng cho quảng cáo" (Reset advertising ID) hoặc "Xóa mã nhận dạng cho quảng cáo" (Delete advertising ID)</em>.
+        </li>
+      </ul>
+
+      <!-- COPPA, GDPR, CCPA -->
+      <h3>5. Tuân Thủ Quy Định Bảo Vệ Trẻ Em &amp; Quyền Riêng Tư Khu Vực (COPPA, GDPR, CCPA)</h3>
+      <p>
+        <strong>Đạo luật bảo vệ quyền riêng tư của trẻ em trên mạng (COPPA):</strong> Trò chơi được thiết kế phù hợp cho mọi lứa tuổi và không chủ đích thu thập dữ liệu cá nhân từ trẻ em dưới 13 tuổi.
+      </p>
+      <p>
+        <strong>Quy định chung về bảo vệ dữ liệu của Liên minh Châu Âu (GDPR) &amp; Vương quốc Anh (UK):</strong> Đối với người dùng tại Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh, ứng dụng hiển thị hộp thoại lấy ý kiến đồng thuận (Consent Form theo chuẩn UMP của Google) ngay khi mở ứng dụng. Bạn có thể thay đổi tùy chọn đồng thuận này bất kỳ lúc nào tại mục Cài đặt của trò chơi.
+      </p>
+      <p>
+        <strong>Đạo luật về quyền riêng tư của người tiêu dùng California (CCPA):</strong> Chúng tôi không bán thông tin cá nhân của người dùng cho bất kỳ bên thứ ba nào.
+      </p>
+
+      <!-- Thông tin liên hệ -->
+      <h3 id="lien-he">6. Thông Tin Nhà Phát Triển &amp; Liên Hệ Hỗ Trợ</h3>
+      <p>Nếu bạn có bất kỳ câu hỏi, góp ý hoặc yêu cầu hỗ trợ nào liên quan đến chính sách quyền riêng tư hay trò chơi, xin vui lòng liên hệ:</p>
+
+      <div class="sdk-box">
+        <p><strong>Nhà phát triển:</strong> MT Games (Nguyễn Minh Thắng)</p>
+        <p><strong>Email hỗ trợ:</strong> <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+        <p><strong>Dự án GitHub:</strong> <a href="https://github.com/minhthang9911" target="_blank" rel="noopener noreferrer">https://github.com/minhthang9911</a></p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 MT Games. Bảo lưu mọi quyền.</p>
+      <p>Sun &amp; Moon - Tango Puzzle (cm.mt.tango) | Phát triển bằng Godot Engine 4.7</p>
+    </footer>
+
+  </div>
+</body>
+</html>
