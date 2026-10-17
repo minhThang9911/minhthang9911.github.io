@@ -1,0 +1,42 @@
+Queens - Nữ Hoàng Logic là tựa game giải đố trí tuệ kẹo ngọt, dễ thương và thư giãn bậc nhất, mang đến làn gió chữa lành cho tâm trí bạn mỗi ngày.
+
+Lấy cảm hứng từ hiện tượng giải đố kinh điển Queens & Star Battle, trò chơi kết hợp hoàn hảo giữa thẩm mỹ Kawaii Cozy ấm cúng và tư duy logic thuần khiết. Không đoán mò, không may rủi — mỗi bước đi đều là một suy luận sắc bén và đáng yêu!
+
+👑 LUẬT CHƠI ĐƠN GIẢN — THỬ THÁCH VÔ TẬN:
+Bàn cờ lưới N×N được chia thành các vùng màu sắc macaron độc đáo. Nhiệm vụ của bạn:
+1. Đặt đúng một quân Hậu ♛ vào mỗi Hàng, mỗi Cột và mỗi Vùng màu.
+2. Hai quân Hậu KHÔNG ĐƯỢC chạm nhau ở 8 ô lân cận (kể cả đường chéo kề nhau).
+3. Đánh dấu Hoa nhỏ 🌸 hoặc Kẹo que ✨ vào các ô loại trừ để tìm ra đáp án.
+
+✨ ĐIỂM NỔI BẬT:
+• 100% SUY LUẬN LOGIC — KHÔNG BAO GIỜ PHẢI ĐOÁN MÒ:
+Mọi ván chơi đều được sinh bằng thuật toán độc quyền với nghiệm duy nhất, đảm bảo 100% giải trọn vẹn bằng các bước tư duy logic loại trừ.
+
+• 4 BẢNG MÀU PASTEL CHỮA LÀNH (COZY PALETTES):
+- 🍓 Strawberry Milk: Sữa dâu ngọt ngào, mềm mại, nữ tính.
+- 🧋 Boba Taro Night: Trà sữa khoai môn ban đêm dịu mắt, dễ ngủ.
+- 🍵 Matcha & Honey: Tiệm cafe ấm cúng, thư giãn an yên.
+- ☁️ Cotton Candy: Kẹo bông mộng mơ, tươi mát trong trẻo.
+
+• TRẢI NGHIỆM XÚC GIÁC & ÂM THANH KAWAII ASMR:
+- Tiếng hút trân châu Boba Pop giòn tròn tai khi đặt quân Hậu.
+- Hộp âm nhạc Music Box Celesta du dương ngân nga khi hoàn thành ván đố.
+- Hiệu ứng nảy thạch Jelly Wobble bồng bềnh và bụi sao Twinkle Sparkles lấp lánh.
+- Phản hồi rung Haptic Purr êm dịu như tiếng mèo cưng nựng.
+
+• BỘ SƯU TẬP VƯƠNG MIỆN & KIỂU ĐÁNH DẤU XINH XẮN:
+- Tủ Vương Miện Hoàng Gia: Nơ Hồng Hoàng Kim (Ribbon Tiara), Vương Miện Tai Mèo (Cat Ears), Hoa Anh Đào (Sakura), Trái Tim Ngọc Trai (Pearl Heart), Tai Thỏ Thiên Thần (Angel Bunny).
+- Tùy chọn kiểu đánh dấu: Bông Hoa Nhỏ (Little Blossom), Kẹo Que Bo Tròn (Soft X), Dấu Chân Mèo (Cat Paw).
+
+• SỔ TAY STICKER HOÀNG GIA (ROYAL STICKER BOOK):
+Tích lũy Sao (★) từ các ván thắng để mở khóa các mẫu Sticker dễ thương: Mèo Công Chúa, Bánh Dâu Tây, Trà Sữa Trân Châu, Váy Dạ Hội, Lâu Đài Mây, Thỏ Kẹo Ôm Tim!
+
+• TÍNH NĂNG HỖ TRỢ CHU ĐÁO:
+- Thẻ ảnh chiến thắng Polaroid kèm lời khen Vibe Check ấm áp.
+- Tự động điền hoa/X xung quanh quân Hậu tiện lợi.
+- Hoàn tác (Undo) không giới hạn, miễn phí.
+- 3 cấp độ: 6×6 Khởi động, 8×8 Tiêu chuẩn và 10×10 Bậc thầy với hàng trăm màn chơi.
+- Hoàn toàn OFFLINE: Chơi mọi lúc mọi nơi không cần Wi-Fi/4G.
+- Tự động lưu tức thì: Tiếp tục ván chơi dở bất kỳ lúc nào.
+
+Hãy tải ngay Queens - Nữ Hoàng Logic và cùng tận hưởng những phút giây thư giãn, rèn luyện trí tuệ kẹo ngọt mỗi ngày!

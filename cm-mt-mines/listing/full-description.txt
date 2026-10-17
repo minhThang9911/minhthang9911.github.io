@@ -1,0 +1,27 @@
+Chào mừng bạn đến với Mines - Dò Mìn Không Đoán, tựa game dò mìn giải đố logic đỉnh cao loại bỏ hoàn toàn yếu tố may rủi!
+
+Tại sao gọi là "Không Đoán" (No-Guess)?
+Trong trò chơi dò mìn (Minesweeper) truyền thống, chắc hẳn bạn đã nhiều lần bực bội khi rơi vào tình thế 50/50 bắt buộc phải đoán mò ở cuối ván. Với Mines, mọi bàn cờ đều được thuật toán tạo dựng đảm bảo 100% giải được bằng suy luận thuần tuý. Vùng bắt đầu luôn tự động mở rộng sẵn, mang đến khởi đầu thuận lợi mà bạn không bao giờ phải lo lắng bấm trúng mìn ở nước đầu tiên!
+
+Hệ thống gợi ý thông minh kèm lý do:
+Nếu bạn gặp bế tắc, tính năng Gợi ý sẽ không chỉ chỉ ra ô an toàn hay ô mìn, mà còn giải thích chi tiết bước suy luận bằng tiếng Việt dễ hiểu dựa trên 5 cấp độ luật logic (đủ mìn, thiếu mìn, so sánh tập hợp kề nhau, thử nghiệm mâu thuẫn biên). Đây là công cụ tuyệt vời để vừa chơi vừa rèn luyện kỹ năng tư duy phản biện.
+
+3 chế độ chơi phong phú:
+• Cổ điển (Classic): 3 cấp độ quen thuộc Dễ (9×9), Vừa (16×16) và Khó (16×30 hỗ trợ thu phóng mượt mà). Tự động theo dõi thời gian phá kỷ lục và trao tặng huy hiệu "Chiến thắng sạch" khi hoàn thành không cần trợ giúp.
+• Hành trình (Journey): Khám phá chuỗi hàng trăm màn chơi liên tục với độ khó tăng dần, thu thập sao xếp hạng và chinh phục những thử thách kích thước mới lạ.
+• Thử thách mỗi ngày (Daily Challenge): Mỗi ngày một bàn cờ đặc biệt, duy trì ngọn lửa chuỗi ngày thắng liên tiếp (streak) và xem lại nhật ký lịch tháng.
+
+Đặc sắc với Bàn cờ Lục giác (Hexagonal):
+Trải nghiệm phong cách giải đố tổ ong độc đáo với 6 ô láng giềng. Cấu trúc lục giác mở ra những góc suy luận hình học hoàn toàn mới lạ so với lưới vuông 8 ô truyền thống.
+
+2 phong cách giao diện tuỳ chọn:
+• Cổ điển: Tối giản, thanh lịch với các khối màu vector sắc nét, đậm chất game giải đố cổ điển.
+• Vườn hoa: Rực rỡ và vui nhộn với bãi cỏ xanh, hoa nở và những chú chuột chũi ngộ nghĩnh thay cho mìn.
+
+Tính năng & Tiện ích:
+• Chơi ngoại tuyến 100% (Offline): Hoàn toàn không cần kết nối mạng hay Wi-Fi.
+• Không cần tài khoản: Mở game là chơi ngay lập tức, dữ liệu và tiến trình được lưu tự động trên thiết bị.
+• Điều khiển linh hoạt: Chuyển đổi nhanh chế độ Mở / Cắm cờ, hỗ trợ cử chỉ giữ 280 ms để cắm cờ và mở nhanh tổ hợp (chord).
+• Cơ hội bứt phá: Cho phép Hồi sinh khi lỡ trúng mìn hoặc mở an toàn 1 ô hỗ trợ.
+
+Hãy tải ngay Mines - Dò Mìn Không Đoán và tận hưởng niềm vui suy luận trí tuệ trọn vẹn từng ván đấu!

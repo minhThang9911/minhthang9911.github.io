@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tile Match - Ghép 3 Ô Hình | Giới Thiệu &amp; Chính Sách Quyền Riêng Tư</title>
+  <meta name="description" content="Trang thông tin chính thức, giới thiệu tính năng, mô tả chuẩn Google Play Store và Chính sách quyền riêng tư (Privacy Policy) của trò chơi Tile Match - Ghép 3 Ô Hình (cm.mt.tilematch).">
+  <link rel="icon" type="image/png" href="playstore-app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Bảng màu Pastel Cozy & Kawaii */
+      --bg-gradient-top: #fff0f3;
+      --bg-gradient-mid: #fff5f8;
+      --bg-gradient-bottom: #f8f5ff;
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --card-bg-subtle: rgba(255, 240, 245, 0.65);
+      --border-soft: rgba(255, 179, 193, 0.45);
+      --border-accent: rgba(255, 107, 139, 0.55);
+      
+      --pink-primary: #ff6b8b;
+      --pink-deep: #e64980;
+      --pink-light: #ffe3e8;
+      --berry-accent: #c2255c;
+      
+      --matcha-soft: #dcfce7;
+      --matcha-text: #166534;
+      --taro-soft: #f3e8ff;
+      --taro-text: #6b21a8;
+      --honey-soft: #fef9c3;
+      --honey-text: #854d0e;
+      
+      --text-main: #342342;
+      --text-secondary: #5e4d6d;
+      --text-muted: #8e7c9e;
+      --shadow-color: rgba(255, 107, 139, 0.14);
+      --shadow-heavy: rgba(180, 70, 100, 0.22);
+      
+      --font-display: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(180deg, var(--bg-gradient-top) 0%, var(--bg-gradient-mid) 40%, var(--bg-gradient-bottom) 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.75;
+      padding: 1.5rem 1rem 4rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Hero Banner */
+    .hero-container {
+      width: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 16px 40px var(--shadow-heavy);
+      border: 3px solid rgba(255, 255, 255, 0.8);
+      background: #ffffff;
+      position: relative;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* App Header Profile */
+    .app-profile {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 1.8rem 2.2rem;
+      border-radius: 26px;
+      border: 2px solid var(--border-soft);
+      margin-bottom: 2rem;
+      box-shadow: 0 12px 35px var(--shadow-color);
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 10px 24px var(--shadow-color);
+      flex-shrink: 0;
+      object-fit: cover;
+      background: #ffffff;
+    }
+
+    .app-info {
+      flex: 1;
+    }
+
+    .app-info h1 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--pink-primary);
+      line-height: 1.25;
+      margin-bottom: 0.4rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.5rem 0 0.6rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      line-height: 1.3;
+    }
+
+    .badge-package {
+      background: var(--pink-light);
+      color: var(--berry-accent);
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .badge-theme {
+      background: var(--matcha-soft);
+      color: var(--matcha-text);
+    }
+
+    .badge-cat {
+      background: var(--taro-soft);
+      color: var(--taro-text);
+    }
+
+    .badge-offline {
+      background: var(--honey-soft);
+      color: var(--honey-text);
+    }
+
+    .app-author {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Card Containers */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 24px;
+      border: 1.8px solid var(--border-soft);
+      padding: 2.2rem 2.4rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 32px var(--shadow-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 14px 40px var(--shadow-heavy);
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--pink-deep);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      border-bottom: 2px dashed var(--pink-light);
+      padding-bottom: 0.7rem;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 1.6rem 0 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.4rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+
+    strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    code {
+      font-family: monospace;
+      background: var(--pink-light);
+      color: var(--berry-accent);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+
+    /* Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin: 1.4rem 0;
+    }
+
+    .feature-item {
+      background: var(--card-bg-subtle);
+      border: 1.5px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 4px 16px rgba(255, 107, 139, 0.08);
+    }
+
+    .feature-item .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .feature-item h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--pink-deep);
+      margin-bottom: 0.35rem;
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Highlight & Notice Boxes */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(255, 240, 245, 0.9) 0%, rgba(248, 245, 255, 0.9) 100%);
+      border-left: 5px solid var(--pink-primary);
+      padding: 1.2rem 1.5rem;
+      border-radius: 14px;
+      margin: 1.2rem 0;
+      box-shadow: 0 4px 16px rgba(255, 107, 139, 0.08);
+    }
+
+    .notice-box {
+      background: #f0fdf4;
+      border-left: 5px solid #22c55e;
+      padding: 1.2rem 1.5rem;
+      border-radius: 14px;
+      margin: 1.2rem 0;
+      color: #14532d;
+    }
+
+    .notice-box strong {
+      color: #166534;
+    }
+
+    /* Preformatted Description Block */
+    .desc-block {
+      background: #ffffff;
+      border: 1.5px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      margin: 1rem 0;
+      font-size: 0.94rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      white-space: pre-line;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    /* Data Safety Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.4rem 0;
+      border-radius: 16px;
+      border: 1.5px solid var(--border-soft);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      background: #ffffff;
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    th {
+      background: var(--pink-light);
+      color: var(--berry-accent);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 240, 245, 0.35);
+    }
+
+    /* Action Candy Button */
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, var(--pink-primary) 0%, var(--pink-deep) 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px var(--shadow-heavy);
+      transition: all 0.25s ease;
+      margin-top: 0.6rem;
+    }
+
+    .btn-contact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px var(--shadow-heavy);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    a {
+      color: var(--pink-deep);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--berry-accent);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 2px dashed var(--border-soft);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.8rem 3rem;
+      }
+      .card {
+        padding: 1.5rem 1.3rem;
+        border-radius: 20px;
+      }
+      .app-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.6rem 1.2rem;
+        gap: 1.2rem;
+      }
+      .badges {
+        justify-content: center;
+      }
+      .app-info h1 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Hero Banner -->
+    <div class="hero-container">
+      <img src="feature-image.png" alt="Tile Match - Feature Graphic" class="hero-image">
+    </div>
+
+    <!-- App Profile Header -->
+    <header class="app-profile">
+      <img src="playstore-app-icon.png" alt="Tile Match App Icon" class="app-icon">
+      <div class="app-info">
+        <h1>Tile Match - Ghép 3 Ô Hình</h1>
+        <div class="badges">
+          <span class="badge badge-package">cm.mt.tilematch</span>
+          <span class="badge badge-theme">🌸 Pastel &amp; Kawaii</span>
+          <span class="badge badge-cat">🧩 Giải đố ghép ô</span>
+          <span class="badge badge-offline">📶 100% Offline</span>
+        </div>
+        <p class="app-author">Phát triển bởi <strong>MT Games</strong> &bull; Phiên bản chính thức <strong>1.0.0</strong></p>
+      </div>
+    </header>
+
+    <!-- Section 1: Giới Thiệu Ứng Dụng -->
+    <section class="card">
+      <h2>🌸 1. Giới Thiệu Về Trò Chơi</h2>
+      <p><strong>Tile Match - Ghép 3 Ô Hình</strong> là tựa game giải đố ghép ô <em>(Triple Tile / Match 3 Tiles)</em> mang phong cách <strong>Cozy &amp; Kawaii Pastel Aesthetic</strong> hiện đại, được thiết kế đặc biệt giúp người chơi giải tỏa căng thẳng, thư giãn tinh thần và nuôi dưỡng sự tập trung nhẹ nhàng mỗi ngày.</p>
+      
+      <div class="highlight-box">
+        <strong>✨ Cách chơi cực kỳ đơn giản &amp; thư thái:</strong>
+        <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+          <li>Chạm vào các ô hình tự do (không bị ô khác đè lên) để đưa xuống khay chứa gồm <strong>7 ô</strong>.</li>
+          <li>Khi khay gom đủ <strong>3 ô có hình giống hệt nhau</strong>, chúng sẽ lập tức triệt tiêu và giải phóng chỗ trống.</li>
+          <li>Mục tiêu: Dọn sạch toàn bộ các ô trên bàn cờ để giành chiến thắng 3 sao ★★★; đừng để khay chứa bị đầy 7 ô nhé!</li>
+        </ul>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <span class="icon">🎨</span>
+          <h4>4 Giao Diện Pastel</h4>
+          <p>Tuỳ chọn 1 chạm: Dâu Tây Sữa 🍓, Matcha Latte 🍵, Khoai Môn Mộng Mơ 🔮, và Bơ Mật Ong 🍯.</p>
+        </div>
+        <div class="feature-item">
+          <span class="icon">🎧</span>
+          <h4>Âm Thanh ASMR</h4>
+          <p>Hiệu ứng âm thanh êm tai: tiếng chạm bong bóng popping, gốm sứ clink lách cách và chuông gió thanh thoát.</p>
+        </div>
+        <div class="feature-item">
+          <span class="icon">♾️</span>
+          <h4>Vô Hạn Màn Chơi</h4>
+          <p>Màn chơi sinh tự động bằng thuật toán thông minh, cam kết 100% luôn giải được với độ khó tăng dần cuốn hút.</p>
+        </div>
+        <div class="feature-item">
+          <span class="icon">🪄</span>
+          <h4>Công Cụ Hữu Ích</h4>
+          <p>Hoàn tác (Undo) nước đi, Xáo trộn (Shuffle) bàn cờ, và Tiếp tục (Continue) hồi sinh khi khay đầy.</p>
+        </div>
+        <div class="feature-item">
+          <span class="icon">📶</span>
+          <h4>Thuần Offline</h4>
+          <p>Trải nghiệm mượt mà không cần mạng Wi-Fi hay 4G/5G, không tốn data, tiết kiệm pin tối đa.</p>
+        </div>
+        <div class="feature-item">
+          <span class="icon">⏱️</span>
+          <h4>Không Áp Lực Giờ</h4>
+          <p>Không có đồng hồ đếm ngược, thoải mái suy nghĩ từng nước đi theo nhịp độ riêng của bạn.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Thông Tin Chuẩn Google Play Store -->
+    <section class="card">
+      <h2>📱 2. Thông Tin Niêm Yết Google Play Store</h2>
+      
+      <h3>📌 Tên ứng dụng (App Title)</h3>
+      <div class="highlight-box" style="margin-top: 0.4rem;">
+        <strong>Tile Match - Ghép 3 Ô Hình</strong>
+      </div>
+
+      <h3>📝 Mô tả ngắn (Short Description &mdash; Chuẩn &le; 80 ký tự)</h3>
+      <div class="highlight-box" style="margin-top: 0.4rem;">
+        <code>Ghép 3 ô hình pastel siêu cute! Thư giãn, 4 giao diện xinh xắn, chơi offline.</code>
+      </div>
+
+      <h3>📄 Mô tả chi tiết (Long / Full Description)</h3>
+      <div class="desc-block">Tile Match - Ghép 3 Ô Hình là trò chơi giải đố ghép ô mang phong cách Pastel & Kawaii siêu dễ thương, giúp bạn thư giãn tinh thần và xua tan căng thẳng mỗi ngày!
+
+🌸 Giao diện Pastel ngọt ngào & Dễ thương:
+• 4 bảng màu xinh xắn tuỳ chọn chỉ với 1 chạm: Dâu Tây Sữa 🍓, Matcha Latte 🍵, Khoai Môn Mộng Mơ 🔮, và Bơ Mật Ong 🍯.
+• Thiết kế ô gốm sứ bo tròn mềm mại, hiệu ứng bóng bẩy và hoạt ảnh đàn hồi squishy êm ái.
+• Hiệu ứng âm thanh ASMR êm tai: tiếng chạm bong bóng popping và chuông gió thanh mảnh lúc ghép 3.
+
+Luật chơi cực kỳ đơn giản:
+• Chạm vào các ô hình trên bàn cờ để đưa vào khay chứa.
+• Ghép 3 ô có hình giống hệt nhau để xoá chúng khỏi khay.
+• Dọn sạch toàn bộ ô trên bàn cờ để giành chiến thắng; đừng để khay chứa đầy 7 ô nhé!
+
+Điểm nổi bật của trò chơi:
+• Không giới hạn thời gian: Thảnh thơi suy nghĩ từng nước đi mà không phải chịu bất kỳ áp lực đếm ngược nào.
+• Vô hạn màn chơi tự động: Màn chơi được sinh bằng thuật toán thông minh, đảm bảo 100% luôn có lời giải và độ khó tăng dần đầy cuốn hút.
+• Công cụ hỗ trợ đắc lực:
+  - Hoàn tác (Undo): Quay lại nước đi trước đó khi lỡ tay.
+  - Xáo trộn (Shuffle): Đổi vị trí các ô trên bàn cờ khi gặp thế khó.
+  - Tiếp tục (Continue): Hồi sinh ván đấu ngay khi khay đầy để không bỏ lỡ tiến trình.
+• Hoàn toàn Offline: Trải nghiệm mượt mà mọi lúc mọi nơi mà không cần kết nối mạng Wi-Fi hay 4G.
+• Dung lượng cực nhẹ, tiết kiệm pin, không cần tài khoản phức tạp.
+
+Nếu bạn yêu thích các tựa game ghép ô thư giãn, thẩm mỹ dễ thương nhẹ nhàng (cozy & cute puzzle), Tile Match chắc chắn sẽ là người bạn đồng hành tuyệt vời của bạn mỗi ngày.
+
+Tải ngay hôm nay để tận hưởng cảm giác ghép ô ngọt ngào và đáng yêu nhé!</div>
+    </section>
+
+    <!-- Section 3: Chính Sách Quyền Riêng Tư (Privacy Policy) -->
+    <section class="card">
+      <h2>🛡️ 3. Chính Sách Quyền Riêng Tư (App Privacy Policy)</h2>
+      <p><em>Ngày có hiệu lực: 14 tháng 10 năm 2026 &bull; Áp dụng cho phiên bản 1.0.0 trở đi</em></p>
+      
+      <p><strong>MT Games</strong> xây dựng trò chơi <strong>Tile Match - Ghép 3 Ô Hình</strong> (mã gói: <code>cm.mt.tilematch</code>) như một ứng dụng hỗ trợ quảng cáo miễn phí kết hợp tùy chọn mua một lần. Chúng tôi tuyệt đối tôn trọng và cam kết bảo vệ quyền riêng tư của mọi người dùng. Chính sách này công khai minh bạch toàn bộ các quyền hệ thống và dịch vụ bên thứ ba mà ứng dụng sử dụng.</p>
+
+      <h3>🔒 Các quyền hệ thống ứng dụng yêu cầu (Android Permissions)</h3>
+      <p>Ứng dụng tuân thủ nghiêm ngặt nguyên tắc chỉ yêu cầu các quyền thực sự cần thiết để vận hành các tính năng kỹ thuật cốt lõi:</p>
+      <ul>
+        <li><code>android.permission.INTERNET</code>: Quyền truy cập mạng Internet, dùng để tải quảng cáo từ Google AdMob và xác thực giao dịch mua hàng qua Google Play. <em>Ứng dụng không truyền tải bất kỳ dữ liệu cá nhân nào ra bên ngoài.</em></li>
+        <li><code>android.permission.ACCESS_NETWORK_STATE</code>: Quyền kiểm tra trạng thái kết nối mạng (Wi-Fi/di động) để xác định tính khả dụng trước khi thực hiện tải quảng cáo, giúp ứng dụng không bị treo khi thiết bị đang ở chế độ máy bay hoặc mất mạng.</li>
+        <li><code>android.permission.VIBRATE</code>: Quyền điều khiển bộ rung thiết bị, dùng cho phản hồi xúc giác nhẹ (Haptic Feedback) khi người chơi chạm vào ô gốm, hoàn thành chuỗi ghép 3 hoặc bấm các nút bấm. Người dùng có thể bật/tắt rung bất kỳ lúc nào trong mục <strong>Cài đặt</strong> của game.</li>
+        <li><code>com.google.android.gms.permission.AD_ID</code>: Quyền cho phép Google Mobile Ads SDK truy cập Mã nhận dạng quảng cáo (Google Advertising ID) trên các thiết bị chạy Android 13 trở lên, phục vụ đo lường và hiển thị quảng cáo phù hợp.</li>
+        <li><code>com.android.vending.BILLING</code>: Quyền xử lý thanh toán thông qua Google Play Billing Library khi người dùng chọn mua gói <em>"Xóa quảng cáo" (Remove Ads)</em>.</li>
+      </ul>
+
+      <div class="notice-box">
+        <strong>Cam kết bảo mật:</strong> Ứng dụng <strong>KHÔNG</strong> yêu cầu bất kỳ quyền nhạy cảm nào như: Định vị GPS, Đọc danh bạ, Đọc bộ nhớ ngoài (Storage), Máy ảnh (Camera), Micro (Audio Record), hay Thông tin số điện thoại.
+      </div>
+
+      <h3>🧩 SDK và Dịch Vụ Của Bên Thứ Ba</h3>
+      <p>Ứng dụng tích hợp đúng 2 SDK chính thức từ Google:</p>
+      
+      <h4>1. Google Mobile Ads (AdMob)</h4>
+      <p>Google AdMob được sử dụng để phân phối quảng cáo biểu ngữ (Banner), quảng cáo xen kẽ (Interstitial), và quảng cáo nhận thưởng (Rewarded video). Google AdMob có thể tự động thu thập một số định danh kỹ thuật (như Advertising ID, thông tin dòng máy, phiên bản hệ điều hành) để phục vụ việc tối ưu quảng cáo và phòng chống gian lận thương mại.</p>
+      <p>Tìm hiểu thêm tại: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Chính sách quảng cáo của Google</a> và <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách quyền riêng tư của Google</a>.</p>
+      <p><strong>Tuân thủ UMP / GDPR:</strong> Đối với người chơi tại Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK), ứng dụng hiển thị biểu mẫu UMP Consent (User Messaging Platform) ngay lần đầu mở ứng dụng. Bạn hoàn toàn có thể quản lý, thay đổi hoặc thu hồi quyền đồng ý quảng cáo cá nhân hoá bất cứ lúc nào trong mục <em>Cài đặt &rarr; Quyền riêng tư quảng cáo</em>.</p>
+
+      <h4>2. Google Play In-App Billing</h4>
+      <p>Ứng dụng cung cấp gói mua một lần <code>remove_ads</code>. Toàn bộ quy trình thanh toán được thực hiện trực tiếp trên hạ tầng bảo mật của Google Play Store. Nhà phát triển <strong>không bao giờ thu thập, lưu trữ hay tiếp cận</strong> thông tin thẻ tín dụng, tài khoản ngân hàng hoặc dữ liệu tài chính của người dùng.</p>
+    </section>
+
+    <!-- Section 4: Thu Thập, Sử Dụng và Xóa Dữ Liệu -->
+    <section class="card">
+      <h2>📊 4. Chính Sách Thu Thập, Sử Dụng &amp; Xóa Dữ Liệu (Data Safety &amp; Deletion)</h2>
+      
+      <h3>📑 Bảng Khai Báo An Toàn Dữ Liệu (Data Safety Table)</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Loại dữ liệu</th>
+              <th>Thu thập / Chia sẻ</th>
+              <th>Mục đích sử dụng</th>
+              <th>Mã hoá truyền tải</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mã nhận dạng thiết bị</strong><br>(Google Advertising ID)</td>
+              <td>Google AdMob thu thập &amp; chia sẻ</td>
+              <td>Quảng cáo, tiếp thị, phân tích hiệu quả &amp; phòng chống gian lận</td>
+              <td>Có (HTTPS / TLS)</td>
+            </tr>
+            <tr>
+              <td><strong>Tương tác trong ứng dụng</strong><br>(App Interactions)</td>
+              <td>Google AdMob thu thập</td>
+              <td>Đo lường tần suất xem quảng cáo, tính toán thưởng rewarded</td>
+              <td>Có (HTTPS / TLS)</td>
+            </tr>
+            <tr>
+              <td><strong>Chẩn đoán &amp; Nhật ký sự cố</strong><br>(Crash Logs &amp; Diagnostics)</td>
+              <td>Google Play Console thu thập</td>
+              <td>Phân tích lỗi kỹ thuật, đảm bảo độ ổn định &amp; cải thiện phiên bản</td>
+              <td>Có (HTTPS / TLS)</td>
+            </tr>
+            <tr>
+              <td><strong>Tiến trình chơi &amp; Cài đặt game</strong><br>(Level, Stars, Theme, Sfx)</td>
+              <td><strong>LƯU CỤC BỘ 100%</strong><br>(Không chia sẻ)</td>
+              <td>Lưu giữ màn chơi, tổng số sao đạt được, theme đã chọn và cài đặt âm thanh trên máy</td>
+              <td>Lưu trữ an toàn trên thiết bị</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>💾 Cơ chế lưu trữ tiến trình cục bộ (Offline Storage)</h3>
+      <p>Ứng dụng hoạt động theo triết lý <strong>Offline-First</strong>: mọi dữ liệu gồm số màn chơi hiện tại (<code>level.current</code>), số sao đã đạt (<code>stars.total</code>), ván cờ đang chơi dở (<code>state.game</code>), và màu giao diện bạn yêu thích được lưu cục bộ trên bộ nhớ máy (Sandbox của ứng dụng do hệ điều hành Android bảo vệ). Chúng tôi không có máy chủ lưu trữ (No backend server) và không tạo hồ sơ người dùng.</p>
+
+      <h3>🗑️ Chính Sách &amp; Hướng Dẫn Xóa Dữ Liệu (Data Deletion Policy)</h3>
+      <p>Người dùng có toàn quyền kiểm soát và xóa bỏ toàn bộ dữ liệu liên quan đến ứng dụng bất kỳ lúc nào thông qua các phương thức sau:</p>
+      
+      <div class="highlight-box">
+        <strong>1. Xóa toàn bộ tiến trình và dữ liệu game trên thiết bị:</strong>
+        <p style="margin-top: 0.35rem; margin-bottom: 0.4rem;">Do dữ liệu được lưu hoàn toàn trên thiết bị của bạn, bạn có thể xóa sạch mọi dữ liệu chơi bất kỳ lúc nào bằng 1 trong 2 cách:</p>
+        <ul style="margin-bottom: 0;">
+          <li>Vào <strong>Cài đặt (Settings) thiết bị &rarr; Ứng dụng (Apps) &rarr; Tile Match &rarr; Lưu trữ (Storage) &rarr; chọn "Xóa dữ liệu" (Clear Data)</strong> hoặc <strong>"Xóa bộ nhớ đệm" (Clear Cache)</strong>.</li>
+          <li>Hoặc đơn giản là <strong>Gỡ cài đặt (Uninstall)</strong> ứng dụng khỏi thiết bị. Hệ điều hành Android sẽ tự động dọn dẹp sạch sẽ toàn bộ thư mục lưu trữ cục bộ của game.</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <strong>2. Đặt lại hoặc Xóa Mã nhận dạng quảng cáo (Advertising ID):</strong>
+        <p style="margin-top: 0.35rem; margin-bottom: 0.4rem;">Để xóa bỏ lịch sử quảng cáo do Google AdMob ghi nhận trên thiết bị của bạn:</p>
+        <ul style="margin-bottom: 0;">
+          <li>Mở <strong>Cài đặt (Settings) trên Android &rarr; Google &rarr; Quảng cáo (Ads)</strong>.</li>
+          <li>Chọn <strong>"Đặt lại ID quảng cáo" (Reset advertising ID)</strong> hoặc <strong>"Xóa ID quảng cáo" (Delete advertising ID)</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <strong>3. Yêu cầu hỗ trợ xóa dữ liệu qua Email:</strong>
+        <p style="margin-top: 0.35rem; margin-bottom: 0;">Nếu bạn có bất kỳ câu hỏi nào hoặc muốn được hướng dẫn chi tiết cách xóa dữ liệu, vui lòng gửi email về hòm thư: <a href="mailto:minhthang0792@gmail.com"><strong>minhthang0792@gmail.com</strong></a>. Nhà phát triển cam kết tiếp nhận và phản hồi giải đáp trong vòng <strong>24 &ndash; 48 giờ làm việc</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Section 5: Quyền Riêng Tư Của Trẻ Em -->
+    <section class="card">
+      <h2>👶 5. Quyền Riêng Tư Của Trẻ Em (Children's Privacy)</h2>
+      <p>Trò chơi hướng tới đối tượng người chơi từ 13 tuổi trở lên (đặc biệt phù hợp độ tuổi học sinh, sinh viên và thanh niên 15&ndash;25 tuổi yêu thích thẩm mỹ dễ thương, nhẹ nhàng). Chúng tôi không chủ đích thu thập bất kỳ thông tin nhận dạng cá nhân nào từ trẻ em dưới 13 tuổi. Nếu phụ huynh hoặc người giám hộ phát hiện rằng con em mình đã cung cấp thông tin cho các dịch vụ bên thứ ba thông qua ứng dụng, vui lòng liên hệ với chúng tôi để được hỗ trợ kiểm tra và xử lý kịp thời.</p>
+    </section>
+
+    <!-- Section 6: Thay Đổi Chính Sách & Liên Hệ -->
+    <section class="card">
+      <h2>📬 6. Thông Tin Liên Hệ Nhà Phát Triển</h2>
+      <p>Chính sách quyền riêng tư này có thể được cập nhật theo thời gian nhằm phản ánh các cải tiến mới của trò chơi hoặc đáp ứng quy định cập nhật của Google Play Store. Mọi thay đổi sẽ được công bố trực tiếp tại trang web này.</p>
+      
+      <p>Nếu bạn có bất kỳ thắc mắc, đóng góp ý kiến hoặc phản hồi liên quan đến trò chơi cũng như chính sách bảo mật, xin vui lòng liên hệ trực tiếp với nhà phát triển:</p>
+      
+      <p style="margin-top: 1rem; margin-bottom: 0.5rem;">
+        🏢 <strong>Đơn vị phát triển:</strong> MT Games<br>
+        📧 <strong>Email hỗ trợ:</strong> <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a><br>
+        🌍 <strong>Địa chỉ trang chính sách:</strong> <a href="https://minhthang9911.github.io/cm-mt-tilematch/privacy-policy.html">https://minhthang9911.github.io/cm-mt-tilematch/privacy-policy.html</a>
+      </p>
+
+      <a href="mailto:minhthang0792@gmail.com" class="btn-contact">
+        ✉️ Gửi Email Hỗ Trợ Cho Nhà Phát Triển
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 <strong>MT Games</strong> &bull; All Rights Reserved.</p>
+      <p>Tile Match - Ghép 3 Ô Hình (<code>cm.mt.tilematch</code>)</p>
+      <p style="margin-top: 0.4rem; font-size: 0.82rem;">Trang web tuân thủ Tiêu chuẩn Nhà phát triển Google Play Store &amp; Chính sách An toàn Dữ liệu (Data Safety).</p>
+    </footer>
+
+  </div>
+</body>
+</html>

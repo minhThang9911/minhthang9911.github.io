@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop Merge - Thả Kẹo Gộp 2048 | Chính Sách Bảo Mật & Giới Thiệu Ứng Dụng</title>
+  <meta name="description" content="Chính sách bảo mật, quyền thiết bị, SDK và thông tin niêm yết chính thức của game giải đố Drop Merge - Thả Kẹo Gộp 2048 (cm.mt.dropmerge) trên Google Play Store.">
+  <meta name="theme-color" content="#FFE4EC">
+
+  <!-- Google Fonts: Quicksand & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-page: #FFF5F8;
+      --bg-gradient: linear-gradient(175deg, #FFF0F5 0%, #FAF0FC 45%, #F0F6FF 100%);
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --card-border: #F8D8E5;
+      --primary: #FF5D8F;
+      --primary-hover: #E03E70;
+      --primary-soft: #FFE6EE;
+      --secondary: #9B5DE5;
+      --secondary-soft: #F4EBFD;
+      --accent: #FFB703;
+      --accent-soft: #FFF6DF;
+      --cyan: #00BBF9;
+      --cyan-soft: #E5F8FE;
+      --text-main: #3D293A;
+      --text-muted: #796076;
+      --text-light: #A38DA0;
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+      --shadow-card: 0 12px 32px rgba(255, 93, 143, 0.08), 0 4px 12px rgba(155, 93, 229, 0.04);
+      --shadow-hover: 0 16px 36px rgba(255, 93, 143, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding: 1.5rem 1rem 4rem;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    /* Hero Section */
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .hero-banner-wrap {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(135deg, #FFCCD8, #E2D4F8);
+      overflow: hidden;
+    }
+
+    .hero-banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255, 240, 245, 0.05) 0%, rgba(255, 255, 255, 0.88) 100%);
+    }
+
+    .hero-profile {
+      padding: 0 2rem 2rem;
+      margin-top: -65px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .app-icon-wrap {
+      width: 124px;
+      height: 124px;
+      border-radius: 30px;
+      background: #FFFFFF;
+      padding: 6px;
+      box-shadow: 0 12px 28px rgba(255, 93, 143, 0.25);
+      border: 2.5px solid #FFF0F5;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .app-icon-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .app-title {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 2.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.5px;
+    }
+
+    .app-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 1.15rem;
+      font-weight: 500;
+    }
+
+    .badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .badge.secondary {
+      background: var(--secondary-soft);
+      color: var(--secondary);
+    }
+
+    .badge.accent {
+      background: var(--accent-soft);
+      color: #C28200;
+    }
+
+    .badge.cyan {
+      background: var(--cyan-soft);
+      color: #0087B5;
+    }
+
+    /* Nav Pills */
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      padding: 0.75rem;
+      background: rgba(255, 240, 245, 0.7);
+      border-radius: var(--radius-md);
+      margin-top: 0.5rem;
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .nav-pill {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    /* Content Cards */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-card);
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px dashed var(--primary-soft);
+      padding-bottom: 0.9rem;
+    }
+
+    .section-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+
+    .section-icon.purple {
+      background: var(--secondary-soft);
+      color: var(--secondary);
+    }
+
+    .section-icon.orange {
+      background: var(--accent-soft);
+      color: #E29800;
+    }
+
+    .section-icon.cyan {
+      background: var(--cyan-soft);
+      color: #00A6DF;
+    }
+
+    h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 1.6rem 0 0.65rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul, ol {
+      margin: 0.5rem 0 1.25rem 1.5rem;
+      color: var(--text-main);
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Grid Feature Cards */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin: 1.35rem 0;
+    }
+
+    .feature-item {
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feature-item-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .feature-item-title {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .feature-item-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    /* Play Store Listing Box */
+    .store-box {
+      background: #FFFDFE;
+      border: 1.5px solid #FAD1DF;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .store-tag {
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+      display: inline-block;
+    }
+
+    .short-desc-text {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary-hover);
+      font-style: italic;
+      background: #FFFFFF;
+      padding: 0.9rem 1.25rem;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--primary);
+      margin: 0.5rem 0 1rem;
+      box-shadow: 0 2px 8px rgba(255, 93, 143, 0.05);
+    }
+
+    .full-desc-pre {
+      white-space: pre-wrap;
+      font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+      font-size: 0.935rem;
+      color: var(--text-main);
+      background: #FFFFFF;
+      padding: 1.35rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--card-border);
+      line-height: 1.75;
+      max-height: 440px;
+      overflow-y: auto;
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--card-border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+      background: #FFFFFF;
+    }
+
+    th {
+      background: #FFF0F5;
+      color: var(--primary);
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid var(--card-border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid #FAF0F4;
+      color: var(--text-main);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Callout & Highlights */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 1.2rem 1.4rem;
+      margin: 1.25rem 0;
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      background: #FFF4F8;
+      border: 1px solid #FAD1DF;
+    }
+
+    .callout.green {
+      background: #F1FBF6;
+      border-color: #C8EED9;
+    }
+
+    .callout.purple {
+      background: #F8F3FD;
+      border-color: #E4D6F7;
+    }
+
+    .callout-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .callout-content {
+      font-size: 0.925rem;
+      color: var(--text-main);
+    }
+
+    .callout-content p {
+      margin-bottom: 0.4rem;
+    }
+
+    .callout-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Link & Button */
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #FFF0F5, #F5EDFC);
+      border-radius: var(--radius-lg);
+      padding: 1.85rem;
+      border: 1.5px solid #F4D5E3;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #FFFFFF !important;
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      box-shadow: 0 6px 18px rgba(255, 93, 143, 0.35);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      text-decoration: none !important;
+    }
+
+    .email-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(255, 93, 143, 0.45);
+    }
+
+    .copy-btn {
+      margin-left: 0.5rem;
+      background: #FFFFFF;
+      color: var(--primary);
+      border: 1px solid var(--primary-soft);
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--primary-soft);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed var(--card-border);
+    }
+
+    footer p {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      body {
+        padding: 0.75rem 0.5rem 3rem;
+      }
+
+      .hero-banner-wrap {
+        height: 180px;
+      }
+
+      .hero-profile {
+        padding: 0 1.25rem 1.5rem;
+        margin-top: -50px;
+      }
+
+      .app-icon-wrap {
+        width: 95px;
+        height: 95px;
+        border-radius: 24px;
+      }
+
+      .app-title {
+        font-size: 1.6rem;
+      }
+
+      .section-card {
+        padding: 1.6rem 1.25rem;
+        border-radius: var(--radius-md);
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .quick-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HERO SECTION -->
+    <header class="hero-card">
+      <div class="hero-banner-wrap">
+        <img src="feature-image.png" alt="Drop Merge - Thả Kẹo Gộp 2048 Feature Banner" class="hero-banner-img">
+        <div class="hero-banner-overlay"></div>
+      </div>
+
+      <div class="hero-profile">
+        <div class="app-icon-wrap">
+          <img src="playstore-app-icon.png" alt="Drop Merge App Icon" class="app-icon-img">
+        </div>
+
+        <h1 class="app-title">Drop Merge - Thả Kẹo Gộp 2048</h1>
+        <p class="app-subtitle">Game giải đố thả kẹo dẻo pastel nảy tưng • Gộp số nhân đôi liên hoàn vô tận • Thư giãn & chữa lành tâm hồn</p>
+
+        <div class="badges-row">
+          <span class="badge">🍬 Gói: cm.mt.dropmerge</span>
+          <span class="badge secondary">📱 Phiên bản 1.0.0</span>
+          <span class="badge accent">✨ 100% Offline</span>
+          <span class="badge cyan">💖 Pastel Jelly Pop</span>
+          <span class="badge">🛡️ Google Play Verified</span>
+        </div>
+
+        <nav class="quick-nav" aria-label="Mục lục nhanh">
+          <a href="#gioi-thieu" class="nav-pill">🌸 Giới thiệu</a>
+          <a href="#playstore-listing" class="nav-pill">📝 Mô tả Play Store</a>
+          <a href="#quyen-ung-dung" class="nav-pill">🔑 Quyền thiết bị</a>
+          <a href="#sdk-ben-thu-ba" class="nav-pill">📦 SDK bên thứ ba</a>
+          <a href="#chinh-sach-du-lieu" class="nav-pill">🔒 Thu thập & Xóa dữ liệu</a>
+          <a href="#lien-he" class="nav-pill">💌 Liên hệ hỗ trợ</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- PHẦN 1: GIỚI THIỆU ỨNG DỤNG -->
+    <section id="gioi-thieu" class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🍬</div>
+        <h2>1. Giới Thiệu Ứng Dụng</h2>
+      </div>
+
+      <p><strong>Drop Merge - Thả Kẹo Gộp 2048</strong> (mã gói ứng dụng: <code>cm.mt.dropmerge</code>) là tựa game giải đố thả gộp số vô tận (Endless Drop & Merge) được phát triển và phát hành chính thức bởi <strong>MT Games</strong> trên nền tảng Android.</p>
+      
+      <p>Được thiết kế dựa trên phong cách thẩm mỹ <strong>Pastel Jelly Pop</strong> ngọt ngào, dịu mát với các tông màu kem dâu sữa, kẹo thạch pha lê và hiệu ứng nảy dẻo squishy mochi bồng bềnh, trò chơi mang đến không gian giải trí ấm áp, thư giãn (cozy & healing) cho người chơi từ 15 đến 25 tuổi, đặc biệt là các bạn trẻ và phái nữ yêu thích những trải nghiệm dễ thương, tinh tế.</p>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <span class="feature-item-icon">🍮</span>
+          <div class="feature-item-title">Cơ Chế Nảy Dẻo Squishy</div>
+          <p class="feature-item-desc">Từng viên kẹo mochi rơi xuống đáy khay, nảy tưng tưng đàn hồi mang lại cảm giác xúc giác cực kỳ thỏa mãn và giải tỏa căng thẳng.</p>
+        </div>
+
+        <div class="feature-item">
+          <span class="feature-item-icon">⚡</span>
+          <div class="feature-item-title">Gộp Chuỗi Dây Chuyền</div>
+          <p class="feature-item-desc">Gộp kẹo đồng số ở dưới, trái, phải tạo ra hiệu ứng combo liên hoàn ×2, ×3 bùng nổ bụi sao và trái tim lấp lánh trên màn hình.</p>
+        </div>
+
+        <div class="feature-item">
+          <span class="feature-item-icon">🧹</span>
+          <div class="feature-item-title">Cơn Mưa Dọn Ô Nhỏ</div>
+          <p class="feature-item-desc">Mở khóa kẹo mốc kỷ lục mới (1024, 2048, 4096...) sẽ kích hoạt mưa kẹo dọn sạch các ô quá bé, giải phóng khay kẹo ngoạn mục.</p>
+        </div>
+
+        <div class="feature-item">
+          <span class="feature-item-icon">🪄</span>
+          <div class="feature-item-title">Bảo Bối Ma Thuật</div>
+          <p class="feature-item-desc">Hỗ trợ đắc lực với Nơ Hoàn Tác, Gậy Sao Phép Thuật phá ô cản đường, và Trái Tim Hoán Đổi kẹo tiếp theo hoàn toàn miễn phí.</p>
+        </div>
+      </div>
+
+      <div class="callout green">
+        <div class="callout-icon">📴</div>
+        <div class="callout-content">
+          <strong>Cam kết trải nghiệm 100% Offline:</strong> Toàn bộ thuật toán bàn cờ, logic gộp số, cơ chế rơi và lưu trữ điểm số đều chạy trực tiếp trên thiết bị của bạn. Người chơi có thể thỏa sức thả kẹo mọi lúc mọi nơi ngay cả khi đang trên xe buýt, máy bay hoặc ở nơi không có Wi-Fi/4G.
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 2: THÔNG TIN NIÊM YẾT GOOGLE PLAY STORE -->
+    <section id="playstore-listing" class="section-card">
+      <div class="section-header">
+        <div class="section-icon purple">📝</div>
+        <h2>2. Thông Tin Niêm Yết Google Play Store</h2>
+      </div>
+
+      <p>Nội dung niêm yết chính thức của ứng dụng tuân thủ nghiêm ngặt mọi tiêu chuẩn nội dung và chính sách metadata của Google Play Store:</p>
+
+      <div class="store-box">
+        <span class="store-tag">📌 Tiêu đề ứng dụng (App Title — tối đa 30 ký tự)</span>
+        <div class="short-desc-text" style="font-style: normal; color: var(--primary);">
+          Drop Merge - Thả Kẹo Gộp 2048
+        </div>
+        <small style="color: var(--text-muted); font-size: 0.8rem;">Độ dài: 29 ký tự • Chuẩn chính sách Play Console metadata.</small>
+      </div>
+
+      <div class="store-box">
+        <span class="store-tag">📌 Mô tả ngắn (Short Description — tối đa 80 ký tự)</span>
+        <div class="short-desc-text">
+          Thả kẹo dẻo vào cột, gộp số nhân đôi, nảy tưng dây chuyền. Thư giãn, offline.
+        </div>
+        <small style="color: var(--text-muted); font-size: 0.8rem;">Độ dài: 74 ký tự • Chuẩn chính sách Play Console metadata.</small>
+      </div>
+
+      <div class="store-box">
+        <span class="store-tag">📖 Mô tả đầy đủ (Full Description)</span>
+        <div class="full-desc-pre">Drop Merge - Thả Kẹo Gộp 2048 là tựa game giải đố kẹo dẻo pastel siêu dễ thương, mang đến cảm giác thư giãn (cozy & healing) tuyệt đối cùng lối chơi thả gộp bất tận (endless) cực kỳ lôi cuốn!
+
+🍬 CÁCH CHƠI ĐƠN GIẢN & GÂY NGHIỆN:
+• Chạm hoặc kéo ngón tay để ngắm 1 trong 5 cột khay kẹo.
+• Thả tay để viên kẹo dẻo mochi rơi xuống đáy cột và nảy tưng tưng.
+• Chạm ô cùng số ở DƯỚI, TRÁI hoặc PHẢI sẽ tự động gộp thành kẹo vị mới gấp đôi (2 ➔ 4 ➔ 8 ➔ 16 ➔ ... ➔ 2048).
+• Gộp nhiều ô cùng lúc sẽ tạo nên chuỗi DÂY CHUYỀN liên hoàn bùng nổ sao và trái tim!
+• Trò chơi kết thúc khi cả 5 cột đều đầy và không còn chỗ trống để thả kẹo mới.
+
+✨ TÍNH NĂNG NỔI BẬT DÀNH CHO BẠN:
+• 🌸 Giao diện Pastel Jelly Pop ngọt ngào: Tông màu kem dâu sữa êm dịu mắt, các viên kẹo bóng bẩy như thạch pha lê, font chữ bo tròn phúng phính.
+• 💖 Cơ chế nảy dẻo (Squishy Jiggle): Từng cú chạm và gộp mang lại cảm giác xúc giác "cực sướng tay", xua tan căng thẳng sau giờ học và làm việc.
+• 🧹 Cơn mưa kẹo dọn ô nhỏ: Khi bạn tạo ra kẹo mốc mới (như 1024, 2048), mọi ô kẹo quá nhỏ sẽ tự động tan biến thành bụi tiên lấp lánh.
+• ⭐ Bộ bảo bối ma thuật đáng yêu:
+  - Nơ Hoàn tác: Quay ngược 1 bước đi lỡ tay.
+  - Gậy Sao Phép Thuật: Chạm để xoá viên kẹo cản đường thành bụi sao.
+  - Trái Tim Hoán Đổi: Đổi chỗ kẹo hiện tại và kẹo kế tiếp hoàn toàn miễn phí.
+  - Hồi sinh tiếp tục: Cơ hội xoá 2 hàng đáy để viết tiếp kỷ lục mới!
+• 🎵 Âm thanh thủy tinh pha lê vui tai: Chuỗi âm thanh pop-bloop vui nhộn êm dịu, không gây ồn ào khó chịu.
+• 📴 Chơi offline 100%: Hoàn toàn không cần wifi hay dữ liệu di động, không cần đăng nhập. Chơi mọi lúc, mọi nơi!
+• 🔋 Siêu nhẹ máy & tiết kiệm pin: Dung lượng nhỏ gọn, chạy mượt mà 60 FPS trên mọi dòng máy Android.
+
+Bạn có thể tạo ra được viên kẹo Cầu Vồng 2048, Thiên Hà 4096 hay bứt phá 1 TRIỆU điểm không? Hãy tải ngay Drop Merge và đắm chìm vào thế giới kẹo ngọt hôm nay!</div>
+      </div>
+    </section>
+
+    <!-- PHẦN 3: CÁC QUYỀN ỨNG DỤNG YÊU CẦU TRÊN THIẾT BỊ -->
+    <section id="quyen-ung-dung" class="section-card">
+      <div class="section-header">
+        <div class="section-icon orange">🔑</div>
+        <h2>3. Quyền Thiết Bị Yêu Cầu (App Permissions)</h2>
+      </div>
+
+      <p>Ứng dụng tuân thủ nghiêm ngặt nguyên tắc tối thiểu hóa quyền truy cập (Principle of Least Privilege). Dưới đây là giải trình minh bạch toàn bộ các quyền khai báo trong tệp <code>AndroidManifest.xml</code> của trò chơi:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Quyền Android</th>
+              <th>Mục đích sử dụng</th>
+              <th>Kiểm soát của người dùng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>android.permission.INTERNET</code></td>
+              <td>Tải nội dung quảng cáo từ Google AdMob và kết nối xác thực giao dịch mua hàng Google Play Billing khi có mạng.</td>
+              <td>Tự động khi có kết nối Internet (trò chơi vẫn chạy hoàn hảo 100% khi tắt mạng).</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+              <td>Kiểm tra xem thiết bị hiện đang có kết nối mạng hay không để tối ưu hoá việc nạp quảng cáo và đồng bộ giao dịch.</td>
+              <td>Được hệ thống Android tự động cấp phát.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.VIBRATE</code></td>
+              <td>Tạo phản hồi xúc giác haptic êm ái (30ms) khi kẹo tiếp đất, nảy dẻo và kích hoạt combo gộp số dây chuyền.</td>
+              <td>Có thể chủ động bật hoặc tắt bất kỳ lúc nào trong mục <strong>Cài đặt</strong> của trò chơi.</td>
+            </tr>
+            <tr>
+              <td><code>com.android.vending.BILLING</code></td>
+              <td>Thực hiện giao dịch mua một lần gói "Xóa quảng cáo" (Remove Ads) vĩnh viễn thông qua Google Play In-App Billing.</td>
+              <td>Người dùng chủ động nhấn mua khi có nhu cầu gỡ bỏ quảng cáo.</td>
+            </tr>
+            <tr>
+              <td><code>com.google.android.gms.permission.AD_ID</code></td>
+              <td>Mã nhận dạng quảng cáo của Google (Advertising ID) được SDK Google AdMob sử dụng để phân phối quảng cáo phù hợp.</td>
+              <td>Người dùng có thể đặt lại hoặc xóa bỏ mã định danh này trong cài đặt hệ thống Android.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <div class="callout-icon">🛡️</div>
+        <div class="callout-content">
+          <p><strong>Cam kết KHÔNG yêu cầu quyền riêng tư nhạy cảm:</strong></p>
+          <p>Trò chơi tuyệt đối <strong>KHÔNG</strong> yêu cầu hoặc truy cập: Vị trí địa lý (GPS/Location), Danh bạ (Contacts), Máy ảnh (Camera), Micro ghi âm, Thư viện ảnh/bộ nhớ riêng tư, hay bất kỳ cảm biến sinh trắc học nào trên thiết bị của bạn.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 4: DỊCH VỤ VÀ SDK BÊN THỨ BA -->
+    <section id="sdk-ben-thu-ba" class="section-card">
+      <div class="section-header">
+        <div class="section-icon cyan">📦</div>
+        <h2>4. Dịch Vụ & SDK Bên Thứ Ba</h2>
+      </div>
+
+      <p>Để duy trì mô hình trò chơi miễn phí chất lượng cao và cung cấp giao dịch tiện lợi an toàn, trò chơi tích hợp 2 bộ SDK chính thức từ Google:</p>
+
+      <h3>4.1. Google Mobile Ads (AdMob SDK)</h3>
+      <p>Trò chơi sử dụng nền tảng quảng cáo Google AdMob để hiển thị:</p>
+      <ul>
+        <li><strong>Biểu ngữ (Banner Ads):</strong> Hiển thị gọn gàng ở phía chân màn hình menu chính, không gây cản trở trải nghiệm.</li>
+        <li><strong>Quảng cáo xen kẽ (Interstitial Ads):</strong> Chỉ hiển thị tự nhiên khi ván chơi kết thúc thua cuộc (áp dụng cơ chế giãn cách tối thiểu 3 phút và ân hạn 60 giây đầu phiên mở game). Hoàn toàn không xuất hiện giữa chừng khi bạn đang thả kẹo.</li>
+        <li><strong>Quảng cáo tặng thưởng (Rewarded Video Ads):</strong> Chỉ phát khi người dùng chủ động bấm xem để nhận cơ hội hồi sinh xóa 2 hàng đáy hoặc nhận bảo bối ma thuật.</li>
+      </ul>
+
+      <p><strong>Dữ liệu SDK AdMob có thể xử lý:</strong></p>
+      <ul>
+        <li>Mã nhận dạng quảng cáo của Google (Google Advertising ID - GAID).</li>
+        <li>Thông tin kỹ thuật thiết bị (hãng sản xuất, phiên bản hệ điều hành Android, độ phân giải màn hình).</li>
+        <li>Dữ liệu tương tác với quảng cáo (lượt hiển thị, lượt nhấp).</li>
+        <li>Báo cáo sự cố kỹ thuật và chẩn đoán hiệu năng ẩn danh (Crash logs & Diagnostics).</li>
+      </ul>
+
+      <p><strong>Cơ chế UMP Consent (Khu vực EEA & UK):</strong> Đối với người dùng tại Liên minh Châu Âu và Vương quốc Anh, trò chơi hiển thị biểu mẫu chuẩn của Google User Messaging Platform (UMP) để người dùng tự do đồng ý hoặc từ chối quảng cáo cá nhân hóa. Lựa chọn này có thể điều chỉnh lại bất cứ lúc nào trong mục <em>Cài đặt</em>.</p>
+      
+      <p>Chi tiết về cách Google xử lý dữ liệu xin vui lòng tham khảo:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Chính sách bảo mật của Google</a> và 
+        <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">Cách Google sử dụng dữ liệu từ các ứng dụng sử dụng dịch vụ của Google</a>.
+      </p>
+
+      <h3>4.2. Google Play In-App Billing</h3>
+      <p>Ứng dụng cung cấp tùy chọn mua một lần gói <strong>"Xóa Quảng Cáo" (Remove Ads)</strong> vĩnh viễn.</p>
+      <p>Mọi giao dịch thanh toán đều được thực hiện độc quyền qua cổng thanh toán bảo mật của Google Play Store. Nhà phát triển <strong>không thu thập, không lưu trữ và không có quyền truy cập</strong> vào thông tin tài khoản ngân hàng, số thẻ tín dụng hay bất kỳ dữ liệu tài chính nào của bạn.</p>
+    </section>
+
+    <!-- PHẦN 5: CHÍNH SÁCH THU THẬP, SỬ DỤNG VÀ XÓA DỮ LIỆU -->
+    <section id="chinh-sach-du-lieu" class="section-card">
+      <div class="section-header">
+        <div class="section-icon purple">🔒</div>
+        <h2>5. Chính Sách Thu Thập, Sử Dụng & Xóa Dữ Liệu</h2>
+      </div>
+
+      <p>Chúng tôi tôn trọng tuyệt đối quyền riêng tư và quyền tự quyết dữ liệu của mọi người dùng theo tiêu chuẩn Google Play Data Safety:</p>
+
+      <h3>5.1. Thu thập dữ liệu</h3>
+      <ul>
+        <li><strong>Không yêu cầu tài khoản cá nhân:</strong> Người chơi không cần tạo tài khoản, không cần đăng nhập bằng mạng xã hội, không phải cung cấp họ tên, số điện thoại hay email khi trải nghiệm trò chơi.</li>
+        <li><strong>Lưu trữ cục bộ (Local Storage):</strong> Mọi dữ liệu về điểm số kỷ lục (Best score), trạng thái bàn cờ đang chơi dở, số lượng bảo bối và quyền sở hữu gói Xóa quảng cáo đều được lưu trữ trực tiếp trên thiết bị của bạn thông qua tệp mã hóa cục bộ <code>user://save.json</code>. Dữ liệu này không bao giờ được gửi lên bất kỳ máy chủ bên ngoài nào của chúng tôi.</li>
+      </ul>
+
+      <h3>5.2. Chia sẻ dữ liệu</h3>
+      <ul>
+        <li>Chúng tôi <strong>TUYỆT ĐỐI KHÔNG</strong> bán, trao đổi, thương mại hóa hoặc chuyển nhượng bất kỳ dữ liệu nào của người dùng cho bên thứ ba.</li>
+        <li>Dữ liệu kỹ thuật ẩn danh chỉ được xử lý tự động giữa thiết bị và máy chủ Google cho mục đích phân phối quảng cáo và chẩn đoán hiệu năng theo quy chuẩn bảo mật của Google.</li>
+      </ul>
+
+      <h3>5.3. Mã hóa và an toàn thông tin</h3>
+      <ul>
+        <li>Mọi liên lạc phát sinh từ SDK Google AdMob và Google Play Billing đều bắt buộc phải sử dụng giao thức mã hóa đường truyền tiêu chuẩn <strong>HTTPS / TLS</strong> an toàn tuyệt đối.</li>
+      </ul>
+
+      <h3>5.4. Chính sách và hướng dẫn xóa dữ liệu (Data Deletion Policy)</h3>
+      <p>Vì trò chơi hoạt động ngoại tuyến, không duy trì hệ thống tài khoản đám mây hay máy chủ lưu trữ hồ sơ người dùng, bạn có toàn quyền kiểm soát và xóa sạch toàn bộ dữ liệu của mình bất cứ lúc nào bằng các cách sau:</p>
+
+      <div class="callout green">
+        <div class="callout-icon">🗑️</div>
+        <div class="callout-content">
+          <p><strong>Cách 1: Xóa dữ liệu cục bộ trong Cài đặt thiết bị:</strong></p>
+          <p>Mở <em>Cài đặt (Settings) trên Android</em> → <em>Ứng dụng (Apps)</em> → Tìm chọn <em>Drop Merge</em> → Chọn <em>Lưu trữ & bộ nhớ đệm (Storage & cache)</em> → Nhấn <strong>Xóa bộ nhớ / Xóa tất cả dữ liệu (Clear Storage / Clear Data)</strong>. Toàn bộ điểm kỷ lục, ván chơi dở và cài đặt sẽ được đặt lại về trạng thái ban đầu.</p>
+        </div>
+      </div>
+
+      <div class="callout purple">
+        <div class="callout-icon">📲</div>
+        <div class="callout-content">
+          <p><strong>Cách 2: Gỡ cài đặt ứng dụng:</strong></p>
+          <p>Nhấn giữ biểu tượng ứng dụng <em>Drop Merge</em> trên màn hình chính hoặc trong Google Play Store và chọn <strong>Gỡ cài đặt (Uninstall)</strong>. Hệ điều hành Android sẽ tự động xóa sạch toàn bộ thư mục dữ liệu cục bộ của ứng dụng khỏi thiết bị.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-icon">🆔</div>
+        <div class="callout-content">
+          <p><strong>Cách 3: Đặt lại hoặc Xóa mã nhận dạng quảng cáo (GAID):</strong></p>
+          <p>Mở <em>Cài đặt Android</em> → <em>Google</em> → <em>Quảng cáo (Ads)</em> → Chọn <strong>Xóa mã nhận dạng cho quảng cáo (Delete advertising ID)</strong> hoặc <strong>Đặt lại mã nhận dạng cho quảng cáo (Reset advertising ID)</strong> để xóa toàn bộ lịch sử quảng cáo trên thiết bị.</p>
+        </div>
+      </div>
+
+      <p>Nếu bạn có bất kỳ câu hỏi hoặc muốn gửi yêu cầu hỗ trợ liên quan đến dữ liệu cá nhân, vui lòng liên hệ trực tiếp qua email: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>. Chúng tôi sẽ phản hồi trong vòng 24–48 giờ làm việc.</p>
+    </section>
+
+    <!-- PHẦN 6: TRẺ EM & QUYỀN RIÊNG TƯ -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-icon">👶</div>
+        <h2>6. Quyền Riêng Tư Của Trẻ Em</h2>
+      </div>
+
+      <p>Trò chơi <strong>Drop Merge - Thả Kẹo Gộp 2048</strong> được thiết kế hướng tới đối tượng người dùng từ 15 tuổi trở lên (học sinh, sinh viên và thanh niên yêu thích giải đố thư giãn, xả stress). Ứng dụng tuân thủ nghiêm ngặt Đạo luật bảo vệ quyền riêng tư của trẻ em trên mạng (COPPA) và Chính sách gia đình của Google Play.</p>
+      
+      <p>Ứng dụng không chủ đích nhắm tới trẻ em dưới 13 tuổi và không cố ý thu thập bất kỳ thông tin nhận dạng cá nhân nào từ trẻ em. Nếu phụ huynh hoặc người giám hộ phát hiện bất kỳ dữ liệu nào được thu thập ngoài ý muốn, vui lòng liên hệ ngay với chúng tôi để được xử lý và xóa bỏ kịp thời.</p>
+    </section>
+
+    <!-- PHẦN 7: THAY ĐỔI CHÍNH SÁCH -->
+    <section class="section-card">
+      <div class="section-header">
+        <div class="section-icon orange">🔄</div>
+        <h2>7. Thay Đổi Chính Sách Bảo Mật</h2>
+      </div>
+
+      <p>Chính sách bảo mật này có thể được cập nhật định kỳ nhằm phản ánh những cải tiến tính năng mới trong trò chơi hoặc tuân thủ các quy định pháp lý hiện hành của Google Play. Mọi thay đổi sẽ được công bố trực tiếp trên trang này kèm mốc thời gian cập nhật cụ thể.</p>
+      <p>Chúng tôi khuyến khích người dùng định kỳ xem lại trang này để luôn nắm rõ các cam kết bảo vệ dữ liệu mới nhất.</p>
+      <p style="margin-top: 1rem; font-weight: 600; color: var(--primary);">
+        📅 Ngày cập nhật mới nhất: 14 tháng 10 năm 2026 (Phiên bản 1.0.0)
+      </p>
+    </section>
+
+    <!-- PHẦN 8: LIÊN HỆ NHÀ PHÁT TRIỂN -->
+    <section id="lien-he" class="section-card">
+      <div class="section-header">
+        <div class="section-icon">💌</div>
+        <h2>8. Liên Hệ Nhà Phát Triển</h2>
+      </div>
+
+      <p>Nếu bạn có bất kỳ thắc mắc, phản hồi về lỗi, ý kiến đóng góp tính năng hoặc câu hỏi nào liên quan đến Chính sách bảo mật này, xin vui lòng liên hệ với nhà phát triển qua thông tin chính thức sau:</p>
+
+      <div class="contact-box">
+        <h3 style="margin-top: 0; color: var(--primary); font-size: 1.3rem;">MT Games Support Team</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.5rem;">Chúng tôi luôn lắng nghe và hỗ trợ người chơi nhiệt tình nhất!</p>
+        
+        <p style="font-size: 1.05rem; font-weight: 600; margin: 0.85rem 0;">
+          Email hỗ trợ: 
+          <a href="mailto:minhthang0792@gmail.com" id="dev-email" style="color: var(--primary);">minhthang0792@gmail.com</a>
+          <button class="copy-btn" onclick="copyEmail()" id="copy-btn-text">📋 Sao chép</button>
+        </p>
+
+        <a href="mailto:minhthang0792@gmail.com?subject=[Drop%20Merge%20Support]%20Yêu%20cầu%20hỗ%20trợ" class="email-btn">
+          ✉️ Gửi Email Trực Tiếp Cho Nhà Phát Triển
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p><strong>Drop Merge - Thả Kẹo Gộp 2048</strong> • Phiên bản 1.0.0 • Phát triển bởi MT Games</p>
+      <p>Crafted with 💖 for cozy jelly puzzle lovers. Chúc bạn có những phút giây thư giãn ngọt ngào!</p>
+      <p style="font-size: 0.775rem; color: var(--text-light); margin-top: 0.5rem;">© 2026 MT Games. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function copyEmail() {
+      const email = "minhthang0792@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById("copy-btn-text");
+        btn.innerText = "✓ Đã chép!";
+        btn.style.background = "#FF5D8F";
+        btn.style.color = "#FFFFFF";
+        setTimeout(() => {
+          btn.innerText = "📋 Sao chép";
+          btn.style.background = "#FFFFFF";
+          btn.style.color = "#FF5D8F";
+        }, 2000);
+      }).catch(err => {
+        console.error("Lỗi sao chép: ", err);
+      });
+    }
+  </script>
+</body>
+</html>

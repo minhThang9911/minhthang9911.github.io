@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sudoku: Tiệm Bánh Thỏ Mochi | Giới Thiệu &amp; Chính Sách Quyền Riêng Tư</title>
+  <meta name="description" content="Trang thông tin chính thức, giới thiệu game giải đố Sudoku: Tiệm Bánh Thỏ Mochi (cm.mt.sudoku) và chính sách quyền riêng tư (Privacy Policy) minh bạch theo chuẩn Google Play Store.">
+  <link rel="icon" type="image/png" href="playstore-app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FFF9F2;
+      --bg-card: #FFFFFF;
+      --bg-sakura: #FFF0F5;
+      --bg-matcha: #F0FDF4;
+      --bg-peach: #FFF7ED;
+      --bg-taro: #FAF5FF;
+      
+      --accent-pink: #FF758F;
+      --accent-pink-light: #FF9FB2;
+      --accent-pink-shadow: #E67389;
+      --accent-mint: #10B981;
+      --accent-peach: #FA8C16;
+      --accent-butter: #F59E0B;
+      --accent-taro: #8B5CF6;
+      --accent-blue: #3B82F6;
+      
+      --text-cocoa: #5C4033;
+      --text-dark: #2D3748;
+      --text-muted: #718096;
+      --text-light: #A0AEC0;
+      
+      --border-soft: #F3E8DC;
+      --border-pink: #FFD1DC;
+      
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(255, 159, 178, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 25%, rgba(254, 240, 138, 0.20) 0%, transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(168, 230, 207, 0.18) 0%, transparent 45%),
+        linear-gradient(180deg, #FFF9F2 0%, #FFF5EB 50%, #FFF0F5 100%);
+      background-attachment: fixed;
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      line-height: 1.8;
+      padding: 1.5rem 1rem 5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    /* Hero Banner */
+    .hero-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 16px 40px rgba(107, 82, 70, 0.12), 0 2px 10px rgba(255, 159, 178, 0.15);
+      border: 3px solid var(--border-soft);
+      background: #FFFFFF;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-wrapper:hover {
+      box-shadow: 0 20px 48px rgba(107, 82, 70, 0.18), 0 4px 16px rgba(255, 159, 178, 0.25);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* App Header Profile */
+    .app-profile {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      background: var(--bg-card);
+      padding: 2rem 2.2rem;
+      border-radius: 26px;
+      border: 2px solid var(--border-soft);
+      margin-bottom: 2.2rem;
+      box-shadow: 0 10px 30px rgba(92, 64, 51, 0.06);
+    }
+
+    .app-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(255, 117, 143, 0.25);
+      border: 3px solid #FFFFFF;
+      flex-shrink: 0;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .app-icon:hover {
+      transform: scale(1.06) rotate(-3deg);
+    }
+
+    .app-info {
+      flex: 1;
+    }
+
+    .app-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-pink);
+      line-height: 1.25;
+      margin-bottom: 0.35rem;
+    }
+
+    .app-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-cocoa);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .app-meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-pink {
+      background: var(--bg-sakura);
+      color: var(--accent-pink);
+      border: 1px solid var(--border-pink);
+    }
+
+    .badge-mint {
+      background: var(--bg-matcha);
+      color: var(--accent-mint);
+      border: 1px solid #A7F3D0;
+    }
+
+    .badge-butter {
+      background: #FEF9C3;
+      color: #B45309;
+      border: 1px solid #FDE047;
+    }
+
+    .badge-taro {
+      background: var(--bg-taro);
+      color: var(--accent-taro);
+      border: 1px solid #DDD6FE;
+    }
+
+    /* Content Cards */
+    .card {
+      background: var(--bg-card);
+      border-radius: 26px;
+      padding: 2.2rem;
+      margin-bottom: 2rem;
+      border: 2px solid var(--border-soft);
+      box-shadow: 0 8px 24px rgba(92, 64, 51, 0.05);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text-cocoa);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px dashed var(--border-soft);
+    }
+
+    .section-title .icon {
+      font-size: 1.6rem;
+    }
+
+    p {
+      margin-bottom: 1.1rem;
+      color: #374151;
+      font-size: 1rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: var(--text-cocoa);
+      font-weight: 700;
+    }
+
+    /* Callout & Highlights */
+    .callout-box {
+      background: var(--bg-sakura);
+      border-left: 5px solid var(--accent-pink);
+      border-radius: 0 18px 18px 0;
+      padding: 1.2rem 1.4rem;
+      margin: 1.2rem 0;
+      font-size: 1.02rem;
+      color: var(--text-cocoa);
+    }
+
+    .callout-box.yellow {
+      background: #FEF9C3;
+      border-left-color: var(--accent-butter);
+      color: #78350F;
+    }
+
+    .callout-box.mint {
+      background: var(--bg-matcha);
+      border-left-color: var(--accent-mint);
+      color: #065F46;
+    }
+
+    /* Feature List Styling */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+      margin: 1.4rem 0;
+    }
+
+    .feature-item {
+      background: var(--bg-cream);
+      padding: 1.2rem 1.4rem;
+      border-radius: 18px;
+      border: 1.5px solid var(--border-soft);
+    }
+
+    .feature-item h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--accent-pink);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .feature-item p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+      margin: 0;
+    }
+
+    /* Rules & Privacy Bullets */
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 1rem 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 0.75rem;
+      color: #374151;
+    }
+
+    li::before {
+      content: "🌸";
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      font-size: 0.95rem;
+    }
+
+    li.check::before {
+      content: "✓";
+      color: var(--accent-mint);
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    li.shield::before {
+      content: "🛡️";
+    }
+
+    /* Table */
+    .data-table-wrapper {
+      overflow-x: auto;
+      margin: 1.4rem 0;
+      border-radius: 18px;
+      border: 1.5px solid var(--border-soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.94rem;
+      background: #FFFFFF;
+    }
+
+    th {
+      background: var(--bg-sakura);
+      color: var(--accent-pink);
+      font-family: var(--font-display);
+      font-weight: 700;
+      padding: 0.9rem 1.1rem;
+      border-bottom: 2px solid var(--border-pink);
+    }
+
+    td {
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid var(--border-soft);
+      color: #374151;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background: #FFFAF5;
+    }
+
+    /* Contact Box */
+    .contact-card {
+      background: linear-gradient(135deg, var(--bg-sakura) 0%, #FFF5EB 100%);
+      border: 2px solid var(--border-pink);
+      border-radius: 24px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .contact-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--accent-pink);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-pink);
+      background: #FFFFFF;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      border: 2px solid var(--border-pink);
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(255, 117, 143, 0.15);
+      margin-top: 0.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-email:hover {
+      background: var(--accent-pink);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(255, 117, 143, 0.28);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 2.5rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    footer p {
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.8rem 3.5rem;
+      }
+      .app-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.6rem 1.2rem;
+      }
+      .app-meta-badges {
+        justify-content: center;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+        border-radius: 20px;
+      }
+      .hero-wrapper {
+        border-radius: 20px;
+      }
+      .app-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- 1. HERO BANNER -->
+    <div class="hero-wrapper">
+      <img src="feature-image.png" alt="Sudoku: Tiệm Bánh Thỏ Mochi Feature Graphic" class="hero-image">
+    </div>
+
+    <!-- 2. APP PROFILE -->
+    <header class="app-profile">
+      <img src="playstore-app-icon.png" alt="Biểu tượng ứng dụng Sudoku" class="app-icon">
+      <div class="app-info">
+        <h1 class="app-title">Sudoku: Tiệm Bánh Thỏ Mochi</h1>
+        <div class="app-subtitle">Game Giải Đố Số Học Kinh Điển 9×9 · 100% Suy Luận Logic · Cozy &amp; Kawaii</div>
+        <div class="app-meta-badges">
+          <span class="badge badge-pink">🍓 Tiệm Bánh Thỏ Mochi</span>
+          <span class="badge badge-mint">✓ 100% Logic Không Đoán</span>
+          <span class="badge badge-butter">🎵 ASMR Kalimba</span>
+          <span class="badge badge-taro">📱 Offline 100%</span>
+          <span class="badge badge-pink">🛡️ Bảo Mật Google Play</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 3. THÔNG TIN PHÁT HÀNH GOOGLE PLAY STORE -->
+    <section class="card">
+      <h2 class="section-title"><span class="icon">🍰</span> Giới Thiệu Trò Chơi (Play Store Listing)</h2>
+      
+      <p>
+        <strong>Sudoku: Tiệm Bánh Thỏ Mochi</strong> (mã gói: <code>cm.mt.sudoku</code>) là trò chơi giải đố số học kinh điển 9×9 được tái định vị toàn diện theo phong cách **hiện đại, dễ thương và chữa lành tâm hồn (cozy &amp; kawaii aesthetic)**. Trò chơi mang đến không gian thư giãn êm dịu như một trang sổ tay **Bullet Journal** hay một **Khay Bánh Bento 9 Ngăn** ngọt ngào, xua tan hoàn toàn cảm giác khô khan của các bảng tính số học truyền thống.
+      </p>
+
+      <div class="callout-box">
+        <strong>Mô Tả Ngắn (Short Description trên Google Play Store):</strong><br>
+        <em>"Sudoku Tiệm Bánh Ngọt Ngào 🍰. Bé thỏ Mochi, 100% logic có giải thích, offline."</em>
+      </div>
+
+      <h3 style="font-family: var(--font-display); color: var(--text-cocoa); margin: 1.5rem 0 0.8rem; font-size: 1.25rem;">
+        Mô Tả Chi Tiết (Full Description):
+      </h3>
+
+      <p>
+        Chào mừng bạn đến với <strong>Sudoku: Tiệm Bánh Thỏ Mochi 🍰</strong> — Thế giới giải đố số học ngọt ngào và chữa lành tâm hồn!
+      </p>
+      <p>
+        Tạm biệt những bảng tính số học khô khan, hãy bước vào tiệm trà bánh ấm áp cùng Bé Thỏ Mochi nếp dẻo! Thưởng thức từng ván Sudoku 9×9 thư thái như một cuốn sổ tay nhật ký bullet journal xinh xắn, với âm thanh phím đàn Kalimba trong trẻo và những viên kẹo số sắc màu.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h4>🍱 Giao Diện Sweet Bento Cực Xinh</h4>
+          <p>Khay bánh bento 9 ngăn pastel êm dịu, bảo vệ mắt. 9 chữ số kẹo ngọt sắc màu trực quan, bàn phím 3D kẹo dẻo bấm giòn tan cực đã tay. Báo lỗi ửng hồng má nhẹ nhàng, không gây áp lực.</p>
+        </div>
+        <div class="feature-item">
+          <h4>🐰 Đồng Hành Cùng Bé Thỏ Mochi</h4>
+          <p>Linh vật bé thỏ mochi tròn vo má hồng luôn ở bên cổ vũ và vẫy tay chào bạn. Cùng bé ăn mừng chiến thắng với pháo hoa giấy confetti và bánh ngọt rực rỡ!</p>
+        </div>
+        <div class="feature-item">
+          <h4>🧠 100% Suy Luận Logic — Không Cần Đoán Mò</h4>
+          <p>Mọi ván chơi đều có nghiệm duy nhất được kiểm chứng chặt chẽ. Cam kết 100% giải được bằng logic thuần túy từ cơ bản đến nâng cao mà không bao giờ phải thử sai.</p>
+        </div>
+        <div class="feature-item">
+          <h4>💡 Gợi Ý Kèm Giải Thích Dễ Hiểu</h4>
+          <p>Bé Thỏ Mochi sẽ cầm bút chì cà rốt chỉ ra ô mấu chốt và giải thích cặn kẽ lý do (Ô đơn độc vị, Ô đơn ẩn giấu, Cặp khoá hàng/cột, X-Wing...) giúp bạn nâng cao tư duy mỗi ngày.</p>
+        </div>
+        <div class="feature-item">
+          <h4>🎵 Âm Thanh ASMR Kalimba Chữa Lành</h4>
+          <p>Từng phím số vang lên như tiếng đàn Kalimba trong veo và tiếng búng nước dịu dàng, giúp bạn tĩnh tâm, tập trung sâu và xua tan căng thẳng sau giờ học tập, làm việc.</p>
+        </div>
+        <div class="feature-item">
+          <h4>🛠️ Công Cụ Hỗ Trợ Đắc Lực</h4>
+          <p>Ghi chú bút chì pastel (Pencil marks) &amp; Tự động dọn ghi chú thông minh. Hoàn tác (Undo) không giới hạn. Chơi hoàn toàn OFFLINE: Không cần Internet/4G, tự động lưu tức thì.</p>
+        </div>
+      </div>
+
+      <h4 style="font-family: var(--font-display); color: var(--text-cocoa); margin-top: 1.2rem; font-size: 1.05rem;">4 Cấp Độ Khó Vô Hạn Màn Chơi:</h4>
+      <ul>
+        <li><strong>🍓 Dễ (Bánh Dâu Nhẹ Nhàng):</strong> 38 ô cho sẵn, giải thuần tuý bằng kỹ thuật Naked/Hidden Single. Khởi động thư giãn, giải tỏa căng thẳng.</li>
+        <li><strong>🍑 Vừa (Trà Đào Vừa Vặn):</strong> 32 ô cho sẵn, kết hợp thêm kỹ thuật Pointing/Claiming Pairs. Thử thách quan sát và kết hợp đa chiều.</li>
+        <li><strong>🍫 Khó (Socola Thử Thách):</strong> 28 ô cho sẵn, vận dụng Naked/Hidden Pairs và mô hình X-Wing kinh điển.</li>
+        <li><strong>🧁 Chuyên Gia (Macaron Đỉnh Cao):</strong> 26 ô cho sẵn, thử thách đỉnh cao dành riêng cho bậc thầy Sudoku.</li>
+      </ul>
+    </section>
+
+    <!-- 4. CHÍNH SÁCH QUYỀN RIÊNG TƯ CHUẨN GOOGLE PLAY -->
+    <section class="card">
+      <h2 class="section-title"><span class="icon">🛡️</span> Chính Sách Quyền Riêng Tư (Privacy Policy)</h2>
+
+      <p><em>Ngày có hiệu lực: 13 tháng 10 năm 2026 | Phiên bản: 1.0.0</em></p>
+      
+      <p>
+        Chào mừng bạn đến với chính sách bảo mật của <strong>Sudoku: Tiệm Bánh Thỏ Mochi</strong> (được phát triển bởi <strong>MT Games</strong>). Chúng tôi cam kết bảo vệ quyền riêng tư và dữ liệu cá nhân của người chơi một cách minh bạch, tuyệt đối tuân thủ chính sách của <strong>Google Play Developer Program Policies</strong>, quy định bảo vệ dữ liệu chung châu Âu (<strong>GDPR</strong>) và đạo luật bảo vệ quyền riêng tư của trẻ em trên mạng (<strong>COPPA</strong>).
+      </p>
+
+      <div class="callout-box mint">
+        <strong>Cam Kết Cốt Lõi:</strong><br>
+        Ứng dụng hoạt động <strong>hoàn toàn Offline</strong>, <strong>KHÔNG</strong> yêu cầu đăng ký tài khoản, <strong>KHÔNG</strong> thu thập họ tên, email, số điện thoại, vị trí địa lý hay danh bạ, và <strong>KHÔNG</strong> lưu trữ bất kỳ thông tin nhận dạng cá nhân (PII) nào trên máy chủ riêng.
+      </div>
+
+      <!-- 4.1 Thu Thập Dữ Liệu -->
+      <h3 style="font-family: var(--font-display); color: var(--text-cocoa); margin: 1.8rem 0 0.8rem; font-size: 1.25rem;">
+        1. Dữ Liệu Chúng Tôi Thu Thập &amp; Không Thu Thập
+      </h3>
+      
+      <div class="data-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Loại Thông Tin</th>
+              <th>Thu Thập?</th>
+              <th>Mục Đích &amp; Cơ Chế Xử Lý</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Thông tin cá nhân (Tên, Email, SĐT)</strong></td>
+              <td><span style="color: #DC2626; font-weight: 700;">Không</span></td>
+              <td>Ứng dụng không có tính năng đăng ký, đăng nhập hay tài khoản người dùng.</td>
+            </tr>
+            <tr>
+              <td><strong>Danh bạ, Tin nhắn, Ảnh, Tệp tin</strong></td>
+              <td><span style="color: #DC2626; font-weight: 700;">Không</span></td>
+              <td>Ứng dụng không yêu cầu và không có quyền truy cập vào danh bạ, thư viện ảnh hay tệp riêng tư.</td>
+            </tr>
+            <tr>
+              <td><strong>Vị trí địa lý chính xác (GPS)</strong></td>
+              <td><span style="color: #DC2626; font-weight: 700;">Không</span></td>
+              <td>Không sử dụng cảm biến vị trí hay quyền GPS.</td>
+            </tr>
+            <tr>
+              <td><strong>Tiến trình chơi (Màn, Sao, Kỷ lục)</strong></td>
+              <td><span style="color: #10B981; font-weight: 700;">Cục bộ</span></td>
+              <td>Được lưu trực tiếp trong bộ nhớ bảo mật cục bộ của thiết bị (<code>user://</code>), không gửi lên server.</td>
+            </tr>
+            <tr>
+              <td><strong>Mã định danh quảng cáo (Google Advertising ID)</strong></td>
+              <td><span style="color: #FA8C16; font-weight: 700;">Có (Bên thứ 3)</span></td>
+              <td>Được Google AdMob SDK xử lý để phân phối quảng cáo và đo lường tần suất hiển thị.</td>
+            </tr>
+            <tr>
+              <td><strong>Thông tin thanh toán Mua hàng (IAP)</strong></td>
+              <td><span style="color: #FA8C16; font-weight: 700;">Google Play</span></td>
+              <td>Được xử lý 100% bởi Google Play Billing. Nhà phát triển không nhận thông tin thẻ thanh toán.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 4.2 Các Quyền Ứng Dụng Yêu Cầu -->
+      <h3 style="font-family: var(--font-display); color: var(--text-cocoa); margin: 1.8rem 0 0.8rem; font-size: 1.25rem;">
+        2. Toàn Bộ Quyền Hệ Thống Ứng Dụng Yêu Cầu (App Permissions)
+      </h3>
+      <p>Ứng dụng được thiết kế tối giản quyền hạn hệ thống trên Android, chỉ yêu cầu các quyền thực sự cần thiết sau:</p>
+      <ul>
+        <li><code>android.permission.INTERNET</code>: Cho phép kết nối Internet để tải quảng cáo từ Google AdMob và xác thực trạng thái mua gói "Xoá quảng cáo" qua Google Play Billing.</li>
+        <li><code>android.permission.ACCESS_NETWORK_STATE</code>: Cho phép kiểm tra thiết bị đang có kết nối mạng hay đang ở chế độ Offline để tối ưu luồng hiển thị trong game.</li>
+        <li><code>com.android.vending.BILLING</code>: Cho phép giao tiếp với dịch vụ Google Play Billing để người chơi thực hiện giao dịch mua một lần (Gói Xoá Quảng Cáo <code>remove_ads</code>).</li>
+        <li><code>android.permission.VIBRATE</code>: Cho phép kích hoạt rung phản hồi xúc giác nhẹ (Haptic feedback) khi chạm phím số hoặc thông báo lỗi nhẹ. Người chơi có thể tắt hoàn toàn tính năng rung trong mục Cài đặt.</li>
+      </ul>
+      <p>
+        Ứng dụng <strong>KHÔNG</strong> yêu cầu các quyền nhạy cảm như: <em>Camera, Ghi âm micro, Đọc/Ghi bộ nhớ ngoài (READ_EXTERNAL_STORAGE), Quyền truy cập vị trí nền, Quyền truy cập danh bạ, hay Quyền nhận dạng cuộc gọi</em>.
+      </p>
+
+      <!-- 4.3 Dịch Vụ & SDK Bên Thứ Ba -->
+      <h3 style="font-family: var(--font-display); color: var(--text-cocoa); margin: 1.8rem 0 0.8rem; font-size: 1.25rem;">
+        3. Dịch Vụ &amp; SDK Bên Thứ Ba (Third-Party SDKs)
+      </h3>
+      <p>Để duy trì mô hình phát hành miễn phí chất lượng cao và hỗ trợ thanh toán an toàn, ứng dụng tích hợp hai thư viện chính thức từ Google:</p>
+      
+      <div style="background: var(--bg-cream); padding: 1.3rem 1.5rem; border-radius: 20px; border: 1.5px solid var(--border-soft); margin-bottom: 1.2rem;">
+        <h4 style="font-family: var(--font-display); color: var(--accent-pink); margin-bottom: 0.4rem;">
+          a. Google Mobile Ads (AdMob SDK)
+        </h4>
+        <p style="font-size: 0.94rem; margin-bottom: 0.5rem;">
+          Ứng dụng sử dụng dịch vụ AdMob để hiển thị banner, interstitial sau ván chơi và video rewarded tuỳ chọn. AdMob có thể sử dụng Mã nhận dạng quảng cáo của Google (AAID) và dữ liệu chẩn đoán sự cố ứng dụng để phục vụ quảng cáo phù hợp và chống gian lận.
+        </p>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0;">
+          Chính sách AdMob: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color: var(--accent-pink); text-decoration: underline;">https://policies.google.com/technologies/ads</a><br>
+          Chính sách bảo mật Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--accent-pink); text-decoration: underline;">https://policies.google.com/privacy</a>
+        </p>
+      </div>
+
+      <div style="background: var(--bg-cream); padding: 1.3rem 1.5rem; border-radius: 20px; border: 1.5px solid var(--border-soft);">
+        <h4 style="font-family: var(--font-display); color: var(--accent-taro); margin-bottom: 0.4rem;">
+          b. Google Play In-App Billing (Google Play Billing SDK)
+        </h4>
+        <p style="font-size: 0.94rem; margin-bottom: 0.5rem;">
+          Được sử dụng cho tính năng mua gói vĩnh viễn "Xoá quảng cáo" (<code>remove_ads</code>). Toàn bộ giao dịch được mã hoá và bảo vệ bởi hạ tầng thanh toán bảo mật của Google Play. Chúng tôi không bao giờ thu thập, lưu trữ hay có quyền truy cập vào thông tin thẻ ngân hàng hoặc tài khoản tài chính của bạn.
+        </p>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0;">
+          Điều khoản Google Play: <a href="https://play.google.com/intl/vi_vn/about/play-terms/" target="_blank" rel="noopener" style="color: var(--accent-taro); text-decoration: underline;">https://play.google.com/about/play-terms/</a>
+        </p>
+      </div>
+
+      <!-- 4.4 Chính Sách Thu Thập, Sử Dụng và Xóa Dữ Liệu -->
+      <h3 style="font-family: var(--font-display); color: var(--text-cocoa); margin: 1.8rem 0 0.8rem; font-size: 1.25rem;">
+        4. Chính Sách Thu Thập, Sử Dụng và Xóa Dữ Liệu (Data Collection, Usage, and Deletion Policy)
+      </h3>
+      <p>
+        Theo chuẩn minh bạch dữ liệu <strong>Google Play Data Safety</strong>, người chơi có toàn quyền kiểm soát và xóa dữ liệu của mình bất cứ lúc nào thông qua các cơ chế sau:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Tự xóa dữ liệu tiến trình chơi trên thiết bị:</strong> Vì dữ liệu trò chơi (màn đã giải, kỷ lục, tuỳ chọn) chỉ lưu cục bộ, bạn có thể xóa toàn bộ dữ liệu này ngay lập tức bằng cách:
+          <br>
+          <em>Mở Cài đặt Android → Ứng dụng → Sudoku → Lưu trữ &amp; Bộ nhớ đệm → Chọn <strong>"Xoá bộ nhớ" (Clear Storage)</strong> hoặc gỡ cài đặt ứng dụng (Uninstall).</em>
+        </li>
+        <li>
+          <strong>Xóa và Đặt lại Mã định danh quảng cáo (Google Advertising ID):</strong> Bạn có toàn quyền đặt lại hoặc xóa hoàn toàn mã định danh quảng cáo để các mạng quảng cáo không thể liên kết hành vi:
+          <br>
+          <em>Mở Cài đặt Android → Google → Quảng cáo (Ads) → Chọn <strong>"Đặt lại ID quảng cáo" (Reset Advertising ID)</strong> hoặc <strong>"Xóa ID quảng cáo" (Delete Advertising ID)</strong>.</em>
+        </li>
+        <li>
+          <strong>Tắt quảng cáo cá nhân hoá (GDPR &amp; UK Consent):</strong> Người dùng trong Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh có thể thay đổi hoặc thu hồi quyền đồng ý về dữ liệu quảng cáo bất cứ lúc nào tại mục <em>Cài đặt trong game → Tuỳ chọn quảng cáo (GDPR)</em>.
+        </li>
+        <li>
+          <strong>Yêu cầu hỗ trợ xóa dữ liệu từ nhà phát triển:</strong> Nếu bạn có bất kỳ câu hỏi nào về việc xóa dữ liệu liên quan, bạn có thể gửi yêu cầu trực tiếp qua email <a href="mailto:minhthang0792@gmail.com" style="color: var(--accent-pink); font-weight: 700;">minhthang0792@gmail.com</a>. Chúng tôi sẽ phản hồi và xử lý yêu cầu của bạn trong vòng tối đa <strong>48 giờ làm việc</strong>.
+        </li>
+      </ul>
+
+      <!-- 4.5 Quyền Riêng Tư Của Trẻ Em -->
+      <h3 style="font-family: var(--font-display); color: var(--text-cocoa); margin: 1.8rem 0 0.8rem; font-size: 1.25rem;">
+        5. Quyền Riêng Tư Của Trẻ Em (Children's Privacy - COPPA)
+      </h3>
+      <p>
+        Sudoku: Tiệm Bánh Thỏ Mochi là trò chơi giải đố số học lành mạnh phù hợp với người chơi ở mọi độ tuổi. Trò chơi không hướng tới đối tượng người dùng dưới 13 tuổi và không cố ý thu thập dữ liệu cá nhân của trẻ em. Nếu phụ huynh hoặc người giám hộ phát hiện bất kỳ thông tin nào được thu thập ngoài ý muốn, vui lòng liên hệ ngay với chúng tôi để được hỗ trợ loại bỏ kịp thời.
+      </p>
+
+      <!-- 4.6 Thay Đổi Chính Sách -->
+      <h3 style="font-family: var(--font-display); color: var(--text-cocoa); margin: 1.8rem 0 0.8rem; font-size: 1.25rem;">
+        6. Cập Nhật Chính Sách Bảo Mật
+      </h3>
+      <p>
+        Chúng tôi có thể định kỳ cập nhật chính sách này để phản ánh các thay đổi trong quy định pháp lý hoặc phiên bản ứng dụng mới. Mọi cập nhật sẽ được đăng tải trực tiếp tại địa chỉ URL công khai này và ghi rõ ngày cập nhật hiệu lực mới nhất.
+      </p>
+
+      <!-- 4.7 Thông Tin Liên Hệ Dev -->
+      <div class="contact-card">
+        <h3>💌 Thông Tin Liên Hệ &amp; Hỗ Trợ Nhà Phát Triển</h3>
+        <p style="font-size: 0.95rem; color: var(--text-cocoa);">
+          Nếu bạn có bất kỳ thắc mắc, đóng góp ý kiến về trò chơi hoặc câu hỏi liên quan đến chính sách quyền riêng tư, đừng ngần ngại gửi thư cho chúng tôi:
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem;">
+          <strong>Nhà phát triển:</strong> MT Games<br>
+          <strong>Ứng dụng:</strong> Sudoku: Tiệm Bánh Thỏ Mochi (<code>cm.mt.sudoku</code>)
+        </p>
+        <a href="mailto:minhthang0792@gmail.com" class="contact-email">
+          ✉️ minhthang0792@gmail.com
+        </a>
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p><strong>Sudoku: Tiệm Bánh Thỏ Mochi</strong> &copy; 2026 MT Games. Mọi quyền được bảo lưu.</p>
+      <p>Thiết kế dành cho cộng đồng yêu thích giải đố tư duy logic &amp; thẩm mỹ kẹo ngọt dễ thương.</p>
+      <p style="font-size: 0.82rem; margin-top: 0.6rem; color: var(--text-light);">
+        URL công khai: <code>https://minhthang9911.github.io/cm-mt-sudoku/privacy-policy.html</code>
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

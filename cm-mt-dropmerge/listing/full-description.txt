@@ -1,0 +1,23 @@
+Drop Merge - Thả Kẹo Gộp 2048 là tựa game giải đố kẹo dẻo pastel siêu dễ thương, mang đến cảm giác thư giãn (cozy & healing) tuyệt đối cùng lối chơi thả gộp bất tận (endless) cực kỳ lôi cuốn!
+
+🍬 CÁCH CHƠI ĐƠN GIẢN & GÂY NGHIỆN:
+• Chạm hoặc kéo ngón tay để ngắm 1 trong 5 cột khay kẹo.
+• Thả tay để viên kẹo dẻo mochi rơi xuống đáy cột và nảy tưng tưng.
+• Chạm ô cùng số ở DƯỚI, TRÁI hoặc PHẢI sẽ tự động gộp thành kẹo vị mới gấp đôi (2 ➔ 4 ➔ 8 ➔ 16 ➔ ... ➔ 2048).
+• Gộp nhiều ô cùng lúc sẽ tạo nên chuỗi DÂY CHUYỀN liên hoàn bùng nổ sao và trái tim!
+• Trò chơi kết thúc khi cả 5 cột đều đầy và không còn chỗ trống để thả kẹo mới.
+
+✨ TÍNH NĂNG NỔI BẬT DÀNH CHO BẠN:
+• 🌸 Giao diện Pastel Jelly Pop ngọt ngào: Tông màu kem dâu sữa êm dịu mắt, các viên kẹo bóng bẩy như thạch pha lê, font chữ bo tròn phúng phính.
+• 💖 Cơ chế nảy dẻo (Squishy Jiggle): Từng cú chạm và gộp mang lại cảm giác xúc giác "cực sướng tay", xua tan căng thẳng sau giờ học và làm việc.
+• 🧹 Cơn mưa kẹo dọn ô nhỏ: Khi bạn tạo ra kẹo mốc mới (như 1024, 2048), mọi ô kẹo quá nhỏ sẽ tự động tan biến thành bụi tiên lấp lánh.
+• ⭐ Bộ bảo bối ma thuật đáng yêu:
+  - Nơ Hoàn tác: Quay ngược 1 bước đi lỡ tay.
+  - Gậy Sao Phép Thuật: Chạm để xoá viên kẹo cản đường thành bụi sao.
+  - Trái Tim Hoán Đổi: Đổi chỗ kẹo hiện tại và kẹo kế tiếp hoàn toàn miễn phí.
+  - Hồi sinh tiếp tục: Cơ hội xoá 2 hàng đáy để viết tiếp kỷ lục mới!
+• 🎵 Âm thanh thủy tinh pha lê vui tai: Chuỗi âm thanh pop-bloop vui nhộn êm dịu, không gây ồn ào khó chịu.
+• 📴 Chơi offline 100%: Hoàn toàn không cần wifi hay dữ liệu di động, không cần đăng nhập. Chơi mọi lúc, mọi nơi!
+• 🔋 Siêu nhẹ máy & tiết kiệm pin: Dung lượng nhỏ gọn, chạy mượt mà 60 FPS trên mọi dòng máy Android.
+
+Bạn có thể tạo ra được viên kẹo Cầu Vồng 2048, Thiên Hà 4096 hay bứt phá 1 TRIỆU điểm không? Hãy tải ngay Drop Merge và đắm chìm vào thế giới kẹo ngọt hôm nay!

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mines - Dò Mìn Không Đoán | Giới Thiệu &amp; Chính Sách Quyền Riêng Tư</title>
+  <meta name="description" content="Trang thông tin chính thức, giới thiệu tính năng, mô tả chuẩn Google Play Store và chính sách quyền riêng tư (Privacy Policy) của trò chơi Mines - Dò Mìn Không Đoán (cm.mt.mines).">
+  <link rel="icon" type="image/png" href="playstore-app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FFFDF9;
+      --bg-latte: #FFF6F0;
+      --bg-card: rgba(255, 255, 255, 0.94);
+      --bg-card-subtle: #FFF0F4;
+      --pink-primary: #FF8FA3;
+      --pink-deep: #FF5D73;
+      --pink-soft: #FFD5DE;
+      --green-mint: #74C69D;
+      --mint-deep: #52B788;
+      --yellow-butter: #FCE38A;
+      --yellow-deep: #F5C344;
+      --purple-taro: #C8B6FF;
+      --brown-cocoa: #6C584C;
+      --ink-warm: #3D2C2E;
+      --text-muted: #7E6C6E;
+      --border-warm: #FFE5EC;
+      --border-strong: #FFB3C1;
+      --shadow-soft: 0 12px 36px rgba(255, 143, 163, 0.12), 0 4px 12px rgba(61, 44, 46, 0.05);
+      --shadow-hover: 0 16px 44px rgba(255, 143, 163, 0.18), 0 6px 16px rgba(61, 44, 46, 0.08);
+      --font-title: 'Baloo 2', cursive, sans-serif;
+      --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-cream);
+      background-image: 
+        radial-gradient(circle at 10% 12%, rgba(255, 143, 163, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 90% 18%, rgba(252, 227, 138, 0.22) 0%, transparent 40%),
+        radial-gradient(circle at 50% 65%, rgba(116, 198, 157, 0.14) 0%, transparent 50%),
+        radial-gradient(circle at 85% 85%, rgba(200, 182, 255, 0.16) 0%, transparent 45%),
+        linear-gradient(180deg, #FFFDF9 0%, #FFF8FA 50%, #FFF5F2 100%);
+      background-attachment: fixed;
+      color: var(--ink-warm);
+      font-family: var(--font-body);
+      line-height: 1.75;
+      padding: 1.5rem 1rem 5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Top Floating Navigation */
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .nav-pill {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1.5px solid var(--border-warm);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--brown-cocoa);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(61, 44, 46, 0.04);
+    }
+    .nav-pill:hover {
+      background: var(--pink-soft);
+      color: var(--pink-deep);
+      border-color: var(--pink-primary);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Graphic Card */
+    .hero-card {
+      width: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 16px 40px rgba(255, 93, 115, 0.16), 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 2px solid var(--border-warm);
+      background: #FFFFFF;
+      transition: transform 0.3s ease;
+    }
+    .hero-card:hover {
+      transform: translateY(-3px);
+    }
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* App Profile Banner */
+    .app-profile {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.8rem 2.2rem;
+      border-radius: 28px;
+      border: 2px solid var(--border-warm);
+      margin-bottom: 2.2rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 8px 24px rgba(255, 93, 115, 0.22);
+      flex-shrink: 0;
+      object-fit: cover;
+      background: var(--bg-latte);
+    }
+    .app-info {
+      flex: 1;
+    }
+    .app-info h1 {
+      font-family: var(--font-title);
+      font-size: 2.1rem;
+      line-height: 1.25;
+      color: var(--pink-deep);
+      margin-bottom: 0.3rem;
+    }
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.4rem 0 0.6rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 8px;
+    }
+    .badge-package {
+      background: #FFF0F3;
+      color: var(--pink-deep);
+      border: 1px solid var(--pink-soft);
+      font-family: monospace;
+    }
+    .badge-highlight {
+      background: #E8F8F0;
+      color: var(--mint-deep);
+      border: 1px solid #B8E8D0;
+    }
+    .badge-theme {
+      background: #FFF9E6;
+      color: #997404;
+      border: 1px solid #FCE38A;
+    }
+    .app-info p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      font-weight: 500;
+    }
+
+    /* Content Cards */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 26px;
+      border: 2px solid var(--border-warm);
+      padding: 2.2rem 2.4rem;
+      margin-bottom: 2.2rem;
+      box-shadow: var(--shadow-soft);
+      transition: box-shadow 0.25s ease;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    h2 {
+      font-family: var(--font-title);
+      font-size: 1.7rem;
+      color: var(--pink-deep);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      border-bottom: 2px dashed var(--border-warm);
+      padding-bottom: 0.6rem;
+    }
+    h3 {
+      font-family: var(--font-title);
+      font-size: 1.3rem;
+      color: var(--ink-warm);
+      margin: 1.6rem 0 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--brown-cocoa);
+      margin: 1.2rem 0 0.4rem;
+    }
+    p {
+      margin-bottom: 0.9rem;
+      color: var(--ink-warm);
+      font-size: 1rem;
+    }
+    ul, ol {
+      margin-left: 1.4rem;
+      margin-bottom: 1.1rem;
+      color: var(--ink-warm);
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    strong {
+      color: var(--ink-warm);
+      font-weight: 700;
+    }
+
+    /* Highlight Candy Boxes */
+    .candy-box {
+      background: var(--bg-card-subtle);
+      border-left: 5px solid var(--pink-primary);
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.2rem 0;
+      box-shadow: 0 4px 14px rgba(255, 143, 163, 0.08);
+    }
+    .candy-box-mint {
+      background: #F0FBF5;
+      border-left-color: var(--green-mint);
+    }
+    .candy-box-yellow {
+      background: #FFFDF0;
+      border-left-color: var(--yellow-deep);
+    }
+
+    /* Store Listing Text Boxes */
+    .store-text-box {
+      background: #FFF8FA;
+      border: 1.5px solid var(--border-warm);
+      border-radius: 18px;
+      padding: 1.2rem 1.4rem;
+      margin: 0.9rem 0 1.4rem;
+      font-size: 0.98rem;
+    }
+    .store-text-box.pre-wrap {
+      white-space: pre-wrap;
+      line-height: 1.7;
+      font-size: 0.95rem;
+      background: #FFFFFF;
+      border-color: #F0E6EA;
+    }
+
+    /* Modern Table */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1.2rem 0;
+      border-radius: 16px;
+      border: 1.5px solid var(--border-warm);
+      background: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(61, 44, 46, 0.03);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid var(--border-warm);
+      vertical-align: top;
+    }
+    th {
+      background: #FFF0F4;
+      font-family: var(--font-title);
+      font-size: 1.02rem;
+      color: var(--pink-deep);
+      font-weight: 700;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #FFFCFD; }
+
+    /* Contact Box */
+    .contact-card {
+      background: linear-gradient(135deg, #FFF0F4 0%, #FFF9E6 100%);
+      border: 2px solid var(--pink-soft);
+      border-radius: 20px;
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--pink-primary);
+      color: #FFFFFF;
+      font-family: var(--font-title);
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(255, 143, 163, 0.35);
+      transition: all 0.2s ease;
+    }
+    .contact-btn:hover {
+      background: var(--pink-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 93, 115, 0.4);
+      color: #FFFFFF;
+    }
+
+    code {
+      font-family: monospace;
+      background: #FFF0F3;
+      color: var(--pink-deep);
+      padding: 0.15rem 0.45rem;
+      border-radius: 6px;
+      font-size: 0.92rem;
+      border: 1px solid #FFE5EC;
+    }
+
+    a {
+      color: var(--pink-deep);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    a:hover {
+      color: #D83A56;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 2px dashed var(--border-warm);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+    footer p {
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 680px) {
+      body { padding: 1rem 0.8rem 4rem; }
+      .app-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.6rem 1.2rem;
+      }
+      .badge-group { justify-content: center; }
+      .card { padding: 1.6rem 1.3rem; border-radius: 20px; }
+      .app-info h1 { font-size: 1.7rem; }
+      h2 { font-size: 1.45rem; }
+      .contact-card { flex-direction: column; text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Quick Links -->
+    <nav class="top-nav">
+      <a href="#about" class="nav-pill">🌸 Giới Thiệu</a>
+      <a href="#store-listing" class="nav-pill">📋 Google Play Listing</a>
+      <a href="#privacy-policy" class="nav-pill">🛡️ Quyền Riêng Tư</a>
+      <a href="#permissions" class="nav-pill">📱 Quyền Ứng Dụng</a>
+      <a href="#third-party-sdk" class="nav-pill">⚙️ SDK Bên Thứ Ba</a>
+      <a href="#data-deletion" class="nav-pill">🗑️ Quản Lý &amp; Xóa Dữ Liệu</a>
+      <a href="#contact" class="nav-pill">📧 Liên Hệ</a>
+    </nav>
+
+    <!-- Hero Image Banner -->
+    <div class="hero-card">
+      <img src="feature-image.png" alt="Mines Feature Graphic - Vườn Hoa Không Đoán" class="hero-image">
+    </div>
+
+    <!-- App Profile Header -->
+    <header class="app-profile">
+      <img src="playstore-app-icon.png" alt="Mines App Icon" class="app-icon">
+      <div class="app-info">
+        <h1>Mines - Dò Mìn Không Đoán</h1>
+        <div class="badge-group">
+          <span class="badge badge-package">cm.mt.mines</span>
+          <span class="badge badge-highlight">🌸 100% No-Guess</span>
+          <span class="badge badge-theme">✨ Offline &bull; Pastel Garden</span>
+        </div>
+        <p>Phát triển bởi <strong>MT Games</strong> &bull; Trò chơi giải đố dò mìn suy luận logic thuần tuý không may rủi dành cho mọi lứa tuổi.</p>
+      </div>
+    </header>
+
+    <!-- SECTION 1: Giới thiệu Game -->
+    <section id="about" class="card">
+      <h2>🌸 Giới Thiệu Trò Chơi</h2>
+      <p><strong>Mines - Dò Mìn Không Đoán</strong> là phiên bản nâng cấp sáng tạo của trò chơi dò mìn cổ điển (Minesweeper), loại bỏ hoàn toàn tình thế bế tắc 50/50 bắt buộc phải đoán mò. Toàn bộ bàn cờ được thuật toán độc quyền tạo dựng nhằm đảm bảo <strong>100% giải được bằng suy luận logic thuần tuý</strong>.</p>
+      
+      <div class="candy-box candy-box-mint">
+        <h4 style="color: var(--mint-deep); margin-top: 0;">✨ 5 Điểm đột phá chỉ có tại Mines:</h4>
+        <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+          <li><strong>Vùng mở đầu an toàn tuyệt đối:</strong> Luôn tự động mở rộng sẵn từ đầu ván, không bao giờ lo nổ mìn ở nước đi đầu tiên.</li>
+          <li><strong>Bé Chuột Chũi Mochi ngộ nghĩnh:</strong> Mascot đồng hành cùng biểu cảm sinh động (chớp mắt, vẫy tay ăn mừng, mắt xoáy khi trúng mìn).</li>
+          <li><strong>Hệ thống Gợi ý thông minh (Hint with Reason):</strong> Giải thích cặn kẽ từng bước suy luận bằng tiếng Việt qua 5 cấp độ luật logic khoa học.</li>
+          <li><strong>Thử thách Bàn cờ Lục giác (Hexagonal ⬡):</strong> Cấu trúc tổ ong 6 ô láng giềng độc đáo, mở ra trải nghiệm tư duy hình học mới lạ.</li>
+          <li><strong>Giao diện Pastel Garden kẹo ngọt:</strong> Bảng màu pastel êm dịu, font chữ tròn phồng trẻ trung, âm thanh ASMR marimba thư giãn.</li>
+        </ul>
+      </div>
+
+      <h3>🎮 3 Chế độ chơi đa dạng</h3>
+      <ul>
+        <li><strong>⏱️ Cổ điển (Classic):</strong> 3 cấp độ chuẩn mực Dễ (9×9), Vừa (16×16) và Khó (16×30 có zoom/pan mượt mà). Tự động ghi nhận kỷ lục cá nhân và trao huy hiệu <em>"Chiến thắng sạch"</em> khi không dùng quyền trợ giúp.</li>
+        <li><strong>🗺️ Hành trình hoa (Journey):</strong> Khám phá chuỗi vô hạn các màn chơi với độ khó tăng dần, thu thập sao và chinh phục các bàn cờ lục giác đặc biệt.</li>
+        <li><strong>📅 Thử thách mỗi ngày (Daily):</strong> Mỗi ngày một câu đố mới, duy trì ngọn lửa chuỗi ngày chiến thắng liên tiếp (streak) và lưu vào sổ tay Bullet Journal.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 2: Google Play Store Listing -->
+    <section id="store-listing" class="card">
+      <h2>📋 Thông Tin Niêm Yết Google Play Store</h2>
+      <p>Thông tin chính thức đã được kiểm duyệt và áp dụng trên cửa hàng Google Play Store theo tiêu chuẩn quốc tế:</p>
+
+      <h4>1. Tên ứng dụng (App Title - Tối đa 30 ký tự)</h4>
+      <div class="store-text-box">
+        <strong>Mines - Dò Mìn Không Đoán</strong>
+      </div>
+
+      <h4>2. Mô tả ngắn (Short Description - Tối đa 80 ký tự)</h4>
+      <div class="store-text-box">
+        Dò mìn 100% không đoán, gợi ý có lý do. Cổ điển, hành trình, lục giác. Offline.
+      </div>
+
+      <h4>3. Mô tả đầy đủ (Full Description)</h4>
+      <div class="store-text-box pre-wrap">Chào mừng bạn đến với Mines - Dò Mìn Không Đoán, tựa game dò mìn giải đố logic đỉnh cao loại bỏ hoàn toàn yếu tố may rủi!
+
+Tại sao gọi là "Không Đoán" (No-Guess)?
+Trong trò chơi dò mìn (Minesweeper) truyền thống, chắc hẳn bạn đã nhiều lần bực bội khi rơi vào tình thế 50/50 bắt buộc phải đoán mò ở cuối ván. Với Mines, mọi bàn cờ đều được thuật toán tạo dựng đảm bảo 100% giải được bằng suy luận thuần tuý. Vùng bắt đầu luôn tự động mở rộng sẵn, mang đến khởi đầu thuận lợi mà bạn không bao giờ phải lo lắng bấm trúng mìn ở nước đầu tiên!
+
+Hệ thống gợi ý thông minh kèm lý do:
+Nếu bạn gặp bế tắc, tính năng Gợi ý sẽ không chỉ chỉ ra ô an toàn hay ô mìn, mà còn giải thích chi tiết bước suy luận bằng tiếng Việt dễ hiểu dựa trên 5 cấp độ luật logic (đủ mìn, thiếu mìn, so sánh tập hợp kề nhau, thử nghiệm mâu thuẫn biên). Đây là công cụ tuyệt vời để vừa chơi vừa rèn luyện kỹ năng tư duy phản biện.
+
+3 chế độ chơi phong phú:
+• Cổ điển (Classic): 3 cấp độ quen thuộc Dễ (9×9), Vừa (16×16) và Khó (16×30 hỗ trợ thu phóng mượt mà). Tự động theo dõi thời gian phá kỷ lục và trao tặng huy hiệu "Chiến thắng sạch" khi hoàn thành không cần trợ giúp.
+• Hành trình (Journey): Khám phá chuỗi hàng trăm màn chơi liên tục với độ khó tăng dần, thu thập sao xếp hạng và chinh phục những thử thách kích thước mới lạ.
+• Thử thách mỗi ngày (Daily Challenge): Mỗi ngày một bàn cờ đặc biệt, duy trì ngọn lửa chuỗi ngày thắng liên tiếp (streak) và xem lại nhật ký lịch tháng.
+
+Đặc sắc với Bàn cờ Lục giác (Hexagonal):
+Trải nghiệm phong cách giải đố tổ ong độc đáo với 6 ô láng giềng. Cấu trúc lục giác mở ra những góc suy luận hình học hoàn toàn mới lạ so với lưới vuông 8 ô truyền thống.
+
+2 phong cách giao diện tuỳ chọn:
+• Cổ điển: Tối giản, thanh lịch với các khối màu vector sắc nét, đậm chất game giải đố cổ điển.
+• Vườn hoa: Rực rỡ và vui nhộn với bãi cỏ xanh, hoa nở và những chú chuột chũi ngộ nghĩnh thay cho mìn.
+
+Tính năng & Tiện ích:
+• Chơi ngoại tuyến 100% (Offline): Hoàn toàn không cần kết nối mạng hay Wi-Fi.
+• Không cần tài khoản: Mở game là chơi ngay lập tức, dữ liệu và tiến trình được lưu tự động trên thiết bị.
+• Điều khiển linh hoạt: Chuyển đổi nhanh chế độ Mở / Cắm cờ, hỗ trợ cử chỉ giữ 280 ms để cắm cờ và mở nhanh tổ hợp (chord).
+• Cơ hội bứt phá: Cho phép Hồi sinh khi lỡ trúng mìn hoặc mở an toàn 1 ô hỗ trợ.
+
+Hãy tải ngay Mines - Dò Mìn Không Đoán và tận hưởng niềm vui suy luận trí tuệ trọn vẹn từng ván đấu!</div>
+    </section>
+
+    <!-- SECTION 3: Chính Sách Quyền Riêng Tư -->
+    <section id="privacy-policy" class="card">
+      <h2>🛡️ Chính Sách Quyền Riêng Tư (App Privacy Policy)</h2>
+      <p><em>Có hiệu lực từ: 14/10/2026 &bull; Áp dụng cho: Ứng dụng Mines (cm.mt.mines)</em></p>
+      <p>MT Games cam kết tôn trọng và bảo vệ tối đa quyền riêng tư của người dùng. Tài liệu này mô tả chi tiết cách thức ứng dụng thu thập, xử lý, bảo vệ và quyền quản lý dữ liệu của bạn theo đúng các chính sách hiện hành của Google Play Store.</p>
+
+      <div class="candy-box candy-box-yellow">
+        <strong>Nguyên tắc cốt lõi: Offline-First &amp; Quyền riêng tư tối đa:</strong>
+        <p style="margin-top: 0.4rem; margin-bottom: 0;">Trò chơi không yêu cầu người dùng đăng ký hay đăng nhập bất kỳ tài khoản nào. Ứng dụng không thu thập họ tên, địa chỉ email, số điện thoại hay danh bạ của bạn. Mọi tiến trình chơi, kỷ lục thời gian, cài đặt và số sao đều được lưu trữ hoàn toàn cục bộ trên thiết bị của bạn.</p>
+      </div>
+
+      <!-- Sub-section: Device Permissions -->
+      <h3 id="permissions">📱 1. Các quyền ứng dụng yêu cầu (Device Permissions)</h3>
+      <p>Ứng dụng chỉ yêu cầu các quyền hệ thống tối thiểu cần thiết để vận hành các tính năng kỹ thuật và dịch vụ tích hợp:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 32%;">Tên quyền (Android Permission)</th>
+              <th style="width: 25%;">Bên yêu cầu</th>
+              <th>Mục đích sử dụng cụ thể</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>android.permission.INTERNET</code></td>
+              <td>Google AdMob &amp; Google Play Billing</td>
+              <td>Cho phép tải quảng cáo (banner, interstitial, rewarded) và thực hiện xác thực giao dịch mua hàng qua Google Play.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+              <td>Google AdMob SDK</td>
+              <td>Kiểm tra thiết bị có kết nối Internet hay không trước khi gửi yêu cầu nạp quảng cáo để tiết kiệm tài nguyên mạng và pin.</td>
+            </tr>
+            <tr>
+              <td><code>com.google.android.gms.permission.AD_ID</code></td>
+              <td>Google Mobile Ads SDK</td>
+              <td>Được Google AdMob sử dụng trên Android 13+ để nhận diện ID quảng cáo ẩn danh phục vụ mục đích giới hạn tần suất hiển thị và ngăn ngừa gian lận.</td>
+            </tr>
+            <tr>
+              <td><code>com.android.vending.BILLING</code></td>
+              <td>Google Play Billing Library</td>
+              <td>Hỗ trợ tính năng mua gói mở khóa vật phẩm <code>remove_ads</code> (Xóa quảng cáo vĩnh viễn) được xử lý an toàn bởi Google Play.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.VIBRATE</code></td>
+              <td>Ứng dụng Mines</td>
+              <td>Tạo hiệu ứng rung xúc giác (haptic feedback) 15–40 ms khi cắm cờ hoặc nổ mìn, tăng trải nghiệm chơi. Có thể tắt bất kỳ lúc nào trong menu Cài đặt.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Sub-section: Third-Party SDKs -->
+      <h3 id="third-party-sdk">⚙️ 2. Các SDK của bên thứ ba được tích hợp</h3>
+      <p>Để duy trì phát hành ứng dụng miễn phí và hỗ trợ thanh toán an toàn, chúng tôi tích hợp các bộ công cụ phát triển (SDK) uy tín từ Google:</p>
+      <ul>
+        <li>
+          <strong>Google Mobile Ads SDK (AdMob):</strong>
+          Hiển thị quảng cáo biểu ngữ (banner), quảng cáo xen kẽ (interstitial) giữa các ván và quảng cáo thưởng (rewarded video) khi người chơi muốn xem gợi ý hoặc hồi sinh. Google AdMob có thể tự động thu thập ID quảng cáo thiết bị, thông tin cấu hình kỹ thuật và tương tác quảng cáo nhằm phòng chống gian lận và hiển thị quảng cáo phù hợp.
+          <br>Tham khảo: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách quyền riêng tư của Google</a> và <a href="https://support.google.com/admob/answer/10787117" target="_blank" rel="noopener">Khai báo dữ liệu AdMob</a>.
+        </li>
+        <li>
+          <strong>Google User Messaging Platform (UMP) SDK:</strong>
+          Công cụ quản lý sự đồng thuận của người dùng theo quy định GDPR (Châu Âu) và CCPA (California). Ứng dụng hiển thị hộp thoại xin phép đồng ý quảng cáo cá nhân hoá và cho phép bạn thay đổi tuỳ chọn này bất cứ lúc nào trong mục Cài đặt.
+        </li>
+        <li>
+          <strong>Google Play In-App Billing Library:</strong>
+          Xử lý giao dịch mua gói <code>remove_ads</code>. Toàn bộ thông tin tài khoản ngân hàng, thẻ tín dụng được xử lý bảo mật tuyệt đối 100% bởi máy chủ của Google Play. Nhà phát triển trò chơi hoàn toàn không tiếp cận hay lưu giữ bất kỳ thông tin thanh toán nào.
+        </li>
+      </ul>
+
+      <!-- Sub-section: Data Safety Table -->
+      <h3>📊 3. Khai báo An Toàn Dữ Liệu (Google Play Data Safety)</h3>
+      <p>Bảng tóm tắt thông tin khai báo trên Google Play Console:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Loại dữ liệu</th>
+              <th>Thu thập / Chia sẻ</th>
+              <th>Đơn vị xử lý</th>
+              <th>Mục đích sử dụng</th>
+              <th>Mã hoá truyền tải</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mã nhận dạng thiết bị</strong><br>(Advertising ID / GAID)</td>
+              <td>Thu thập &amp; Chia sẻ</td>
+              <td>Google AdMob</td>
+              <td>Quảng cáo, ngăn chặn gian lận, đo lường hiệu quả</td>
+              <td>Có (HTTPS/TLS)</td>
+            </tr>
+            <tr>
+              <td><strong>Tương tác trong app</strong><br>(Lượt nhấp, hiển thị quảng cáo)</td>
+              <td>Thu thập &amp; Chia sẻ</td>
+              <td>Google AdMob</td>
+              <td>Phân tích hiệu suất hiển thị quảng cáo</td>
+              <td>Có (HTTPS/TLS)</td>
+            </tr>
+            <tr>
+              <td><strong>Chẩn đoán &amp; Nhật ký lỗi</strong><br>(Crash logs, ANR)</td>
+              <td>Thu thập (ẩn danh)</td>
+              <td>Google Play Console</td>
+              <td>Phát hiện lỗi kỹ thuật để tối ưu độ ổn định ứng dụng</td>
+              <td>Có (HTTPS/TLS)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Sub-section: Data Collection, Usage, Retention & Deletion -->
+      <h3 id="data-deletion">🗑️ 4. Chính sách lưu trữ, sử dụng và xóa dữ liệu</h3>
+      <h4>a. Lưu trữ và sử dụng dữ liệu</h4>
+      <p>Dữ liệu trò chơi (màn chơi hiện tại, số sao đã đạt, kỷ lục thời gian, chuỗi ngày thắng và trạng thái sở hữu gói Xóa quảng cáo) được lưu cục bộ trong thư mục lưu trữ bảo mật của ứng dụng trên thiết bị thông qua hệ thống lưu trữ chuẩn của Godot Engine. Chúng tôi không truyền tải dữ liệu này về bất kỳ máy chủ bên ngoài nào.</p>
+
+      <h4>b. Quyền và cách thức xóa toàn bộ dữ liệu</h4>
+      <p>Vì ứng dụng không lưu trữ dữ liệu cá nhân trên máy chủ đám mây, bạn nắm toàn quyền kiểm soát và có thể xóa sạch 100% dữ liệu bất cứ lúc nào bằng các cách sau:</p>
+      <ol>
+        <li>
+          <strong>Xóa qua Cài đặt Android:</strong> Mở <em>Cài đặt thiết bị &rarr; Ứng dụng &rarr; Mines &rarr; Lưu trữ (Storage) &rarr; chọn "Xóa dữ liệu" (Clear Data) và "Xóa bộ nhớ đệm" (Clear Cache)</em>. Thao tác này sẽ đặt lại trò chơi về trạng thái ban đầu như mới cài đặt.
+        </li>
+        <li>
+          <strong>Gỡ cài đặt ứng dụng:</strong> Khi bạn gỡ cài đặt (Uninstall) ứng dụng Mines, toàn bộ dữ liệu lưu trữ cục bộ sẽ được hệ điều hành Android tự động xóa sạch hoàn toàn khỏi thiết bị.
+        </li>
+        <li>
+          <strong>Yêu cầu hỗ trợ xóa dữ liệu qua email:</strong> Nếu có bất kỳ thắc mắc hoặc cần xác nhận về dữ liệu liên quan, bạn có thể gửi yêu cầu đến email nhà phát triển: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>. Chúng tôi sẽ phản hồi và hỗ trợ giải quyết trong vòng 48 giờ làm việc.
+        </li>
+      </ol>
+
+      <!-- Sub-section: Children's Privacy -->
+      <h3>👶 5. Quyền riêng tư của trẻ em (Children's Privacy)</h3>
+      <p>Trò chơi <strong>Mines</strong> là tựa game giải đố trí tuệ phù hợp cho đối tượng từ 13 tuổi trở lên. Chúng tôi không cố ý thu thập bất kỳ thông tin nhận dạng cá nhân nào từ trẻ em dưới 13 tuổi. Nếu bạn là phụ huynh hoặc người giám hộ và phát hiện con em mình đã cung cấp thông tin cho các dịch vụ bên thứ ba mà không có sự đồng ý của bạn, vui lòng liên hệ với chúng tôi để được hỗ trợ xử lý kịp thời.</p>
+
+      <!-- Sub-section: Changes to Privacy Policy -->
+      <h3>📝 6. Thay đổi chính sách quyền riêng tư</h3>
+      <p>Chúng tôi có thể cập nhật chính sách này theo thời gian nhằm phản ánh các thay đổi về pháp lý hoặc tính năng của trò chơi. Mọi phiên bản cập nhật sẽ được đăng tải công khai tại đường dẫn trang này cùng với ngày cập nhật mới nhất ở đầu trang.</p>
+    </section>
+
+    <!-- SECTION 4: Thông Tin Liên Hệ -->
+    <section id="contact" class="card">
+      <h2>📧 Thông Tin Liên Hệ Nhà Phát Triển</h2>
+      <p>Nếu bạn có bất kỳ câu hỏi, góp ý hay khiếu nại nào liên quan đến trò chơi hoặc chính sách quyền riêng tư này, xin vui lòng liên hệ trực tiếp với chúng tôi:</p>
+      
+      <div class="contact-card">
+        <div>
+          <h4 style="margin: 0 0 0.3rem; font-size: 1.15rem; color: var(--pink-deep);">MT Games Studio</h4>
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">Lập trình viên: <strong>Nguyễn Minh Thắng</strong></p>
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">Email hỗ trợ: <strong>minhthang0792@gmail.com</strong></p>
+        </div>
+        <a href="mailto:minhthang0792@gmail.com?subject=Hỗ%20trợ%20game%20Mines%20(cm.mt.mines)" class="contact-btn">
+          ✉️ Gửi Email Hỗ Trợ
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 <strong>MT Games</strong> &bull; Trò chơi Mines - Dò Mìn Không Đoán (<code>cm.mt.mines</code>).</p>
+      <p>Thiết kế dành cho cộng đồng yêu thích giải đố logic &bull; All Rights Reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
