@@ -61,28 +61,39 @@ a { color:var(--accent); }
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">Bé Tập Vẽ là bảng vẽ đơn giản đúng tầm tay trẻ nhỏ: 10 màu tươi sáng với nút tròn to dễ chạm, 3 cỡ bút, nét vẽ mượt, hoàn tác và xóa có hỏi lại để tránh mất tranh vì bấm nhầm. An toàn theo chuẩn Gia đình của Google Play: không liên kết ra ngoài, không mua trong ứng dụng, chia sẻ tranh phải qua cổng phụ huynh giữ nút 3 giây, quảng cáo giới hạn nội dung trẻ em và đặt cố định trên đỉnh — xa vùng tay bé vẽ.</p>
+      <p style="margin:0">Bé Tập Vẽ là bảng vẽ đơn giản đúng tầm tay trẻ nhỏ: 10 màu tươi sáng với nút tròn to dễ chạm, 3 cỡ bút, nét vẽ mượt, hoàn tác và xóa có hỏi lại để tránh mất tranh vì bấm nhầm. An toàn theo chuẩn Gia đình của Google Play: không liên kết ra ngoài, mọi thao tác ra khỏi app (chia sẻ tranh, mở cài đặt hệ thống, mua gói xoá quảng cáo) đều nằm sau cổng phụ huynh giải phép tính, quảng cáo giới hạn nội dung trẻ em và đặt cố định trên đỉnh — xa vùng tay bé vẽ. Bé có thư viện "Tranh của bé" tự lưu mỗi bức, xem lại nét vẽ dạng phim, trang tô màu, con dấu và 4 kiểu bút (thường, phát sáng, cầu vồng, chấm). Chế độ Bé ẩn hết nút phụ và quảng cáo, thoát ra phải giữ nút 3 giây. Có gói "Xoá quảng cáo" mua một lần để tắt hẳn quảng cáo.</p>
     </div>
 
     <h2>Chính sách quyền riêng tư</h2>
-    <p class="note">Cập nhật lần cuối: 09/07/2026 · Áp dụng cho ứng dụng <strong>Bé Tập Vẽ - Bảng Vẽ Trẻ Em</strong> (package <code>home.free.kidsdoodle</code>).</p>
+    <p class="note">Cập nhật lần cuối: 07/09/2026 · Áp dụng cho ứng dụng <strong>Bé Tập Vẽ - Bảng Vẽ Trẻ Em</strong> (package <code>home.free.kidsdoodle</code>).</p>
 
     <h3>Tóm tắt</h3>
     <ul>
       <li>Ứng dụng hoạt động <strong>offline</strong>, không yêu cầu tài khoản, không có máy chủ riêng.</li>
       <li>Chúng tôi <strong>không thu thập, không lưu trữ, không chia sẻ</strong> dữ liệu cá nhân của bạn.</li>
-      <li>Bên thứ ba duy nhất là <strong>Google AdMob</strong> để hiển thị quảng cáo (chi tiết bên dưới).</li>
+      <li>Bên thứ ba: <strong>Google AdMob</strong> (quảng cáo) và <strong>Google Play Billing</strong> (mua gói xoá quảng cáo) — chi tiết bên dưới.</li>
     </ul>
 
     <h3>Quyền (permissions) ứng dụng yêu cầu</h3>
+    <p class="note">Đây là <strong>toàn bộ</strong> quyền có trong file cài đặt (AndroidManifest sau khi ghép),
+    gồm cả quyền do SDK của Google tự thêm vào — đúng danh sách Google Play hiển thị. Ứng dụng
+    không yêu cầu quyền vị trí, danh bạ, camera hay bộ nhớ.</p>
     <table>
       <tr><th style="width:38%">Quyền Android</th><th>Mục đích sử dụng</th></tr>
-      <tr><td class="code">INTERNET</td><td>Hiển thị quảng cáo Google AdMob. Ứng dụng không dùng internet cho bất kỳ mục đích nào khác.</td></tr>
+      <tr><td class="code">INTERNET</td><td>Tải quảng cáo Google AdMob và kiểm tra gói "Xoá quảng cáo" qua Google Play. Ứng dụng không dùng internet cho bất kỳ mục đích nào khác — mọi tính năng chính chạy offline.</td></tr>
+<tr><td class="code">com.android.vending.BILLING</td><td>Mua gói "Xoá quảng cáo" một lần qua Google Play. Thanh toán do Google Play xử lý — ứng dụng không nhìn thấy và không lưu thông tin thẻ của bạn.</td></tr>
+<tr><td class="code">com.google.android.gms.permission.AD_ID</td><td>Mã quảng cáo của thiết bị, do SDK Google AdMob khai báo để phân phối và đo lường quảng cáo. Bạn có thể đặt lại hoặc xoá mã này trong Cài đặt Android → Google → Quảng cáo.</td></tr>
+<tr><td class="code">ACCESS_NETWORK_STATE</td><td>SDK quảng cáo kiểm tra máy có mạng hay không trước khi tải quảng cáo (do SDK khai báo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_AD_ID</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (đọc mã quảng cáo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_ATTRIBUTION</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (đo lường chuyển đổi quảng cáo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_TOPICS</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (chủ đề quảng cáo).</td></tr>
+<tr><td class="code">WAKE_LOCK</td><td>Do các SDK của Google (quảng cáo, thanh toán) và thư viện thông báo khai báo để công việc của chúng không bị ngắt giữa chừng. Bản thân ứng dụng không giữ máy thức chạy nền.</td></tr>
+<tr><td class="code">FOREGROUND_SERVICE</td><td>Do các SDK của Google và thư viện thông báo khai báo. Ứng dụng không chạy dịch vụ nền nào.</td></tr>
     </table>
     
 
     <h3>SDK bên thứ ba</h3>
-    <p>Ứng dụng tích hợp duy nhất một SDK có kết nối mạng: <strong>Google AdMob</strong>
+    <p>Ứng dụng tích hợp hai dịch vụ của Google có kết nối mạng. Thứ nhất, <strong>Google AdMob</strong>
     (Google Mobile Ads SDK) để hiển thị quảng cáo — nguồn thu duy trì ứng dụng miễn phí.
     Quảng cáo được phân phối ở chế độ <strong>hướng đến trẻ em (child-directed)</strong> với xếp hạng nội dung tối đa G theo chương trình Gia đình của Google Play — Google không dùng mã quảng cáo để cá nhân hóa quảng cáo cho người dùng trẻ em. AdMob có thể thu thập: <strong>mã quảng cáo của thiết bị (Advertising ID)</strong>,
     địa chỉ IP, thông tin thiết bị chung và dữ liệu tương tác quảng cáo, theo
@@ -91,6 +102,10 @@ a { color:var(--accent); }
     Bạn có thể đặt lại hoặc xóa Advertising ID trong <em>Cài đặt Android → Google → Quảng cáo</em>.
     Ngoài AdMob, ứng dụng <strong>không nhúng</strong> bất kỳ SDK phân tích, theo dõi hay mạng xã hội nào
     (không Firebase Analytics, không Facebook SDK, không crash reporting).</p>
+    <p>Thứ hai, <strong>Google Play Billing</strong> — dùng khi bạn mua gói "Xoá quảng cáo" một lần.
+Giao dịch do <strong>Google Play xử lý hoàn toàn</strong>: ứng dụng không nhìn thấy và không lưu số thẻ hay thông tin
+thanh toán của bạn; chúng tôi chỉ nhận biết trạng thái "đã mua" để tắt quảng cáo. Việc mua hàng tuân theo
+<a href="https://policies.google.com/privacy" rel="noopener">Chính sách quyền riêng tư của Google</a>.</p>
 
     <h3>Thu thập &amp; sử dụng dữ liệu</h3>
     <ul>
@@ -100,7 +115,8 @@ a { color:var(--accent); }
       <li>Dữ liệu cảm biến/micro (nếu ứng dụng có dùng) được xử lý tức thời trên máy và không được lưu thành bản ghi gốc.</li>
       <li>Không có hồ sơ người dùng, không quảng cáo dựa trên dữ liệu do chúng tôi thu thập.</li>
     </ul>
-    
+    <h3>Dữ liệu ứng dụng lưu trên máy bạn</h3>
+<p>Ứng dụng lưu các bức tranh của bé trong thư viện (nét vẽ dạng JSON + ảnh thu nhỏ, nằm trong thư mục riêng của ứng dụng) và cài đặt. Ứng dụng không hỏi tên, tuổi hay bất kỳ thông tin nào về bé. Toàn bộ nằm trong bộ nhớ riêng của ứng dụng trên máy bạn — không đồng bộ, không gửi lên máy chủ nào (chúng tôi không có máy chủ), và SDK quảng cáo không truy cập được.</p>
 
     <h3>Xóa dữ liệu</h3>
     <ul>
@@ -133,28 +149,39 @@ a { color:var(--accent); }
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">Kids Doodle is a drawing board sized for little hands: 10 bright colors with big round buttons, 3 brush sizes, smooth strokes, undo, and a confirm-before-clear so a stray tap never erases a masterpiece. Built for Google Play Families: no external links, no in-app purchases, sharing requires a 3-second-hold parental gate, and ads are child-directed and pinned to the top — far from where kids draw.</p>
+      <p style="margin:0">Kids Doodle is a drawing board sized for little hands: 10 bright colors with big round buttons, 3 brush sizes, smooth strokes, undo, and a confirm-before-clear so a stray tap never erases a masterpiece. Built for Google Play Families: no external links, every action that leaves the app (sharing a drawing, opening system settings, buying the remove-ads item) sits behind a parental gate with a math question, and ads are child-directed and pinned to the top — far from where kids draw. Kids get a "My drawings" gallery that saves every picture, a replay of the strokes, coloring pages, stamps and 4 brushes (plain, glow, rainbow, dotted). Kid Mode hides every extra button and the ads, and needs a 3-second hold to leave. A one-time "Remove ads" purchase switches the ads off for good.</p>
     </div>
 
     <h2>Privacy Policy</h2>
-    <p class="note">Last updated: 09/07/2026 · Applies to <strong>Kids Doodle - Drawing Board</strong> (package <code>home.free.kidsdoodle</code>).</p>
+    <p class="note">Last updated: 07/09/2026 · Applies to <strong>Kids Doodle - Drawing Board</strong> (package <code>home.free.kidsdoodle</code>).</p>
 
     <h3>Summary</h3>
     <ul>
       <li>The app works <strong>offline</strong>, requires no account, and we operate no servers.</li>
       <li>We <strong>do not collect, store or share</strong> any of your personal data.</li>
-      <li>The only third party is <strong>Google AdMob</strong>, used to serve ads (details below).</li>
+      <li>Third parties: <strong>Google AdMob</strong> (ads) and <strong>Google Play Billing</strong> (the remove-ads purchase) — see below.</li>
     </ul>
 
     <h3>Permissions requested</h3>
+    <p class="note">This is the <strong>complete</strong> list from the installed package (the merged
+    AndroidManifest), including permissions added automatically by Google's SDKs — the same list Google Play
+    shows. The app requests no location, contacts, camera or storage permission.</p>
     <table>
       <tr><th style="width:38%">Android permission</th><th>Purpose</th></tr>
-      <tr><td class="code">INTERNET</td><td>Serve Google AdMob ads. The app uses the internet for no other purpose.</td></tr>
+      <tr><td class="code">INTERNET</td><td>Load Google AdMob ads and check the "Remove ads" purchase through Google Play. The app uses the internet for nothing else — every core feature works offline.</td></tr>
+<tr><td class="code">com.android.vending.BILLING</td><td>Buy the one-time "Remove ads" item through Google Play. Payment is handled by Google Play — the app never sees or stores your card details.</td></tr>
+<tr><td class="code">com.google.android.gms.permission.AD_ID</td><td>The device advertising ID, declared by the Google AdMob SDK to serve and measure ads. You can reset or delete it in Android Settings → Google → Ads.</td></tr>
+<tr><td class="code">ACCESS_NETWORK_STATE</td><td>The ads SDK checks whether the device is online before requesting an ad (declared by the SDK).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_AD_ID</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (read the advertising ID).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_ATTRIBUTION</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (ad conversion measurement).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_TOPICS</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (ads topics).</td></tr>
+<tr><td class="code">WAKE_LOCK</td><td>Declared by Google's SDKs (ads, billing) and the notification library so their work is not cut off. The app itself does not hold the device awake in the background.</td></tr>
+<tr><td class="code">FOREGROUND_SERVICE</td><td>Declared by Google's SDKs and the notification library. The app runs no foreground service.</td></tr>
     </table>
     
 
     <h3>Third-party SDKs</h3>
-    <p>The app embeds exactly one network-connected SDK: <strong>Google AdMob</strong>
+    <p>The app integrates two Google services that use the network. First, <strong>Google AdMob</strong>
     (Google Mobile Ads SDK), which serves the ads that keep this app free.
     Ads are served in <strong>child-directed mode</strong> with a maximum content rating of G under the Google Play Families program — Google does not use the advertising ID for personalization for child users. AdMob may collect the device <strong>Advertising ID</strong>, IP address,
     general device information and ad-interaction data, as described in the
@@ -163,6 +190,10 @@ a { color:var(--accent); }
     You can reset or delete your Advertising ID in <em>Android Settings → Google → Ads</em>.
     Beyond AdMob, the app embeds <strong>no</strong> analytics, tracking or social SDKs
     (no Firebase Analytics, no Facebook SDK, no crash reporting).</p>
+    <p>Second, <strong>Google Play Billing</strong> — used when you buy the one-time "Remove ads" item.
+The transaction is <strong>handled entirely by Google Play</strong>: the app never sees or stores your card or payment
+details; it only learns the "purchased" state in order to switch ads off. Purchases are governed by the
+<a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</p>
 
     <h3>Data collection &amp; use</h3>
     <ul>
@@ -172,7 +203,8 @@ a { color:var(--accent); }
       <li>Sensor/microphone data (where applicable) is processed on-device in real time and never stored as raw recordings.</li>
       <li>No user profiles are built; no advertising is based on data we collect.</li>
     </ul>
-    
+    <h3>What the app stores on your device</h3>
+<p>The app stores the drawings in the gallery (strokes as JSON + a thumbnail, inside the app's own folder) and settings. The app never asks for a child's name, age or any other information. All of it lives in the app's private storage on your phone — never synced, never uploaded to any server (we run none), and the advertising SDK cannot access it.</p>
 
     <h3>Data deletion</h3>
     <ul>

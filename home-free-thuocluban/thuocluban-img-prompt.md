@@ -13,8 +13,20 @@ Sau khi có ảnh, áp icon bằng một lệnh:
 python3 assets-shared/icons/apply_icon.py thuocluban <đường-dẫn-ảnh-icon>.png
 ```
 
-Icon hiện tại là **glyph tạm** sinh bằng `gen_icons.py thuocluban` (bốn ô cung
-đặc–rỗng + mũi tên). Dùng được, nhưng ảnh thật sẽ nổi hơn trên Play.
+Icon hiện tại là **ảnh thật** sinh bằng Nano Banana theo biến thể C bên dưới
+(khung cửa + mũi tên đo thông thuỷ), đã áp bằng `apply_icon.py`. Glyph tạm sinh
+bằng `gen_icons.py thuocluban` vẫn còn trong code làm phương án dự phòng.
+
+**Ảnh Nano Banana có watermark** — dấu sao bốn cánh mờ ở góc dưới bên phải. Xoá
+bằng:
+
+```bash
+python3 assets-shared/icons/remove_watermark.py <ảnh.png>
+```
+
+Script giữ ảnh gốc thành `<tên>-original.png`, và lấp chỗ watermark bằng nghiệm
+phương trình Laplace nên không để lại vệt trên nền gradient. Nhớ chạy TRƯỚC khi
+`apply_icon.py`.
 
 ---
 

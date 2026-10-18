@@ -61,30 +61,43 @@ a { color:var(--accent); }
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">White Noise mang đến 12 âm ru ngủ: ồn trắng/hồng/nâu, mưa, sóng biển, gió, suối, quạt, máy sấy, máy hút bụi, nhịp tim và tiếng suỵt. Trộn tối đa 3 âm với âm lượng riêng từng âm, lưu 5 mix yêu thích, hẹn giờ tắt 15–90 phút có giảm âm từ từ, phát nền khi tắt màn hình với điều khiển trên thanh thông báo. Tôn trọng giấc ngủ của bé: chỉ một banner nhỏ, không bao giờ có quảng cáo toàn màn hình.</p>
+      <p style="margin:0">White Noise mang đến 12 âm ru ngủ: ồn trắng/hồng/nâu, mưa, sóng biển, gió, suối, quạt, máy sấy, máy hút bụi, nhịp tim và tiếng suỵt. Trộn tối đa 3 âm với âm lượng riêng từng âm, lưu 5 mix yêu thích, hẹn giờ tắt 15–90 phút có giảm âm từ từ, phát nền khi tắt màn hình với điều khiển trên thanh thông báo. Tôn trọng giấc ngủ của bé: chỉ một banner nhỏ, không bao giờ có quảng cáo toàn màn hình. Thêm màn hình đêm tối màu cho phòng bé, nhắc giờ ngủ hằng ngày và cảnh báo âm lượng an toàn cho tai trẻ nhỏ. Có gói "Xoá quảng cáo" mua một lần để tắt hẳn quảng cáo.</p>
     </div>
 
     <h2>Chính sách quyền riêng tư</h2>
-    <p class="note">Cập nhật lần cuối: 09/07/2026 · Áp dụng cho ứng dụng <strong>White Noise - Ru Bé Ngủ</strong> (package <code>home.free.whitenoisebaby</code>).</p>
+    <p class="note">Cập nhật lần cuối: 07/09/2026 · Áp dụng cho ứng dụng <strong>White Noise - Ru Bé Ngủ</strong> (package <code>home.free.whitenoisebaby</code>).</p>
 
     <h3>Tóm tắt</h3>
     <ul>
       <li>Ứng dụng hoạt động <strong>offline</strong>, không yêu cầu tài khoản, không có máy chủ riêng.</li>
       <li>Chúng tôi <strong>không thu thập, không lưu trữ, không chia sẻ</strong> dữ liệu cá nhân của bạn.</li>
-      <li>Bên thứ ba duy nhất là <strong>Google AdMob</strong> để hiển thị quảng cáo (chi tiết bên dưới).</li>
+      <li>Bên thứ ba: <strong>Google AdMob</strong> (quảng cáo) và <strong>Google Play Billing</strong> (mua gói xoá quảng cáo) — chi tiết bên dưới.</li>
     </ul>
 
     <h3>Quyền (permissions) ứng dụng yêu cầu</h3>
+    <p class="note">Đây là <strong>toàn bộ</strong> quyền có trong file cài đặt (AndroidManifest sau khi ghép),
+    gồm cả quyền do SDK của Google tự thêm vào — đúng danh sách Google Play hiển thị. Ứng dụng
+    không yêu cầu quyền vị trí, danh bạ, camera hay bộ nhớ.</p>
     <table>
       <tr><th style="width:38%">Quyền Android</th><th>Mục đích sử dụng</th></tr>
-      <tr><td class="code">INTERNET</td><td>Hiển thị quảng cáo Google AdMob. Ứng dụng không dùng internet cho bất kỳ mục đích nào khác.</td></tr>
-<tr><td class="code">WAKE_LOCK</td><td>Giữ thiết bị thức trong lúc phát âm thanh / đo đạc / bật đèn để tác vụ không bị gián đoạn.</td></tr>
-<tr><td class="code">FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PLAYBACK</td><td>Tiếp tục phát âm thanh khi bạn tắt màn hình hoặc chuyển sang ứng dụng khác (hiện điều khiển trên thanh thông báo).</td></tr>
+      <tr><td class="code">FOREGROUND_SERVICE_MEDIA_PLAYBACK</td><td>Tiếp tục phát âm thanh khi bạn tắt màn hình hoặc chuyển sang ứng dụng khác (kèm điều khiển trên thanh thông báo).</td></tr>
+<tr><td class="code">POST_NOTIFICATIONS</td><td>Hiện thông báo nhắc do chính bạn đặt trong ứng dụng.</td></tr>
+<tr><td class="code">RECEIVE_BOOT_COMPLETED</td><td>Đặt lại lịch nhắc của bạn sau khi thiết bị khởi động lại.</td></tr>
+<tr><td class="code">VIBRATE</td><td>Rung phản hồi nhẹ khi thao tác trong ứng dụng và khi hiện thông báo.</td></tr>
+<tr><td class="code">INTERNET</td><td>Tải quảng cáo Google AdMob và kiểm tra gói "Xoá quảng cáo" qua Google Play. Ứng dụng không dùng internet cho bất kỳ mục đích nào khác — mọi tính năng chính chạy offline.</td></tr>
+<tr><td class="code">com.android.vending.BILLING</td><td>Mua gói "Xoá quảng cáo" một lần qua Google Play. Thanh toán do Google Play xử lý — ứng dụng không nhìn thấy và không lưu thông tin thẻ của bạn.</td></tr>
+<tr><td class="code">com.google.android.gms.permission.AD_ID</td><td>Mã quảng cáo của thiết bị, do SDK Google AdMob khai báo để phân phối và đo lường quảng cáo. Bạn có thể đặt lại hoặc xoá mã này trong Cài đặt Android → Google → Quảng cáo.</td></tr>
+<tr><td class="code">ACCESS_NETWORK_STATE</td><td>SDK quảng cáo kiểm tra máy có mạng hay không trước khi tải quảng cáo (do SDK khai báo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_AD_ID</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (đọc mã quảng cáo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_ATTRIBUTION</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (đo lường chuyển đổi quảng cáo).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_TOPICS</td><td>Do SDK AdMob khai báo cho Privacy Sandbox trên Android 13+ (chủ đề quảng cáo).</td></tr>
+<tr><td class="code">WAKE_LOCK</td><td>Giữ máy không ngủ trong lúc đang phát âm thanh để tiếng không bị ngắt khi tắt màn hình.</td></tr>
+<tr><td class="code">FOREGROUND_SERVICE</td><td>Chạy dịch vụ phát nhạc ở nền, kèm điều khiển trên thanh thông báo.</td></tr>
     </table>
-    
+    <ul class="note"><li>Ứng dụng cố ý KHÔNG xin quyền báo thức chính xác (SCHEDULE_EXACT_ALARM): lời nhắc có thể lệch vài phút, đổi lại bạn không phải cấp thêm quyền nào.</li></ul>
 
     <h3>SDK bên thứ ba</h3>
-    <p>Ứng dụng tích hợp duy nhất một SDK có kết nối mạng: <strong>Google AdMob</strong>
+    <p>Ứng dụng tích hợp hai dịch vụ của Google có kết nối mạng. Thứ nhất, <strong>Google AdMob</strong>
     (Google Mobile Ads SDK) để hiển thị quảng cáo — nguồn thu duy trì ứng dụng miễn phí.
     AdMob có thể thu thập: <strong>mã quảng cáo của thiết bị (Advertising ID)</strong>,
     địa chỉ IP, thông tin thiết bị chung và dữ liệu tương tác quảng cáo, theo
@@ -93,6 +106,10 @@ a { color:var(--accent); }
     Bạn có thể đặt lại hoặc xóa Advertising ID trong <em>Cài đặt Android → Google → Quảng cáo</em>.
     Ngoài AdMob, ứng dụng <strong>không nhúng</strong> bất kỳ SDK phân tích, theo dõi hay mạng xã hội nào
     (không Firebase Analytics, không Facebook SDK, không crash reporting).</p>
+    <p>Thứ hai, <strong>Google Play Billing</strong> — dùng khi bạn mua gói "Xoá quảng cáo" một lần.
+Giao dịch do <strong>Google Play xử lý hoàn toàn</strong>: ứng dụng không nhìn thấy và không lưu số thẻ hay thông tin
+thanh toán của bạn; chúng tôi chỉ nhận biết trạng thái "đã mua" để tắt quảng cáo. Việc mua hàng tuân theo
+<a href="https://policies.google.com/privacy" rel="noopener">Chính sách quyền riêng tư của Google</a>.</p>
 
     <h3>Thu thập &amp; sử dụng dữ liệu</h3>
     <ul>
@@ -102,7 +119,8 @@ a { color:var(--accent); }
       <li>Dữ liệu cảm biến/micro (nếu ứng dụng có dùng) được xử lý tức thời trên máy và không được lưu thành bản ghi gốc.</li>
       <li>Không có hồ sơ người dùng, không quảng cáo dựa trên dữ liệu do chúng tôi thu thập.</li>
     </ul>
-    
+    <h3>Dữ liệu ứng dụng lưu trên máy bạn</h3>
+<p>Ứng dụng lưu các bản phối âm thanh bạn lưu, thời lượng hẹn giờ, giờ nhắc ngủ bạn đặt và cài đặt âm lượng an toàn. Toàn bộ nằm trong bộ nhớ riêng của ứng dụng trên máy bạn — không đồng bộ, không gửi lên máy chủ nào (chúng tôi không có máy chủ), và SDK quảng cáo không truy cập được.</p>
 
     <h3>Xóa dữ liệu</h3>
     <ul>
@@ -135,30 +153,43 @@ a { color:var(--accent); }
     </div>
     <div class="box">
       <div class="label">Long description (Google Play)</div>
-      <p style="margin:0">White Noise offers 12 sleep sounds: white/pink/brown noise, rain, ocean, wind, stream, fan, dryer, vacuum, heartbeat and shushing. Mix up to 3 sounds with individual volumes, save 5 favorite mixes, set a 15–90 minute sleep timer with gentle fade-out, and keep playing in the background with a notification control. Baby-sleep friendly: a single small banner and never any full-screen ads.</p>
+      <p style="margin:0">White Noise offers 12 sleep sounds: white/pink/brown noise, rain, ocean, wind, stream, fan, dryer, vacuum, heartbeat and shushing. Mix up to 3 sounds with individual volumes, save 5 favorite mixes, set a 15–90 minute sleep timer with gentle fade-out, and keep playing in the background with a notification control. Baby-sleep friendly: a single small banner and never any full-screen ads. It also includes a dimmed night screen for the nursery, a daily bedtime reminder and a safe-volume warning for little ears. A one-time "Remove ads" purchase switches the ads off for good.</p>
     </div>
 
     <h2>Privacy Policy</h2>
-    <p class="note">Last updated: 09/07/2026 · Applies to <strong>White Noise - Baby Sleep</strong> (package <code>home.free.whitenoisebaby</code>).</p>
+    <p class="note">Last updated: 07/09/2026 · Applies to <strong>White Noise - Baby Sleep</strong> (package <code>home.free.whitenoisebaby</code>).</p>
 
     <h3>Summary</h3>
     <ul>
       <li>The app works <strong>offline</strong>, requires no account, and we operate no servers.</li>
       <li>We <strong>do not collect, store or share</strong> any of your personal data.</li>
-      <li>The only third party is <strong>Google AdMob</strong>, used to serve ads (details below).</li>
+      <li>Third parties: <strong>Google AdMob</strong> (ads) and <strong>Google Play Billing</strong> (the remove-ads purchase) — see below.</li>
     </ul>
 
     <h3>Permissions requested</h3>
+    <p class="note">This is the <strong>complete</strong> list from the installed package (the merged
+    AndroidManifest), including permissions added automatically by Google's SDKs — the same list Google Play
+    shows. The app requests no location, contacts, camera or storage permission.</p>
     <table>
       <tr><th style="width:38%">Android permission</th><th>Purpose</th></tr>
-      <tr><td class="code">INTERNET</td><td>Serve Google AdMob ads. The app uses the internet for no other purpose.</td></tr>
-<tr><td class="code">WAKE_LOCK</td><td>Keep the device awake while playing audio / measuring / lighting so the task is not interrupted.</td></tr>
-<tr><td class="code">FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PLAYBACK</td><td>Continue audio playback when the screen is off or you switch apps (with a media control in the notification shade).</td></tr>
+      <tr><td class="code">FOREGROUND_SERVICE_MEDIA_PLAYBACK</td><td>Continue audio playback when the screen is off or you switch apps (with a media control in the notification shade).</td></tr>
+<tr><td class="code">POST_NOTIFICATIONS</td><td>Show the reminder notifications you set up yourself in the app.</td></tr>
+<tr><td class="code">RECEIVE_BOOT_COMPLETED</td><td>Re-arm your scheduled reminders after the device reboots.</td></tr>
+<tr><td class="code">VIBRATE</td><td>Light haptic feedback for in-app actions and notifications.</td></tr>
+<tr><td class="code">INTERNET</td><td>Load Google AdMob ads and check the "Remove ads" purchase through Google Play. The app uses the internet for nothing else — every core feature works offline.</td></tr>
+<tr><td class="code">com.android.vending.BILLING</td><td>Buy the one-time "Remove ads" item through Google Play. Payment is handled by Google Play — the app never sees or stores your card details.</td></tr>
+<tr><td class="code">com.google.android.gms.permission.AD_ID</td><td>The device advertising ID, declared by the Google AdMob SDK to serve and measure ads. You can reset or delete it in Android Settings → Google → Ads.</td></tr>
+<tr><td class="code">ACCESS_NETWORK_STATE</td><td>The ads SDK checks whether the device is online before requesting an ad (declared by the SDK).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_AD_ID</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (read the advertising ID).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_ATTRIBUTION</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (ad conversion measurement).</td></tr>
+<tr><td class="code">ACCESS_ADSERVICES_TOPICS</td><td>Declared by the AdMob SDK for Privacy Sandbox on Android 13+ (ads topics).</td></tr>
+<tr><td class="code">WAKE_LOCK</td><td>Keep the device from sleeping while audio is playing so the sound is not cut off when the screen goes off.</td></tr>
+<tr><td class="code">FOREGROUND_SERVICE</td><td>Run the audio playback service in the background, with a control in the notification shade.</td></tr>
     </table>
-    
+    <ul class="note"><li>The app deliberately does NOT request exact-alarm permission (SCHEDULE_EXACT_ALARM): reminders may drift by a few minutes, and you never have to grant an extra permission.</li></ul>
 
     <h3>Third-party SDKs</h3>
-    <p>The app embeds exactly one network-connected SDK: <strong>Google AdMob</strong>
+    <p>The app integrates two Google services that use the network. First, <strong>Google AdMob</strong>
     (Google Mobile Ads SDK), which serves the ads that keep this app free.
     AdMob may collect the device <strong>Advertising ID</strong>, IP address,
     general device information and ad-interaction data, as described in the
@@ -167,6 +198,10 @@ a { color:var(--accent); }
     You can reset or delete your Advertising ID in <em>Android Settings → Google → Ads</em>.
     Beyond AdMob, the app embeds <strong>no</strong> analytics, tracking or social SDKs
     (no Firebase Analytics, no Facebook SDK, no crash reporting).</p>
+    <p>Second, <strong>Google Play Billing</strong> — used when you buy the one-time "Remove ads" item.
+The transaction is <strong>handled entirely by Google Play</strong>: the app never sees or stores your card or payment
+details; it only learns the "purchased" state in order to switch ads off. Purchases are governed by the
+<a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</p>
 
     <h3>Data collection &amp; use</h3>
     <ul>
@@ -176,7 +211,8 @@ a { color:var(--accent); }
       <li>Sensor/microphone data (where applicable) is processed on-device in real time and never stored as raw recordings.</li>
       <li>No user profiles are built; no advertising is based on data we collect.</li>
     </ul>
-    
+    <h3>What the app stores on your device</h3>
+<p>The app stores the sound mixes you save, your sleep-timer length, the bedtime reminder you set and the volume-safety settings. All of it lives in the app's private storage on your phone — never synced, never uploaded to any server (we run none), and the advertising SDK cannot access it.</p>
 
     <h3>Data deletion</h3>
     <ul>
