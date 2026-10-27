@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vườn Trái Cây Miền Tây – Giới thiệu & Chính sách bảo mật (Privacy Policy)</title>
+  <meta name="description" content="Thông tin giới thiệu, mô tả Google Play Store và Chính sách bảo mật chi tiết của trò chơi Vườn Trái Cây Miền Tây (cm.mt.orchard).">
+  <meta name="author" content="MT Games - minhthang0792@gmail.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #2E7D32;
+      --primary-dark: #1B5E20;
+      --primary-light: #4CAF50;
+      --primary-soft: #E8F5E9;
+      --accent-orange: #EF6C00;
+      --accent-orange-soft: #FFF3E0;
+      --accent-lotus: #D81B60;
+      --accent-lotus-soft: #FCE4EC;
+      --bg-cream: #F8F5EC;
+      --card-bg: #FFFFFF;
+      --text-main: #27302A;
+      --text-muted: #59655D;
+      --border-color: #E2DBD0;
+      --border-focus: #81C784;
+      --shadow-sm: 0 2px 8px rgba(39, 48, 42, 0.05);
+      --shadow-md: 0 8px 24px rgba(39, 48, 42, 0.08);
+      --shadow-lg: 0 16px 40px rgba(39, 48, 42, 0.12);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 245, 236, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem 1.25rem;
+    }
+
+    .nav-container {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .brand-link img {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      box-shadow: var(--shadow-sm);
+      object-fit: cover;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .nav-menu a:hover, .nav-menu a.active {
+      color: var(--primary-dark);
+      background: var(--primary-soft);
+    }
+
+    /* Main Container */
+    .main-wrap {
+      max-width: 980px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.25rem;
+    }
+
+    /* Hero Section */
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-feature-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      background: #1B5E20;
+      overflow: hidden;
+    }
+
+    .hero-feature-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-feature-img-wrap:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-overlay-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(20,50,25,0.7) 100%);
+    }
+
+    .hero-body {
+      position: relative;
+      padding: 2.25rem 2rem 2rem;
+    }
+
+    .hero-icon-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 1.5rem;
+      margin-top: -5rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-app-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid #FFFFFF;
+      background: #FFFFFF;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .hero-title-group h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-title-group .package-name {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      background: var(--primary-soft);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      display: inline-block;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      background: #F1EFE7;
+      color: var(--text-muted);
+    }
+
+    .badge.green {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+    }
+
+    .badge.orange {
+      background: var(--accent-orange-soft);
+      color: var(--accent-orange);
+    }
+
+    .badge.pink {
+      background: var(--accent-lotus-soft);
+      color: var(--accent-lotus);
+    }
+
+    .hero-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.25rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 0.65rem 1.35rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(46, 125, 50, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #FFFFFF;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background: #F5F2E8;
+      border-color: #D2C8B8;
+    }
+
+    /* Sections */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 2px solid var(--primary-soft);
+    }
+
+    .section-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .section-header p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Feature Grid in About */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-box {
+      background: #FCFBF7;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      transition: all 0.2s ease;
+    }
+
+    .feature-box:hover {
+      border-color: var(--border-focus);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+
+    .feature-box .feat-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .feature-box h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Store Copy Boxes */
+    .store-copy-block {
+      background: #FDFDFB;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .copy-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .copy-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .copy-char-count {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: #EFECE1;
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .copy-content-box {
+      background: #F6F4EB;
+      border: 1px solid #DFD9CC;
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #333D35;
+      white-space: pre-line;
+      word-break: break-word;
+      font-family: inherit;
+    }
+
+    .copy-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: var(--primary-soft);
+      border-color: var(--border-focus);
+      color: var(--primary-dark);
+    }
+
+    .copy-btn.copied {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    /* Policy Details */
+    .policy-article {
+      margin-bottom: 2rem;
+    }
+
+    .policy-article:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-article h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .policy-article h3 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .policy-article p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .policy-article ul {
+      margin: 0.75rem 0 1rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .policy-article li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .policy-article strong {
+      color: var(--text-main);
+    }
+
+    /* Custom Tables */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: #FFFFFF;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    th {
+      background: #F4F1E6;
+      color: var(--text-main);
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #ECE7DC;
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #FDFCF9;
+    }
+
+    /* Callout & Alert Boxes */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.35rem;
+      margin: 1.25rem 0;
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+
+    .callout-icon {
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    .callout-body {
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .callout-green {
+      background: #E8F5E9;
+      border: 1px solid #C8E6C9;
+      color: #1B5E20;
+    }
+
+    .callout-orange {
+      background: #FFF3E0;
+      border: 1px solid #FFE0B2;
+      color: #E65100;
+    }
+
+    .callout-blue {
+      background: #E0F2F1;
+      border: 1px solid #B2DFDB;
+      color: #004D40;
+    }
+
+    /* Step List for Data Deletion */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin: 1rem 0;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 1rem;
+      background: #FAF8F2;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.2rem;
+    }
+
+    .step-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--accent-orange);
+      color: #FFFFFF;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.95rem;
+    }
+
+    .step-content h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      margin-top: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-pill {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 0.65rem 1.25rem;
+      border-radius: 12px;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .contact-pill:hover {
+      background: #FFFFFF;
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 1.25rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .top-nav {
+        padding: 0.6rem 1rem;
+      }
+      .nav-menu {
+        display: none; /* simple mobile view */
+      }
+      .hero-feature-img-wrap {
+        height: 220px;
+      }
+      .hero-icon-row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: -3.5rem;
+        gap: 0.75rem;
+      }
+      .hero-app-icon {
+        width: 84px;
+        height: 84px;
+        border-radius: 18px;
+      }
+      .hero-title-group h1 {
+        font-size: 1.45rem;
+      }
+      .hero-body {
+        padding: 1.5rem 1.25rem;
+      }
+      .section-card {
+        padding: 1.5rem 1.25rem;
+      }
+      .contact-card {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="#top" class="brand-link">
+        <img src="./playstore-app-icon.png" alt="Icon Vườn Trái Cây Miền Tây" width="38" height="38">
+        <span>Vườn Trái Cây Miền Tây</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#store-listing">Mô tả Play Store</a></li>
+        <li><a href="#permissions">Quyền & SDK</a></li>
+        <li><a href="#privacy">Chính sách bảo mật</a></li>
+        <li><a href="#data-deletion">Xóa dữ liệu</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="main-wrap" id="top">
+
+    <!-- Hero Card -->
+    <article class="hero-card">
+      <div class="hero-feature-img-wrap">
+        <img src="./feature-image.png" alt="Vườn Trái Cây Miền Tây - Feature Graphic" width="1024" height="500">
+        <div class="hero-overlay-gradient"></div>
+      </div>
+      
+      <div class="hero-body">
+        <div class="hero-icon-row">
+          <img class="hero-app-icon" src="./playstore-app-icon.png" alt="App Icon" width="110" height="110">
+          <div class="hero-title-group">
+            <h1>Vườn Trái Cây Miền Tây</h1>
+            <span class="package-name">cm.mt.orchard</span>
+          </div>
+        </div>
+
+        <div class="hero-badges">
+          <span class="badge green">🌾 Nông trại hẹn giờ</span>
+          <span class="badge orange">📶 Chơi Offline 100%</span>
+          <span class="badge green">🔒 Không thu thập dữ liệu cá nhân</span>
+          <span class="badge pink">🌸 Thuần Việt & Miễn phí</span>
+          <span class="badge">👶 Mọi lứa tuổi (PEGI 3)</span>
+          <span class="badge">⚙️ Godot 4 Engine</span>
+        </div>
+
+        <p class="hero-lead">
+          Trải nghiệm cảm giác làm chủ miệt vườn trù phú Nam Bộ: gieo trồng 10 loại quả đặc sản, canh giờ thu hoạch, bán ở Chợ nổi Cái Răng tấp nập và giao hàng cho ghe thương lái. Thư giãn nhẹ nhàng, không áp lực cày cuốc!
+        </p>
+
+        <div class="hero-actions">
+          <a href="#privacy" class="btn btn-primary">📜 Xem Chính sách bảo mật</a>
+          <a href="#store-listing" class="btn btn-outline">📋 Chuẩn mô tả Google Play</a>
+          <a href="#contact" class="btn btn-outline">✉️ Liên hệ Nhà phát triển</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 1: Giới thiệu ứng dụng -->
+    <section class="section-card" id="about">
+      <div class="section-header">
+        <div class="section-icon">🥭</div>
+        <div>
+          <h2>Giới thiệu Game</h2>
+          <p>Nét độc đáo của tựa game nông trại miệt vườn Nam Bộ</p>
+        </div>
+      </div>
+
+      <p>
+        <strong>Vườn Trái Cây Miền Tây</strong> là trò chơi mô phỏng trồng trọt nhàn rỗi (appointment farming) lấy cảm hứng từ những vườn cây ăn trái trĩu quả ven sông Tiền, sông Hậu và nét văn hoá Chợ nổi độc đáo của miền Tây Nam Bộ.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature-box">
+          <span class="feat-icon">⏳</span>
+          <h3>Trồng cây theo giờ thật</h3>
+          <p>Mỗi loại trái cây có thời gian chín riêng từ vài phút đến vài giờ. Bạn chỉ cần gieo giống trước khi đi làm hay đi ngủ, trái sẽ tự lớn mà không cần treo máy.</p>
+        </div>
+
+        <div class="feature-box">
+          <span class="feat-icon">🛶</span>
+          <h3>Họp Chợ nổi & Ghe lái</h3>
+          <p>Trái hái xong được đưa lên Chợ nổi với giá bán biến động theo ngày (có loại trúng mùa x2 giá) hoặc giao đơn hàng cho ghe thương lái nhận Sen vàng may mắn.</p>
+        </div>
+
+        <div class="feature-box">
+          <span class="feat-icon">🌱</span>
+          <h3>10 Đặc sản trứ danh</h3>
+          <p>Từ Chuối ngự, Đu đủ, Dừa xiêm, Thanh long cho đến Xoài cát Hoà Lộc, Vú sữa Lò Rèn, Bưởi da xanh và Sầu riêng Ri6 thơm nức.</p>
+        </div>
+
+        <div class="feature-box">
+          <span class="feat-icon">🏡</span>
+          <h3>Mở rộng & Nâng cấp vườn</h3>
+          <p>Mở rộng tới 20 ô đất phì nhiêu, lai tạo giống cây ngon tăng giá bán vĩnh viễn, xây dựng Nhà kính rút ngắn thời gian chín và Kho lạnh giữ trái luôn tươi.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-green">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <strong>Triết lý thiết kế thân thiện:</strong> Trò chơi hoàn toàn <strong>offline</strong>, không tạo tài khoản, không theo dõi định danh cá nhân, không hệ thống năng lượng gò bó và không pay-to-win.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Chuẩn Google Play Store Listing -->
+    <section class="section-card" id="store-listing">
+      <div class="section-header">
+        <div class="section-icon">📱</div>
+        <div>
+          <h2>Thông tin niêm yết Google Play Store</h2>
+          <p>Tiêu đề, Mô tả ngắn và Mô tả chi tiết đạt chuẩn ASO Play Console</p>
+        </div>
+      </div>
+
+      <!-- App Title -->
+      <div class="store-copy-block">
+        <div class="copy-header">
+          <span class="copy-title">🏷️ Tiêu đề ứng dụng (App Title)</span>
+          <div>
+            <span class="copy-char-count">22 / 30 ký tự</span>
+            <button class="copy-btn" onclick="copyText('app-title-text', this)">Sao chép</button>
+          </div>
+        </div>
+        <div class="copy-content-box" id="app-title-text">Vườn Trái Cây Miền Tây</div>
+      </div>
+
+      <!-- Short Description -->
+      <div class="store-copy-block">
+        <div class="copy-header">
+          <span class="copy-title">📝 Mô tả ngắn (Short Description)</span>
+          <div>
+            <span class="copy-char-count">73 / 80 ký tự</span>
+            <button class="copy-btn" onclick="copyText('short-desc-text', this)">Sao chép</button>
+          </div>
+        </div>
+        <div class="copy-content-box" id="short-desc-text">Trồng cây ăn trái, họp chợ nổi miền Tây. Thư giãn miệt vườn, chơi offline!</div>
+      </div>
+
+      <!-- Full Description -->
+      <div class="store-copy-block">
+        <div class="copy-header">
+          <span class="copy-title">📖 Mô tả đầy đủ (Full Description)</span>
+          <div>
+            <span class="copy-char-count">Chuẩn ASO Google Play Store</span>
+            <button class="copy-btn" onclick="copyText('full-desc-text', this)">Sao chép toàn bộ</button>
+          </div>
+        </div>
+        <div class="copy-content-box" id="full-desc-text">Chào mừng bạn về với Vườn Trái Cây Miền Tây – tựa game nông trại miệt vườn Nam Bộ nhẹ nhàng, mộc mạc và hoàn toàn thư giãn!
+
+Bạn có bao giờ nhớ bóng mát rặng dừa nghiêng bóng, tiếng nước khua chèo và những chùm quả chín mọng trĩu cành bên dòng kênh phù sa màu mỡ? Vườn Trái Cây Miền Tây sẽ đưa bạn trở thành một chủ vườn thực thụ giữa lòng sông nước Cửu Long.
+
+🌿 CÁC TÍNH NĂNG NỔI BẬT:
+
+🌱 TRỒNG CÂY THEO THỜI GIAN THẬT (APPOINTMENT FARMING)
+• Trồng cây và để quả tự chín theo giờ thật: 1 phút, 15 phút, 2 giờ, 8 giờ cho đến 24 giờ.
+• Thích hợp cho nhịp sống bận rộn: gieo hạt trước giờ làm hay trước khi đi ngủ, rảnh lúc nào ghé thăm vườn thu hoạch lúc đó mà không cần cắm sạc treo máy!
+
+🍉 10 ĐẶC SẢN MIỆT VƯỜN TRỨ DANH
+• Gieo trồng và thu hái trọn vẹn những loại quả ngọt Nam Bộ: Chuối tiêu, Đu đủ, Dừa xiêm, Thanh long, Xoài cát Hoà Lộc, Chôm chôm nhãn, Vú sữa Lò Rèn, Bưởi da xanh, Măng cụt và Vua trái cây Sầu riêng Ri6.
+• Mỗi giống cây có thời gian sinh trưởng, giá bán và cấp độ mở khóa hấp dẫn riêng.
+
+🛶 HỌP CHỢ NỔI SẦM UẤT & GHE THƯƠNG LÁI
+• Chợ nổi Cái Răng tấp nập: Giá thu mua trái cây biến động mỗi ngày. Canh ngày trúng mùa để bán x2 lợi nhuận!
+• Đơn hàng Ghe Thương Lái: Giao đủ loại trái theo yêu cầu mỗi ngày để nhận thưởng lớn Tiền xu, Điểm kinh nghiệm và Sen vàng may mắn.
+
+🏡 MỞ RỘNG VÀ NÂNG CẤP VƯỜN CÂY
+• Khai hoang đất mới: Mở rộng tới 20 ô đất phù sa màu mỡ.
+• Nâng giống ngon: Lai tạo giống cây giúp tăng vĩnh viễn % giá bán khi xuất khẩu.
+• Xây dựng Nhà kính: Rút ngắn thời gian chín của toàn bộ vườn cây.
+• Lắp đặt Kho lạnh: Giữ trái cây luôn tươi rói, không lo quả chín quá lâu bị héo.
+
+🎁 PHÂN BÓN & QUÀ TẶNG MỖI NGÀY
+• Quà điểm danh 7 ngày liên tục với hàng trăm Sen vàng quý giá.
+• Bao Phân bón thần kỳ: Bón phân là giảm ngay 1 giờ chín cho toàn bộ cây trong vườn!
+
+📶 HOÀN TOÀN OFFLINE – KHÔNG LO TỐN PIN & 4G
+• Chơi mượt mà không cần mạng Internet.
+• Không yêu cầu đăng ký tài khoản rườm rà.
+• Dung lượng cực nhẹ, tiết kiệm pin tối đa cho mọi dòng máy Android.
+
+Hãy xắn tay áo lên, gieo những mầm xanh đầu tiên và ngắm nhìn miệt vườn của bạn trĩu quả từng ngày!
+
+Cảm ơn bạn đã ủng hộ game thuần Việt! Chúc bạn có những phút giây thư thái nhất cùng Vườn Trái Cây Miền Tây.</div>
+      </div>
+    </section>
+
+    <!-- Section 3: Chính sách bảo mật (App Privacy Policy) -->
+    <section class="section-card" id="permissions">
+      <div class="section-header">
+        <div class="section-icon">🛡️</div>
+        <div>
+          <h2>Chính sách bảo mật (Privacy Policy)</h2>
+          <p>Tuân thủ nghiêm ngặt Chính sách dành cho Nhà phát triển của Google Play</p>
+        </div>
+      </div>
+
+      <div class="policy-article">
+        <p><strong>Ngày có hiệu lực:</strong> 28 tháng 10 năm 2026</p>
+        <p>
+          Chính sách bảo mật này giải thích cách thức ứng dụng di động <strong>Vườn Trái Cây Miền Tây</strong> (mã gói: <code>cm.mt.orchard</code>, được phát triển bởi <strong>MT Games</strong>) thu thập, sử dụng, bảo vệ và xử lý thông tin khi bạn cài đặt và trải nghiệm trò chơi trên hệ điều hành Android.
+        </p>
+        <p>
+          Chúng tôi cam kết tôn trọng tuyệt đối quyền riêng tư của bạn. Chúng tôi thiết kế trò chơi với nguyên tắc <strong>Offline First</strong> — giảm thiểu tối đa việc thu thập dữ liệu và không yêu cầu bất kỳ thông tin nhận dạng cá nhân nào từ phía người chơi.
+        </p>
+      </div>
+
+      <!-- Quyền hạn ứng dụng -->
+      <div class="policy-article" id="app-permissions">
+        <h3><span class="num">1</span> Các quyền mà ứng dụng yêu cầu trên thiết bị</h3>
+        <p>Trò chơi chỉ yêu cầu một số quyền tối thiểu của hệ điều hành Android để phục vụ tính năng chơi game và hiển thị dịch vụ, cụ thể gồm:</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 32%;">Quyền Android</th>
+                <th style="width: 20%;">Loại quyền</th>
+                <th>Mục đích sử dụng thực tế</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>android.permission.INTERNET</code></td>
+                <td>Thông thường (Normal)</td>
+                <td>Cho phép kết nối mạng để tải quảng cáo từ Google AdMob và xử lý giao dịch thanh toán Google Play Billing. Game vẫn chơi hoàn toàn ngoại tuyến (offline) khi không có mạng.</td>
+              </tr>
+              <tr>
+                <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+                <td>Thông thường (Normal)</td>
+                <td>Kiểm tra xem thiết bị hiện có kết nối mạng hay không để kích hoạt hoặc tạm dừng các yêu cầu tải quảng cáo một cách an toàn và tiết kiệm pin.</td>
+              </tr>
+              <tr>
+                <td><code>android.permission.VIBRATE</code></td>
+                <td>Thông thường (Normal)</td>
+                <td>Tạo hiệu ứng rung phản hồi xúc giác nhẹ (haptic feedback) khi bạn thu hoạch quả, bón phân hoặc bấm nút. Người chơi có thể <strong>bật / tắt rung</strong> bất cứ lúc nào trong mục Cài đặt.</td>
+              </tr>
+              <tr>
+                <td><code>com.google.android.gms.permission.AD_ID</code></td>
+                <td>Dịch vụ Google Play</td>
+                <td>Truy cập Mã định danh quảng cáo (Advertising ID) theo tiêu chuẩn của Google AdMob nhằm phục vụ mục đích kiểm soát tần suất quảng cáo và phòng chống gian lận.</td>
+              </tr>
+              <tr>
+                <td><code>com.android.vending.BILLING</code></td>
+                <td>Dịch vụ Google Play</td>
+                <td>Hỗ trợ người chơi thực hiện giao dịch mua gói vật phẩm "Xóa quảng cáo" (Remove Ads) an toàn thông qua cổng thanh toán Google Play Store.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-blue">
+          <div class="callout-icon">ℹ️</div>
+          <div class="callout-body">
+            <strong>Cam kết quyền nhạy cảm:</strong> Trò chơi <strong>KHÔNG</strong> yêu cầu các quyền nhạy cảm như Định vị GPS (Location), Camera, Microphone, Danh bạ (Contacts), Nhật ký cuộc gọi, Tin nhắn SMS hay Bộ nhớ ngoài (Storage).
+          </div>
+        </div>
+      </div>
+
+      <!-- SDK Bên thứ 3 -->
+      <div class="policy-article" id="third-party">
+        <h3><span class="num">2</span> Các dịch vụ & SDK bên thứ ba</h3>
+        <p>Để duy trì trò chơi miễn phí và hỗ trợ thanh toán tiện lợi, chúng tôi tích hợp các SDK dịch vụ chính thức từ Google LLC:</p>
+
+        <ul>
+          <li>
+            <strong>Google AdMob (Google Mobile Ads SDK):</strong>
+            <br>Trò chơi hiển thị biểu ngữ (Banner), quảng cáo xen kẽ (Interstitial) và video tặng thưởng (Rewarded Video). Google AdMob có thể tự động thu thập và xử lý các thông tin kỹ thuật không định danh như: Mã quảng cáo Android (Advertising ID), mẫu thiết bị, phiên bản hệ điều hành, địa chỉ IP (dạng ẩn danh) và các chỉ số tương tác quảng cáo.
+            <br>Chi tiết xem tại: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách quyền riêng tư của Google</a> và <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Cách Google sử dụng dữ liệu từ ứng dụng</a>.
+          </li>
+          <li>
+            <strong>Google Play In-App Billing (Google Play):</strong>
+            <br>Cung cấp tính năng mua gói vật phẩm "Xóa quảng cáo" một lần duy nhất. Toàn bộ tiến trình thanh toán, xử lý thẻ tín dụng, ví điện tử hay hóa đơn đều do Google Play trực tiếp quản lý bảo mật. Chúng tôi <strong>không bao giờ</strong> tiếp cận hoặc lưu trữ bất kỳ thông tin thẻ ngân hàng hoặc dữ liệu tài chính nào của bạn.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Chính sách thu thập dữ liệu -->
+      <div class="policy-article" id="privacy">
+        <h3><span class="num">3</span> Chính sách thu thập & sử dụng dữ liệu</h3>
+        
+        <p><strong>Dữ liệu cá nhân:</strong> Chúng tôi <strong>KHÔNG thu thập</strong> bất kỳ thông tin nhận dạng cá nhân nào (như họ tên, email cá nhân, số điện thoại, địa chỉ nhà hay ảnh đại diện). Bạn không cần đăng ký tài khoản hay đăng nhập mạng xã hội để chơi game.</p>
+
+        <p><strong>Bảng an toàn dữ liệu (Data Safety Disclosure) theo chuẩn Google Play Console:</strong></p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Hạng mục dữ liệu</th>
+                <th>Thu thập</th>
+                <th>Chia sẻ</th>
+                <th>Mục đích xử lý</th>
+                <th>Mã hóa khi truyền</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mã định danh thiết bị</strong><br>(Advertising ID)</td>
+                <td>Có (bởi AdMob)</td>
+                <td>Có (cho mạng quảng cáo Google)</td>
+                <td>Quảng cáo, kiểm soát tần suất, phân tích và phòng chống gian lận</td>
+                <td>Có (Giao thức HTTPS / TLS)</td>
+              </tr>
+              <tr>
+                <td><strong>Tương tác trong ứng dụng</strong><br>(App Interactions)</td>
+                <td>Có (bởi AdMob)</td>
+                <td>Có (Google AdMob)</td>
+                <td>Đo lường hiệu suất hiển thị quảng cáo</td>
+                <td>Có (HTTPS)</td>
+              </tr>
+              <tr>
+                <td><strong>Chẩn đoán & Sự cố</strong><br>(Crash Logs & Diagnostics)</td>
+                <td>Có (khi xảy ra lỗi)</td>
+                <td>Không</td>
+                <td>Nâng cao chất lượng, khắc phục lỗi crash ứng dụng</td>
+                <td>Có (HTTPS)</td>
+              </tr>
+              <tr>
+                <td><strong>Tiến trình chơi game</strong><br>(Tiền, Ô đất, Cấp, Trái cây)</td>
+                <td>Lưu cục bộ trên máy</td>
+                <td>Không bao giờ</td>
+                <td>Duy trì dữ liệu chơi game cho người chơi</td>
+                <td>Lưu trong Sandbox nội bộ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Xóa dữ liệu -->
+      <div class="policy-article" id="data-deletion">
+        <h3><span class="num">4</span> Chính sách lưu trữ & Xóa dữ liệu (Data Deletion)</h3>
+        <p>
+          Do toàn bộ tiến trình chơi game được lưu trữ <strong>cục bộ (locally)</strong> trên thiết bị của bạn (trong phân vùng dữ liệu nội bộ được bảo vệ bởi sandbox hệ điều hành Android), bạn có toàn quyền kiểm soát và xóa dữ liệu bất kỳ lúc nào thông qua 2 cách cực kỳ đơn giản:
+        </p>
+
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-badge">1</div>
+            <div class="step-content">
+              <h4>Cách 1: Xóa trực tiếp trong game (Khuyên dùng)</h4>
+              <p>Mở trò chơi &rarr; Bấm vào biểu tượng <strong>Cài đặt</strong> (bánh răng ở góc trên màn hình) &rarr; Chọn <strong>"Xóa tiến trình"</strong> &rarr; Xác nhận "Đồng ý". Toàn bộ dữ liệu tiền tệ, cấp độ, ô đất và kho trái cây sẽ được dọn sạch về trạng thái ban đầu ngay lập tức.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-badge">2</div>
+            <div class="step-content">
+              <h4>Cách 2: Xóa qua Cài đặt Android hoặc Gỡ cài đặt</h4>
+              <p>Trên điện thoại, vào <strong>Cài đặt &rarr; Ứng dụng &rarr; Vườn Trái Cây Miền Tây &rarr; Bộ nhớ (Storage) &rarr; Xóa dữ liệu (Clear Data)</strong>; hoặc đơn giản chỉ cần <strong>Gỡ cài đặt (Uninstall)</strong> ứng dụng. Toàn bộ file lưu trữ của game trên máy sẽ được hệ điều hành xóa bỏ vĩnh viễn.</p>
+            </div>
+          </div>
+        </div>
+
+        <p>Vì chúng tôi không duy trì máy chủ lưu trữ dữ liệu người dùng qua đám mây, việc thực hiện một trong hai cách trên sẽ xóa vĩnh viễn 100% dữ liệu mà không thể phục hồi.</p>
+      </div>
+
+      <!-- Trẻ em -->
+      <div class="policy-article">
+        <h3><span class="num">5</span> Quyền riêng tư của Trẻ em (COPPA & Family Policy)</h3>
+        <p>
+          Trò chơi có nội dung lành mạnh, không bạo lực và phù hợp với mọi lứa tuổi gia đình. Chúng tôi tuân thủ nghiêm ngặt Đạo luật bảo vệ quyền riêng tư của trẻ em trên mạng (COPPA) và Chính sách Gia đình của Google Play:
+        </p>
+        <ul>
+          <li>Không chủ động thu thập bất kỳ thông tin nhận dạng cá nhân nào từ trẻ em dưới 13 tuổi (hoặc độ tuổi tương đương theo luật pháp quốc gia sở tại).</li>
+          <li>Nếu bạn là phụ huynh hoặc người giám hộ và phát hiện con em mình cung cấp thông tin cho bên thứ ba, vui lòng liên hệ ngay qua email để chúng tôi phối hợp kiểm tra và xử lý kịp thời.</li>
+        </ul>
+      </div>
+
+      <!-- GDPR / Châu Âu -->
+      <div class="policy-article">
+        <h3><span class="num">6</span> Người dùng tại Khu vực Kinh tế Châu Âu (EEA / UK / GDPR)</h3>
+        <p>
+          Đối với người dùng thuộc Liên minh Châu Âu (EU), Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK), trò chơi tích hợp cơ chế đồng thuận <strong>User Messaging Platform (UMP)</strong> được chứng nhận bởi Google để thu thập ý kiến về việc sử dụng cookie và cá nhân hóa quảng cáo.
+        </p>
+        <p>
+          Bạn có thể thay đổi hoặc thu hồi lựa chọn đồng thuận quảng cáo của mình bất kỳ lúc nào bằng cách vào mục <strong>Cài đặt &rarr; Tùy chọn quyền riêng tư (Privacy Options)</strong> trong menu trò chơi. Ngoài ra, bạn cũng có thể đặt lại hoặc tắt mã quảng cáo trong <strong>Cài đặt Android &rarr; Google &rarr; Quảng cáo</strong>.
+        </p>
+      </div>
+
+      <!-- Điều khoản thay đổi -->
+      <div class="policy-article">
+        <h3><span class="num">7</span> Thay đổi Chính sách bảo mật</h3>
+        <p>
+          Chúng tôi có thể cập nhật nội dung Chính sách bảo mật này theo thời gian nhằm phản ánh các thay đổi trong tính năng trò chơi hoặc yêu cầu pháp lý từ phía Google Play. Mọi cập nhật sẽ được công bố công khai tại đường dẫn trang này với ngày hiệu lực được ghi rõ ở đầu văn bản.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-card" id="contact">
+        <h3>📬 Liên hệ với Nhà phát triển</h3>
+        <p>
+          Nếu bạn có bất kỳ câu hỏi, góp ý về trò chơi hoặc yêu cầu hỗ trợ liên quan đến Chính sách bảo mật, xin vui lòng gửi thư cho chúng tôi. Chúng tôi luôn sẵn lòng lắng nghe và phản hồi trong thời gian sớm nhất!
+        </p>
+        <div class="contact-methods">
+          <a class="contact-pill" href="mailto:minhthang0792@gmail.com">
+            <span>📧</span> minhthang0792@gmail.com
+          </a>
+          <span class="contact-pill">
+            <span>🏢</span> MT Games Studio
+          </span>
+          <span class="contact-pill">
+            <span>📍</span> Việt Nam
+          </span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Vườn Trái Cây Miền Tây</strong> (cm.mt.orchard) &bull; Phát triển bởi MT Games</p>
+    <p>Bản quyền &copy; 2026 MT Games. Mọi quyền được bảo lưu.</p>
+    <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem;">Trang chính sách bảo mật chính thức được xuất bản cho Google Play Store Console.</p>
+  </footer>
+
+  <!-- Simple Copy Script -->
+  <script>
+    function copyText(elementId, btnElement) {
+      const textToCopy = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = btnElement.innerText;
+        btnElement.innerText = "✓ Đã sao chép!";
+        btnElement.classList.add("copied");
+        setTimeout(() => {
+          btnElement.innerText = originalText;
+          btnElement.classList.remove("copied");
+        }, 2200);
+      }).catch(err => {
+        console.error("Lỗi khi sao chép: ", err);
+      });
+    }
+  </script>
+
+</body>
+</html>
