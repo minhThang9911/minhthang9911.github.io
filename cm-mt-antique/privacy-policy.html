@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chợ Đồ Cổ – Giới thiệu & Chính sách bảo mật (Privacy Policy)</title>
+  <meta name="description" content="Thông tin giới thiệu, mô tả Google Play Store và Chính sách bảo mật chi tiết của trò chơi Chợ Đồ Cổ (cm.mt.antique).">
+  <meta name="author" content="MT Games - minhthang0792@gmail.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #8D5338;
+      --primary-dark: #5D3320;
+      --primary-light: #B86B47;
+      --primary-soft: #F7ECE4;
+      --accent-jade: #1E7E68;
+      --accent-jade-soft: #E0F2EE;
+      --accent-gold: #C68A2E;
+      --accent-gold-soft: #FCF4E6;
+      --bg-cream: #FAF6EF;
+      --card-bg: #FFFFFF;
+      --text-main: #332720;
+      --text-muted: #66584E;
+      --border-color: #E8DFD3;
+      --border-focus: #D4AF37;
+      --shadow-sm: 0 2px 8px rgba(51, 39, 32, 0.05);
+      --shadow-md: 0 8px 24px rgba(51, 39, 32, 0.08);
+      --shadow-lg: 0 16px 40px rgba(51, 39, 32, 0.12);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 246, 239, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem 1.25rem;
+    }
+
+    .nav-container {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .brand-link img {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      box-shadow: var(--shadow-sm);
+      object-fit: cover;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .nav-menu a:hover, .nav-menu a.active {
+      color: var(--primary-dark);
+      background: var(--primary-soft);
+    }
+
+    /* Main Container */
+    .main-wrap {
+      max-width: 980px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.25rem;
+    }
+
+    /* Hero Section */
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-feature-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      background: #5D3320;
+      overflow: hidden;
+    }
+
+    .hero-feature-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-feature-img-wrap:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-overlay-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(45,26,18,0.72) 100%);
+    }
+
+    .hero-body {
+      position: relative;
+      padding: 2.25rem 2rem 2rem;
+    }
+
+    .hero-icon-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 1.5rem;
+      margin-top: -5rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-app-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid #FFFFFF;
+      background: #FFFFFF;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .hero-title-group h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-title-group .package-name {
+      font-size: 0.88rem;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      background: var(--primary-soft);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      display: inline-block;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      background: #F2ECE3;
+      color: var(--text-muted);
+    }
+
+    .badge.terracotta {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+    }
+
+    .badge.jade {
+      background: var(--accent-jade-soft);
+      color: var(--accent-jade);
+    }
+
+    .badge.gold {
+      background: var(--accent-gold-soft);
+      color: var(--accent-gold);
+    }
+
+    .hero-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.25rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 0.65rem 1.35rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(141, 83, 56, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: #FFFFFF;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background: #F7F2E8;
+      border-color: #D6C8B4;
+    }
+
+    /* Sections */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 2px solid var(--primary-soft);
+    }
+
+    .section-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .section-header p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Feature Grid in About */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-box {
+      background: #FAF7F0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      transition: all 0.2s ease;
+    }
+
+    .feature-box:hover {
+      border-color: var(--border-focus);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+
+    .feature-box .feat-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .feature-box h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Store Copy Boxes */
+    .store-copy-block {
+      background: #FDFCF9;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .copy-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .copy-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .copy-char-count {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: #EFE9DE;
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .copy-content-box {
+      background: #F7F3EA;
+      border: 1px solid #DFD6C7;
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #382B24;
+      white-space: pre-line;
+      word-break: break-word;
+      font-family: inherit;
+    }
+
+    .copy-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: var(--primary-soft);
+      border-color: var(--border-focus);
+      color: var(--primary-dark);
+    }
+
+    .copy-btn.copied {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    /* Policy Details */
+    .policy-article {
+      margin-bottom: 2rem;
+    }
+
+    .policy-article:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-article h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .policy-article h3 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .policy-article p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .policy-article ul {
+      margin: 0.75rem 0 1rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .policy-article li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .policy-article strong {
+      color: var(--text-main);
+    }
+
+    /* Custom Tables */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: #FFFFFF;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    th {
+      background: #F4EFE6;
+      color: var(--text-main);
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #EFEAE0;
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #FDFBF8;
+    }
+
+    /* Callout & Alert Boxes */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.35rem;
+      margin: 1.25rem 0;
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+
+    .callout-icon {
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    .callout-body {
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .callout-brown {
+      background: var(--primary-soft);
+      border: 1px solid #E5D5C8;
+      color: var(--primary-dark);
+    }
+
+    .callout-jade {
+      background: var(--accent-jade-soft);
+      border: 1px solid #B8E4D8;
+      color: #0E5948;
+    }
+
+    .callout-gold {
+      background: var(--accent-gold-soft);
+      border: 1px solid #F5E2C4;
+      color: #8C5B12;
+    }
+
+    /* Step List for Data Deletion */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin: 1rem 0;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 1rem;
+      background: #FAF7F0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.2rem;
+    }
+
+    .step-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.95rem;
+    }
+
+    .step-content h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: linear-gradient(135deg, #5D3320 0%, #8D5338 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      margin-top: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-pill {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 0.65rem 1.25rem;
+      border-radius: 12px;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .contact-pill:hover {
+      background: #FFFFFF;
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 1.25rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .top-nav {
+        padding: 0.6rem 1rem;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .hero-feature-img-wrap {
+        height: 220px;
+      }
+      .hero-icon-row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: -3.5rem;
+        gap: 0.75rem;
+      }
+      .hero-app-icon {
+        width: 84px;
+        height: 84px;
+        border-radius: 18px;
+      }
+      .hero-title-group h1 {
+        font-size: 1.5rem;
+      }
+      .hero-body {
+        padding: 1.5rem 1.25rem;
+      }
+      .section-card {
+        padding: 1.5rem 1.25rem;
+      }
+      .contact-card {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="#top" class="brand-link">
+        <img src="./playstore-app-icon.png" alt="Icon Chợ Đồ Cổ" width="38" height="38">
+        <span>Chợ Đồ Cổ</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#store-listing">Mô tả Play Store</a></li>
+        <li><a href="#permissions">Quyền & SDK</a></li>
+        <li><a href="#privacy">Chính sách bảo mật</a></li>
+        <li><a href="#data-deletion">Xóa dữ liệu</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="main-wrap" id="top">
+
+    <!-- Hero Card -->
+    <article class="hero-card">
+      <div class="hero-feature-img-wrap">
+        <img src="./feature-image.png" alt="Chợ Đồ Cổ - Feature Graphic" width="1024" height="500">
+        <div class="hero-overlay-gradient"></div>
+      </div>
+      
+      <div class="hero-body">
+        <div class="hero-icon-row">
+          <img class="hero-app-icon" src="./playstore-app-icon.png" alt="App Icon" width="110" height="110">
+          <div class="hero-title-group">
+            <h1>Chợ Đồ Cổ</h1>
+            <span class="package-name">cm.mt.antique</span>
+          </div>
+        </div>
+
+        <div class="hero-badges">
+          <span class="badge terracotta">🏺 Mua bán & Thẩm định cổ vật</span>
+          <span class="badge jade">📶 Chơi Offline 100%</span>
+          <span class="badge gold">🔒 Không thu thập dữ liệu cá nhân</span>
+          <span class="badge terracotta">🤝 Mặc cả sinh lời</span>
+          <span class="badge">👶 Mọi lứa tuổi (PEGI 3)</span>
+          <span class="badge">⚙️ Godot 4 Engine</span>
+        </div>
+
+        <p class="hero-lead">
+          Trải nghiệm cảm giác làm chủ tiệm đồ cổ phố xưa: săn lùng bảo vật ở Chợ phiên mỗi ngày, soi kính lúp thẩm định hàng thật – đồ giả, đặt lên kệ bán theo giờ thật và mặc cả giá hời với những vị khách sành sỏi. Thư giãn mộc mạc, không áp lực!
+        </p>
+
+        <div class="hero-actions">
+          <a href="#privacy" class="btn btn-primary">📜 Xem Chính sách bảo mật</a>
+          <a href="#store-listing" class="btn btn-outline">📋 Chuẩn mô tả Google Play</a>
+          <a href="#contact" class="btn btn-outline">✉️ Liên hệ Nhà phát triển</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 1: Giới thiệu ứng dụng -->
+    <section class="section-card" id="about">
+      <div class="section-header">
+        <div class="section-icon">🏺</div>
+        <div>
+          <h2>Giới thiệu Game</h2>
+          <p>Nét độc đáo của tựa game buôn bán đồ cổ phố xưa</p>
+        </div>
+      </div>
+
+      <p>
+        <strong>Chợ Đồ Cổ</strong> là trò chơi mô phỏng buôn bán và thẩm định cổ vật mang đậm màu sắc văn hoá Việt Nam, kết hợp khéo léo giữa lối chơi nhàn rỗi theo giờ thật (idle appointment) và mini-game đối thoại mặc cả kịch tính.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature-box">
+          <span class="feat-icon">🏮</span>
+          <h3>Chợ Phiên Cổ Vật Muôn Màu</h3>
+          <p>Lô hàng chợ phiên được làm mới mỗi ngày với 36 cổ vật chia làm 6 bộ sưu tập kinh điển. Mỗi món đồ ẩn chứa câu chuyện lịch sử và giá trị bất ngờ.</p>
+        </div>
+
+        <div class="feature-box">
+          <span class="feat-icon">🔍</span>
+          <h3>Bàn Giám Định Thật Giả</h3>
+          <p>Dùng kính lúp soi xét ước tính giá trị hoặc đưa lên Bàn giám định để lột trần hàng nhái ve chai. Rèn luyện Mắt nghề tinh tường để tránh mua nhầm đồ giả!</p>
+        </div>
+
+        <div class="feature-box">
+          <span class="feat-icon">🏷️</span>
+          <h3>Bày Kệ Bán Theo Giờ Thật</h3>
+          <p>Tự do định giá theo 3 chiến lược: Bán nhanh, Giá vừa, hoặc Giá cao. Dù bạn tắt app hay đi ngủ, khách vẫn ghé mua hàng và để lại tiền lời chờ bạn trở lại.</p>
+        </div>
+
+        <div class="feature-box">
+          <span class="feat-icon">🤝</span>
+          <h3>Mini-Game Mặc Cả Với Khách</h3>
+          <p>Trò chuyện và trả giá với những vị khách quen tính tình độc đáo (Cô Hai, Anh Tây balo, Bác cán bộ...). Cân bằng mức giá và lòng kiên nhẫn để chốt đơn hời nhất.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-brown">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <strong>Triết lý thiết kế thân thiện:</strong> Trò chơi hoàn toàn <strong>offline</strong>, không bắt buộc kết nối mạng, không yêu cầu tạo tài khoản, không theo dõi định danh cá nhân và không có cơ chế gò bó gây áp lực.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Chuẩn Google Play Store Listing -->
+    <section class="section-card" id="store-listing">
+      <div class="section-header">
+        <div class="section-icon">📱</div>
+        <div>
+          <h2>Thông tin niêm yết Google Play Store</h2>
+          <p>Tiêu đề, Mô tả ngắn và Mô tả chi tiết đạt chuẩn ASO Play Console</p>
+        </div>
+      </div>
+
+      <!-- App Title -->
+      <div class="store-copy-block">
+        <div class="copy-header">
+          <span class="copy-title">🏷️ Tiêu đề ứng dụng (App Title)</span>
+          <div>
+            <span class="copy-char-count">9 / 30 ký tự</span>
+            <button class="copy-btn" onclick="copyText('app-title-text', this)">Sao chép</button>
+          </div>
+        </div>
+        <div class="copy-content-box" id="app-title-text">Chợ Đồ Cổ</div>
+      </div>
+
+      <!-- Short Description -->
+      <div class="store-copy-block">
+        <div class="copy-header">
+          <span class="copy-title">📝 Mô tả ngắn (Short Description)</span>
+          <div>
+            <span class="copy-char-count">72 / 80 ký tự</span>
+            <button class="copy-btn" onclick="copyText('short-desc-text', this)">Sao chép</button>
+          </div>
+        </div>
+        <div class="copy-content-box" id="short-desc-text">Săn lùng cổ vật, thẩm định thật giả & mặc cả sinh lời. Thư giãn offline!</div>
+      </div>
+
+      <!-- Full Description -->
+      <div class="store-copy-block">
+        <div class="copy-header">
+          <span class="copy-title">📖 Mô tả đầy đủ (Full Description)</span>
+          <div>
+            <span class="copy-char-count">Chuẩn ASO Google Play Store</span>
+            <button class="copy-btn" onclick="copyText('full-desc-text', this)">Sao chép toàn bộ</button>
+          </div>
+        </div>
+        <div class="copy-content-box" id="full-desc-text">Chào mừng bạn bước chân vào Chợ Đồ Cổ – tựa game buôn bán và thẩm định cổ vật mộc mạc, hoài niệm và đầy lôi cuốn!
+
+Bạn có từng mơ ước được làm chủ một góc tiệm đồ cổ yên bình nơi phố xưa, ngày ngày săm soi từng chiếc đèn dầu hoa kỳ, bàn ủi con gà, ấm tích trà xanh hay những chiếc bình gốm hoa lam nhuốm màu thời gian? Chợ Đồ Cổ sẽ mang đến cho bạn trải nghiệm độc đáo của một nhà thẩm định cổ vật thực thụ.
+
+🏺 CÁC TÍNH NĂNG NỔI BẬT:
+
+🏮 SĂN LÙNG CỔ VẬT TẠI CHỢ PHIÊN
+• Lô hàng đổi mới mỗi ngày: Mỗi phiên chợ là một cơ hội tìm kiếm báu vật vô giá.
+• 36 món cổ vật thuộc 6 bộ sưu tập đặc sắc:
+  1. Đồ xưa nhà bà: Đèn dầu hoa kỳ, Bàn ủi con gà, Radio bán dẫn, Máy may đạp chân, Đồng hồ quả lắc...
+  2. Tem & tiền xưa: Bưu thiếp cũ, Bộ tem Đông Dương, Tiền xu cổ, Tiền giấy xưa...
+  3. Gốm sứ hoa lam: Bát chiết yêu, Ấm tích trà, Đĩa lam Huế, Bình vôi cổ, Lọ lục bình...
+  4. Đồ đồng thờ tự: Chân đèn đồng, Lư hương cổ, Chuông đồng, Đỉnh đồng tam khí...
+  5. Gỗ & sơn mài mỹ nghệ: Hộp trầu cẩn ốc, Khay trà khảm xà cừ, Tượng phúc lộc thọ...
+  6. Trang sức cổ: Trâm cài tóc ngọc, Vòng cẩm thạch, Nhẫn vàng chạm rồng...
+
+🔍 BÀN GIÁM ĐỊNH & THẨM ĐỊNH THẬT GIẢ
+• Thật giả lẫn lộn: Chợ phiên có hàng thật giá trị ngàn vàng, nhưng cũng đầy rẫy đồ giả tinh vi bán giá đắt đỏ.
+• Soi kính lúp: Kiểm tra sơ bộ các dấu vết khả nghi trước khi quyết định xuống tiền mua.
+• Bàn giám định: Đặt cổ vật lên bàn để thẩm định chi tiết theo thời gian thực. Đồ thật sẽ lộ rõ giá trị đích thực, đồ giả sẽ chuyển thành phế liệu bán ve chai gỡ vốn!
+• Nâng cấp Mắt nghề: Càng lên cấp cao, khoảng ước giá càng chính xác, giúp bạn bắt chuẩn món hời.
+
+🏷️ BÀY KỆ BÁN HÀNG THEO THỜI GIAN THẬT
+• Chiến lược định giá linh hoạt: Chọn Bán nhanh (lãi vừa, bán sau 1 giờ), Giá vừa (sau 4 giờ) hoặc Giá cao (sau 9 giờ khi bạn đi ngủ).
+• Tự động bán khi vắng mặt: Khách hàng vẫn ghé sạp và mua đồ ngay cả khi bạn tắt máy. Mở game trở lại để nhận ngay khoản tiền bán rủng rỉnh!
+
+🤝 MINI-GAME MẶC CẢ ĐỐI THOẠI KỊCH TÍNH
+• Khi mở app, khách hàng sẽ ghé sạp ngắm nghía đồ cổ và bấm chuông gọi bạn ra tiếp chuyện!
+• Gặp gỡ những vị khách cá tính: Cô Hai xởi lởi, Anh Tây balo tò mò, Bác cán bộ hưu trí kỹ tính...
+• Kéo thanh trượt để trả giá: Đề nghị giá cao để kiếm lời đậm, nhưng cẩn thận làm cạn kiên nhẫn của khách! Nếu khách dỗi bỏ đi, bạn vẫn có thể "năn nỉ" để giữ chân khách mua bằng một lời đề nghị hợp lý.
+
+📜 SỔ SƯU TẦM & ĐƠN HÀNG ĐẶC BIỆT
+• Tặng hiện vật vào Sổ sưu tầm để lưu giữ gia tài cổ vật.
+• Hoàn thành trọn bộ 6/6 món để kích hoạt buff tăng vĩnh viễn 20% giá bán cho toàn bộ cổ vật thuộc bộ đó!
+• Giao hàng theo Đơn khách đặt mỗi ngày để nhận Uy tín và thưởng thêm Ngọc quý.
+
+📶 CHƠI HOÀN TOÀN OFFLINE – KHÔNG CẦN WI-FI
+• Chơi mượt mà mọi lúc mọi nơi, không cần mạng 4G/Wi-Fi.
+• Không yêu cầu đăng ký tài khoản, không thủ tục rườm rà.
+• Dung lượng siêu nhẹ, tối ưu pin tối đa cho mọi dòng máy Android.
+
+Hãy mở cửa sạp, lau sạch chiếc kính lúp và đón những vị khách đầu tiên đến với Chợ Đồ Cổ ngay hôm nay!
+
+Cảm ơn bạn đã ủng hộ game độc lập thuần Việt! Chúc bạn có những phút giây hoài niệm và thư giãn tuyệt vời.</div>
+      </div>
+    </section>
+
+    <!-- Section 3: Chính sách bảo mật (App Privacy Policy) -->
+    <section class="section-card" id="permissions">
+      <div class="section-header">
+        <div class="section-icon">🛡️</div>
+        <div>
+          <h2>Chính sách bảo mật (Privacy Policy)</h2>
+          <p>Tuân thủ nghiêm ngặt Chính sách dành cho Nhà phát triển của Google Play</p>
+        </div>
+      </div>
+
+      <div class="policy-article">
+        <p><strong>Ngày có hiệu lực:</strong> 31 tháng 10 năm 2026</p>
+        <p>
+          Chính sách bảo mật này giải thích cách thức ứng dụng di động <strong>Chợ Đồ Cổ</strong> (mã gói: <code>cm.mt.antique</code>, được phát triển bởi <strong>MT Games</strong>) thu thập, sử dụng, bảo vệ và xử lý thông tin khi bạn cài đặt và trải nghiệm trò chơi trên hệ điều hành Android.
+        </p>
+        <p>
+          Chúng tôi cam kết tôn trọng tuyệt đối quyền riêng tư của bạn. Chúng tôi thiết kế trò chơi với nguyên tắc <strong>Offline First</strong> — giảm thiểu tối đa việc thu thập dữ liệu và không yêu cầu bất kỳ thông tin nhận dạng cá nhân nào từ phía người chơi.
+        </p>
+      </div>
+
+      <!-- Quyền hạn ứng dụng -->
+      <div class="policy-article" id="app-permissions">
+        <h3><span class="num">1</span> Các quyền mà ứng dụng yêu cầu trên thiết bị</h3>
+        <p>Trò chơi chỉ yêu cầu một số quyền tối thiểu của hệ điều hành Android để phục vụ tính năng chơi game và hiển thị dịch vụ, cụ thể gồm:</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 32%;">Quyền Android</th>
+                <th style="width: 20%;">Loại quyền</th>
+                <th>Mục đích sử dụng thực tế</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>android.permission.INTERNET</code></td>
+                <td>Thông thường (Normal)</td>
+                <td>Cho phép kết nối mạng để tải quảng cáo từ Google AdMob và xử lý giao dịch mua gói Xoá quảng cáo qua Google Play Billing. Game vẫn chơi hoàn toàn ngoại tuyến (offline 100%) khi không có mạng.</td>
+              </tr>
+              <tr>
+                <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+                <td>Thông thường (Normal)</td>
+                <td>Kiểm tra thiết bị hiện có kết nối mạng hay không để tối ưu hóa việc nạp quảng cáo nền, tự động chuyển chế độ offline hoàn toàn khi mất mạng để tiết kiệm pin.</td>
+              </tr>
+              <tr>
+                <td><code>android.permission.VIBRATE</code></td>
+                <td>Thông thường (Normal)</td>
+                <td>Tạo hiệu ứng rung phản hồi xúc giác nhẹ (haptic feedback) khi gõ búa giám định hoặc chốt đơn mặc cả thành công. Người chơi có thể <strong>bật / tắt rung</strong> bất cứ lúc nào trong mục Cài đặt.</td>
+              </tr>
+              <tr>
+                <td><code>com.google.android.gms.permission.AD_ID</code></td>
+                <td>Dịch vụ Google Play</td>
+                <td>Truy cập Mã định danh quảng cáo (Advertising ID) theo tiêu chuẩn của Google AdMob nhằm phục vụ mục đích kiểm soát tần suất quảng cáo và phòng chống gian lận.</td>
+              </tr>
+              <tr>
+                <td><code>com.android.vending.BILLING</code></td>
+                <td>Dịch vụ Google Play</td>
+                <td>Hỗ trợ người chơi thực hiện giao dịch mua gói "Xóa quảng cáo" (Remove Ads) an toàn thông qua cổng thanh toán bảo mật của Google Play Store.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-jade">
+          <div class="callout-icon">ℹ️</div>
+          <div class="callout-body">
+            <strong>Cam kết quyền nhạy cảm:</strong> Trò chơi <strong>KHÔNG</strong> yêu cầu bất kỳ quyền nhạy cảm nào như Định vị GPS (Location), Camera, Microphone, Danh bạ (Contacts), Tin nhắn SMS, Nhật ký cuộc gọi hay Bộ nhớ ngoài (External Storage).
+          </div>
+        </div>
+      </div>
+
+      <!-- SDK Bên thứ 3 -->
+      <div class="policy-article" id="third-party">
+        <h3><span class="num">2</span> Các dịch vụ & SDK bên thứ ba</h3>
+        <p>Để duy trì trò chơi miễn phí và hỗ trợ thanh toán an toàn, chúng tôi tích hợp các SDK dịch vụ chính thức từ Google LLC:</p>
+
+        <ul>
+          <li>
+            <strong>Google AdMob (Google Mobile Ads SDK):</strong>
+            <br>Trò chơi hiển thị biểu ngữ (Banner) ở màn hình chính, quảng cáo xen kẽ (Interstitial) giữa các phiên chơi và video tặng thưởng (Rewarded Video) khi người chơi chủ động xem để rút ngắn giờ thẩm định hoặc thêm lượt mặc cả. Google AdMob có thể tự động thu thập và xử lý các thông tin kỹ thuật không định danh như: Mã quảng cáo Android (Advertising ID), mẫu thiết bị, phiên bản hệ điều hành, địa chỉ IP (dạng ẩn danh) và các chỉ số tương tác quảng cáo.
+            <br>Chi tiết xem tại: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách quyền riêng tư của Google</a> và <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Cách Google sử dụng dữ liệu từ ứng dụng</a>.
+          </li>
+          <li>
+            <strong>Google Play In-App Billing (Google Play):</strong>
+            <br>Cung cấp tính năng mua gói vật phẩm "Xóa quảng cáo" một lần duy nhất. Toàn bộ tiến trình thanh toán, xử lý thẻ tín dụng, ví điện tử hay hóa đơn đều do Google Play trực tiếp quản lý bảo mật. Chúng tôi <strong>không bao giờ</strong> tiếp cận hoặc lưu trữ bất kỳ thông tin tài chính nào của bạn.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Chính sách thu thập dữ liệu -->
+      <div class="policy-article" id="privacy">
+        <h3><span class="num">3</span> Chính sách thu thập & sử dụng dữ liệu</h3>
+        
+        <p><strong>Dữ liệu cá nhân:</strong> Chúng tôi <strong>KHÔNG thu thập</strong> bất kỳ thông tin nhận dạng cá nhân nào (như họ tên, email cá nhân, số điện thoại, địa chỉ nhà hay ảnh đại diện). Bạn không cần đăng ký tài khoản hay đăng nhập mạng xã hội để chơi game.</p>
+
+        <p><strong>Bảng an toàn dữ liệu (Data Safety Disclosure) theo chuẩn Google Play Console:</strong></p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Hạng mục dữ liệu</th>
+                <th>Thu thập</th>
+                <th>Chia sẻ</th>
+                <th>Mục đích xử lý</th>
+                <th>Mã hóa khi truyền</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mã định danh thiết bị</strong><br>(Advertising ID)</td>
+                <td>Có (bởi AdMob)</td>
+                <td>Có (cho mạng quảng cáo Google)</td>
+                <td>Quảng cáo, kiểm soát tần suất, phân tích và phòng chống gian lận</td>
+                <td>Có (Giao thức HTTPS / TLS)</td>
+              </tr>
+              <tr>
+                <td><strong>Tương tác trong ứng dụng</strong><br>(App Interactions)</td>
+                <td>Có (bởi AdMob)</td>
+                <td>Có (Google AdMob)</td>
+                <td>Đo lường hiệu suất hiển thị quảng cáo</td>
+                <td>Có (HTTPS)</td>
+              </tr>
+              <tr>
+                <td><strong>Chẩn đoán & Sự cố</strong><br>(Crash Logs & Diagnostics)</td>
+                <td>Có (khi xảy ra lỗi)</td>
+                <td>Không</td>
+                <td>Nâng cao chất lượng, khắc phục lỗi crash ứng dụng</td>
+                <td>Có (HTTPS)</td>
+              </tr>
+              <tr>
+                <td><strong>Tiến trình chơi game</strong><br>(Tiền, Ngọc, Cổ vật, Kệ bán)</td>
+                <td>Lưu cục bộ trên máy</td>
+                <td>Không bao giờ</td>
+                <td>Duy trì dữ liệu chơi game cho người chơi</td>
+                <td>Lưu trong Sandbox nội bộ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Xóa dữ liệu -->
+      <div class="policy-article" id="data-deletion">
+        <h3><span class="num">4</span> Chính sách lưu trữ & Xóa dữ liệu (Data Deletion)</h3>
+        <p>
+          Do toàn bộ tiến trình chơi game được lưu trữ <strong>cục bộ (locally)</strong> trên thiết bị của bạn (trong phân vùng dữ liệu nội bộ được bảo vệ bởi sandbox hệ điều hành Android), bạn có toàn quyền kiểm soát và xóa dữ liệu bất kỳ lúc nào thông qua 2 cách cực kỳ đơn giản:
+        </p>
+
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-badge">1</div>
+            <div class="step-content">
+              <h4>Cách 1: Xóa trực tiếp trong game (Khuyên dùng)</h4>
+              <p>Mở trò chơi &rarr; Bấm vào biểu tượng <strong>Cài đặt</strong> (bánh răng ở góc trên màn hình) &rarr; Chọn <strong>"Xóa tiến trình"</strong> &rarr; Xác nhận "Đồng ý". Toàn bộ dữ liệu tiền xu, ngọc quý, sạp hàng và sổ sưu tầm sẽ được dọn sạch về trạng thái ban đầu ngay lập tức.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-badge">2</div>
+            <div class="step-content">
+              <h4>Cách 2: Xóa qua Cài đặt Android hoặc Gỡ cài đặt</h4>
+              <p>Trên điện thoại, vào <strong>Cài đặt &rarr; Ứng dụng &rarr; Chợ Đồ Cổ &rarr; Bộ nhớ (Storage) &rarr; Xóa dữ liệu (Clear Data)</strong>; hoặc đơn giản chỉ cần <strong>Gỡ cài đặt (Uninstall)</strong> ứng dụng. Toàn bộ file lưu trữ của game trên máy sẽ được hệ điều hành xóa bỏ vĩnh viễn.</p>
+            </div>
+          </div>
+        </div>
+
+        <p>Vì chúng tôi không duy trì máy chủ lưu trữ dữ liệu người dùng qua đám mây, việc thực hiện một trong hai cách trên sẽ xóa vĩnh viễn 100% dữ liệu mà không thể phục hồi.</p>
+      </div>
+
+      <!-- Trẻ em -->
+      <div class="policy-article">
+        <h3><span class="num">5</span> Quyền riêng tư của Trẻ em (COPPA & Family Policy)</h3>
+        <p>
+          Trò chơi có nội dung lành mạnh, không bạo lực và phù hợp với mọi lứa tuổi gia đình. Chúng tôi tuân thủ nghiêm ngặt Đạo luật bảo vệ quyền riêng tư của trẻ em trên mạng (COPPA) và Chính sách Gia đình của Google Play:
+        </p>
+        <ul>
+          <li>Không chủ động thu thập bất kỳ thông tin nhận dạng cá nhân nào từ trẻ em dưới 13 tuổi (hoặc độ tuổi tương đương theo luật pháp quốc gia sở tại).</li>
+          <li>Nếu bạn là phụ huynh hoặc người giám hộ và phát hiện con em mình cung cấp thông tin cho bên thứ ba, vui lòng liên hệ ngay qua email để chúng tôi phối hợp kiểm tra và xử lý kịp thời.</li>
+        </ul>
+      </div>
+
+      <!-- GDPR / Châu Âu -->
+      <div class="policy-article">
+        <h3><span class="num">6</span> Người dùng tại Khu vực Kinh tế Châu Âu (EEA / UK / GDPR)</h3>
+        <p>
+          Đối với người dùng thuộc Liên minh Châu Âu (EU), Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK), trò chơi tích hợp cơ chế đồng thuận <strong>User Messaging Platform (UMP)</strong> được chứng nhận bởi Google để thu thập ý kiến về việc sử dụng cookie và cá nhân hóa quảng cáo.
+        </p>
+        <p>
+          Bạn có thể thay đổi hoặc thu hồi lựa chọn đồng thuận quảng cáo của mình bất kỳ lúc nào bằng cách vào mục <strong>Cài đặt &rarr; Tùy chọn quyền riêng tư (Privacy Options)</strong> trong menu trò chơi. Ngoài ra, bạn cũng có thể đặt lại hoặc tắt mã quảng cáo trong <strong>Cài đặt Android &rarr; Google &rarr; Quảng cáo</strong>.
+        </p>
+      </div>
+
+      <!-- Điều khoản thay đổi -->
+      <div class="policy-article">
+        <h3><span class="num">7</span> Thay đổi Chính sách bảo mật</h3>
+        <p>
+          Chúng tôi có thể cập nhật nội dung Chính sách bảo mật này theo thời gian nhằm phản ánh các thay đổi trong tính năng trò chơi hoặc yêu cầu pháp lý từ phía Google Play. Mọi cập nhật sẽ được công bố công khai tại đường dẫn trang này với ngày hiệu lực được ghi rõ ở đầu văn bản.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-card" id="contact">
+        <h3>📬 Liên hệ với Nhà phát triển</h3>
+        <p>
+          Nếu bạn có bất kỳ câu hỏi, góp ý về trò chơi hoặc yêu cầu hỗ trợ liên quan đến Chính sách bảo mật, xin vui lòng gửi thư cho chúng tôi. Chúng tôi luôn sẵn lòng lắng nghe và phản hồi trong thời gian sớm nhất!
+        </p>
+        <div class="contact-methods">
+          <a class="contact-pill" href="mailto:minhthang0792@gmail.com">
+            <span>📧</span> minhthang0792@gmail.com
+          </a>
+          <span class="contact-pill">
+            <span>🏢</span> MT Games Studio
+          </span>
+          <span class="contact-pill">
+            <span>📍</span> Việt Nam
+          </span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Chợ Đồ Cổ</strong> (cm.mt.antique) &bull; Phát triển bởi MT Games</p>
+    <p>Bản quyền &copy; 2026 MT Games. Mọi quyền được bảo lưu.</p>
+    <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem;">Trang chính sách bảo mật chính thức được xuất bản cho Google Play Store Console.</p>
+  </footer>
+
+  <!-- Simple Copy Script -->
+  <script>
+    function copyText(elementId, btnElement) {
+      const textToCopy = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = btnElement.innerText;
+        btnElement.innerText = "✓ Đã sao chép!";
+        btnElement.classList.add("copied");
+        setTimeout(() => {
+          btnElement.innerText = originalText;
+          btnElement.classList.remove("copied");
+        }, 2200);
+      }).catch(err => {
+        console.error("Lỗi khi sao chép: ", err);
+      });
+    }
+  </script>
+
+</body>
+</html>
