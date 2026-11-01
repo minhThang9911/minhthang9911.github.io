@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bắn Bóng - Bubble Pop | Giới thiệu & Chính sách bảo mật</title>
+  <meta name="description" content="Thông tin ứng dụng, mô tả Google Play Store và Chính sách quyền riêng tư của trò chơi Bắn Bóng - Bubble Pop (cm.mt.bubblepop).">
+  <link rel="icon" type="image/png" href="playstore-app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FF6584;
+      --primary-dark: #E24869;
+      --primary-light: #FFE3EA;
+      --accent-purple: #5E4975;
+      --accent-yellow: #FFB800;
+      --accent-blue: #4FA8F9;
+      --accent-green: #38C673;
+      --bg-gradient-start: #E9F4FF;
+      --bg-gradient-end: #FFF0F6;
+      --card-bg: rgba(255, 255, 255, 0.94);
+      --card-border: #F3D7E5;
+      --text-main: #3F334D;
+      --text-muted: #736582;
+      --radius-sm: 14px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --shadow-soft: 0 12px 34px rgba(94, 73, 117, 0.08);
+      --shadow-hover: 0 16px 40px rgba(255, 101, 132, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(175deg, var(--bg-gradient-start) 0%, #F5F3FF 45%, var(--bg-gradient-end) 100%);
+      color: var(--text-main);
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 24px 16px 60px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Đám mây nền trang trí */
+    body::before, body::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+      z-index: -1;
+      pointer-events: none;
+    }
+    body::before {
+      top: 5%;
+      left: -100px;
+      width: 320px;
+      height: 320px;
+      background: rgba(255, 184, 217, 0.35);
+    }
+    body::after {
+      top: 40%;
+      right: -100px;
+      width: 350px;
+      height: 350px;
+      background: rgba(168, 216, 255, 0.35);
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      margin-bottom: 28px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feature-img-wrapper {
+      width: 100%;
+      position: relative;
+      background: linear-gradient(135deg, #CFE8FF 0%, #FFD6E8 100%);
+      line-height: 0;
+    }
+    .feature-img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-body {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .app-icon-wrapper {
+      margin-top: -72px;
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .app-icon {
+      width: 112px;
+      height: 112px;
+      border-radius: 26px;
+      box-shadow: 0 10px 25px rgba(94, 73, 117, 0.22);
+      border: 4px solid #FFFFFF;
+      background: #FFFFFF;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .app-icon:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    h1.app-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--accent-purple);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .app-tagline {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1.5px solid #F0D7E5;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-purple);
+      box-shadow: 0 2px 8px rgba(94, 73, 117, 0.05);
+    }
+    .badge.highlight {
+      background: var(--primary-light);
+      border-color: #FFB3C4;
+      color: var(--primary-dark);
+    }
+
+    .hero-meta {
+      display: inline-block;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      background: rgba(245, 240, 250, 0.7);
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-top: 4px;
+    }
+    .hero-meta strong {
+      color: var(--accent-purple);
+    }
+
+    /* Quick Nav Pills */
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .nav-pill {
+      text-decoration: none;
+      background: var(--card-bg);
+      border: 1.8px solid var(--card-border);
+      color: var(--accent-purple);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(94, 73, 117, 0.04);
+    }
+    .nav-pill:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 101, 132, 0.25);
+    }
+
+    /* Content Cards */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+      padding: 34px 32px;
+      margin-bottom: 26px;
+      backdrop-filter: blur(10px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 2px dashed #F0D7E5;
+    }
+    .section-icon {
+      font-size: 1.8rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    h2.section-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--accent-purple);
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent-purple);
+      margin: 22px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      font-size: 1.02rem;
+      color: var(--text-main);
+    }
+
+    /* Hộp mô tả Play Store */
+    .playstore-box {
+      background: #FFFFFF;
+      border: 1.8px solid #F0D7E5;
+      border-radius: var(--radius-md);
+      padding: 20px 22px;
+      margin: 16px 0 20px;
+      position: relative;
+    }
+    .playstore-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .playstore-box-title {
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .char-count {
+      font-size: 0.8rem;
+      background: #F4EEF7;
+      color: var(--accent-purple);
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+    .playstore-text {
+      white-space: pre-line;
+      font-size: 0.98rem;
+      color: #3B2E48;
+      line-height: 1.75;
+    }
+
+    /* Danh sách tính năng */
+    .feature-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin: 16px 0 20px;
+    }
+    .feature-item {
+      background: #FFFFFF;
+      border: 1.5px solid #F5E5EF;
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .feature-item-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    /* Bảng dữ liệu / quyền */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 16px 0 22px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid #F0D7E5;
+      background: #FFFFFF;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.94rem;
+    }
+    thead {
+      background: #FAF3F8;
+    }
+    th {
+      padding: 14px 16px;
+      font-weight: 800;
+      color: var(--accent-purple);
+      border-bottom: 2px solid #F0D7E5;
+      white-space: nowrap;
+    }
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #F7EAF1;
+      color: var(--text-main);
+      vertical-align: top;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background: #FFFDFE;
+    }
+    .permission-code {
+      font-family: monospace;
+      font-size: 0.88rem;
+      background: #F5EEFA;
+      color: #553377;
+      padding: 3px 7px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    /* Hộp cảnh báo / ghi chú */
+    .alert-box {
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 18px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .alert-box.info {
+      background: #EEF7FF;
+      border: 1.5px solid #CAE5FF;
+      color: #1A548B;
+    }
+    .alert-box.success {
+      background: #EFFDF5;
+      border: 1.5px solid #C4F5D8;
+      color: #1D6B3E;
+    }
+    .alert-box.warning {
+      background: #FFF9E8;
+      border: 1.5px solid #FFE4A0;
+      color: #7A5300;
+    }
+    .alert-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .alert-content {
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+    .alert-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Các bước hướng dẫn */
+    .step-list {
+      list-style: none;
+      counter-reset: step-counter;
+      margin: 16px 0;
+    }
+    .step-item {
+      position: relative;
+      padding-left: 48px;
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+    }
+    .step-item::before {
+      counter-increment: step-counter;
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: -2px;
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(255, 101, 132, 0.3);
+    }
+
+    /* Footer & Contact Card */
+    .contact-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FFF5F8 100%);
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 26px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-top: 14px;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 18px rgba(255, 101, 132, 0.35);
+    }
+    .email-link:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(255, 101, 132, 0.45);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 36px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 14px 10px 40px;
+      }
+      .section-card {
+        padding: 24px 18px;
+        border-radius: var(--radius-md);
+      }
+      .hero-body {
+        padding: 24px 18px;
+      }
+      h1.app-title {
+        font-size: 1.7rem;
+      }
+      .app-icon {
+        width: 92px;
+        height: 92px;
+        border-radius: 20px;
+      }
+      .app-icon-wrapper {
+        margin-top: -56px;
+      }
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- 1. HERO CARD -->
+    <header class="hero-card">
+      <div class="feature-img-wrapper">
+        <img class="feature-img" src="feature-image.png" alt="Bubble Pop - Bắn Bóng Pastel Sky Banner">
+      </div>
+      <div class="hero-body">
+        <div class="app-icon-wrapper">
+          <img class="app-icon" src="playstore-app-icon.png" alt="Bắn Bóng App Icon">
+        </div>
+        <h1 class="app-title">Bắn Bóng — Bubble Pop <span>🌸</span></h1>
+        <p class="app-tagline">Thế giới kẹo ngọt pastel giải đố thư giãn & offline 100%</p>
+
+        <div class="badge-row">
+          <span class="badge highlight">🎮 Game Mini Android</span>
+          <span class="badge">✈️ Chơi 100% Offline</span>
+          <span class="badge">🔒 Không Cần Tài Khoản</span>
+          <span class="badge">🍬 Kawaii Pastel Candy</span>
+        </div>
+
+        <div class="hero-meta">
+          Mã gói: <strong>cm.mt.bubblepop</strong> &bull; Nhà phát triển: <strong>MT Games</strong> &bull; Phiên bản: <strong>1.0.0</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. QUICK NAVIGATION -->
+    <nav class="quick-nav">
+      <a href="#about" class="nav-pill">✨ Giới thiệu App</a>
+      <a href="#playstore-listing" class="nav-pill">📱 Google Play Listing</a>
+      <a href="#privacy-policy" class="nav-pill">🛡️ Chính sách bảo mật</a>
+      <a href="#permissions" class="nav-pill">🔑 Quyền ứng dụng</a>
+      <a href="#data-management" class="nav-pill">🗑️ Quản lý & Xoá dữ liệu</a>
+      <a href="#contact" class="nav-pill">✉️ Liên hệ</a>
+    </nav>
+
+    <!-- 3. GIỚI THIỆU APP -->
+    <section id="about" class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🍭</div>
+        <div>
+          <h2 class="section-title">Giới thiệu trò chơi</h2>
+        </div>
+      </div>
+      <p>
+        <strong>Bắn Bóng (Bubble Pop)</strong> là tựa game bắn bóng giải đố kinh điển được nâng cấp hoàn toàn theo phong cách nghệ thuật <strong>Kawaii Pastel Sky & Jelly Candy</strong>. Với tông màu kẹo ngọt pastel dịu mắt, âm thanh pop tí tách vui tai và hiệu ứng nổ pháo giấy confetti rực rỡ, Bubble Pop mang lại trải nghiệm thư giãn tinh thần tuyệt đối sau những giờ học tập và làm việc căng thẳng.
+      </p>
+
+      <ul class="feature-list">
+        <li class="feature-item">
+          <span class="feature-item-icon">🎯</span>
+          <div><strong>Ngắm bắn vật lý chuẩn xác:</strong> Đường ngắm nét đứt mộng mơ với mũi tên định hướng và sao dội tường hỗ trợ căn góc hẹp hoàn hảo.</div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-item-icon">☁️</span>
+          <div><strong>Khẩu pháo mây thần kỳ:</strong> Bệ mây bánh răng pastel cùng nòng đại bác nhún giật lùi sinh động, chạm đổi màu bóng chờ linh hoạt.</div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-item-icon">🌈</span>
+          <div><strong>Bổ trợ hấp dẫn:</strong> Bóng Cầu vồng kích nổ mọi sắc màu kề cạnh và Bom nổ chùm quét sạch cụm bóng khó nhằn.</div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-item-icon">💎</span>
+          <div><strong>Đá cẩm thạch & Chướng ngại:</strong> Đá nứt khi bóng kề nổ, chùm bóng mất neo trần rơi tự do đạt điểm kỷ lục.</div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-item-icon">👁️</span>
+          <div><strong>Thân thiện thị giác:</strong> Chế độ ký hiệu trợ năng dành riêng cho người chơi khó phân biệt màu sắc (Colorblind-friendly).</div>
+        </li>
+        <li class="feature-item">
+          <span class="feature-item-icon">🔋</span>
+          <div><strong>Siêu nhẹ & Tiết kiệm pin:</strong> Tối ưu mượt mà 60 FPS, không tốn bộ nhớ máy và hoàn toàn không cần kết nối Internet.</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4. GOOGLE PLAY STORE LISTING (SHORT & LONG DESCRIPTION) -->
+    <section id="playstore-listing" class="section-card">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <div>
+          <h2 class="section-title">Nội dung Google Play Store Listing</h2>
+        </div>
+      </div>
+      <p>Nội dung mô tả chính thức của trò chơi trên Google Play Store tuân thủ tiêu chuẩn chất lượng và giới hạn ký tự của Google Play Console:</p>
+
+      <!-- Short Description -->
+      <div class="playstore-box">
+        <div class="playstore-box-header">
+          <span class="playstore-box-title">📌 Mô tả ngắn (Short Description)</span>
+          <span class="char-count">76 / 80 ký tự</span>
+        </div>
+        <div class="playstore-text">Bắn bóng giải đố kẹo ngọt pastel, chơi offline thư giãn mọi lúc mọi nơi!</div>
+      </div>
+
+      <!-- Long Description -->
+      <div class="playstore-box">
+        <div class="playstore-box-header">
+          <span class="playstore-box-title">📖 Mô tả đầy đủ (Long Description)</span>
+          <span class="char-count">Chuẩn Play Store (dưới 4000 ký tự)</span>
+        </div>
+        <div class="playstore-text">🌸 Chào mừng bạn đến với thế giới kẹo ngọt bồng bềnh của Bắn Bóng — Bubble Pop! 🌸
+
+Nếu bạn đang tìm kiếm một tựa game bắn bóng giải đố kinh điển nhưng mang phong cách hiện đại, dễ thương và thư giãn tinh thần tuyệt đối, Bubble Pop chính là sự lựa chọn hoàn hảo dành cho bạn!
+
+✨ ĐIỂM NỔI BẬT CỦA BẮN BÓNG BUBBLE POP:
+• Đồ hoạ Pastel & Jelly Candy đáng yêu: Tận hưởng những viên kẹo dẻo 3D căng mọng, bầu trời pastel mơ mộng cùng hiệu ứng confetti rực rỡ khi chiến thắng!
+• Đường ngắm mũi tên chuẩn xác: Thao tác kéo thả mượt mà, đường dẫn nét đứt tinh tế cùng đầu mũi tên chỉ hướng giúp bạn dễ dàng thực hiện những pha bắn nảy tường điệu nghệ.
+• Khẩu pháo mây bánh răng độc đáo: Khẩu pháo Kawaii sống động, chạm nhẹ vào ổ mây để hoán đổi màu bóng tiếp theo một cách chiến thuật.
+• Hàng trăm màn chơi giải đố thông minh: Chinh phục thử thách với chướng ngại vật đá cẩm thạch kiên cố, kích nổ chuỗi bom liên hoàn và làm rơi những chùm bóng khổng lồ để đạt 3 sao hoàn hảo!
+• Tuyệt chiêu trợ giúp: Dễ dàng mở khoá Bóng Cầu Vồng (phá hủy mọi sắc màu kề cạnh) và Bom Nổ (quét sạch khu vực rộng lớn).
+• Chế độ trợ năng đặc biệt: Tuỳ chọn bật ký hiệu hình học đáng yêu trên từng quả bóng, giúp tất cả người chơi dễ dàng nhận diện màu sắc.
+
+🎮 CÁCH CHƠI VÔ CÙNG ĐƠN GIẢN:
+1. Nhấn giữ và kéo ngón tay để ngắm hướng bay của bóng.
+2. Thả tay để bắn bóng về phía trần mây.
+3. Ghép từ 3 viên kẹo bóng cùng màu trở lên để tạo chuỗi nổ giòn tan.
+4. Triệt tiêu các điểm neo trần để toàn bộ chùm bóng phía dưới rơi tự do và rinh điểm thưởng kỷ lục!
+
+💖 VÌ SAO BẠN SẼ YÊU THÍCH BUBBLE POP?
+✓ 100% Hoàn toàn miễn phí.
+✓ Chơi Offline bất cứ nơi đâu: Không cần Wi-Fi, không tốn dữ liệu di động 4G/5G.
+✓ Không yêu cầu đăng ký tài khoản rườm rà.
+✓ Nhẹ máy, mượt mà 60fps và cực kỳ tiết kiệm pin.
+✓ Phù hợp cho mọi lứa tuổi — từ trẻ em, học sinh, sinh viên đến người lớn giải trí hàng ngày.
+
+Tải ngay Bắn Bóng — Bubble Pop hôm nay để bắt đầu chuyến phiêu lưu giải đố ngọt ngào giữa bầu trời pastel! 🌈🎈</div>
+      </div>
+    </section>
+
+    <!-- 5. CHÍNH SÁCH BẢO MẬT (PRIVACY POLICY) -->
+    <section id="privacy-policy" class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🛡️</div>
+        <div>
+          <h2 class="section-title">Chính sách bảo mật (Privacy Policy)</h2>
+        </div>
+      </div>
+      <p><em>Cập nhật lần cuối: Ngày 01 tháng 11 năm 2026</em></p>
+      <p>
+        Chính sách bảo mật này áp dụng cho trò chơi di động <strong>Bắn Bóng (Bubble Pop)</strong>, mã gói <code>cm.mt.bubblepop</code>, được phát triển và vận hành bởi <strong>MT Games</strong> ("chúng tôi"). Chúng tôi cam kết bảo vệ tối đa quyền riêng tư của người dùng ("bạn"). Chính sách này giải thích rõ ràng những thông tin nào được xử lý khi bạn cài đặt và trải nghiệm trò chơi.
+      </p>
+
+      <div class="alert-box success">
+        <div class="alert-icon">✨</div>
+        <div class="alert-content">
+          <strong>Cam kết cốt lõi:</strong> Trò chơi hoạt động 100% ngoại tuyến (offline), <strong>KHÔNG</strong> yêu cầu đăng ký tài khoản, <strong>KHÔNG</strong> lưu trữ thông tin cá nhân trên bất kỳ máy chủ bên ngoài nào của chúng tôi.
+        </div>
+      </div>
+
+      <h3>1. Dữ liệu cá nhân chúng tôi KHÔNG thu thập</h3>
+      <p>MT Games trực tiếp tuân thủ nguyên tắc tối giản dữ liệu. Chúng tôi <strong>không bao giờ thu thập, lưu trữ hay chia sẻ</strong> bất kỳ thông tin nhận dạng cá nhân (PII) nào sau đây:</p>
+      <ul style="margin-left: 24px; margin-bottom: 14px;">
+        <li>Họ và tên, địa chỉ cư trú, số điện thoại hoặc địa chỉ email cá nhân.</li>
+        <li>Vị trí địa lý chính xác (GPS).</li>
+        <li>Danh bạ liên lạc, tin nhắn, nhật ký cuộc gọi.</li>
+        <li>Hình ảnh, video, tập tin âm thanh hoặc tài liệu lưu trong thiết bị của bạn.</li>
+        <li>Dữ liệu sinh trắc học hoặc thông tin sức khoẻ.</li>
+      </ul>
+
+      <h3>2. Dữ liệu lưu trữ cục bộ trên thiết bị (Local Storage)</h3>
+      <p>
+        Mọi tiến trình chơi game bao gồm: màn chơi hiện tại, số sao đạt được (1–3 sao), điểm số kỷ lục, trạng thái tiếp tục ván chơi và các tuỳ chọn cá nhân (ngôn ngữ Tiếng Việt/English, âm thanh, nhạc nền, rung, ký hiệu trợ năng) được lưu trữ <strong>hoàn toàn cục bộ</strong> trên bộ nhớ trong thiết bị của bạn (thông qua tệp cấu hình bảo vệ nội bộ <code>user://save.dat</code>). Dữ liệu này không bao giờ được gửi lên bất kỳ máy chủ đám mây nào.
+      </p>
+
+      <h3>3. Dịch vụ và SDK của Bên thứ ba (Third-party SDKs)</h3>
+      <p>Trò chơi có tích hợp 2 SDK chính thức từ Google nhằm hỗ trợ duy trì và vận hành trò chơi miễn phí:</p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Dịch vụ / SDK</th>
+              <th>Mục đích sử dụng</th>
+              <th>Dữ liệu được xử lý</th>
+              <th>Chính sách bảo mật</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google AdMob</strong><br><small>(Google Play Services)</small></td>
+              <td>Hiển thị quảng cáo (Banner ở menu, Interstitial sau ván chơi, Rewarded khi nhận trợ giúp)</td>
+              <td>Mã nhận dạng quảng cáo của Google (GAID/Advertising ID), thông tin thiết bị (model, hệ điều hành), dữ liệu tương tác quảng cáo, nhật ký lỗi (Crash logs & Diagnostics).</td>
+              <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách bảo mật Google</a> &bull; <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob Data Usage</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google Play Billing</strong><br><small>(In-App Purchase)</small></td>
+              <td>Xử lý gói mua tuỳ chọn "Bỏ quảng cáo" (Remove Ads)</td>
+              <td>Mã xác thực giao dịch Google Play. Toàn bộ thông tin tài chính/thẻ do Google Play xử lý an toàn; nhà phát triển <strong>không</strong> nhận thông tin thẻ của bạn.</td>
+              <td><a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&ldt=privacynotice" target="_blank" rel="noopener">Google Payments Privacy</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert-box info">
+        <div class="alert-icon">🇪🇺</div>
+        <div class="alert-content">
+          <strong>Quyền đồng ý của người dùng (GDPR & UMP):</strong> Người dùng trong Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK) được cung cấp biểu mẫu đồng ý hiển thị quảng cáo tuân thủ tiêu chuẩn UMP (User Messaging Platform) của Google ngay khi khởi động. Bạn có thể thay đổi hoặc thu hồi sự đồng ý này bất kỳ lúc nào trong mục <em>Cài đặt &rarr; Tuỳ chọn quảng cáo</em> của game.
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. QUYỀN ỨNG DỤNG YÊU CẦU (PERMISSIONS) -->
+    <section id="permissions" class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🔑</div>
+        <div>
+          <h2 class="section-title">Các quyền ứng dụng yêu cầu trên Android</h2>
+        </div>
+      </div>
+      <p>Ứng dụng chỉ khai báo các quyền kỹ thuật tối thiểu cần thiết trong tệp <code>AndroidManifest.xml</code> để game hoạt động ổn định và hỗ trợ SDK Google:</p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Quyền Android</th>
+              <th>Mức độ</th>
+              <th>Mục đích sử dụng thực tế</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="permission-code">android.permission.INTERNET</span></td>
+              <td>Bình thường (Normal)</td>
+              <td>Cho phép tải quảng cáo AdMob và xác minh giao dịch mua gói "Bỏ quảng cáo" qua Google Play khi có mạng. <em>(Nếu không có mạng, game vẫn chơi bình thường)</em>.</td>
+            </tr>
+            <tr>
+              <td><span class="permission-code">android.permission.ACCESS_NETWORK_STATE</span></td>
+              <td>Bình thường (Normal)</td>
+              <td>Kiểm tra thiết bị có đang kết nối Wi-Fi/4G hay không trước khi gửi yêu cầu nạp quảng cáo.</td>
+            </tr>
+            <tr>
+              <td><span class="permission-code">android.permission.VIBRATE</span></td>
+              <td>Bình thường (Normal)</td>
+              <td>Tạo phản hồi xúc giác nhẹ (rung 10ms–30ms) khi bắn trúng cụm bóng hoặc kích nổ bom, tăng cảm giác chân thực. <em>(Có thể tắt hoàn toàn trong Cài đặt game)</em>.</td>
+            </tr>
+            <tr>
+              <td><span class="permission-code">com.android.vending.BILLING</span></td>
+              <td>Bình thường (Normal)</td>
+              <td>Giao tiếp với ứng dụng Google Play Store để kích hoạt cửa sổ thanh toán khi người chơi bấm nút "Bỏ quảng cáo".</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert-box success">
+        <div class="alert-icon">🛡️</div>
+        <div class="alert-content">
+          <strong>KHÔNG YÊU CẦU QUYỀN NGUY HIỂM:</strong> Game hoàn toàn không yêu cầu bất kỳ quyền nhạy cảm (Dangerous Runtime Permissions) nào như: Quyền Đọc/Ghi bộ nhớ ngoài (Storage), Danh bạ (Contacts), Máy ảnh (Camera), Micro (Microphone) hay Vị trí (Location).
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CHÍNH SÁCH QUẢN LÝ, SỬ DỤNG VÀ XOÁ DỮ LIỆU -->
+    <section id="data-management" class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🗑️</div>
+        <div>
+          <h2 class="section-title">Chính sách Thu thập, Sử dụng & Xoá dữ liệu</h2>
+        </div>
+      </div>
+
+      <h3>1. Mục đích sử dụng dữ liệu</h3>
+      <p>Mọi dữ liệu kỹ thuật được xử lý chỉ phục vụ các mục đích cụ thể sau:</p>
+      <ul style="margin-left: 24px; margin-bottom: 16px;">
+        <li>Duy trì tiến độ chơi, thành tích sao và tuỳ chọn âm thanh của người chơi trên máy.</li>
+        <li>Hiển thị quảng cáo phù hợp nhằm duy trì ứng dụng hoàn toàn miễn phí tới người chơi.</li>
+        <li>Chẩn đoán lỗi giật lag, treo ứng dụng để nâng cao chất lượng trải nghiệm qua các bản cập nhật.</li>
+      </ul>
+
+      <h3>2. Cách xoá dữ liệu tiến trình game trên thiết bị</h3>
+      <p>Do dữ liệu game được lưu cục bộ trên thiết bị của bạn, bạn hoàn toàn có toàn quyền xoá bỏ bất kỳ lúc nào bằng 1 trong 2 cách sau:</p>
+
+      <ol class="step-list">
+        <li class="step-item">
+          <strong>Xoá dữ liệu ứng dụng:</strong> Vào <em>Cài đặt thiết bị (Settings) &rarr; Ứng dụng (Apps) &rarr; Bubble Pop &rarr; Lưu trữ (Storage) &rarr; chọn "Xoá dữ liệu" (Clear Data)</em>. Toàn bộ tiến trình chơi và cài đặt sẽ được đưa về trạng thái ban đầu như mới tải.
+        </li>
+        <li class="step-item">
+          <strong>Gỡ cài đặt trò chơi:</strong> Khi bạn gỡ cài đặt (Uninstall) Bubble Pop khỏi điện thoại, hệ điều hành Android sẽ tự động dọn dẹp và xoá bỏ hoàn toàn toàn bộ tệp lưu trữ của game trên máy.
+        </li>
+      </ol>
+
+      <h3>3. Cách đặt lại hoặc xoá Mã định danh quảng cáo (GAID)</h3>
+      <p>Nếu bạn muốn tắt quảng cáo cá nhân hoá hoặc đặt lại mã quảng cáo trên toàn bộ thiết bị Android:</p>
+      <ol class="step-list">
+        <li class="step-item">
+          Mở ứng dụng <strong>Cài đặt (Settings)</strong> trên điện thoại Android của bạn.
+        </li>
+        <li class="step-item">
+          Cuộn xuống và chọn mục <strong>Google</strong> &rarr; chọn <strong>Quảng cáo (Ads)</strong>.
+        </li>
+        <li class="step-item">
+          Chọn <strong>"Đặt lại mã nhận dạng cho quảng cáo"</strong> (Reset advertising ID) hoặc <strong>"Xóa mã nhận dạng cho quảng cáo"</strong> (Delete advertising ID).
+        </li>
+      </ol>
+
+      <h3>4. Chính sách bảo vệ quyền riêng tư của Trẻ em (COPPA)</h3>
+      <p>
+        Bắn Bóng (Bubble Pop) là trò chơi giải đố thông thường phù hợp cho mọi lứa tuổi. Trò chơi không cố ý thu thập hay yêu cầu thông tin nhận dạng cá nhân từ trẻ em dưới 13 tuổi (hoặc độ tuổi tối thiểu theo quy định của pháp luật tại quốc gia sở tại). Nếu cha mẹ hoặc người giám hộ phát hiện bất kỳ thông tin nào được gửi nhầm, vui lòng liên hệ với chúng tôi để được xử lý ngay lập tức.
+      </p>
+
+      <h3>5. Thay đổi đối với Chính sách bảo mật</h3>
+      <p>
+        Chúng tôi có thể cập nhật nội dung Chính sách bảo mật này theo thời gian để phản ánh các cải tiến về tính năng hoặc tuân thủ các quy định pháp lý mới. Mọi sửa đổi sẽ có hiệu lực ngay khi được đăng tải công khai trên trang web này. Chúng tôi khuyến khích bạn kiểm tra định kỳ trang này để luôn nắm rõ các cam kết bảo mật mới nhất.
+      </p>
+    </section>
+
+    <!-- 8. THÔNG TIN LIÊN HỆ -->
+    <section id="contact" class="contact-card">
+      <h2 style="color: var(--accent-purple); font-size: 1.5rem; margin-bottom: 10px; font-weight: 900;">💌 Liên hệ với Nhà phát triển</h2>
+      <p style="color: var(--text-muted); max-width: 580px; margin: 0 auto 16px;">
+        Nếu bạn có bất kỳ câu hỏi, thắc mắc, phản hồi về lỗi game hoặc yêu cầu liên quan đến dữ liệu và quyền riêng tư, vui lòng gửi thư cho chúng tôi:
+      </p>
+      <div>
+        <a href="mailto:minhthang0792@gmail.com" class="email-link">
+          <span>📧</span>
+          <span>minhthang0792@gmail.com</span>
+        </a>
+      </div>
+      <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-muted);">
+        Nhà phát triển: <strong>MT Games</strong> &bull; Hỗ trợ phản hồi trong vòng 24–48 giờ làm việc.
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 MT Games — Bắn Bóng (Bubble Pop). Tất cả các quyền được bảo lưu.</p>
+      <p style="margin-top: 6px;">
+        <a href="#about">Về đầu trang &uarr;</a>
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
