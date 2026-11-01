@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tìm Chữ – Word Search | Giới thiệu & Chính sách bảo mật</title>
+  <meta name="description" content="Thông tin ứng dụng, mô tả chuẩn Google Play Store và Chính sách quyền riêng tư của trò chơi Tìm Chữ – Word Search (cm.mt.wordsearch).">
+  <link rel="icon" type="image/png" href="playstore-app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FFB703;
+      --primary-dark: #FB8500;
+      --primary-light: #FFF3D6;
+      --navy: #2E3A59;
+      --navy-dark: #1E2742;
+      --navy-light: #41517A;
+      --cream-bg: #FDF8F0;
+      --cream-card: #FFFFFF;
+      --cream-border: #EFE4D2;
+      --text-main: #2E3A59;
+      --text-muted: #64748B;
+      --pastel-pink: #FF8FAB;
+      --pastel-cyan: #7BDFF2;
+      --pastel-green: #B8E986;
+      --pastel-purple: #C3A6FF;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --shadow-card: 0 12px 32px rgba(46, 58, 89, 0.07);
+      --shadow-hover: 0 16px 40px rgba(251, 133, 0, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--cream-bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 24px 16px 64px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Đốm màu nền trang trí mang phong cách giấy màu ấm áp */
+    body::before, body::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      z-index: -1;
+      pointer-events: none;
+    }
+    body::before {
+      top: 0;
+      left: -120px;
+      width: 380px;
+      height: 380px;
+      background: rgba(255, 183, 3, 0.18);
+    }
+    body::after {
+      top: 45%;
+      right: -120px;
+      width: 420px;
+      height: 420px;
+      background: rgba(123, 223, 242, 0.22);
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Thanh điều hướng nhanh */
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 24px;
+      padding: 6px;
+    }
+    .quick-nav a {
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+      background: var(--cream-card);
+      padding: 8px 16px;
+      border-radius: 50px;
+      border: 1px solid var(--cream-border);
+      box-shadow: 0 2px 6px rgba(46, 58, 89, 0.04);
+      transition: all 0.25s ease;
+    }
+    .quick-nav a:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Card */
+    .hero-card {
+      background: var(--cream-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-border);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      margin-bottom: 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feature-img-wrapper {
+      width: 100%;
+      position: relative;
+      background: #FDEFDB;
+      line-height: 0;
+    }
+    .feature-img {
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-body {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .app-icon-wrapper {
+      margin-top: -76px;
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .app-icon {
+      width: 116px;
+      height: 116px;
+      border-radius: 28px;
+      box-shadow: 0 10px 24px rgba(46, 58, 89, 0.18);
+      border: 4px solid #FFFFFF;
+      background: #FFFFFF;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .app-icon:hover {
+      transform: scale(1.06) rotate(-2deg);
+    }
+
+    h1.app-title {
+      font-family: 'Baloo 2', cursive, sans-serif;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+    .app-tagline {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 18px;
+      max-width: 600px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--cream-bg);
+      border: 1px solid var(--cream-border);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .badge.highlight {
+      background: var(--primary-light);
+      border-color: #FCD285;
+      color: var(--primary-dark);
+    }
+
+    .meta-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      width: 100%;
+      background: var(--cream-bg);
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--cream-border);
+      margin-top: 10px;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .meta-box div span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .meta-box div strong {
+      color: var(--navy);
+    }
+
+    /* Các thẻ nội dung chung */
+    .content-card {
+      background: var(--cream-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--cream-border);
+      box-shadow: var(--shadow-card);
+      padding: 32px 30px;
+      margin-bottom: 24px;
+    }
+
+    h2.section-title {
+      font-family: 'Baloo 2', cursive, sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed var(--cream-border);
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin: 22px 0 10px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: var(--navy-light);
+    }
+
+    /* Store Listing Boxes */
+    .store-box {
+      background: var(--cream-bg);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .store-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .store-box-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .char-count {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #FFFFFF;
+      padding: 2px 8px;
+      border-radius: 20px;
+      border: 1px solid var(--cream-border);
+    }
+    .short-desc-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    .long-desc-content {
+      font-size: 0.96rem;
+      color: var(--navy);
+      white-space: pre-line;
+      line-height: 1.8;
+      background: #FFFFFF;
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      max-height: 480px;
+      overflow-y: auto;
+    }
+
+    /* Bảng quyền và SDK */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 16px 0 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--cream-border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      text-align: left;
+    }
+    thead {
+      background: var(--cream-bg);
+    }
+    th {
+      padding: 14px 16px;
+      color: var(--navy);
+      font-weight: 700;
+      border-bottom: 2px solid var(--cream-border);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--cream-border);
+      color: var(--navy-light);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:nth-child(even) {
+      background: rgba(253, 248, 240, 0.4);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: rgba(255, 183, 3, 0.14);
+      color: #B45309;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.85em;
+    }
+
+    /* Lưới tính năng (Feature Grid) */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .feature-item {
+      background: var(--cream-bg);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      transition: transform 0.25s ease;
+    }
+    .feature-item:hover {
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .feature-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .feature-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Danh sách bước */
+    .step-list {
+      margin: 14px 0 18px 20px;
+    }
+    .step-item {
+      margin-bottom: 10px;
+      color: var(--navy-light);
+    }
+
+    /* Khối liên hệ */
+    .contact-card {
+      background: linear-gradient(135deg, #FFFDF8 0%, #FFF3D6 100%);
+      border: 2px solid #FCD285;
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-card);
+    }
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      border: 1px solid var(--cream-border);
+      box-shadow: 0 4px 14px rgba(46, 58, 89, 0.08);
+      margin-top: 12px;
+      transition: all 0.25s ease;
+    }
+    .email-link:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(251, 133, 0, 0.25);
+    }
+
+    /* Chân trang */
+    footer {
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--cream-border);
+    }
+    footer a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 12px 48px;
+      }
+      .content-card {
+        padding: 24px 18px;
+      }
+      h1.app-title {
+        font-size: 1.85rem;
+      }
+      .hero-body {
+        padding: 24px 16px;
+      }
+      .meta-box {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Thanh điều hướng nhanh -->
+    <nav class="quick-nav">
+      <a href="#about">Giới thiệu</a>
+      <a href="#store-listing">Mô tả Store</a>
+      <a href="#permissions">Quyền ứng dụng</a>
+      <a href="#third-party">SDK bên thứ 3</a>
+      <a href="#data-policy">Chính sách dữ liệu</a>
+      <a href="#contact">Liên hệ</a>
+    </nav>
+
+    <!-- 1. HERO CARD -->
+    <header id="about" class="hero-card">
+      <div class="feature-img-wrapper">
+        <img src="feature-image.png" alt="Ảnh quảng bá Tìm Chữ - Word Search" class="feature-img">
+      </div>
+      <div class="hero-body">
+        <div class="app-icon-wrapper">
+          <img src="playstore-app-icon.png" alt="Biểu tượng ứng dụng Tìm Chữ" class="app-icon">
+        </div>
+        <h1 class="app-title">Tìm Chữ – Word Search</h1>
+        <p class="app-tagline">Tìm từ ẩn trong lưới chữ theo chủ đề · Song ngữ Việt - Anh · Vô hạn màn chơi offline thư giãn</p>
+
+        <div class="badge-row">
+          <span class="badge highlight">🌟 Song ngữ Việt / Anh</span>
+          <span class="badge">📴 Chơi Offline 100%</span>
+          <span class="badge">🧩 30 Chủ đề phong phú</span>
+          <span class="badge">🔥 Thử thách hàng ngày</span>
+          <span class="badge">👨‍👩‍👧‍👦 Phù hợp mọi lứa tuổi</span>
+        </div>
+
+        <div class="meta-box">
+          <div>
+            <span>Nhà phát triển</span>
+            <strong>MT Games</strong>
+          </div>
+          <div>
+            <span>Mã gói (Package ID)</span>
+            <code>cm.mt.wordsearch</code>
+          </div>
+          <div>
+            <span>Nền tảng</span>
+            <strong>Android 5.0 trở lên</strong>
+          </div>
+          <div>
+            <span>Cập nhật chính sách</span>
+            <strong>01/11/2026</strong>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. GIỚI THIỆU TỔNG QUAN -->
+    <section class="content-card">
+      <h2 class="section-title">✨ Giới thiệu trò chơi</h2>
+      <p>
+        <strong>Tìm Chữ – Word Search</strong> là trò chơi giải đố tìm từ cổ điển được tái hiện với phong cách hiện đại, trực quan và thư giãn. Người chơi sẽ hòa mình vào những lưới chữ cái sinh động, tinh tế, sử dụng ngón tay để nối các chữ cái liền kề thành những từ vựng có ý nghĩa theo các chủ đề quen thuộc.
+      </p>
+      <p>
+        Điểm độc đáo của trò chơi là khả năng <strong>hỗ trợ song ngữ hoàn hảo (Tiếng Việt &amp; Tiếng Anh)</strong> ngay trong một ứng dụng duy nhất. Dù bạn muốn thư giãn sau giờ học tập, làm việc căng thẳng, hay trau dồi vốn từ vựng ngoại ngữ mỗi ngày, <strong>Tìm Chữ</strong> luôn là người bạn đồng hành thông minh, tinh gọn và hoàn toàn miễn phí.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <span class="feature-icon">📚</span>
+          <div class="feature-title">30 Chủ đề Tuyển chọn</div>
+          <div class="feature-desc">Hơn 1.000 từ vựng phong phú từ Động vật, Món ăn Việt, Trái cây đến Khoa học và Vũ trụ.</div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🎯</span>
+          <div class="feature-title">2 Chế độ Chọn từ</div>
+          <div class="feature-desc">Vuốt kéo mượt mà 8 hướng hoặc chạm hai đầu ô để khoanh từ cực kỳ chính xác.</div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🕵️</span>
+          <div class="feature-title">Màn chơi Bí ẩn</div>
+          <div class="feature-desc">Các màn thử thách đặc biệt che giấu một phần ký tự, kích thích trí tò mò và tài phán đoán.</div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">📅</span>
+          <div class="feature-title">Thử thách Ngày &amp; Chuỗi</div>
+          <div class="feature-desc">Mỗi ngày một câu đố 10×10 mới toanh. Chinh phục liên tục để xây dựng chuỗi ngày rực lửa!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. STORE LISTING (CHUẨN GOOGLE PLAY) -->
+    <section id="store-listing" class="content-card">
+      <h2 class="section-title">📱 Nội dung niêm yết Google Play Store</h2>
+      <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px;">
+        Nội dung mô tả chính thức của trò chơi trên Google Play Store theo đúng quy chuẩn ASO và giới hạn ký tự:
+      </p>
+
+      <!-- Short Description -->
+      <div class="store-box">
+        <div class="store-box-header">
+          <div class="store-box-label">
+            <span>📝</span> Mô tả ngắn (Short Description)
+          </div>
+          <div class="char-count">77 / 80 ký tự</div>
+        </div>
+        <div class="short-desc-text">
+          Tìm từ ẩn trong lưới chữ theo chủ đề. Vô hạn màn, thử thách mỗi ngày, offline.
+        </div>
+      </div>
+
+      <!-- Long Description -->
+      <div class="store-box">
+        <div class="store-box-header">
+          <div class="store-box-label">
+            <span>📄</span> Mô tả đầy đủ (Full Description)
+          </div>
+          <div class="char-count">Chuẩn ASO Play Store</div>
+        </div>
+        <div class="long-desc-content">Chào mừng bạn đến với Tìm Chữ – Trò chơi giải đố tìm từ ẩn cổ điển, nhẹ nhàng và gây nghiện nhất trên Android!
+
+Bạn là người yêu thích sự nhạy bén của ngôn từ? Bạn muốn rèn luyện trí não, mở rộng vốn từ vựng và thư giãn mỗi ngày mà không cần kết nối mạng? Tìm Chữ (Word Search) chính là tựa game hoàn hảo dành cho bạn!
+
+🌟 CÁC ĐIỂM NỔI BẬT KHÔNG THỂ BỎ QUA:
+
+🔤 SONG NGỮ VIỆT - ANH TRONG CÙNG 1 ỨNG DỤNG
+Dễ dàng chuyển đổi linh hoạt giữa Tiếng Việt và Tiếng Anh trong phần Cài đặt:
+- Tiếng Việt: Bộ từ vựng phong phú, hỗ trợ dấu tiếng Việt chuẩn xác (dấu mới hòa/thủy, chữ to rõ nét).
+- Tiếng Anh: Từ vựng chuẩn mực quốc tế, hỗ trợ đắc lực cho việc học và ghi nhớ từ mới tự nhiên.
+
+🧩 30 CHỦ ĐỀ ĐA DẠNG – HƠN 1.000 TỪ VỰNG CHỌN LỌC
+Khám phá thế giới từ ngữ qua 30 chủ đề gần gũi và thú vị: Động vật, Trái cây, Màu sắc, Gia đình, Cơ thể, Món ăn Việt, Trường học, Phương tiện, Rau củ, Biển cả, Thời tiết, Hoa, Đồ uống, Thể thao, Tỉnh thành, Quốc gia, Vũ trụ...
+
+🎮 ĐA DẠNG CHẾ ĐỘ CHƠI:
+- Vượt Màn Vô Tận: Hàng trăm màn chơi thuật toán không giới hạn, độ khó tăng dần từ lưới mini 6×6 đến đại chiến 10×10 với 8 hướng tìm từ (ngang, dọc, chéo, xuôi và ngược).
+- Màn Chơi Bí Ẩn: Thử thách đặc biệt cứ mỗi 5 màn chơi, che giấu các ký tự để bạn tự phán đoán và khám phá từ ẩn!
+- Thử Thách Mỗi Ngày (Daily Challenge): Mỗi ngày mang tới 1 câu đố 10×10 đặc sắc. Giải đố đều đặn để tích lũy chuỗi ngày chiến thắng (Streak) đầy tự hào.
+
+👌 ĐIỀU KHIỂN DỄ DÀNG & CHÍNH XÁC:
+Hỗ trợ cả 2 cách chơi tiện lợi:
+1. Vuốt ngón tay: Kéo thẳng theo 8 hướng cực nhạy, cơ chế tự động bám góc chính xác.
+2. Chạm 2 đầu: Chạm chữ cái đầu rồi chạm chữ cái cuối để khoanh từ mà không cần giữ ngón tay.
+
+🎨 GIAO DIỆN ẤM ÁP – ÂM THANH THƯ THÁI:
+- Thiết kế Warm Paper Theme trang nhã, màu sắc dịu nhẹ chống mỏi mắt khi chơi lâu.
+- Âm thanh gõ gỗ mộc mạc, tiếng nảy chữ vui tai và hiệu ứng pháo hoa rực rỡ khi hoàn thành màn.
+
+📴 HOÀN TOÀN OFFLINE – KHÔNG CẦN WIFI:
+Chơi mọi lúc mọi nơi: trên máy bay, tàu xe, giờ nghỉ trưa hay những nơi không có sóng điện thoại. Không tốn dung lượng 4G, tự động lưu tiến trình ván chơi bất cứ lúc nào bạn dừng lại.
+
+Hãy tải ngay Tìm Chữ – Word Search để bắt đầu hành trình khám phá ngôn từ và thư giãn trí óc ngay hôm nay!</div>
+      </div>
+    </section>
+
+    <!-- 4. CHÍNH SÁCH BẢO MẬT & QUYỀN HỆ THỐNG -->
+    <section id="permissions" class="content-card">
+      <h2 class="section-title">🔒 Chính sách quyền riêng tư (Privacy Policy)</h2>
+      <p>
+        MT Games phát triển trò chơi <strong>Tìm Chữ – Word Search</strong> dưới dạng ứng dụng có hỗ trợ quảng cáo. Chính sách này nhằm công khai minh bạch cách chúng tôi bảo vệ quyền riêng tư, cách ứng dụng hoạt động và những quyền hạn được yêu cầu trên thiết bị của bạn.
+      </p>
+
+      <h3>1. Các quyền hệ thống Android ứng dụng yêu cầu</h3>
+      <p>
+        Trò chơi chỉ yêu cầu các quyền kỹ thuật tối thiểu cần thiết để vận hành các tính năng cơ bản, tuyệt đối <strong>không yêu cầu quyền truy cập danh bạ, vị trí GPS, máy ảnh, micro hay bộ nhớ tệp ngoài</strong>:
+      </p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Tên quyền (Permission)</th>
+              <th>Mục đích sử dụng</th>
+              <th>Tính chất</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>android.permission.INTERNET</code></td>
+              <td>Cho phép kết nối mạng để tải quảng cáo (Google AdMob) và xử lý giao dịch Xóa quảng cáo (Google Play Billing).</td>
+              <td>Bình thường (Normal)</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+              <td>Kiểm tra xem thiết bị có đang kết nối Wifi / 4G hay không để điều phối việc hiển thị quảng cáo hoặc chạy chế độ Offline.</td>
+              <td>Bình thường (Normal)</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.VIBRATE</code></td>
+              <td>Tạo hiệu ứng rung xúc giác (Haptic Feedback) nhẹ khi người chơi khoanh trúng từ hoặc hoàn thành màn (có thể tắt trong Cài đặt).</td>
+              <td>Bình thường (Normal)</td>
+            </tr>
+            <tr>
+              <td><code>com.google.android.gms.permission.AD_ID</code></td>
+              <td>Mã nhận dạng cho quảng cáo của Google (Advertising ID) được SDK Google AdMob sử dụng trên Android 13+ để phục vụ quảng cáo.</td>
+              <td>Quảng cáo (Ads)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5. SDK BÊN THỨ 3 -->
+      <h3 id="third-party">2. Dịch vụ và SDK bên thứ ba</h3>
+      <p>
+        Để duy trì ứng dụng hoàn toàn miễn phí tới người chơi và cung cấp tính năng mua sắm tiện lợi, trò chơi tích hợp các thư viện chính thức và uy tín của Google:
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <span class="feature-icon">📢</span>
+          <div class="feature-title">Google AdMob</div>
+          <div class="feature-desc">
+            Hiển thị biểu ngữ (Banner), quảng cáo giữa các màn (Interstitial) và quảng cáo thưởng (Rewarded) khi nhận lượt Gợi ý. AdMob có thể xử lý mã định danh quảng cáo (GAID) và thông tin kỹ thuật cơ bản của thiết bị theo <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách bảo mật Google</a>.
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">💳</span>
+          <div class="feature-title">Google Play Billing</div>
+          <div class="feature-desc">
+            Cung cấp gói mua <em>"Xoá quảng cáo" (Remove Ads)</em> một lần duy nhất. Toàn bộ thanh toán do Google Play bảo mật xử lý; nhà phát triển không thu thập hay lưu trữ bất kỳ thông tin tài chính hay thẻ tín dụng nào của bạn.
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 0.92rem; color: var(--text-muted);">
+        <em>Lưu ý tuân thủ GDPR/UMP:</em> Đối với người dùng tại Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh (UK), ứng dụng sẽ hiển thị biểu mẫu chấp thuận quảng cáo (Consent Form) theo chuẩn IAB TCF v2. Người chơi có toàn quyền xem lại và thay đổi quyết định tại mục Cài đặt của trò chơi bất kỳ lúc nào.
+      </p>
+
+      <!-- 6. THU THẬP & XÓA DỮ LIỆU -->
+      <h3 id="data-policy">3. Chính sách thu thập, sử dụng và xoá dữ liệu (Data Deletion)</h3>
+      <p>
+        <strong>Cam kết không thu thập dữ liệu cá nhân:</strong> Chúng tôi <strong>không</strong> yêu cầu người chơi tạo tài khoản, <strong>không</strong> lưu trữ tên tuổi, email, số điện thoại hay bất kỳ dữ liệu định danh người dùng nào trên máy chủ riêng.
+      </p>
+      <p>
+        <strong>Lưu trữ cục bộ:</strong> Mọi dữ liệu về cấp độ chơi, số sao, kỷ lục thời gian, chuỗi ngày Thử thách và cài đặt âm thanh được lưu trữ trực tiếp và duy nhất trên bộ nhớ nội bộ của điện thoại thông qua cơ chế lưu trữ an toàn của trò chơi.
+      </p>
+
+      <h4 style="font-size: 1rem; color: var(--navy); margin: 16px 0 8px;">Quy trình xoá dữ liệu người dùng (Data Deletion Process):</h4>
+      <p>Vì dữ liệu trò chơi nằm hoàn toàn trên thiết bị của bạn, bạn có thể chủ động xoá bỏ toàn bộ dữ liệu bất cứ khi nào theo 2 cách đơn giản sau:</p>
+
+      <ol class="step-list">
+        <li class="step-item">
+          <strong>Cách 1 – Xoá bộ nhớ đệm và dữ liệu ứng dụng:</strong><br>
+          Mở <em>Cài đặt thiết bị (Settings) &rarr; Ứng dụng (Apps) &rarr; Tìm Chữ (Word Search) &rarr; Lưu trữ (Storage) &rarr; nhấn "Xoá dữ liệu" (Clear Data / Clear Storage)</em>. Toàn bộ tiến trình màn chơi sẽ được thiết lập lại từ đầu.
+        </li>
+        <li class="step-item">
+          <strong>Cách 2 – Gỡ cài đặt ứng dụng:</strong><br>
+          Khi bạn gỡ cài đặt (Uninstall) Tìm Chữ khỏi điện thoại, hệ điều hành Android sẽ tự động xoá vĩnh viễn toàn bộ tệp tin, dữ liệu lưu và cài đặt của game khỏi thiết bị.
+        </li>
+      </ol>
+
+      <h4 style="font-size: 1rem; color: var(--navy); margin: 16px 0 8px;">Cách đặt lại hoặc xoá Mã định danh quảng cáo (Google Advertising ID):</h4>
+      <p>Nếu bạn muốn tắt quảng cáo cá nhân hoá hoặc đặt lại mã quảng cáo trên toàn bộ thiết bị Android của mình:</p>
+      <ol class="step-list">
+        <li class="step-item">Vào <strong>Cài đặt (Settings)</strong> trên điện thoại Android của bạn.</li>
+        <li class="step-item">Cuộn xuống chọn mục <strong>Google</strong> &rarr; chọn <strong>Quảng cáo (Ads)</strong>.</li>
+        <li class="step-item">Chọn <strong>"Đặt lại mã nhận dạng cho quảng cáo"</strong> (Reset advertising ID) hoặc <strong>"Xoá mã nhận dạng cho quảng cáo"</strong> (Delete advertising ID).</li>
+      </ol>
+
+      <h3>4. Quyền riêng tư của Trẻ em (COPPA / GDPR)</h3>
+      <p>
+        <strong>Tìm Chữ – Word Search</strong> là trò chơi giải đố thông thường, văn minh, lành mạnh và an toàn cho tất cả mọi lứa tuổi, bao gồm cả trẻ em và gia đình. Trò chơi không chủ ý thu thập hay lưu trữ bất kỳ thông tin nhận dạng cá nhân nào từ trẻ em dưới 13 tuổi (hoặc độ tuổi quy định tại quốc gia sở tại). Nếu phụ huynh hoặc người giám hộ phát hiện bất kỳ băn khoăn nào, xin vui lòng gửi thư cho chúng tôi để được giải đáp và hỗ trợ ngay lập tức.
+      </p>
+
+      <h3>5. Thay đổi đối với Chính sách</h3>
+      <p>
+        Chúng tôi có thể cập nhật nội dung Chính sách bảo mật này khi phát hành phiên bản mới hoặc cập nhật theo các quy định mới của Google Play. Mọi thay đổi sẽ luôn được công khai trực tiếp tại trang web này với ngày cập nhật cụ thể ở đầu trang.
+      </p>
+    </section>
+
+    <!-- 7. THÔNG TIN LIÊN HỆ -->
+    <section id="contact" class="contact-card">
+      <h2 style="font-family: 'Baloo 2', cursive, sans-serif; color: var(--navy); font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">
+        📬 Thông tin liên hệ Nhà phát triển
+      </h2>
+      <p style="color: var(--text-muted); max-width: 580px; margin: 0 auto 16px; font-size: 0.96rem;">
+        Mọi câu hỏi, phản hồi đóng góp ý kiến về nội dung bộ từ, thông báo lỗi kỹ thuật hoặc thắc mắc liên quan đến quyền riêng tư, xin vui lòng gửi thư tới:
+      </p>
+      <div>
+        <a href="mailto:minhthang0792@gmail.com" class="email-link">
+          <span>✉️</span>
+          <span>minhthang0792@gmail.com</span>
+        </a>
+      </div>
+      <p style="margin-top: 18px; font-size: 0.88rem; color: var(--text-muted);">
+        Nhà phát triển: <strong>MT Games</strong> &bull; Hỗ trợ phản hồi trong vòng 24–48 giờ làm việc.
+      </p>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer>
+      <p>&copy; 2026 MT Games — Tìm Chữ – Word Search (<code>cm.mt.wordsearch</code>). Bản quyền đã được bảo lưu.</p>
+      <p style="margin-top: 8px;">
+        <a href="#about">Lên đầu trang &uarr;</a>
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
