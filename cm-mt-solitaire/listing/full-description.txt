@@ -1,0 +1,29 @@
+Chào mừng bạn đến với Solitaire - Trải nghiệm xếp bài kinh điển đỉnh cao quy tụ 3 trò chơi bài một người được yêu thích nhất mọi thời đại: Klondike, Spider và FreeCell!
+
+Được thiết kế tinh tế theo phong cách sòng bài hoàng gia sang trọng kết hợp giao diện trẻ trung, mượt mà chuẩn 60 FPS, trò chơi mang đến cho bạn những phút giây thư giãn trí tuệ hoàn hảo, rèn luyện tư duy logic mọi lúc, mọi nơi mà không cần kết nối Internet.
+
+👑 BỘ 3 GAME BÀI KINH ĐIỂN TRONG 1 ỨNG DỤNG DUY NHẤT:
+1. Klondike Solitaire (Xếp Bài Cổ Điển):
+• Luật chơi truyền thống quen thuộc: sắp xếp 4 chất bài từ Át (A) đến K vào 4 ô đích (Foundation).
+• 2 chế độ rút bài: Rút 1 lá (Draw 1) nhẹ nhàng thư thái hoặc Rút 3 lá (Draw 3) kích thích tư duy chiến thuật.
+• Tùy chọn điểm chuẩn Vegas hoặc tính điểm truyền thống.
+
+2. Spider Solitaire (Nhện Độc):
+• Trải nghiệm 8 cột bài đầy mê hoặc với 3 cấp độ thử thách: 1 Chất (Dễ - làm quen), 2 Chất (Vừa - tính toán), và 4 Chất (Khó - bậc thầy giải bài).
+• Ghép trọn vẹn chuỗi bài đồng chất từ K xuống A để thu bài về ô hoàn thành.
+
+3. FreeCell Solitaire:
+• Đỉnh cao của sự tính toán và logic! 4 ô tạm (Free Cells) chiến lược giúp bạn linh hoạt luân chuyển các lá bài.
+• 100% ván bài đều có thể giải được nếu bạn có chiến thuật thông minh và kiên nhẫn.
+
+🌟 TÍNH NĂNG NỔI BẬT:
+• 100% Ván bài thắng được (Winnable Deals): Thuật toán chia bài thông minh đảm bảo mọi ván bài ở chế độ Thắng Được đều có lời giải thực tế.
+• Thử thách hàng ngày (Daily Challenge): Mỗi ngày một ván bài độc đáo cho từng thể loại. Chinh phục và sưu tập trọn bộ huy hiệu danh giá trong tháng.
+• Chơi Offline 100%: Thư giãn trên máy bay, tàu xe, hay bất cứ nơi đâu mà không lo tốn dung lượng 4G/5G.
+• Gợi ý thông minh (Smart Hint) & Hoàn tác vô hạn (Unlimited Undo): Không bao giờ lo bế tắc nước đi.
+• Tự động thu bài (Auto-Complete): Tự động chuyển các lá bài lên ô đích khi thế trận đã chắc chắn thắng.
+• Tùy biến bàn chơi đẳng cấp: Đa dạng mặt lưng bài hoàng gia mạ vàng và 5 màu nỉ sang trọng (Xanh Casino, Rêu Emerald, Đỏ Rượu Ruby, Tím Hoàng Gia, Xám Obsidian).
+• Thống kê chi tiết & Kỷ lục: Theo dõi tỉ lệ thắng, số trận đã chơi, chuỗi thắng liên tiếp, thời gian hoàn thành nhanh nhất và số nước đi tối ưu.
+• Chế độ tay trái / tay phải tiện lợi, lá bài hiển thị số to rõ ràng, không gây mỏi mắt.
+
+Tải ngay Solitaire - Xếp Bài Cổ Điển để tận hưởng những ván bài thư thái và rèn luyện trí tuệ mỗi ngày!

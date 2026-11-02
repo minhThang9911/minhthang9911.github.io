@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solitaire: Xếp Bài Cổ Điển – Giới Thiệu & Chính Sách Bảo Mật</title>
+    <meta name="description" content="Trang giới thiệu chính thức và Chính sách bảo mật ứng dụng Solitaire: Xếp Bài Cổ Điển (Klondike, Spider, FreeCell) - MT Games.">
+    <meta property="og:title" content="Solitaire: Xếp Bài Cổ Điển – Klondike, Spider & FreeCell">
+    <meta property="og:description" content="Trải nghiệm bộ ba game bài một người kinh điển thế giới. Đồ hoạ hoàng gia sang trọng, 100% ván thắng được, chơi offline mọi lúc.">
+    <meta property="og:image" content="./feature-image.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="./playstore-app-icon.png">
+    <style>
+        :root {
+            --bg-deep: #06130c;
+            --bg-radial: radial-gradient(circle at 50% 20%, #0f3822 0%, #081a11 55%, #040d08 100%);
+            --card-bg: rgba(16, 38, 27, 0.75);
+            --card-border: rgba(255, 209, 102, 0.2);
+            --card-border-hover: rgba(255, 209, 102, 0.45);
+            --gold: #FFD166;
+            --gold-light: #FFE399;
+            --emerald: #10B981;
+            --emerald-glow: rgba(16, 185, 129, 0.35);
+            --ruby: #EF4444;
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --text-muted: #8E9BAE;
+            --code-bg: #091710;
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-deep);
+            background-image: var(--bg-radial);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.68;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px 20px 80px;
+        }
+
+        /* Top Nav */
+        header.nav-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 28px;
+        }
+
+        .brand-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-badge img {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--gold);
+        }
+
+        .brand-text h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: -0.01em;
+        }
+
+        .brand-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .header-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .header-links a:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+            background: rgba(255, 209, 102, 0.08);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 10px 0 36px;
+        }
+
+        .hero-banner-wrap {
+            position: relative;
+            width: 100%;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 209, 102, 0.2);
+            margin-bottom: 24px;
+            background: #000;
+        }
+
+        .hero-banner-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .hero-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: -54px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-app-icon {
+            width: 104px;
+            height: 104px;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65), 0 0 0 3px var(--gold);
+            background: #081a11;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .hero-title span {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 20px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(16, 185, 129, 0.12);
+            color: #34D399;
+            border: 1px solid rgba(16, 185, 129, 0.28);
+        }
+
+        .tag.gold {
+            background: rgba(255, 209, 102, 0.12);
+            color: var(--gold);
+            border-color: rgba(255, 209, 102, 0.3);
+        }
+
+        .tag.ruby {
+            background: rgba(239, 68, 68, 0.12);
+            color: #F87171;
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        /* Nav Pills (TOC) */
+        .toc-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+            padding: 12px;
+            background: rgba(8, 26, 17, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 12px;
+            z-index: 100;
+        }
+
+        .toc-bar a {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            transition: all 0.15s ease;
+        }
+
+        .toc-bar a:hover {
+            color: var(--gold);
+            background: rgba(255, 209, 102, 0.12);
+        }
+
+        /* Section Layout */
+        section {
+            margin-bottom: 44px;
+            scroll-margin-top: 80px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            transition: border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: var(--card-border-hover);
+        }
+
+        h2.section-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 209, 102, 0.2);
+        }
+
+        h2.section-heading .icon {
+            font-size: 1.6rem;
+        }
+
+        h3.sub-heading {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 22px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--text-secondary);
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        /* 3-Game Mode Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .game-mode-box {
+            background: rgba(10, 26, 18, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .game-mode-box:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold);
+        }
+
+        .game-mode-box h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .game-mode-box p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--text-secondary);
+        }
+
+        /* Play Store Listing Boxes */
+        .listing-box {
+            background: var(--code-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            margin: 14px 0 22px;
+            position: relative;
+        }
+
+        .listing-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .listing-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .char-counter {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .copy-btn {
+            background: rgba(255, 209, 102, 0.15);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--gold);
+            color: #06130c;
+        }
+
+        .listing-content {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-family: inherit;
+            line-height: 1.6;
+        }
+
+        /* Tables */
+        .data-table-wrap {
+            overflow-x: auto;
+            margin: 18px 0;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+            background: rgba(10, 24, 16, 0.6);
+        }
+
+        table.data-table th, table.data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        table.data-table th {
+            background: rgba(16, 38, 27, 0.95);
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+
+        table.data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.data-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .badge-pill {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .badge-pill.yes {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34D399;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+
+        .badge-pill.no {
+            background: rgba(148, 163, 184, 0.15);
+            color: #94A3B8;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        /* Step cards for Deletion */
+        .steps-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: rgba(10, 24, 16, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+        }
+
+        .step-num {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: #06130c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .step-content strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        .step-content p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Permission item */
+        .perm-card {
+            background: rgba(10, 24, 16, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .perm-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .perm-code {
+            font-family: monospace;
+            background: #050d08;
+            color: #34D399;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .perm-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .perm-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* Alert Callouts */
+        .alert-box {
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            margin: 18px 0;
+            font-size: 0.92rem;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .alert-box.info {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #E2E8F0;
+        }
+
+        .alert-box.warn {
+            background: rgba(255, 209, 102, 0.1);
+            border: 1px solid rgba(255, 209, 102, 0.3);
+            color: #F8FAFC;
+        }
+
+        .alert-icon {
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, rgba(16, 46, 30, 0.9) 0%, rgba(8, 26, 17, 0.9) 100%);
+            border: 1px solid var(--gold);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-box h3 {
+            color: var(--gold);
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 209, 102, 0.15);
+            color: var(--gold);
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 14px 0;
+            border: 1px solid var(--gold);
+            transition: all 0.2s ease;
+        }
+
+        .contact-email:hover {
+            background: var(--gold);
+            color: #06130c;
+            transform: scale(1.03);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer p {
+            margin-bottom: 6px;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            .container {
+                padding: 16px 14px 60px;
+            }
+
+            .card {
+                padding: 20px 16px;
+            }
+
+            .hero-title {
+                font-size: 1.6rem;
+            }
+
+            .hero-app-icon {
+                width: 80px;
+                height: 80px;
+                margin-top: -40px;
+            }
+
+            .toc-bar {
+                display: none;
+            }
+
+            .brand-text p {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Top Navigation -->
+    <header class="nav-header">
+        <a href="#hero" class="brand-badge">
+            <img src="./playstore-app-icon.png" alt="Solitaire Icon">
+            <div class="brand-text">
+                <h1>Solitaire: Xếp Bài Cổ Điển</h1>
+                <p>MT Games • Android</p>
+            </div>
+        </a>
+        <div class="header-links">
+            <a href="#privacy">Chính Sách Bảo Mật</a>
+        </div>
+    </header>
+
+    <!-- Hero Showcase -->
+    <section id="hero" class="hero">
+        <div class="hero-banner-wrap">
+            <img src="./feature-image.png" alt="Solitaire Feature Graphic">
+        </div>
+        <div class="hero-profile">
+            <img src="./playstore-app-icon.png" alt="App Icon" class="hero-app-icon">
+            <h1 class="hero-title">Solitaire: <span>Xếp Bài Cổ Điển</span></h1>
+            <p class="hero-subtitle">Bộ ba game bài một người huyền thoại thế giới: Klondike, Spider & FreeCell. Đồ họa hoàng gia tinh tế, ván chia thông minh và hoàn toàn miễn phí offline.</p>
+            <div class="tag-row">
+                <span class="tag gold">♠ Klondike (Rút 1 / Rút 3)</span>
+                <span class="tag">🕷️ Spider (1, 2, 4 Chất)</span>
+                <span class="tag ruby">♦ FreeCell Kinh Điển</span>
+                <span class="tag">⚡ 100% Chơi Offline</span>
+                <span class="tag gold">🎯 100% Ván Thắng Được</span>
+                <span class="tag">🛡️ Không Thu Thập PII</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents Sticky Bar -->
+    <nav class="toc-bar">
+        <a href="#about">Giới Thiệu</a>
+        <a href="#listing">Nội Dung Google Play</a>
+        <a href="#permissions">Quyền Ứng Dụng</a>
+        <a href="#privacy">Chính Sách Bảo Mật</a>
+        <a href="#third-party">SDK Bên Thứ Ba</a>
+        <a href="#deletion">Xóa Dữ Liệu</a>
+        <a href="#contact">Liên Hệ</a>
+    </nav>
+
+    <!-- SECTION 1: GIỚI THIỆU ỨNG DỤNG -->
+    <section id="about">
+        <div class="card">
+            <h2 class="section-heading">
+                <span class="icon">👑</span> Giới Thiệu Ứng Dụng
+            </h2>
+            <p><strong>Solitaire: Xếp Bài Cổ Điển</strong> (tên gói: <code>cm.mt.solitaire</code>) là ứng dụng trò chơi bài một người cao cấp được thiết kế chuyên biệt cho hệ điều hành Android. Kết hợp trọn vẹn cả 3 thể loại xếp bài được yêu thích nhất mọi thời đại — <strong>Klondike</strong>, <strong>Spider</strong>, và <strong>FreeCell</strong> — trong một trải nghiệm duy nhất, mượt mà chuẩn 60 FPS với đồ hoạ phong cách sòng bài hoàng gia sang trọng.</p>
+
+            <div class="game-grid">
+                <div class="game-mode-box">
+                    <h4>♠ Klondike Solitaire</h4>
+                    <p>Luật chơi kinh điển truyền thống. Xếp các lá bài từ A đến K theo chất vào 4 ô đích. Hỗ trợ tùy chọn <strong>Rút 1 lá</strong> (Draw 1) thư giãn nhẹ nhàng hoặc <strong>Rút 3 lá</strong> (Draw 3) kích thích trí tuệ chiến thuật.</p>
+                </div>
+                <div class="game-mode-box">
+                    <h4>🕷️ Spider Solitaire</h4>
+                    <p>Thử thách tư duy với 8 cột bài và 104 lá. Lựa chọn 3 cấp độ: <strong>1 Chất</strong> (dễ tiếp cận), <strong>2 Chất</strong> (tính toán chiến thuật), hoặc <strong>4 Chất</strong> (thử thách tột đỉnh cho cao thủ).</p>
+                </div>
+                <div class="game-mode-box">
+                    <h4>🃏 FreeCell Solitaire</h4>
+                    <p>Đỉnh cao của sự tính toán và logic thuần túy! 4 ô tạm (Free Cells) giúp bạn linh hoạt luân chuyển các lá bài. Hầu như 100% các ván chia bài đều có thể giải được nếu bạn có kế hoạch đi nước đúng đắn.</p>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">🌟 Những Điểm Vượt Trội</h3>
+            <ul style="padding-left: 20px; color: var(--text-secondary); margin-bottom: 16px;">
+                <li style="margin-bottom: 8px;"><strong>100% Ván bài thắng được (Winnable Deals):</strong> Thuật toán tạo ván bài thông minh được kiểm định nghiêm ngặt, đảm bảo mọi ván bài ở chế độ Thắng Được đều có lời giải thực tế, không gây ức chế vì bế tắc vô lý.</li>
+                <li style="margin-bottom: 8px;"><strong>Thử thách hàng ngày (Daily Challenge):</strong> Mỗi ngày một ván bài đặc biệt cho từng thể loại. Chinh phục để tích lũy vương miện và huy hiệu vinh danh mỗi tháng.</li>
+                <li style="margin-bottom: 8px;"><strong>Chơi Offline Hoàn Toàn:</strong> Không yêu cầu mạng Internet, không lo tốn pin hay tiêu hao dung lượng di động khi chơi trên máy bay, tàu xe hay bất cứ đâu.</li>
+                <li style="margin-bottom: 8px;"><strong>Tùy biến bàn chơi đẳng cấp:</strong> Đa dạng hoa văn mặt lưng bài mạ vàng hoàng gia, chân dung bài J-Q-K vẽ tay sắc nét, cùng 5 màu nỉ sang trọng (Xanh Casino, Xanh Rêu Emerald, Đỏ Rượu Ruby, Tím Hoàng Gia, Xám Obsidian).</li>
+                <li style="margin-bottom: 8px;"><strong>Hỗ trợ người chơi tận tâm:</strong> Gợi ý thông minh (Smart Hint), Hoàn tác vô hạn (Undo), Tự động thu bài lên ô đích (Auto-Complete), chế độ chuyển đổi cho người thuận tay trái hoặc tay phải.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 2: GOOGLE PLAY STORE LISTING -->
+    <section id="listing">
+        <div class="card">
+            <h2 class="section-heading">
+                <span class="icon">📱</span> Nội Dung Niêm Yết Google Play Store
+            </h2>
+            <p>Dưới đây là thông tin chuẩn hóa theo đúng tiêu chuẩn nội dung và chính sách ASO (App Store Optimization) của Google Play Store:</p>
+
+            <!-- Title -->
+            <div class="listing-box">
+                <div class="listing-header">
+                    <span class="listing-label">Tên ứng dụng (App Title • Tối đa 30 ký tự)</span>
+                    <button class="copy-btn" onclick="copyText('app-title-text')">Sao chép</button>
+                </div>
+                <div class="listing-content" id="app-title-text">Solitaire - Xếp Bài Cổ Điển</div>
+                <div class="char-counter" style="margin-top: 6px;">27 / 30 ký tự</div>
+            </div>
+
+            <!-- Short Description -->
+            <div class="listing-box">
+                <div class="listing-header">
+                    <span class="listing-label">Mô tả ngắn (Short Description • Tối đa 80 ký tự)</span>
+                    <button class="copy-btn" onclick="copyText('short-desc-text')">Sao chép</button>
+                </div>
+                <div class="listing-content" id="short-desc-text">Klondike, Spider & FreeCell kinh điển. Ván thắng được, chơi offline mọi lúc.</div>
+                <div class="char-counter" style="margin-top: 6px;">76 / 80 ký tự</div>
+            </div>
+
+            <!-- Long Description -->
+            <div class="listing-box">
+                <div class="listing-header">
+                    <span class="listing-label">Mô tả chi tiết (Full Description • Tối đa 4000 ký tự)</span>
+                    <button class="copy-btn" onclick="copyText('full-desc-text')">Sao chép</button>
+                </div>
+                <div class="listing-content" id="full-desc-text">Chào mừng bạn đến với Solitaire - Trải nghiệm xếp bài kinh điển đỉnh cao quy tụ 3 trò chơi bài một người được yêu thích nhất mọi thời đại: Klondike, Spider và FreeCell!
+
+Được thiết kế tinh tế theo phong cách sòng bài hoàng gia sang trọng kết hợp giao diện trẻ trung, mượt mà chuẩn 60 FPS, trò chơi mang đến cho bạn những phút giây thư giãn trí tuệ hoàn hảo, rèn luyện tư duy logic mọi lúc, mọi nơi mà không cần kết nối Internet.
+
+👑 BỘ 3 GAME BÀI KINH ĐIỂN TRONG 1 ỨNG DỤNG DUY NHẤT:
+1. Klondike Solitaire (Xếp Bài Cổ Điển):
+• Luật chơi truyền thống quen thuộc: sắp xếp 4 chất bài từ Át (A) đến K vào 4 ô đích (Foundation).
+• 2 chế độ rút bài: Rút 1 lá (Draw 1) nhẹ nhàng thư thái hoặc Rút 3 lá (Draw 3) kích thích tư duy chiến thuật.
+• Tùy chọn điểm chuẩn Vegas hoặc tính điểm truyền thống.
+
+2. Spider Solitaire (Nhện Độc):
+• Trải nghiệm 8 cột bài đầy mê hoặc với 3 cấp độ thử thách: 1 Chất (Dễ - làm quen), 2 Chất (Vừa - tính toán), và 4 Chất (Khó - bậc thầy giải bài).
+• Ghép trọn vẹn chuỗi bài đồng chất từ K xuống A để thu bài về ô hoàn thành.
+
+3. FreeCell Solitaire:
+• Đỉnh cao của sự tính toán và logic! 4 ô tạm (Free Cells) chiến lược giúp bạn linh hoạt luân chuyển các lá bài.
+• 100% ván bài đều có thể giải được nếu bạn có chiến thuật thông minh và kiên nhẫn.
+
+🌟 TÍNH NĂNG NỔI BẬT:
+• 100% Ván bài thắng được (Winnable Deals): Thuật toán chia bài thông minh đảm bảo mọi ván bài ở chế độ Thắng Được đều có lời giải thực tế.
+• Thử thách hàng ngày (Daily Challenge): Mỗi ngày một ván bài độc đáo cho từng thể loại. Chinh phục và sưu tập trọn bộ huy hiệu danh giá trong tháng.
+• Chơi Offline 100%: Thư giãn trên máy bay, tàu xe, hay bất cứ nơi đâu mà không lo tốn dung lượng 4G/5G.
+• Gợi ý thông minh (Smart Hint) & Hoàn tác vô hạn (Unlimited Undo): Không bao giờ lo bế tắc nước đi.
+• Tự động thu bài (Auto-Complete): Tự động chuyển các lá bài lên ô đích khi thế trận đã chắc chắn thắng.
+• Tùy biến bàn chơi đẳng cấp: Đa dạng mặt lưng bài hoàng gia mạ vàng và 5 màu nỉ sang trọng (Xanh Casino, Rêu Emerald, Đỏ Rượu Ruby, Tím Hoàng Gia, Xám Obsidian).
+• Thống kê chi tiết & Kỷ lục: Theo dõi tỉ lệ thắng, số trận đã chơi, chuỗi thắng liên tiếp, thời gian hoàn thành nhanh nhất và số nước đi tối ưu.
+• Chế độ tay trái / tay phải tiện lợi, lá bài hiển thị số to rõ ràng, không gây mỏi mắt.
+
+Tải ngay Solitaire - Xếp Bài Cổ Điển để tận hưởng những ván bài thư thái và rèn luyện trí tuệ mỗi ngày!</div>
+                <div class="char-counter" style="margin-top: 6px;">2.394 / 4.000 ký tự</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: QUYỀN HẠN ỨNG DỤNG -->
+    <section id="permissions">
+        <div class="card">
+            <h2 class="section-heading">
+                <span class="icon">🔒</span> Quyền Hạn Ứng Dụng Yêu Cầu (App Permissions)
+            </h2>
+            <p>Ứng dụng tuân thủ nghiêm ngặt nguyên tắc cấp quyền tối thiểu (Least Privilege). Chúng tôi chỉ yêu cầu các quyền hạn kỹ thuật thực sự cần thiết để vận hành quảng cáo và tính năng mua gói bỏ quảng cáo trên Android:</p>
+
+            <div class="perm-card">
+                <div class="perm-header">
+                    <span class="perm-code">android.permission.INTERNET</span>
+                    <span class="perm-name">Truy cập Internet</span>
+                </div>
+                <p class="perm-desc">Cho phép ứng dụng kết nối mạng để tải quảng cáo (Google AdMob SDK) và liên lạc bảo mật với dịch vụ thanh toán Google Play Billing. Khi thiết bị ngoại tuyến (không có mạng), trò chơi vẫn hoạt động 100% bình thường mà không bị gián đoạn.</p>
+            </div>
+
+            <div class="perm-card">
+                <div class="perm-header">
+                    <span class="perm-code">android.permission.ACCESS_NETWORK_STATE</span>
+                    <span class="perm-name">Kiểm tra trạng thái mạng</span>
+                </div>
+                <p class="perm-desc">Cho phép ứng dụng phát hiện trạng thái kết nối mạng (Wifi, dữ liệu di động 4G/5G, hoặc ngắt mạng) để tối ưu hoá việc gửi yêu cầu quảng cáo và tránh các lỗi chờ mạng không cần thiết.</p>
+            </div>
+
+            <div class="perm-card">
+                <div class="perm-header">
+                    <span class="perm-code">com.android.vending.BILLING</span>
+                    <span class="perm-name">Dịch vụ thanh toán Google Play</span>
+                </div>
+                <p class="perm-desc">Cho phép người dùng mua gói <em>"Xóa Quảng Cáo" (Remove Ads)</em> một lần vĩnh viễn trực tiếp qua cổng thanh toán bảo mật của Google Play Store.</p>
+            </div>
+
+            <div class="alert-box info">
+                <span class="alert-icon">🛡️</span>
+                <div>
+                    <strong>Cam kết không yêu cầu quyền nhạy cảm:</strong> Ứng dụng <u>TUYỆT ĐỐI KHÔNG</u> yêu cầu quyền truy cập Định vị GPS, Danh bạ điện thoại, Tin nhắn SMS, Bộ sưu tập hình ảnh, Camera, Micro hay Bộ nhớ ngoài nhạy cảm.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CHÍNH SÁCH BẢO MẬT & DATA SAFETY -->
+    <section id="privacy">
+        <div class="card">
+            <h2 class="section-heading">
+                <span class="icon">📜</span> Chính Sách Bảo Mật (App Privacy Policy)
+            </h2>
+            <p style="font-size: 0.88rem; color: var(--gold);">Có hiệu lực & Cập nhật lần cuối: Tháng 11/2026</p>
+            <p>MT Games cam kết bảo vệ quyền riêng tư của bạn. Chính sách này quy định cách thức dữ liệu được xử lý khi bạn cài đặt và sử dụng ứng dụng <strong>Solitaire: Xếp Bài Cổ Điển</strong>.</p>
+
+            <h3 class="sub-heading">1. Nguyên Tắc Xử Lý Dữ Liệu</h3>
+            <ul style="padding-left: 20px; color: var(--text-secondary); margin-bottom: 14px;">
+                <li><strong>Không yêu cầu tài khoản:</strong> Bạn không cần đăng ký tài khoản, không cần cung cấp họ tên, email hay số điện thoại để trải nghiệm game.</li>
+                <li><strong>Lưu trữ nội bộ (Local Storage):</strong> Toàn bộ tiến trình ván bài, điểm số kỷ lục, huy hiệu ngày, và tùy chọn cài đặt âm thanh được lưu cục bộ trong bộ nhớ riêng tư của ứng dụng trên thiết bị bằng hệ thống bảo mật của Android (Internal Storage). Chúng tôi không có máy chủ backend để lưu hay đồng bộ dữ liệu này.</li>
+                <li><strong>Không bán dữ liệu:</strong> Chúng tôi không bao giờ bán, cho thuê hoặc thương mại hóa bất kỳ dữ liệu nào của người dùng.</li>
+            </ul>
+
+            <h3 class="sub-heading">2. Bảng Khai Báo An Toàn Dữ Liệu (Google Play Data Safety)</h3>
+            <p>Đối chiếu với biểu mẫu Data Safety trên Google Play Console:</p>
+
+            <div class="data-table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Loại Dữ Liệu</th>
+                            <th>Thu Thập</th>
+                            <th>Chia Sẻ</th>
+                            <th>Mục Đích</th>
+                            <th>Mã Hóa Truyền Tải</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mã định danh thiết bị</strong><br><small style="color: var(--text-muted);">Advertising ID (GAID)</small></td>
+                            <td><span class="badge-pill yes">Có</span></td>
+                            <td><span class="badge-pill yes">Có</span></td>
+                            <td>Hiển thị quảng cáo, tối ưu lượt hiển thị (SDK AdMob)</td>
+                            <td><span class="badge-pill yes">Có (HTTPS / TLS)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tương tác trong ứng dụng</strong><br><small style="color: var(--text-muted);">App interactions, xem quảng cáo</small></td>
+                            <td><span class="badge-pill yes">Có</span></td>
+                            <td><span class="badge-pill yes">Có</span></td>
+                            <td>Phân tích hiệu suất hiển thị quảng cáo và chống gian lận</td>
+                            <td><span class="badge-pill yes">Có (HTTPS / TLS)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chẩn đoán lỗi & hiệu suất</strong><br><small style="color: var(--text-muted);">Crash logs, ANR diagnostics</small></td>
+                            <td><span class="badge-pill yes">Có</span></td>
+                            <td><span class="badge-pill no">Không</span></td>
+                            <td>Phát hiện sự cố và tối ưu hoá độ ổn định của ứng dụng</td>
+                            <td><span class="badge-pill yes">Có (HTTPS / TLS)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thông tin cá nhân (PII)</strong><br><small style="color: var(--text-muted);">Tên, Email, SĐT, Vị trí, Ảnh</small></td>
+                            <td><span class="badge-pill no">Không</span></td>
+                            <td><span class="badge-pill no">Không</span></td>
+                            <td>Ứng dụng không thu thập bất kỳ dữ liệu cá nhân nào</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SDK BÊN THỨ BA -->
+    <section id="third-party">
+        <div class="card">
+            <h2 class="section-heading">
+                <span class="icon">🔌</span> Dịch Vụ & SDK Bên Thứ Ba
+            </h2>
+            <p>Để duy trì ứng dụng miễn phí và hỗ trợ tính năng mua hàng, ứng dụng tích hợp các SDK chính thức từ Google:</p>
+
+            <h3 class="sub-heading">1. Google AdMob (Google Mobile Ads SDK)</h3>
+            <p>Chúng tôi sử dụng Google AdMob để hiển thị quảng cáo biểu ngữ (Banner), quảng cáo toàn màn hình khi hoàn thành ván (Interstitial), và quảng cáo video nhận thưởng khi người chơi cần thêm lượt gợi ý hoặc xáo bài (Rewarded Video).</p>
+            <ul style="padding-left: 20px; color: var(--text-secondary); margin-bottom: 12px;">
+                <li><strong>Cơ chế hoạt động:</strong> AdMob có thể sử dụng Mã định danh quảng cáo (Google Advertising ID) và dữ liệu thiết bị kỹ thuật để phục vụ quảng cáo phù hợp và ngăn chặn hành vi gian lận.</li>
+                <li><strong>Quyền kiểm soát của bạn:</strong> Bạn có thể đặt lại hoặc xóa hoàn toàn Advertising ID bất kỳ lúc nào trên máy Android tại: <code>Cài đặt (Settings)</code> → <code>Google</code> → <code>Quảng cáo (Ads)</code> → <code>Xóa mã nhận dạng quảng cáo (Delete advertising ID)</code>.</li>
+                <li><strong>Tuân thủ GDPR / UMP:</strong> Đối với người dùng tại Khu vực Kinh tế Châu Âu (EEA) và Vương quốc Anh, ứng dụng tích hợp sẵn giao diện User Messaging Platform (UMP) của Google để người chơi tự do lựa chọn cho phép hoặc từ chối quảng cáo cá nhân hóa.</li>
+                <li>Tham khảo: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color: var(--gold);">Chính sách quảng cáo của Google</a> và <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener" style="color: var(--gold);">Cách Google sử dụng dữ liệu</a>.</li>
+            </ul>
+
+            <h3 class="sub-heading">2. Google Play Billing Library</h3>
+            <p>Ứng dụng cung cấp gói nâng cấp một lần <strong>"Xóa Quảng Cáo" (Remove Ads)</strong> giúp gỡ bỏ toàn bộ quảng cáo biểu ngữ và quảng cáo xen kẽ.</p>
+            <ul style="padding-left: 20px; color: var(--text-secondary); margin-bottom: 12px;">
+                <li>Toàn bộ thông tin tài khoản ngân hàng, thẻ tín dụng, địa chỉ hóa đơn đều do <strong>Google Play trực tiếp bảo mật và xử lý</strong>.</li>
+                <li>MT Games không có quyền truy cập, không thu thập và không lưu giữ bất kỳ thông tin thẻ hay giao dịch tài chính nào của bạn.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CHÍNH SÁCH XÓA DỮ LIỆU -->
+    <section id="deletion">
+        <div class="card">
+            <h2 class="section-heading">
+                <span class="icon">🗑️</span> Chính Sách Xóa Dữ Liệu (User Data Deletion Policy)
+            </h2>
+            <p>Theo tiêu chuẩn minh bạch của Google Play Store, chúng tôi cung cấp hướng dẫn rõ ràng để người dùng có thể xóa toàn bộ dữ liệu của ứng dụng bất cứ lúc nào:</p>
+
+            <div class="steps-list">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <strong>Xóa sạch dữ liệu lưu trữ trực tiếp trên thiết bị (Khuyên dùng)</strong>
+                        <p>Vào <code>Cài đặt Android (Settings)</code> → <code>Ứng dụng (Apps)</code> → Chọn <code>Solitaire</code> → Chọn <code>Lưu trữ &amp; bộ nhớ đệm (Storage &amp; cache)</code> → Nhấn <strong>Xóa bộ nhớ / Xóa dữ liệu (Clear storage / Clear data)</strong>. Mọi lịch sử ván bài, điểm số và kỷ lục sẽ được xóa vĩnh viễn khỏi máy ngay lập tức.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <strong>Gỡ cài đặt ứng dụng (Uninstall)</strong>
+                        <p>Khi bạn gỡ cài đặt Solitaire khỏi điện thoại, hệ điều hành Android sẽ tự động xóa sạch toàn bộ thư mục dữ liệu cục bộ và cấu hình của ứng dụng khỏi bộ nhớ thiết bị.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <strong>Yêu cầu hỗ trợ về dữ liệu quảng cáo / thanh toán</strong>
+                        <p>Vì MT Games không lưu trữ tài khoản hay dữ liệu người dùng trên máy chủ riêng, không có dữ liệu định danh nào của bạn được lưu trữ trên hệ thống của chúng tôi. Nếu bạn có bất kỳ thắc mắc hay yêu cầu nào liên quan đến dữ liệu từ SDK bên thứ ba, vui lòng gửi email về <a href="mailto:minhthang0792@gmail.com" style="color: var(--gold); font-weight: 600;">minhthang0792@gmail.com</a>. Chúng tôi sẽ giải đáp và hỗ trợ trong vòng 24 - 48 giờ làm việc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">3. Quyền Riêng Tư Của Trẻ Em (COPPA & Family Policy)</h3>
+            <p>Ứng dụng <strong>Solitaire: Xếp Bài Cổ Điển</strong> không hướng tới đối tượng người dùng là trẻ em dưới 13 tuổi và không cố ý thu thập dữ liệu cá nhân từ trẻ em. Nếu phụ huynh hoặc người giám hộ phát hiện trẻ đã cung cấp dữ liệu qua dịch vụ quảng cáo của bên thứ ba mà chưa được sự đồng ý, vui lòng liên hệ với chúng tôi để được hỗ trợ can thiệp.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 7: THÔNG TIN LIÊN HỆ -->
+    <section id="contact">
+        <div class="contact-box">
+            <h3>📬 Thông Tin Liên Hệ Nhà Phát Triển</h3>
+            <p>Nếu bạn có bất kỳ đóng góp, phản hồi về trò chơi, hoặc yêu cầu liên quan đến chính sách bảo mật, xin vui lòng liên hệ trực tiếp:</p>
+            <div>
+                <a href="mailto:minhthang0792@gmail.com" class="contact-email">
+                    ✉️ minhthang0792@gmail.com
+                </a>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 8px;">
+                Đơn vị phát hành: <strong>MT Games</strong> • Hỗ trợ người dùng: 24/7 qua email
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 MT Games. Bảo lưu mọi quyền.</p>
+        <p>Solitaire: Xếp Bài Cổ Điển (Package: <code>cm.mt.solitaire</code>) • Phát hành trên Google Play Store</p>
+        <p style="font-size: 0.8rem; margin-top: 8px;">Trang web này được lưu trữ công khai tại GitHub Pages nhằm đảm bảo tính minh bạch và tuân thủ các quy định của Google Play Developer Program Policy.</p>
+    </footer>
+
+</div>
+
+<!-- Copy Script -->
+<script>
+function copyText(elementId) {
+    const text = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        const originalText = btn.innerText;
+        btn.innerText = "✓ Đã sao chép";
+        btn.style.background = "#10B981";
+        btn.style.color = "#ffffff";
+        btn.style.borderColor = "#10B981";
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.background = "";
+            btn.style.color = "";
+            btn.style.borderColor = "";
+        }, 2000);
+    }).catch(err => {
+        alert("Không thể sao chép tự động, vui lòng chọn văn bản và sao chép thủ công.");
+    });
+}
+</script>
+
+</body>
+</html>
