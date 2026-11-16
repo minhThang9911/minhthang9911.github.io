@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chở Hàng Xe Máy: Scooter Stack – Giới thiệu & Chính sách bảo mật</title>
+<meta name="description" content="Chở Hàng Xe Máy: Scooter Stack – game chất hàng lên xe máy và chở qua phố. Giới thiệu ứng dụng và chính sách bảo mật đầy đủ.">
+<link rel="icon" href="playstore-app-icon.png">
+<meta property="og:title" content="Chở Hàng Xe Máy: Scooter Stack">
+<meta property="og:description" content="Chất hàng cao ngất lên xe máy, chở qua ổ gà, gờ giảm tốc mà không rơi món nào!">
+<meta property="og:image" content="feature-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+	--sun:#FFC93C; --sun-2:#FFB000; --orange:#FF7A1A; --red:#E63946;
+	--teal:#14937F; --teal-soft:#DDF4EF; --ink:#2B2118; --ink-2:#5A4B3E;
+	--paper:#FFF9EC; --card:#FFFFFF; --line:#F1E3C4; --shadow:0 6px 0 #2B2118;
+	--radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+	margin:0; background:var(--paper); color:var(--ink);
+	font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+	font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--teal); font-weight:700; text-underline-offset:3px}
+a:hover{color:var(--orange)}
+img{max-width:100%; display:block}
+
+/* ---------- HERO ---------- */
+.hero{
+	position:relative; overflow:hidden; padding:28px 16px 64px;
+	background:
+		repeating-conic-gradient(from 0deg at 50% 38%, rgba(255,255,255,.22) 0 7deg, transparent 7deg 18deg),
+		radial-gradient(circle at 50% 38%, #FFE07A 0%, var(--sun) 45%, var(--sun-2) 100%);
+	border-bottom:4px solid var(--ink);
+}
+.hero-inner{max-width:960px; margin:0 auto; position:relative}
+.banner{
+	border:4px solid var(--ink); border-radius:28px; overflow:hidden;
+	box-shadow:0 10px 0 var(--ink); background:#fff; transform:rotate(-1deg);
+}
+.banner img{width:100%; height:auto; aspect-ratio:1024/500; object-fit:cover}
+.id{
+	display:flex; gap:20px; align-items:center; margin-top:-46px; padding:0 18px;
+	position:relative; z-index:2;
+}
+.app-icon{
+	width:112px; height:112px; flex:none; border-radius:28px; border:4px solid var(--ink);
+	box-shadow:var(--shadow); background:#fff; transform:rotate(3deg);
+}
+.id-text{padding-top:66px; min-width:0}
+.id h1{
+	margin:0; font-size:clamp(26px,5vw,42px); line-height:1.1; font-weight:900; letter-spacing:-.5px;
+}
+.id .dev{margin:6px 0 0; font-weight:600; color:var(--ink-2)}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; padding:0; list-style:none}
+.chips li{
+	background:#fff; border:3px solid var(--ink); border-radius:999px; padding:4px 14px;
+	font-weight:700; font-size:14px; box-shadow:0 3px 0 var(--ink);
+}
+
+/* ---------- NAV ---------- */
+nav{
+	position:sticky; top:0; z-index:10; background:var(--ink);
+	box-shadow:0 4px 0 rgba(43,33,24,.15);
+}
+nav ul{
+	max-width:960px; margin:0 auto; padding:10px 16px; list-style:none; display:flex; gap:8px;
+	overflow-x:auto; scrollbar-width:none;
+}
+nav ul::-webkit-scrollbar{display:none}
+nav a{
+	display:block; white-space:nowrap; color:#fff; text-decoration:none; font-size:14px;
+	padding:6px 14px; border-radius:999px; background:rgba(255,255,255,.08);
+}
+nav a:hover{background:var(--sun); color:var(--ink)}
+
+/* ---------- LAYOUT ---------- */
+main{max-width:960px; margin:0 auto; padding:36px 16px 24px}
+section{scroll-margin-top:72px; margin-bottom:40px}
+.card{
+	background:var(--card); border:3px solid var(--ink); border-radius:var(--radius);
+	box-shadow:var(--shadow); padding:24px;
+}
+h2{
+	display:flex; align-items:center; gap:12px; margin:0 0 16px;
+	font-size:clamp(22px,4vw,30px); font-weight:900; line-height:1.2;
+}
+h2 .em{
+	flex:none; display:grid; place-items:center; width:46px; height:46px; font-size:24px;
+	background:var(--sun); border:3px solid var(--ink); border-radius:14px; transform:rotate(-4deg);
+}
+h3{font-size:19px; font-weight:800; margin:26px 0 8px}
+h3:first-child{margin-top:0}
+p{margin:0 0 12px}
+.lead{font-size:18px}
+.muted{color:var(--ink-2); font-size:14px}
+.tag{
+	display:inline-block; font-size:12px; font-weight:800; letter-spacing:.6px; text-transform:uppercase;
+	background:var(--teal-soft); color:var(--teal); border-radius:8px; padding:2px 10px; margin-bottom:10px;
+}
+
+/* intro feature grid */
+.grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-top:18px}
+.tile{
+	background:var(--paper); border:3px solid var(--ink); border-radius:18px; padding:16px;
+}
+.tile b{display:block; font-size:17px; margin:6px 0 4px}
+.tile .big{font-size:30px; line-height:1}
+.tile p{margin:0; font-size:15px; color:var(--ink-2)}
+
+/* store text */
+.store-short{
+	font-size:20px; font-weight:800; line-height:1.45; margin:0;
+	background:linear-gradient(transparent 62%, #FFE07A 62%);
+	display:inline;
+}
+.store-long{
+	background:var(--paper); border:2px dashed #D9C49A; border-radius:16px; padding:20px;
+	white-space:pre-line; font-size:15.5px;
+}
+
+/* policy */
+.summary{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin:6px 0 8px}
+.summary div{
+	border-radius:16px; padding:14px 16px; border:3px solid var(--ink); font-weight:600; font-size:15px;
+	background:#fff;
+}
+.summary .yes{background:#FFF1D6}
+.summary .no{background:var(--teal-soft)}
+.summary b{display:block; font-size:13px; text-transform:uppercase; letter-spacing:.6px; color:var(--ink-2)}
+
+.table-wrap{overflow-x:auto; margin:8px 0 14px; border:3px solid var(--ink); border-radius:16px}
+table{width:100%; border-collapse:collapse; font-size:15px; min-width:560px}
+th,td{padding:10px 12px; text-align:left; vertical-align:top; border-bottom:2px solid var(--line)}
+th{background:var(--ink); color:#fff; font-weight:700; font-size:14px}
+tr:last-child td{border-bottom:0}
+td code{
+	font-size:12.5px; background:var(--paper); border:1px solid var(--line); border-radius:6px;
+	padding:1px 6px; overflow-wrap:anywhere; display:inline-block; margin:1px 0;
+}
+.perm td:first-child{width:40%}
+.pill{display:inline-block; font-size:12px; font-weight:800; border-radius:999px; padding:1px 10px; white-space:nowrap}
+.pill.normal{background:var(--teal-soft); color:var(--teal)}
+.pill.ad{background:#FFE3CC; color:#B34A00}
+
+ul.check{list-style:none; padding:0; margin:0 0 12px}
+ul.check li{position:relative; padding-left:30px; margin-bottom:8px}
+ul.check li::before{
+	content:"✓"; position:absolute; left:0; top:2px; width:20px; height:20px; border-radius:6px;
+	background:var(--teal); color:#fff; font-size:13px; font-weight:900; display:grid; place-items:center;
+}
+ul.cross li::before{content:"✕"; background:var(--red)}
+
+.sdk{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin:8px 0 14px}
+.sdk article{background:var(--paper); border:3px solid var(--ink); border-radius:18px; padding:16px}
+.sdk h4{margin:0 0 4px; font-size:17px}
+.sdk p{font-size:14.5px; margin:0 0 6px}
+
+.contact{
+	text-align:center; background:var(--teal); color:#fff; border:3px solid var(--ink);
+	border-radius:var(--radius); box-shadow:var(--shadow); padding:28px 20px;
+}
+.contact h2{justify-content:center; color:#fff}
+.contact a.mail{
+	display:inline-block; margin-top:6px; background:var(--sun); color:var(--ink); text-decoration:none;
+	border:3px solid var(--ink); border-radius:999px; padding:10px 22px; font-size:18px; font-weight:800;
+	box-shadow:0 4px 0 var(--ink); word-break:break-all;
+}
+.contact a.mail:hover{transform:translateY(2px); box-shadow:0 2px 0 var(--ink)}
+
+footer{text-align:center; padding:12px 16px 40px; color:var(--ink-2); font-size:14px}
+
+@media (max-width:560px){
+	.hero{padding:16px 16px 48px}
+	.id{flex-direction:column; align-items:flex-start; gap:10px; margin-top:-40px; padding:0 8px}
+	.app-icon{width:88px; height:88px; border-radius:22px}
+	.id-text{padding-top:0}
+	.card{padding:18px}
+	h2 .em{width:40px; height:40px; font-size:20px}
+	.chips{gap:6px}
+	.chips li{font-size:12.5px; padding:3px 10px; border-width:2px; box-shadow:0 2px 0 var(--ink)}
+	table.perm{min-width:0}
+	table.perm thead{display:none}
+	table.perm tr{display:block; padding:12px 14px; border-bottom:2px solid var(--line)}
+	table.perm tr:last-child{border-bottom:0}
+	table.perm td{display:block; width:auto !important; padding:2px 0; border:0}
+	table.perm td:nth-child(2){margin:4px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+	<div class="hero-inner">
+		<div class="banner"><img src="feature-image.png" alt="Ảnh bìa game Chở Hàng Xe Máy: Scooter Stack" width="1024" height="500"></div>
+		<div class="id">
+			<img class="app-icon" src="playstore-app-icon.png" alt="Biểu tượng ứng dụng" width="112" height="112">
+			<div class="id-text">
+				<h1>Chở Hàng Xe Máy: Scooter Stack</h1>
+				<p class="dev">MT Games · Game xếp hàng vật lý</p>
+			</div>
+		</div>
+		<ul class="chips">
+			<li>🛵 Chơi offline</li>
+			<li>🙅 Không cần tài khoản</li>
+			<li>🇻🇳 Tiếng Việt · 🇬🇧 English</li>
+			<li>📢 Có quảng cáo</li>
+			<li>🛒 Mua trong ứng dụng</li>
+		</ul>
+	</div>
+</header>
+
+<nav aria-label="Mục lục">
+	<ul>
+		<li><a href="#gioi-thieu">Giới thiệu</a></li>
+		<li><a href="#mo-ta-ngan">Mô tả ngắn</a></li>
+		<li><a href="#mo-ta-day-du">Mô tả đầy đủ</a></li>
+		<li><a href="#chinh-sach">Chính sách bảo mật</a></li>
+		<li><a href="#quyen">Quyền truy cập</a></li>
+		<li><a href="#sdk">SDK bên thứ ba</a></li>
+		<li><a href="#xoa-du-lieu">Xoá dữ liệu</a></li>
+		<li><a href="#lien-he">Liên hệ</a></li>
+	</ul>
+</nav>
+
+<main>
+
+	<!-- ============ GIỚI THIỆU ============ -->
+	<section id="gioi-thieu" class="card">
+		<h2><span class="em">🛵</span>Giới thiệu ứng dụng</h2>
+		<p class="lead">Ai từng đi đường ở Việt Nam đều đã thấy những chiếc xe máy chở hàng cao như núi. <strong>Chở Hàng Xe Máy: Scooter Stack</strong> đưa cảnh quen thuộc ấy vào một game vật lý ngắn gọn: chất hàng thật khéo, chằng dây thật chắc, rồi lái qua phố mà không đánh rơi món nào.</p>
+		<div class="grid">
+			<div class="tile"><span class="big">📦</span><b>Chất hàng</b><p>Kéo, xoay, thả từng món lên ván. Chất lệch là đổ.</p></div>
+			<div class="tile"><span class="big">🪢</span><b>Chằng dây</b><p>Số dây có hạn, chọn đúng món cần buộc.</p></div>
+			<div class="tile"><span class="big">🚧</span><b>Chở đi</b><p>Giữ ga, giữ phanh, vượt ổ gà, gờ giảm tốc, đường ray.</p></div>
+			<div class="tile"><span class="big">⭐</span><b>Nhận tiền boa</b><p>Giao đủ và đúng giờ để được 3 sao, rồi nâng cấp xe.</p></div>
+		</div>
+		<p class="muted" style="margin-top:16px">Mã gói: <code>cm.mt.xemay</code> · Phiên bản: 1.0.0 · Yêu cầu Android 7.0 trở lên</p>
+	</section>
+
+	<!-- ============ MÔ TẢ NGẮN ============ -->
+	<section id="mo-ta-ngan" class="card">
+		<h2><span class="em">✏️</span>Mô tả ngắn</h2>
+		<span class="tag">Google Play · tối đa 80 ký tự</span>
+		<p><span class="store-short">Chất hàng cao ngất lên xe máy, chở qua ổ gà, gờ giảm tốc mà không rơi món nào!</span></p>
+	</section>
+
+	<!-- ============ MÔ TẢ ĐẦY ĐỦ ============ -->
+	<section id="mo-ta-day-du" class="card">
+		<h2><span class="em">📖</span>Mô tả đầy đủ</h2>
+		<span class="tag">Google Play · tối đa 4.000 ký tự</span>
+		<div class="store-long">Chở Hàng Xe Máy là game xếp chồng vật lý kiểu "xe máy chở hàng" quen thuộc trên phố Việt: bao gạo, thùng xốp, lồng gà, chậu quất, tủ lạnh mini… tất cả phải lên một chiếc xe số và tới tay khách an toàn.
+
+<b>🛵 CÁCH CHƠI 3 BƯỚC</b>
+• Chất hàng: kéo để dời món, xoay, nhấc tay để thả. Vật lý thật, chất lệch là đổ!
+• Chằng dây: chọn món cần buộc với số dây có hạn.
+• Chở đi: giữ Ga, giữ Phanh, vượt ổ gà, gờ giảm tốc, đường ray, cầu và dốc. Chạy quá nhanh là hàng bay.
+
+<b>📦 16 MÓN HÀNG KỲ QUẶC</b>
+Mỗi món một tính cách: lốp xe lăn, nệm mềm, bình nước 20 lít nặng trịch, khay trứng và tấm kính dễ vỡ, chồng ghế nhựa cao lêu nghêu, sọt sầu riêng, bó mía, cây đá…
+
+<b>⭐ GIAO ĐÚNG GIỜ, NHẬN TIỀN BOA</b>
+Giao đủ hàng và kịp giờ để được 3 sao và tiền boa. Món rơi giữa đường thì khách trừ tiền.
+
+<b>🔧 SỬA XE</b>
+Dùng xu nâng cấp: thêm dây, dây xịn, ván dài, giảm xóc. Xe càng tốt, chồng hàng càng cao.
+
+<b>✨ ĐIỂM NỔI BẬT</b>
+• Vô hạn đơn hàng, độ khó tăng dần
+• Chơi offline, không cần đăng ký tài khoản
+• Hỗ trợ tiếng Việt và tiếng Anh
+• Mỗi đơn chỉ khoảng một phút
+
+Bạn chở được chồng hàng cao tới đâu?</div>
+	</section>
+
+	<!-- ============ CHÍNH SÁCH BẢO MẬT ============ -->
+	<section id="chinh-sach" class="card">
+		<h2><span class="em">🔒</span>Chính sách bảo mật</h2>
+		<p class="muted">Có hiệu lực từ: 16/11/2026 · Áp dụng cho ứng dụng Android <strong>Chở Hàng Xe Máy: Scooter Stack</strong> (<code>cm.mt.xemay</code>) do MT Games phát triển (“chúng tôi”).</p>
+		<p>Chính sách này giải thích ứng dụng thu thập dữ liệu gì, dùng vào việc gì, chia sẻ với ai, lưu bao lâu và cách bạn xoá dữ liệu. Nội dung khớp với phần khai báo “An toàn dữ liệu” (Data safety) của ứng dụng trên Google Play.</p>
+
+		<div class="summary">
+			<div class="no"><b>Chúng tôi</b>Không có máy chủ, không có tài khoản, không tự thu thập dữ liệu cá nhân.</div>
+			<div class="yes"><b>SDK quảng cáo Google</b>Thu thập mã định danh quảng cáo và dữ liệu thiết bị để hiển thị quảng cáo.</div>
+			<div class="no"><b>Truyền dữ liệu</b>Mọi dữ liệu gửi qua mạng đều được mã hoá (HTTPS/TLS).</div>
+		</div>
+
+		<h3>1. Dữ liệu lưu trên thiết bị của bạn</h3>
+		<p>Tiến trình chơi (đơn đã qua, số sao, số xu, nâng cấp xe, cài đặt âm thanh/rung/ngôn ngữ, trạng thái đã mua “Xoá quảng cáo”) được lưu trong một tệp riêng của ứng dụng <strong>chỉ trên thiết bị của bạn</strong>. Tệp này không được gửi về cho chúng tôi hay bất kỳ ai.</p>
+
+		<h3>2. Dữ liệu chúng tôi KHÔNG thu thập</h3>
+		<ul class="check cross">
+			<li>Họ tên, email, số điện thoại, địa chỉ, ngày sinh</li>
+			<li>Vị trí (GPS hay vị trí gần đúng)</li>
+			<li>Danh bạ, tin nhắn, nhật ký cuộc gọi</li>
+			<li>Ảnh, video, tệp, micro, máy ảnh</li>
+			<li>Thông tin thanh toán (thẻ, tài khoản ngân hàng)</li>
+		</ul>
+
+		<h3>3. Dữ liệu do SDK bên thứ ba thu thập</h3>
+		<p>Ứng dụng hiển thị quảng cáo qua <strong>Google AdMob</strong>. SDK của Google tự động thu thập và chia sẻ với Google các dữ liệu sau:</p>
+		<div class="table-wrap">
+			<table>
+				<thead><tr><th>Loại dữ liệu</th><th>Thu thập</th><th>Chia sẻ</th><th>Mục đích</th><th>Bắt buộc</th></tr></thead>
+				<tbody>
+					<tr><td><strong>Mã thiết bị hoặc mã khác</strong><br>Mã định danh quảng cáo (Advertising ID)</td><td>Có</td><td>Có (Google)</td><td>Quảng cáo, phân tích</td><td>Có*</td></tr>
+					<tr><td><strong>Hoạt động trong ứng dụng</strong><br>Lượt xem, lượt nhấn quảng cáo</td><td>Có</td><td>Có (Google)</td><td>Quảng cáo, phân tích</td><td>Có</td></tr>
+					<tr><td><strong>Thông tin và hiệu suất ứng dụng</strong><br>Nhật ký sự cố, dữ liệu chẩn đoán của SDK</td><td>Có</td><td>Không</td><td>Phân tích, sửa lỗi</td><td>Có</td></tr>
+				</tbody>
+			</table>
+		</div>
+		<p class="muted">* Bạn có thể xoá hoặc đặt lại mã định danh quảng cáo bất cứ lúc nào trong Cài đặt Android (xem mục <a href="#xoa-du-lieu">Xoá dữ liệu</a>). Khi mã đã bị xoá, quảng cáo vẫn hiện nhưng không được cá nhân hoá.</p>
+
+		<h3>4. Cách dữ liệu được sử dụng</h3>
+		<ul class="check">
+			<li>Hiển thị banner, quảng cáo xen kẽ giữa các ván và quảng cáo có thưởng (khi bạn chủ động bấm xem để nhận thêm dây, x2 xu hoặc quay lại nhặt hàng).</li>
+			<li>Đo hiệu quả quảng cáo, chống gian lận và lưu lượng không hợp lệ (do Google thực hiện).</li>
+			<li>Xử lý giao dịch “Xoá quảng cáo” và khôi phục giao dịch đã mua (do Google Play thực hiện).</li>
+		</ul>
+		<p>Chúng tôi <strong>không bán</strong> dữ liệu của bạn và không dùng dữ liệu cho bất kỳ mục đích nào khác ngoài các mục trên.</p>
+
+		<h3>5. Đồng ý quảng cáo cá nhân hoá (GDPR)</h3>
+		<p>Ứng dụng dùng <strong>Google User Messaging Platform (UMP)</strong>. Người dùng ở Khu vực Kinh tế Châu Âu (EEA), Vương quốc Anh, Thuỵ Sĩ và các vùng có luật tương tự sẽ được hỏi ý kiến trước khi quảng cáo cá nhân hoá được bật. Bạn có thể thay đổi lựa chọn bất cứ lúc nào bằng nút <em>“Tuỳ chọn quyền riêng tư”</em> trong màn hình Cài đặt của game.</p>
+		<p>Quảng cáo được giới hạn ở mức nội dung <strong>PG</strong> (phù hợp với đa số khán giả).</p>
+
+		<h3>6. Mua trong ứng dụng</h3>
+		<p>Gói “Xoá quảng cáo” được bán qua <strong>Google Play Billing</strong>. Google Play xử lý toàn bộ thanh toán; chúng tôi không nhận và không lưu thông tin thẻ hay tài khoản của bạn. Trạng thái đã mua được lưu trên thiết bị và có thể khôi phục bằng nút <em>“Khôi phục mua hàng”</em> trong Cài đặt.</p>
+
+		<h3>7. Thời gian lưu trữ</h3>
+		<p>Dữ liệu trên thiết bị tồn tại đến khi bạn xoá dữ liệu ứng dụng hoặc gỡ cài đặt. Dữ liệu do Google thu thập được lưu theo <a href="https://policies.google.com/technologies/retention" target="_blank" rel="noopener">chính sách lưu giữ của Google</a>. Chúng tôi không lưu dữ liệu nào trên máy chủ riêng.</p>
+
+		<h3>8. Bảo mật</h3>
+		<p>Ứng dụng không mở cổng mạng, không gửi dữ liệu tới máy chủ của chúng tôi. Mọi kết nối của SDK Google đều dùng HTTPS/TLS. Tệp lưu game nằm trong vùng nhớ riêng của ứng dụng mà ứng dụng khác không đọc được.</p>
+
+		<h3>9. Trẻ em</h3>
+		<p>Ứng dụng <strong>không hướng tới trẻ em dưới 13 tuổi</strong> và không cố ý thu thập dữ liệu của trẻ em. Nếu bạn là phụ huynh và cho rằng con mình đã dùng ứng dụng, bạn có thể xoá dữ liệu theo hướng dẫn bên dưới hoặc liên hệ với chúng tôi.</p>
+	</section>
+
+	<!-- ============ QUYỀN ============ -->
+	<section id="quyen" class="card">
+		<h2><span class="em">🛡️</span>Quyền truy cập ứng dụng yêu cầu</h2>
+		<p>Đây là <strong>toàn bộ</strong> quyền có trong tệp cài đặt, gồm cả quyền do SDK bên thứ ba thêm vào. Không quyền nào cần bạn cấp qua hộp thoại; ứng dụng <strong>không</strong> xin quyền vị trí, máy ảnh, micro, danh bạ hay bộ nhớ.</p>
+		<div class="table-wrap">
+			<table class="perm">
+				<thead><tr><th>Quyền</th><th>Nguồn</th><th>Dùng để</th></tr></thead>
+				<tbody>
+					<tr><td><code>android.permission.INTERNET</code></td><td><span class="pill normal">Ứng dụng</span></td><td>Tải quảng cáo và kết nối Google Play để mua/khôi phục “Xoá quảng cáo”. Game vẫn chơi được khi không có mạng.</td></tr>
+					<tr><td><code>android.permission.ACCESS_NETWORK_STATE</code></td><td><span class="pill normal">Ứng dụng</span></td><td>Kiểm tra có kết nối mạng hay không trước khi tải quảng cáo.</td></tr>
+					<tr><td><code>android.permission.VIBRATE</code></td><td><span class="pill normal">Ứng dụng</span></td><td>Rung nhẹ khi hàng rơi, vỡ hoặc đứt dây. Tắt được trong Cài đặt của game.</td></tr>
+					<tr><td><code>com.android.vending.BILLING</code></td><td><span class="pill ad">Google Play Billing</span></td><td>Mua gói “Xoá quảng cáo” qua Google Play.</td></tr>
+					<tr><td><code>com.google.android.gms.permission.AD_ID</code><br><code>android.permission.AD_ID</code></td><td><span class="pill ad">Google Mobile Ads SDK</span></td><td>Đọc mã định danh quảng cáo để hiển thị và đo lường quảng cáo.</td></tr>
+					<tr><td><code>android.permission.WAKE_LOCK</code></td><td><span class="pill ad">Google Mobile Ads SDK / AndroidX</span></td><td>Giữ CPU hoạt động trong vài giây để hoàn tất tác vụ nền ngắn của SDK (gửi báo cáo quảng cáo). Không giữ màn hình sáng.</td></tr>
+					<tr><td><code>android.permission.FOREGROUND_SERVICE</code></td><td><span class="pill ad">AndroidX WorkManager</span></td><td>Thư viện lập lịch tác vụ nền mà SDK quảng cáo dùng. Ứng dụng không chạy dịch vụ nền liên tục.</td></tr>
+					<tr><td><code>android.permission.READ_BASIC_PHONE_STATE</code></td><td><span class="pill ad">Thư viện / hệ thống</span></td><td>Được trình đóng gói Android tự thêm do một thư viện phụ thuộc. Ứng dụng không hỏi quyền này và không đọc số điện thoại, cuộc gọi hay thông tin SIM.</td></tr>
+					<tr><td><code>cm.mt.xemay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td><td><span class="pill ad">AndroidX</span></td><td>Quyền nội bộ do AndroidX tạo để chặn ứng dụng khác gửi tín hiệu vào game. Không truy cập dữ liệu nào.</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<!-- ============ SDK ============ -->
+	<section id="sdk" class="card">
+		<h2><span class="em">🧩</span>SDK bên thứ ba</h2>
+		<p>Ứng dụng chỉ chứa các SDK sau. Không có SDK phân tích, mạng xã hội hay mạng quảng cáo trung gian (mediation) nào khác.</p>
+		<div class="sdk">
+			<article>
+				<h4>Google Mobile Ads SDK (AdMob)</h4>
+				<p>Hiển thị quảng cáo. Thu thập mã định danh quảng cáo, dữ liệu thiết bị, tương tác với quảng cáo, nhật ký sự cố.</p>
+				<p><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách bảo mật</a> · <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Cách Google dùng dữ liệu</a> · <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" target="_blank" rel="noopener">Khai báo dữ liệu</a></p>
+			</article>
+			<article>
+				<h4>Google User Messaging Platform (UMP)</h4>
+				<p>Hiển thị và ghi nhớ lựa chọn đồng ý quảng cáo cá nhân hoá (GDPR và các luật tương tự).</p>
+				<p><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách bảo mật</a></p>
+			</article>
+			<article>
+				<h4>Google Play Billing Library</h4>
+				<p>Xử lý mua và khôi phục gói “Xoá quảng cáo”. Thanh toán do Google Play thực hiện.</p>
+				<p><a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank" rel="noopener">Thông báo bảo mật Google Payments</a></p>
+			</article>
+			<article>
+				<h4>Godot Engine</h4>
+				<p>Bộ máy chạy game, mã nguồn mở (MIT). Không thu thập hay gửi bất kỳ dữ liệu nào.</p>
+				<p><a href="https://godotengine.org/license/" target="_blank" rel="noopener">Giấy phép</a></p>
+			</article>
+		</div>
+	</section>
+
+	<!-- ============ XOÁ DỮ LIỆU ============ -->
+	<section id="xoa-du-lieu" class="card">
+		<h2><span class="em">🗑️</span>Quyền của bạn & cách xoá dữ liệu</h2>
+		<p>Vì ứng dụng không có tài khoản và không có máy chủ, chúng tôi không giữ dữ liệu nào để xoá giúp bạn. Bạn có thể tự xoá toàn bộ dữ liệu như sau:</p>
+		<h3>Xoá dữ liệu game trên thiết bị</h3>
+		<ul class="check">
+			<li>Vào <strong>Cài đặt Android → Ứng dụng → Chở Hàng Xe Máy → Bộ nhớ → Xoá dữ liệu</strong>, hoặc</li>
+			<li>Gỡ cài đặt ứng dụng. Toàn bộ tiến trình chơi bị xoá ngay lập tức.</li>
+			<li>Gói “Xoá quảng cáo” đã mua <strong>không mất</strong>: cài lại và bấm “Khôi phục mua hàng”.</li>
+		</ul>
+		<h3>Xoá hoặc đặt lại mã định danh quảng cáo</h3>
+		<ul class="check">
+			<li>Vào <strong>Cài đặt Android → Quyền riêng tư (hoặc Google) → Quảng cáo</strong>, chọn <em>Xoá mã nhận dạng quảng cáo</em> hoặc <em>Đặt lại mã nhận dạng quảng cáo</em>.</li>
+		</ul>
+		<h3>Dữ liệu Google đã thu thập</h3>
+		<ul class="check">
+			<li>Xem và xoá hoạt động liên quan tới quảng cáo tại <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">Trung tâm quảng cáo của tôi</a> và <a href="https://myactivity.google.com/" target="_blank" rel="noopener">Hoạt động của tôi</a> trên tài khoản Google.</li>
+			<li>Thay đổi lựa chọn đồng ý quảng cáo bằng nút “Tuỳ chọn quyền riêng tư” trong Cài đặt của game (nếu áp dụng ở khu vực của bạn).</li>
+		</ul>
+		<p>Nếu bạn đã gửi email cho chúng tôi và muốn email đó được xoá, chỉ cần trả lời yêu cầu xoá; chúng tôi sẽ xoá thư khỏi hộp thư.</p>
+	</section>
+
+	<!-- ============ THAY ĐỔI ============ -->
+	<section class="card">
+		<h2><span class="em">🔄</span>Thay đổi chính sách</h2>
+		<p>Nếu ứng dụng thêm SDK hoặc thay đổi cách xử lý dữ liệu, chúng tôi sẽ cập nhật trang này và ngày hiệu lực ở đầu mục Chính sách bảo mật. Phiên bản mới nhất luôn nằm tại địa chỉ này.</p>
+	</section>
+
+	<!-- ============ LIÊN HỆ ============ -->
+	<section id="lien-he" class="contact">
+		<h2><span class="em">✉️</span>Liên hệ nhà phát triển</h2>
+		<p>Câu hỏi về quyền riêng tư, góp ý hay báo lỗi, gửi về:</p>
+		<a class="mail" href="mailto:minhthang0792@gmail.com?subject=Scooter%20Stack%20-%20Quy%E1%BB%81n%20ri%C3%AAng%20t%C6%B0">minhthang0792@gmail.com</a>
+		<p style="margin-top:14px">MT Games · Việt Nam</p>
+	</section>
+
+</main>
+
+<footer>© 2026 MT Games · Chở Hàng Xe Máy: Scooter Stack</footer>
+
+</body>
+</html>
