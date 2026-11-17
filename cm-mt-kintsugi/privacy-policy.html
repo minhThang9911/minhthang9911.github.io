@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kintsugi: Hàn Gốm Vàng – Giới thiệu & Chính sách bảo mật</title>
+<meta name="description" content="Giới thiệu, mô tả Google Play và Chính sách bảo mật của trò chơi Kintsugi: Hàn Gốm Vàng (cm.mt.kintsugi).">
+<meta name="author" content="MT Games">
+<meta name="theme-color" content="#16110d">
+<meta property="og:title" content="Kintsugi: Hàn Gốm Vàng">
+<meta property="og:description" content="Ghép lại đồ gốm vỡ, miết vàng theo vết nứt. Thư giãn, không giờ, không thua.">
+<meta property="og:image" content="feature-image.png">
+<link rel="icon" type="image/png" href="playstore-app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+	--bg: #16110d;
+	--bg-2: #1e1712;
+	--card: #241b15;
+	--card-2: #2c221b;
+	--line: #3f3127;
+	--text: #f4ecdd;
+	--muted: #c2b29c;
+	--gold: #e9b93a;
+	--gold-2: #f7d77a;
+	--gold-soft: rgba(233, 185, 58, 0.12);
+	--indigo: #8fb0ff;
+	--indigo-soft: rgba(143, 176, 255, 0.12);
+	--celadon: #9fd8bd;
+	--celadon-soft: rgba(159, 216, 189, 0.12);
+	--seal: #e0574f;
+	--seal-soft: rgba(224, 87, 79, 0.13);
+	--radius: 22px;
+	--radius-sm: 12px;
+	--shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+	--serif: 'Lora', Georgia, 'Times New Roman', serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+	font-family: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	background:
+		radial-gradient(1100px 600px at 85% -10%, rgba(233, 185, 58, 0.10), transparent 60%),
+		radial-gradient(900px 520px at -10% 25%, rgba(143, 176, 255, 0.07), transparent 60%),
+		radial-gradient(800px 500px at 50% 110%, rgba(159, 216, 189, 0.05), transparent 60%),
+		var(--bg);
+	color: var(--text);
+	line-height: 1.7;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+a { color: var(--gold-2); text-underline-offset: 3px; }
+a:hover { color: #fff1c4; }
+code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.86em;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid var(--line);
+	padding: 0.08rem 0.4rem;
+	border-radius: 6px;
+	word-break: break-all;
+}
+
+/* Gold text with a slow shimmer, like liquid gold catching light */
+.gold-text {
+	background: linear-gradient(100deg, #c8921f 0%, var(--gold) 30%, #fff3c8 45%, var(--gold) 60%, #b98018 100%);
+	background-size: 250% 100%;
+	-webkit-background-clip: text; background-clip: text;
+	color: transparent;
+	animation: shimmer 7s ease-in-out infinite;
+}
+@keyframes shimmer { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
+
+/* ---------- Nav ---------- */
+.top-nav {
+	position: sticky; top: 0; z-index: 50;
+	background: rgba(22, 17, 13, 0.84);
+	backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+	border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+	max-width: 1000px; margin: 0 auto;
+	padding: 0.7rem 1rem;
+	display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; color: var(--text); font-family: var(--serif); font-weight: 700; white-space: nowrap; }
+.brand img { width: 36px; height: 36px; border-radius: 10px; box-shadow: 0 0 0 2px var(--gold), 0 0 18px rgba(233, 185, 58, 0.35); }
+.nav-links { display: flex; gap: 0.25rem; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+	display: block; white-space: nowrap;
+	color: var(--muted); text-decoration: none;
+	font-size: 0.86rem; font-weight: 600;
+	padding: 0.4rem 0.75rem; border-radius: 999px;
+	transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover { background: var(--gold-soft); color: var(--gold-2); }
+
+/* ---------- Layout ---------- */
+.wrap { max-width: 1000px; margin: 0 auto; padding: 1.75rem 1rem 4rem; }
+
+/* ---------- Hero ---------- */
+.hero {
+	position: relative;
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: 28px;
+	overflow: hidden;
+	box-shadow: var(--shadow);
+	margin-bottom: 2rem;
+}
+.hero-banner { position: relative; aspect-ratio: 1024 / 500; max-height: 440px; width: 100%; overflow: hidden; background: #120d0a; }
+.hero-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-banner::after {
+	content: ""; position: absolute; inset: 0;
+	background: linear-gradient(180deg, rgba(22, 17, 13, 0) 45%, rgba(36, 27, 21, 0.97) 100%);
+}
+.hero-body { position: relative; padding: 0 2rem 2rem; }
+.hero-head { display: flex; align-items: flex-end; gap: 1.4rem; margin-top: -64px; position: relative; z-index: 2; }
+.hero-icon {
+	width: 128px; height: 128px; flex-shrink: 0;
+	border-radius: 30px;
+	border: 3px solid var(--gold);
+	box-shadow: 0 0 0 6px rgba(233, 185, 58, 0.14), 0 0 44px rgba(233, 185, 58, 0.4), var(--shadow);
+	animation: glow 5s ease-in-out infinite;
+}
+@keyframes glow {
+	0%, 100% { box-shadow: 0 0 0 6px rgba(233, 185, 58, 0.14), 0 0 34px rgba(233, 185, 58, 0.30), var(--shadow); }
+	50% { box-shadow: 0 0 0 6px rgba(233, 185, 58, 0.22), 0 0 60px rgba(233, 185, 58, 0.55), var(--shadow); }
+}
+.hero-title h1 { font-family: var(--serif); font-size: clamp(1.7rem, 4.6vw, 2.5rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; }
+.hero-title .sub { display: block; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.05rem; color: var(--muted); margin-top: 0.25rem; }
+.hero-title .pkg { margin-top: 0.5rem; display: inline-block; }
+.hero-lead { margin-top: 1.3rem; font-size: 1.06rem; color: var(--muted); max-width: 780px; }
+.hero-lead strong { color: var(--text); }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+.chip {
+	display: inline-flex; align-items: center; gap: 0.35rem;
+	font-size: 0.82rem; font-weight: 700;
+	padding: 0.35rem 0.8rem; border-radius: 999px;
+	border: 1px solid transparent;
+}
+.chip.gold { background: var(--gold-soft); color: var(--gold-2); border-color: rgba(233, 185, 58, 0.32); }
+.chip.indigo { background: var(--indigo-soft); color: var(--indigo); border-color: rgba(143, 176, 255, 0.3); }
+.chip.celadon { background: var(--celadon-soft); color: var(--celadon); border-color: rgba(159, 216, 189, 0.3); }
+.chip.seal { background: var(--seal-soft); color: #ff8b84; border-color: rgba(224, 87, 79, 0.32); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px dashed var(--line); }
+.btn {
+	display: inline-flex; align-items: center; gap: 0.45rem;
+	font: inherit; font-size: 0.92rem; font-weight: 800;
+	padding: 0.7rem 1.3rem; border-radius: 14px;
+	text-decoration: none; cursor: pointer; border: none;
+	transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+}
+.btn-primary { background: linear-gradient(180deg, var(--gold-2), var(--gold)); color: #2a1a00; box-shadow: 0 6px 22px rgba(233, 185, 58, 0.32); }
+.btn-primary:hover { transform: translateY(-2px); color: #2a1a00; box-shadow: 0 10px 28px rgba(233, 185, 58, 0.45); }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold-2); }
+
+/* Gold crack divider */
+.crack { display: block; width: 100%; height: 26px; margin: 0.2rem 0 1.6rem; }
+.crack path { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 4px rgba(233, 185, 58, 0.6)); }
+
+/* ---------- Sections ---------- */
+.section {
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: 2rem;
+	margin-bottom: 1.6rem;
+}
+.sec-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.4rem; }
+.sec-icon {
+	width: 48px; height: 48px; flex-shrink: 0;
+	display: grid; place-items: center;
+	font-size: 1.45rem;
+	border-radius: 14px;
+	background: var(--gold-soft);
+	border: 1px solid rgba(233, 185, 58, 0.3);
+}
+.sec-head h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; line-height: 1.25; }
+.sec-head p { font-size: 0.88rem; color: var(--muted); }
+.section > p, .article > p { color: var(--muted); margin-bottom: 0.9rem; }
+.section p strong, .article strong { color: var(--text); }
+
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.2rem; }
+.tile {
+	background: var(--card-2);
+	border: 1px solid var(--line);
+	border-radius: 18px;
+	padding: 1.2rem;
+	transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.tile:hover { transform: translateY(-3px); border-color: rgba(233, 185, 58, 0.55); box-shadow: 0 0 26px rgba(233, 185, 58, 0.14); }
+.tile .emo { font-size: 1.9rem; line-height: 1; }
+.tile h3 { font-size: 1.02rem; font-weight: 800; margin: 0.6rem 0 0.3rem; }
+.tile p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+.roster { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+.roster span {
+	font-size: 0.82rem; font-weight: 600;
+	padding: 0.3rem 0.7rem; border-radius: 10px;
+	background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line);
+}
+.roster span i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 0.4rem; vertical-align: 0; box-shadow: 0 0 0 1px rgba(255,255,255,0.15); }
+.sub-h { font-size: 1.02rem; font-weight: 800; margin: 1.6rem 0 0.2rem; }
+
+/* ---------- Store copy ---------- */
+.copy-block {
+	background: var(--bg-2);
+	border: 1px solid var(--line);
+	border-radius: 18px;
+	padding: 1.2rem;
+	margin-bottom: 1.1rem;
+}
+.copy-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem; }
+.copy-label { font-weight: 800; color: var(--gold-2); display: flex; align-items: center; gap: 0.45rem; }
+.copy-meta { display: flex; align-items: center; gap: 0.5rem; }
+.count {
+	font-size: 0.76rem; font-weight: 700; color: var(--muted);
+	background: rgba(255, 255, 255, 0.06); padding: 0.15rem 0.55rem; border-radius: 999px;
+}
+.count.ok { color: var(--celadon); }
+.count.over { color: #ff8b84; }
+.copy-btn {
+	font: inherit; font-size: 0.78rem; font-weight: 800;
+	color: var(--text); background: transparent;
+	border: 1px solid var(--line); border-radius: 10px;
+	padding: 0.32rem 0.8rem; cursor: pointer;
+	transition: all 0.2s;
+}
+.copy-btn:hover { border-color: var(--gold); color: var(--gold-2); }
+.copy-btn.done { background: var(--celadon); border-color: var(--celadon); color: #0b2a1d; }
+.copy-text {
+	background: rgba(0, 0, 0, 0.25);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	border-radius: var(--radius-sm);
+	padding: 1rem 1.1rem;
+	font-size: 0.93rem; line-height: 1.65;
+	white-space: pre-line; word-break: break-word;
+	color: #eadfcb;
+}
+.copy-text.big { max-height: 480px; overflow-y: auto; }
+
+/* ---------- Policy ---------- */
+.meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; }
+.summary {
+	display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;
+	margin: 1.2rem 0 0.4rem;
+}
+.summary div {
+	background: var(--celadon-soft); border: 1px solid rgba(159, 216, 189, 0.28);
+	border-radius: 14px; padding: 0.85rem 1rem;
+	font-size: 0.88rem; color: var(--text); font-weight: 600;
+}
+.summary div b { display: block; color: var(--celadon); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.15rem; }
+.article { padding-top: 1.6rem; margin-top: 1.6rem; border-top: 1px dashed var(--line); }
+.article h3 { display: flex; align-items: center; gap: 0.6rem; font-size: 1.12rem; font-weight: 800; margin-bottom: 0.75rem; }
+.article h3 .num {
+	width: 30px; height: 30px; flex-shrink: 0;
+	display: grid; place-items: center;
+	border-radius: 8px; font-size: 0.85rem; font-family: var(--serif);
+	background: var(--seal); color: #fff4ec;
+	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.18);
+}
+.article ul, .article ol { padding-left: 1.25rem; color: var(--muted); margin-bottom: 0.9rem; }
+.article li { margin-bottom: 0.45rem; }
+.article li::marker { color: var(--gold); }
+
+.table-wrap { overflow-x: auto; margin: 0.6rem 0 1.1rem; border: 1px solid var(--line); border-radius: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 620px; }
+th, td { text-align: left; vertical-align: top; padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--line); }
+th { background: var(--bg-2); color: var(--gold-2); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+tr:last-child td { border-bottom: none; }
+td { color: var(--muted); }
+td:first-child { color: var(--text); font-weight: 600; }
+.tag { display: inline-block; font-size: 0.74rem; font-weight: 800; padding: 0.1rem 0.5rem; border-radius: 6px; white-space: nowrap; }
+.tag.yes { background: var(--seal-soft); color: #ff8b84; }
+.tag.no { background: var(--celadon-soft); color: var(--celadon); }
+.tag.info { background: var(--indigo-soft); color: var(--indigo); }
+
+.steps { list-style: none; padding: 0 !important; counter-reset: s; }
+.steps li {
+	counter-increment: s;
+	position: relative; padding: 0.85rem 1rem 0.85rem 3.2rem !important;
+	background: var(--bg-2); border: 1px solid var(--line); border-radius: 14px;
+}
+.steps li::before {
+	content: counter(s);
+	position: absolute; left: 0.9rem; top: 0.85rem;
+	width: 26px; height: 26px; border-radius: 8px;
+	display: grid; place-items: center;
+	background: var(--gold); color: #2a1a00; font-weight: 900; font-size: 0.8rem;
+}
+.note {
+	background: var(--gold-soft); border: 1px solid rgba(233, 185, 58, 0.3);
+	border-radius: 14px; padding: 0.9rem 1rem; color: var(--text); font-size: 0.9rem;
+	margin: 0.6rem 0 1rem;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+	text-align: center;
+	background:
+		radial-gradient(600px 220px at 50% 0%, rgba(233, 185, 58, 0.18), transparent 70%),
+		var(--card);
+}
+.contact h2 { font-family: var(--serif); font-size: 1.55rem; font-weight: 700; margin-bottom: 0.5rem; }
+.contact p { color: var(--muted); max-width: 620px; margin: 0 auto 1.3rem; }
+.mail {
+	display: inline-flex; align-items: center; gap: 0.55rem;
+	font-size: 1.05rem; font-weight: 800; text-decoration: none;
+	color: #2a1a00; background: linear-gradient(180deg, var(--gold-2), var(--gold));
+	padding: 0.8rem 1.5rem; border-radius: 16px;
+	box-shadow: 0 0 30px rgba(233, 185, 58, 0.4);
+	word-break: break-all;
+	transition: transform 0.15s;
+}
+.mail:hover { color: #2a1a00; transform: translateY(-2px); }
+
+footer { text-align: center; color: var(--muted); font-size: 0.82rem; padding: 0 1rem 2.5rem; }
+footer p + p { margin-top: 0.3rem; }
+
+@media (max-width: 640px) {
+	.brand span { display: none; }
+	.hero-body { padding: 0 1.1rem 1.4rem; }
+	.hero-head { flex-direction: column; align-items: flex-start; gap: 0.8rem; margin-top: -52px; }
+	.hero-icon { width: 96px; height: 96px; border-radius: 24px; }
+	.section { padding: 1.4rem 1.1rem; }
+	.grid { grid-template-columns: 1fr; }
+	.sec-head h2 { font-size: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+	* { animation: none !important; transition: none !important; }
+	html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+	<div class="nav-inner">
+		<a class="brand" href="#top"><img src="playstore-app-icon.png" alt=""><span>Kintsugi</span></a>
+		<ul class="nav-links">
+			<li><a href="#gioi-thieu">Giới thiệu</a></li>
+			<li><a href="#play-store">Mô tả Play Store</a></li>
+			<li><a href="#quyen-sdk">Quyền & SDK</a></li>
+			<li><a href="#bao-mat">Bảo mật</a></li>
+			<li><a href="#xoa-du-lieu">Xoá dữ liệu</a></li>
+			<li><a href="#lien-he">Liên hệ</a></li>
+		</ul>
+	</div>
+</nav>
+
+<main class="wrap" id="top">
+
+	<!-- HERO -->
+	<header class="hero">
+		<div class="hero-banner">
+			<img src="feature-image.png" alt="Bình gốm hoa lam đã hàn vàng đứng cạnh chiếc bát men ngọc vỡ và chén vàng lỏng trên bàn gỗ" width="1024" height="500">
+		</div>
+		<div class="hero-body">
+			<div class="hero-head">
+				<img class="hero-icon" src="playstore-app-icon.png" alt="Biểu tượng ứng dụng Kintsugi: chén trà hoa lam liền lại bằng những đường vàng" width="128" height="128">
+				<div class="hero-title">
+					<h1>Kintsugi: <span class="gold-text">Hàn Gốm Vàng</span></h1>
+					<span class="sub">Golden Repair · nghệ thuật làm đẹp những vết vỡ</span>
+					<code class="pkg">cm.mt.kintsugi</code>
+				</div>
+			</div>
+			<p class="hero-lead">
+				Một món gốm vỡ nằm trên bàn. Bạn <strong>ghép từng mảnh về đúng chỗ</strong>, rồi <strong>miết ngón tay dọc vết nứt</strong> để vàng lỏng chảy lấp đầy. Món đồ liền lại, đẹp hơn cả lúc chưa vỡ, và được đặt lên <strong>Tủ gốm</strong> của riêng bạn. Không đếm giờ, không thua, chỉ có tiếng gốm chạm khẽ và ánh vàng lấp lánh.
+			</p>
+			<div class="chips">
+				<span class="chip gold">✨ Thư giãn ASMR</span>
+				<span class="chip indigo">🏺 Mỗi món là duy nhất</span>
+				<span class="chip celadon">📴 Chơi offline</span>
+				<span class="chip celadon">🙅 Không cần tài khoản</span>
+				<span class="chip seal">🇻🇳 Tiếng Việt · English</span>
+			</div>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=cm.mt.kintsugi">▶ Xem trên Google Play</a>
+				<a class="btn btn-ghost" href="#bao-mat">🔒 Đọc Chính sách bảo mật</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- GIỚI THIỆU -->
+	<section class="section" id="gioi-thieu">
+		<div class="sec-head">
+			<div class="sec-icon">🏺</div>
+			<div>
+				<h2>Giới thiệu trò chơi</h2>
+				<p>Vết vỡ không phải để giấu đi, mà để tô bằng vàng</p>
+			</div>
+		</div>
+		<p>
+			<strong>Kintsugi</strong> (金継ぎ, “nối bằng vàng”) là nghệ thuật sửa đồ gốm của Nhật Bản: thay vì che vết nứt, người thợ tô nó bằng sơn mài pha bột vàng, biến chỗ vỡ thành phần đẹp nhất của món đồ. Trò chơi đưa bạn vào vai người thợ ấy, với những món gốm mang đậm chất Á Đông: men lam, men ngọc, men rạn, men Biên Hoà, thiên mục, hoả biến…
+		</p>
+		<p>
+			Mọi món gốm trong game đều được <strong>vẽ bằng thuật toán</strong> theo số thứ tự món: dáng, men, hoa văn và đường vỡ đều khác nhau. Số món không giới hạn, không món nào giống món nào.
+		</p>
+		<div class="grid">
+			<div class="tile">
+				<div class="emo">🧩</div>
+				<h3>Ghép mảnh</h3>
+				<p>Kéo từng mảnh vỡ trên bàn về đúng chỗ. Gần đúng là mảnh tự bám vào với tiếng “keng” trong trẻo và một nốt đàn.</p>
+			</div>
+			<div class="tile">
+				<div class="emo">✨</div>
+				<h3>Miết vàng</h3>
+				<p>Lướt ngón tay dọc vết nứt, vàng lỏng chảy theo, lan sang những vết bên cạnh rồi đông lại sáng bóng.</p>
+			</div>
+			<div class="tile">
+				<div class="emo">🗄️</div>
+				<h3>Tủ gốm & Sổ men</h3>
+				<p>Món nào đã liền cũng được trưng trên Tủ gốm. Sổ men có 162 ô để sưu tầm: 9 dáng × 18 loại men.</p>
+			</div>
+			<div class="tile">
+				<div class="emo">🛠️</div>
+				<h3>Xưởng</h3>
+				<p>Đóng ấn triện, nhận vàng lá, mua thêm 6 loại kim loại hàn và 5 mặt bàn làm việc cho xưởng của bạn.</p>
+			</div>
+		</div>
+
+		<h3 class="sub-h">9 dáng gốm</h3>
+		<div class="roster">
+			<span>Chén trà</span><span>Bát</span><span>Hũ</span><span>Đĩa</span><span>Mai bình</span><span>Thạp</span><span>Ngọc hồ xuân</span><span>Lọ hoa</span><span>Bình hồ lô</span>
+		</div>
+		<h3 class="sub-h">18 loại men</h3>
+		<div class="roster">
+			<span>men lam</span><span>hoa nâu</span><span>men ngọc</span><span>men rạn</span><span>men mật</span><span>đất nung</span><span>ngũ sắc</span><span>son lam</span><span>men Biên Hoà</span><span>men lục chảy</span><span>men trắng rỗ</span><span>men ngà</span><span>thiên mục</span><span>hoả biến</span><span>men Quân</span><span>men đen</span><span>giọt dầu</span><span>diệu biến</span>
+		</div>
+		<h3 class="sub-h">6 loại kim loại hàn</h3>
+		<div class="roster">
+			<span><i style="background:#e9b93a"></i>Vàng</span><span><i style="background:#e8a48a"></i>Vàng hồng</span><span><i style="background:#cdd3db"></i>Bạc</span><span><i style="background:#c8703a"></i>Đồng</span><span><i style="background:#b52a2a"></i>Son đỏ</span><span><i style="background:linear-gradient(135deg,#e8e2d6,#b9d8e8,#e8c8e0)"></i>Xà cừ</span>
+		</div>
+		<h3 class="sub-h">Những món đặc biệt</h3>
+		<div class="roster">
+			<span>💎 Món quý (mỗi 10 món)</span><span>🌙 Món của ngày</span><span>〰️ Rạn</span><span>🕳️ Khuyết</span><span>🧱 Vá mảnh</span><span>🔄 Món xoay</span><span>🔥 Mẻ lò đặc biệt</span>
+		</div>
+	</section>
+
+	<!-- PLAY STORE -->
+	<section class="section" id="play-store">
+		<div class="sec-head">
+			<div class="sec-icon">🛒</div>
+			<div>
+				<h2>Thông tin niêm yết Google Play</h2>
+				<p>Tên ứng dụng ≤ 30 ký tự · Mô tả ngắn ≤ 80 ký tự · Mô tả chi tiết ≤ 4000 ký tự</p>
+			</div>
+		</div>
+
+		<div class="copy-block">
+			<div class="copy-head">
+				<div class="copy-label">🏷️ Tên ứng dụng</div>
+				<div class="copy-meta"><span class="count" data-max="30"></span><button class="copy-btn" type="button">Sao chép</button></div>
+			</div>
+			<div class="copy-text">Kintsugi: Hàn Gốm Vàng</div>
+		</div>
+
+		<div class="copy-block">
+			<div class="copy-head">
+				<div class="copy-label">✏️ Mô tả ngắn (Short description)</div>
+				<div class="copy-meta"><span class="count" data-max="80"></span><button class="copy-btn" type="button">Sao chép</button></div>
+			</div>
+			<div class="copy-text">Ghép lại đồ gốm vỡ, miết vàng theo vết nứt. Thư giãn, không giờ, không thua.</div>
+		</div>
+
+		<div class="copy-block">
+			<div class="copy-head">
+				<div class="copy-label">📄 Mô tả chi tiết (Full description)</div>
+				<div class="copy-meta"><span class="count" data-max="4000"></span><button class="copy-btn" type="button">Sao chép</button></div>
+			</div>
+			<div class="copy-text big">Một chiếc chén vỡ không phải là đồ bỏ đi. Với nghệ thuật Kintsugi của Nhật Bản, vết vỡ được tô bằng vàng và trở thành phần đẹp nhất của món đồ.
+
+Kintsugi: Hàn Gốm Vàng là game thư giãn kiểu ASMR. Bạn là người thợ gốm: ghép lại từng mảnh vỡ, rồi miết ngón tay dọc vết nứt để vàng lỏng chảy lấp đầy. Không đếm giờ, không thua, không áp lực. Chỉ có tiếng gốm chạm khẽ, tiếng đàn nhẹ nhàng và ánh vàng lấp lánh.
+
+🧩 CÁCH CHƠI
+• Kéo từng mảnh vỡ trên bàn về đúng chỗ. Gần đúng là mảnh tự bám vào.
+• Ghép đủ mảnh thì vết nứt hiện ra. Lướt ngón tay dọc vết nứt, vàng chảy theo tay bạn.
+• Món đồ liền lại sáng bóng, được đóng ấn triện và đặt lên Tủ gốm.
+• Bí thì giữ nút Xem mẫu để thấy hình món đồ khi còn nguyên.
+
+🏺 MỖI MÓN LÀ DUY NHẤT
+Mọi món gốm được tạo bằng thuật toán: 9 dáng (chén trà, bát, hũ, đĩa, mai bình, thạp, ngọc hồ xuân, lọ hoa, bình hồ lô) kết hợp với 18 loại men (men lam, men ngọc, men rạn, men Biên Hoà, thiên mục, hoả biến, diệu biến…). Hoa văn và đường vỡ khác nhau ở từng món. Số món không giới hạn.
+
+✨ NHIỀU KIỂU MÓN
+• Món quý: cứ 10 món có một món quý men hiếm.
+• Rạn: món chỉ nứt mà không vỡ, chỉ cần miết vàng.
+• Khuyết: món mất một mảnh, lấp chỗ trống bằng vàng.
+• Vá mảnh: chọn mảnh gốm khác màu để vá vào chỗ thiếu.
+• Món xoay: mảnh bị lệch chiều, chạm để xoay cho đúng.
+• Món của ngày: mỗi ngày một món mới.
+
+🗄️ SƯU TẦM
+• Tủ gốm trưng bày mọi món bạn đã hàn, xem lại hay ghép lại bất cứ lúc nào.
+• Sổ men 162 ô: sưu tầm đủ 9 dáng × 18 loại men.
+• Mỗi món có một câu chuyện nhỏ trên thẻ giấy.
+
+🛠️ XƯỞNG
+Nhận vàng lá sau mỗi món, mua thêm kim loại hàn (vàng hồng, bạc, đồng, son đỏ, xà cừ) và mặt bàn làm việc (chiếu tre, vải chàm, đá đen, gỗ trắc).
+
+🎧 ĐIỂM NỔI BẬT
+• Âm thanh ASMR: tiếng gốm chạm, tiếng vàng chảy, tiếng đàn koto. Nên đeo tai nghe.
+• Chơi offline hoàn toàn, không cần mạng, không cần tài khoản.
+• Mỗi món chỉ vài phút, hợp chơi trước khi ngủ hay lúc rảnh tay.
+• Xem lại quá trình hàn món đồ như một đoạn phim ngắn.
+• Hỗ trợ Tiếng Việt và English.
+
+Game miễn phí, có quảng cáo. Bạn có thể mua gói “Xoá quảng cáo” một lần trong ứng dụng.</div>
+		</div>
+	</section>
+
+	<!-- QUYỀN & SDK -->
+	<section class="section" id="quyen-sdk">
+		<div class="sec-head">
+			<div class="sec-icon">🧩</div>
+			<div>
+				<h2>Quyền ứng dụng & SDK bên thứ ba</h2>
+				<p>Danh sách lấy từ tệp AndroidManifest của bản build</p>
+			</div>
+		</div>
+		<p>Kintsugi <strong>không</strong> yêu cầu quyền nhạy cảm nào: không truy cập vị trí, danh bạ, máy ảnh, micro, ảnh hay tệp của bạn. Mọi quyền dưới đây đều là quyền thông thường, được Android cấp tự động khi cài đặt, phần lớn do SDK quảng cáo và thanh toán của Google khai báo.</p>
+		<div class="table-wrap">
+			<table>
+				<thead>
+					<tr><th>Quyền Android</th><th>Khai báo bởi</th><th>Mục đích</th></tr>
+				</thead>
+				<tbody>
+					<tr><td><code>android.permission.INTERNET</code></td><td>Ứng dụng, AdMob</td><td>Tải quảng cáo và kết nối Google Play Billing. Trò chơi vẫn chơi đầy đủ khi không có mạng.</td></tr>
+					<tr><td><code>android.permission.ACCESS_NETWORK_STATE</code></td><td>Ứng dụng, AdMob</td><td>Kiểm tra có mạng hay không trước khi tải quảng cáo, tránh gửi yêu cầu vô ích và tốn pin.</td></tr>
+					<tr><td><code>android.permission.VIBRATE</code></td><td>Ứng dụng</td><td>Rung nhẹ khi mảnh gốm bám vào đúng chỗ. Tắt được trong Cài đặt của game.</td></tr>
+					<tr><td><code>com.google.android.gms.permission.AD_ID</code><br><code>android.permission.AD_ID</code></td><td>Google Mobile Ads SDK</td><td>Đọc Mã định danh quảng cáo (Advertising ID) để hiển thị quảng cáo, giới hạn tần suất, đo lường và chống gian lận.</td></tr>
+					<tr><td><code>com.android.vending.BILLING</code></td><td>Google Play Billing</td><td>Thực hiện và khôi phục giao dịch mua “Xoá quảng cáo” qua Google Play.</td></tr>
+					<tr><td><code>android.permission.WAKE_LOCK</code></td><td>Google Mobile Ads SDK (thư viện nền của Google)</td><td>Giữ thiết bị thức trong thời gian ngắn để thư viện của Google hoàn tất tác vụ nền (ví dụ gửi báo cáo quảng cáo).</td></tr>
+					<tr><td><code>android.permission.FOREGROUND_SERVICE</code></td><td>Thư viện nền của Google (WorkManager)</td><td>Cho phép thư viện của Google chạy tác vụ nền đã lên lịch theo quy định của Android. Ứng dụng không tự chạy dịch vụ nền.</td></tr>
+					<tr><td><code>android.permission.READ_BASIC_PHONE_STATE</code></td><td>Google Mobile Ads SDK</td><td>Đọc trạng thái mạng di động cơ bản (ví dụ loại mạng) để tối ưu việc tải quảng cáo. <strong>Không</strong> đọc số điện thoại, IMEI hay nội dung cuộc gọi.</td></tr>
+					<tr><td><code>cm.mt.kintsugi.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td><td>Thư viện AndroidX</td><td>Quyền nội bộ của chính ứng dụng, chặn ứng dụng khác gọi vào các bộ nhận sự kiện của Kintsugi.</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h3 class="sub-h">SDK bên thứ ba được tích hợp</h3>
+		<div class="grid">
+			<div class="tile">
+				<div class="emo">📢</div>
+				<h3>Google Mobile Ads SDK (AdMob)</h3>
+				<p>Hiển thị quảng cáo banner, quảng cáo xen kẽ và quảng cáo có thưởng. <a href="https://policies.google.com/privacy">Chính sách quyền riêng tư của Google</a> · <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">Dữ liệu AdMob thu thập</a></p>
+			</div>
+			<div class="tile">
+				<div class="emo">🛡️</div>
+				<h3>Google User Messaging Platform (UMP)</h3>
+				<p>Hiện hộp hỏi ý kiến về quảng cáo cá nhân hoá cho người dùng ở EEA, Vương quốc Anh và Thuỵ Sĩ theo GDPR. <a href="https://developers.google.com/admob/android/privacy">Tìm hiểu thêm</a></p>
+			</div>
+			<div class="tile">
+				<div class="emo">💳</div>
+				<h3>Google Play Billing Library</h3>
+				<p>Xử lý giao dịch “Xoá quảng cáo”. Thông tin thanh toán do Google Play quản lý, chúng tôi không nhận được. <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice">Thông báo bảo mật Google Payments</a></p>
+			</div>
+			<div class="tile">
+				<div class="emo">🎮</div>
+				<h3>Godot Engine</h3>
+				<p>Bộ máy trò chơi mã nguồn mở (giấy phép MIT). Không thu thập hay gửi dữ liệu nào ra ngoài.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- CHÍNH SÁCH BẢO MẬT -->
+	<section class="section" id="bao-mat">
+		<div class="sec-head">
+			<div class="sec-icon">🔒</div>
+			<div>
+				<h2>Chính sách bảo mật (Privacy Policy)</h2>
+				<p>Theo Chính sách dành cho nhà phát triển của Google Play</p>
+			</div>
+		</div>
+		<div class="meta-row">
+			<span class="chip gold">📅 Có hiệu lực từ: 17/11/2026</span>
+			<span class="chip indigo">👤 Nhà phát triển: MT Games</span>
+		</div>
+		<p>Chính sách này giải thích cách ứng dụng <strong>Kintsugi: Hàn Gốm Vàng</strong> (mã gói <code>cm.mt.kintsugi</code>, sau đây gọi là “ứng dụng”) thu thập, sử dụng, chia sẻ và xoá dữ liệu. Khi cài đặt và sử dụng ứng dụng, bạn đồng ý với các nội dung dưới đây.</p>
+		<div class="summary">
+			<div><b>Tài khoản</b>Không cần đăng ký, không đăng nhập</div>
+			<div><b>Dữ liệu cá nhân</b>Chúng tôi không tự thu thập</div>
+			<div><b>Tiến trình chơi</b>Chỉ lưu trên máy của bạn</div>
+			<div><b>Bên thứ ba</b>Google AdMob & Google Play</div>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">1</span>Dữ liệu chúng tôi thu thập</h3>
+			<p>Chúng tôi (nhà phát triển) <strong>không có máy chủ</strong> và <strong>không tự thu thập</strong> bất kỳ thông tin nhận dạng cá nhân nào như họ tên, email, số điện thoại, vị trí, danh bạ, ảnh hay tệp.</p>
+			<p>Những dữ liệu sau được lưu <strong>cục bộ trên thiết bị</strong> của bạn để trò chơi hoạt động, không bao giờ gửi về cho chúng tôi:</p>
+			<ul>
+				<li>Tiến trình chơi: món đang chơi, các món đã hàn trên Tủ gốm, ô đã mở trong Sổ men, ấn triện, số vàng lá, chuỗi ngày chơi Món của ngày, thống kê số món và số mảnh đã ghép.</li>
+				<li>Đồ trong Xưởng: kim loại hàn và mặt bàn đã mua, món đang dùng.</li>
+				<li>Cài đặt: âm thanh, nhạc, rung, tự xoay mảnh, ngôn ngữ.</li>
+				<li>Trạng thái đã mua “Xoá quảng cáo” (để ứng dụng chạy đúng cả khi không có mạng), số lần mở ứng dụng và lựa chọn của bạn ở hộp mời đánh giá.</li>
+			</ul>
+			<p>Hình ảnh các món gốm <strong>không được lưu thành tệp</strong>: ứng dụng vẽ lại chúng từ số thứ tự món mỗi khi cần.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">2</span>Dữ liệu do SDK bên thứ ba thu thập</h3>
+			<p>Ứng dụng dùng <strong>Google Mobile Ads SDK (AdMob)</strong> để hiển thị quảng cáo. Khi quảng cáo được tải, SDK này có thể tự động thu thập và gửi về Google các dữ liệu sau:</p>
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr><th>Loại dữ liệu (theo Play Console)</th><th>Thu thập</th><th>Chia sẻ</th><th>Mục đích</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>Mã thiết bị hoặc mã khác: Advertising ID, App set ID</td><td><span class="tag yes">Có</span></td><td><span class="tag yes">Có</span></td><td>Quảng cáo hoặc tiếp thị, phân tích, chống gian lận</td></tr>
+						<tr><td>Hoạt động trong ứng dụng: lượt xem và lượt bấm quảng cáo</td><td><span class="tag yes">Có</span></td><td><span class="tag yes">Có</span></td><td>Quảng cáo hoặc tiếp thị, phân tích</td></tr>
+						<tr><td>Thông tin và hiệu suất ứng dụng: nhật ký sự cố, chẩn đoán</td><td><span class="tag yes">Có</span></td><td><span class="tag no">Không</span></td><td>Phân tích, khắc phục lỗi của SDK</td></tr>
+						<tr><td>Vị trí gần đúng (suy ra từ địa chỉ IP)</td><td><span class="tag info">Do Google xử lý</span></td><td><span class="tag no">Không</span></td><td>Chọn quảng cáo phù hợp khu vực, chống gian lận</td></tr>
+						<tr><td>Tiến trình chơi, cài đặt</td><td><span class="tag no">Không</span></td><td><span class="tag no">Không</span></td><td>Chỉ lưu trên thiết bị</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<p>Mọi dữ liệu SDK gửi đi đều được <strong>mã hoá khi truyền</strong> (HTTPS/TLS). Cách Google sử dụng dữ liệu được mô tả tại <a href="https://policies.google.com/technologies/partner-sites">Cách Google sử dụng thông tin từ các trang web và ứng dụng sử dụng dịch vụ của Google</a>.</p>
+			<p>Khi bạn mua “Xoá quảng cáo”, giao dịch do <strong>Google Play</strong> xử lý. Chúng tôi chỉ nhận được xác nhận giao dịch thành công, không nhận số thẻ, tài khoản ngân hàng hay thông tin thanh toán nào của bạn.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">3</span>Cách dữ liệu được sử dụng</h3>
+			<ul>
+				<li>Lưu và khôi phục tiến trình chơi, bộ sưu tập và cài đặt của bạn trên thiết bị.</li>
+				<li>Hiển thị quảng cáo: banner ở menu, Tủ gốm, Sổ men và Xưởng (không có banner khi đang hàn gốm); quảng cáo xen kẽ sau một số món; quảng cáo có thưởng khi bạn tự chọn xem để dùng Keo thần, nhân đôi vàng lá hoặc mở Mẻ lò đặc biệt.</li>
+				<li>Ghi nhớ bạn đã mua “Xoá quảng cáo” để tắt quảng cáo và cho nhận thưởng ngay.</li>
+				<li>Chúng tôi <strong>không</strong> bán dữ liệu, <strong>không</strong> dùng dữ liệu để lập hồ sơ cá nhân và <strong>không</strong> chia sẻ dữ liệu với bên nào khác ngoài các dịch vụ của Google nêu trên.</li>
+			</ul>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">4</span>Quảng cáo cá nhân hoá & quyền lựa chọn của bạn</h3>
+			<ul>
+				<li><strong>Người dùng ở EEA, Vương quốc Anh, Thuỵ Sĩ:</strong> lần đầu mở ứng dụng sẽ thấy hộp hỏi ý kiến (Google UMP). Bạn có thể đổi lựa chọn bất cứ lúc nào trong <strong>Cài đặt → Tuỳ chọn quyền riêng tư quảng cáo</strong> của game.</li>
+				<li><strong>Đặt lại hoặc xoá Mã định danh quảng cáo:</strong> trên Android, vào <strong>Cài đặt → Quyền riêng tư → Quảng cáo</strong> (hoặc <strong>Cài đặt → Google → Quảng cáo</strong>, tuỳ máy).</li>
+				<li><strong>Tắt hẳn quảng cáo:</strong> mua gói “Xoá quảng cáo” một lần trong ứng dụng. Đã mua thì dùng nút <strong>Khôi phục mua hàng</strong> trong Cài đặt khi đổi máy.</li>
+			</ul>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">5</span>Lưu giữ và bảo mật dữ liệu</h3>
+			<p>Dữ liệu trò chơi nằm trong vùng lưu trữ riêng của ứng dụng trên thiết bị, ứng dụng khác không đọc được, và chỉ tồn tại tới khi bạn xoá dữ liệu hoặc gỡ ứng dụng. Ứng dụng tắt sao lưu tự động của Android, nên dữ liệu không được tải lên đám mây. Dữ liệu do Google thu thập được lưu giữ theo <a href="https://policies.google.com/technologies/retention">chính sách lưu giữ dữ liệu của Google</a>.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">6</span>Trẻ em</h3>
+			<p>Trò chơi có nội dung nhẹ nhàng, không bạo lực, nhưng <strong>không hướng tới trẻ em dưới 13 tuổi</strong> và chúng tôi không cố ý thu thập dữ liệu của trẻ em. Nếu bạn là phụ huynh và cho rằng con mình đã cung cấp dữ liệu qua ứng dụng, hãy liên hệ email bên dưới để được hỗ trợ.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">7</span>Thay đổi chính sách</h3>
+			<p>Chính sách có thể được cập nhật khi ứng dụng thêm tính năng hoặc khi Google Play thay đổi yêu cầu. Bản mới nhất luôn ở địa chỉ trang này, kèm ngày có hiệu lực ở đầu mục. Nếu thay đổi ảnh hưởng đáng kể tới cách xử lý dữ liệu, chúng tôi sẽ thông báo trong bản cập nhật ứng dụng.</p>
+		</div>
+	</section>
+
+	<!-- XOÁ DỮ LIỆU -->
+	<section class="section" id="xoa-du-lieu">
+		<div class="sec-head">
+			<div class="sec-icon">🗑️</div>
+			<div>
+				<h2>Yêu cầu xoá dữ liệu</h2>
+				<p>Bạn toàn quyền xoá dữ liệu của mình bất cứ lúc nào</p>
+			</div>
+		</div>
+		<p>Vì ứng dụng không có tài khoản và không có máy chủ, chúng tôi <strong>không giữ bản sao nào</strong> của dữ liệu trò chơi. Bạn có thể tự xoá toàn bộ ngay trên điện thoại:</p>
+		<ol class="steps article" style="border-top:none;margin-top:0;padding-top:0;">
+			<li><strong>Xoá dữ liệu trò chơi:</strong> vào Cài đặt Android → Ứng dụng → Kintsugi → Bộ nhớ → <strong>Xoá dữ liệu</strong>. Hoặc gỡ cài đặt ứng dụng.</li>
+			<li><strong>Xoá dữ liệu quảng cáo gắn với máy:</strong> vào Cài đặt Android → Quyền riêng tư → Quảng cáo → <strong>Xoá mã định danh quảng cáo</strong> (hoặc Đặt lại).</li>
+			<li><strong>Dữ liệu Google đã thu thập:</strong> quản lý và xoá tại <a href="https://myactivity.google.com/">Google My Activity</a> và <a href="https://myadcenter.google.com/">Google My Ad Center</a>.</li>
+		</ol>
+		<div class="note">⚠️ Xoá dữ liệu trò chơi sẽ mất vĩnh viễn tiến trình, Tủ gốm, Sổ men, vàng lá và đồ trong Xưởng, không khôi phục được. Riêng gói “Xoá quảng cáo” đã mua vẫn lấy lại được bằng nút <strong>Khôi phục mua hàng</strong> trong Cài đặt của game.</div>
+		<p>Cần hỗ trợ thêm về dữ liệu? Gửi email tới <a href="mailto:minhthang0792@gmail.com?subject=Kintsugi%20-%20Y%C3%AAu%20c%E1%BA%A7u%20d%E1%BB%AF%20li%E1%BB%87u">minhthang0792@gmail.com</a>, chúng tôi phản hồi trong vòng 30 ngày.</p>
+	</section>
+
+	<!-- LIÊN HỆ -->
+	<section class="section contact" id="lien-he">
+		<svg class="crack" viewBox="0 0 600 26" preserveAspectRatio="none" aria-hidden="true"><path d="M0 14 L70 12 L96 4 L150 16 L210 10 L232 20 L300 13 L356 6 L384 15 L452 11 L478 21 L540 12 L600 14 M232 20 L246 26 M356 6 L362 0"/></svg>
+		<h2>📬 Liên hệ nhà phát triển</h2>
+		<p>Góp ý về trò chơi, báo lỗi hay câu hỏi về Chính sách bảo mật, hãy gửi thư cho chúng tôi. Mọi phản hồi đều được đọc.</p>
+		<a class="mail" href="mailto:minhthang0792@gmail.com?subject=Kintsugi">✉️ minhthang0792@gmail.com</a>
+	</section>
+
+</main>
+
+<footer>
+	<p>Kintsugi: Hàn Gốm Vàng · <code>cm.mt.kintsugi</code></p>
+	<p>© 2026 MT Games. Mọi quyền được bảo lưu.</p>
+</footer>
+
+<script>
+(function () {
+	document.querySelectorAll('.copy-block').forEach(function (block) {
+		var textEl = block.querySelector('.copy-text');
+		var countEl = block.querySelector('.count');
+		var btn = block.querySelector('.copy-btn');
+		var text = textEl.textContent.trim();
+		var max = parseInt(countEl.getAttribute('data-max'), 10);
+		var len = Array.from(text).length;
+		countEl.textContent = len + ' / ' + max + ' ký tự';
+		countEl.classList.add(len <= max ? 'ok' : 'over');
+		btn.addEventListener('click', function () {
+			var done = function () {
+				btn.textContent = 'Đã chép ✓';
+				btn.classList.add('done');
+				setTimeout(function () { btn.textContent = 'Sao chép'; btn.classList.remove('done'); }, 1600);
+			};
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				navigator.clipboard.writeText(text).then(done, function () {});
+			}
+		});
+	});
+})();
+</script>
+</body>
+</html>
