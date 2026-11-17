@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vợt Muỗi: Mosquito Zapper – Giới thiệu & Chính sách bảo mật</title>
+<meta name="description" content="Giới thiệu, mô tả Google Play và Chính sách bảo mật của trò chơi Vợt Muỗi: Mosquito Zapper (cm.mt.votmuoi).">
+<meta name="author" content="MT Games">
+<meta name="theme-color" content="#12122a">
+<meta property="og:title" content="Vợt Muỗi: Mosquito Zapper">
+<meta property="og:description" content="Lia vợt điện canh giấc ngủ, diệt cả đàn muỗi tới sáng.">
+<meta property="og:image" content="feature-image.png">
+<link rel="icon" type="image/png" href="playstore-app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+	--bg: #12122a;
+	--bg-2: #1a1a3a;
+	--card: #1f1f44;
+	--card-2: #26264f;
+	--line: #34346a;
+	--text: #ecebff;
+	--muted: #a9a8d0;
+	--zap: #4fe3ff;
+	--zap-soft: rgba(79, 227, 255, 0.12);
+	--racket: #ffc93c;
+	--racket-soft: rgba(255, 201, 60, 0.13);
+	--bite: #ff5c7a;
+	--bite-soft: rgba(255, 92, 122, 0.13);
+	--leaf: #6ee7a8;
+	--leaf-soft: rgba(110, 231, 168, 0.12);
+	--radius: 22px;
+	--radius-sm: 12px;
+	--shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+	font-family: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	background:
+		radial-gradient(1200px 600px at 85% -10%, rgba(79, 227, 255, 0.10), transparent 60%),
+		radial-gradient(900px 500px at -10% 20%, rgba(255, 201, 60, 0.07), transparent 60%),
+		var(--bg);
+	color: var(--text);
+	line-height: 1.7;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+a { color: var(--zap); text-underline-offset: 3px; }
+a:hover { color: #a4f1ff; }
+code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.86em;
+	background: rgba(255, 255, 255, 0.07);
+	border: 1px solid var(--line);
+	padding: 0.08rem 0.4rem;
+	border-radius: 6px;
+	word-break: break-all;
+}
+
+/* ---------- Nav ---------- */
+.top-nav {
+	position: sticky; top: 0; z-index: 50;
+	background: rgba(18, 18, 42, 0.82);
+	backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+	border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+	max-width: 1000px; margin: 0 auto;
+	padding: 0.7rem 1rem;
+	display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; color: var(--text); font-weight: 800; white-space: nowrap; }
+.brand img { width: 36px; height: 36px; border-radius: 10px; box-shadow: 0 0 0 2px var(--racket), 0 0 18px rgba(79, 227, 255, 0.35); }
+.nav-links { display: flex; gap: 0.25rem; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+	display: block; white-space: nowrap;
+	color: var(--muted); text-decoration: none;
+	font-size: 0.86rem; font-weight: 600;
+	padding: 0.4rem 0.75rem; border-radius: 999px;
+	transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover { background: var(--zap-soft); color: var(--zap); }
+
+/* ---------- Layout ---------- */
+.wrap { max-width: 1000px; margin: 0 auto; padding: 1.75rem 1rem 4rem; }
+
+/* ---------- Hero ---------- */
+.hero {
+	position: relative;
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: 28px;
+	overflow: hidden;
+	box-shadow: var(--shadow);
+	margin-bottom: 2rem;
+}
+.hero-banner { position: relative; aspect-ratio: 1024 / 500; max-height: 420px; width: 100%; overflow: hidden; background: #0d0d22; }
+.hero-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-banner::after {
+	content: ""; position: absolute; inset: 0;
+	background: linear-gradient(180deg, rgba(18, 18, 42, 0) 45%, rgba(31, 31, 68, 0.96) 100%);
+}
+.hero-body { position: relative; padding: 0 2rem 2rem; }
+.hero-head { display: flex; align-items: flex-end; gap: 1.4rem; margin-top: -64px; position: relative; z-index: 2; }
+.hero-icon {
+	width: 128px; height: 128px; flex-shrink: 0;
+	border-radius: 30px;
+	border: 4px solid var(--racket);
+	box-shadow: 0 0 0 6px rgba(255, 201, 60, 0.15), 0 0 40px rgba(79, 227, 255, 0.45), var(--shadow);
+	animation: buzz 6s ease-in-out infinite;
+}
+@keyframes buzz {
+	0%, 90%, 100% { transform: rotate(0); }
+	92% { transform: rotate(-3deg); }
+	94% { transform: rotate(3deg); }
+	96% { transform: rotate(-2deg); }
+	98% { transform: rotate(1deg); }
+}
+.hero-title h1 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; }
+.hero-title h1 .zap { color: var(--zap); text-shadow: 0 0 22px rgba(79, 227, 255, 0.55); }
+.hero-title .pkg { margin-top: 0.4rem; display: inline-block; }
+.hero-lead { margin-top: 1.3rem; font-size: 1.06rem; color: var(--muted); max-width: 760px; }
+.hero-lead strong { color: var(--text); }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+.chip {
+	display: inline-flex; align-items: center; gap: 0.35rem;
+	font-size: 0.82rem; font-weight: 700;
+	padding: 0.35rem 0.8rem; border-radius: 999px;
+	border: 1px solid transparent;
+}
+.chip.zap { background: var(--zap-soft); color: var(--zap); border-color: rgba(79, 227, 255, 0.3); }
+.chip.racket { background: var(--racket-soft); color: var(--racket); border-color: rgba(255, 201, 60, 0.3); }
+.chip.bite { background: var(--bite-soft); color: var(--bite); border-color: rgba(255, 92, 122, 0.3); }
+.chip.leaf { background: var(--leaf-soft); color: var(--leaf); border-color: rgba(110, 231, 168, 0.3); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px dashed var(--line); }
+.btn {
+	display: inline-flex; align-items: center; gap: 0.45rem;
+	font: inherit; font-size: 0.92rem; font-weight: 800;
+	padding: 0.7rem 1.3rem; border-radius: 14px;
+	text-decoration: none; cursor: pointer; border: none;
+	transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+}
+.btn-primary { background: var(--racket); color: #2a1e00; box-shadow: 0 6px 22px rgba(255, 201, 60, 0.32); }
+.btn-primary:hover { transform: translateY(-2px); color: #2a1e00; box-shadow: 0 10px 28px rgba(255, 201, 60, 0.42); }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.btn-ghost:hover { border-color: var(--zap); color: var(--zap); }
+
+/* ---------- Sections ---------- */
+.section {
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: 2rem;
+	margin-bottom: 1.6rem;
+}
+.sec-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.4rem; }
+.sec-icon {
+	width: 48px; height: 48px; flex-shrink: 0;
+	display: grid; place-items: center;
+	font-size: 1.45rem;
+	border-radius: 14px;
+	background: var(--zap-soft);
+	border: 1px solid rgba(79, 227, 255, 0.28);
+}
+.sec-head h2 { font-size: 1.45rem; font-weight: 800; line-height: 1.25; }
+.sec-head p { font-size: 0.88rem; color: var(--muted); }
+.section > p, .article > p { color: var(--muted); margin-bottom: 0.9rem; }
+.section p strong, .article strong { color: var(--text); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+.tile {
+	background: var(--card-2);
+	border: 1px solid var(--line);
+	border-radius: 18px;
+	padding: 1.2rem;
+	transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.tile:hover { transform: translateY(-3px); border-color: rgba(79, 227, 255, 0.55); box-shadow: 0 0 26px rgba(79, 227, 255, 0.15); }
+.tile .emo { font-size: 1.9rem; line-height: 1; }
+.tile h3 { font-size: 1.02rem; font-weight: 800; margin: 0.6rem 0 0.3rem; }
+.tile p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+.roster { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+.roster span {
+	font-size: 0.82rem; font-weight: 600;
+	padding: 0.3rem 0.7rem; border-radius: 10px;
+	background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line);
+}
+.sub-h { font-size: 1.02rem; font-weight: 800; margin: 1.6rem 0 0.2rem; }
+
+/* ---------- Store copy ---------- */
+.copy-block {
+	background: var(--bg-2);
+	border: 1px solid var(--line);
+	border-radius: 18px;
+	padding: 1.2rem;
+	margin-bottom: 1.1rem;
+}
+.copy-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem; }
+.copy-label { font-weight: 800; color: var(--racket); display: flex; align-items: center; gap: 0.45rem; }
+.copy-meta { display: flex; align-items: center; gap: 0.5rem; }
+.count {
+	font-size: 0.76rem; font-weight: 700; color: var(--muted);
+	background: rgba(255, 255, 255, 0.06); padding: 0.15rem 0.55rem; border-radius: 999px;
+}
+.count.ok { color: var(--leaf); }
+.count.over { color: var(--bite); }
+.copy-btn {
+	font: inherit; font-size: 0.78rem; font-weight: 800;
+	color: var(--text); background: transparent;
+	border: 1px solid var(--line); border-radius: 10px;
+	padding: 0.32rem 0.8rem; cursor: pointer;
+	transition: all 0.2s;
+}
+.copy-btn:hover { border-color: var(--zap); color: var(--zap); }
+.copy-btn.done { background: var(--leaf); border-color: var(--leaf); color: #062615; }
+.copy-text {
+	background: rgba(0, 0, 0, 0.22);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: var(--radius-sm);
+	padding: 1rem 1.1rem;
+	font-size: 0.93rem; line-height: 1.65;
+	white-space: pre-line; word-break: break-word;
+	color: #dcdbf5;
+}
+.copy-text.big { max-height: 460px; overflow-y: auto; }
+
+/* ---------- Policy ---------- */
+.meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; }
+.summary {
+	display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;
+	margin: 1.2rem 0 0.4rem;
+}
+.summary div {
+	background: var(--leaf-soft); border: 1px solid rgba(110, 231, 168, 0.28);
+	border-radius: 14px; padding: 0.85rem 1rem;
+	font-size: 0.88rem; color: var(--text); font-weight: 600;
+}
+.summary div b { display: block; color: var(--leaf); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.15rem; }
+.article { padding-top: 1.6rem; margin-top: 1.6rem; border-top: 1px dashed var(--line); }
+.article h3 { display: flex; align-items: center; gap: 0.6rem; font-size: 1.12rem; font-weight: 800; margin-bottom: 0.75rem; }
+.article h3 .num {
+	width: 30px; height: 30px; flex-shrink: 0;
+	display: grid; place-items: center;
+	border-radius: 9px; font-size: 0.85rem;
+	background: var(--racket); color: #2a1e00;
+}
+.article ul, .article ol { padding-left: 1.25rem; color: var(--muted); margin-bottom: 0.9rem; }
+.article li { margin-bottom: 0.45rem; }
+.article li::marker { color: var(--zap); }
+
+.table-wrap { overflow-x: auto; margin: 0.6rem 0 1.1rem; border: 1px solid var(--line); border-radius: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 620px; }
+th, td { text-align: left; vertical-align: top; padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--line); }
+th { background: var(--bg-2); color: var(--racket); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+tr:last-child td { border-bottom: none; }
+td { color: var(--muted); }
+td:first-child { color: var(--text); font-weight: 600; }
+.tag { display: inline-block; font-size: 0.74rem; font-weight: 800; padding: 0.1rem 0.5rem; border-radius: 6px; white-space: nowrap; }
+.tag.yes { background: var(--bite-soft); color: var(--bite); }
+.tag.no { background: var(--leaf-soft); color: var(--leaf); }
+.tag.info { background: var(--zap-soft); color: var(--zap); }
+
+.steps { list-style: none; padding: 0 !important; counter-reset: s; }
+.steps li {
+	counter-increment: s;
+	position: relative; padding: 0.85rem 1rem 0.85rem 3.2rem !important;
+	background: var(--bg-2); border: 1px solid var(--line); border-radius: 14px;
+}
+.steps li::before {
+	content: counter(s);
+	position: absolute; left: 0.9rem; top: 0.85rem;
+	width: 26px; height: 26px; border-radius: 8px;
+	display: grid; place-items: center;
+	background: var(--zap); color: #04232b; font-weight: 900; font-size: 0.8rem;
+}
+.note {
+	background: var(--racket-soft); border: 1px solid rgba(255, 201, 60, 0.3);
+	border-radius: 14px; padding: 0.9rem 1rem; color: var(--text); font-size: 0.9rem;
+	margin: 0.6rem 0 1rem;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+	text-align: center;
+	background:
+		radial-gradient(600px 220px at 50% 0%, rgba(79, 227, 255, 0.18), transparent 70%),
+		var(--card);
+}
+.contact h2 { font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem; }
+.contact p { color: var(--muted); max-width: 620px; margin: 0 auto 1.3rem; }
+.mail {
+	display: inline-flex; align-items: center; gap: 0.55rem;
+	font-size: 1.05rem; font-weight: 800; text-decoration: none;
+	color: #04232b; background: var(--zap);
+	padding: 0.8rem 1.5rem; border-radius: 16px;
+	box-shadow: 0 0 30px rgba(79, 227, 255, 0.4);
+	word-break: break-all;
+}
+.mail:hover { color: #04232b; transform: translateY(-2px); }
+
+footer { text-align: center; color: var(--muted); font-size: 0.82rem; padding: 0 1rem 2.5rem; }
+footer p + p { margin-top: 0.3rem; }
+
+@media (max-width: 640px) {
+	.brand span { display: none; }
+	.hero-body { padding: 0 1.1rem 1.4rem; }
+	.hero-head { flex-direction: column; align-items: flex-start; gap: 0.8rem; margin-top: -52px; }
+	.hero-icon { width: 96px; height: 96px; border-radius: 24px; }
+	.section { padding: 1.4rem 1.1rem; }
+	.sec-head h2 { font-size: 1.22rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+	* { animation: none !important; transition: none !important; }
+	html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+	<div class="nav-inner">
+		<a class="brand" href="#top"><img src="playstore-app-icon.png" alt=""><span>Vợt Muỗi</span></a>
+		<ul class="nav-links">
+			<li><a href="#gioi-thieu">Giới thiệu</a></li>
+			<li><a href="#play-store">Mô tả Play Store</a></li>
+			<li><a href="#quyen-sdk">Quyền & SDK</a></li>
+			<li><a href="#bao-mat">Bảo mật</a></li>
+			<li><a href="#xoa-du-lieu">Xoá dữ liệu</a></li>
+			<li><a href="#lien-he">Liên hệ</a></li>
+		</ul>
+	</div>
+</nav>
+
+<main class="wrap" id="top">
+
+	<!-- HERO -->
+	<header class="hero">
+		<div class="hero-banner">
+			<img src="feature-image.png" alt="Cây vợt điện quét qua đàn muỗi trong phòng ngủ, người đang ngủ say trên giường" width="1024" height="500">
+		</div>
+		<div class="hero-body">
+			<div class="hero-head">
+				<img class="hero-icon" src="playstore-app-icon.png" alt="Biểu tượng ứng dụng Vợt Muỗi" width="128" height="128">
+				<div class="hero-title">
+					<h1>Vợt Muỗi: <span class="zap">Mosquito Zapper</span></h1>
+					<code class="pkg">cm.mt.votmuoi</code>
+				</div>
+			</div>
+			<p class="hero-lead">
+				Đêm hè oi bức, cả đàn muỗi kéo vào phòng qua cửa sổ, cửa ra vào và lỗ thông gió. Bạn cầm <strong>cây vợt điện</strong>, lia khắp phòng để người thân <strong>ngủ ngon tới sáng</strong>. Tiếng “tách tách” quen thuộc, tia lửa xanh tóe ra, thạch sùng lè lưỡi đớp muỗi: một game hành động ngắn, vui và rất Việt Nam.
+			</p>
+			<div class="chips">
+				<span class="chip zap">⚡ Hành động sinh tồn</span>
+				<span class="chip racket">🌙 Mỗi đêm 3 phút</span>
+				<span class="chip leaf">📴 Chơi offline</span>
+				<span class="chip leaf">🙅 Không cần tài khoản</span>
+				<span class="chip bite">🇻🇳 Tiếng Việt · English</span>
+			</div>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=cm.mt.votmuoi">▶ Xem trên Google Play</a>
+				<a class="btn btn-ghost" href="#bao-mat">🔒 Đọc Chính sách bảo mật</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- GIỚI THIỆU -->
+	<section class="section" id="gioi-thieu">
+		<div class="sec-head">
+			<div class="sec-icon">🦟</div>
+			<div>
+				<h2>Giới thiệu trò chơi</h2>
+				<p>Canh giấc ngủ cho người khác, không phải cho chính mình</p>
+			</div>
+		</div>
+		<p>
+			<strong>Vợt Muỗi</strong> là game hành động kiểu “survivor-like” nhìn từ trên xuống. Mỗi màn là một đêm, đồng hồ chạy từ <strong>23:00 tới 05:00</strong> trong 3 phút. Muỗi bay tới đậu lên mặt, tay, chân của người đang ngủ; mỗi lần bị chích là thanh <strong>Giấc ngủ</strong> tụt xuống. Hết Giấc ngủ là người ấy tỉnh dậy và bạn thua đêm đó.
+		</p>
+		<div class="grid">
+			<div class="tile">
+				<div class="emo">🏸</div>
+				<h3>Vuốt để lia vợt</h3>
+				<p>Kéo ngón tay ở bất kỳ đâu trên màn hình, vợt đi theo. Mỗi lần giật tốn 1 vạch pin, nên phải canh pin cho đợt muỗi lớn.</p>
+			</div>
+			<div class="tile">
+				<div class="emo">🃏</div>
+				<h3>Lên cấp, chọn đồ nghề</h3>
+				<p>Diệt muỗi lấy kinh nghiệm. Mỗi lần lên cấp chọn 1 trong 3 thẻ, ghép thành lối chơi riêng: tối đa 4 đồ nghề và 3 phụ kiện mỗi đêm.</p>
+			</div>
+			<div class="tile">
+				<div class="emo">🌊</div>
+				<h3>Đợt muỗi & Muỗi chúa</h3>
+				<p>Đầu mỗi giờ có một đợt muỗi ùa vào, lớn nhất lúc 04:36. Cứ 5 đêm lại có Muỗi chúa khổng lồ vừa trâu vừa đẻ thêm muỗi con.</p>
+			</div>
+			<div class="tile">
+				<div class="emo">🏪</div>
+				<h3>Tiệm tạp hoá</h3>
+				<p>Hết đêm nhận xu, mua 9 nâng cấp vĩnh viễn rồi thử đêm khó hơn. Số đêm không giới hạn, đêm nào cũng chơi lại được.</p>
+			</div>
+		</div>
+
+		<h3 class="sub-h">6 loại muỗi</h3>
+		<div class="roster">
+			<span>Muỗi thường</span><span>Muỗi vằn (lượn gắt)</span><span>Muỗi bầy (8 con một lúc)</span><span>Muỗi béo (lì đòn)</span><span>Muỗi ranh (biết né vợt)</span><span>👑 Muỗi chúa</span>
+		</div>
+		<h3 class="sub-h">11 thẻ đồ nghề đậm chất Việt</h3>
+		<div class="roster">
+			<span>⚡ Vợt điện</span><span>🌀 Nhang muỗi</span><span>🌬️ Quạt máy</span><span>💡 Đèn bắt muỗi</span><span>🦎 Thạch sùng</span><span>💨 Bình xịt</span><span>🛏️ Mùng</span><span>🩴 Dép tổ ong</span><span>🔋 Sạc dự phòng</span><span>🛌 Gối ôm</span><span>📒 Sổ tay mẹo</span>
+		</div>
+	</section>
+
+	<!-- PLAY STORE -->
+	<section class="section" id="play-store">
+		<div class="sec-head">
+			<div class="sec-icon">🛒</div>
+			<div>
+				<h2>Thông tin niêm yết Google Play</h2>
+				<p>Tên ứng dụng ≤ 30 ký tự · Mô tả ngắn ≤ 80 ký tự · Mô tả chi tiết ≤ 4000 ký tự</p>
+			</div>
+		</div>
+
+		<div class="copy-block">
+			<div class="copy-head">
+				<div class="copy-label">🏷️ Tên ứng dụng</div>
+				<div class="copy-meta"><span class="count" data-max="30"></span><button class="copy-btn" type="button">Sao chép</button></div>
+			</div>
+			<div class="copy-text">Vợt Muỗi: Mosquito Zapper</div>
+		</div>
+
+		<div class="copy-block">
+			<div class="copy-head">
+				<div class="copy-label">✏️ Mô tả ngắn (Short description)</div>
+				<div class="copy-meta"><span class="count" data-max="80"></span><button class="copy-btn" type="button">Sao chép</button></div>
+			</div>
+			<div class="copy-text">Lia vợt điện, diệt cả đàn muỗi, giữ giấc ngủ tới sáng. Tách tách cực đã tay!</div>
+		</div>
+
+		<div class="copy-block">
+			<div class="copy-head">
+				<div class="copy-label">📄 Mô tả chi tiết (Full description)</div>
+				<div class="copy-meta"><span class="count" data-max="4000"></span><button class="copy-btn" type="button">Sao chép</button></div>
+			</div>
+			<div class="copy-text big">Đêm hè oi bức, cả đàn muỗi kéo vào phòng… và chỉ có bạn với cây vợt điện canh cho người thân ngủ ngon tới sáng!
+
+Vợt Muỗi là game hành động sinh tồn (survivor-like) mang đậm không khí nhà Việt: gạch bông, chiếu, mùng, nhang vòng, quạt đứng và chú thạch sùng trên tường. Vuốt ngón tay để lia vợt, nghe tiếng “tách tách” quen thuộc và nhìn tia lửa xanh tóe ra khi cả bầy muỗi dính lưới.
+
+⚡ CÁCH CHƠI
+• Mỗi đêm dài 3 phút, đồng hồ chạy từ 23:00 tới 05:00.
+• Vuốt ở bất kỳ đâu trên màn hình để lia vợt, diệt muỗi trước khi chúng chích người đang ngủ.
+• Mỗi lần giật tốn pin: canh pin cho khéo để không hụt hơi khi đợt muỗi lớn ùa vào.
+• Lên cấp thì chọn 1 trong 3 thẻ đồ nghề, ghép thành lối chơi của riêng bạn.
+• Giữ thanh Giấc ngủ trên 0 tới bình minh là thắng!
+
+🦟 6 LOẠI MUỖI
+Muỗi thường, Muỗi vằn lượn gắt, Muỗi bầy kéo tới 8 con một lúc, Muỗi béo lì đòn, Muỗi ranh biết né vợt, và Muỗi chúa khổng lồ xuất hiện mỗi 5 đêm.
+
+🧰 11 THẺ ĐỒ NGHỀ ĐẬM CHẤT VIỆT
+• Đồ nghề: Vợt điện, Nhang muỗi, Quạt máy, Đèn bắt muỗi, Thạch sùng, Bình xịt, Mùng.
+• Phụ kiện: Dép tổ ong, Sạc dự phòng, Gối ôm, Sổ tay mẹo.
+Mỗi thẻ nâng được tới cấp 5. Nhang tỏa khói làm muỗi chậm lại, quạt thổi bạt cả đàn, thạch sùng chạy khắp tường đớp muỗi, mùng chặn những cú chích phút chót…
+
+🏪 TIỆM TẠP HOÁ
+Hết đêm nhận xu, mua 9 nâng cấp vĩnh viễn như Vợt to, Pin trâu, Điện mạnh, Chăn ấm, Ngủ say, Heo đất… rồi thử sức với những đêm khó hơn. Số đêm không giới hạn.
+
+✨ ĐIỂM NỔI BẬT
+• Chơi offline hoàn toàn, không cần mạng, không cần tài khoản.
+• Mỗi ván chỉ 3 phút, hợp chơi lúc rảnh tay.
+• Hàng trăm con muỗi cùng lúc trên màn hình mà vẫn mượt.
+• Âm thanh vui tai, có rung phản hồi (bật/tắt trong Cài đặt).
+• Hỗ trợ Tiếng Việt và English.
+
+Game miễn phí, có quảng cáo. Bạn có thể mua gói “Xoá quảng cáo” một lần trong ứng dụng.</div>
+		</div>
+	</section>
+
+	<!-- QUYỀN & SDK -->
+	<section class="section" id="quyen-sdk">
+		<div class="sec-head">
+			<div class="sec-icon">🧩</div>
+			<div>
+				<h2>Quyền ứng dụng & SDK bên thứ ba</h2>
+				<p>Danh sách lấy từ tệp AndroidManifest của bản phát hành</p>
+			</div>
+		</div>
+		<p>Vợt Muỗi <strong>không</strong> yêu cầu quyền nhạy cảm nào: không truy cập vị trí, danh bạ, máy ảnh, micro, ảnh hay tệp của bạn. Mọi quyền dưới đây đều là quyền thông thường, được Android cấp tự động khi cài đặt, phần lớn do SDK quảng cáo và thanh toán của Google khai báo.</p>
+
+		<div class="table-wrap">
+			<table>
+				<thead>
+					<tr><th>Quyền Android</th><th>Khai báo bởi</th><th>Mục đích</th></tr>
+				</thead>
+				<tbody>
+					<tr><td><code>android.permission.INTERNET</code></td><td>Ứng dụng, AdMob</td><td>Tải quảng cáo và kết nối Google Play Billing. Trò chơi vẫn chơi đầy đủ khi không có mạng.</td></tr>
+					<tr><td><code>android.permission.ACCESS_NETWORK_STATE</code></td><td>Ứng dụng, AdMob</td><td>Kiểm tra có mạng hay không trước khi tải quảng cáo, tránh gửi yêu cầu vô ích và tốn pin.</td></tr>
+					<tr><td><code>android.permission.VIBRATE</code></td><td>Ứng dụng</td><td>Rung nhẹ khi vợt giật trúng muỗi hoặc khi người ngủ bị chích. Tắt được trong Cài đặt của game.</td></tr>
+					<tr><td><code>com.google.android.gms.permission.AD_ID</code><br><code>android.permission.AD_ID</code></td><td>Google Mobile Ads SDK</td><td>Đọc Mã định danh quảng cáo (Advertising ID) để hiển thị quảng cáo, giới hạn tần suất, đo lường và chống gian lận.</td></tr>
+					<tr><td><code>com.android.vending.BILLING</code></td><td>Google Play Billing</td><td>Thực hiện và khôi phục giao dịch mua “Xoá quảng cáo” qua Google Play.</td></tr>
+					<tr><td><code>android.permission.WAKE_LOCK</code></td><td>Google Mobile Ads SDK (thư viện nền của Google)</td><td>Giữ thiết bị thức trong thời gian ngắn để thư viện của Google hoàn tất tác vụ nền (ví dụ gửi báo cáo quảng cáo).</td></tr>
+					<tr><td><code>android.permission.FOREGROUND_SERVICE</code></td><td>Thư viện nền của Google (WorkManager)</td><td>Cho phép thư viện của Google chạy tác vụ nền đã lên lịch theo quy định của Android. Ứng dụng không tự chạy dịch vụ nền.</td></tr>
+					<tr><td><code>android.permission.READ_BASIC_PHONE_STATE</code></td><td>Google Mobile Ads SDK</td><td>Đọc trạng thái mạng di động cơ bản (ví dụ loại mạng) để tối ưu tải quảng cáo. <strong>Không</strong> đọc số điện thoại, IMEI hay nội dung cuộc gọi.</td></tr>
+					<tr><td><code>cm.mt.votmuoi.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td><td>Thư viện AndroidX</td><td>Quyền nội bộ của chính ứng dụng, bảo vệ các bộ nhận sự kiện không cho ứng dụng khác gọi vào.</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h3 class="sub-h">SDK bên thứ ba được tích hợp</h3>
+		<div class="grid">
+			<div class="tile">
+				<div class="emo">📢</div>
+				<h3>Google Mobile Ads SDK (AdMob)</h3>
+				<p>Hiển thị quảng cáo banner, quảng cáo xen kẽ và quảng cáo có thưởng. <a href="https://policies.google.com/privacy">Chính sách quyền riêng tư của Google</a> · <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">Dữ liệu AdMob thu thập</a></p>
+			</div>
+			<div class="tile">
+				<div class="emo">🛡️</div>
+				<h3>Google User Messaging Platform (UMP)</h3>
+				<p>Hiện hộp hỏi ý kiến về quảng cáo cá nhân hoá cho người dùng ở EEA, Vương quốc Anh và Thuỵ Sĩ theo GDPR. <a href="https://developers.google.com/admob/android/privacy">Tìm hiểu thêm</a></p>
+			</div>
+			<div class="tile">
+				<div class="emo">💳</div>
+				<h3>Google Play Billing Library</h3>
+				<p>Xử lý giao dịch “Xoá quảng cáo”. Thông tin thanh toán do Google Play quản lý, chúng tôi không nhận được. <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice">Thông báo bảo mật Google Payments</a></p>
+			</div>
+			<div class="tile">
+				<div class="emo">🎮</div>
+				<h3>Godot Engine</h3>
+				<p>Bộ máy trò chơi mã nguồn mở (giấy phép MIT). Không thu thập hay gửi dữ liệu nào ra ngoài.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- CHÍNH SÁCH BẢO MẬT -->
+	<section class="section" id="bao-mat">
+		<div class="sec-head">
+			<div class="sec-icon">🔒</div>
+			<div>
+				<h2>Chính sách bảo mật (Privacy Policy)</h2>
+				<p>Theo Chính sách dành cho nhà phát triển của Google Play</p>
+			</div>
+		</div>
+		<div class="meta-row">
+			<span class="chip racket">📅 Có hiệu lực từ: 17/11/2026</span>
+			<span class="chip zap">👤 Nhà phát triển: MT Games</span>
+		</div>
+		<p>Chính sách này giải thích cách ứng dụng <strong>Vợt Muỗi: Mosquito Zapper</strong> (mã gói <code>cm.mt.votmuoi</code>, sau đây gọi là “ứng dụng”) thu thập, sử dụng, chia sẻ và xoá dữ liệu. Khi cài đặt và sử dụng ứng dụng, bạn đồng ý với các nội dung dưới đây.</p>
+
+		<div class="summary">
+			<div><b>Tài khoản</b>Không cần đăng ký, không đăng nhập</div>
+			<div><b>Dữ liệu cá nhân</b>Chúng tôi không tự thu thập</div>
+			<div><b>Tiến trình chơi</b>Chỉ lưu trên máy của bạn</div>
+			<div><b>Bên thứ ba</b>Google AdMob & Google Play</div>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">1</span>Dữ liệu chúng tôi thu thập</h3>
+			<p>Chúng tôi (nhà phát triển) <strong>không có máy chủ</strong> và <strong>không tự thu thập</strong> bất kỳ thông tin nhận dạng cá nhân nào như họ tên, email, số điện thoại, vị trí, danh bạ, ảnh hay tệp.</p>
+			<p>Những dữ liệu sau được lưu <strong>cục bộ trên thiết bị</strong> của bạn để trò chơi hoạt động, không bao giờ gửi về cho chúng tôi:</p>
+			<ul>
+				<li>Tiến trình chơi: đêm đã mở, số xu, các nâng cấp đã mua ở Tiệm tạp hoá, kỷ lục ít bị chích nhất của từng đêm.</li>
+				<li>Cài đặt: âm thanh, nhạc, rung, ngôn ngữ, độ nhạy vợt.</li>
+				<li>Trạng thái đã mua “Xoá quảng cáo” (để ứng dụng chạy đúng cả khi không có mạng), số lần mở ứng dụng và lựa chọn của bạn ở hộp mời đánh giá.</li>
+			</ul>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">2</span>Dữ liệu do SDK bên thứ ba thu thập</h3>
+			<p>Ứng dụng dùng <strong>Google Mobile Ads SDK (AdMob)</strong> để hiển thị quảng cáo. Khi quảng cáo được tải, SDK này có thể tự động thu thập và gửi về Google các dữ liệu sau:</p>
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr><th>Loại dữ liệu (theo Play Console)</th><th>Thu thập</th><th>Chia sẻ</th><th>Mục đích</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>Mã thiết bị hoặc mã khác: Advertising ID, App set ID</td><td><span class="tag yes">Có</span></td><td><span class="tag yes">Có</span></td><td>Quảng cáo hoặc tiếp thị, phân tích, chống gian lận</td></tr>
+						<tr><td>Hoạt động trong ứng dụng: lượt xem và lượt bấm quảng cáo</td><td><span class="tag yes">Có</span></td><td><span class="tag yes">Có</span></td><td>Quảng cáo hoặc tiếp thị, phân tích</td></tr>
+						<tr><td>Thông tin và hiệu suất ứng dụng: nhật ký sự cố, chẩn đoán</td><td><span class="tag yes">Có</span></td><td><span class="tag no">Không</span></td><td>Phân tích, khắc phục lỗi của SDK</td></tr>
+						<tr><td>Vị trí gần đúng (suy ra từ địa chỉ IP)</td><td><span class="tag info">Do Google xử lý</span></td><td><span class="tag no">Không</span></td><td>Chọn quảng cáo phù hợp khu vực, chống gian lận</td></tr>
+						<tr><td>Tiến trình chơi, cài đặt</td><td><span class="tag no">Không</span></td><td><span class="tag no">Không</span></td><td>Chỉ lưu trên thiết bị</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<p>Mọi dữ liệu SDK gửi đi đều được <strong>mã hoá khi truyền</strong> (HTTPS/TLS). Cách Google sử dụng dữ liệu được mô tả tại <a href="https://policies.google.com/technologies/partner-sites">Cách Google sử dụng thông tin từ các trang web và ứng dụng sử dụng dịch vụ của Google</a>.</p>
+			<p>Khi bạn mua “Xoá quảng cáo”, giao dịch do <strong>Google Play</strong> xử lý. Chúng tôi chỉ nhận được xác nhận giao dịch thành công, không nhận số thẻ, tài khoản ngân hàng hay thông tin thanh toán nào của bạn.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">3</span>Cách dữ liệu được sử dụng</h3>
+			<ul>
+				<li>Lưu và khôi phục tiến trình chơi, cài đặt của bạn trên thiết bị.</li>
+				<li>Hiển thị quảng cáo (banner ở menu, quảng cáo xen kẽ sau một số đêm chơi, quảng cáo có thưởng khi bạn tự chọn xem để đổi thẻ, dỗ ngủ tiếp, chuẩn bị thêm hoặc nhân đôi xu).</li>
+				<li>Ghi nhớ bạn đã mua “Xoá quảng cáo” để tắt quảng cáo và cho nhận thưởng ngay.</li>
+				<li>Chúng tôi <strong>không</strong> bán dữ liệu, <strong>không</strong> dùng dữ liệu để lập hồ sơ cá nhân và <strong>không</strong> chia sẻ dữ liệu với bên nào khác ngoài các dịch vụ của Google nêu trên.</li>
+			</ul>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">4</span>Quảng cáo cá nhân hoá & quyền lựa chọn của bạn</h3>
+			<ul>
+				<li><strong>Người dùng ở EEA, Vương quốc Anh, Thuỵ Sĩ:</strong> lần đầu mở ứng dụng sẽ thấy hộp hỏi ý kiến (Google UMP). Bạn có thể đổi lựa chọn bất cứ lúc nào trong <strong>Cài đặt → Tuỳ chọn quyền riêng tư quảng cáo</strong> của game.</li>
+				<li><strong>Đặt lại hoặc xoá Mã định danh quảng cáo:</strong> trên Android, vào <strong>Cài đặt → Quyền riêng tư → Quảng cáo</strong> (hoặc <strong>Cài đặt → Google → Quảng cáo</strong>, tuỳ máy).</li>
+				<li><strong>Tắt hẳn quảng cáo:</strong> mua gói “Xoá quảng cáo” một lần trong ứng dụng. Đã mua thì dùng nút <strong>Khôi phục mua hàng</strong> trong Cài đặt khi đổi máy.</li>
+			</ul>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">5</span>Lưu giữ và bảo mật dữ liệu</h3>
+			<p>Dữ liệu trò chơi nằm trong vùng lưu trữ riêng của ứng dụng trên thiết bị, ứng dụng khác không đọc được, và chỉ tồn tại tới khi bạn xoá dữ liệu hoặc gỡ ứng dụng. Ứng dụng tắt sao lưu tự động của Android, nên dữ liệu không được tải lên đám mây. Dữ liệu do Google thu thập được lưu giữ theo <a href="https://policies.google.com/technologies/retention">chính sách lưu giữ dữ liệu của Google</a>.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">6</span>Trẻ em</h3>
+			<p>Trò chơi có nội dung nhẹ nhàng, không bạo lực, nhưng <strong>không hướng tới trẻ em dưới 13 tuổi</strong> và chúng tôi không cố ý thu thập dữ liệu của trẻ em. Nếu bạn là phụ huynh và cho rằng con mình đã cung cấp dữ liệu qua ứng dụng, hãy liên hệ email bên dưới để được hỗ trợ.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">7</span>Thay đổi chính sách</h3>
+			<p>Chính sách có thể được cập nhật khi ứng dụng thêm tính năng hoặc khi Google Play thay đổi yêu cầu. Bản mới nhất luôn ở địa chỉ trang này, kèm ngày có hiệu lực ở đầu mục. Nếu thay đổi làm ảnh hưởng đáng kể tới cách xử lý dữ liệu, chúng tôi sẽ thông báo trong bản cập nhật ứng dụng.</p>
+		</div>
+	</section>
+
+	<!-- XOÁ DỮ LIỆU -->
+	<section class="section" id="xoa-du-lieu">
+		<div class="sec-head">
+			<div class="sec-icon">🗑️</div>
+			<div>
+				<h2>Yêu cầu xoá dữ liệu</h2>
+				<p>Bạn toàn quyền xoá dữ liệu của mình bất cứ lúc nào</p>
+			</div>
+		</div>
+		<p>Vì ứng dụng không có tài khoản và không có máy chủ, chúng tôi <strong>không giữ bản sao nào</strong> của dữ liệu trò chơi. Bạn có thể tự xoá toàn bộ ngay trên điện thoại:</p>
+		<ol class="steps article" style="border-top:none;margin-top:0;padding-top:0;">
+			<li><strong>Xoá dữ liệu trò chơi:</strong> vào Cài đặt Android → Ứng dụng → Vợt Muỗi → Bộ nhớ → <strong>Xoá dữ liệu</strong>. Hoặc gỡ cài đặt ứng dụng.</li>
+			<li><strong>Xoá dữ liệu quảng cáo gắn với máy:</strong> vào Cài đặt Android → Quyền riêng tư → Quảng cáo → <strong>Xoá mã định danh quảng cáo</strong> (hoặc Đặt lại).</li>
+			<li><strong>Dữ liệu Google đã thu thập:</strong> quản lý và xoá tại <a href="https://myactivity.google.com/">Google My Activity</a> và <a href="https://myadcenter.google.com/">Google My Ad Center</a>.</li>
+		</ol>
+		<div class="note">⚠️ Xoá dữ liệu trò chơi sẽ mất vĩnh viễn tiến trình, xu và nâng cấp, không khôi phục được. Riêng gói “Xoá quảng cáo” đã mua vẫn lấy lại được bằng nút <strong>Khôi phục mua hàng</strong> trong Cài đặt của game.</div>
+		<p>Cần hỗ trợ thêm về dữ liệu? Gửi email tới <a href="mailto:minhthang0792@gmail.com?subject=V%E1%BB%A3t%20Mu%E1%BB%97i%20-%20Y%C3%AAu%20c%E1%BA%A7u%20d%E1%BB%AF%20li%E1%BB%87u">minhthang0792@gmail.com</a>, chúng tôi phản hồi trong vòng 30 ngày.</p>
+	</section>
+
+	<!-- LIÊN HỆ -->
+	<section class="section contact" id="lien-he">
+		<h2>📬 Liên hệ nhà phát triển</h2>
+		<p>Góp ý về trò chơi, báo lỗi hay câu hỏi về Chính sách bảo mật, hãy gửi thư cho chúng tôi. Mọi phản hồi đều được đọc.</p>
+		<a class="mail" href="mailto:minhthang0792@gmail.com?subject=V%E1%BB%A3t%20Mu%E1%BB%97i">✉️ minhthang0792@gmail.com</a>
+	</section>
+</main>
+
+<footer>
+	<p>Vợt Muỗi: Mosquito Zapper · <code>cm.mt.votmuoi</code></p>
+	<p>© 2026 MT Games. Mọi quyền được bảo lưu.</p>
+</footer>
+
+<script>
+(function () {
+	document.querySelectorAll('.copy-block').forEach(function (block) {
+		var textEl = block.querySelector('.copy-text');
+		var countEl = block.querySelector('.count');
+		var btn = block.querySelector('.copy-btn');
+		var text = textEl.textContent.trim();
+		var max = parseInt(countEl.getAttribute('data-max'), 10);
+		var len = Array.from(text).length;
+		countEl.textContent = len + ' / ' + max + ' ký tự';
+		countEl.classList.add(len <= max ? 'ok' : 'over');
+		btn.addEventListener('click', function () {
+			var done = function () {
+				btn.textContent = 'Đã chép ✓';
+				btn.classList.add('done');
+				setTimeout(function () { btn.textContent = 'Sao chép'; btn.classList.remove('done'); }, 1600);
+			};
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				navigator.clipboard.writeText(text).then(done, function () {});
+			}
+		});
+	});
+})();
+</script>
+</body>
+</html>
