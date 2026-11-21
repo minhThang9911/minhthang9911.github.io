@@ -1,0 +1,34 @@
+5 giờ chiều, cả thành phố đổ ra đường… và chiếc công tắc đèn giao thông ở ngã tư đông nhất phố đang nằm trong tay bạn!
+
+Ngã Tư Giờ Cao Điểm (Honk Hour) là game điều khiển đèn giao thông mang đậm chất phố phường Việt Nam: xe máy đi từng bầy, người chờ lâu thì bấm còi inh ỏi rồi vượt đèn đỏ, ba gác chở hàng chậm rì, xe cứu thương hú còi xin đường và cả đàn vịt thong thả băng qua vạch kẻ. Nhiệm vụ của bạn: cho càng nhiều xe qua càng tốt mà không để ai đâm nhau.
+
+🚦 CÁCH CHƠI
+• Chạm vào một hướng đường để đổi đèn đỏ ↔ xanh.
+• Mỗi ca dài 90 giây, đồng hồ chạy từ 17:00 tới 18:30.
+• Mỗi xe qua ngã tư được điểm: xe máy, xe đạp 1 điểm, ô tô 2, ba gác 3, xe buýt và xe cứu thương 5.
+• Đạt đủ mốc điểm để qua ca và nhận tới 3 sao.
+• Hai dòng xe cắt nhau là “RẦM!”, mất 1 tim. Hết 3 tim là thua ca.
+
+🛵 6 LOẠI XE
+Xe máy, xe đạp, ô tô, xe ba gác, xe buýt và xe cứu thương. Mỗi loại có tốc độ và khoảng phanh riêng: xe máy lao nhanh theo bầy, xe buýt dài và chậm, ba gác bò từng chút một.
+
+🗺️ CÀNG LÊN CA CÀNG ĐÔNG
+• Bắt đầu với đường một chiều, rồi lên ngã ba và ngã tư đông nghẹt.
+• Từ ca 10, xe rẽ trái dừng chờ ngay giữa ngã tư.
+• Từ ca 12, xe cứu thương hú còi: chặn nó quá lâu là mất tim.
+• Từ ca 16, đàn vịt băng qua đường làm cả dòng xe đứng hình.
+• Số ca không giới hạn, ca nào cũng chơi lại được để kiếm đủ 3 sao.
+
+📯 TRỢ GIÚP
+• Còi: thổi một tiếng, mọi xe trong ngã tư được miễn va chạm 2,5 giây. Mỗi ca có 1 lượt sẵn.
+• Hồi sinh: tiếp tục ca đang chơi dở với 1 tim.
+• Bỏ qua ca: dành cho ca quá khó sau nhiều lần thử.
+
+✨ ĐIỂM NỔI BẬT
+• Chơi một ngón tay, mỗi ca chỉ 90 giây, hợp lúc rảnh tay.
+• Chơi offline hoàn toàn, không cần mạng, không cần tài khoản.
+• Trời chuyển dần từ nắng chiều sang hoàng hôn, xe bật đèn pha, đèn đường sáng lên.
+• Âm thanh còi xe, tiếng vịt kêu vui tai; có rung phản hồi (bật/tắt trong Cài đặt).
+• Hỗ trợ Tiếng Việt và English.
+
+Trò chơi có quảng cáo. Bạn có thể mua gói “Xoá quảng cáo” một lần trong ứng dụng để bỏ quảng cáo và dùng trợ giúp mà không cần xem video.
