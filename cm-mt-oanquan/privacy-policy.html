@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ô Ăn Quan – Giới thiệu & Chính sách bảo mật</title>
+<meta name="description" content="Giới thiệu, mô tả Google Play và Chính sách bảo mật của trò chơi Ô Ăn Quan – Mancala: O An Quan &amp; Kalah (cm.mt.oanquan).">
+<meta name="author" content="MT Games">
+<meta name="theme-color" content="#4a2e18">
+<meta property="og:title" content="Ô Ăn Quan – Cờ Dân Gian Việt">
+<meta property="og:description" content="Trò chơi ô ăn quan đúng luật dân gian: đấu với 4 đối thủ trong làng hoặc 2 người cùng máy. Có thêm luật Mancala Kalah. Chơi offline.">
+<meta property="og:image" content="feature-image.png">
+<link rel="icon" type="image/png" href="playstore-app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+	--bg: #f7ecd6;
+	--bg-2: #f3e3c3;
+	--card: #fffaf0;
+	--card-2: #fbf1dc;
+	--line: #e6cfa6;
+	--text: #3e2723;
+	--muted: #6d5a4c;
+	--navy: #4a2e18;
+	--sun: #d84315;
+	--sun-soft: rgba(216, 67, 21, 0.11);
+	--red: #d23b2e;
+	--red-soft: rgba(210, 59, 46, 0.11);
+	--leaf: #2e7d32;
+	--leaf-soft: rgba(67, 160, 71, 0.13);
+	--gold: #c8902c;
+	--gold-soft: rgba(232, 163, 23, 0.15);
+	--radius: 22px;
+	--radius-sm: 12px;
+	--shadow: 0 18px 46px rgba(74, 46, 24, 0.16);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+	font-family: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	background:
+		radial-gradient(1100px 560px at 90% -12%, rgba(216, 67, 21, 0.22), transparent 62%),
+		radial-gradient(900px 500px at -12% 26%, rgba(67, 160, 71, 0.08), transparent 60%),
+		var(--bg);
+	color: var(--text);
+	line-height: 1.7;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+a { color: #b3360f; text-underline-offset: 3px; }
+a:hover { color: var(--red); }
+code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.86em;
+	background: rgba(74, 46, 24, 0.06);
+	border: 1px solid var(--line);
+	padding: 0.08rem 0.4rem;
+	border-radius: 6px;
+	word-break: break-all;
+}
+td code { word-break: normal; overflow-wrap: anywhere; }
+
+/* ---------- Nav ---------- */
+.top-nav {
+	position: sticky; top: 0; z-index: 50;
+	background: rgba(74, 46, 24, 0.94);
+	backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+	box-shadow: 0 4px 20px rgba(74, 46, 24, 0.25);
+}
+.nav-inner {
+	max-width: 1000px; margin: 0 auto;
+	padding: 0.65rem 1rem;
+	display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; color: #fff; font-weight: 800; white-space: nowrap; }
+.brand img { width: 36px; height: 36px; border-radius: 10px; box-shadow: 0 0 0 2px var(--sun); }
+.nav-links { display: flex; gap: 0.25rem; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+	display: block; white-space: nowrap;
+	color: #f1dfc4; text-decoration: none;
+	font-size: 0.86rem; font-weight: 600;
+	padding: 0.4rem 0.75rem; border-radius: 999px;
+	transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover { background: rgba(216, 67, 21, 0.22); color: #ffccb8; }
+
+/* ---------- Layout ---------- */
+.wrap { max-width: 1000px; margin: 0 auto; padding: 1.75rem 1rem 4rem; }
+
+/* ---------- Hero ---------- */
+.hero {
+	position: relative;
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: 28px;
+	overflow: hidden;
+	box-shadow: var(--shadow);
+	margin-bottom: 2rem;
+}
+.hero-banner { position: relative; aspect-ratio: 1024 / 500; max-height: 460px; width: 100%; overflow: hidden; background: #e9c99a; }
+.hero-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-banner::after {
+	content: ""; position: absolute; inset: 0;
+	background: linear-gradient(180deg, rgba(255, 250, 242, 0) 55%, rgba(255, 250, 242, 0.98) 100%);
+}
+.hero-body { position: relative; padding: 0 2rem 2rem; }
+.hero-head { display: flex; align-items: flex-end; gap: 1.4rem; margin-top: -64px; position: relative; z-index: 2; }
+.hero-icon {
+	width: 128px; height: 128px; flex-shrink: 0;
+	border-radius: 30px;
+	border: 4px solid var(--card);
+	box-shadow: 0 0 0 3px var(--sun), var(--shadow);
+	animation: sow 3.2s ease-in-out infinite;
+}
+@keyframes sow {
+	0%, 70%, 100% { transform: translateY(0) rotate(0); }
+	78% { transform: translateY(-10px) rotate(-3deg); }
+	86% { transform: translateY(0) rotate(0); }
+	91% { transform: translateY(-4px) rotate(1.5deg); }
+}
+.hero-title h1 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--navy); }
+.hero-title h1 .accent { color: var(--sun); }
+.hero-title .pkg { margin-top: 0.4rem; display: inline-block; }
+.hero-lead { margin-top: 1.3rem; font-size: 1.06rem; color: var(--muted); max-width: 800px; }
+.hero-lead strong { color: var(--text); }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+.chip {
+	display: inline-flex; align-items: center; gap: 0.35rem;
+	font-size: 0.82rem; font-weight: 700;
+	padding: 0.35rem 0.8rem; border-radius: 999px;
+	border: 1px solid transparent;
+}
+.chip.sun { background: var(--sun-soft); color: #b3360f; border-color: rgba(216, 67, 21, 0.35); }
+.chip.leaf { background: var(--leaf-soft); color: var(--leaf); border-color: rgba(67, 160, 71, 0.3); }
+.chip.red { background: var(--red-soft); color: var(--red); border-color: rgba(210, 59, 46, 0.28); }
+.chip.gold { background: var(--gold-soft); color: #9a6a00; border-color: rgba(232, 163, 23, 0.35); }
+.chip.navy { background: rgba(74, 46, 24, 0.08); color: var(--navy); border-color: rgba(74, 46, 24, 0.2); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px dashed var(--line); }
+.btn {
+	display: inline-flex; align-items: center; gap: 0.45rem;
+	font: inherit; font-size: 0.92rem; font-weight: 800;
+	padding: 0.7rem 1.3rem; border-radius: 14px;
+	text-decoration: none; cursor: pointer; border: none;
+	transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+}
+.btn-primary { background: var(--sun); color: #fff; box-shadow: 0 6px 22px rgba(216, 67, 21, 0.35); }
+.btn-primary:hover { transform: translateY(-2px); color: #fff; box-shadow: 0 10px 28px rgba(216, 67, 21, 0.45); }
+.btn-ghost { background: transparent; color: var(--navy); border: 1px solid var(--line); }
+.btn-ghost:hover { border-color: var(--sun); color: #b3360f; }
+
+/* ---------- Sections ---------- */
+.section {
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: 2rem;
+	margin-bottom: 1.6rem;
+	box-shadow: 0 6px 24px rgba(74, 46, 24, 0.06);
+}
+.sec-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.4rem; }
+.sec-icon {
+	width: 48px; height: 48px; flex-shrink: 0;
+	display: grid; place-items: center;
+	font-size: 1.45rem;
+	border-radius: 14px;
+	background: var(--sun-soft);
+	border: 1px solid rgba(216, 67, 21, 0.3);
+}
+.sec-head h2 { font-size: 1.45rem; font-weight: 800; line-height: 1.25; color: var(--navy); }
+.sec-head p { font-size: 0.88rem; color: var(--muted); }
+.section > p, .article > p { color: var(--muted); margin-bottom: 0.9rem; }
+.section p strong, .article strong { color: var(--text); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+.tile {
+	background: var(--card-2);
+	border: 1px solid var(--line);
+	border-radius: 18px;
+	padding: 1.2rem;
+	transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.tile:hover { transform: translateY(-3px); border-color: rgba(216, 67, 21, 0.6); box-shadow: 0 10px 26px rgba(216, 67, 21, 0.16); }
+.tile .emo { font-size: 1.9rem; line-height: 1; }
+.tile h3 { font-size: 1.02rem; font-weight: 800; margin: 0.6rem 0 0.3rem; color: var(--navy); }
+.tile p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+.tile .gest {
+	display: inline-block; margin-top: 0.55rem;
+	font-size: 0.76rem; font-weight: 800; letter-spacing: 0.03em;
+	padding: 0.15rem 0.55rem; border-radius: 8px;
+	background: var(--navy); color: #fff;
+}
+
+.roster { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+.roster span {
+	font-size: 0.82rem; font-weight: 600;
+	padding: 0.3rem 0.7rem; border-radius: 10px;
+	background: #fff; border: 1px solid var(--line);
+}
+.sub-h { font-size: 1.02rem; font-weight: 800; margin: 1.6rem 0 0.2rem; color: var(--navy); }
+
+/* ---------- Store copy ---------- */
+.lang-tabs { display: inline-flex; gap: 0.3rem; padding: 0.3rem; border-radius: 14px; background: var(--bg-2); border: 1px solid var(--line); margin-bottom: 1.1rem; }
+.lang-tabs button {
+	font: inherit; font-size: 0.86rem; font-weight: 800;
+	padding: 0.4rem 1rem; border-radius: 10px; border: none; cursor: pointer;
+	background: transparent; color: var(--muted);
+}
+.lang-tabs button[aria-selected="true"] { background: var(--navy); color: #fff; }
+.lang-pane[hidden] { display: none; }
+.copy-block {
+	background: var(--card-2);
+	border: 1px solid var(--line);
+	border-radius: 18px;
+	padding: 1.2rem;
+	margin-bottom: 1.1rem;
+}
+.copy-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem; }
+.copy-label { font-weight: 800; color: var(--navy); display: flex; align-items: center; gap: 0.45rem; }
+.copy-meta { display: flex; align-items: center; gap: 0.5rem; }
+.count {
+	font-size: 0.76rem; font-weight: 700; color: var(--muted);
+	background: rgba(74, 46, 24, 0.06); padding: 0.15rem 0.55rem; border-radius: 999px;
+}
+.count.ok { color: var(--leaf); }
+.count.over { color: var(--red); }
+.copy-btn {
+	font: inherit; font-size: 0.78rem; font-weight: 800;
+	color: var(--navy); background: #fff;
+	border: 1px solid var(--line); border-radius: 10px;
+	padding: 0.32rem 0.8rem; cursor: pointer;
+	transition: all 0.2s;
+}
+.copy-btn:hover { border-color: var(--sun); color: #b3360f; }
+.copy-btn.done { background: var(--leaf); border-color: var(--leaf); color: #fff; }
+.copy-text {
+	background: #fff;
+	border: 1px solid var(--line);
+	border-radius: var(--radius-sm);
+	padding: 1rem 1.1rem;
+	font-size: 0.93rem; line-height: 1.65;
+	white-space: pre-line; word-break: break-word;
+	color: #3e2723;
+}
+.copy-text.big { max-height: 480px; overflow-y: auto; }
+
+/* ---------- Policy ---------- */
+.meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; }
+.summary {
+	display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;
+	margin: 1.2rem 0 0.4rem;
+}
+.summary div {
+	background: var(--leaf-soft); border: 1px solid rgba(67, 160, 71, 0.28);
+	border-radius: 14px; padding: 0.85rem 1rem;
+	font-size: 0.88rem; color: var(--text); font-weight: 600;
+}
+.summary div b { display: block; color: var(--leaf); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.15rem; }
+.article { padding-top: 1.6rem; margin-top: 1.6rem; border-top: 1px dashed var(--line); }
+.article h3 { display: flex; align-items: center; gap: 0.6rem; font-size: 1.12rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--navy); }
+.article h3 .num {
+	width: 30px; height: 30px; flex-shrink: 0;
+	display: grid; place-items: center;
+	border-radius: 9px; font-size: 0.85rem;
+	background: var(--sun); color: #fff;
+}
+.article ul, .article ol { padding-left: 1.25rem; color: var(--muted); margin-bottom: 0.9rem; }
+.article li { margin-bottom: 0.45rem; }
+.article li::marker { color: var(--sun); }
+
+.table-wrap { overflow-x: auto; margin: 0.6rem 0 1.1rem; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 620px; }
+th, td { text-align: left; vertical-align: top; padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--line); }
+th { background: var(--navy); color: #fff; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+tr:last-child td { border-bottom: none; }
+td { color: var(--muted); }
+td:first-child { color: var(--text); font-weight: 600; }
+.tag { display: inline-block; font-size: 0.74rem; font-weight: 800; padding: 0.1rem 0.5rem; border-radius: 6px; white-space: nowrap; }
+.tag.yes { background: var(--red-soft); color: var(--red); }
+.tag.no { background: var(--leaf-soft); color: var(--leaf); }
+.tag.info { background: var(--gold-soft); color: #9a6a00; }
+
+.steps { list-style: none; padding: 0 !important; counter-reset: s; }
+.steps li {
+	counter-increment: s;
+	position: relative; padding: 0.85rem 1rem 0.85rem 3.2rem !important;
+	background: var(--card-2); border: 1px solid var(--line); border-radius: 14px;
+}
+.steps li::before {
+	content: counter(s);
+	position: absolute; left: 0.9rem; top: 0.85rem;
+	width: 26px; height: 26px; border-radius: 8px;
+	display: grid; place-items: center;
+	background: var(--leaf); color: #fff; font-weight: 900; font-size: 0.8rem;
+}
+.note {
+	background: var(--gold-soft); border: 1px solid rgba(232, 163, 23, 0.35);
+	border-radius: 14px; padding: 0.9rem 1rem; color: var(--text); font-size: 0.9rem;
+	margin: 0.6rem 0 1rem;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+	text-align: center;
+	background:
+		radial-gradient(600px 220px at 50% 0%, rgba(216, 67, 21, 0.32), transparent 70%),
+		var(--navy);
+	border-color: var(--navy);
+	color: #fff;
+}
+.contact h2 { font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem; }
+.contact p { color: #f1dfc4; max-width: 620px; margin: 0 auto 1.3rem; }
+.mail {
+	display: inline-flex; align-items: center; gap: 0.55rem;
+	font-size: 1.05rem; font-weight: 800; text-decoration: none;
+	color: #fff; background: var(--sun);
+	padding: 0.8rem 1.5rem; border-radius: 16px;
+	box-shadow: 0 0 30px rgba(216, 67, 21, 0.45);
+	word-break: break-all;
+}
+.mail:hover { color: #fff; transform: translateY(-2px); }
+
+footer { text-align: center; color: var(--muted); font-size: 0.82rem; padding: 0 1rem 2.5rem; }
+footer p + p { margin-top: 0.3rem; }
+
+@media (max-width: 640px) {
+	.brand span { display: none; }
+	.hero-body { padding: 0 1.1rem 1.4rem; }
+	.hero-head { flex-direction: column; align-items: flex-start; gap: 0.8rem; margin-top: -52px; }
+	.hero-icon { width: 96px; height: 96px; border-radius: 24px; }
+	.section { padding: 1.4rem 1.1rem; }
+	.sec-head h2 { font-size: 1.22rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+	* { animation: none !important; transition: none !important; }
+	html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+	<div class="nav-inner">
+		<a class="brand" href="#top"><img src="playstore-app-icon.png" alt=""><span>Ô Ăn Quan</span></a>
+		<ul class="nav-links">
+			<li><a href="#gioi-thieu">Giới thiệu</a></li>
+			<li><a href="#play-store">Mô tả Play Store</a></li>
+			<li><a href="#quyen-sdk">Quyền & SDK</a></li>
+			<li><a href="#bao-mat">Bảo mật</a></li>
+			<li><a href="#xoa-du-lieu">Xoá dữ liệu</a></li>
+			<li><a href="#lien-he">Liên hệ</a></li>
+		</ul>
+	</div>
+</nav>
+
+<main class="wrap" id="top">
+
+	<!-- HERO -->
+	<header class="hero">
+		<div class="hero-banner">
+			<img src="feature-image.png" alt="Ông và cháu ngồi trên sân gạch đỏ trước đình làng, dưới gốc đa, chơi ô ăn quan trên bàn kẻ phấn" width="1024" height="500">
+		</div>
+		<div class="hero-body">
+			<div class="hero-head">
+				<img class="hero-icon" src="playstore-app-icon.png" alt="Biểu tượng ứng dụng Ô Ăn Quan: bàn gỗ với viên quan đen lớn và các viên sỏi" width="128" height="128">
+				<div class="hero-title">
+					<h1>Ô Ăn Quan <span class="accent">· Mancala</span></h1>
+					<code class="pkg">cm.mt.oanquan</code>
+				</div>
+			</div>
+			<p class="hero-lead">
+				Trưa hè, sân đình lát gạch đỏ, mấy nét phấn trắng kẻ thành <strong>hai hàng năm ô và hai ô quan bán nguyệt</strong>, một nắm sỏi và hai viên đá to làm quan. <strong>Ô Ăn Quan</strong> đưa trò chơi dân gian ấy lên điện thoại đúng luật truyền thống: <strong>rải từng viên, bốc dây, ăn liên, ăn quan</strong>. Đấu với 4 đối thủ trong làng từ Cu Tí tới Ông Đồ, hoặc đặt máy giữa bàn để <strong>hai người cùng chơi</strong>. Có thêm luật <strong>Mancala Kalah</strong> phổ biến trên thế giới.
+			</p>
+			<div class="chips">
+				<span class="chip sun">🪨 Cờ dân gian Việt</span>
+				<span class="chip red">👴 4 đối thủ · 👫 2 người</span>
+				<span class="chip leaf">📴 Chơi offline</span>
+				<span class="chip leaf">🙅 Không cần tài khoản</span>
+				<span class="chip navy">🇻🇳 Tiếng Việt · English</span>
+			</div>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=cm.mt.oanquan">▶ Xem trên Google Play</a>
+				<a class="btn btn-ghost" href="#bao-mat">🔒 Đọc Chính sách bảo mật</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- GIỚI THIỆU -->
+	<section class="section" id="gioi-thieu">
+		<div class="sec-head">
+			<div class="sec-icon">🪨</div>
+			<div>
+				<h2>Giới thiệu trò chơi</h2>
+				<p>Trò chơi của ông bà, nay trong túi áo</p>
+			</div>
+		</div>
+		<p>
+			<strong>Ô Ăn Quan</strong> (tên tiếng Anh <strong>Mancala: O An Quan &amp; Kalah</strong>) là trò chơi chiến thuật theo lượt cho hai người. Mỗi lượt bạn chọn một ô dân bên mình và hướng rải; quân được rải từng viên quanh bàn, gặp ô có quân thì bốc rải tiếp, gặp ô trống rồi tới ô có quân thì ăn. Ăn được ô quan là thêm 10 điểm. Hết hai quan thì thu quân, ai nhiều điểm hơn thắng.
+		</p>
+		<div class="grid">
+			<div class="tile">
+				<div class="emo">👦</div>
+				<h3>Cu Tí</h3>
+				<p>Mới học chơi. Hợp để làm quen luật, thắng xong nhận con dấu đầu tiên.</p>
+				<span class="gest">+5 XU / VÁN THẮNG</span>
+			</div>
+			<div class="tile">
+				<div class="emo">👧</div>
+				<h3>Chị Mơ</h3>
+				<p>Biết ăn quân, bắt đầu có thử thách thật sự.</p>
+				<span class="gest">+10 XU / VÁN THẮNG</span>
+			</div>
+			<div class="tile">
+				<div class="emo">👨‍🌾</div>
+				<h3>Chú Tư</h3>
+				<p>Rất hay ăn liên, sơ hở một ô là mất cả dây quân.</p>
+				<span class="gest">+20 XU / VÁN THẮNG</span>
+			</div>
+			<div class="tile">
+				<div class="emo">👴</div>
+				<h3>Ông Đồ</h3>
+				<p>Cao thủ trong làng, tính trước nhiều nước. Thắng được ông là đáng nể.</p>
+				<span class="gest">+40 XU / VÁN THẮNG</span>
+			</div>
+		</div>
+
+		<h3 class="sub-h">Luật Ô Ăn Quan trong một phút</h3>
+		<div class="roster">
+			<span>🟫 10 ô dân × 5 dân, 2 ô quan × 1 quan</span>
+			<span>↔️ Chọn ô bên mình, rải sang trái hoặc phải</span>
+			<span>🔁 Ô kế có quân: bốc rải tiếp</span>
+			<span>🍽️ Ô trống rồi ô có quân: ăn, ăn liên được</span>
+			<span>👑 Ăn quan = 10 điểm (tuỳ chọn 5)</span>
+			<span>⛔ Gặp ô quan còn quân hoặc 2 ô trống: mất lượt</span>
+			<span>🤝 Hết dân: rải lại 5 dân, thiếu thì vay</span>
+			<span>🏁 Hết hai quan: thu quân, đếm điểm</span>
+		</div>
+		<h3 class="sub-h">Chế độ chơi</h3>
+		<div class="roster">
+			<span>🤖 Chơi với máy, 4 mức độ</span>
+			<span>👫 Hai người cùng máy, khung đối diện xoay ngược</span>
+			<span>🌍 Luật Mancala Kalah: 6 hố, đi tiếp khi vào kho</span>
+			<span>📖 Bài học tương tác 1 phút cho từng luật</span>
+		</div>
+		<h3 class="sub-h">Cửa hàng & con dấu (chỉ đổi hình, không đổi độ khó)</h3>
+		<div class="roster">
+			<span>🪨 4 bộ quân: sỏi suối, hạt me, vỏ ốc, bi ve</span>
+			<span>🪵 4 mặt bàn: bàn gỗ, sân gạch vẽ phấn, phiến đá, sơn mài</span>
+			<span>🔴 8 con dấu: thắng từng đối thủ ở mỗi luật mà không dùng Gợi ý</span>
+			<span>🎬 Gợi ý, Đi lại, ×2 xu cuối ván</span>
+		</div>
+	</section>
+
+	<!-- PLAY STORE -->
+	<section class="section" id="play-store">
+		<div class="sec-head">
+			<div class="sec-icon">🛒</div>
+			<div>
+				<h2>Thông tin niêm yết Google Play</h2>
+				<p>Tên ứng dụng ≤ 30 ký tự · Mô tả ngắn ≤ 80 ký tự · Mô tả chi tiết ≤ 4000 ký tự</p>
+			</div>
+		</div>
+
+		<div class="lang-tabs" role="tablist">
+			<button type="button" role="tab" aria-selected="true" data-lang="vi">🇻🇳 Tiếng Việt</button>
+			<button type="button" role="tab" aria-selected="false" data-lang="en">🇬🇧 English</button>
+		</div>
+
+		<div class="lang-pane" data-pane="vi">
+			<div class="copy-block">
+				<div class="copy-head">
+					<div class="copy-label">🏷️ Tên ứng dụng</div>
+					<div class="copy-meta"><span class="count" data-max="30"></span><button class="copy-btn" type="button">Sao chép</button></div>
+				</div>
+				<div class="copy-text">Ô Ăn Quan - Cờ Dân Gian Việt</div>
+			</div>
+
+			<div class="copy-block">
+				<div class="copy-head">
+					<div class="copy-label">✏️ Mô tả ngắn (Short description)</div>
+					<div class="copy-meta"><span class="count" data-max="80"></span><button class="copy-btn" type="button">Sao chép</button></div>
+				</div>
+				<div class="copy-text">Ô ăn quan với máy 4 cấp hoặc 2 người cùng máy, thêm luật Kalah. Chơi offline.</div>
+			</div>
+
+			<div class="copy-block">
+				<div class="copy-head">
+					<div class="copy-label">📄 Mô tả chi tiết (Full description)</div>
+					<div class="copy-meta"><span class="count" data-max="4000"></span><button class="copy-btn" type="button">Sao chép</button></div>
+				</div>
+				<div class="copy-text big">Nhớ những buổi trưa ngồi xổm ngoài sân đình, kẻ phấn lên nền gạch, nhặt sỏi chơi ô ăn quan? 🪨
+
+Ô Ăn Quan đưa trò chơi dân gian quen thuộc của tuổi thơ Việt lên điện thoại, đúng luật truyền thống: hai hàng năm ô dân, hai ô quan bán nguyệt ở hai đầu, rải từng viên, bốc dây, ăn liên và ăn quan. Chơi với máy ở 4 mức độ, hoặc đặt điện thoại giữa bàn để hai người cùng chơi.
+
+🎯 ĐÚNG LUẬT Ô ĂN QUAN
+• Chọn một ô dân bên mình và hướng rải trái hoặc phải.
+• Rải xong, ô kế có quân thì bốc rải tiếp; gặp ô trống rồi tới ô có quân thì ăn, ăn liên nhiều ô.
+• Ăn ô quan được 10 điểm (tuỳ chọn 5 điểm), có luật “quan non” để bật tắt.
+• Hết dân thì lấy dân đã ăn rải lại, thiếu thì vay đối thủ.
+• Hết hai quan là thu quân, tính điểm, ai nhiều điểm hơn thắng.
+
+👴 4 ĐỐI THỦ TRONG LÀNG
+• Cu Tí: mới học chơi, hợp để làm quen.
+• Chị Mơ: biết ăn quân, bắt đầu có thử thách.
+• Chú Tư: rất hay ăn liên, sơ hở là mất quân.
+• Ông Đồ: cao thủ trong làng, tính trước nhiều nước.
+Thắng mỗi đối thủ (không dùng Gợi ý) để nhận con dấu đỏ và xu thưởng. Có 8 con dấu cho cả hai luật.
+
+👫 HAI NGƯỜI CÙNG MÁY
+Đặt điện thoại nằm giữa hai người, mỗi người một hàng ô, khung của người đối diện được xoay ngược để dễ nhìn. Chọn ai đi trước hoặc luân phiên mỗi ván.
+
+🌍 THÊM LUẬT MANCALA (KALAH)
+Biến thể mancala phổ biến trên thế giới: 6 hố mỗi bên, hạt cuối rơi vào kho mình thì được đi tiếp, rơi vào hố trống thì bắt quân đối diện.
+
+📖 HỌC NHANH TRONG 1 PHÚT
+Bài học tương tác từng bước, chơi thử từng tình huống: bốc dây, ăn liên, ăn quan, mất lượt, rải lại khi hết dân. Luật chơi đầy đủ luôn có trong menu.
+
+🛍️ CỬA HÀNG QUÂN VÀ BÀN
+Chơi để nhận xu, đổi lấy:
+• 4 bộ quân: sỏi suối, hạt me, vỏ ốc, bi ve.
+• 4 mặt bàn: bàn gỗ, sân gạch vẽ phấn, phiến đá, sơn mài.
+Đồ trong cửa hàng chỉ đổi hình, không làm máy đánh dễ hơn.
+
+✨ ĐIỂM NỔI BẬT
+• Hình vẽ tay mang không khí làng quê Việt.
+• Gợi ý nước đi và Đi lại khi lỡ tay.
+• Thoát giữa chừng vẫn tiếp tục ván cũ.
+• Chỉnh tốc độ rải: chậm, vừa, nhanh.
+• Chơi offline hoàn toàn, không cần tài khoản.
+• Hỗ trợ Tiếng Việt và English.
+
+Một trò chơi trí tuệ nhẹ nhàng cho mọi lứa tuổi: dạy con trẻ trò chơi của ông bà, hay rủ bạn bè làm một ván ôn kỷ niệm.
+
+Trò chơi có quảng cáo. Gói “Bỏ quảng cáo” mua một lần trong ứng dụng sẽ tắt quảng cáo xen giữa ván và cho dùng Gợi ý, Đi lại, ×2 xu mà không cần xem video.</div>
+			</div>
+		</div>
+
+		<div class="lang-pane" data-pane="en" hidden>
+			<div class="copy-block">
+				<div class="copy-head">
+					<div class="copy-label">🏷️ App name</div>
+					<div class="copy-meta"><span class="count" data-max="30"></span><button class="copy-btn" type="button">Sao chép</button></div>
+				</div>
+				<div class="copy-text">Mancala: O An Quan &amp; Kalah</div>
+			</div>
+
+			<div class="copy-block">
+				<div class="copy-head">
+					<div class="copy-label">✏️ Short description</div>
+					<div class="copy-meta"><span class="count" data-max="80"></span><button class="copy-btn" type="button">Sao chép</button></div>
+				</div>
+				<div class="copy-text">Classic Vietnamese O An Quan &amp; Kalah mancala. Play the AI or a friend, offline.</div>
+			</div>
+
+			<div class="copy-block">
+				<div class="copy-head">
+					<div class="copy-label">📄 Full description</div>
+					<div class="copy-meta"><span class="count" data-max="4000"></span><button class="copy-btn" type="button">Sao chép</button></div>
+				</div>
+				<div class="copy-text big">Remember drawing a board in chalk on the courtyard bricks and playing with pebbles all afternoon? 🪨
+
+Mancala: O An Quan &amp; Kalah brings O An Quan, the traditional Vietnamese mancala board game, to your phone with the real folk rules: two rows of five squares, a half-moon mandarin square at each end, sowing stone by stone, chain sowing, chain captures and capturing the mandarins. Play the computer at 4 levels, or lay your phone flat between two players.
+
+🎯 AUTHENTIC O AN QUAN RULES
+• Pick one of your squares and sow left or right.
+• If the next square has stones, pick them up and keep sowing; an empty square followed by stones is a capture, and captures can chain.
+• A mandarin is worth 10 points (5 optional), with an optional “young mandarin” rule.
+• Out of stones? Re-sow from your captures, or borrow from your opponent.
+• When both mandarins are gone, collect the board and count: most points wins.
+
+👴 4 VILLAGE OPPONENTS
+• Little Tí: just learning, perfect for your first games.
+• Sister Mơ: knows the basics.
+• Uncle Tư: loves chain captures, punishes every slip.
+• Master Đồ: the village master who thinks several moves ahead.
+Beat each opponent without hints to earn a red seal and bonus coins. 8 seals across both rule sets.
+
+👫 2 PLAYERS ON ONE PHONE
+Each player owns a row; the far player’s panel is flipped so both of you can read it. Choose who goes first or alternate every game.
+
+🌍 KALAH MANCALA INCLUDED
+The world’s most popular mancala variant: 6 pits per side, end in your store for an extra turn, land in an empty pit to capture the seeds opposite.
+
+📖 LEARN IN ONE MINUTE
+An interactive step-by-step lesson lets you try every situation: chain sowing, chain captures, mandarin captures, losing a turn, re-sowing. Full rules are always in the menu.
+
+🛍️ STONES AND BOARDS SHOP
+Earn coins by playing and unlock:
+• 4 stone sets: river pebbles, tamarind seeds, sea shells, glass marbles.
+• 4 boards: wooden board, chalk on bricks, stone slab, lacquer.
+Shop items are cosmetic only and never make the AI weaker.
+
+✨ HIGHLIGHTS
+• Hand-drawn Vietnamese village art.
+• Hints and Undo when you slip.
+• Leave mid-game and continue later.
+• Choose your sowing speed: slow, normal or fast.
+• Fully offline, no account needed.
+• Available in English and Vietnamese.
+
+A calm strategy board game for all ages: teach kids the game their grandparents played, or challenge a friend to a quick match.
+
+This game contains ads. A one-time “Remove Ads” purchase removes interstitial ads and lets you use Hint, Undo and ×2 coins without watching videos.</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- QUYỀN & SDK -->
+	<section class="section" id="quyen-sdk">
+		<div class="sec-head">
+			<div class="sec-icon">🧩</div>
+			<div>
+				<h2>Quyền ứng dụng & SDK bên thứ ba</h2>
+				<p>Danh sách lấy từ tệp AndroidManifest của bản build</p>
+			</div>
+		</div>
+		<p>Ô Ăn Quan <strong>không</strong> yêu cầu quyền nhạy cảm nào: không truy cập vị trí, danh bạ, máy ảnh, micro, ảnh, tệp hay nhật ký cuộc gọi của bạn, và không bao giờ hiện hộp xin quyền khi chơi. Mọi quyền dưới đây đều là quyền thông thường, được Android cấp tự động khi cài đặt; phần lớn do SDK quảng cáo và thanh toán của Google khai báo.</p>
+
+		<div class="table-wrap">
+			<table>
+				<thead>
+					<tr><th>Quyền Android</th><th>Khai báo bởi</th><th>Mục đích</th></tr>
+				</thead>
+				<tbody>
+					<tr><td><code>android.<wbr>permission.<wbr>INTERNET</code></td><td>Ứng dụng, AdMob</td><td>Tải quảng cáo và kết nối Google Play Billing. Trò chơi vẫn chơi đầy đủ khi không có mạng.</td></tr>
+					<tr><td><code>android.<wbr>permission.<wbr>ACCESS_NETWORK_STATE</code></td><td>Ứng dụng, AdMob</td><td>Kiểm tra có mạng hay không trước khi tải quảng cáo, tránh gửi yêu cầu vô ích và tốn pin.</td></tr>
+					<tr><td><code>android.<wbr>permission.<wbr>VIBRATE</code></td><td>Ứng dụng</td><td>Rung nhẹ khi chọn ô, khi ăn quân và khi mua hoặc chọn đồ trong cửa hàng. Tắt được trong Cài đặt của game.</td></tr>
+					<tr><td><code>com.<wbr>google.<wbr>android.<wbr>gms.<wbr>permission.<wbr>AD_ID</code><br><code>android.<wbr>permission.<wbr>AD_ID</code></td><td>Google Mobile Ads SDK</td><td>Đọc Mã định danh quảng cáo (Advertising ID) để hiển thị quảng cáo, giới hạn tần suất, đo lường và chống gian lận.</td></tr>
+					<tr><td><code>com.<wbr>android.<wbr>vending.<wbr>BILLING</code></td><td>Google Play Billing</td><td>Thực hiện và khôi phục giao dịch mua “Bỏ quảng cáo” qua Google Play.</td></tr>
+					<tr><td><code>android.<wbr>permission.<wbr>WAKE_LOCK</code></td><td>Google Mobile Ads SDK (thư viện nền của Google)</td><td>Giữ thiết bị thức trong thời gian ngắn để thư viện của Google hoàn tất tác vụ nền (ví dụ gửi báo cáo quảng cáo).</td></tr>
+					<tr><td><code>android.<wbr>permission.<wbr>FOREGROUND_SERVICE</code></td><td>Thư viện nền của Google (WorkManager)</td><td>Cho phép thư viện của Google chạy tác vụ nền đã lên lịch theo quy định của Android. Ứng dụng không tự chạy dịch vụ nền.</td></tr>
+					<tr><td><code>android.<wbr>permission.<wbr>READ_BASIC_PHONE_STATE</code></td><td>Google Mobile Ads SDK</td><td>Đọc trạng thái mạng di động cơ bản (ví dụ loại mạng) để tối ưu tải quảng cáo. <strong>Không</strong> đọc số điện thoại, IMEI hay nội dung cuộc gọi.</td></tr>
+					<tr><td><code>cm.<wbr>mt.<wbr>oanquan.<wbr>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td><td>Thư viện AndroidX</td><td>Quyền nội bộ của chính ứng dụng, bảo vệ các bộ nhận sự kiện không cho ứng dụng khác gọi vào.</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h3 class="sub-h">SDK bên thứ ba được tích hợp</h3>
+		<div class="grid">
+			<div class="tile">
+				<div class="emo">📢</div>
+				<h3>Google Mobile Ads SDK (AdMob)</h3>
+				<p>Hiển thị quảng cáo banner, quảng cáo xen kẽ và quảng cáo có thưởng. <a href="https://policies.google.com/privacy">Chính sách quyền riêng tư của Google</a> · <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">Dữ liệu AdMob thu thập</a></p>
+			</div>
+			<div class="tile">
+				<div class="emo">🛡️</div>
+				<h3>Google User Messaging Platform (UMP)</h3>
+				<p>Hiện hộp hỏi ý kiến về quảng cáo cá nhân hoá cho người dùng ở EEA, Vương quốc Anh và Thuỵ Sĩ theo GDPR. <a href="https://developers.google.com/admob/android/privacy">Tìm hiểu thêm</a></p>
+			</div>
+			<div class="tile">
+				<div class="emo">💳</div>
+				<h3>Google Play Billing Library</h3>
+				<p>Xử lý giao dịch “Bỏ quảng cáo”. Thông tin thanh toán do Google Play quản lý, chúng tôi không nhận được. <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice">Thông báo bảo mật Google Payments</a></p>
+			</div>
+			<div class="tile">
+				<div class="emo">🎮</div>
+				<h3>Godot Engine</h3>
+				<p>Bộ máy trò chơi mã nguồn mở (giấy phép MIT). Máy đánh cờ chạy hoàn toàn trên điện thoại, không thu thập hay gửi dữ liệu nào ra ngoài.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- CHÍNH SÁCH BẢO MẬT -->
+	<section class="section" id="bao-mat">
+		<div class="sec-head">
+			<div class="sec-icon">🔒</div>
+			<div>
+				<h2>Chính sách bảo mật (Privacy Policy)</h2>
+				<p>Theo Chính sách dành cho nhà phát triển của Google Play</p>
+			</div>
+		</div>
+		<div class="meta-row">
+			<span class="chip sun">📅 Có hiệu lực từ: 21/11/2026</span>
+			<span class="chip leaf">👤 Nhà phát triển: MT Games</span>
+		</div>
+		<p>Chính sách này giải thích cách ứng dụng <strong>Ô Ăn Quan</strong> (tên tiếng Anh <strong>Mancala: O An Quan &amp; Kalah</strong>, mã gói <code>cm.mt.oanquan</code>, sau đây gọi là “ứng dụng”) thu thập, sử dụng, chia sẻ và xoá dữ liệu. Khi cài đặt và sử dụng ứng dụng, bạn đồng ý với các nội dung dưới đây.</p>
+
+		<div class="summary">
+			<div><b>Tài khoản</b>Không cần đăng ký, không đăng nhập</div>
+			<div><b>Dữ liệu cá nhân</b>Chúng tôi không tự thu thập</div>
+			<div><b>Tiến trình chơi</b>Chỉ lưu trên máy của bạn</div>
+			<div><b>Bên thứ ba</b>Google AdMob & Google Play</div>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">1</span>Dữ liệu chúng tôi thu thập</h3>
+			<p>Chúng tôi (nhà phát triển) <strong>không có máy chủ</strong> và <strong>không tự thu thập</strong> bất kỳ thông tin nhận dạng cá nhân nào như họ tên, email, số điện thoại, vị trí, danh bạ, ảnh hay tệp.</p>
+			<p>Những dữ liệu sau được lưu <strong>cục bộ trên thiết bị</strong> của bạn để trò chơi hoạt động, không bao giờ gửi về cho chúng tôi:</p>
+			<ul>
+				<li>Tiến trình chơi: ván đang dở (để chơi tiếp), số xu, thành tích thắng/thua với từng đối thủ, con dấu đã nhận, bộ quân và mặt bàn đã mua và đang dùng, thống kê tổng số ván.</li>
+				<li>Cài đặt: âm thanh, nhạc, rung, ngôn ngữ, tốc độ rải, luật đang chọn, ai đi trước; đã xem bài học hay chưa.</li>
+				<li>Trạng thái đã mua “Bỏ quảng cáo” (để ứng dụng chạy đúng cả khi không có mạng), số lần mở ứng dụng và lựa chọn của bạn ở hộp mời đánh giá.</li>
+			</ul>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">2</span>Dữ liệu do SDK bên thứ ba thu thập</h3>
+			<p>Ứng dụng dùng <strong>Google Mobile Ads SDK (AdMob)</strong> để hiển thị quảng cáo. Khi quảng cáo được tải, SDK này có thể tự động thu thập và gửi về Google các dữ liệu sau:</p>
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr><th>Loại dữ liệu (theo Play Console)</th><th>Thu thập</th><th>Chia sẻ</th><th>Mục đích</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>Mã thiết bị hoặc mã khác: Advertising ID, App set ID</td><td><span class="tag yes">Có</span></td><td><span class="tag yes">Có</span></td><td>Quảng cáo hoặc tiếp thị, phân tích, chống gian lận</td></tr>
+						<tr><td>Hoạt động trong ứng dụng: lượt xem và lượt bấm quảng cáo</td><td><span class="tag yes">Có</span></td><td><span class="tag yes">Có</span></td><td>Quảng cáo hoặc tiếp thị, phân tích</td></tr>
+						<tr><td>Thông tin và hiệu suất ứng dụng: nhật ký sự cố, chẩn đoán</td><td><span class="tag yes">Có</span></td><td><span class="tag no">Không</span></td><td>Phân tích, khắc phục lỗi của SDK</td></tr>
+						<tr><td>Vị trí gần đúng (suy ra từ địa chỉ IP)</td><td><span class="tag info">Do Google xử lý</span></td><td><span class="tag no">Không</span></td><td>Chọn quảng cáo phù hợp khu vực, chống gian lận</td></tr>
+						<tr><td>Tiến trình chơi, xu, con dấu, cài đặt</td><td><span class="tag no">Không</span></td><td><span class="tag no">Không</span></td><td>Chỉ lưu trên thiết bị</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<p>Mọi dữ liệu SDK gửi đi đều được <strong>mã hoá khi truyền</strong> (HTTPS/TLS). Cách Google sử dụng dữ liệu được mô tả tại <a href="https://policies.google.com/technologies/partner-sites">Cách Google sử dụng thông tin từ các trang web và ứng dụng sử dụng dịch vụ của Google</a>.</p>
+			<p>Khi bạn mua “Bỏ quảng cáo”, giao dịch do <strong>Google Play</strong> xử lý. Chúng tôi chỉ nhận được xác nhận giao dịch thành công, không nhận số thẻ, tài khoản ngân hàng hay thông tin thanh toán nào của bạn.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">3</span>Cách dữ liệu được sử dụng</h3>
+			<ul>
+				<li>Lưu và khôi phục ván đang dở, xu, con dấu, đồ trong cửa hàng và cài đặt của bạn trên thiết bị.</li>
+				<li>Hiển thị quảng cáo: banner chỉ ở menu, chọn đối thủ, cửa hàng, luật chơi và cài đặt (<strong>không</strong> có trong lúc chơi), quảng cáo xen kẽ khi bấm Ván mới hoặc Menu sau khi hết ván (không quá thường xuyên), và quảng cáo có thưởng khi bạn tự chọn xem để dùng Gợi ý, Đi lại hoặc nhận ×2 xu.</li>
+				<li>Ghi nhớ bạn đã mua “Bỏ quảng cáo” để tắt quảng cáo và cho dùng Gợi ý, Đi lại, ×2 xu ngay.</li>
+				<li>Chúng tôi <strong>không</strong> bán dữ liệu, <strong>không</strong> dùng dữ liệu để lập hồ sơ cá nhân và <strong>không</strong> chia sẻ dữ liệu với bên nào khác ngoài các dịch vụ của Google nêu trên.</li>
+			</ul>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">4</span>Quảng cáo cá nhân hoá & quyền lựa chọn của bạn</h3>
+			<ul>
+				<li><strong>Người dùng ở EEA, Vương quốc Anh, Thuỵ Sĩ:</strong> lần đầu mở ứng dụng sẽ thấy hộp hỏi ý kiến (Google UMP). Bạn có thể đổi lựa chọn bất cứ lúc nào trong <strong>Cài đặt → Tuỳ chọn quảng cáo (GDPR)</strong> của game.</li>
+				<li><strong>Đặt lại hoặc xoá Mã định danh quảng cáo:</strong> trên Android, vào <strong>Cài đặt → Quyền riêng tư → Quảng cáo</strong> (hoặc <strong>Cài đặt → Google → Quảng cáo</strong>, tuỳ máy).</li>
+				<li><strong>Tắt hẳn quảng cáo:</strong> mua gói “Bỏ quảng cáo” một lần trong ứng dụng. Đã mua thì dùng nút <strong>Khôi phục mua hàng</strong> trong Cài đặt khi đổi máy.</li>
+			</ul>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">5</span>Lưu giữ và bảo mật dữ liệu</h3>
+			<p>Dữ liệu trò chơi nằm trong vùng lưu trữ riêng của ứng dụng trên thiết bị, ứng dụng khác không đọc được, và chỉ tồn tại tới khi bạn xoá dữ liệu hoặc gỡ ứng dụng. Ứng dụng tắt sao lưu tự động của Android, nên dữ liệu không được tải lên đám mây. Dữ liệu do Google thu thập được lưu giữ theo <a href="https://policies.google.com/technologies/retention">chính sách lưu giữ dữ liệu của Google</a>.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">6</span>Trẻ em</h3>
+			<p>Trò chơi có nội dung lành mạnh, phù hợp mọi lứa tuổi, nhưng <strong>không hướng tới trẻ em dưới 13 tuổi</strong> và chúng tôi không cố ý thu thập dữ liệu của trẻ em. Nếu bạn là phụ huynh và cho rằng con mình đã cung cấp dữ liệu qua ứng dụng, hãy liên hệ email bên dưới để được hỗ trợ.</p>
+		</div>
+
+		<div class="article">
+			<h3><span class="num">7</span>Thay đổi chính sách</h3>
+			<p>Chính sách có thể được cập nhật khi ứng dụng thêm tính năng hoặc khi Google Play thay đổi yêu cầu. Bản mới nhất luôn ở địa chỉ trang này, kèm ngày có hiệu lực ở đầu mục. Nếu thay đổi làm ảnh hưởng đáng kể tới cách xử lý dữ liệu, chúng tôi sẽ thông báo trong bản cập nhật ứng dụng.</p>
+		</div>
+	</section>
+
+	<!-- XOÁ DỮ LIỆU -->
+	<section class="section" id="xoa-du-lieu">
+		<div class="sec-head">
+			<div class="sec-icon">🗑️</div>
+			<div>
+				<h2>Yêu cầu xoá dữ liệu</h2>
+				<p>Bạn toàn quyền xoá dữ liệu của mình bất cứ lúc nào</p>
+			</div>
+		</div>
+		<p>Vì ứng dụng không có tài khoản và không có máy chủ, chúng tôi <strong>không giữ bản sao nào</strong> của dữ liệu trò chơi. Bạn có thể tự xoá toàn bộ ngay trên điện thoại:</p>
+		<ol class="steps article" style="border-top:none;margin-top:0;padding-top:0;">
+			<li><strong>Xoá dữ liệu trò chơi:</strong> vào Cài đặt Android → Ứng dụng → Ô Ăn Quan → Bộ nhớ → <strong>Xoá dữ liệu</strong>. Hoặc gỡ cài đặt ứng dụng.</li>
+			<li><strong>Xoá dữ liệu quảng cáo gắn với máy:</strong> vào Cài đặt Android → Quyền riêng tư → Quảng cáo → <strong>Xoá mã định danh quảng cáo</strong> (hoặc Đặt lại).</li>
+			<li><strong>Dữ liệu Google đã thu thập:</strong> quản lý và xoá tại <a href="https://myactivity.google.com/">Google My Activity</a> và <a href="https://myadcenter.google.com/">Google My Ad Center</a>.</li>
+		</ol>
+		<div class="note">⚠️ Xoá dữ liệu trò chơi sẽ mất vĩnh viễn xu, con dấu, thành tích, bộ quân và mặt bàn đã mua bằng xu, không khôi phục được. Riêng gói “Bỏ quảng cáo” đã mua bằng tiền vẫn lấy lại được bằng nút <strong>Khôi phục mua hàng</strong> trong Cài đặt của game.</div>
+		<p>Cần hỗ trợ thêm về dữ liệu? Gửi email tới <a href="mailto:minhthang0792@gmail.com?subject=%C3%94%20%C4%82n%20Quan%20-%20Y%C3%AAu%20c%E1%BA%A7u%20d%E1%BB%AF%20li%E1%BB%87u">minhthang0792@gmail.com</a>, chúng tôi phản hồi trong vòng 30 ngày.</p>
+	</section>
+
+	<!-- LIÊN HỆ -->
+	<section class="section contact" id="lien-he">
+		<h2>📬 Liên hệ nhà phát triển</h2>
+		<p>Góp ý về trò chơi, báo lỗi luật chơi hay câu hỏi về Chính sách bảo mật, hãy gửi thư cho chúng tôi. Mọi phản hồi đều được đọc.</p>
+		<a class="mail" href="mailto:minhthang0792@gmail.com?subject=%C3%94%20%C4%82n%20Quan">✉️ minhthang0792@gmail.com</a>
+	</section>
+</main>
+
+<footer>
+	<p>Ô Ăn Quan · Mancala: O An Quan &amp; Kalah · <code>cm.mt.oanquan</code></p>
+	<p>© 2026 MT Games. Mọi quyền được bảo lưu.</p>
+</footer>
+
+<script>
+(function () {
+	document.querySelectorAll('.copy-block').forEach(function (block) {
+		var textEl = block.querySelector('.copy-text');
+		var countEl = block.querySelector('.count');
+		var btn = block.querySelector('.copy-btn');
+		var text = textEl.textContent.trim();
+		var max = parseInt(countEl.getAttribute('data-max'), 10);
+		var len = Array.from(text).length;
+		countEl.textContent = len + ' / ' + max + ' ký tự';
+		countEl.classList.add(len <= max ? 'ok' : 'over');
+		btn.addEventListener('click', function () {
+			var done = function () {
+				btn.textContent = 'Đã chép ✓';
+				btn.classList.add('done');
+				setTimeout(function () { btn.textContent = 'Sao chép'; btn.classList.remove('done'); }, 1600);
+			};
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				navigator.clipboard.writeText(text).then(done, function () {});
+			}
+		});
+	});
+	var tabs = document.querySelectorAll('.lang-tabs button');
+	tabs.forEach(function (tab) {
+		tab.addEventListener('click', function () {
+			tabs.forEach(function (t) { t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+			document.querySelectorAll('.lang-pane').forEach(function (p) { p.hidden = p.getAttribute('data-pane') !== tab.getAttribute('data-lang'); });
+		});
+	});
+})();
+</script>
+</body>
+</html>
