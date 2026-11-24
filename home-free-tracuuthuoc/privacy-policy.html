@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tra Cứu Thuốc – Chính sách quyền riêng tư</title>
+<meta name="description" content="Giới thiệu, mô tả trên Google Play và chính sách quyền riêng tư của ứng dụng Tra Cứu Thuốc (home.free.tracuuthuoc).">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #2E7D32;
+    --brand-deep: #1B5E20;
+    --brand-ink: #0F3D14;
+    --mint: #E3F1E4;
+    --mint-2: #C8E6C9;
+    --bg: #F5F9F4;
+    --card: #FFFFFF;
+    --ink: #1A1F1A;
+    --muted: #55615A;
+    --line: #DCE6DB;
+    --warn-bg: #FFF1D6;
+    --warn-ink: #7A4A00;
+    --ksdb: #6A1B9A;
+    --radius: 18px;
+    --shadow: 0 1px 2px rgba(16, 40, 18, .06), 0 8px 24px rgba(16, 40, 18, .06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --brand: #81C784;
+      --brand-deep: #A5D6A7;
+      --brand-ink: #C8E6C9;
+      --mint: #1E3A20;
+      --mint-2: #2C4D2E;
+      --bg: #0F140F;
+      --card: #171E17;
+      --ink: #E4EAE3;
+      --muted: #A3B0A5;
+      --line: #2A352A;
+      --warn-bg: #3D2E10;
+      --warn-ink: #FFCC80;
+      --ksdb: #E1BEE7;
+      --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --brand: #81C784; --brand-deep: #A5D6A7; --brand-ink: #C8E6C9;
+    --mint: #1E3A20; --mint-2: #2C4D2E; --bg: #0F140F; --card: #171E17;
+    --ink: #E4EAE3; --muted: #A3B0A5; --line: #2A352A;
+    --warn-bg: #3D2E10; --warn-ink: #FFCC80; --ksdb: #E1BEE7; --shadow: none;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--brand); text-underline-offset: 3px; }
+  img { max-width: 100%; display: block; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    color: #fff;
+    background: linear-gradient(160deg, #2E7D32 0%, #1B5E20 60%, #0F3D14 100%);
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(600px 300px at 90% -10%, rgba(200, 230, 201, .25), transparent 60%),
+      radial-gradient(500px 260px at -10% 110%, rgba(200, 230, 201, .18), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative; z-index: 1;
+    max-width: 1040px; margin: 0 auto;
+    padding: 40px 16px 0;
+    display: grid; gap: 28px;
+  }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .brand img {
+    width: 76px; height: 76px; border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+  }
+  .brand h1 { margin: 0; font-size: clamp(28px, 6vw, 40px); line-height: 1.15; font-weight: 800; letter-spacing: -.01em; }
+  .brand p { margin: 4px 0 0; opacity: .85; font-size: 15px; }
+  .tagline { margin: 0; font-size: clamp(17px, 3.4vw, 20px); max-width: 680px; opacity: .95; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .pills li {
+    font-size: 13px; font-weight: 600;
+    padding: 6px 12px; border-radius: 999px;
+    background: rgba(255, 255, 255, .14);
+    border: 1px solid rgba(255, 255, 255, .22);
+  }
+  .feature {
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    box-shadow: 0 -4px 40px rgba(0, 0, 0, .25);
+    aspect-ratio: 1024 / 500;
+    background: #1B5E20;
+  }
+  .feature img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ---------- Layout ---------- */
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  nav.toc {
+    position: sticky; top: 0; z-index: 5;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.toc ul {
+    display: flex; gap: 6px; margin: 0 auto; padding: 10px 16px;
+    max-width: 1040px; list-style: none; overflow-x: auto; scrollbar-width: none;
+  }
+  nav.toc ul::-webkit-scrollbar { display: none; }
+  nav.toc a {
+    display: block; white-space: nowrap; text-decoration: none;
+    font-size: 14px; font-weight: 600; color: var(--muted);
+    padding: 6px 12px; border-radius: 999px;
+  }
+  nav.toc a:hover { background: var(--mint); color: var(--brand-ink); }
+
+  main { padding: 28px 0 48px; }
+  section { margin: 0 0 28px; scroll-margin-top: 64px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+  }
+  h2 {
+    margin: 0 0 4px; font-size: clamp(22px, 4vw, 26px); line-height: 1.25; font-weight: 800;
+    color: var(--brand-ink);
+  }
+  .eyebrow {
+    margin: 0 0 14px; color: var(--muted); font-size: 14px;
+  }
+  h3 { margin: 22px 0 8px; font-size: 18px; font-weight: 700; }
+  p { margin: 0 0 12px; }
+  ul.list { margin: 0 0 12px; padding-left: 20px; }
+  ul.list li { margin: 4px 0; }
+  .grid-3 { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .tile {
+    background: var(--mint); border-radius: 14px; padding: 16px;
+  }
+  .tile b { display: block; color: var(--brand-ink); margin-bottom: 4px; }
+  .tile span { color: var(--muted); font-size: 14px; }
+
+  .notice {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: var(--warn-bg); color: var(--warn-ink);
+    border-radius: 14px; padding: 14px 16px; margin: 16px 0 0;
+    font-size: 15px;
+  }
+  .notice svg { flex: none; margin-top: 3px; }
+
+  /* Store text blocks */
+  .store-text {
+    position: relative;
+    background: var(--bg);
+    border: 1px dashed var(--line);
+    border-radius: 14px;
+    padding: 16px;
+    white-space: pre-wrap;
+    font-size: 15px;
+    margin: 0;
+  }
+  .meta-row {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 8px; margin: 18px 0 8px;
+  }
+  .meta-row h3 { margin: 0; }
+  .count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .count.ok::before { content: "✓ "; color: var(--brand); font-weight: 700; }
+  button.copy {
+    font: inherit; font-size: 13px; font-weight: 600;
+    padding: 6px 12px; border-radius: 999px; cursor: pointer;
+    background: var(--mint); color: var(--brand-ink); border: 1px solid var(--mint-2);
+  }
+  button.copy:hover { filter: brightness(.97); }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin: 8px 0 12px; border: 1px solid var(--line); border-radius: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 560px; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  th { background: var(--mint); color: var(--brand-ink); font-weight: 700; font-size: 14px; }
+  tr:last-child td { border-bottom: 0; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px;
+    background: var(--mint); color: var(--brand-ink);
+    padding: 2px 6px; border-radius: 6px; word-break: break-all;
+  }
+  .tag {
+    display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 6px;
+    background: var(--mint); color: var(--brand-ink); white-space: nowrap;
+  }
+  .tag.sdk { background: color-mix(in srgb, var(--ksdb) 14%, transparent); color: var(--ksdb); }
+
+  .contact {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+    background: linear-gradient(135deg, #2E7D32, #1B5E20); color: #fff;
+    border-radius: var(--radius); padding: 24px;
+  }
+  .contact h2 { color: #fff; }
+  .contact p { margin: 0; opacity: .9; }
+  .contact a.btn {
+    background: #fff; color: #1B5E20; text-decoration: none; font-weight: 700;
+    padding: 12px 18px; border-radius: 999px; white-space: nowrap;
+  }
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 0 16px 40px; }
+
+  @media (max-width: 560px) {
+    .card { padding: 18px; }
+    .brand img { width: 64px; height: 64px; border-radius: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand">
+      <img src="icon.png" alt="Biểu tượng ứng dụng Tra Cứu Thuốc" width="76" height="76">
+      <div>
+        <h1>Tra Cứu Thuốc</h1>
+        <p>Ứng dụng Android · <code style="background:rgba(255,255,255,.14);color:#fff;white-space:nowrap;word-break:normal">home.free.tracuuthuoc</code></p>
+      </div>
+    </div>
+    <p class="tagline">Tra số đăng ký, hạn lưu hành, thuốc kê đơn và thuốc kiểm soát đặc biệt chỉ trong vài giây, dành cho nhà thuốc, quầy thuốc và mọi người dùng tại Việt Nam.</p>
+    <ul class="pills">
+      <li>Số đăng ký 12 chữ số &amp; dạng cũ</li>
+      <li>Còn hạn / hết hạn / đã rút số</li>
+      <li>Kê đơn · Thuốc KSĐB</li>
+      <li>Chia sẻ thẻ thuốc qua Zalo</li>
+    </ul>
+    <div class="feature">
+      <img src="feature-1024x500.png" alt="Ảnh giới thiệu ứng dụng Tra Cứu Thuốc" width="1024" height="500">
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Mục lục">
+  <ul>
+    <li><a href="#gioi-thieu">Giới thiệu</a></li>
+    <li><a href="#mo-ta">Mô tả Google Play</a></li>
+    <li><a href="#chinh-sach">Chính sách quyền riêng tư</a></li>
+    <li><a href="#quyen">Quyền ứng dụng</a></li>
+    <li><a href="#ben-thu-ba">SDK bên thứ ba</a></li>
+    <li><a href="#xoa-du-lieu">Xoá dữ liệu</a></li>
+    <li><a href="#lien-he">Liên hệ</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+<main>
+
+  <!-- ============ GIỚI THIỆU ============ -->
+  <section id="gioi-thieu" class="card">
+    <h2>Giới thiệu ứng dụng</h2>
+    <p class="eyebrow">Biết ngay thuốc còn được lưu hành hay không, ngay tại quầy.</p>
+    <p>
+      <b>Tra Cứu Thuốc</b> giúp bạn kiểm tra nhanh thông tin thuốc đã đăng ký lưu hành tại Việt Nam.
+      Chỉ cần gõ một phần tên thuốc, số đăng ký, hoạt chất hoặc tên công ty, ứng dụng sẽ hiện kết quả
+      ngay khi bạn đang gõ, kèm kết luận rõ ràng: được phép lưu hành, sắp hết hạn, đã hết hạn hay đã bị rút số đăng ký.
+    </p>
+    <div class="grid-3">
+      <div class="tile"><b>Kết luận trước, chi tiết sau</b><span>Trạng thái lưu hành, kê đơn, kiểm soát đặc biệt và nơi sản xuất nằm ngay đầu màn hình.</span></div>
+      <div class="tile"><b>Giải mã số đăng ký</b><span>Tách số đăng ký 12 chữ số thành quốc gia, nhóm thuốc, kê đơn, KSĐB, số thứ tự, năm cấp.</span></div>
+      <div class="tile"><b>Chia sẻ một chạm</b><span>Gửi thẻ thuốc dạng ảnh có nguồn và ngày tra qua Zalo, Facebook hoặc gửi dạng văn bản.</span></div>
+    </div>
+    <div class="notice" role="note">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.5"/></svg>
+      <div>
+        Dữ liệu được tra trực tiếp từ cổng dịch vụ công công khai của Cục Quản lý Dược – Bộ Y tế
+        (<a href="https://dichvucong.dav.gov.vn" rel="noopener">dichvucong.dav.gov.vn</a>).
+        <b>Tra Cứu Thuốc không phải ứng dụng chính thức của Cục Quản lý Dược hay Bộ Y tế</b> và không đại diện
+        cho bất kỳ cơ quan nhà nước nào. Thông tin chỉ để tham khảo, không thay thế chỉ định của bác sĩ, dược sĩ.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MÔ TẢ GOOGLE PLAY ============ -->
+  <section id="mo-ta" class="card">
+    <h2>Mô tả trên Google Play</h2>
+    <p class="eyebrow">Theo giới hạn của Play Console: mô tả ngắn tối đa 80 ký tự, mô tả đầy đủ tối đa 4.000 ký tự.</p>
+
+    <div class="meta-row">
+      <h3>Tên ứng dụng</h3>
+      <span class="count" data-for="app-title" data-max="30"></span>
+    </div>
+    <p class="store-text" id="app-title">Tra Cứu Thuốc</p>
+
+    <div class="meta-row">
+      <h3>Mô tả ngắn (Short description)</h3>
+      <span>
+        <span class="count" data-for="short-desc" data-max="80"></span>
+        <button class="copy" data-copy="short-desc" type="button">Sao chép</button>
+      </span>
+    </div>
+    <p class="store-text" id="short-desc">Tra SĐK thuốc nhanh: còn hạn lưu hành, kê đơn, thuốc KSĐB, giải mã số đăng ký</p>
+
+    <div class="meta-row">
+      <h3>Mô tả đầy đủ (Full description)</h3>
+      <span>
+        <span class="count" data-for="long-desc" data-max="4000"></span>
+        <button class="copy" data-copy="long-desc" type="button">Sao chép</button>
+      </span>
+    </div>
+<pre class="store-text" id="long-desc">Tra Cứu Thuốc giúp nhà thuốc, quầy thuốc và người dùng kiểm tra nhanh thông tin thuốc đã đăng ký lưu hành tại Việt Nam. Chỉ cần gõ một phần tên thuốc, số đăng ký, hoạt chất hoặc tên công ty.
+
+BIẾT NGAY THUỐC CÒN ĐƯỢC LƯU HÀNH KHÔNG
+• Khối kết luận ở đầu màn chi tiết: Được phép lưu hành, Sắp hết hạn, Đã hết hạn hoặc Đã rút số đăng ký
+• Ngày hết hạn số đăng ký và số ngày còn lại
+• Kê đơn hay không kê đơn, thuốc kiểm soát đặc biệt (gây nghiện, hướng thần, tiền chất…) và nơi sản xuất
+
+TRA CỨU LINH HOẠT
+• Gõ một phần tên, số đăng ký, hoạt chất hoặc công ty, kết quả hiện ngay khi đang gõ
+• Hỗ trợ số đăng ký 12 chữ số mới và các dạng cũ (VD-, VN-, GC-, QLĐB-, QLSP-…)
+• Nhập đủ số đăng ký là mở thẳng thông tin thuốc
+• Dán số đăng ký từ bộ nhớ tạm chỉ với một chạm
+• Lọc nhanh: Kê đơn, Không kê đơn, Thuốc KSĐB, Còn hiệu lực, Nhóm thuốc
+• Tìm thuốc cùng hoạt chất để tư vấn thuốc thay thế
+
+GIẢI MÃ SỐ ĐĂNG KÝ 12 CHỮ SỐ
+• Tách từng phần: quốc gia, nhóm thuốc, kê đơn, kiểm soát đặc biệt, số thứ tự, năm cấp
+• Giải mã mang tính tham khảo, dựa theo Thông tư 12/2025/TT-BYT
+
+ĐẦY ĐỦ THÔNG TIN
+• Hoạt chất, hàm lượng, dạng bào chế, quy cách đóng gói, tiêu chuẩn, tuổi thọ
+• Ngày cấp, ngày gia hạn, ngày hết hạn, số quyết định
+• Công ty đăng ký và công ty sản xuất
+• Mở nhãn, hướng dẫn sử dụng và quyết định cấp số đăng ký gốc (PDF)
+
+CHIA SẺ NHANH QUA ZALO
+• Gửi thẻ thuốc dạng ảnh rõ ràng, có ghi nguồn và ngày tra
+• Hoặc gửi dạng văn bản; sao chép số đăng ký chỉ một chạm
+
+TIỆN DỤNG
+• Lịch sử tìm kiếm và thuốc đã xem lưu ngay trên máy, xem lại được cả khi mất mạng
+• Giao diện sáng, tối, chữ rõ ràng, dễ đọc khi đứng quầy
+• Không cần tài khoản, không cần đăng nhập
+• Miễn phí, có quảng cáo; có gói xoá quảng cáo mua một lần
+
+NGUỒN DỮ LIỆU VÀ LƯU Ý
+Dữ liệu được tra trực tiếp từ cổng dịch vụ công công khai của Cục Quản lý Dược – Bộ Y tế (dichvucong.dav.gov.vn). Tra Cứu Thuốc KHÔNG phải ứng dụng chính thức của Cục Quản lý Dược hay Bộ Y tế và không đại diện cho cơ quan nhà nước nào. Thông tin chỉ để tham khảo, không thay thế chỉ định của bác sĩ, dược sĩ. Khi cần căn cứ pháp lý, vui lòng đối chiếu với văn bản gốc trên cổng của Cục Quản lý Dược.
+
+Góp ý: minhthang0792@gmail.com</pre>
+  </section>
+
+  <!-- ============ CHÍNH SÁCH ============ -->
+  <section id="chinh-sach" class="card">
+    <h2>Chính sách quyền riêng tư</h2>
+    <p class="eyebrow">Hiệu lực từ ngày 24/11/2026 · Áp dụng cho ứng dụng Tra Cứu Thuốc (<code>home.free.tracuuthuoc</code>) trên Android.</p>
+
+    <p>
+      Chính sách này giải thích ứng dụng xử lý những dữ liệu nào, vì sao, chia sẻ với ai và cách bạn xoá dữ liệu.
+      Tóm tắt: <b>ứng dụng không có tài khoản, không thu thập tên, email, số điện thoại, danh bạ hay vị trí của bạn,
+      và nhà phát triển không vận hành máy chủ riêng nào</b>. Một số dữ liệu kỹ thuật được các dịch vụ của Google
+      (quảng cáo, thanh toán) xử lý như mô tả bên dưới.
+    </p>
+
+    <h3>1. Dữ liệu ứng dụng xử lý</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Dữ liệu</th><th>Mục đích</th><th>Nơi lưu / gửi tới</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Từ khoá tra cứu</b> (tên thuốc, số đăng ký, hoạt chất, công ty bạn gõ)</td>
+            <td>Lấy kết quả tra cứu thuốc.</td>
+            <td>Gửi qua HTTPS tới máy chủ công khai của Cục Quản lý Dược (<code>dichvucong.dav.gov.vn</code>) khi bạn tra cứu. Ứng dụng không gửi kèm mã định danh nào. Nhà phát triển không nhận và không lưu các từ khoá này.</td>
+          </tr>
+          <tr>
+            <td><b>Lịch sử trên máy</b>: tối đa 30 từ khoá gần đây và 30 thuốc đã xem</td>
+            <td>Giúp bạn tra lại nhanh và xem lại thuốc khi mất mạng.</td>
+            <td>Chỉ lưu trong bộ nhớ riêng của ứng dụng trên thiết bị. Không gửi đi đâu.</td>
+          </tr>
+          <tr>
+            <td><b>Cài đặt</b>: giao diện sáng/tối, trạng thái đã mua "Xoá quảng cáo"</td>
+            <td>Ghi nhớ lựa chọn của bạn.</td>
+            <td>Chỉ lưu trên thiết bị.</td>
+          </tr>
+          <tr>
+            <td><b>Bộ nhớ tạm (clipboard)</b></td>
+            <td>Chỉ đọc <b>khi bạn bấm</b> nút "Dán số đăng ký", để tìm số đăng ký trong đoạn văn bản đã sao chép.</td>
+            <td>Không tự đọc ngầm, không lưu nội dung. Chỉ số đăng ký tìm được mới được dùng làm từ khoá tra cứu.</td>
+          </tr>
+          <tr>
+            <td><b>Ảnh / văn bản chia sẻ</b></td>
+            <td>Tạo thẻ thuốc để bạn gửi cho người khác.</td>
+            <td>Tạo ngay trên thiết bị, chỉ gửi tới ứng dụng bạn chọn trong bảng chia sẻ của Android. Ảnh tạm nằm trong bộ nhớ đệm của ứng dụng.</td>
+          </tr>
+          <tr>
+            <td><b>Tài liệu PDF</b> (nhãn, hướng dẫn sử dụng, quyết định)</td>
+            <td>Xem tài liệu gốc của thuốc.</td>
+            <td>Mở bằng trình duyệt trên máy, tải trực tiếp từ máy chủ của Cục Quản lý Dược.</td>
+          </tr>
+          <tr>
+            <td><b>Dữ liệu quảng cáo</b>: mã quảng cáo, địa chỉ IP, thông tin thiết bị, tương tác với quảng cáo</td>
+            <td>Hiển thị và đo lường quảng cáo, chống gian lận.</td>
+            <td>Do SDK Google AdMob thu thập và xử lý theo chính sách của Google (xem mục SDK bên thứ ba).</td>
+          </tr>
+          <tr>
+            <td><b>Giao dịch mua "Xoá quảng cáo"</b></td>
+            <td>Xác nhận và khôi phục giao dịch mua một lần.</td>
+            <td>Do Google Play xử lý. Ứng dụng không nhìn thấy và không lưu thông tin thẻ hay tài khoản thanh toán của bạn.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2. Cách sử dụng dữ liệu</h3>
+    <ul class="list">
+      <li>Cung cấp chức năng tra cứu, lịch sử, chia sẻ và mở tài liệu.</li>
+      <li>Hiển thị quảng cáo để ứng dụng được miễn phí; xác nhận giao dịch xoá quảng cáo.</li>
+      <li>Nhà phát triển <b>không bán</b> dữ liệu, <b>không</b> dùng dữ liệu để đánh giá tín dụng hay mục đích nào ngoài những mục kể trên.</li>
+    </ul>
+
+    <h3>3. Chia sẻ dữ liệu</h3>
+    <ul class="list">
+      <li><b>Cục Quản lý Dược – Bộ Y tế</b>: nhận từ khoá tra cứu khi bạn chủ động tra cứu (máy chủ có thể ghi nhật ký truy cập như địa chỉ IP theo chính sách của họ).</li>
+      <li><b>Google (AdMob, Google Play)</b>: dữ liệu quảng cáo và giao dịch như mô tả ở trên.</li>
+      <li>Ứng dụng bạn chọn khi bấm <b>Chia sẻ</b>: chỉ nội dung bạn quyết định gửi.</li>
+    </ul>
+
+    <h3>4. Bảo mật</h3>
+    <p>Mọi kết nối mạng của ứng dụng đều dùng HTTPS (mã hoá khi truyền). Dữ liệu trên thiết bị nằm trong vùng lưu trữ riêng của ứng dụng mà ứng dụng khác không đọc được.</p>
+
+    <h3>5. Tóm tắt "An toàn dữ liệu" (Data safety)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Hạng mục</th><th>Nội dung</th></tr></thead>
+        <tbody>
+          <tr><td>Thu thập dữ liệu</td><td>Mã thiết bị hoặc mã khác (mã quảng cáo), tương tác trong ứng dụng, chẩn đoán: <b>do SDK Google AdMob</b>, cho mục đích quảng cáo, phân tích và chống gian lận.</td></tr>
+          <tr><td>Từ khoá tra cứu</td><td>Gửi tới máy chủ Cục Quản lý Dược khi bạn chủ động tra cứu, xử lý tức thời để trả kết quả; nhà phát triển không lưu.</td></tr>
+          <tr><td>Mã hoá khi truyền</td><td>Có (HTTPS).</td></tr>
+          <tr><td>Yêu cầu xoá dữ liệu</td><td>Có: xoá lịch sử ngay trong ứng dụng, gỡ ứng dụng để xoá toàn bộ dữ liệu trên máy (xem mục Xoá dữ liệu).</td></tr>
+          <tr><td>Tài khoản người dùng</td><td>Không có.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>6. Trẻ em</h3>
+    <p>Ứng dụng dành cho người lớn (nhà thuốc, người dùng tra cứu thuốc), không hướng tới trẻ em dưới 13 tuổi và không cố ý thu thập dữ liệu của trẻ em.</p>
+
+    <h3>7. Thay đổi chính sách</h3>
+    <p>Khi chính sách thay đổi, trang này sẽ được cập nhật và ghi rõ ngày hiệu lực mới. Thay đổi lớn sẽ được thông báo trong phần mô tả cập nhật của ứng dụng trên Google Play.</p>
+  </section>
+
+  <!-- ============ QUYỀN ============ -->
+  <section id="quyen" class="card">
+    <h2>Quyền ứng dụng yêu cầu</h2>
+    <p class="eyebrow">Danh sách lấy từ manifest đã hợp nhất của bản phát hành, gồm cả quyền do SDK bên thứ ba tự khai báo. Ứng dụng <b>không</b> yêu cầu quyền vị trí, máy ảnh, micro, danh bạ hay bộ nhớ.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Quyền</th><th>Nguồn</th><th>Lý do</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>android.permission.INTERNET</code></td>
+            <td><span class="tag">Ứng dụng</span></td>
+            <td>Gửi từ khoá tra cứu tới máy chủ Cục Quản lý Dược, mở tài liệu, tải quảng cáo và kiểm tra giao dịch "Xoá quảng cáo".</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+            <td><span class="tag sdk">SDK AdMob</span></td>
+            <td>Kiểm tra thiết bị có mạng hay không trước khi tải quảng cáo.</td>
+          </tr>
+          <tr>
+            <td><code>com.google.android.gms.permission.AD_ID</code></td>
+            <td><span class="tag sdk">SDK AdMob</span></td>
+            <td>Đọc mã quảng cáo của thiết bị để phân phối và đo lường quảng cáo. Bạn có thể đặt lại hoặc xoá mã này trong Cài đặt Android → Google → Quảng cáo.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_ADSERVICES_AD_ID</code></td>
+            <td><span class="tag sdk">SDK AdMob</span></td>
+            <td>Privacy Sandbox trên Android 13 trở lên: đọc mã quảng cáo.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_ADSERVICES_ATTRIBUTION</code></td>
+            <td><span class="tag sdk">SDK AdMob</span></td>
+            <td>Privacy Sandbox trên Android 13 trở lên: đo lường chuyển đổi quảng cáo.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.ACCESS_ADSERVICES_TOPICS</code></td>
+            <td><span class="tag sdk">SDK AdMob</span></td>
+            <td>Privacy Sandbox trên Android 13 trở lên: chủ đề quảng cáo.</td>
+          </tr>
+          <tr>
+            <td><code>com.android.vending.BILLING</code></td>
+            <td><span class="tag sdk">Google Play Billing</span></td>
+            <td>Mua gói "Xoá quảng cáo" một lần qua Google Play. Thanh toán do Google Play xử lý.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.WAKE_LOCK</code></td>
+            <td><span class="tag sdk">SDK Google</span></td>
+            <td>Do SDK quảng cáo và thanh toán khai báo để tác vụ của chúng không bị ngắt giữa chừng. Ứng dụng không giữ máy thức chạy nền.</td>
+          </tr>
+          <tr>
+            <td><code>android.permission.FOREGROUND_SERVICE</code></td>
+            <td><span class="tag sdk">SDK Google</span></td>
+            <td>Do SDK của Google khai báo. Ứng dụng không chạy dịch vụ nền nào.</td>
+          </tr>
+          <tr>
+            <td><code>home.free.tracuuthuoc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td>
+            <td><span class="tag sdk">AndroidX</span></td>
+            <td>Quyền nội bộ (mức chữ ký) do thư viện AndroidX tạo để chặn ứng dụng khác gửi tín hiệu vào ứng dụng. Không truy cập dữ liệu nào của bạn.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ngoài ra, ứng dụng khai báo nhu cầu <b>mở liên kết https</b> (để mở tài liệu bằng trình duyệt) và <b>xử lý văn bản</b> (để hiện menu chọn chữ). Đây là khai báo tương thích của Android, không phải quyền truy cập dữ liệu.</p>
+  </section>
+
+  <!-- ============ SDK BÊN THỨ BA ============ -->
+  <section id="ben-thu-ba" class="card">
+    <h2>Dịch vụ và SDK bên thứ ba</h2>
+    <p class="eyebrow">Các bên này có chính sách quyền riêng tư riêng; vui lòng đọc thêm tại liên kết đi kèm.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Dịch vụ</th><th>Dữ liệu</th><th>Chính sách</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Google AdMob</b> (Google Mobile Ads SDK)</td>
+            <td>Mã quảng cáo, địa chỉ IP, loại thiết bị, phiên bản hệ điều hành, tương tác với quảng cáo, dữ liệu chẩn đoán.</td>
+            <td><a href="https://policies.google.com/privacy" rel="noopener">Chính sách quyền riêng tư của Google</a><br><a href="https://policies.google.com/technologies/ads" rel="noopener">Cách Google dùng dữ liệu quảng cáo</a></td>
+          </tr>
+          <tr>
+            <td><b>Google Play Billing</b></td>
+            <td>Thông tin giao dịch mua "Xoá quảng cáo" (do Google Play xử lý).</td>
+            <td><a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" rel="noopener">Thông báo quyền riêng tư của Google Payments</a></td>
+          </tr>
+          <tr>
+            <td><b>Cổng dịch vụ công Cục Quản lý Dược</b></td>
+            <td>Từ khoá tra cứu bạn gõ; nhật ký truy cập phía máy chủ.</td>
+            <td><a href="https://dichvucong.dav.gov.vn" rel="noopener">dichvucong.dav.gov.vn</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Tắt quảng cáo cá nhân hoá</h3>
+    <p>Trên Android, vào <b>Cài đặt → Google → Quảng cáo</b> để xoá hoặc đặt lại mã quảng cáo. Bạn cũng có thể quản lý tại <a href="https://adssettings.google.com" rel="noopener">adssettings.google.com</a>. Muốn không thấy quảng cáo nữa, hãy mua gói "Xoá quảng cáo" trong mục <b>Giới thiệu và cài đặt</b> của ứng dụng.</p>
+  </section>
+
+  <!-- ============ XOÁ DỮ LIỆU ============ -->
+  <section id="xoa-du-lieu" class="card">
+    <h2>Lưu giữ và xoá dữ liệu</h2>
+    <p class="eyebrow">Bạn luôn kiểm soát dữ liệu trên máy của mình.</p>
+    <div class="grid-3">
+      <div class="tile"><b>Xoá lịch sử trong ứng dụng</b><span>Mở ứng dụng → nút ⓘ → <b>Xoá lịch sử tìm kiếm</b>. Từng từ khoá cũng có thể xoá bằng dấu ✕ ở màn đầu.</span></div>
+      <div class="tile"><b>Xoá toàn bộ dữ liệu</b><span>Cài đặt Android → Ứng dụng → Tra Cứu Thuốc → Bộ nhớ → <b>Xoá dữ liệu</b>, hoặc gỡ cài đặt ứng dụng.</span></div>
+      <div class="tile"><b>Dữ liệu quảng cáo</b><span>Xoá hoặc đặt lại mã quảng cáo trong Cài đặt Android → Google → Quảng cáo.</span></div>
+    </div>
+    <p style="margin-top:16px">
+      Lịch sử được giữ trên máy cho tới khi bạn xoá; ứng dụng tự giới hạn ở 30 từ khoá và 30 thuốc đã xem gần nhất.
+      Nhà phát triển không có bản sao nào của dữ liệu này. Nếu bạn cần hỗ trợ hoặc có yêu cầu liên quan tới dữ liệu,
+      hãy gửi email theo địa chỉ dưới đây; chúng tôi phản hồi trong vòng 30 ngày.
+    </p>
+  </section>
+
+  <!-- ============ LIÊN HỆ ============ -->
+  <section id="lien-he" class="contact">
+    <div>
+      <h2>Liên hệ nhà phát triển</h2>
+      <p>Góp ý, báo lỗi dữ liệu hoặc câu hỏi về quyền riêng tư: <b>minhthang0792@gmail.com</b></p>
+    </div>
+    <a class="btn" href="mailto:minhthang0792@gmail.com?subject=Tra%20C%E1%BB%A9u%20Thu%E1%BB%91c">Gửi email</a>
+  </section>
+
+</main>
+</div>
+
+<footer>
+  © 2026 Tra Cứu Thuốc · Cập nhật ngày 24/11/2026 · Không phải ứng dụng chính thức của Cục Quản lý Dược – Bộ Y tế.
+</footer>
+
+<script>
+  // Đếm ký tự theo cách Play Console đếm (theo ký tự Unicode).
+  document.querySelectorAll('.count').forEach(function (el) {
+    var src = document.getElementById(el.dataset.for);
+    if (!src) return;
+    var n = Array.from(src.textContent.trim()).length;
+    var max = +el.dataset.max;
+    el.textContent = n.toLocaleString('vi-VN') + ' / ' + max.toLocaleString('vi-VN') + ' ký tự';
+    if (n <= max) el.classList.add('ok');
+  });
+  document.querySelectorAll('button.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = document.getElementById(b.dataset.copy).textContent.trim();
+      var done = function () { var t = b.textContent; b.textContent = 'Đã sao chép'; setTimeout(function () { b.textContent = t; }, 1500); };
+      try {
+        navigator.clipboard.writeText(text).then(done, function () {});
+      } catch (e) {}
+    });
+  });
+</script>
+</body>
+</html>
