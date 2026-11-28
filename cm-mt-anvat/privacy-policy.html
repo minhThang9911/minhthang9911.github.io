@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiệm Ăn Vặt: Chè &amp; Trà Chanh – Giới Thiệu &amp; Chính Sách Bảo Mật</title>
+  <meta name="description" content="Giới thiệu trò chơi Tiệm Ăn Vặt (cm.mt.anvat), nội dung Google Play Store và chính sách bảo mật, quyền ứng dụng, thu thập &amp; xóa dữ liệu chi tiết.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-cream: #FFF6D8;
+      --bg-page: linear-gradient(180deg, #FFF9E6 0%, #FFF6D8 45%, #FDEEC7 100%);
+      --card-bg: #FFFFFF;
+      --card-soft: #FFFDF6;
+      --border: #EAD9A8;
+      --border-strong: #DFC783;
+      --ink: #4A2C1D;
+      --ink-body: #624130;
+      --ink-muted: #8A6A58;
+      --orange: #F0642E;
+      --orange-dark: #D64D19;
+      --orange-soft: #FFEAE0;
+      --mint: #2FB99A;
+      --mint-dark: #1B7A63;
+      --mint-soft: #E3F7F2;
+      --gold: #F2B705;
+      --gold-dark: #A66E00;
+      --gold-soft: #FFF5D1;
+      --slate: #647F8D;
+      --slate-soft: #EEF3F6;
+      --shadow-sm: 0 4px 12px rgba(74, 44, 29, 0.05);
+      --shadow-md: 0 12px 30px rgba(74, 44, 29, 0.08);
+      --shadow-hero: 0 22px 48px rgba(74, 44, 29, 0.13);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-sm: 8px;
+      --max-w: 920px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-page);
+      color: var(--ink-body);
+      line-height: 1.75;
+      font-size: 16px;
+      padding: 24px 16px 72px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Baloo 2', 'Nunito', sans-serif;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* Top Status Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card-bg);
+      padding: 7px 15px;
+      border-radius: 999px;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      color: var(--mint-dark);
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 4px rgba(47, 185, 154, 0.22);
+    }
+
+    .meta-date {
+      color: var(--ink-muted);
+      background: rgba(255, 255, 255, 0.65);
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    /* Hero Card */
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-hero);
+      overflow: hidden;
+      margin-bottom: 26px;
+    }
+
+    .hero-banner-wrap {
+      position: relative;
+      width: 100%;
+      background: #FFF6D8;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .hero-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 1024 / 500;
+      object-fit: cover;
+    }
+
+    .hero-spotlight {
+      position: absolute;
+      top: 50%;
+      right: 28px;
+      transform: translateY(-50%);
+      width: 34%;
+      max-width: 290px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow-md);
+      text-align: left;
+    }
+
+    .hero-spotlight-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background: var(--orange);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .hero-spotlight-title {
+      font-family: 'Baloo 2', 'Nunito', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .hero-spotlight-sub {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-body);
+      line-height: 1.45;
+    }
+
+    .hero-content {
+      padding: 24px 30px 28px;
+    }
+
+    .app-identity {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .app-icon-img {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      border: 3px solid var(--border);
+      box-shadow: 0 10px 24px rgba(74, 44, 29, 0.14);
+      background: var(--card-bg);
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .app-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .app-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .app-title {
+      font-size: clamp(25px, 4vw, 34px);
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .app-package {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--orange-dark);
+      background: var(--orange-soft);
+      border: 1px solid #F9CBB8;
+      padding: 3px 11px;
+      border-radius: 999px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .app-lead {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink-body);
+    }
+
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: var(--card-soft);
+      color: var(--ink);
+    }
+
+    .badge.orange {
+      background: var(--orange-soft);
+      color: var(--orange-dark);
+      border-color: #F8C9B6;
+    }
+
+    .badge.mint {
+      background: var(--mint-soft);
+      color: var(--mint-dark);
+      border-color: #BAEADB;
+    }
+
+    .badge.gold {
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+      border-color: #F2DA8B;
+    }
+
+    /* Quick Nav */
+    .quick-nav {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border);
+      padding: 16px 20px;
+      margin-bottom: 26px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .quick-nav-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+    }
+
+    .quick-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .quick-nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--card-soft);
+      border: 1.5px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.18s ease;
+    }
+
+    .quick-nav-links a:hover {
+      background: var(--orange);
+      color: #FFFFFF;
+      border-color: var(--orange);
+      transform: translateY(-1px);
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 30px;
+      margin-bottom: 26px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px dashed var(--border);
+    }
+
+    .section-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--orange-soft);
+      color: var(--orange-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      border: 1.5px solid #F8C9B6;
+    }
+
+    .section-icon.mint {
+      background: var(--mint-soft);
+      color: var(--mint-dark);
+      border-color: #BAEADB;
+    }
+
+    .section-icon.gold {
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+      border-color: #F2DA8B;
+    }
+
+    .section-icon.slate {
+      background: var(--slate-soft);
+      color: #3D5663;
+      border-color: #CEDCE3;
+    }
+
+    .section-title {
+      font-size: clamp(21px, 3vw, 26px);
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    h3 {
+      font-size: 19px;
+      font-weight: 800;
+      margin: 22px 0 10px;
+    }
+
+    h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 18px 0 8px;
+    }
+
+    p {
+      margin-bottom: 14px;
+    }
+
+    ul.clean-list {
+      padding-left: 22px;
+      margin-bottom: 16px;
+    }
+
+    ul.clean-list li {
+      margin-bottom: 6px;
+    }
+
+    /* Callouts & Store Listing */
+    .highlight-box {
+      background: var(--card-soft);
+      border: 1.5px solid var(--border);
+      border-left: 5px solid var(--orange);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .highlight-box.mint {
+      border-left-color: var(--mint);
+      background: #F4FCF9;
+    }
+
+    .highlight-box.gold {
+      border-left-color: var(--gold);
+      background: #FFFCF0;
+    }
+
+    .store-quote {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .char-count {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--mint-dark);
+      background: var(--mint-soft);
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+
+    .desc-block {
+      background: var(--card-soft);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      margin-top: 12px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .feature-item {
+      background: var(--card-soft);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-item-title {
+      font-weight: 800;
+      color: var(--ink);
+      font-size: 15px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .feature-item p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Tables */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 16px 0;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      font-size: 14px;
+      text-align: left;
+    }
+
+    th {
+      background: #FFF2CC;
+      color: var(--ink);
+      font-weight: 800;
+      padding: 13px 15px;
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: var(--card-soft);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      background: #FBF0DF;
+      color: #9C3A16;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .pill-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 2px 9px;
+      border-radius: 999px;
+      margin-top: 4px;
+    }
+
+    .pill-tag.app {
+      background: var(--mint-soft);
+      color: var(--mint-dark);
+    }
+
+    .pill-tag.sdk {
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+    }
+
+    .pill-tag.sys {
+      background: var(--slate-soft);
+      color: #3D5663;
+    }
+
+    /* Steps */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .step-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--card-soft);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 15px 18px;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: linear-gradient(135deg, #FFFDF4 0%, #FFEFE2 100%);
+      border: 2px solid #F6CAAE;
+      border-radius: var(--radius-xl);
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 28px;
+    }
+
+    .contact-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .contact-text {
+      max-width: 600px;
+      margin: 0 auto 18px;
+    }
+
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 13px 28px;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(240, 100, 46, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-email:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(240, 100, 46, 0.45);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--ink-muted);
+      font-size: 14px;
+      font-weight: 700;
+      padding-top: 20px;
+      border-top: 2px dashed var(--border-strong);
+    }
+
+    footer a {
+      color: var(--orange-dark);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    a {
+      color: var(--orange-dark);
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .hero-spotlight {
+        position: static;
+        transform: none;
+        width: auto;
+        max-width: none;
+        margin: 14px 16px 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 14px 10px 56px;
+      }
+      .hero-content {
+        padding: 20px 18px 24px;
+      }
+      .section-card {
+        padding: 22px 16px;
+      }
+      .app-identity {
+        flex-direction: column;
+        text-align: center;
+      }
+      .app-title-row {
+        justify-content: center;
+      }
+      .tags-row {
+        justify-content: center;
+      }
+      .top-bar {
+        justify-content: center;
+      }
+      .desc-block {
+        padding: 18px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Status Bar -->
+    <header class="top-bar">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Thông Tin Chính Thức Cho Google Play Store</span>
+      </div>
+      <div class="meta-date">
+        Cập nhật: 28/11/2026 • Phiên bản 1.0.0
+      </div>
+    </header>
+
+    <!-- Hero Showcase -->
+    <section class="hero-card" aria-label="Giới thiệu tổng quan Tiệm Ăn Vặt">
+      <div class="hero-banner-wrap">
+        <img class="hero-banner-img" src="feature-image.png" alt="Ảnh bìa Tiệm Ăn Vặt: Chè &amp; Trà Chanh với xe đẩy trước cổng trường và anh shipper" width="1024" height="500">
+        <div class="hero-spotlight">
+          <span class="hero-spotlight-tag">🔥 Giờ Đông Khách x3</span>
+          <div class="hero-spotlight-title">Đẩy xe đúng giờ,<br>bán đắt gấp 3!</div>
+          <p class="hero-spotlight-sub" style="margin:0;">Cổng trường giờ tan tầm, Chợ đêm lên đèn hay Ký túc xá khuya — chọn điểm bán theo đồng hồ thật trên máy bạn.</p>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="app-identity">
+          <img class="app-icon-img" src="playstore-app-icon.png" alt="Biểu tượng ứng dụng Tiệm Ăn Vặt" width="96" height="96">
+          <div class="app-meta">
+            <div class="app-title-row">
+              <h1 class="app-title">Tiệm Ăn Vặt: Chè &amp; Trà Chanh</h1>
+              <span class="app-package">cm.mt.anvat</span>
+            </div>
+            <p class="app-lead">Game tycoon xe đẩy ăn vặt đường phố Việt Nam — chạy theo giờ thật, thư giãn 100% offline.</p>
+          </div>
+        </div>
+
+        <div class="tags-row">
+          <span class="badge orange">🍢 8 Món Ăn Vặt Đường Phố</span>
+          <span class="badge gold">🗺️ 12 Điểm Bán Giờ Đông Khách Riêng</span>
+          <span class="badge mint">👩‍🍳 8 Nhân Viên Tự Bán Offline</span>
+          <span class="badge">📴 Không Cần Mạng / Không Tài Khoản</span>
+          <span class="badge">🛡️ Minh Bạch Dữ Liệu Google Play</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <nav class="quick-nav" aria-label="Mục lục nhanh">
+      <div class="quick-nav-title">Mục lục nhanh</div>
+      <div class="quick-nav-links">
+        <a href="#intro">1. Giới thiệu game</a>
+        <a href="#playstore">2. Mô tả Google Play Store</a>
+        <a href="#privacy">3. Chính sách bảo mật</a>
+        <a href="#permissions">4. Quyền ứng dụng &amp; SDK</a>
+        <a href="#third-party">5. SDK bên thứ ba</a>
+        <a href="#data">6. Thu thập, sử dụng &amp; xóa dữ liệu</a>
+        <a href="#children">7. Trẻ em</a>
+        <a href="#contact">8. Liên hệ</a>
+      </div>
+    </nav>
+
+    <!-- SECTION 1: INTRO -->
+    <section id="intro" class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🛒</div>
+        <div>
+          <h2 class="section-title">1. Giới Thiệu Ứng Dụng</h2>
+        </div>
+      </div>
+
+      <p><strong>Tiệm Ăn Vặt: Chè &amp; Trà Chanh</strong> (mã gói <code>cm.mt.anvat</code>) là trò chơi mô phỏng kinh doanh nhàn rỗi (<em>idle tycoon</em>) lấy cảm hứng từ những chiếc xe đẩy ăn vặt rộn ràng trước cổng trường, chợ đêm và khu phố Việt Nam. Bạn khởi đầu với chiếc xe đẩy nhỏ của <strong>Xe ăn vặt Bé Bông</strong>, tự tay bán những ly Trà chanh đầu tiên, mở rộng thực đơn lên 8 món đặc sản, thuê nhân viên phụ bán cả khi tắt màn hình và liên tục <strong>dời xe giữa 12 điểm bán</strong> để đón đúng khung giờ đông khách.</p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-item-title">⏰ Sống theo đồng hồ thật của máy</div>
+          <p>Mỗi điểm bán có biểu đồ đông khách 24 giờ riêng (từ <code>x0.5</code> lúc vắng tới <code>x3</code> lúc cao điểm) và "Món ruột x2" riêng biệt — tính chính xác cả lúc bạn vắng mặt.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item-title">📴 Chơi Offline, Không Tài Khoản</div>
+          <p>Không bắt buộc Wi-Fi hay 4G/5G để trải nghiệm, không yêu cầu đăng nhập, không thu thập thông tin cá nhân như họ tên, email hay vị trí GPS.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item-title">🪶 Gọn Nhẹ &amp; Mượt Mà</div>
+          <p>Đồ họa 2D tươi sáng ấm áp tông vàng kem – đỏ cam – xanh mint, dung lượng nhẹ, tự động lưu an toàn trực tiếp trên thiết bị.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-item-title">💎 Quảng Cáo Văn Minh</div>
+          <p>Không bật quảng cáo chen ngang khi mới mở game hoặc khi mở Bản đồ xem giờ; có gói mua một lần "Xóa quảng cáo" nhận thưởng tức thì.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: GOOGLE PLAY STORE -->
+    <section id="playstore" class="section-card">
+      <div class="section-header">
+        <div class="section-icon gold">📱</div>
+        <div>
+          <h2 class="section-title">2. Nội Dung Chuẩn Google Play Store</h2>
+        </div>
+      </div>
+
+      <h3>Tên ứng dụng (App Title)</h3>
+      <div class="highlight-box gold">
+        <p class="store-quote" style="margin-bottom:4px;">Tiệm Ăn Vặt: Chè &amp; Trà Chanh</p>
+        <span class="char-count">28 / 30 ký tự</span>
+      </div>
+
+      <h3>Mô tả ngắn (Short Description)</h3>
+      <div class="highlight-box">
+        <p class="store-quote">Mở xe ăn vặt, dời xe theo giờ đông khách, thuê nhân viên. Chơi offline!</p>
+        <span class="char-count">71 / 80 ký tự</span>
+      </div>
+
+      <h3>Mô tả chi tiết (Full Description)</h3>
+      <div class="desc-block">
+        <p><strong>Tiệm Ăn Vặt: Chè &amp; Trà Chanh</strong> là một <strong>game ăn vặt</strong> nhàn rỗi nhẹ nhàng, nơi bạn hóa thân thành chủ chiếc xe đẩy nhỏ xinh phục vụ đủ món đường phố quen thuộc, xây dựng <strong>tiệm ăn vặt</strong> đông khách nhất phố và <strong>chơi offline</strong> mọi lúc mọi nơi!</p>
+        <p>Từ vài đồng vốn đầu tiên với ly trà chanh mát lạnh, bạn sẽ tự tay nâng cấp quầy hàng, thuê đội ngũ phụ bếp dễ thương và khéo léo dời xe đúng điểm – đúng giờ để doanh thu tăng vọt.</p>
+
+        <h4>🍢 THỰC ĐƠN 8 MÓN ĂN VẶT QUEN THUỘC</h4>
+        <ul class="clean-list">
+          <li><strong>Trà chanh:</strong> Giải nhiệt tức thì với tốc độ phục vụ cực nhanh.</li>
+          <li><strong>Bánh tráng trộn:</strong> Đĩa trộn đậm đà, món ruột đắt hàng trước cổng trường.</li>
+          <li><strong>Cá viên chiên:</strong> Vàng giòn nóng hổi, thơm lừng cả góc phố.</li>
+          <li><strong>Xiên que nướng:</strong> Đậm vị sốt nướng hấp dẫn khách dạo chơi.</li>
+          <li><strong>Khoai lang lắc phô mai:</strong> Giòn rụm béo ngậy, được dân văn phòng cực chuộng.</li>
+          <li><strong>Bánh tráng nướng:</strong> Giòn tan thơm hành phi trên bếp than hồng.</li>
+          <li><strong>Chè Thái sầu riêng:</strong> Ngọt béo mát lạnh, ngôi sao của các khu ký túc xá.</li>
+          <li><strong>Mâm ăn vặt thập cẩm:</strong> Đầy ắp topping trứ danh cho các phiên bán doanh thu khủng!</li>
+        </ul>
+
+        <h4>🗺️ 12 ĐIỂM BÁN ĐÔNG KHÁCH THEO GIỜ THẬT</h4>
+        <ul class="clean-list">
+          <li>Mở rộng hành trình qua 12 địa điểm từ <strong>Cổng trường, Chợ đêm, Công viên, Chợ sáng, Khu văn phòng, Ký túc xá, Phố đi bộ, Bến xe, Bãi biển, Lễ hội ẩm thực, Sân vận động</strong> tới <strong>Phố cổ</strong>.</li>
+          <li>Mỗi nơi có nhịp đông khách 24 giờ riêng theo đồng hồ thật trên thiết bị (từ <code>x0.5</code> tới <code>x3</code>) cùng một <strong>Món ruột x2</strong> doanh thu và biểu đồ cột trực quan.</li>
+          <li><strong>Bản đồ thông minh:</strong> Gợi ý ngay điểm bán đông nhất hiện tại và nơi đậu xe lời nhất cho khoảng thời gian bạn sắp tắt máy.</li>
+        </ul>
+
+        <h4>👩‍🍳 NHÂN VIÊN CHIBI &amp; SANG QUÁN</h4>
+        <ul class="clean-list">
+          <li>Tuyển 8 nhân viên đáng yêu (<strong>Bé Bông, Anh Tèo, Chị Út, Cu Tí, Cô Ba, Anh Sáu, Bé Mít, Dì Năm</strong>) để tự động chạy món, tiếp tục sinh lời cả khi bạn đóng ứng dụng.</li>
+          <li><strong>Sang quán (Prestige):</strong> Nhượng lại xe cũ để nhận <strong>Tim</strong> tăng doanh thu vĩnh viễn, mở điểm bán mới kèm các đặc quyền như <em>Nhân viên trung thành</em>, tăng thưởng đơn hàng hay kéo dài trần Livestream.</li>
+        </ul>
+
+        <h4>🛵 ANH SHIPPER, ĐƠN ĐẶT HÀNG &amp; SỰ KIỆN MÙA LỄ</h4>
+        <ul class="clean-list">
+          <li><strong>3 đơn đặt hàng mỗi ngày</strong> giúp nhận <strong>Phiếu bé ngoan</strong> đổi nâng cấp trần thu nhập vắng mặt hoặc nhân đôi doanh thu vĩnh viễn tại Quầy đổi phiếu.</li>
+          <li>Đón <strong>anh shipper</strong> ghé xe lấy đơn lớn, bật <strong>Livestream x2</strong> tăng tốc bán hàng, và tận hưởng không khí rộn ràng dịp <strong>Giáng Sinh</strong> &amp; <strong>Tết Nguyên Đán</strong> (Ông già Noel, Thần Tài, hoa tuyết/hoa đào rơi và Tủ kỷ niệm).</li>
+        </ul>
+
+        <h4>✨ VÌ SAO BẠN SẼ THÍCH GAME KINH DOANH NÀY?</h4>
+        <ul class="clean-list">
+          <li>Trải nghiệm <strong>game bán hàng / tycoon</strong> thư giãn, nhịp độ dễ chịu, không cạnh tranh căng thẳng.</li>
+          <li>Hoạt động hoàn toàn <strong>offline</strong>, không cần tài khoản, tự động lưu an toàn trên thiết bị.</li>
+          <li>Màu sắc tươi trẻ, âm thanh vui tai, phù hợp giải trí nhanh mỗi ngày.</li>
+        </ul>
+        <p style="margin-bottom:0;"><strong>Tải Tiệm Ăn Vặt: Chè &amp; Trà Chanh miễn phí ngay hôm nay và đưa chiếc xe ăn vặt nhỏ của bạn đi khắp 12 khu phố!</strong></p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PRIVACY POLICY -->
+    <section id="privacy" class="section-card">
+      <div class="section-header">
+        <div class="section-icon mint">🛡️</div>
+        <div>
+          <h2 class="section-title">3. Chính Sách Bảo Mật (App Privacy Policy)</h2>
+        </div>
+      </div>
+
+      <p>Chính sách bảo mật này giải thích cách <strong>MT Games</strong> (nhà phát triển cá nhân, đại diện: <strong>Đỗ Minh Thắng</strong>) xử lý dữ liệu khi bạn cài đặt và sử dụng ứng dụng <strong>Tiệm Ăn Vặt</strong> (mã gói <code>cm.mt.anvat</code>) trên Android qua Google Play. Chúng tôi tuân thủ nghiêm ngặt <em>Chính sách Chương trình Nhà phát triển Google Play</em> và quy định về quyền riêng tư hiện hành.</p>
+
+      <div class="highlight-box mint">
+        <p style="margin:0; font-weight:700; color:var(--ink);">Cam kết cốt lõi: Tiệm Ăn Vặt KHÔNG yêu cầu đăng ký tài khoản, KHÔNG có máy chủ lưu hồ sơ người chơi riêng, KHÔNG thu thập thông tin định danh cá nhân (họ tên, email, số điện thoại, danh bạ, ảnh, micro hay vị trí GPS). Mọi tiến trình chơi được lưu cục bộ ngay trên thiết bị của bạn.</p>
+      </div>
+
+      <p><strong>Về đồng hồ &amp; múi giờ thiết bị:</strong> Ứng dụng chỉ đọc giờ hệ thống và múi giờ cục bộ (<code>Time</code> của thiết bị) ngay trên máy để xác định khung giờ đông khách trong game và tính thu nhập lúc vắng mặt. Thông tin giờ giấc này hoàn toàn không được truyền tải lên máy chủ ngoài.</p>
+    </section>
+
+    <!-- SECTION 4: PERMISSIONS -->
+    <section id="permissions" class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🔑</div>
+        <div>
+          <h2 class="section-title">4. Các Quyền Ứng Dụng Yêu Cầu (Bao Gồm Quyền Từ SDK Bên Thứ Ba)</h2>
+        </div>
+      </div>
+
+      <p>Bảng dưới đây liệt kê <strong>đầy đủ 100% các quyền Android</strong> được khai báo trong gói cài đặt APK/AAB của <strong>Tiệm Ăn Vặt</strong> (bao gồm quyền do ứng dụng cấu hình và quyền được tự động hợp nhất từ Google Mobile Ads SDK, Google Play Billing và thư viện hệ thống AndroidX):</p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Tên Quyền Android</th>
+              <th>Nguồn Yêu Cầu</th>
+              <th>Mục Đích Sử Dụng Thực Tế</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>android.permission.INTERNET</code></td>
+              <td><span class="pill-tag app">App &amp; Google SDK</span></td>
+              <td>Tải/hiển thị quảng cáo qua Google AdMob và xác thực giao dịch/khôi phục gói mua "Xóa quảng cáo" với Google Play. Trò chơi vẫn chơi được offline khi không có mạng.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+              <td><span class="pill-tag app">App &amp; Google SDK</span></td>
+              <td>Kiểm tra trạng thái kết nối mạng để tránh gọi tải quảng cáo vô ích khi thiết bị đang ngoại tuyến, giúp tiết kiệm pin.</td>
+            </tr>
+            <tr>
+              <td><code>com.android.vending.BILLING</code></td>
+              <td><span class="pill-tag app">App &amp; Play Billing</span></td>
+              <td>Thực hiện giao dịch mua trong ứng dụng (gói <code>remove_ads</code> — Xóa quảng cáo) và khôi phục đơn đã mua qua cổng thanh toán chính thức Google Play.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.VIBRATE</code></td>
+              <td><span class="pill-tag app">Ứng dụng</span></td>
+              <td>Tạo rung phản hồi nhẹ khi người chơi tương tác (chạm nút, nhận thưởng). Có thể bật/tắt bất cứ lúc nào trong phần Cài đặt của game.</td>
+            </tr>
+            <tr>
+              <td><code>com.google.android.gms.permission.AD_ID</code><br><code>android.permission.AD_ID</code></td>
+              <td><span class="pill-tag sdk">SDK AdMob</span></td>
+              <td>Cho phép Google Mobile Ads SDK truy cập Mã định danh quảng cáo (Advertising ID) trên Android 13+ để phân phối, giới hạn tần suất và đo lường quảng cáo hợp lệ.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.WAKE_LOCK</code></td>
+              <td><span class="pill-tag sdk">SDK AdMob / AndroidX</span></td>
+              <td>Được thư viện Google Mobile Ads / WorkManager tự động hợp nhất để giữ bộ xử lý hoàn tất an toàn việc nạp hoặc đóng các thành phần quảng cáo video không bị ngắt giữa chừng.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.FOREGROUND_SERVICE</code></td>
+              <td><span class="pill-tag sdk">AndroidX WorkManager (qua AdMob)</span></td>
+              <td>Quyền chuẩn do thư viện phụ thuộc AndroidX WorkManager của Google Mobile Ads hợp nhất vào manifest phục vụ tác vụ nền nội bộ của SDK quảng cáo; ứng dụng không chạy dịch vụ nền riêng để theo dõi người dùng.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.READ_BASIC_PHONE_STATE</code></td>
+              <td><span class="pill-tag sdk">Google Play Services / AdMob SDK</span></td>
+              <td>Được Google Play Services Ads SDK tự động hợp nhất ở cấp độ tương thích Android để kiểm tra trạng thái mạng/cuộc gọi cơ bản nhằm tạm ngưng xử lý media khi có cuộc gọi; <strong>ứng dụng KHÔNG đọc số điện thoại, IMEI hay danh bạ</strong>.</td>
+            </tr>
+            <tr>
+              <td><code>cm.mt.anvat.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code></td>
+              <td><span class="pill-tag sys">Hệ thống AndroidX</span></td>
+              <td>Quyền bảo mật nội bộ do AndroidX tự sinh cho ứng dụng trên Android 13+ nhằm ngăn các ứng dụng bên ngoài gửi broadcast giả mạo vào receiver nội bộ của game.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size:14px; color:var(--ink-muted); margin-bottom:0;"><em>Ứng dụng hoàn toàn KHÔNG yêu cầu quyền truy cập vị trí chính xác (<code>ACCESS_FINE_LOCATION</code>), danh bạ (<code>READ_CONTACTS</code>), máy ảnh (<code>CAMERA</code>), micro (<code>RECORD_AUDIO</code>), hay tệp/ảnh cá nhân ngoài bộ nhớ riêng của game.</em></p>
+    </section>
+
+    <!-- SECTION 5: THIRD-PARTY SDK -->
+    <section id="third-party" class="section-card">
+      <div class="section-header">
+        <div class="section-icon gold">🧩</div>
+        <div>
+          <h2 class="section-title">5. Các SDK Bên Thứ Ba Được Tích Hợp</h2>
+        </div>
+      </div>
+
+      <p>Ngoài mã trò chơi chạy trên <strong>Godot Engine 4.7</strong> (không thu thập hay gửi dữ liệu người chơi ra ngoài), <strong>Tiệm Ăn Vặt</strong> chỉ sử dụng hai SDK chính thức từ Google:</p>
+
+      <h3>5.1. Google Mobile Ads (AdMob) &amp; Google User Messaging Platform (UMP)</h3>
+      <ul class="clean-list">
+        <li><strong>Vai trò:</strong> Hiển thị banner ở màn hình chính, quảng cáo xen kẽ sau một số lượt thao tác tự nhiên và quảng cáo có thưởng do người chơi tự nguyện bấm xem (x2 thu nhập vắng mặt, Livestream x2, anh shipper, quà ngày, đơn đặt hàng, nhận phiếu hoặc thêm tim khi Sang quán).</li>
+        <li><strong>Dữ liệu SDK có thể xử lý:</strong> Mã định danh quảng cáo Android (<code>Advertising ID</code>), thông tin thiết bị cơ bản (mẫu máy, phiên bản Android, kích thước màn hình, ngôn ngữ), địa chỉ IP ước lượng khu vực để phân phối quảng cáo phù hợp, dữ liệu tương tác quảng cáo (lượt hiển thị/nhấn) và báo cáo sự cố/hiệu năng của SDK quảng cáo.</li>
+        <li><strong>Quyền đồng ý UMP (GDPR):</strong> Người dùng tại Khu vực Kinh tế Châu Âu (EEA), Vương quốc Anh (UK) và Thụy Sĩ sẽ thấy hộp thoại đồng ý quyền riêng tư của Google UMP ngay lần mở đầu tiên và luôn có thể mở lại để thay đổi quyết định trong mục <strong>Cài đặt → Tuỳ chọn quảng cáo (GDPR)</strong> của game.</li>
+        <li><strong>Tài liệu tham khảo:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Chính sách bảo mật của Google</a> và <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Cách Google sử dụng dữ liệu từ ứng dụng đối tác</a>.</li>
+      </ul>
+
+      <h3>5.2. Google Play Billing (In-App Purchases)</h3>
+      <ul class="clean-list">
+        <li><strong>Vai trò:</strong> Cung cấp duy nhất một gói mua vĩnh viễn <strong>"Xóa quảng cáo" (<code>remove_ads</code>)</strong> và chức năng <strong>"Khôi phục mua hàng"</strong>.</li>
+        <li><strong>Bảo mật giao dịch:</strong> Toàn bộ quá trình thanh toán, xác thực hóa đơn và hoàn tiền được thực hiện hoàn toàn trên hạ tầng an toàn của <strong>Google Play</strong> (<a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Thông báo bảo mật Google Payments</a>). Nhà phát triển <strong>không</strong> thu thập, xem hay lưu giữ số thẻ ngân hàng, ví điện tử hoặc thông tin tài chính cá nhân của bạn.</li>
+        <li>Sau khi mua thành công, trạng thái sở hữu gói <code>remove_ads</code> được lưu cục bộ trên máy để game hoạt động mượt ngay cả khi offline, đồng thời tự động đồng bộ lại từ Google Play khi bạn bấm khôi phục mua hàng trên cùng tài khoản Google.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 6: DATA COLLECTION, USE & DELETION -->
+    <section id="data" class="section-card">
+      <div class="section-header">
+        <div class="section-icon mint">📊</div>
+        <div>
+          <h2 class="section-title">6. Chính Sách Thu Thập, Sử Dụng &amp; Xóa Dữ Liệu</h2>
+        </div>
+      </div>
+
+      <h3>6.1. Bảng Khai Báo An Toàn Dữ Liệu (Google Play Data Safety)</h3>
+      <p>Thông tin dưới đây đồng bộ hoàn toàn với mục <em>Data safety</em> của ứng dụng trên Google Play Console:</p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Loại Dữ Liệu</th>
+              <th>Thu Thập?</th>
+              <th>Chia Sẻ?</th>
+              <th>Mục Đích Sử Dụng</th>
+              <th>Mã Hóa &amp; Lưu Trữ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mã định danh thiết bị</strong><br><small>Device or other IDs → Advertising ID</small></td>
+              <td>Có<br><small>(qua AdMob SDK)</small></td>
+              <td>Có<br><small>(với Google AdMob)</small></td>
+              <td>Phân phối quảng cáo, đo lường hiệu quả và phân tích chống gian lận quảng cáo</td>
+              <td>Mã hóa HTTPS/TLS khi truyền qua mạng</td>
+            </tr>
+            <tr>
+              <td><strong>Hoạt động trong ứng dụng</strong><br><small>App interactions</small></td>
+              <td>Có<br><small>(qua AdMob SDK)</small></td>
+              <td>Có<br><small>(với Google AdMob)</small></td>
+              <td>Đo lường lượt hiển thị/tương tác quảng cáo và phân tích hiệu suất</td>
+              <td>Mã hóa HTTPS/TLS khi truyền qua mạng</td>
+            </tr>
+            <tr>
+              <td><strong>Thông tin &amp; hiệu năng ứng dụng</strong><br><small>Crash logs, Diagnostics</small></td>
+              <td>Có<br><small>(qua AdMob SDK)</small></td>
+              <td>Không</td>
+              <td>Phân tích chẩn đoán lỗi kỹ thuật và cải thiện độ ổn định</td>
+              <td>Mã hóa HTTPS/TLS khi truyền qua mạng</td>
+            </tr>
+            <tr>
+              <td><strong>Tiến trình chơi &amp; cài đặt game</strong><br><small>Tiền, điểm bán, nâng cấp, âm thanh</small></td>
+              <td>Chỉ lưu cục bộ</td>
+              <td>Không</td>
+              <td>Duy trì tiến trình chơi của bạn trên chính thiết bị đang sử dụng</td>
+              <td>Lưu trong vùng bộ nhớ riêng tư của ứng dụng (<code>user://</code>)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>6.2. Thời Gian Lưu Giữ Dữ Liệu (Data Retention)</h3>
+      <ul class="clean-list">
+        <li><strong>Dữ liệu chơi game trên thiết bị:</strong> Chỉ tồn tại trên máy của bạn cho đến khi bạn tự xóa trong game, xóa bộ nhớ ứng dụng hoặc gỡ cài đặt trò chơi.</li>
+        <li><strong>Dữ liệu kỹ thuật từ AdMob &amp; hóa đơn Google Play:</strong> Được Google xử lý và lưu giữ theo chu kỳ bảo mật tiêu chuẩn của <a href="https://policies.google.com/technologies/retention" target="_blank" rel="noopener">Chính sách lưu giữ dữ liệu của Google</a>; nhà phát triển không tải xuống hay lưu bản sao dữ liệu nhận dạng người dùng cá nhân.</li>
+      </ul>
+
+      <h3>6.3. Hướng Dẫn &amp; Quyền Xóa Dữ Liệu (Data Deletion)</h3>
+      <p>Vì trò chơi <strong>không có tài khoản và không lưu dữ liệu người chơi trên máy chủ riêng</strong>, bạn toàn quyền kiểm soát và xóa sạch dữ liệu bất kỳ lúc nào qua các cách sau:</p>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-title">Xóa tiến trình chơi ngay trong ứng dụng</div>
+            <p style="margin:0; font-size:14px;">Mở game <strong>Tiệm Ăn Vặt → biểu tượng Cài đặt (⚙) → chọn "Xoá tiến trình chơi"</strong> (có bước xác nhận 2 lần) để đưa toàn bộ dữ liệu chơi cục bộ về trạng thái ban đầu.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-title">Xóa sạch dữ liệu cục bộ trên thiết bị Android</div>
+            <p style="margin:0; font-size:14px;">Vào <strong>Cài đặt Android → Ứng dụng → Tiệm Ăn Vặt → Lưu trữ → "Xóa dữ liệu" (Clear storage / Clear data)</strong> hoặc gỡ cài đặt ứng dụng. Toàn bộ tệp lưu trong vùng nhớ riêng của ứng dụng sẽ bị hệ điều hành xóa ngay lập tức.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-title">Đặt lại hoặc xóa Mã định danh quảng cáo (Advertising ID)</div>
+            <p style="margin:0; font-size:14px;">Vào <strong>Cài đặt Android → Google → Quảng cáo (Ads) → chọn "Đặt lại mã nhận dạng quảng cáo"</strong> hoặc <strong>"Xóa mã nhận dạng quảng cáo"</strong> để ngắt liên kết dữ liệu quảng cáo gắn với thiết bị của bạn.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-title">Gửi yêu cầu hỗ trợ trực tiếp cho nhà phát triển</div>
+            <p style="margin:0; font-size:14px;">Nếu bạn cần giải đáp hoặc hỗ trợ liên quan tới quyền riêng tư và dữ liệu trên Google Play, vui lòng gửi email về <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a> — chúng tôi phản hồi trong vòng 48 giờ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CHILDREN -->
+    <section id="children" class="section-card">
+      <div class="section-header">
+        <div class="section-icon slate">👶</div>
+        <div>
+          <h2 class="section-title">7. Quyền Riêng Tư Của Trẻ Em &amp; Cập Nhật Chính Sách</h2>
+        </div>
+      </div>
+
+      <ul class="clean-list">
+        <li><strong>Quyền riêng tư trẻ em:</strong> Ứng dụng không hướng riêng tới trẻ em dưới 13 tuổi (hoặc độ tuổi tối thiểu theo luật địa phương) và không cố ý thu thập thông tin cá nhân từ trẻ em. Nếu phụ huynh/người giám hộ phát hiện trẻ vô tình chia sẻ thông tin qua dịch vụ bên thứ ba khi dùng ứng dụng, xin liên hệ qua email bên dưới để được hỗ trợ kịp thời.</li>
+        <li><strong>Cập nhật chính sách:</strong> Chính sách này có thể được điều chỉnh khi ứng dụng bổ sung tính năng hoặc thay đổi SDK tích hợp. Mọi cập nhật mới nhất luôn được công bố công khai kèm ngày hiệu lực ngay tại trang web này.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 8: CONTACT -->
+    <section id="contact" class="contact-card">
+      <h2 class="contact-title">8. Liên Hệ Nhà Phát Triển</h2>
+      <p class="contact-text">Mọi góp ý về trò chơi <strong>Tiệm Ăn Vặt: Chè &amp; Trà Chanh</strong>, hỗ trợ khôi phục mua hàng hoặc thắc mắc về Chính sách bảo mật, vui lòng liên hệ trực tiếp:</p>
+
+      <p style="margin-bottom: 20px;">
+        <strong>Nhà phát triển:</strong> MT Games (Đỗ Minh Thắng)<br>
+        <strong>Mã gói Android:</strong> <code>cm.mt.anvat</code><br>
+        <strong>Email hỗ trợ:</strong> <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a>
+      </p>
+
+      <a class="btn-email" href="mailto:minhthang0792@gmail.com?subject=%5BTi%E1%BB%87m%20%C4%82n%20V%E1%BA%B7t%5D%20H%E1%BB%97%20tr%E1%BB%A3%20%26%20Ch%C3%ADnh%20s%C3%A1ch%20b%E1%BA%A3o%20m%E1%BA%ADt">
+        ✉️ Gửi Email: minhthang0792@gmail.com
+      </a>
+    </section>
+
+    <footer>
+      <p>© 2026 MT Games · Tiệm Ăn Vặt (<code>cm.mt.anvat</code>)</p>
+      <p style="margin-top:6px;">Liên hệ: <a href="mailto:minhthang0792@gmail.com">minhthang0792@gmail.com</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
